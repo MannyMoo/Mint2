@@ -48,7 +48,7 @@ namespace MINT
 
     virtual bool useAnalyticGradient();
 
-    virtual void setUseAnalyticGradient( bool useAnalyticGradient );
+    virtual void setUseAnalyticGradient( const bool& useAnalyticGradient );
 
    private:
     std::vector<IMinimisable*> _likList;

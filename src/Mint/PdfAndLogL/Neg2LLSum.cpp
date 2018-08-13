@@ -128,7 +128,7 @@ bool Neg2LLSum::useAnalyticGradient()
   return b;
 }
 
-void Neg2LLSum::setUseAnalyticGradient( bool useAnalyticGradient )
+void Neg2LLSum::setUseAnalyticGradient( const bool& useAnalyticGradient )
 {
   for( unsigned int j=0; j<_likList.size(); ++j )
     _likList[j]->setUseAnalyticGradient(useAnalyticGradient);
