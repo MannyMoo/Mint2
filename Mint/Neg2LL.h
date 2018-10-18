@@ -208,7 +208,7 @@ namespace MINT
     virtual bool useAnalyticGradient()
     { return _useAnalyticGradient; }
 
-    virtual void setUseAnalyticGradient( bool useAnalyticGradient )
+    virtual void setUseAnalyticGradient( const bool& useAnalyticGradient )
     { _useAnalyticGradient = useAnalyticGradient; }
 
     virtual double getNewVal()
@@ -290,7 +290,7 @@ namespace MINT
     virtual bool useAnalyticGradient()
     { return _imini->useAnalyticGradient(); }
 
-    virtual void setUseAnalyticGradient( bool useAnalyticGradient )
+    virtual void setUseAnalyticGradient( const bool& useAnalyticGradient )
     { _imini->setUseAnalyticGradient(useAnalyticGradient); }
 
    protected:
