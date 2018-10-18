@@ -337,7 +337,8 @@ int NamedDecayTreeList::make3BodyList(){
   makeKPiPiZeroList();
   makeDplusToKKPiList();
   makeB02DDKList();
-  makeBp2DDKList();  
+  makeBp2DDKList();
+  makePiPiPi0List();
   return _trees.size();
 }
 
@@ -968,6 +969,20 @@ int NamedDecayTreeList::makeDplusToKKPiList() {
 
   // Done
   return _trees.size();
+}
+
+int NamedDecayTreeList::makePiPiPi0List() {
+  // D0 -> (rho(770)0 -> pi+ pi-) pi0.
+  DecayTree dkRho0Pi0(421) ;
+  dkRho0Pi0.addDgtr(111, 113)->addDgtr(211, -211) ;
+  add(dkRho0Pi0) ;
+
+  // D0 -> (rho(770)+ -> pi+ pi0) pi-
+  DecayTree dkRhopPim(421) ;
+  dkRhopPim.addDgtr(-211, 213)->addDgtr(211, 111) ;
+  add(dkRhopPim) ;
+
+  return _trees.size() ;
 }
 
 //======================== 4 body decays ========================
