@@ -13,7 +13,6 @@ env.Append(CXXFLAGS = ['-O3', '-Wall', '-Wextra', '-Werror', '-pedantic', '-std=
 env.ParseConfig("root-config --libs --cflags --ldflags")
 env.Append(LIBPATH = [QFT_LIB])
 env.Append(LIBS = ['Minuit2', 'MathMore', 'qft++'])
-#env.Append(LINKFLAGS = ['-fopenmp'])
 #env.Append(LINKFLAGS = ['-fopenmp', ' -fprofile-arcs'])
 
 # Check if OpenMP is available.
@@ -22,6 +21,7 @@ ompcheck = subprocess.Popen(['echo |cpp -fopenmp -dM |grep -i open'], stdout = s
 ompcheck.wait()
 if 0 == ompcheck.poll() :
    env.Append(CXXFLAGS = ['-fopenmp'])
+   env.Append(LINKFLAGS = ['-fopenmp'])
 
 #Export environment
 Export('env')
