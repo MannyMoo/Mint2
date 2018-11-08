@@ -86,7 +86,9 @@ MINT::minimisePareto::minimisePareto(std::vector<double>& data, double threshold
 
 double MINT::minimisePareto::getVal(){
   double sum = 0.0;
-#pragma omp parallel for reduction(+:sum)
+#if defined(_OPENMP)
+  #pragma omp parallel for reduction(+:sum)
+#endif
   for( unsigned int i=0; i < _data.size(); ++i ){
     const double x = _data[i] - _threshold;
     if( x > 0 )
