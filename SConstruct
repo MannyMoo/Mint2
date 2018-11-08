@@ -1,4 +1,4 @@
-import os
+import os, subprocess
 
 env = Environment(ENV=os.environ)
 
@@ -15,6 +15,13 @@ env.Append(LIBPATH = [QFT_LIB])
 env.Append(LIBS = ['Minuit2', 'MathMore', 'qft++'])
 #env.Append(LINKFLAGS = ['-fopenmp'])
 #env.Append(LINKFLAGS = ['-fopenmp', ' -fprofile-arcs'])
+
+# Check if OpenMP is available.
+ompcheck = subprocess.Popen(['echo |cpp -fopenmp -dM |grep -i open'], stdout = subprocess.PIPE, stderr = subprocess.PIPE,
+	                    shell = True)
+ompcheck.wait()
+if 0 == ompcheck.poll() :
+   env.Append(CXXFLAGS = ['-fopenmp'])
 
 #Export environment
 Export('env')
