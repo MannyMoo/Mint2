@@ -45,3 +45,5 @@ gaudi_add_library(Mint2Lib
 
 # This can be used to build a C++ executable and add it to PATH
 gaudi_add_executable(genTimeDependent src/bin/genTimeDependent.cpp LINK_LIBRARIES Boost ROOT DaVinciKernelLib Mint2Lib)
+
+gaudi_env(SET MINT2 \$MINT2ROOT)
