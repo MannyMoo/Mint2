@@ -9,7 +9,7 @@
 #include <map>
 #include <complex>
 #include <string>
-#include <AGammaD0Tohhpi0/SplineGenerator.h>
+#include <Mint/SplineGenerator.h>
 
 class TRandom3 ;
 
