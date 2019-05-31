@@ -34,7 +34,8 @@ include_directories(${Boost_INCLUDE_DIRS} ${ROOT_INCLUDE_DIRS})
 # Uncomment whichever source files you have.
 gaudi_add_library(Mint2Lib
                   src/*/*/*.cpp
-                  PUBLIC_HEADERS Mint2
+		  src/*/*.cpp
+                  PUBLIC_HEADERS Mint
                   INCLUDE_DIRS Boost ROOT
                   LINK_LIBRARIES Boost ROOT QFTLib)
 
@@ -43,4 +44,4 @@ gaudi_add_library(Mint2Lib
 
 
 # This can be used to build a C++ executable and add it to PATH
-#gaudi_add_executable(MyExecutable src/MyExecutable.cpp LINK_LIBRARIES Boost ROOT DaVinciKernelLib Mint2Lib)
+gaudi_add_executable(genTimeDependent src/bin/genTimeDependent.cpp LINK_LIBRARIES Boost ROOT DaVinciKernelLib Mint2Lib)
