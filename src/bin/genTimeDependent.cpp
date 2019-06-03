@@ -19,7 +19,7 @@ using namespace MINT;
 // ===========
 // Main method
 // ===========
-int ampFit(){
+int genTimeDependent(){
   time_t startTime = time(0);
 
   TRandom3 ranLux;
@@ -156,7 +156,7 @@ int ampFit(){
   DalitzHistoSet datH = eventList1.histoSet();
   datH.save("plotsFromEventList.root");
 
-  cout << " ampFit done. Took " << (time(0) - startTime)/60. 
+  cout << " genTimeDependent done. Took " << (time(0) - startTime)/60. 
        << " min. Returning 0." << endl;
 
   return 0;
@@ -165,7 +165,7 @@ int ampFit(){
 
 int main(){
 
-  return ampFit();
+  return genTimeDependent();
 
 }
 //
