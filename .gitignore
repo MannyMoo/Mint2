@@ -5,3 +5,4 @@ lib/
 example/
 !example/ampFit.cpp
 !example/two.txt
+*.pyc
