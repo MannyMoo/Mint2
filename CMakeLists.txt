@@ -27,9 +27,9 @@ gaudi_install_python_modules()
 # set(ROOT_genreflex_CMD ${env_cmd} --xml ${env_xml} ${ROOT_genreflex_CMD})
 
 include_directories(${Boost_INCLUDE_DIRS} ${ROOT_INCLUDE_DIRS})
-# gaudi_add_dictionary(Mint2
-#                      dict/Mint2Dict.h dict/Mint2Dict.xml
-#                      SPLIT_CLASSDEF)
+gaudi_add_dictionary(Mint2
+                     dict/Mint2Dict.h dict/Mint2Dict.xml
+                     SPLIT_CLASSDEF)
 
 # Uncomment whichever source files you have.
 gaudi_add_library(Mint2Lib

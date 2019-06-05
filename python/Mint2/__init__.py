@@ -6,4 +6,4 @@ def load_cpp_lib() :
     ROOT.gSystem.Load('libMint2Dict.so')
 
 # Uncomment the below if you want to automatically load your C++ libraries
-# load_cpp_lib()
+load_cpp_lib()
