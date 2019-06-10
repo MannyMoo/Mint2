@@ -15,8 +15,8 @@
 #include <iostream>
 
 class ILookLikeFitAmpSum
-: virtual public MINT::IReturnRealForEvent<IDalitzEvent>
-, virtual public IFastAmplitudeIntegrable
+: virtual public IFastAmplitudeIntegrable
+, virtual public MINT::IReturnRealForEvent<IDalitzEvent>
 {
  public:
   virtual MINT::counted_ptr<IIntegrationCalculator> makeIntegrationCalculator()=0;

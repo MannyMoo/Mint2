@@ -17,6 +17,10 @@ class PhaseDifferenceCalc {
 
   // Returns the cross term A* x Abar fro the given point in phase space.
   std::complex<double> cross_term(IDalitzEvent&) ;
+
+  const FitAmpSum& model() const ;
+  const FitAmpSum& cp_model() const ;
+
  private :
   FitAmpSum m_model ;
   FitAmpSum m_cpmodel ;

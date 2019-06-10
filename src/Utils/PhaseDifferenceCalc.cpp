@@ -20,3 +20,11 @@ std::complex<double> PhaseDifferenceCalc::cross_term(IDalitzEvent& evt) {
   std::complex<double> cpval = m_cpmodel.ComplexVal(evt) ;
   return std::conj(val) * cpval ;
 }
+
+const FitAmpSum& PhaseDifferenceCalc::model() const {
+  return m_model ;
+}
+
+const FitAmpSum& PhaseDifferenceCalc::cp_model() const {
+  return m_cpmodel ;
+}

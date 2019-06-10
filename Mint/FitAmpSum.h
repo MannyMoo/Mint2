@@ -24,11 +24,11 @@
 // many methods formerly defined here are now defined there.
 
 class FitAmpSum 
-: virtual public MINT::IReturnRealForEvent<IDalitzEvent>
-, virtual public MINT::IReturnComplexForEvent<IDalitzEvent>
-, virtual public IFastAmplitudeIntegrable
+: public FitAmpList
 , virtual public ILookLikeFitAmpSum
-, public FitAmpList
+, virtual public IFastAmplitudeIntegrable
+, virtual public MINT::IReturnRealForEvent<IDalitzEvent>
+, virtual public MINT::IReturnComplexForEvent<IDalitzEvent>
 {
  protected:
  MINT::NamedParameter<int> _useAnalyticGradient;     

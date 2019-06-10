@@ -5,8 +5,8 @@
   <class name="MINT::NamedParameterBase" />
   <class name="TimeDependentGenerator" />
   <class name="SplineGenerator" />
-  <!--
   <class name="FitAmpSum" />
+  <!--
   <class name="AmpInitialiser" />
   <class name="AmpPair" />
   <class name="AmpRatios" />

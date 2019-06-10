@@ -10,7 +10,8 @@
 #include <Mint/NamedParameterBase.h>
 #include <Mint/TimeDependentGenerator.h>
 #include <Mint/SplineGenerator.h>
-/*#include <Mint/FitAmpSum.h>
+#include <Mint/FitAmpSum.h>
+/*
 #include <Mint/DalitzBox.h>
 #include <Mint/Model_independent.h>
 #include <Mint/PolymorphVector.h>

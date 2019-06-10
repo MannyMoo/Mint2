@@ -2,6 +2,7 @@
 
 import os, subprocess
 from Mint2.ConfigFile import ConfigFile
+from ROOT import TVector3, TLorentzVector
 
 def run_job(exe, workingdir, configs = [], parameters = {}, stdout = 'stdout', stderr = 'stderr') :
     '''Run a MINT executable with the given config files/parameters.'''
@@ -70,3 +71,21 @@ def gen_time_dependent_main(defaultconfigs, defaultintegratorsdir, defaultdatadi
 
     sys.exit(gen_time_dependent(name = args.name, configs = args.configs, integratorsdir = args.integratorsdir,
                                 mintdatadir = args.mintdatadir, **variableslists))
+
+def three_body_event(pattern, s13, s23) :
+    '''To be implemented.'''
+
+    m0 = pattern[0].mass()
+    m1 = pattern[1].mass()
+    m2 = pattern[2].mass()
+    m3 = pattern[3].mass()
+
+    '''
+    s13 = (e1 + e3)**2 - (px1 + px3)**2 - (py1 + py3)**2 - (pz1 + pz3)**2
+    s23 = (e2 + e3)**2 - (px2 + px3)**2 - (py2 + py3)**2 - (pz2 + pz3)**2
+    
+    # set px3 = py3 = 0, py2 = 0
+    s13 = ((m1**2 + px1**2 + py1**2 )**.5 + (m3**2 + pz3**2))**2 - px1**2 - py1**2 - (pz1 + pz3)**2
+    s23 = ((e2 + e3)**2 - (px2 + px3)**2 - (py2 + py3)**2 - (pz2 + pz3)**2
+    '''
+    
