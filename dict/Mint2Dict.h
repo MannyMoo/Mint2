@@ -11,12 +11,12 @@
 #include <Mint/TimeDependentGenerator.h>
 #include <Mint/SplineGenerator.h>
 #include <Mint/FitAmpSum.h>
+#include <Mint/DalitzEvent.h>
 /*
 #include <Mint/DalitzBox.h>
 #include <Mint/Model_independent.h>
 #include <Mint/PolymorphVector.h>
 #include <Mint/polVector.h>
-#include <Mint/DalitzEvent.h>
 #include <Mint/TLorentzVectorC.h>
 #include <Mint/DalitzHistogram.h>
 #include <Mint/DalitzSet.h>

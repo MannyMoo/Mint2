@@ -6,6 +6,7 @@
   <class name="TimeDependentGenerator" />
   <class name="SplineGenerator" />
   <class name="FitAmpSum" />
+  <class name="DalitzEvent" />
   <!--
   <class name="AmpInitialiser" />
   <class name="AmpPair" />
@@ -34,7 +35,6 @@
   <class name="DalitzBoxSet" />
   <class name="DalitzBoxSet_Method2" />
   <class name="DalitzCoordinate" />
-  <class name="DalitzEvent" />
   <class name="DalitzEventPtrList" />
   <class name="DalitzHistoSet" />
   <class name="DalitzHistoStackSet" />
