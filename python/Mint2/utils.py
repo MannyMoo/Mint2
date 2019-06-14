@@ -27,7 +27,7 @@ def run_job(exe, workingdir, configs = [], parameters = {}, stdout = 'stdout', s
     os.chdir(pwd)
     return retval
 
-def gen_time_dependent(name, integratorsdir, mintdatadir, configs = [], **parameters) :
+def gen_time_dependent(name, integratorsdir, mintdatadir, configs = [], number = None, zfill = 3, **parameters) :
     '''Generate time dependent MINT MC with genTimeDependent.exe.'''
 
     if not configs and not parameters :
@@ -36,10 +36,17 @@ def gen_time_dependent(name, integratorsdir, mintdatadir, configs = [], **parame
     if isinstance(configs, str) :
         configs = [configs]
     config = ConfigFile(*configs, **parameters)
-    outputdir = os.path.join(integratorsdir, name)
+
+    topdir = os.path.join(integratorsdir, name)
+    if number == None :
+        number = 0
+        while os.path.exists(os.path.join(topdir, str(number).zfill(zfill))) :
+            number += 1
+
+    outputdir = os.path.join(topdir, str(number).zfill(zfill))
     if not os.path.exists(outputdir) :
         os.makedirs(outputdir)
-    integsdir = os.path.join(outputdir, 'integrators')
+    integsdir = os.path.join(topdir, 'integrators')
     config['integratorsDirectory'] = [integsdir]
 
     datadir = os.path.join(mintdatadir, name)
@@ -60,7 +67,9 @@ def gen_time_dependent_main(defaultconfigs, defaultintegratorsdir, defaultdatadi
     parser.add_argument('--configs', nargs = '*', help = 'Config files to use', default = defaultconfigs)
     parser.add_argument('--integratorsdir', help = 'Integrators directory', default = defaultintegratorsdir)
     parser.add_argument('--mintdatadir', help = 'Directory to save generated data', default = defaultdatadir)
-    
+    parser.add_argument('--number', help = 'Number of the job (used as the name of the working directory).', default = None)
+    parser.add_argument('--zfill', help = 'How many zeros to pad the job number with', default = 3)
+
     args, remainder = parser.parse_known_args()
     variableslists = {}
     for arg in remainder :
@@ -71,7 +80,8 @@ def gen_time_dependent_main(defaultconfigs, defaultintegratorsdir, defaultdatadi
         varargs.append(arg)
 
     sys.exit(gen_time_dependent(name = args.name, configs = args.configs, integratorsdir = args.integratorsdir,
-                                mintdatadir = args.mintdatadir, **variableslists))
+                                mintdatadir = args.mintdatadir, number = args.number, zfill = args.zfill,
+                                **variableslists))
 
 def three_body_event(pattern, s13, s23) :
     '''Create a 3-body DalitzEvent with the given DalitzEventPattern, s13 and s23.'''
