@@ -90,7 +90,9 @@ int genTimeDependent(){
       decaytime = ranLux.Exp(lifetime) ;
     taus.push_back(decaytime) ;
 
-    cout << "Generating candidate " << i << " (" << (time(0)-startTimeGen)/float(i) << " s per candidate)" << endl ;
+    if(i%1000 == 0)
+      cout << "Generating candidate " << i << " (" << (time(0)-startTimeGen)/float(i) << " s per candidate)" << endl ;
+
     if(genTimeDependent){
       TimeDependentGenerator::GenTimeEvent evt = timedepgen->generate_event() ;
       tags.back() = evt.tag ;
