@@ -107,6 +107,36 @@ def three_body_event(pattern, s13, s23) :
     py3 = 0.
     pz3 = 0.
 
+    #Calculate energies of pi+, pi- from known parameters
+    E1 = ( m0**2 + m1**2 - s23 ) / (2 * m0)
+    E2 = ( m0**2 + m2**2 - s13 ) / (2 * m0)
+
+    #Get E3 from conservation of energy
+    E3 = m0 - E1 - E2
+
+    #Reject events where kinematics are impossible
+    pz1Sq = E1**2 - m1**2
+    if pz1Sq < 0 :
+        return None
+
+    #Get pz1 from mass/energy relation (co-ordinate system defined so that px1 = py1 = 0)
+    pz1 = pz1Sq**0.5
+
+    #Calculate pz3 from conservation of momentum 
+    pz3 = ( E2**2 - m2**2 - E3**2 + m3**2 - pz1**2 ) / ( 2*pz1 )
+
+    #Use pz3 to get py3 (co-ordinate system designed so that px3 = 0)
+    py3Sq =  E3**2 - m3**2 - pz3**2
+
+    #Reject events where kinematics are impossible
+    if py3Sq < 0 :
+        return None
+
+    py3 = py3Sq**0.5
+    #Conservation of momentum => py2 = -py3 and pz2 = -(pz1 + pz3)
+    py2 = -1 * py3
+    pz2 = -1 * (pz1 + pz3)
+
     momenta = ROOT.vector('TVector3')()
     momenta.push_back(TVector3(0., 0., 0.)) # mother momentum
     momenta.push_back(TVector3(px1, py1, pz1))
