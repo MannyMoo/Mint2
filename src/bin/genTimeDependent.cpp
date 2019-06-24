@@ -57,12 +57,15 @@ int genTimeDependent(){
   NamedParameter<double> ntimepoints("nTimePoints", 0.1) ;
   NamedParameter<int> overwrite("overwriteIntegrators", 1) ;
   NamedParameter<string> name("integratorsDirectory", string("integrators"), (char*)0) ;
+
+  NamedParameter<int> saveIntegEvents("saveIntegEvents", 1) ;
   
   unique_ptr<TimeDependentGenerator> timedepgen ;
   if(genTimeDependent){
     int startinit(time(0)) ;
     timedepgen.reset(new TimeDependentGenerator(name, overwrite, &ranLux, integPrecision, pat,
-						width, deltam, deltagamma, qoverp, phi, tmax, ntimepoints)) ;
+						width, deltam, deltagamma, qoverp, phi, tmax, ntimepoints,
+						(bool)saveIntegEvents)) ;
     cout << "Initialise TimeDependentGenerator took " << time(0) - startinit << " s" << endl ;
   }
 

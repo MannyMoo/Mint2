@@ -46,7 +46,8 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
 					       double precision,
 					       const DalitzEventPattern& pattern, double width, double deltam,
 					       double deltagamma,
-					       double qoverp, double phi, double tmax, int ntimepoints) :
+					       double qoverp, double phi, double tmax, int ntimepoints,
+					       const bool saveIntegEvents) :
   m_name(name),
   m_rndm(rndm),
   m_pattern(pattern),
@@ -110,10 +111,15 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
       double integral(0.) ;
       // Calculate the integral if necessary.
       if(!exists(fname.str())){
+	const string eventsFile(fname.str() + "_events.root") ;
 	DalitzPdfSaveInteg dalitz(*evtpat, model, m_precision, fname.str(),
-				  fname.str() + "_events.root", "topUp", fname.str()) ;
+				  eventsFile, "topUp", fname.str()) ;
 	integral = dalitz.getIntegralValue() ;
 	dalitz.saveIntegrator(fname.str()) ;
+	if(!saveIntegEvents){
+	  string cmd("rm " + eventsFile) ;
+	  system(cmd.c_str()) ;
+	}
       }
       // Else retrive the integral from a file.
       else {
