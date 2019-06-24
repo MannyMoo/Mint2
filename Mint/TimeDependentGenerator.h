@@ -61,7 +61,8 @@ public :
   TimeDependentGenerator(const std::string& name, const bool overwrite, TRandom3* rndm, double precision,
 			 const DalitzEventPattern& pattern, double width, double deltam,
 			 double deltagamma,
-			 double qoverp, double phi, double tmax, int ntimepoints) ;
+			 double qoverp, double phi, double tmax, int ntimepoints,
+			 const bool saveIntegEvents = true) ;
 
   // Get the coefficients of the amplitudes for the produced flavour and the mixed flavour
   // given the tag and decay time.
