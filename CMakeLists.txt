@@ -34,7 +34,7 @@ gaudi_add_dictionary(Mint2
 # Uncomment whichever source files you have.
 gaudi_add_library(Mint2Lib
                   src/*/*/*.cpp
-		  src/*/*.cpp
+		  src/Utils/*.cpp
                   PUBLIC_HEADERS Mint
                   INCLUDE_DIRS Boost ROOT
                   LINK_LIBRARIES Boost ROOT QFTLib)
@@ -44,6 +44,7 @@ gaudi_add_library(Mint2Lib
 
 
 # This can be used to build a C++ executable and add it to PATH
-gaudi_add_executable(genTimeDependent src/bin/genTimeDependent.cpp LINK_LIBRARIES Boost ROOT DaVinciKernelLib Mint2Lib)
+gaudi_add_executable(genTimeDependent src/bin/genTimeDependent.cpp LINK_LIBRARIES Mint2Lib)
+gaudi_add_executable(printKnownTrees src/bin/printKnownTrees.cpp LINK_LIBRARIES Mint2Lib)
 
 gaudi_env(SET MINT2 \$MINT2ROOT)
