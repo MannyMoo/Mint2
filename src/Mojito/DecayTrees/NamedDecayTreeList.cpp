@@ -981,6 +981,67 @@ int NamedDecayTreeList::makePiPiPi0List() {
   DecayTree dkRhopPim(421) ;
   dkRhopPim.addDgtr(-211, 213)->addDgtr(211, 111) ;
   add(dkRhopPim) ;
+  
+  // D0 -> (rho(770)- -> pi- pi0) pi+
+  DecayTree dkRhomPip(421) ;
+  dkRhopPim.addDgtr(211, -213)->addDgtr(-211, 111) ;
+  add(dkRhomPip) ;
+
+  // D0 -> (rho(1450)0 -> pi+ pi-) pi0
+  DecayTree dkRho0_1450Pi0(421) ;
+  dkRho0_1450Pi0.addDgtr(111, 100113)->addDgtr(211, -211) ;
+  add(dkRho0_1450Pi0) ;
+
+  // D0 -> (rho(1450)+ -> pi+ pi0) pi-
+  DecayTree dkRhop_1450Pim(421) ;
+  dkRhop_1450Pim.addDgtr(-211, 100213)->addDgtr(211, 111) ;
+  add(dkRhop_1450Pim) ;
+
+  // D0 -> (rho(1450)- -> pi- pi0) pi+
+  DecayTree dkRhom_1450Pip(421) ;
+  dkRhom_1450Pip.addDgtr(211, -100213)->addDgtr(-211, 111) ;
+  add(dkRhom_1450Pip) ;
+
+  // D0 -> (rho(1700)0 -> pi+ pi-) pi0
+  DecayTree dkRho0_1700Pi0(421) ;
+  dkRho0_1700Pi0.addDgtr(111, 30113)->addDgtr(211, -211) ;
+  add(dkRho0_1700Pi0) ;
+
+  // D0 -> (rho(1700)+ -> pi+ pi0) pi-
+  DecayTree dkRhop_1700Pim(421) ;
+  dkRhop_1700Pim.addDgtr(-211, 30213)->addDgtr(211, 111) ;
+  add(dkRhop_1700Pim) ;
+
+  // D0 -> (rho(1700)- -> pi- pi0) pi+
+  DecayTree dkRhom_1700Pip(421) ;
+  dkRhom_1700Pip.addDgtr(211, -30213)->addDgtr(-211, 111) ;
+  add(dkRhom_1700Pip) ;
+
+  // D0 -> (f0(980) -> pi+ pi-) pi0
+  DecayTree dkf0_980Pi0(421) ;
+  dkf0_980Pi0.addDgtr(111, 9010221)->addDgtr(211, -211) ;
+  add(dkf0_980Pi0) ;
+
+  // D0 -> (f0(1370) -> pi+ pi-) pi0
+  DecayTree dkf0_1370Pi0(421) ;
+  dkf0_1370Pi0.addDgtr(111, 30221)->addDgtr(211, -211) ;
+  add(dkf0_1370Pi0) ;
+
+  // D0 -> (f0(1500) -> pi+ pi-) pi0
+  DecayTree dkf0_1500Pi0(421) ;
+  dkf0_1500Pi0.addDgtr(111, 9030221)->addDgtr(211, -211) ;
+  add(dkf0_1500Pi0) ;
+
+  // D0 -> (f0(1710) -> pi+ pi-) pi0
+  DecayTree dkf0_1710Pi0(421) ;
+  dkf0_1710Pi0.addDgtr(111, 10331)->addDgtr(211, -211) ;
+  add(dkf0_1710Pi0) ;
+
+  // D0 -> (f2(1270) -> pi+ pi-) pi0
+  DecayTree dkf2_1270Pi0(421) ;
+  dkf2_1270Pi0.addDgtr(111, 225)->addDgtr(211, -211) ;
+  add(dkf2_1270Pi0) ;
+
 
   return _trees.size() ;
 }
