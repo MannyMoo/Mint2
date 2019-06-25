@@ -47,7 +47,7 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
 					       const DalitzEventPattern& pattern, double width, double deltam,
 					       double deltagamma,
 					       double qoverp, double phi, double tmax, int ntimepoints,
-					       const bool saveIntegEvents) :
+					       const bool saveIntegEvents, const double tmin) :
   m_name(name),
   m_rndm(rndm),
   m_pattern(pattern),
@@ -58,6 +58,7 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
   m_qoverp(qoverp),
   m_phi(phi),
   m_tmax(tmax),
+  m_tmin(tmin),
   m_ntimepoints(ntimepoints),
   m_genmap(),
   m_timegenerators(),
@@ -77,7 +78,7 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
   }
     
   const DalitzEventPattern* patterns[] = {&m_cppattern, &m_pattern} ;
-  double sampleinterval = m_tmax/m_ntimepoints ;
+  double sampleinterval = m_ntimepoints > 1 ? (m_tmax - m_tmin)/(m_ntimepoints-1) : 0. ;
   // Loop over flavours.
   for(int tag = -1 ; tag <= 1 ; tag += 2) {
     m_genmap[tag] = GenList() ;
@@ -91,8 +92,8 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
     vector<double> times ;
     vector<double> integrals ;
     // Loop over decay time sample points.
-    for(int i = 0 ; i <= m_ntimepoints ; ++i){
-      double decaytime = i * sampleinterval ;
+    for(int i = 0 ; i < m_ntimepoints ; ++i){
+      double decaytime = m_tmin + i * sampleinterval ;
       AmpPair amps = amplitude_coefficients(tag, decaytime) ;
       FitAmpSum* model(new FitAmpSum(*evtpat)) ;
       *model *= amps.first ;
