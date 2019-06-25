@@ -62,7 +62,7 @@ public :
 			 const DalitzEventPattern& pattern, double width, double deltam,
 			 double deltagamma,
 			 double qoverp, double phi, double tmax, int ntimepoints,
-			 const bool saveIntegEvents = true) ;
+			 const bool saveIntegEvents = true, double tmin = 0.) ;
 
   // Get the coefficients of the amplitudes for the produced flavour and the mixed flavour
   // given the tag and decay time.
@@ -96,6 +96,7 @@ private :
   const double m_phi ;
 
   const double m_tmax ;
+  const double m_tmin ;
   const int m_ntimepoints ;
 
   GenMap m_genmap ;

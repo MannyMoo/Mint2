@@ -54,22 +54,26 @@ int genTimeDependent(){
   NamedParameter<double> phi("phi", 0.) ;
 
   NamedParameter<double> tmax("tmax", 10.) ;
-  NamedParameter<double> ntimepoints("nTimePoints", 0.1) ;
+  NamedParameter<double> tmin("tmin", 0.) ;
+  NamedParameter<double> ntimepoints("nTimePoints", 101) ;
   NamedParameter<int> overwrite("overwriteIntegrators", 1) ;
   NamedParameter<string> name("integratorsDirectory", string("integrators"), (char*)0) ;
 
   NamedParameter<int> saveIntegEvents("saveIntegEvents", 1) ;
   
+  cout << " got event pattern: " << pat << endl;
+
   unique_ptr<TimeDependentGenerator> timedepgen ;
   if(genTimeDependent){
     int startinit(time(0)) ;
     timedepgen.reset(new TimeDependentGenerator(name, overwrite, &ranLux, integPrecision, pat,
 						width, deltam, deltagamma, qoverp, phi, tmax, ntimepoints,
-						(bool)saveIntegEvents)) ;
+						(bool)saveIntegEvents, tmin)) ;
     cout << "Initialise TimeDependentGenerator took " << time(0) - startinit << " s" << endl ;
   }
 
-  cout << " got event pattern: " << pat << endl;
+  if(!(bool)saveEvents)
+    return 0 ;
 
   DalitzEventList eventList1 ;
 
@@ -107,56 +111,55 @@ int genTimeDependent(){
     }
   }
   
-  if((int) saveEvents){
-    // Make sure the first event in the list is a D0 so the naming scheme is consistent.
-    if(eventList1.begin()->eventPattern() != pat){
-      auto ievt = eventList1.begin() ;
-      ++ievt ;
-      for( ; ievt->eventPattern() != pat && ievt != eventList1.end() ; ++ievt)
-	continue ;
-      if(ievt != eventList1.end()){
-	DalitzEvent evt(*ievt) ;
-	int i = ievt - eventList1.begin() ;
-	eventList1.erase(ievt) ;
-	eventList1.theVector().insert(eventList1.begin(), evt) ;
-	auto itag = tags.begin() ;
-	advance(itag, i) ;
-	int tag = *itag ;
-	tags.erase(itag) ;
-	tags.insert(tags.begin(), tag) ;
-	auto itau = taus.begin() ;
-	advance(itau, i) ;
-	double tau = *itau ;
-	taus.erase(itau) ;
-	taus.insert(taus.begin(), tau) ;
-      }
+  // Make sure the first event in the list is a D0 so the naming scheme is consistent.
+  if(eventList1.begin()->eventPattern() != pat){
+    auto ievt = eventList1.begin() ;
+    ++ievt ;
+    for( ; ievt->eventPattern() != pat && ievt != eventList1.end() ; ++ievt)
+      continue ;
+    if(ievt != eventList1.end()){
+      DalitzEvent evt(*ievt) ;
+      int i = ievt - eventList1.begin() ;
+      eventList1.erase(ievt) ;
+      eventList1.theVector().insert(eventList1.begin(), evt) ;
+      auto itag = tags.begin() ;
+      advance(itag, i) ;
+      int tag = *itag ;
+      tags.erase(itag) ;
+      tags.insert(tags.begin(), tag) ;
+      auto itau = taus.begin() ;
+      advance(itau, i) ;
+      double tau = *itau ;
+      taus.erase(itau) ;
+      taus.insert(taus.begin(), tau) ;
     }
-    NamedParameter<string> outputfname("outputFileName", string("pipipi0_1.root"), (char*)0) ;
-    eventList1.save(outputfname);
-    string fnamestr(outputfname) ;
-    TFile tuplefile(fnamestr.c_str(), "update") ;
-    TNtupleD* ntuple = (TNtupleD*)tuplefile.Get("DalitzEventList") ;
-    int tag(0) ;
-    double tau(0.) ;
-    TBranch* tagbranch = ntuple->Branch("tag", &tag, "tag/I") ;
-    TBranch* taubranch = ntuple->Branch("decaytime", &tau, "decaytime/D") ;
-    list<int>::const_iterator itag = tags.begin() ;
-    list<double>::const_iterator itau = taus.begin() ;
-    for(int i = 0 ; i < Nevents ; ++i){
-      tag = *itag ;
-      tau = *itau ;
-      tagbranch->Fill() ;
-      taubranch->Fill() ;
-      ++itag ;
-      ++itau ;
-    }
-    ntuple->Write(ntuple->GetName(), TObject::kWriteDelete) ;
-    if(genTimeDependent){
-      timedepgen->time_generators().find(-1)->second.spline().Write() ;
-      timedepgen->time_generators().find(1)->second.spline().Write() ;
-    }
-    tuplefile.Close() ;
   }
+
+  NamedParameter<string> outputfname("outputFileName", string("pipipi0_1.root"), (char*)0) ;
+  eventList1.save(outputfname);
+  string fnamestr(outputfname) ;
+  TFile tuplefile(fnamestr.c_str(), "update") ;
+  TNtupleD* ntuple = (TNtupleD*)tuplefile.Get("DalitzEventList") ;
+  int tag(0) ;
+  double tau(0.) ;
+  TBranch* tagbranch = ntuple->Branch("tag", &tag, "tag/I") ;
+  TBranch* taubranch = ntuple->Branch("decaytime", &tau, "decaytime/D") ;
+  list<int>::const_iterator itag = tags.begin() ;
+  list<double>::const_iterator itau = taus.begin() ;
+  for(int i = 0 ; i < Nevents ; ++i){
+    tag = *itag ;
+    tau = *itau ;
+    tagbranch->Fill() ;
+    taubranch->Fill() ;
+    ++itag ;
+    ++itau ;
+  }
+  ntuple->Write(ntuple->GetName(), TObject::kWriteDelete) ;
+  if(genTimeDependent){
+    timedepgen->time_generators().find(-1)->second.spline().Write() ;
+    timedepgen->time_generators().find(1)->second.spline().Write() ;
+  }
+  tuplefile.Close() ;
   
   DalitzHistoSet datH = eventList1.histoSet();
   datH.save("plotsFromEventList.root");
