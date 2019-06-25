@@ -984,7 +984,7 @@ int NamedDecayTreeList::makePiPiPi0List() {
   
   // D0 -> (rho(770)- -> pi- pi0) pi+
   DecayTree dkRhomPip(421) ;
-  dkRhopPim.addDgtr(211, -213)->addDgtr(-211, 111) ;
+  dkRhomPip.addDgtr(211, -213)->addDgtr(-211, 111) ;
   add(dkRhomPip) ;
 
   // D0 -> (rho(1450)0 -> pi+ pi-) pi0
