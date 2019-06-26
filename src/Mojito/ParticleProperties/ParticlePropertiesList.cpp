@@ -88,8 +88,8 @@ const std::vector<std::string>& ParticlePropertiesList::dirList(){
 
 void ParticlePropertiesList::fillDirList(){
   _dirList.clear();
-  NamedParameter<std::string> userDir("ParticlePropertiesList::ParticlePropertiesDir"
-					, (std::string) "");
+  NamedParameter<std::string> userDir("ParticlePropertiesList::ParticlePropertiesDir",
+				      "", NamedParameterBase::QUIET);
   for(int i=0; i < userDir.size(); i++){
     if("" != userDir.getVal(i)){
       _dirList.push_back(userDir.getVal(i) + "/");
@@ -102,7 +102,7 @@ void ParticlePropertiesList::fillDirList(){
 
   std::string MintRoot(".");
   char * Mintevn(0);
-  Mintevn = getenv ("MINTROOT");
+  Mintevn = getenv ("MINT2");
   if (NULL != Mintevn){
     MintRoot = Mintevn;
   }
@@ -113,18 +113,11 @@ void ParticlePropertiesList::fillDirList(){
   if (NULL != DecFiles){
     DecFilesRoot = DecFiles;
   }
-  
+
   _dirList.push_back("");
   _dirList.push_back("./");
+  _dirList.push_back(MintRoot+"/share/");
   _dirList.push_back(DecFilesRoot+"/MintData/");
-  _dirList.push_back(MintRoot+"/src/Mojito/ParticleProperties/src/");
-  _dirList.push_back("../../../Mojito/ParticleProperties/src/");
-  _dirList.push_back("../../../../src/Mojito/ParticleProperties/src/");
-  _dirList.push_back("../../ParticleProperties/src/");
-  _dirList.push_back("../ParticleProperties/src/");
-  _dirList.push_back("./ParticleProperties/src/");
-  _dirList.push_back("../");
-  _dirList.push_back("../../");
 }
 
 
