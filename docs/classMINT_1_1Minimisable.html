@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -107,11 +108,13 @@ Inheritance diagram for MINT::Minimisable:</div>
 <area href="classchi2BF.html" alt="chi2BF" shape="rect" coords="335,112,660,136"/>
 <area href="classFindMaxFCN.html" alt="FindMaxFCN" shape="rect" coords="335,168,660,192"/>
 <area href="classMINT_1_1LASSO.html" alt="MINT::LASSO" shape="rect" coords="335,224,660,248"/>
-<area href="classMINT_1_1minimisePareto.html" alt="MINT::minimisePareto" shape="rect" coords="335,280,660,304"/>
-<area href="classMINT_1_1Neg2LL.html" alt="MINT::Neg2LL" shape="rect" coords="335,336,660,360"/>
-<area href="classMINT_1_1Neg2LLClass.html" alt="MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;" shape="rect" coords="335,392,660,416"/>
-<area href="classMINT_1_1Neg2LLConstraint.html" alt="MINT::Neg2LLConstraint" shape="rect" coords="335,448,660,472"/>
-<area href="classMINT_1_1Neg2LLSum.html" alt="MINT::Neg2LLSum" shape="rect" coords="335,504,660,528"/>
+<area href="classMINT_1_1LASSO__flexi.html" alt="MINT::LASSO_flexi" shape="rect" coords="335,280,660,304"/>
+<area href="classMINT_1_1minimisePareto.html" alt="MINT::minimisePareto" shape="rect" coords="335,336,660,360"/>
+<area href="classMINT_1_1Neg2LL.html" alt="MINT::Neg2LL" shape="rect" coords="335,392,660,416"/>
+<area href="classMINT_1_1Neg2LLClass.html" alt="MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;" shape="rect" coords="335,448,660,472"/>
+<area href="classMINT_1_1Neg2LLConstraint.html" alt="MINT::Neg2LLConstraint" shape="rect" coords="335,504,660,528"/>
+<area href="classMINT_1_1Neg2LLMultiConstraint.html" alt="MINT::Neg2LLMultiConstraint" shape="rect" coords="335,560,660,584"/>
+<area href="classMINT_1_1Neg2LLSum.html" alt="MINT::Neg2LLSum" shape="rect" coords="335,616,660,640"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -121,8 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa802159b079eb79abdc093d2b18dab3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0841ec04c72fb4ea4212708e4a071020"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1Minimisable.html#a0841ec04c72fb4ea4212708e4a071020">Minimisable</a> (const <a class="el" href="classMINT_1_1Minimisable.html">Minimisable</a> &amp;other)</td></tr>
 <tr class="separator:a0841ec04c72fb4ea4212708e4a071020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a556fbf1f7c5062bb8734102b205e8b7b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1Minimisable.html#a556fbf1f7c5062bb8734102b205e8b7b">~Minimisable</a> ()</td></tr>
-<tr class="separator:a556fbf1f7c5062bb8734102b205e8b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77de6df2a4a9bf68a6c34d5f56c3bc91"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1Minimisable.html#a77de6df2a4a9bf68a6c34d5f56c3bc91">~Minimisable</a> ()</td></tr>
+<tr class="separator:a77de6df2a4a9bf68a6c34d5f56c3bc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb9fc1bce14015652c14d59c173598b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1Minimisable.html#abb9fc1bce14015652c14d59c173598b6">setPset</a> (<a class="el" href="classMINT_1_1MinuitParameterSet.html">MinuitParameterSet</a> *mps)</td></tr>
 <tr class="separator:abb9fc1bce14015652c14d59c173598b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8eb3c8cd37bd5ea240d5a2f05cc28b50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMINT_1_1MinuitParameterSet.html">MinuitParameterSet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1Minimisable.html#a8eb3c8cd37bd5ea240d5a2f05cc28b50">getParSet</a> ()</td></tr>
@@ -138,14 +141,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af3fda8cb9d26000372bb5541a21dd4ff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1Minimisable.html#af3fda8cb9d26000372bb5541a21dd4ff">getNewVal</a> ()</td></tr>
 <tr class="separator:af3fda8cb9d26000372bb5541a21dd4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classMINT_1_1IMinimisable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classMINT_1_1IMinimisable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classMINT_1_1IMinimisable.html">MINT::IMinimisable</a></td></tr>
-<tr class="memitem:ae2c7260bd901dd7273664698bf1b0521 inherit pub_methods_classMINT_1_1IMinimisable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinimisable.html#ae2c7260bd901dd7273664698bf1b0521">~IMinimisable</a> ()</td></tr>
-<tr class="separator:ae2c7260bd901dd7273664698bf1b0521 inherit pub_methods_classMINT_1_1IMinimisable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a219fe5ba44fbc9e07f58fee40642856e inherit pub_methods_classMINT_1_1IMinimisable"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinimisable.html#a219fe5ba44fbc9e07f58fee40642856e">Gradient</a> (const std::vector&lt; double &gt; &amp;par)</td></tr>
-<tr class="separator:a219fe5ba44fbc9e07f58fee40642856e inherit pub_methods_classMINT_1_1IMinimisable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad44658489f606ecfa9fc9f96bd8da425 inherit pub_methods_classMINT_1_1IMinimisable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinimisable.html#ad44658489f606ecfa9fc9f96bd8da425">Gradient</a> (std::vector&lt; double &gt; &amp;grad)</td></tr>
+<tr class="separator:ad44658489f606ecfa9fc9f96bd8da425 inherit pub_methods_classMINT_1_1IMinimisable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2f1d1e57611e7a5ed83e78a98113890 inherit pub_methods_classMINT_1_1IMinimisable"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinimisable.html#ab2f1d1e57611e7a5ed83e78a98113890">useAnalyticGradient</a> ()</td></tr>
 <tr class="separator:ab2f1d1e57611e7a5ed83e78a98113890 inherit pub_methods_classMINT_1_1IMinimisable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72283900ed5d06cbfe684ad43b03c20a inherit pub_methods_classMINT_1_1IMinimisable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinimisable.html#a72283900ed5d06cbfe684ad43b03c20a">setUseAnalyticGradient</a> (const bool &amp;<a class="el" href="classMINT_1_1IMinimisable.html#ab2f1d1e57611e7a5ed83e78a98113890">useAnalyticGradient</a>)</td></tr>
-<tr class="separator:a72283900ed5d06cbfe684ad43b03c20a inherit pub_methods_classMINT_1_1IMinimisable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a167fe150d96c4da7e75e938d21abcba0 inherit pub_methods_classMINT_1_1IMinimisable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinimisable.html#a167fe150d96c4da7e75e938d21abcba0">setUseAnalyticGradient</a> (bool <a class="el" href="classMINT_1_1IMinimisable.html#ab2f1d1e57611e7a5ed83e78a98113890">useAnalyticGradient</a>)</td></tr>
+<tr class="separator:a167fe150d96c4da7e75e938d21abcba0 inherit pub_methods_classMINT_1_1IMinimisable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c7260bd901dd7273664698bf1b0521 inherit pub_methods_classMINT_1_1IMinimisable"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinimisable.html#ae2c7260bd901dd7273664698bf1b0521">~IMinimisable</a> ()</td></tr>
+<tr class="separator:ae2c7260bd901dd7273664698bf1b0521 inherit pub_methods_classMINT_1_1IMinimisable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -154,7 +157,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00009">9</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
+<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00010">10</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa802159b079eb79abdc093d2b18dab3b"></a>
 <div class="memitem">
@@ -170,8 +173,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Minimisable_8cpp_source.html#l00005">5</a> of file <a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  : <a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a>(mps)</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{}</div><div class="ttc" id="classMINT_1_1Minimisable_html_af567c5103f914d031140f4c63a09bebb"><div class="ttname"><a href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">MINT::Minimisable::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8h_source.html#l00042">Minimisable.h:42</a></div></div>
+<p>Definition at line <a class="el" href="Minimisable_8cpp_source.html#l00006">6</a> of file <a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  : <a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a>(mps)</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div><div class="ttc" id="classMINT_1_1Minimisable_html_af567c5103f914d031140f4c63a09bebb"><div class="ttname"><a href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">MINT::Minimisable::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8h_source.html#l00011">Minimisable.h:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -189,13 +192,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Minimisable_8cpp_source.html#l00009">9</a> of file <a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  : <a class="code" href="classMINT_1_1IMinimisable.html">IMinimisable</a>()</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  , <a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a>(other.<a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a>)</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{}</div><div class="ttc" id="classMINT_1_1IMinimisable_html"><div class="ttname"><a href="classMINT_1_1IMinimisable.html">MINT::IMinimisable</a></div><div class="ttdef"><b>Definition:</b> <a href="IMinimisable_8h_source.html#l00009">IMinimisable.h:9</a></div></div>
-<div class="ttc" id="classMINT_1_1Minimisable_html_af567c5103f914d031140f4c63a09bebb"><div class="ttname"><a href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">MINT::Minimisable::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8h_source.html#l00042">Minimisable.h:42</a></div></div>
+<p>Definition at line <a class="el" href="Minimisable_8cpp_source.html#l00012">12</a> of file <a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    : <a class="code" href="classMINT_1_1IMinimisable.html">IMinimisable</a>() </div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    , <a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a>(other.<a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a>)</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div><div class="ttc" id="classMINT_1_1IMinimisable_html"><div class="ttname"><a href="classMINT_1_1IMinimisable.html">MINT::IMinimisable</a></div><div class="ttdef"><b>Definition:</b> <a href="IMinimisable_8h_source.html#l00010">IMinimisable.h:10</a></div></div>
+<div class="ttc" id="classMINT_1_1Minimisable_html_af567c5103f914d031140f4c63a09bebb"><div class="ttname"><a href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">MINT::Minimisable::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8h_source.html#l00011">Minimisable.h:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a556fbf1f7c5062bb8734102b205e8b7b"></a>
+<a class="anchor" id="a77de6df2a4a9bf68a6c34d5f56c3bc91"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -203,7 +206,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual MINT::Minimisable::~Minimisable </td>
+          <td class="memname">Minimisable::~Minimisable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -211,13 +214,13 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00016">16</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="Minimisable_8cpp_source.html#l00019">19</a> of file <a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -244,10 +247,10 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinimisable.html#a3fba62c089239b01b022d51c117d9dc2">MINT::IMinimisable</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#ae087bc5a9438e9a60caabc80aa6f28f8">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#a7ba6a2c9b1858b5694d09306d6996056">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLSum.html#aa7309a9dd3f73a09a49bfab74ae466fd">MINT::Neg2LLSum</a>, <a class="el" href="classMINT_1_1Neg2LLConstraint.html#ac63e34b0c01954c62b560bae64aeacd3">MINT::Neg2LLConstraint</a>, and <a class="el" href="classMINT_1_1LASSO.html#ad7327bd5d8a4c9a512d3c012684f088b">MINT::LASSO</a>.</p>
+<p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#ae087bc5a9438e9a60caabc80aa6f28f8">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLMultiConstraint.html#aa54892d6e9f1b6459ed54f6e8bb0a7a3">MINT::Neg2LLMultiConstraint</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#a7ba6a2c9b1858b5694d09306d6996056">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLSum.html#aa7309a9dd3f73a09a49bfab74ae466fd">MINT::Neg2LLSum</a>, <a class="el" href="classMINT_1_1LASSO__flexi.html#a0b2f62d9fbc59f9cdda21994cb325237">MINT::LASSO_flexi</a>, <a class="el" href="classMINT_1_1LASSO.html#ad7327bd5d8a4c9a512d3c012684f088b">MINT::LASSO</a>, and <a class="el" href="classMINT_1_1Neg2LLConstraint.html#ac63e34b0c01954c62b560bae64aeacd3">MINT::Neg2LLConstraint</a>.</p>
 
-<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00024">24</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00021">21</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab19433ad11906ea03b2def443ca00da6"></a>
@@ -273,10 +276,10 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinimisable.html#a82dd474a34ebf004d9d945555b820c31">MINT::IMinimisable</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#a458b418503b5fb81577b7c8a84b66d87">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#a80c9c4132f359ecb9d9494b432929283">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLSum.html#ac3979189e5becd599b0eedced0cdc8a6">MINT::Neg2LLSum</a>, <a class="el" href="classMINT_1_1Neg2LLConstraint.html#a9fa63472ea415cc3faa95e250b92800e">MINT::Neg2LLConstraint</a>, and <a class="el" href="classMINT_1_1LASSO.html#a84cc37559af5384e3d388b4a8cc813ff">MINT::LASSO</a>.</p>
+<p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#a458b418503b5fb81577b7c8a84b66d87">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLMultiConstraint.html#a78d3171cc6d891de28a727b5a813402e">MINT::Neg2LLMultiConstraint</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#a80c9c4132f359ecb9d9494b432929283">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLSum.html#ac3979189e5becd599b0eedced0cdc8a6">MINT::Neg2LLSum</a>, <a class="el" href="classMINT_1_1LASSO__flexi.html#ac03d7375635dde3bf2bf5b94f3145d45">MINT::LASSO_flexi</a>, <a class="el" href="classMINT_1_1LASSO.html#a84cc37559af5384e3d388b4a8cc813ff">MINT::LASSO</a>, and <a class="el" href="classMINT_1_1Neg2LLConstraint.html#a9fa63472ea415cc3faa95e250b92800e">MINT::Neg2LLConstraint</a>.</p>
 
-<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00028">28</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00023">23</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af3fda8cb9d26000372bb5541a21dd4ff"></a>
@@ -302,10 +305,10 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinimisable.html#a970508dc025ec1836d76d12e551aca56">MINT::IMinimisable</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#a17aa19b3330e6a55ef0b7584ca8781b8">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#a2b5704a1223dbf2cf96b10f1b592b6bb">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, and <a class="el" href="classMINT_1_1Neg2LLConstraint.html#a5e8b18f1d927f850ea40bb832245abe7">MINT::Neg2LLConstraint</a>.</p>
+<p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#a17aa19b3330e6a55ef0b7584ca8781b8">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#a2b5704a1223dbf2cf96b10f1b592b6bb">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLMultiConstraint.html#a9602277206d640be8592ce61c971e82a">MINT::Neg2LLMultiConstraint</a>, and <a class="el" href="classMINT_1_1Neg2LLConstraint.html#a5e8b18f1d927f850ea40bb832245abe7">MINT::Neg2LLConstraint</a>.</p>
 
-<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00034">34</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <a class="code" href="classMINT_1_1Minimisable.html#a986a31f66175509735f1f9038cac19f5">parametersChanged</a>();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1Minimisable.html#aa878cc14692e6bb4218853ecaad830ce">getVal</a>();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div><div class="ttc" id="classMINT_1_1Minimisable_html_a986a31f66175509735f1f9038cac19f5"><div class="ttname"><a href="classMINT_1_1Minimisable.html#a986a31f66175509735f1f9038cac19f5">MINT::Minimisable::parametersChanged</a></div><div class="ttdeci">virtual void parametersChanged()</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8h_source.html#l00026">Minimisable.h:26</a></div></div>
+<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00029">29</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classMINT_1_1Minimisable.html#a986a31f66175509735f1f9038cac19f5">parametersChanged</a>();</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1Minimisable.html#aa878cc14692e6bb4218853ecaad830ce">getVal</a>();</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  }</div><div class="ttc" id="classMINT_1_1Minimisable_html_a986a31f66175509735f1f9038cac19f5"><div class="ttname"><a href="classMINT_1_1Minimisable.html#a986a31f66175509735f1f9038cac19f5">MINT::Minimisable::parametersChanged</a></div><div class="ttdeci">virtual void parametersChanged()</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8h_source.html#l00022">Minimisable.h:22</a></div></div>
 <div class="ttc" id="classMINT_1_1Minimisable_html_aa878cc14692e6bb4218853ecaad830ce"><div class="ttname"><a href="classMINT_1_1Minimisable.html#aa878cc14692e6bb4218853ecaad830ce">MINT::Minimisable::getVal</a></div><div class="ttdeci">double getVal()=0</div></div>
 </div><!-- fragment -->
 </div>
@@ -335,9 +338,9 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#a9b8c4c88dfad21308cf35e8c1468fd55">MINT::Neg2LL</a>.</p>
 
-<p>Definition at line <a class="el" href="Minimisable_8cpp_source.html#l00017">17</a> of file <a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">if</span>( 0 != <a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a> ){</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1MinuitParameterSet.html#aaed853598d1a91ab1d5533da1e5d8bd6">MinuitParameterSet::getDefaultSet</a>();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div><div class="ttc" id="classMINT_1_1MinuitParameterSet_html_aaed853598d1a91ab1d5533da1e5d8bd6"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html#aaed853598d1a91ab1d5533da1e5d8bd6">MINT::MinuitParameterSet::getDefaultSet</a></div><div class="ttdeci">static MinuitParameterSet * getDefaultSet()</div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8cpp_source.html#l00019">MinuitParameterSet.cpp:19</a></div></div>
-<div class="ttc" id="classMINT_1_1Minimisable_html_af567c5103f914d031140f4c63a09bebb"><div class="ttname"><a href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">MINT::Minimisable::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8h_source.html#l00042">Minimisable.h:42</a></div></div>
+<p>Definition at line <a class="el" href="Minimisable_8cpp_source.html#l00025">25</a> of file <a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                          {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">if</span>(0 != <a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a>){</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a>;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1MinuitParameterSet.html#aaed853598d1a91ab1d5533da1e5d8bd6">MinuitParameterSet::getDefaultSet</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div><div class="ttc" id="classMINT_1_1MinuitParameterSet_html_aaed853598d1a91ab1d5533da1e5d8bd6"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html#aaed853598d1a91ab1d5533da1e5d8bd6">MINT::MinuitParameterSet::getDefaultSet</a></div><div class="ttdeci">static MinuitParameterSet * getDefaultSet()</div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8cpp_source.html#l00025">MinuitParameterSet.cpp:25</a></div></div>
+<div class="ttc" id="classMINT_1_1Minimisable_html_af567c5103f914d031140f4c63a09bebb"><div class="ttname"><a href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">MINT::Minimisable::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8h_source.html#l00011">Minimisable.h:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -364,7 +367,7 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinimisable.html#ad8dfbf20f19065ff6268e898991b5355">MINT::IMinimisable</a>.</p>
 
-<p>Implemented in <a class="el" href="classchi2BF.html#a07944735182fcc5edb1502c4a860d11e">chi2BF</a>, <a class="el" href="classMINT_1_1Neg2LL.html#aee202379622274438670799c010cdd7e">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#a860af522a0ae30752ecadc4c18a0cba0">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLSum.html#ae60d4627c4b0355f2941f612312f3a80">MINT::Neg2LLSum</a>, <a class="el" href="classMINT_1_1minimisePareto.html#ad973cd1ef110ad084a9632af2594ec6f">MINT::minimisePareto</a>, <a class="el" href="classFindMaxFCN.html#a704a2c2b74df7bde68c1012283b4ca8c">FindMaxFCN</a>, <a class="el" href="classMINT_1_1Neg2LLConstraint.html#ac10aa65ec98df34d4c9ecdb838a68cb2">MINT::Neg2LLConstraint</a>, and <a class="el" href="classMINT_1_1LASSO.html#ace9a88ef2fc6bbfdc7cba50c64ae0448">MINT::LASSO</a>.</p>
+<p>Implemented in <a class="el" href="classchi2BF.html#a07944735182fcc5edb1502c4a860d11e">chi2BF</a>, <a class="el" href="classMINT_1_1Neg2LL.html#aee202379622274438670799c010cdd7e">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#a860af522a0ae30752ecadc4c18a0cba0">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLMultiConstraint.html#a4603ab46e34c0136e1f439fa288bdf83">MINT::Neg2LLMultiConstraint</a>, <a class="el" href="classMINT_1_1Neg2LLSum.html#ae60d4627c4b0355f2941f612312f3a80">MINT::Neg2LLSum</a>, <a class="el" href="classMINT_1_1minimisePareto.html#ad973cd1ef110ad084a9632af2594ec6f">MINT::minimisePareto</a>, <a class="el" href="classFindMaxFCN.html#a704a2c2b74df7bde68c1012283b4ca8c">FindMaxFCN</a>, <a class="el" href="classMINT_1_1LASSO__flexi.html#a2255046399c21f41e6847b29c74a53ed">MINT::LASSO_flexi</a>, <a class="el" href="classMINT_1_1LASSO.html#ace9a88ef2fc6bbfdc7cba50c64ae0448">MINT::LASSO</a>, and <a class="el" href="classMINT_1_1Neg2LLConstraint.html#ac10aa65ec98df34d4c9ecdb838a68cb2">MINT::Neg2LLConstraint</a>.</p>
 
 </div>
 </div>
@@ -391,10 +394,10 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinimisable.html#a4251cacf21d6b88433a455bda0afc424">MINT::IMinimisable</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#affa9eabe4cd1086d4896f448a6054138">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#aba26e1baf256ff1475ea069e8f118389">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLSum.html#a5db55fa6275e6c7407753ac82e311e59">MINT::Neg2LLSum</a>, <a class="el" href="classMINT_1_1Neg2LLConstraint.html#ae3982379911d9951b39e5b5f425d96b8">MINT::Neg2LLConstraint</a>, and <a class="el" href="classMINT_1_1LASSO.html#afaa54f0e166feef908a25522c5da4e0c">MINT::LASSO</a>.</p>
+<p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#affa9eabe4cd1086d4896f448a6054138">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLMultiConstraint.html#ae233b9d1efde3932a5cf0f156e07460f">MINT::Neg2LLMultiConstraint</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#aba26e1baf256ff1475ea069e8f118389">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLSum.html#a5db55fa6275e6c7407753ac82e311e59">MINT::Neg2LLSum</a>, <a class="el" href="classMINT_1_1LASSO__flexi.html#a25ce854d6a707674fbce1734e8aa6f2c">MINT::LASSO_flexi</a>, <a class="el" href="classMINT_1_1LASSO.html#afaa54f0e166feef908a25522c5da4e0c">MINT::LASSO</a>, and <a class="el" href="classMINT_1_1Neg2LLConstraint.html#ae3982379911d9951b39e5b5f425d96b8">MINT::Neg2LLConstraint</a>.</p>
 
-<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00026">26</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00022">22</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abb9fc1bce14015652c14d59c173598b6"></a>
@@ -411,8 +414,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Minimisable_8cpp_source.html#l00014">14</a> of file <a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{ <a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a> = mps; }</div><div class="ttc" id="classMINT_1_1Minimisable_html_af567c5103f914d031140f4c63a09bebb"><div class="ttname"><a href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">MINT::Minimisable::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8h_source.html#l00042">Minimisable.h:42</a></div></div>
+<p>Definition at line <a class="el" href="Minimisable_8cpp_source.html#l00021">21</a> of file <a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                                {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">_pset</a> = mps;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div><div class="ttc" id="classMINT_1_1Minimisable_html_af567c5103f914d031140f4c63a09bebb"><div class="ttname"><a href="classMINT_1_1Minimisable.html#af567c5103f914d031140f4c63a09bebb">MINT::Minimisable::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8h_source.html#l00011">Minimisable.h:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -435,13 +438,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00042">42</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
+<p>Definition at line <a class="el" href="Minimisable_8h_source.html#l00011">11</a> of file <a class="el" href="Minimisable_8h_source.html">Minimisable.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Mint2/Mint/<a class="el" href="Minimisable_8h_source.html">Minimisable.h</a></li>
-<li>Mint2/src/Mint/Minimiser/<a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a></li>
+<li>Mint/<a class="el" href="Minimisable_8h_source.html">Minimisable.h</a></li>
+<li>src/Mint/Minimiser/<a class="el" href="Minimisable_8cpp_source.html">Minimisable.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fit',['FIT',['../classMINT_1_1FitParameter.html#ac823a25c21ca761c9c2c33dece221f75a7dde34c5d32a148263b76116f1feda42',1,'MINT::FitParameter']]],
-  ['fix',['FIX',['../classMINT_1_1FitParameter.html#ac823a25c21ca761c9c2c33dece221f75a0ed605a7e33d996d11e032fcac32b52c',1,'MINT::FitParameter']]]
+  ['binning_5fdims',['BINNING_DIMS',['../classAlgOption.html#a803493389f892d3b420b7354f9535dabac05c4b64609acaa22ab6397b6ce0104d',1,'AlgOption']]]
 ];

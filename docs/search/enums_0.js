@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fix_5for_5fwhat',['FIX_OR_WHAT',['../classMINT_1_1FitParameter.html#ac823a25c21ca761c9c2c33dece221f75',1,'MINT::FitParameter']]]
+  ['alg',['Alg',['../classHyperBinningAlgorithms.html#ad22978ffd1b9e4275d0809bb48869736',1,'HyperBinningAlgorithms']]]
 ];

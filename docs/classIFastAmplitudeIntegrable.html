@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -98,16 +99,19 @@ Inheritance diagram for IFastAmplitudeIntegrable:</div>
  <div class="center">
   <img src="classIFastAmplitudeIntegrable.png" usemap="#IFastAmplitudeIntegrable_map" alt=""/>
   <map id="IFastAmplitudeIntegrable_map" name="IFastAmplitudeIntegrable_map">
-<area href="classMINT_1_1IReturnRealForEvent.html" alt="MINT::IReturnRealForEvent&lt; IDalitzEvent &gt;" shape="rect" coords="530,0,785,24"/>
-<area href="classFitAmpIncoherentSum.html" alt="FitAmpIncoherentSum" shape="rect" coords="0,112,255,136"/>
-<area href="classFitAmpSum.html" alt="FitAmpSum" shape="rect" coords="265,112,520,136"/>
-<area href="classILookLikeFitAmpSum.html" alt="ILookLikeFitAmpSum" shape="rect" coords="530,112,785,136"/>
-<area href="classMultiTopHat.html" alt="MultiTopHat" shape="rect" coords="795,112,1050,136"/>
-<area href="classSumOfFitAmpLists.html" alt="SumOfFitAmpLists" shape="rect" coords="1060,112,1315,136"/>
-<area href="classFitAmpIncoherentSum.html" alt="FitAmpIncoherentSum" shape="rect" coords="132,168,387,192"/>
-<area href="classFitAmpSum.html" alt="FitAmpSum" shape="rect" coords="397,168,652,192"/>
-<area href="classMultiTopHat.html" alt="MultiTopHat" shape="rect" coords="662,168,917,192"/>
-<area href="classSumOfFitAmpLists.html" alt="SumOfFitAmpLists" shape="rect" coords="927,168,1182,192"/>
+<area href="classMINT_1_1IReturnRealForEvent.html" alt="MINT::IReturnRealForEvent&lt; IDalitzEvent &gt;" shape="rect" coords="576,0,854,24"/>
+<area href="classMINT_1_1IReturnComplexForEvent.html" alt="MINT::IReturnComplexForEvent&lt; IDalitzEvent &gt;" shape="rect" coords="864,0,1142,24"/>
+<area href="classFitAmpIncoherentSum.html" alt="FitAmpIncoherentSum" shape="rect" coords="0,112,278,136"/>
+<area href="classFitAmpIncoherentSumEvtGen.html" alt="FitAmpIncoherentSumEvtGen" shape="rect" coords="288,112,566,136"/>
+<area href="classFitAmpSum.html" alt="FitAmpSum" shape="rect" coords="576,112,854,136"/>
+<area href="classILookLikeFitAmpSum.html" alt="ILookLikeFitAmpSum" shape="rect" coords="864,112,1142,136"/>
+<area href="classMultiTopHat.html" alt="MultiTopHat" shape="rect" coords="1152,112,1430,136"/>
+<area href="classSumOfFitAmpLists.html" alt="SumOfFitAmpLists" shape="rect" coords="1440,112,1718,136"/>
+<area href="classFitAmpIncoherentSum.html" alt="FitAmpIncoherentSum" shape="rect" coords="288,168,566,192"/>
+<area href="classFitAmpIncoherentSumEvtGen.html" alt="FitAmpIncoherentSumEvtGen" shape="rect" coords="576,168,854,192"/>
+<area href="classFitAmpSum.html" alt="FitAmpSum" shape="rect" coords="864,168,1142,192"/>
+<area href="classMultiTopHat.html" alt="MultiTopHat" shape="rect" coords="1152,168,1430,192"/>
+<area href="classSumOfFitAmpLists.html" alt="SumOfFitAmpLists" shape="rect" coords="1440,168,1718,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -123,6 +127,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a318dc816c70d6eb773d9a9092a21d982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacaf8d0c0e0b0ed66e6aaec8ad38b51a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIFastAmplitudeIntegrable.html#aacaf8d0c0e0b0ed66e6aaec8ad38b51a">print</a> (std::ostream &amp;os=std::cout) const  =0</td></tr>
 <tr class="separator:aacaf8d0c0e0b0ed66e6aaec8ad38b51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a1796f29d4cebead4b40abec8dafa96"><td class="memItemLeft" align="right" valign="top">virtual std::complex&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIFastAmplitudeIntegrable.html#a3a1796f29d4cebead4b40abec8dafa96">ComplexVal</a> (<a class="el" href="classIDalitzEvent.html">IDalitzEvent</a> &amp;evt)</td></tr>
+<tr class="separator:a3a1796f29d4cebead4b40abec8dafa96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affb84dff1ce392a2d2c454ff86d2918a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIFastAmplitudeIntegrable.html#affb84dff1ce392a2d2c454ff86d2918a">Gradient</a> (<a class="el" href="classIDalitzEvent.html">IDalitzEvent</a> &amp;evt, std::vector&lt; double &gt; &amp;grad, <a class="el" href="classMINT_1_1MinuitParameterSet.html">MINT::MinuitParameterSet</a> *mps)</td></tr>
 <tr class="separator:affb84dff1ce392a2d2c454ff86d2918a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5965d40fda0dfbaa87b8e3bd0f95c1a4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIFastAmplitudeIntegrable.html#a5965d40fda0dfbaa87b8e3bd0f95c1a4">useAnalyticGradient</a> ()</td></tr>
@@ -134,16 +140,22 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6918c33099b2378609a462e6cf736232 inherit pub_methods_classMINT_1_1IReturnRealForEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a067f02e0992d4fd5d62eaffb27d246a0 inherit pub_methods_classMINT_1_1IReturnRealForEvent"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IReturnRealForEvent.html#a067f02e0992d4fd5d62eaffb27d246a0">~IReturnRealForEvent</a> ()</td></tr>
 <tr class="separator:a067f02e0992d4fd5d62eaffb27d246a0 inherit pub_methods_classMINT_1_1IReturnRealForEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classMINT_1_1IReturnComplexForEvent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classMINT_1_1IReturnComplexForEvent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classMINT_1_1IReturnComplexForEvent.html">MINT::IReturnComplexForEvent&lt; IDalitzEvent &gt;</a></td></tr>
+<tr class="memitem:a0076c3a1235f273e026864285e39d955 inherit pub_methods_classMINT_1_1IReturnComplexForEvent"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IReturnComplexForEvent.html#a0076c3a1235f273e026864285e39d955">~IReturnComplexForEvent</a> ()</td></tr>
+<tr class="separator:a0076c3a1235f273e026864285e39d955 inherit pub_methods_classMINT_1_1IReturnComplexForEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classMINT_1_1IReturnRealForEvent"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classMINT_1_1IReturnRealForEvent')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classMINT_1_1IReturnRealForEvent.html">MINT::IReturnRealForEvent&lt; IDalitzEvent &gt;</a></td></tr>
 <tr class="memitem:a36f47b5775788e9f291cdddaf383e8e7 inherit pro_methods_classMINT_1_1IReturnRealForEvent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IReturnRealForEvent.html#a36f47b5775788e9f291cdddaf383e8e7">IReturnRealForEvent</a> ()</td></tr>
 <tr class="separator:a36f47b5775788e9f291cdddaf383e8e7 inherit pro_methods_classMINT_1_1IReturnRealForEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classMINT_1_1IReturnComplexForEvent"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classMINT_1_1IReturnComplexForEvent')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classMINT_1_1IReturnComplexForEvent.html">MINT::IReturnComplexForEvent&lt; IDalitzEvent &gt;</a></td></tr>
+<tr class="memitem:afd1a186f038aabbea7ee7138fb48e704 inherit pro_methods_classMINT_1_1IReturnComplexForEvent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IReturnComplexForEvent.html#afd1a186f038aabbea7ee7138fb48e704">IReturnComplexForEvent</a> ()</td></tr>
+<tr class="separator:afd1a186f038aabbea7ee7138fb48e704 inherit pro_methods_classMINT_1_1IReturnComplexForEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="IFastAmplitudeIntegrable_8h_source.html#l00021">21</a> of file <a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a>.</p>
+<p>Definition at line <a class="el" href="IFastAmplitudeIntegrable_8h_source.html#l00022">22</a> of file <a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7c0a1a7086a87b8821fca67ecbaaca0a"></a>
 <div class="memitem">
@@ -166,11 +178,42 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="IFastAmplitudeIntegrable_8h_source.html#l00043">43</a> of file <a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="IFastAmplitudeIntegrable_8h_source.html#l00047">47</a> of file <a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a3a1796f29d4cebead4b40abec8dafa96"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::complex&lt;double&gt; IFastAmplitudeIntegrable::ComplexVal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classIDalitzEvent.html">IDalitzEvent</a> &amp;&#160;</td>
+          <td class="paramname"><em>evt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classMINT_1_1IReturnComplexForEvent.html#a3562e3360a00351d4c5b2406e08e6b70">MINT::IReturnComplexForEvent&lt; IDalitzEvent &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classFitAmpSum.html#a236a2d492fbfe7916c87b180d4ad1a69">FitAmpSum</a>, and <a class="el" href="classMultiTopHat.html#a10de2589df7e243e532370dc8b1027b3">MultiTopHat</a>.</p>
+
+<p>Definition at line <a class="el" href="IFastAmplitudeIntegrable_8h_source.html#l00037">37</a> of file <a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{<span class="keywordflow">return</span> std::complex&lt;double&gt;(<a class="code" href="classMINT_1_1IReturnRealForEvent.html#a6918c33099b2378609a462e6cf736232">RealVal</a>(evt),0);}</div><div class="ttc" id="classMINT_1_1IReturnRealForEvent_html_a6918c33099b2378609a462e6cf736232"><div class="ttname"><a href="classMINT_1_1IReturnRealForEvent.html#a6918c33099b2378609a462e6cf736232">MINT::IReturnRealForEvent&lt; IDalitzEvent &gt;::RealVal</a></div><div class="ttdeci">virtual double RealVal(IDalitzEvent &amp;evt)=0</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="affb84dff1ce392a2d2c454ff86d2918a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -209,10 +252,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classFitAmpSum.html#aad6b80b332fa29ececd6f34eed8d6273">FitAmpSum</a>, and <a class="el" href="classFitAmpIncoherentSum.html#a06bc0760bd18e2a864d4adf951ebf267">FitAmpIncoherentSum</a>.</p>
+<p>Reimplemented in <a class="el" href="classFitAmpSum.html#aad6b80b332fa29ececd6f34eed8d6273">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#a06bc0760bd18e2a864d4adf951ebf267">FitAmpIncoherentSum</a>, and <a class="el" href="classFitAmpIncoherentSumEvtGen.html#abfdcbb776edf585d0e5d2f4b91af8555">FitAmpIncoherentSumEvtGen</a>.</p>
 
-<p>Definition at line <a class="el" href="IFastAmplitudeIntegrable_8h_source.html#l00034">34</a> of file <a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                                                              {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Gradient of pdf is not implemented. Please implement me or set useAnalyticGradient to 0 in your options file. I&#39;ll crash now. &quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">throw</span> <span class="stringliteral">&quot;crash&quot;</span>;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    (void)evt;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    (void)grad;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    (void)mps;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="IFastAmplitudeIntegrable_8h_source.html#l00038">38</a> of file <a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                                                              {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Gradient of pdf is not implemented. Please implement me or set useAnalyticGradient to 0 in your options file. I&#39;ll crash now. &quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">throw</span> <span class="stringliteral">&quot;crash&quot;</span>;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    (void)evt;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    (void)grad;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    (void)mps;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a318dc816c70d6eb773d9a9092a21d982"></a>
@@ -247,7 +290,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classFitAmpSum.html#a84c00f0b31a0919ce81637f1f3a7505b">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#a91e26a36ed163d63f92bd716b3958ce3">FitAmpIncoherentSum</a>, <a class="el" href="classMultiTopHat.html#afcae4769cd96a8f2efa5abedb5357c94">MultiTopHat</a>, <a class="el" href="classSumOfFitAmpLists.html#ac6a45cf150fe92cce5201f18a3ae3e97">SumOfFitAmpLists</a>, and <a class="el" href="classILookLikeFitAmpSum.html#a444471f2dfe3a0e12bc4c35131890beb">ILookLikeFitAmpSum</a>.</p>
+<p>Implemented in <a class="el" href="classFitAmpSum.html#a84c00f0b31a0919ce81637f1f3a7505b">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#a91e26a36ed163d63f92bd716b3958ce3">FitAmpIncoherentSum</a>, <a class="el" href="classFitAmpIncoherentSumEvtGen.html#ae9dd33a83bb5a9055b5a17830599c807">FitAmpIncoherentSumEvtGen</a>, <a class="el" href="classMultiTopHat.html#afcae4769cd96a8f2efa5abedb5357c94">MultiTopHat</a>, <a class="el" href="classSumOfFitAmpLists.html#ac6a45cf150fe92cce5201f18a3ae3e97">SumOfFitAmpLists</a>, and <a class="el" href="classILookLikeFitAmpSum.html#a444471f2dfe3a0e12bc4c35131890beb">ILookLikeFitAmpSum</a>.</p>
 
 </div>
 </div>
@@ -272,7 +315,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classFitAmpSum.html#a5bd1186514e731632178043bb2f828e2">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#a1ba2e368fb2c63e30686a16fdf385cbd">FitAmpIncoherentSum</a>, and <a class="el" href="classMultiTopHat.html#a109a774b5e8bcb60042ece08e12fe7aa">MultiTopHat</a>.</p>
+<p>Implemented in <a class="el" href="classFitAmpSum.html#a5bd1186514e731632178043bb2f828e2">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#a1ba2e368fb2c63e30686a16fdf385cbd">FitAmpIncoherentSum</a>, <a class="el" href="classFitAmpIncoherentSumEvtGen.html#a043bd0c86fbaba88f35d6d6d29e601e4">FitAmpIncoherentSumEvtGen</a>, and <a class="el" href="classMultiTopHat.html#a109a774b5e8bcb60042ece08e12fe7aa">MultiTopHat</a>.</p>
 
 </div>
 </div>
@@ -297,7 +340,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classFitAmpSum.html#a63a0fe518f1984029397ef9480d044e6">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#a2af8e19bbdf2385a64268411861a533e">FitAmpIncoherentSum</a>, <a class="el" href="classMultiTopHat.html#ad57d56386f7a17efb63ccab8f17d7a02">MultiTopHat</a>, <a class="el" href="classSumOfFitAmpLists.html#a3f9f7491810321f39edff666a67fdc0c">SumOfFitAmpLists</a>, and <a class="el" href="classILookLikeFitAmpSum.html#aa2829498bc1b5e5c86e9e23dc9b7c4eb">ILookLikeFitAmpSum</a>.</p>
+<p>Implemented in <a class="el" href="classFitAmpSum.html#a63a0fe518f1984029397ef9480d044e6">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#a2af8e19bbdf2385a64268411861a533e">FitAmpIncoherentSum</a>, <a class="el" href="classFitAmpIncoherentSumEvtGen.html#aab98aa5b884fcd4dff0b146f89a5e268">FitAmpIncoherentSumEvtGen</a>, <a class="el" href="classMultiTopHat.html#ad57d56386f7a17efb63ccab8f17d7a02">MultiTopHat</a>, <a class="el" href="classSumOfFitAmpLists.html#a3f9f7491810321f39edff666a67fdc0c">SumOfFitAmpLists</a>, and <a class="el" href="classILookLikeFitAmpSum.html#aa2829498bc1b5e5c86e9e23dc9b7c4eb">ILookLikeFitAmpSum</a>.</p>
 
 </div>
 </div>
@@ -322,7 +365,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classFitAmpSum.html#a89bdac9d31ab65f8ce4752a4819c8d74">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#ac6917810c06a9daa5e97e74c3ae85a1a">FitAmpIncoherentSum</a>, <a class="el" href="classMultiTopHat.html#a04865ff0d4b8771d2bfea6259ac23993">MultiTopHat</a>, <a class="el" href="classSumOfFitAmpLists.html#a02083b6a8b2593772615c3de6909864d">SumOfFitAmpLists</a>, and <a class="el" href="classILookLikeFitAmpSum.html#a841f7410c071a362198c594bb777c57d">ILookLikeFitAmpSum</a>.</p>
+<p>Implemented in <a class="el" href="classFitAmpSum.html#a89bdac9d31ab65f8ce4752a4819c8d74">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#ac6917810c06a9daa5e97e74c3ae85a1a">FitAmpIncoherentSum</a>, <a class="el" href="classFitAmpIncoherentSumEvtGen.html#a97ef2fd54633fd293242f31262ad1bb3">FitAmpIncoherentSumEvtGen</a>, <a class="el" href="classMultiTopHat.html#a04865ff0d4b8771d2bfea6259ac23993">MultiTopHat</a>, <a class="el" href="classSumOfFitAmpLists.html#a02083b6a8b2593772615c3de6909864d">SumOfFitAmpLists</a>, and <a class="el" href="classILookLikeFitAmpSum.html#a841f7410c071a362198c594bb777c57d">ILookLikeFitAmpSum</a>.</p>
 
 </div>
 </div>
@@ -348,7 +391,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classFitAmpSum.html#a140e1a77e224116b7f2741096109b60b">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#a2f60cc35dcc7d84a59ec57914707df23">FitAmpIncoherentSum</a>, <a class="el" href="classMultiTopHat.html#a85dd8118956fe405d2eb919315c74ce3">MultiTopHat</a>, <a class="el" href="classSumOfFitAmpLists.html#a25acbae0363d5b45625a8b04effd35a4">SumOfFitAmpLists</a>, and <a class="el" href="classILookLikeFitAmpSum.html#a6d40b2acdb86459597e79609a1f85ad3">ILookLikeFitAmpSum</a>.</p>
+<p>Implemented in <a class="el" href="classFitAmpSum.html#a140e1a77e224116b7f2741096109b60b">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#a2f60cc35dcc7d84a59ec57914707df23">FitAmpIncoherentSum</a>, <a class="el" href="classFitAmpIncoherentSumEvtGen.html#ac33ce4f481beb1ee7d30519a81673761">FitAmpIncoherentSumEvtGen</a>, <a class="el" href="classMultiTopHat.html#a85dd8118956fe405d2eb919315c74ce3">MultiTopHat</a>, <a class="el" href="classSumOfFitAmpLists.html#a25acbae0363d5b45625a8b04effd35a4">SumOfFitAmpLists</a>, and <a class="el" href="classILookLikeFitAmpSum.html#a6d40b2acdb86459597e79609a1f85ad3">ILookLikeFitAmpSum</a>.</p>
 
 </div>
 </div>
@@ -373,14 +416,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classFitAmpSum.html#afcc61b8b799607aed34a3477246b0b10">FitAmpSum</a>, and <a class="el" href="classFitAmpIncoherentSum.html#a47c659a1c7f1bfbfd59a6f72d799950a">FitAmpIncoherentSum</a>.</p>
+<p>Reimplemented in <a class="el" href="classFitAmpSum.html#afcc61b8b799607aed34a3477246b0b10">FitAmpSum</a>, <a class="el" href="classFitAmpIncoherentSum.html#a47c659a1c7f1bfbfd59a6f72d799950a">FitAmpIncoherentSum</a>, and <a class="el" href="classFitAmpIncoherentSumEvtGen.html#aa4899445b4c6f3768c2a148b5ebf846d">FitAmpIncoherentSumEvtGen</a>.</p>
 
-<p>Definition at line <a class="el" href="IFastAmplitudeIntegrable_8h_source.html#l00041">41</a> of file <a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="IFastAmplitudeIntegrable_8h_source.html#l00045">45</a> of file <a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Mint2/Mint/<a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a></li>
+<li>Mint/<a class="el" href="IFastAmplitudeIntegrable_8h_source.html">IFastAmplitudeIntegrable.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

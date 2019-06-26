@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -100,7 +101,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="FitAmpPair_8h_source.html#l00204">204</a> of file <a class="el" href="FitAmpPair_8h_source.html">FitAmpPair.h</a>.</p>
+<p>Definition at line <a class="el" href="FitAmpPair_8h_source.html#l00205">205</a> of file <a class="el" href="FitAmpPair_8h_source.html">FitAmpPair.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a546347d7f22569ee553ff69b603f1a9e"></a>
 <div class="memitem">
@@ -126,15 +127,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FitAmpPair_8cpp_source.html#l00645">645</a> of file <a class="el" href="FitAmpPair_8cpp_source.html">FitAmpPair.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                                                                              {</div><div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;  <span class="keyword">const</span> <a class="code" href="classFitAmpPair.html">FitAmpPair</a>* a = apair.first;</div><div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;  <span class="keyword">const</span> <a class="code" href="classFitAmpPair.html">FitAmpPair</a>* b = bpair.first;</div><div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;</div><div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0==b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0!=b) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;  <span class="keywordflow">if</span>(0 !=a  &amp;&amp; 0==b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;  <span class="keywordflow">return</span> a-&gt;<a class="code" href="classFitAmpPair.html#abe5bcb38973964fe7b332f216637c02c">integral</a>() &lt; b-&gt;<a class="code" href="classFitAmpPair.html#abe5bcb38973964fe7b332f216637c02c">integral</a>();</div><div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;}</div><div class="ttc" id="classFitAmpPair_html_abe5bcb38973964fe7b332f216637c02c"><div class="ttname"><a href="classFitAmpPair.html#abe5bcb38973964fe7b332f216637c02c">FitAmpPair::integral</a></div><div class="ttdeci">double integral() const </div><div class="ttdef"><b>Definition:</b> <a href="FitAmpPair_8cpp_source.html#l00476">FitAmpPair.cpp:476</a></div></div>
+<p>Definition at line <a class="el" href="FitAmpPair_8cpp_source.html#l00650">650</a> of file <a class="el" href="FitAmpPair_8cpp_source.html">FitAmpPair.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                                                                              {</div><div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;  <span class="keyword">const</span> <a class="code" href="classFitAmpPair.html">FitAmpPair</a>* a = apair.first;</div><div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;  <span class="keyword">const</span> <a class="code" href="classFitAmpPair.html">FitAmpPair</a>* b = bpair.first;</div><div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;</div><div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0==b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0!=b) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;  <span class="keywordflow">if</span>(0 !=a  &amp;&amp; 0==b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;  <span class="keywordflow">return</span> a-&gt;<a class="code" href="classFitAmpPair.html#abe5bcb38973964fe7b332f216637c02c">integral</a>() &lt; b-&gt;<a class="code" href="classFitAmpPair.html#abe5bcb38973964fe7b332f216637c02c">integral</a>();</div><div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;}</div><div class="ttc" id="classFitAmpPair_html_abe5bcb38973964fe7b332f216637c02c"><div class="ttname"><a href="classFitAmpPair.html#abe5bcb38973964fe7b332f216637c02c">FitAmpPair::integral</a></div><div class="ttdeci">double integral() const </div><div class="ttdef"><b>Definition:</b> <a href="FitAmpPair_8cpp_source.html#l00476">FitAmpPair.cpp:476</a></div></div>
 <div class="ttc" id="classFitAmpPair_html"><div class="ttname"><a href="classFitAmpPair.html">FitAmpPair</a></div><div class="ttdef"><b>Definition:</b> <a href="FitAmpPair_8h_source.html#l00022">FitAmpPair.h:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Mint2/Mint/<a class="el" href="FitAmpPair_8h_source.html">FitAmpPair.h</a></li>
-<li>Mint2/src/Mojito/FitAmplitude/<a class="el" href="FitAmpPair_8cpp_source.html">FitAmpPair.cpp</a></li>
+<li>Mint/<a class="el" href="FitAmpPair_8h_source.html">FitAmpPair.h</a></li>
+<li>src/Mojito/FitAmplitude/<a class="el" href="FitAmpPair_8cpp_source.html">FitAmpPair.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
