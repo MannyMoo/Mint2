@@ -50,6 +50,9 @@ class DalitzEvent : virtual public IDalitzEvent{
   double _aValue;
   double _weight;
   double _generatorPdfRelativeToPhaseSpace;
+    
+  std::vector<double> _vectorOfValues;
+  std::vector<double> _vectorOfWeights;
 
   mutable std::vector< std::vector<double> > _s;
   mutable std::vector< std::vector<double> > _t;
@@ -123,6 +126,15 @@ public:
 
   virtual void   setGeneratorPdfRelativeToPhaseSpace(double gpdf);
   virtual double getGeneratorPdfRelativeToPhaseSpace()const;
+    
+  virtual const std::vector<double>& getVectorOfValues() const;
+  virtual std::vector<double>& getVectorOfValues();
+  virtual const std::vector<double>& getVectorOfWeights() const;
+  virtual std::vector<double>& getVectorOfWeights();
+  virtual void setValueInVector(unsigned int i, double value);
+  virtual void setWeightInVector(unsigned int i, double weight);
+  virtual double getValueFromVector(unsigned int i) const;
+  virtual double getWeightFromVector(unsigned int i) const;
 
   virtual void P_conjugateYourself();
   virtual void C_conjugateYourself();

@@ -35,6 +35,8 @@ DalitzEvent::DalitzEvent()
   , _aValue(-9999.)
   , _weight(1)
   , _generatorPdfRelativeToPhaseSpace(1)
+  , _vectorOfValues()
+  , _vectorOfWeights()
   , _permutationIndex(0)
   , _perm()
 {
@@ -48,6 +50,8 @@ DalitzEvent::DalitzEvent(const DalitzEventPattern& pat
   , _aValue(-9999.)
   , _weight(1)
   , _generatorPdfRelativeToPhaseSpace(1)
+  , _vectorOfValues()
+  , _vectorOfWeights()
   , _s(pat.size())
   , _t(pat.size())
   , _permutationIndex(0)
@@ -69,6 +73,8 @@ DalitzEvent::DalitzEvent(const DalitzEventPattern& pat
   , _aValue(-9999.)
   , _weight(1)
   , _generatorPdfRelativeToPhaseSpace(1)
+  , _vectorOfValues()
+  , _vectorOfWeights()
   , _s(pat.size())
   , _t(pat.size())
   , _permutationIndex(0)
@@ -129,6 +135,8 @@ DalitzEvent::DalitzEvent(const DalitzEventPattern& pat
   , _aValue(-9999.)
   , _weight(1)
   , _generatorPdfRelativeToPhaseSpace(1)
+  , _vectorOfValues()
+  , _vectorOfWeights()
   , _s(pat.size())
   , _t(pat.size())
   , _permutationIndex(0)
@@ -145,6 +153,8 @@ DalitzEvent::DalitzEvent(const DalitzEventPattern& pat)
   , _aValue(-9999.)
   , _weight(1)
   , _generatorPdfRelativeToPhaseSpace(1)
+  , _vectorOfValues()
+  , _vectorOfWeights()
   , _s(pat.size())
   , _t(pat.size())
   , _permutationIndex(0)
@@ -162,6 +172,8 @@ DalitzEvent::DalitzEvent(const DalitzEventPattern& pat, TRandom* rnd)
   , _aValue(-9999.)
   , _weight(1)
   , _generatorPdfRelativeToPhaseSpace(1)
+  , _vectorOfValues()
+  , _vectorOfWeights()
   , _s(pat.size())
   , _t(pat.size())
   , _permutationIndex(0)
@@ -182,6 +194,8 @@ DalitzEvent::DalitzEvent(const IDalitzEvent* other)
   , _aValue(other->getAValue())
   , _weight(other->getWeight())
   , _generatorPdfRelativeToPhaseSpace(other->getGeneratorPdfRelativeToPhaseSpace())
+  , _vectorOfValues(other->getVectorOfValues())
+  , _vectorOfWeights(other->getVectorOfWeights())
     //  , _s()
     //, _t(other._t)
   , _permutationIndex(0)
@@ -202,6 +216,8 @@ DalitzEvent::DalitzEvent(const IDalitzEvent& other)
   , _aValue(other.getAValue())
   , _weight(other.getWeight())
   , _generatorPdfRelativeToPhaseSpace(other.getGeneratorPdfRelativeToPhaseSpace())
+  , _vectorOfValues(other.getVectorOfValues())
+  , _vectorOfWeights(other.getVectorOfWeights())
   , _permutationIndex(0)
   , _perm(other.eventPattern())
 {
@@ -224,6 +240,8 @@ DalitzEvent::DalitzEvent(const DalitzEvent* other)
   , _aValue(other->_aValue)
   , _weight(other->_weight)
   , _generatorPdfRelativeToPhaseSpace(other->_generatorPdfRelativeToPhaseSpace)
+  , _vectorOfValues(other->_vectorOfValues)
+  , _vectorOfWeights(other->_vectorOfWeights)
   , _s(other->_s)
   , _t(other->_t)
   , _sijMap(other->_sijMap)
@@ -247,6 +265,8 @@ DalitzEvent::DalitzEvent(const DalitzEvent& other)
   , _aValue(other._aValue)
   , _weight(other._weight)
   , _generatorPdfRelativeToPhaseSpace(other._generatorPdfRelativeToPhaseSpace)
+  , _vectorOfValues(other._vectorOfValues)
+  , _vectorOfWeights(other._vectorOfWeights)
   , _s(other._s)
   , _t(other._t)
   , _sijMap(other._sijMap)
@@ -265,6 +285,8 @@ DalitzEvent::DalitzEvent(TNtupleD* ntp)
   , _aValue(-9999.)
   , _weight(1)
   , _generatorPdfRelativeToPhaseSpace(1)
+  , _vectorOfValues()
+  , _vectorOfWeights()
   , _permutationIndex(0)
 {
   if(! fromTree(ntp)){
@@ -295,6 +317,37 @@ double DalitzEvent::getGeneratorPdfRelativeToPhaseSpace() const{
 void DalitzEvent::setGeneratorPdfRelativeToPhaseSpace(double gpdf){
   _generatorPdfRelativeToPhaseSpace = gpdf;
 }
+
+const std::vector<double>& DalitzEvent::getVectorOfValues() const{
+    return _vectorOfValues;}
+
+std::vector<double>& DalitzEvent::getVectorOfValues(){
+    return _vectorOfValues;}
+
+const std::vector<double>& DalitzEvent::getVectorOfWeights() const{
+    return _vectorOfWeights;}
+
+std::vector<double>& DalitzEvent::getVectorOfWeights(){
+    return _vectorOfWeights;}
+
+void DalitzEvent::setValueInVector(unsigned int i, double value){
+    if(_vectorOfValues.size() <= i) _vectorOfValues.resize(i+1);
+    _vectorOfValues[i]=value;
+}
+
+void DalitzEvent::setWeightInVector(unsigned int i, double weight){
+    if(_vectorOfWeights.size() <= i) _vectorOfWeights.resize(i+1);
+    _vectorOfWeights[i]=weight;
+}
+
+double DalitzEvent::getValueFromVector(unsigned int i) const{
+    return _vectorOfValues[i];
+}
+
+double DalitzEvent::getWeightFromVector(unsigned int i) const{
+    return _vectorOfWeights[i];
+}
+
 double DalitzEvent::m(unsigned int i) const{
   // easy access to the nominal masses
   if(i >= _pat.size()){
@@ -967,7 +1020,7 @@ bool DalitzEvent::fromNtuple(TNtupleD* ntp){
   _p.resize(nParticles);
   for(int i=0; i< nParticles && counter < maxCounter; i++){
     if(dbThis) cout << "filling " << i << " th particle: " << endl;
-    _pat[i] = round(array[counter++]);
+    _pat[i] = nearestInt(array[counter++]);
     _p[i].SetE(array[counter++]);
     _p[i].SetX(array[counter++]);
     _p[i].SetY(array[counter++]);
@@ -1084,7 +1137,7 @@ bool DalitzEvent::fromParasTreeOld(TTree* ntp){
       ((TBranch*) (*branchArray)[counter++])->GetListOfLeaves();
     leafVal = ((TLeaf*) (*leafArray)[0])->GetValue();
     if(dbThis) cout << " leaf[ " << counter-1 << "] " << leafVal << endl;
-    _pat[i] = round(leafVal);
+    _pat[i] = nearestInt(leafVal);
 
     if(forcePDGMassForFinalState && i > 0){
       double m=_pat[i].mass();

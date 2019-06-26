@@ -133,6 +133,12 @@ bool Amplitude::CConjugateFinalState(){
     return resetTree(dt);
 }
 
+bool Amplitude::CConjugateInitialState(){
+    DecayTree dt = theBareDecay();
+    dt.getVal().antiThis();
+    return resetTree(dt);
+}
+
 bool Amplitude::setL(int L){
     DecayTree dt = theBareDecay();
     dt.getVal().setL(L);
@@ -393,7 +399,7 @@ std::complex<double> Amplitude::getVal(IDalitzEvent* evt){
 }
 
 std::complex<double> Amplitude::getNewVal(IDalitzEvent& evt){
-  bool dbThis=false;
+  //bool dbThis=false;
 
   //initialiseIfNeeded(evt.eventPattern());
   CheckAndMatchPattern(evt);
@@ -401,24 +407,24 @@ std::complex<double> Amplitude::getNewVal(IDalitzEvent& evt){
 
   //if(! evt.eventPattern().compatibleWithFinalState(getTreePattern())) return 0;
 
-  if(dbThis) cout << "num permutations: " << evt.numPermutations() << endl;
+//   if(dbThis) cout << "num permutations: " << evt.numPermutations() << endl;
   for(int i=0; i < evt.numPermutations(); i++){
     evt.setPermutationIndex(i);
-    complex<double> thisVal= getOnePermutationsVal(evt);
+    //complex<double> thisVal= getOnePermutationsVal(evt);
     
-    if(dbThis){
+/*    if(dbThis){
       cout << " permutation " << i
 	   << " makes event look like this: ";
       evt.print();
       cout << "\n gets thisVal " << thisVal << endl;
-    }
+    }*/
     
-    sum += thisVal;
+    sum += getOnePermutationsVal(evt);
   }
   evt.setPermutationIndex(0);
   sum /= sqrt((double) evt.numPermutations());
 
-  if(dbThis) cout << "returning " << sum << endl;
+//   if(dbThis) cout << "returning " << sum << endl;
   /*
   if(dbThis && abs(sum) > sqrt((double) 1000)){
     cout << " Amplitude : " << (*this)

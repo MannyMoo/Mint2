@@ -3,11 +3,13 @@
 // author: Jonas Rademacker (Jonas.Rademacker@bristol.ac.uk)
 // status:  Mon 9 Feb 2009 19:17:55 GMT
 
+//#include "TMinuit.h"
 #include "Mint/IMinuitParameter.h"
 #include "Mint/MinuitParameterSet.h"
 #include "Mint/NamedParameterBase.h"
 #include "Mint/NamedParameter.h"
 #include "Mint/Utils.h"
+#include "Mint/IReturnReal.h"
 
 #include <complex>
 
@@ -37,7 +39,7 @@ following the parameter name!!
 
 namespace MINT{
 
-class FitParameter : public NamedParameterBase, public IMinuitParameter{
+class FitParameter : public NamedParameterBase, public IMinuitParameter, virtual public IReturnReal{
   // copying dangerous because a pointer is held 
   // in MinuitParameterSet
   // therefore for the time being: private.
@@ -47,15 +49,22 @@ class FitParameter : public NamedParameterBase, public IMinuitParameter{
 
 
  protected:
+ 
+  double _blinding;
+  bool setupBlinding();
+
   static const char* _initString;
-  
+
+  //  TMinuit* _minPtr;
   MinuitParameterSet* _pset;
   int _psetIndex;
 
+  //  int _pN;
   int _iFixInit;
   double _meanInit, _stepInit, _minInit, _maxInit;
 
   NamedParameter<double> _scanParameters;
+  NamedParameter<double> _blindingParameters;
 
   double _meanResult, _errResult, _errPosResult, _errNegResult;
   double _currentFitVal;
@@ -68,6 +77,9 @@ class FitParameter : public NamedParameterBase, public IMinuitParameter{
   enum FIX_OR_WHAT{FIT=0, HIDE=1, FIX=2};// possible fix options
 
   static const char* getInitString();
+  virtual double blinding() const{return _blinding;}
+
+  void invertBlinding() { _blinding = - _blinding;} 
 
   FitParameter(const std::string& name
 	       , const char* fname=0
@@ -114,9 +126,14 @@ class FitParameter : public NamedParameterBase, public IMinuitParameter{
 
   void setCurrentValToInit(); // resets only mean value, leaves errors etc alone
   void resetToInit(); // resets all
+  void setInit(double init){
+	_meanInit = init;
+   }
 
   //  virtual bool updateResults();
 
+  //  const TMinuit* getMinuit() const;
+  //  TMinuit* getMinuit();
   int iFixInit() const;
   bool hidden() const{return iFixInit() == 1;}
   bool scan() const;
@@ -131,8 +148,13 @@ class FitParameter : public NamedParameterBase, public IMinuitParameter{
   double minInit() const;
   double maxInit() const;
   
+  //  int parNumber() const;
+  //  void associate(TMinuit* tm, int parNum);
+
+  //  bool MinuitOK() const;
   double valAtLastFCNCall()const;
   double mean()const;
+  double blindedMean()const; 
   double min()const;
   double max()const;
   double errPos(); // not const because mnerrs is non-const
@@ -151,6 +173,10 @@ class FitParameter : public NamedParameterBase, public IMinuitParameter{
   void fixAndHide();
   void fixToInitAndHide();
   void unFix();
+
+  double RealVal(){ // promised by IReturnReal
+        return mean();
+  }
 
   operator double() const{
     return mean();

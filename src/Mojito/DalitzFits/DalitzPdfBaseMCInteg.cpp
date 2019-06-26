@@ -67,10 +67,10 @@ DalitzPdfBaseMCInteg::DalitzPdfBaseMCInteg(const DalitzEventPattern& pat, IFastA
   , _norm(-1)
   , _precision(prec)
   , _amps(amps)
-  , _val(-1)
   , _generator(generator)
   , _integrating(0)
   , _defaultGenerator(0)
+  , _val(-1)
 {
 }
 
@@ -85,10 +85,10 @@ DalitzPdfBaseMCInteg::DalitzPdfBaseMCInteg(const DalitzPdfBaseMCInteg& other)
   , _norm(other._norm)
   , _precision(other._precision)
   , _amps(other._amps)
-  , _val(-1)
   , _generator(other._generator)
   , _integrating(other._integrating)
   , _defaultGenerator(other._defaultGenerator)
+  , _val(-1)
 {
 }
 
@@ -182,7 +182,7 @@ void DalitzPdfBaseMCInteg::endFit(){
   //_faint.doFinalStats();
 }
 
-void DalitzPdfBaseMCInteg::doFinalStats( Minimiser* mini ){
+void DalitzPdfBaseMCInteg::doFinalStats(Minimiser* mini){
   //_faint.doFinalStats(mini);
   (void)mini;
 }

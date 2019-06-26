@@ -18,7 +18,9 @@ namespace MINT{
       , IPdf<EVENT_TYPE>()
       {};
  
-    //virtual IPdf<EVENT_TYPE>* Clone() const = 0;
+   //virtual IPdf<EVENT_TYPE>* Clone() const{
+     //return new PdfBase(*this);
+   //}
     
     virtual double getVal(EVENT_TYPE & evt)=0;
     virtual double RealVal(EVENT_TYPE & evt){

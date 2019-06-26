@@ -85,6 +85,7 @@ class AmpPair : public MINT::FitParDependent{
   bool retrieve(const std::string& asSubdirOf=".");
 
   bool isSingleAmp() const;
+  bool hasMatchingPattern() const;
 
   std::complex<double> add(IDalitzEvent* evt, double weight=1, double efficiency=1);
   std::complex<double> add(const MINT::counted_ptr<IDalitzEvent>& evt, double weight=1, double efficiency=1);

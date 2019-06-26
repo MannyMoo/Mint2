@@ -252,7 +252,7 @@ bool DiskResidentEventList::fromFile(){
     makeNewFile();
   }
   if(dbThis) cout << " opened file" << endl;
-  if(dbThis){ _f->ls(); cout << " that's in it" << endl;}
+  if(dbThis) _f->ls(); cout << " that's in it" << endl;
   _f->cd();
   if(dbThis){
     cout << " cd'ed to file " << endl;
@@ -405,13 +405,14 @@ bool DiskResidentEventList::Close(){
   if(0 == _ntp) return false;
 
 
-  success &= save();
-  if(dbThis && ! success){
-    cout << "DiskResidentEventList::Close() failure in saving when closing" 
-	 << endl;
+  if(_opt != "OPEN"){
+	success &= save();
+	if(dbThis && ! success){
+	cout << "DiskResidentEventList::Close() failure in saving when closing" 
+		<< endl;
+	}
+	if(dbThis) cout << "saved file with success = " << success << endl;
   }
-  if(dbThis) cout << "saved file with success = " << success << endl;
-  
   //_f->cd();
   //_ntp->Write();
   //_f->Write();

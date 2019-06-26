@@ -58,11 +58,11 @@ class DalitzPdfBaseMCInteg
   double _precision;
   DalitzMCIntegrator _mcint;
   IFastAmplitudeIntegrable* _amps;
-  double _val;   
     
   MINT::IEventGenerator<IDalitzEvent>* _generator;
   bool _integrating;
   MINT::counted_ptr<MINT::IEventGenerator<IDalitzEvent> > _defaultGenerator;
+  double _val;   
 
   virtual double un_normalised_noPs(IDalitzEvent& evt)=0;
   // This replaces un_normalised. Make sure it 
@@ -149,10 +149,7 @@ class DalitzPdfBaseMCInteg
     return _norm;
   }
   double getIntegralValue(){
-    if(_norm < 0)
-      getNorm();
-
-    return _norm;
+    if(_norm < 0) getNorm(); return _norm;
   }
   double redoIntegrator(){
     _norm = -1;
