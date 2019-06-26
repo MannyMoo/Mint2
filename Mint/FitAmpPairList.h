@@ -83,6 +83,12 @@ class FitAmpPairList
 
   virtual int numEvents() const;
   virtual double integral() const;
+  
+  std::complex<double> ComplexIntegralForTags(int tag1, int tag2) const;
+
+  double integralForMatchingPatterns(bool match,int pattern_sign) const;
+  std::complex<double> ComplexSumForMatchingPatterns(bool match) const;
+
   virtual double variance() const;
   virtual double sumOfVariances() const;
   virtual std::complex<double> ComplexSum() const;
@@ -97,6 +103,7 @@ class FitAmpPairList
     
   FitFractionList getFractions() const{return _singleAmpFractions;}
   FitFractionList getInterferenceTerms() const{return _interferenceFractions;}
+  bool doFractions();
 
   void setEfficiency(MINT::counted_ptr<MINT::IReturnRealForEvent<IDalitzEvent> > eff);
   void unsetEfficiency();

@@ -2,6 +2,7 @@
 // status:  Mon 9 Feb 2009 19:18:04 GMT
 
 #include "Mint/LineshapeMaker.h"
+//#include "Mint/CLEO2012_LineshapeMaker.h"
 #include "Mint/ILineshape.h"
 #include "Mint/Utils.h"
 #include "Mint/AssociatedDecayTree.h"
@@ -12,7 +13,10 @@
 #include "Mint/Histo_BW.h"
 #include "Mint/GounarisSakurai.h"
 #include "Mint/Lass.h"
+#include "Mint/GLass.h"
 #include "Mint/Flatte.h"
+#include "Mint/FocusFlatte.h"
+#include "Mint/CrystalBarrelFOCUS.h"
 #include "Mint/NonRes.h"
 #include "Mint/Bugg_BW.h"
 #include "Mint/RhoOmegaGS.h"
@@ -48,6 +52,7 @@ ILineshape* LineshapeMaker(const AssociatedDecayTree* tree
   bool dbThis=true;
 
   cout << "in LineshapeMaker: lineshapePrefix = " << lineshapePrefix << endl;
+
 
   if(0 == tree) return 0;
   
@@ -92,6 +97,7 @@ ILineshape* LineshapeMaker(const AssociatedDecayTree* tree
               << endl;
               if( A_is_in_B("Exp", lopt) ) return new NonRes(*tree, "Exp", lineshapePrefix);
               else if( A_is_in_B("Pow", lopt) ) return new NonRes(*tree, "Pow", lineshapePrefix);
+              else if( A_is_in_B("EvtGen", lopt) ) return new NonRes(*tree, "EvtGen", lineshapePrefix);
               else return new NonRes(*tree, "", lineshapePrefix);
           }
       }
@@ -116,7 +122,7 @@ ILineshape* LineshapeMaker(const AssociatedDecayTree* tree
     return new Histo_BW(*tree, lineshapePrefix);
   }
 
-  if(abs(tree->getVal().pdg()) == 9000221 || abs(tree->getVal().pdg()) == 999001 ){ // sigma
+  if(abs(tree->getVal().pdg()) == 9000221 || abs(tree->getVal().pdg()) == 999001 || abs(tree->getVal().pdg()) == 10321 || abs(tree->getVal().pdg()) == 10311 ){ // sigma or kappa
         if(A_is_in_B("Bugg", lopt)){
             if(dbThis) cout << "LineshapeMaker: " << "\n\t> returning Bugg lineshape" << endl;
             return new Bugg_BW(*tree, lineshapePrefix);  
@@ -132,6 +138,8 @@ ILineshape* LineshapeMaker(const AssociatedDecayTree* tree
     if(abs(tree->getVal().pdg()) == 113 && A_is_in_B("RHO_OMEGA", lopt)){
       if(dbThis)cout << "LineshapeMaker returning rho-omega lineshape"<< endl;
       return new Rho0Omega(*tree, lineshapePrefix);
+      //return new CrystalBarrelFOCUS(*tree);
+      //return new BW_BW(*tree);
     }else if(A_is_in_B("RhoOmegaGS", lopt)) return new RhoOmegaGS(*tree, lineshapePrefix);    
     else if((abs(tree->getVal().pdg())%1000)==113 && A_is_in_B("GS", lopt)){
       if(dbThis) cout << "LineshapeMaker: return GS lineshape" << endl;
@@ -143,7 +151,12 @@ ILineshape* LineshapeMaker(const AssociatedDecayTree* tree
       return new BW_BW(*tree, lineshapePrefix);
     }
   }else if(abs(tree->getVal().pdg()) == 10321 || abs(tree->getVal().pdg()) == 10311 ){ // K0*(1430), charged or neutral
-    if(A_is_in_B("Lass", lopt)){
+    if(A_is_in_B("GLass", lopt)){
+          cout << "LineshapeMaker: "
+          << "\n\t> returning Lass lineshape"
+          << endl;
+          return new GLass(*tree, lineshapePrefix);
+    }else if(A_is_in_B("Lass", lopt)){
       cout << "LineshapeMaker: "
 	   << "\n\t> returning Lass lineshape"
 	   << endl;
@@ -155,7 +168,12 @@ ILineshape* LineshapeMaker(const AssociatedDecayTree* tree
       return new BW_BW(*tree, lineshapePrefix);
     }
   }else if(abs(tree->getVal().pdg()) == 9010221 ){ // f0(980)
-    if(A_is_in_B("Flatte", lopt)){
+    if(A_is_in_B("FocusFlatte", lopt)){
+      cout << "LineshapeMaker: "
+	   << "\n\t> returning Flatte lineshape"
+	   << endl;
+      return new FocusFlatte(*tree, lineshapePrefix);
+    }else if(A_is_in_B("Flatte", lopt)){
       cout << "LineshapeMaker: "
 	   << "\n\t> returning Flatte lineshape"
 	   << endl;
@@ -168,17 +186,13 @@ ILineshape* LineshapeMaker(const AssociatedDecayTree* tree
     }
   }else if(tree->getVal().isNonResonant()){
       if( A_is_in_B("NonRes", lopt) ){
-          cout << "LineshapeMaker: "
-          << "\n\t> returning Non-resonant lineshape"
-          << endl;
-      if( A_is_in_B("Exp", lopt) )
-	return new NonRes(*tree, "Exp", lineshapePrefix);
-      else if( A_is_in_B("Pow", lopt) )
-	return new NonRes(*tree, "Pow", lineshapePrefix);
-      else
-	return new NonRes(*tree, "", lineshapePrefix);
+          	cout << "LineshapeMaker: "<< "\n\t> returning Non-resonant lineshape"<< endl;
+         	if( A_is_in_B("Exp", lopt) )return new NonRes(*tree, "Exp", lineshapePrefix);
+         	else if( A_is_in_B("Pow", lopt) )return new NonRes(*tree, "Pow", lineshapePrefix);
+		else if( A_is_in_B("EvtGen", lopt) ) return new NonRes(*tree, "EvtGen", lineshapePrefix);
+	      	else return new NonRes(*tree, "", lineshapePrefix);
       }else if(A_is_in_B("TopHats", lopt) && numOptions.size() >= 2){
-	return new singleTopHatShape(*tree, numOptions[0], numOptions[1], lineshapePrefix); // options[0]=from, options[1]=to
+		return new singleTopHatShape(*tree, numOptions[0], numOptions[1], lineshapePrefix); // options[0]=from, options[1]=to
       }else{
           cout << "WARNING: LineshapeMaker:"
           << " returning plain Breit-Wigner (BW_BW) for non-resonant"

@@ -450,6 +450,11 @@ bool AmpPair::isSingleAmp() const{
   return _a1 == _a2;
 }
 
+bool AmpPair::hasMatchingPattern() const{
+    if(_a1->theBareDecay().getVal() == _a2->theBareDecay().getVal()  )return true;
+    return false;
+}
+
 const std::string& AmpPair::name(){
   if("" == _name) makeName();
   return _name;

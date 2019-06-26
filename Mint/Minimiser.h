@@ -1,200 +1,117 @@
 #ifndef MINIMISER_HH
 #define MINIMISER_HH
+// author: Jonas Rademacker (Jonas.Rademacker@bristol.ac.uk)
+// status:  Mon 9 Feb 2009 19:17:55 GMT
+
+#include "TMinuit.h"
+#include "TMatrixTSym.h"
+#include "Mint/NamedParameter.h"
+#include "Mint/IMinimisable.h"
 
 #include <iostream>
+#include <vector>
 
-#include "TGraph.h"
-#include "TMatrixTSym.h"//delete soon
+class TGraph;
+namespace MINT{
 
-#include "Minuit2/FunctionMinimum.h"
+class IMinuitParameter;
+class FitParameter;
 
-#include "Mint/IMinimisable.h"
-#include "Mint/MintFcn.h"
-#include "Mint/MintFcnGrad.h"
-#include "Mint/NamedParameter.h"
+class Minimiser : public TMinuit{
+  mutable Double_t arglist[10];
+  mutable Int_t ierflg;
+ protected:
+  bool  _useAnalyticGradient;  
+  static Minimiser* _defaultMinimiser;
+  static int _defaultMaxCalls;
 
-namespace MINT
-{
-  class IMinuitParameter;
+  MinuitParameterSet* _parSet;
+  //  MinuitParameterSet _floating;
 
-  class Minimiser
-  {
-   public:
-    /**
-       Ensure only one instance
-     */
-    static Minimiser* getDefaultMinimiser();
+  IMinimisable* _theFunction;
+  int _maxCalls;
 
-    /**
-       Constructor
-     */
-    Minimiser( IMinimisable* fitFunction=0 );
+  int _printLevel;
 
-    /**
-       Destructor
-     */
-    virtual ~Minimiser()
-    {}
+  bool init();  
+  bool MakeSpace(int needSpace);
+  void TMinInit();
 
-    /**
-       Replace stored Minimisable
-     */
-    bool attachFunction( IMinimisable* fitFunction );
+  bool updateFitParameters(Double_t* p);
+  bool setParametersToResult();
+  bool endOfFit();
+  //  bool detachParameters();
 
-    /**
-       Return modifiable Minimisable
-     */
-    IMinimisable* theFunction()
-    { return _theFunction; }
+  Int_t Eval(Int_t npar
+	     , Double_t *grad
+	     , Double_t &fval
+	     , Double_t *par
+	     , Int_t flag
+	     );
+ public:
+  static Minimiser* getDefaultMinimiser();
 
-    /**
-       Return non-modifiable Minimisable
-     */
-    const IMinimisable* theFunction() const
-    { return _theFunction; }
+  Minimiser(IMinimisable* fitFunction=0);
+  virtual ~Minimiser();
+  bool attachFunction(IMinimisable* fcn);
+  IMinimisable* theFunction(){ return _theFunction;}
+  const IMinimisable* theFunction() const{ return _theFunction;}
 
-    /**
-       Return modifiable Mint parameters
-     */
-    MinuitParameterSet* parSet()
-    { return _parSet; }
+  const MinuitParameterSet* parSet()const{ return _parSet;}
+  MinuitParameterSet* parSet(){ return _parSet;}
 
-    /**
-       Return non-modifiable Mint parameters
-     */
-    const MinuitParameterSet* parSet() const
-    { return _parSet; }
+  unsigned int nPars() const;
+  IMinuitParameter* getParPtr(unsigned int i);
+  const IMinuitParameter* getParPtr(unsigned int i) const;
 
-    /**
-       Number of Mint parameters
-     */
-    unsigned int nPars() const;
+  bool OK() const;
+  bool parsOK() const;
+  bool fcnOK() const;
 
-    /**
-       Return modifiable Mint parameter
-     */
-    IMinuitParameter* getParPtr( const unsigned int& i );
+  double getFCNVal();
+  void FCNGradient(std::vector<double>& grad);
 
-    /**
-       Return non-modifiable Mint parameter
-     */
-    const IMinuitParameter* getParPtr( const unsigned int& i ) const;
+  bool initialiseVariables();
 
-    /**
-       Mint parameter and Minimisable status
-     */
-    bool OK() const
-    { return parsOK() && fcnOK(); }
+  bool setPrintLevel(int level=-1);
+  bool temporarilyQuiet();
+  bool resetPrintLevel();
 
-    /**
-       Mint parameter status
-     */
-    bool parsOK() const;
+  bool SetSomeMinuitOptions();
+  bool CallMigrad();
+  bool CallMinos();
+  bool CallSeek(int maxCalls = 100, int devs = 5);
+  bool CallSimplex(int maxCalls = 300, double tolerance = 1. );
+  bool CallImprove(int maxCalls= 1500, int searches= 5);
 
-    /**
-       Minimisable status
-     */
-    bool fcnOK() const;
+  bool prepFit();
+  bool doFit();
+  bool doMinosFit();
+  bool doSeekFit(int maxCalls = 100, int devs = 5);
+  bool doSimplexFit(int maxCalls = 300, double tolerance = 1. );
 
-    bool minOK() const
-    { return _min.IsValid(); }
+  bool scanMarked();
+  bool scanAll();
+  TGraph* scan(int i, double from=0, double to=0);
+  // note that the index i is the one in the parameter list
+  // which goes from 0 to n-1 (i.e. C-style).
+  // This corresponds to Minuit's parameter number i+1.
+  // (so if you want Minuit's fit parameter 1, pass it 1-1=0)
+  TGraph* scan(IMinuitParameter& fp, double from=0, double to=0);
 
-    /**
-       Prepare Minimisable
-       Initialise Minuit2 parameter set
-     */
-    //seems unnecessary to Prepare Minimisable again since Init does this already
-    bool prepFit();
 
-    /**
-       Update Mint parameters with fit result
-       Finalise Minimisable
-       Print minimum
-     */
-    bool endOfFit();
+  void setMaxCalls(int maxCalls);
+  int getMaxCalls() const;
 
-    /**
-       Initial call to Simplex
-     */
-    bool CallSimplex();
+  void printResultVsInput(std::ostream& os = std::cout) const;
 
-    /**
-       Initial call to Migrad
-       In most cases, this will likely fail due to high edm
-       Use CallImprove to push down the edm
-     */
-    bool CallMigrad();
+  // get number of free parameters from TMinuit call:
+  // GetNumFreePars()
 
-    /**
-       Iteratively improve on the first attempt at Migrad
-       Search will break once valid minimum is found
-     */
-    bool CallImprove( const unsigned int& searches=5 );
+  TMatrixTSym<double> covMatrix();
+  TMatrixTSym<double> covMatrixFull();
 
-    /**
-       Call Minos on a particular external parameter number
-     */
-    bool CallMinos( const unsigned int& par_id );
-
-    /**
-       Perform fast likelihood scan of given parameter
-       Minimisation is not performed at each step in the scan
-     */
-    bool CallScan( const unsigned int& par_id,
-		   const double& from=0.0, const double& to=0.0 );
-
-    /**
-       A typical minimsation script
-       Call Migrad
-     */
-    bool doFit();
-
-    /**
-       Print fit pulls
-     */
-    void printResultVsInput( std::ostream& os = std::cout ) const;
-
-    /**
-       Print covariance matrix
-     */
-    void PrintCovMatrix() const;
-
-    /**
-       Return full covariance matrix including entries for fixed parameters
-     */
-    TMatrixTSym<double> covMatrixFull();
-
-   protected:
-    /**
-       Prepare Minimisable
-       Initialise Minuit2 parameter set
-       Decide on FCN type
-     */
-    bool Init();
-
-    /**
-       Initialise Minuit2 parameter set
-     */
-    bool initialiseVariables();
-
-    /**
-       Update Mint parameters with fit result
-     */
-    bool setParametersToResult();
-
-    bool _useAnalyticGradient = false;
-    static Minimiser* _defaultMinimiser;
-
-    MinuitParameterSet* _parSet;
-
-    IMinimisable* _theFunction;
-
-  private:
-    ROOT::Minuit2::FCNBase* _fcn;
-    ROOT::Minuit2::MnUserParameters _mn_param;
-    ROOT::Minuit2::FunctionMinimum _min;
-    ROOT::Minuit2::MnUserCovariance _cov;
-  };
-} //namespace MINT
-
-#endif //MINIMISER_HH
+};
+}//namespace MINT
+#endif
+//

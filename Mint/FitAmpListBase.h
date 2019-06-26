@@ -67,6 +67,9 @@ class FitAmpListBase
 
   virtual bool CConjugateFinalStateSameFitParameters();
   virtual MINT::counted_ptr<FitAmpListBase> GetCConjugateFinalStateSameFitParameters() const;  
+
+  virtual bool CConjugateInitialStateSameFitParameters();
+  virtual MINT::counted_ptr<FitAmpListBase> GetCConjugateInitialStateSameFitParameters() const;  
     
   virtual bool setLSameFitParameters(int L);
   virtual MINT::counted_ptr<FitAmpListBase> GetDifferentLSameFitParameters(int L) const;  
@@ -132,7 +135,12 @@ class FitAmpListBase
   FitAmpListBase operator*(const std::complex<double>& z) const;
   FitAmpListBase operator*(const MINT::counted_ptr<MINT::IReturnComplex>& irc) const;
 
-  void normalizeAmps(DalitzEventList& evtList);    
+  void normalizeAmps(DalitzEventList& evtList);  
+  std::vector<double> normFactors(DalitzEventList& evtList);       
+  void randomizeStartVals(int seed = 0);  
+  void randomizePhaseStartVals(int seed = 0);  
+
+  void setTag(int tag); 
 
   friend class FitAmplitude;
 

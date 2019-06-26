@@ -8,7 +8,6 @@
 
 #include "Mint/IWeightedEvent.h"
 #include "Mint/DalitzEventPattern.h"
-#include "Mint/PolymorphVector.h"
 
 #include <vector>
 #include <iostream>
@@ -26,6 +25,15 @@ class IDalitzEvent : public virtual MINT::IWeightedEvent{
 
   virtual void   setGeneratorPdfRelativeToPhaseSpace(double gpdf)=0;
   virtual double getGeneratorPdfRelativeToPhaseSpace()const=0;
+    
+  virtual const std::vector<double>& getVectorOfValues() const=0;
+  virtual std::vector<double>& getVectorOfValues()=0;
+  virtual const std::vector<double>& getVectorOfWeights() const=0;
+  virtual std::vector<double>& getVectorOfWeights()=0;
+  virtual void setValueInVector(unsigned int i, double value)=0;
+  virtual void setWeightInVector(unsigned int i, double weight)=0;
+  virtual double getValueFromVector(unsigned int i) const=0;
+  virtual double getWeightFromVector(unsigned int i) const=0;
 
   virtual const DalitzEventPattern& eventPattern() const=0;
   virtual const TLorentzVector& p(unsigned int i) const= 0;

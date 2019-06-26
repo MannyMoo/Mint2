@@ -139,11 +139,11 @@ bool NamedParameterBase::setFromParsedFile(){
   }
   const ParsedParameterLine& ppL =_ppF->find(name());
   if(! ppL.isValid()){
-    if(! _quiet){
+    /*if(! _quiet){
       cout << "WARNING in  NamedParameterBase::setFromParsedFile():"
 	   << "\n  > Can't find variable with name \"" << name() << "\""
 	   << "\n  > in attached ParsedParameterFile." << endl;
-    }
+    }*/
   }else{
     success = setFromParsedLine(ppL);
   }

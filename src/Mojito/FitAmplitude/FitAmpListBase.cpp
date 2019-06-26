@@ -9,7 +9,7 @@
 #include "Mint/FitAmpSum.h"
 #include "Mint/FitAmpIncoherentSum.h"
 #include "Mint/FitAmpPairList.h"
-
+#include "TRandom3.h"
 #include <iostream>
 
 using namespace std;
@@ -120,9 +120,7 @@ FitAmplitude* FitAmpListBase::getAmpPtr(unsigned int in){
   unsigned int sz = _fitAmps.size();
   for(unsigned int i = 0; i < _fitAmpLists.size(); i++){
     int index = in - sz;
-    if( index >= 0 && static_cast<unsigned int>(index)<_fitAmpLists[i]->size() )
-      return _fitAmpLists[i]->getAmpPtr(index);
-
+    if(index >= 0 && static_cast<unsigned int>(index) < _fitAmpLists[i]->size()) return _fitAmpLists[i]->getAmpPtr(index);
     sz += _fitAmpLists[i]->size();
   }
   
@@ -136,9 +134,7 @@ const FitAmplitude* FitAmpListBase::getAmpPtr(unsigned int in) const{
   unsigned int sz = _fitAmps.size();
   for(unsigned int i = 0; i < _fitAmpLists.size(); i++){
     int index = in - sz;
-    if( index >= 0 && static_cast<unsigned int>(index)<_fitAmpLists[i]->size() )
-      return _fitAmpLists[i]->getAmpPtr(index);
-
+    if(index >= 0 && static_cast<unsigned int>(index) < _fitAmpLists[i]->size()) return _fitAmpLists[i]->getAmpPtr(index);
     sz += _fitAmpLists[i]->size();
   }
   
@@ -165,6 +161,17 @@ bool FitAmpListBase::CConjugateFinalStateSameFitParameters(){
     bool success=true;
     for(unsigned int i=0; i< this->size(); i++){
         success &= getAmpPtr(i)->CConjugateFinalStateSameFitParameters();
+    }
+    return success;
+}
+
+bool FitAmpListBase::CConjugateInitialStateSameFitParameters(){
+    bool dbThis=false;
+    if(dbThis) cout << "FitAmpListBase::CConjugateFinalStateSameFitParameters()" << endl;
+    
+    bool success=true;
+    for(unsigned int i=0; i< this->size(); i++){
+        success &= getAmpPtr(i)->CConjugateInitialStateSameFitParameters();
     }
     return success;
 }
@@ -227,6 +234,15 @@ counted_ptr<FitAmpListBase> FitAmpListBase::GetCConjugateFinalStateSameFitParame
     
     counted_ptr<FitAmpListBase> newList = this->GetCloneSameFitParameters();
     newList->CConjugateFinalStateSameFitParameters();
+    return newList;
+}
+
+counted_ptr<FitAmpListBase> FitAmpListBase::GetCConjugateInitialStateSameFitParameters() const{
+    bool dbThis=false;
+    if(dbThis) cout << "FitAmpListBase::GetCConjugateFinalStateSameFitParameters()" << endl;
+    
+    counted_ptr<FitAmpListBase> newList = this->GetCloneSameFitParameters();
+    newList->CConjugateInitialStateSameFitParameters();
     return newList;
 }
 
@@ -457,6 +473,55 @@ void FitAmpListBase::normalizeAmps(DalitzEventList& evtList){
       }
       if(weight_sum==0)weight_sum = evtList.size(); 
       if(integral>0)(getAmpPtr(i))->multiply(sqrt(weight_sum/integral));
+    }
+}
+
+vector<double> FitAmpListBase::normFactors(DalitzEventList& evtList){
+    
+    	vector<double> tmp;
+        	for(unsigned int i=0; i< this->size(); i++){
+              		if(0 == getAmpPtr(i))continue;
+              		double integral=0.;
+              		double weight_sum=0.;
+              		for (unsigned int j=0; j<evtList.size(); j++) {
+            			double weight = evtList[j].getWeight()/evtList[j].getGeneratorPdfRelativeToPhaseSpace();
+            			weight_sum += weight;
+            			integral += weight * std::norm(getAmpPtr(i)->amp().getNewVal(evtList[j]));
+                  		}
+              		if(weight_sum==0)weight_sum = evtList.size(); 
+                 	if(integral>0)tmp.push_back(sqrt(weight_sum/integral));
+            	}
+        	return tmp;
+}
+
+void FitAmpListBase::randomizeStartVals(int seed){
+        TRandom3* r = new TRandom3(seed);    
+    
+        for(unsigned int i=0; i< this->size(); i++){
+              //if(0 == getAmpPtr(i))continue;
+              double mag = r->Uniform(0.,1.);
+              double re,im;
+              r->Circle(re,im,mag);
+              complex<double> c(re,im);
+              //getAmpPtr(i)->multiply(c);
+             if(!(getAmpPtr(i)->FitAmpPhase().isConstant()))getAmpPtr(i)->FitAmpPhase().set(c);
+            }
+}
+
+
+void FitAmpListBase::randomizePhaseStartVals(int seed){
+        TRandom3* r = new TRandom3(seed);    
+    
+        for(unsigned int i=0; i< this->size(); i++){
+              //if(0 == getAmpPtr(i))continue;
+              double phase = r->Uniform(-pi,pi);
+              if(!(getAmpPtr(i)->FitAmpPhase().isConstant()))getAmpPtr(i)->FitAmpPhase().set( polar(getAmpPtr(i)->FitAmpPhase().getAmp(),phase)  );
+            }
+}
+
+void FitAmpListBase::setTag(int tag){
+    for(unsigned int i=0; i< this->size(); i++){
+        this->getAmpPtr(i)->setTag(tag);
     }
 }
 

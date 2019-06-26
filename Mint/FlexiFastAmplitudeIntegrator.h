@@ -134,6 +134,18 @@ class FlexiFastAmplitudeIntegrator : virtual public IDalitzIntegrator{
     return getVal();
   }
     
+  double integralForMatchingPatterns(bool match,int pattern_sign){
+        return _integCalc->integralForMatchingPatterns(match, pattern_sign);
+  }
+    
+  std::complex<double> ComplexIntegralForTags(int tag1, int tag2){
+        return _integCalc->ComplexIntegralForTags(tag1,tag2);
+  }
+
+  std::complex<double> ComplexSumForMatchingPatterns(bool match){
+        return _integCalc->ComplexSumForMatchingPatterns(match);
+  }
+
   double sumOfSqrtFitFractions() {
         return _integCalc->sumOfSqrtFitFractions();
   }
@@ -153,6 +165,10 @@ class FlexiFastAmplitudeIntegrator : virtual public IDalitzIntegrator{
   int numberOfFitFractionsLargerThanThreshold(double threshold){
         return _integCalc->numberOfFitFractionsLargerThanThreshold(threshold);
   } 
+
+  FitFractionList getFractions() const{return _integCalc->getFractions();}
+  FitFractionList getInterferenceTerms() const{return _integCalc->getInterferenceTerms();}
+  bool doFractions() {return _integCalc->doFractions();}
 
   double variance() const;
 

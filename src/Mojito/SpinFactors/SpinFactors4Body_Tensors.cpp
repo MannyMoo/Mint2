@@ -441,7 +441,7 @@ double SF_DtoT1T2_T1toP0P1_T2toP2P3_P::getVal(IDalitzEvent& evt){
   TLorentzVector pT2 = p(2, evt) + p(3, evt);
   TLorentzVector qT2 = p(2, evt) - p(3, evt);
   TLorentzVector pD  = pT1 + pT2;
-  TLorentzVector qD  = pT1 + pT2;
+  TLorentzVector qD  = pT1 - pT2;
   
 
   double MT1 = mRes(T[0], evt);

@@ -49,7 +49,6 @@ void FitAmpPairList::applyHistoOption(){
 
 FitAmpPairList::FitAmpPairList()
   : MINT::PolymorphVector<FitAmpPair>()
-  , HistoOption("FitAmpPairList::HistoOption", (std::string) "default")
   , _Nevents(0)
   , _sum(0)
   , _sumsq(0)
@@ -58,13 +57,13 @@ FitAmpPairList::FitAmpPairList()
   , _slow(true)
   , _cov(this)
   , _efficiency(0)
+  , HistoOption("FitAmpPairList::HistoOption", (std::string) "default")
 {
   applyHistoOption();
 }
 FitAmpPairList::FitAmpPairList(const FitAmpPairList& other)
   : IIntegrationCalculator()
   , MINT::PolymorphVector<FitAmpPair>(other)
-  , HistoOption("FitAmpPairList::HistoOption", (std::string) "default")
   , _Nevents(other._Nevents)
   , _sum(other._sum)
   , _sumsq(other._sumsq)
@@ -73,6 +72,7 @@ FitAmpPairList::FitAmpPairList(const FitAmpPairList& other)
   , _slow(other._slow)
   , _cov(other._cov, this)
   , _efficiency(other._efficiency)
+  , HistoOption("FitAmpPairList::HistoOption", (std::string) "default")
 {
   applyHistoOption();
 }
@@ -238,6 +238,46 @@ double FitAmpPairList::integral() const{
   }
   return sum;
 }
+
+std::complex<double> FitAmpPairList::ComplexIntegralForTags(int tag1, int tag2) const{
+    std::complex<double> sum = 0;
+
+    for(unsigned int i=0; i< this->size(); i++){
+        if((this->at(i).fitAmp1().getTag() == tag1) && ( this->at(i).fitAmp2().getTag() == tag2)){
+            sum += conj(this->at(i).complexVal());       
+        }
+        else if((this->at(i).fitAmp1().getTag() == tag2) && ( this->at(i).fitAmp2().getTag() == tag1)){
+            sum += this->at(i).complexVal();
+        }
+    }
+    return sum;
+}
+
+double FitAmpPairList::integralForMatchingPatterns(bool match, int pattern_sign) const{
+    double sum = 0;
+    for(unsigned int i=0; i< this->size(); i++){
+        if(this->at(i).hasMatchingPattern()==match){
+            if(match){
+                if(static_cast<double>(pattern_sign) * this->at(i).fitAmp1().theBareDecay().getVal() < 0 ) continue;
+            }
+            sum += this->at(i).integral();
+        }
+    }
+    return sum;
+}
+
+std::complex<double> FitAmpPairList::ComplexSumForMatchingPatterns(bool match) const{
+    std::complex<double> sum = 0;
+    for(unsigned int i=0; i< this->size(); i++){
+        if(this->at(i).hasMatchingPattern()==match){
+            std::complex<double> val = this->at(i).complexVal();
+            if(this->at(i).fitAmp1().theBareDecay().getVal() >  this->at(i).fitAmp2().theBareDecay().getVal() ) val = conj(val);
+            sum += val;
+        }
+    }
+    return sum;
+}
+
 std::complex<double> FitAmpPairList::ComplexSum() const{ //laurenPsuedo
   bool dbThis = false;
   std::complex<double> sum = 0;
@@ -617,11 +657,80 @@ void FitAmpPairList::doFinalStats(Minimiser* mini){
 }
 
 
+bool FitAmpPairList::doFractions(){
+
+  if(this->empty()) return 0;
+
+   _singleAmpFractions = FitFractionList() ;
+   _interferenceFractions = FitFractionList();
+
+  cout << "\n============================================"
+       << "============================================"
+       << "\n        Amplitude Fractions";
+
+  double norm = integral();
+
+  if(norm <= 0){
+    cout << "ERROR in FitAmpPairList::makeAndStoreFractions()"
+	 << " integral = " << integral()
+	 << " won't do fractions."
+	 << endl;
+    return false;
+  }
+
+  for(unsigned int i=0; i < this->size(); i++){    
+    double frac = this->at(i).integral()/norm;
+    string name;
+    if(this->at(i).isSingleAmp()){
+      name = this->at(i).fitAmp1().name();
+    }else{
+//       name = this->at(i).name();
+      name = this->at(i).fitAmp1().name() + "_x_" + this->at(i).fitAmp2().name();
+    }
+    FitFraction f(name, frac);
+
+    if(this->at(i).isSingleAmp()){
+      this->at(i).fitAmp1().setFraction(frac);
+      _singleAmpFractions.add(f);
+    }else{
+      _interferenceFractions.add(f);
+    }
+  }
+
+  cout << "filled FitFractionLists" << endl;
+  FitFractionList interferenceFractionsSorted(_interferenceFractions);
+  interferenceFractionsSorted.sortByMagnitudeDecending();
+  
+  cout <<   "================================================="
+       << "\n================================================="
+       << "\n FRACTIONS:"
+       << "\n ^^^^^^^^^^" << endl;
+  cout << _singleAmpFractions << endl;
+  cout <<   "================================================="
+       << "\n================================================="
+       << "\n Interference terms (sorted by size)"
+       << "\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
+  cout << interferenceFractionsSorted << endl;
+  cout <<   "================================================="
+       << "\n=================================================" << endl;
+
+  cout << "\n\n\t X-check: total sum of all terms"
+       << " (amplitude fractions + interference terms): "
+       << _singleAmpFractions.sum().frac() 
+    + _interferenceFractions.sum().frac();
+
+  return true;
+}
+
+
 bool FitAmpPairList::makeAndStoreFractions(const std::string& fname
-					   , const std::string&  // dummy
+					   , const std::string&  fnameROOT
 					   , Minimiser* mini
 					   ){
   bool dbThis=true;
+
+   _singleAmpFractions = FitFractionList() ;
+   _interferenceFractions = FitFractionList();
 
   if(this->empty()) return 0;
   counted_ptr<FitAmpPairFitCovariance> fcov(0);
@@ -682,7 +791,6 @@ bool FitAmpPairList::makeAndStoreFractions(const std::string& fname
     }
   }
 
-
   if(dbThis)cout << "filled FitFractionLists" << endl;
   if(printFitErrors){
     _singleAmpFractions.setSumFitError(fcov->getFractionSumError());
@@ -715,12 +823,104 @@ bool FitAmpPairList::makeAndStoreFractions(const std::string& fname
        << _singleAmpFractions.sum().frac() 
     + _interferenceFractions.sum().frac();
   cout << endl;
-  ofstream os(fname.c_str());
-  if(os){
-    os << _singleAmpFractions << endl;
-    os << _interferenceFractions << endl;
-    os.close();
+  ofstream os(fname.c_str(),std::ofstream::trunc);
+//   if(os){
+//     os << _singleAmpFractions << endl;
+//     os << _interferenceFractions << endl;
+//     os.close();
+//   }
+  /// latex table
+  if(!os)return true;
+  os << "\\begin{tabular}{l r}" << "\n";
+  os << "\\hline" << "\n";
+  os << "\\hline" << "\n";
+  os << "Decay channel & Fraction [$\\%$] \\\\" << "\n";
+  os << "\\hline" << "\n";
+
+  for(unsigned int i=0; i < this->size(); i++){    
+    double frac = this->at(i).integral()/norm;
+    TString name;
+    if(this->at(i).isSingleAmp()) name = this->at(i).fitAmp1().name();
+    else continue;
+    FitFraction f((string)name, frac);
+    double frac_err = fcov->getFractionError(i);
+    
+    name.ReplaceAll("->"," \\to ");
+    name.ReplaceAll("Bs0","B_s");
+    name.ReplaceAll("Ds","D_s");
+    name.ReplaceAll("pi","\\pi");
+    name.ReplaceAll("rho","\\rho");
+    name.ReplaceAll("sigma10","\\sigma");
+    name.ReplaceAll("GS","");
+    name.ReplaceAll("SBW","");
+    name.ReplaceAll("RhoOmega","");
+    name.ReplaceAll("GLass","");
+    name.ReplaceAll("Lass","");
+    name.ReplaceAll("Bugg","");
+    name.ReplaceAll("Flatte","");
+    name.ReplaceAll("+","^+");
+    name.ReplaceAll("-","^-");
+    name.ReplaceAll("*","^*");
+    name.ReplaceAll(")0",")^0");
+    name.ReplaceAll(","," \\, ");
+    name.ReplaceAll("NonResS0( \\to D_s^- \\, \\pi^+)","( D_s^- \\, \\pi^+)_{S}");
+    name.ReplaceAll("NonResV0( \\to D_s^- \\, \\pi^+)","( D_s^- \\, \\pi^+)_{P}");
+    name.ReplaceAll("NonResS0( \\to D_s^- \\, K^+)","( D_s^- \\, K^+)_{S}");
+    name.ReplaceAll("NonResV0( \\to D_s^- \\, K^+)","( D_s^- \\, K^+)_{P}");
+
+    os << std::fixed << std::setprecision(2) << "$" << name << "$ & " << frac * 100. << " $\\pm$ "  << frac_err * 100. <<  " \\\\" << "\n";
   }
+  os <<  " \\hline" << "\n";
+  os << " Sum & " << std::fixed << std::setprecision(2) << _singleAmpFractions.sum().frac() * 100. << " $\\pm$ "  << fcov->getFractionSumError() * 100. <<  " \\\\" << "\n";
+  os << "\\hline" << "\n";
+  os << "\\hline" << "\n";
+  os << "\\end{tabular}" << "\n";
+  os.close();
+
+  TFile* paraFile = new TFile((fnameROOT).c_str(), "RECREATE");
+  TTree* tree = new TTree("fractions","fractions");
+    
+  for(unsigned int i=0; i < this->size(); i++){    
+	double frac = this->at(i).integral()/norm;
+	TString name;
+	if(this->at(i).isSingleAmp())name = TString(this->at(i).fitAmp1().name());
+	else name = TString(this->at(i).name());
+	FitFraction f((string)name, frac);	
+
+	name.ReplaceAll("A(","");
+	name.ReplaceAll("fit","");
+	name.ReplaceAll("[","_");
+	name.ReplaceAll("]","_");
+	name.ReplaceAll("(","_");
+	name.ReplaceAll(")","_");
+	name.ReplaceAll("->","_");
+	name.ReplaceAll("+","p");
+	name.ReplaceAll("-","m");
+	name.ReplaceAll("*","s");
+	name.ReplaceAll(",","");
+	name.ReplaceAll("GS","");
+	name.ReplaceAll("GLass","");
+	name.ReplaceAll("Lass","");
+	name.ReplaceAll("RhoOmega","");
+	name.ReplaceAll("Bugg","");
+	name.ReplaceAll("Flatte","");
+
+	if(0 != tree){
+		double val = frac;
+		if(!this->at(i).isSingleAmp()) name = "int_" + name;
+		TBranch* Bra_val = tree->Branch( ((string)name).c_str(), &val, ((string)(name+"/D")).c_str());
+		if(0 != Bra_val)  Bra_val->Fill();
+	}
+  }
+  double val = _singleAmpFractions.sum().frac();
+  TBranch* Bra_val = tree->Branch( "Sum", &val, "Sum/D");
+  if(0 != Bra_val) Bra_val->Fill();
+
+  if(0 != tree) tree->Fill();
+
+  tree->Write();  
+  paraFile->Close();
+  delete paraFile;
   
   return true;
 }
@@ -884,9 +1084,9 @@ double FitAmpPairList::getFractionChi2() const{
       counter++;
       double frac = this->at(i).integral()/norm;
       double target_f = this->at(i).fitAmp1().getFraction();
-      if(i < 10){
-	cout << "(" << frac << " - " << target_f << ")" << endl;
-      }
+      //if(i < 10){
+	//cout << "(" << frac << " - " << target_f << ")" << endl;
+      //}
       double dfs=(frac - target_f)/canonicalError;
       if(ErrorProportionalToSqrtTarget && target_f > 0) dfs /= sqrt(0.01*target_f);
       sum += dfs*dfs;

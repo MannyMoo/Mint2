@@ -113,6 +113,7 @@ class FitAmpPair : public MINT::FitParDependent{
   bool retrieve(const std::string& asSubdirOf=".");
 
   bool isSingleAmp() const;
+  bool hasMatchingPattern() const;
 
   double reAdd(IDalitzEvent& evt, double weight=1, double efficiency=1);
   double add(IDalitzEvent& evt, double weight=1, double efficiency=1);

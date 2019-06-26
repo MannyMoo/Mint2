@@ -265,7 +265,7 @@ int FastAmplitudeIntegrator::addEvents(long int Nevents){
     if(maxTries < (unsigned long int) Nevents) maxTries = Nevents * 10;
     if(maxTries < (unsigned long int) Nevents) maxTries = Nevents;
 
-    //time_t startTime = time(0);
+    time_t startTime = time(0);
     for(unsigned long int i=0; i < maxTries && N_success < Nevents; i++){
       counted_ptr<IDalitzEvent> ptr(_generator->newEvent());
       if(dbThis) cout << "got event with ptr: " << ptr << endl;
@@ -293,9 +293,9 @@ int FastAmplitudeIntegrator::addEvents(long int Nevents){
 	  double sigma = -9999;
 	  if(v > 0) sigma = sqrt(v);
 	  cout << "\t integ= " << _mean << " +/- " << sigma;
-	  /*cout << "\t("
+	  cout << "\t("
 	       << MINT::stringtime(difftime(time(0), startTime))
-	       << ")";*/
+	       << ")";
 	  cout << endl;
 	}
       }

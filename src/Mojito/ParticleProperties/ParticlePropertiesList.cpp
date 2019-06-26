@@ -86,30 +86,38 @@ const std::vector<std::string>& ParticlePropertiesList::dirList(){
   return _dirList;
 }
 
-void ParticlePropertiesList::fillDirList()
-{
+void ParticlePropertiesList::fillDirList(){
   _dirList.clear();
-
-  //User-defined directories
-  NamedParameter<std::string>
-    userDir("ParticlePropertiesList::ParticlePropertiesDir",
-	    (std::string)"");
-  for( int i=0; i<userDir.size(); ++i )
-    if( userDir.getVal(i) != "" )
+  NamedParameter<std::string> userDir("ParticlePropertiesList::ParticlePropertiesDir",
+				      "", NamedParameterBase::QUIET);
+  for(int i=0; i < userDir.size(); i++){
+    if("" != userDir.getVal(i)){
       _dirList.push_back(userDir.getVal(i) + "/");
-
-  //Run-time directory
-  _dirList.push_back("./");
-
-  //Mint2-defined directory
-  if( !std::getenv("MINT2") ){
-    std::cout
-      << "ERROR: Mint2 environment variable not set."
-      << "       Energy-dependent mass/width histograms cannot be found."
-      << std::endl;
-    exit(1);
+      //      cout << "just pushed back " << userDir.getVal() << endl;
+    }
   }
-  _dirList.push_back(static_cast<std::string>(getenv("MINT2"))+"/share/");
+
+//   Get directory to MINTROOT
+
+
+  std::string MintRoot(".");
+  char * Mintevn(0);
+  Mintevn = getenv ("MINT2");
+  if (NULL != Mintevn){
+    MintRoot = Mintevn;
+  }
+
+  std::string DecFilesRoot("UNKNOWN");
+  char * DecFiles;
+  DecFiles = getenv ("DECFILESROOT");
+  if (NULL != DecFiles){
+    DecFilesRoot = DecFiles;
+  }
+
+  _dirList.push_back("");
+  _dirList.push_back("./");
+  _dirList.push_back(MintRoot+"/share/");
+  _dirList.push_back(DecFilesRoot+"/MintData/");
 }
 
 

@@ -1,58 +1,95 @@
 #ifndef NEG_TWO_LL_SUM_HH
 #define NEG_TWO_LL_SUM_HH
-
-#include <vector>
+// author: Jonas Rademacker (Jonas.Rademacker@bristol.ac.uk)
+// status:  Mon 9 Feb 2009 19:17:56 GMT
 
 #include "Mint/Minimisable.h"
 
-namespace MINT
-{
-  class IMinimisable;
-  class MinuitParameterSet;
+#include <vector>
 
-  class Neg2LLSum : public Minimisable
-  {
-   public:
-    Neg2LLSum( MinuitParameterSet* mps=0 );
+namespace MINT{
 
-    template<typename IMINIMISIBLE>
-    Neg2LLSum( MinuitParameterSet* mps, IMINIMISIBLE* ll )
-      : Minimisable(mps)
-    { insert(ll); }
+class IMinimisable;
+class MinuitParameterSet;
 
-    template<typename IMINIMISIBLE_FIRST, typename... IMINIMISIBLE_REST>
-    Neg2LLSum( MinuitParameterSet* mps,
-	       IMINIMISIBLE_FIRST* ll_first, IMINIMISIBLE_REST*... ll_rest )
-      : Neg2LLSum(mps, ll_rest...)
-    { insert(ll_first); }
+class Neg2LLSum : public Minimisable{
 
-    Neg2LLSum( const std::vector<IMinimisable*>& likList_in,
-	       MinuitParameterSet* mps=0 );
+  std::vector<IMinimisable*> _likList;
+ public:
+  Neg2LLSum(MinuitParameterSet* mps = 0);
 
-    Neg2LLSum( const Neg2LLSum& other );
+  Neg2LLSum(const std::vector<IMinimisable*>& likList_in
+	    , MinuitParameterSet* mps = 0);
+  
+  Neg2LLSum(IMinimisable* ll_1
+	    , MinuitParameterSet* mps = 0);
 
-    bool add( IMinimisable* llPtr );
-    bool insert( IMinimisable* llPtr );
+  Neg2LLSum(IMinimisable* ll_1, IMinimisable* ll_2
+	    , MinuitParameterSet* mps = 0);
 
-    virtual void beginFit();
+  Neg2LLSum(IMinimisable* ll_1, IMinimisable* ll_2
+	    , IMinimisable* ll_3
+	    , MinuitParameterSet* mps = 0);
+  
+  Neg2LLSum(IMinimisable* ll_1, IMinimisable* ll_2
+	    , IMinimisable* ll_3, IMinimisable* ll_4
+	    , MinuitParameterSet* mps = 0);
+  
+  Neg2LLSum(IMinimisable* ll_1, IMinimisable* ll_2
+	    , IMinimisable* ll_3, IMinimisable* ll_4
+	    , IMinimisable* ll_5
+	    , MinuitParameterSet* mps = 0);
+  
+  Neg2LLSum(IMinimisable* ll_1, IMinimisable* ll_2
+	    , IMinimisable* ll_3, IMinimisable* ll_4
+	    , IMinimisable* ll_5, IMinimisable* ll_6
+	    , MinuitParameterSet* mps = 0);
+  
+  Neg2LLSum(IMinimisable* ll_1, IMinimisable* ll_2
+	    , IMinimisable* ll_3, IMinimisable* ll_4
+	    , IMinimisable* ll_5, IMinimisable* ll_6
+	    , IMinimisable* ll_7
+	    , MinuitParameterSet* mps = 0);
 
-    virtual void parametersChanged();
+  Neg2LLSum(IMinimisable* ll_1, IMinimisable* ll_2
+	    , IMinimisable* ll_3, IMinimisable* ll_4
+	    , IMinimisable* ll_5, IMinimisable* ll_6
+	    , IMinimisable* ll_7, IMinimisable* ll_8
+	    , MinuitParameterSet* mps = 0);
+  
+  Neg2LLSum(IMinimisable* ll_1, IMinimisable* ll_2
+	    , IMinimisable* ll_3, IMinimisable* ll_4
+	    , IMinimisable* ll_5, IMinimisable* ll_6
+	    , IMinimisable* ll_7, IMinimisable* ll_8
+	    , IMinimisable* ll_9
+	    , MinuitParameterSet* mps = 0);
 
-    virtual void endFit();
+  Neg2LLSum(IMinimisable* ll_1, IMinimisable* ll_2
+	    , IMinimisable* ll_3, IMinimisable* ll_4
+	    , IMinimisable* ll_5, IMinimisable* ll_6
+	    , IMinimisable* ll_7, IMinimisable* ll_8
+	    , IMinimisable* ll_9, IMinimisable* ll_10
+	    , MinuitParameterSet* mps = 0);
+    
+  Neg2LLSum(const Neg2LLSum& other);
+  
+  bool add(IMinimisable* llPtr);
 
-    double getVal();
+  virtual void beginFit();
 
-    bool addConstraints();
+  virtual void parametersChanged();
 
-    virtual std::vector<double> Gradient( const std::vector<double>& par );
+  virtual void endFit();
 
-    virtual bool useAnalyticGradient();
+  double getVal();
+    
+  bool addConstraints();
+    
+  virtual void Gradient(std::vector<double>& grad);
+  virtual bool useAnalyticGradient();
+  virtual void setUseAnalyticGradient(bool useAnalyticGradient);
 
-    virtual void setUseAnalyticGradient( const bool& useAnalyticGradient );
-
-   private:
-    std::vector<IMinimisable*> _likList;
-  };
-} //namespace MINT
-
-#endif //NEG_TWO_LL_SUM_HH
+};
+}// namespace MINT
+#endif
+//
