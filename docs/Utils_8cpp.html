@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>MINT2: /nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mint/Utils/Utils.cpp File Reference</title>
+<title>MINT2: Mint2/src/Mint/Utils/Utils.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6ee9fcec0d94afcd9b74258d52525230.html">Mint</a></li><li class="navelem"><a class="el" href="dir_df19af92c8ebb725b5c1ac710caa7eff.html">Utils</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4754f46ea6d4ab9d9c154d70b7241947.html">Mint2</a></li><li class="navelem"><a class="el" href="dir_260d20cafbd34bfc73bb36537eaea320.html">src</a></li><li class="navelem"><a class="el" href="dir_e4c3a2580b6097e317f80024b349a191.html">Mint</a></li><li class="navelem"><a class="el" href="dir_23161900a5f78c115ca379f8870472f4.html">Utils</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -92,7 +92,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Utils_8h_source.html">Mint/Utils.h</a>&quot;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="Utils_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a196c42fd72b3e88bb7b07d2f7c257885"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utils_8cpp.html#a196c42fd72b3e88bb7b07d2f7c257885">operator&lt;&lt;</a> (std::ostream &amp;out, const TLorentzVector &amp;v)</td></tr>
@@ -123,6 +125,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00036">36</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  out &lt;&lt; <span class="stringliteral">&quot;(&quot;</span>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i=0; i&lt;3; ++i )</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    out &lt;&lt; v[i] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  out &lt;&lt; v[3] &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">return</span> out;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

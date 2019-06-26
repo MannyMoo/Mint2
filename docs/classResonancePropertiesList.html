@@ -146,7 +146,10 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:ad2179fc2b24176f9cf3a574943c9bdd4"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::pair&lt; std::string, const <a class="el" href="classMINT_1_1MinuitParameterSet.html">MINT::MinuitParameterSet</a> * &gt;, <a class="el" href="classResonancePropertiesList.html">ResonancePropertiesList</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResonancePropertiesList.html#ad2179fc2b24176f9cf3a574943c9bdd4">_mapOfLists</a></td></tr>
 <tr class="separator:ad2179fc2b24176f9cf3a574943c9bdd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8h_source.html#l00017">17</a> of file <a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6988d35a8adce87f985f379f3affe132"></a>
 <div class="memitem">
 <div class="memproto">
@@ -179,6 +182,12 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8cpp_source.html#l00068">68</a> of file <a class="el" href="ResonancePropertiesList_8cpp_source.html">ResonancePropertiesList.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  : <a class="code" href="classResonancePropertiesList.html#ae580049e38d96f6214e41f4ab12e53aa">_mps</a>(mps)</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  , <a class="code" href="classResonancePropertiesList.html#ac45a9ab7f57ad3ee60122fabd72ff818">_prefix</a>(namePrefix)</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  , <a class="code" href="classResonancePropertiesList.html#a1d7547fbdbf023679ff42b997897d2fa">_radius</a>(namePrefix + <span class="stringliteral">&quot;BW_radius&quot;</span>, 1, 1.5/<a class="code" href="CLHEPSystemOfUnits_8h.html#aec0e126d9991db8ad0b26139f5860568">GeV</a>, 0, 0, 0, mps,  NamedParameterBase::QUIET) <span class="comment">//, _rp(10323)</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{   </div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">/*</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">  cout &lt;&lt; &quot;Hello from ResonancePropertiesList::ResonancePropertiesList&quot; &lt;&lt; endl;</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">  cout &lt;&lt; &quot;I think I initialised _radius&quot; &lt;&lt; endl;</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">  cout &lt;&lt; &quot;here we go&quot; &lt;&lt; endl;</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">  cout &lt;&lt; _radius &lt;&lt; endl;</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">  */</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//fix BW radius to default value if not explicitly initiallised </span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//if(_radius.iFixInit() &amp;&amp; _radius== 0) _radius = 1.5/GeV;</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">/*</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">    const ParticlePropertiesList* PPL = ParticlePropertiesList::getMe();</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">    const std::list&lt;ParticleProperties&gt; theParticleList = PPL-&gt;getList();</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">    for(std::list&lt;ParticleProperties&gt;::const_iterator it= theParticleList.begin();it != theParticleList.end(); it++){</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">        if(it-&gt;pdg_id&gt;0)</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">        ResonanceProperties* rp= new ResonanceProperties(it-&gt;pdg_id());</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">        theList.push_back(rp);</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">    }</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">    */</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div><div class="ttc" id="classResonancePropertiesList_html_ac45a9ab7f57ad3ee60122fabd72ff818"><div class="ttname"><a href="classResonancePropertiesList.html#ac45a9ab7f57ad3ee60122fabd72ff818">ResonancePropertiesList::_prefix</a></div><div class="ttdeci">std::string _prefix</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00035">ResonancePropertiesList.h:35</a></div></div>
+<div class="ttc" id="CLHEPSystemOfUnits_8h_html_aec0e126d9991db8ad0b26139f5860568"><div class="ttname"><a href="CLHEPSystemOfUnits_8h.html#aec0e126d9991db8ad0b26139f5860568">GeV</a></div><div class="ttdeci">static const double GeV</div><div class="ttdef"><b>Definition:</b> <a href="CLHEPSystemOfUnits_8h_source.html#l00152">CLHEPSystemOfUnits.h:152</a></div></div>
+<div class="ttc" id="classResonancePropertiesList_html_ae580049e38d96f6214e41f4ab12e53aa"><div class="ttname"><a href="classResonancePropertiesList.html#ae580049e38d96f6214e41f4ab12e53aa">ResonancePropertiesList::_mps</a></div><div class="ttdeci">MINT::MinuitParameterSet * _mps</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00034">ResonancePropertiesList.h:34</a></div></div>
+<div class="ttc" id="classResonancePropertiesList_html_a1d7547fbdbf023679ff42b997897d2fa"><div class="ttname"><a href="classResonancePropertiesList.html#a1d7547fbdbf023679ff42b997897d2fa">ResonancePropertiesList::_radius</a></div><div class="ttdeci">MINT::FitParameter _radius</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00037">ResonancePropertiesList.h:37</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -204,6 +213,10 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8cpp_source.html#l00102">102</a> of file <a class="el" href="ResonancePropertiesList_8cpp_source.html">ResonancePropertiesList.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                                                                    {</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">//theList.push_back(rp);</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">if</span>(0 != rp) <a class="code" href="classResonancePropertiesList.html#a9c71fc00e0e989144dbc179ebd519917">byID</a>[rp-&gt;<a class="code" href="classResonanceProperties.html#addd28f62609a6e613e4dcf5f75fd61c0">pid</a>()] = rp;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">return</span> rp;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div><div class="ttc" id="classResonancePropertiesList_html_a9c71fc00e0e989144dbc179ebd519917"><div class="ttname"><a href="classResonancePropertiesList.html#a9c71fc00e0e989144dbc179ebd519917">ResonancePropertiesList::byID</a></div><div class="ttdeci">std::map&lt; int, ResonanceProperties * &gt; byID</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00041">ResonancePropertiesList.h:41</a></div></div>
+<div class="ttc" id="classResonanceProperties_html_addd28f62609a6e613e4dcf5f75fd61c0"><div class="ttname"><a href="classResonanceProperties.html#addd28f62609a6e613e4dcf5f75fd61c0">ResonanceProperties::pid</a></div><div class="ttdeci">int pid() const </div><div class="ttdef"><b>Definition:</b> <a href="ResonanceProperties_8h_source.html#l00127">ResonanceProperties.h:127</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a37a05871c1074ddbb3e5d56911d4d8a9"></a>
@@ -220,6 +233,12 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8cpp_source.html#l00108">108</a> of file <a class="el" href="ResonancePropertiesList_8cpp_source.html">ResonancePropertiesList.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                                                                {</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keyword">const</span> <a class="code" href="classResonanceProperties.html">ResonanceProperties</a>* rp = this-&gt;<span class="keyword">get</span>(pdg_id);</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordflow">if</span>(0 == rp){</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="classResonanceProperties.html">ResonanceProperties</a>* rpnew= <span class="keyword">new</span> <a class="code" href="classResonanceProperties.html">ResonanceProperties</a>(pdg_id, <a class="code" href="classResonancePropertiesList.html#a49c609f71b5b046cd1fa2b24848c47b5">getMinuitParameterSet</a>(), <a class="code" href="classResonancePropertiesList.html#a7be68e61562a06120917d231037352a1">prefix</a>());</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    this-&gt;<a class="code" href="classResonancePropertiesList.html#a72c07235287433a7502e9a9c83afd7da">AddToList</a>(rpnew);</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    rp=rpnew;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordflow">return</span> rp;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div><div class="ttc" id="classResonancePropertiesList_html_a49c609f71b5b046cd1fa2b24848c47b5"><div class="ttname"><a href="classResonancePropertiesList.html#a49c609f71b5b046cd1fa2b24848c47b5">ResonancePropertiesList::getMinuitParameterSet</a></div><div class="ttdeci">MINT::MinuitParameterSet * getMinuitParameterSet()</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8cpp_source.html#l00097">ResonancePropertiesList.cpp:97</a></div></div>
+<div class="ttc" id="classResonancePropertiesList_html_a7be68e61562a06120917d231037352a1"><div class="ttname"><a href="classResonancePropertiesList.html#a7be68e61562a06120917d231037352a1">ResonancePropertiesList::prefix</a></div><div class="ttdeci">const std::string &amp; prefix() const </div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00051">ResonancePropertiesList.h:51</a></div></div>
+<div class="ttc" id="classResonancePropertiesList_html_a72c07235287433a7502e9a9c83afd7da"><div class="ttname"><a href="classResonancePropertiesList.html#a72c07235287433a7502e9a9c83afd7da">ResonancePropertiesList::AddToList</a></div><div class="ttdeci">const ResonanceProperties * AddToList(ResonanceProperties *rp)</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8cpp_source.html#l00102">ResonancePropertiesList.cpp:102</a></div></div>
+<div class="ttc" id="classResonanceProperties_html"><div class="ttname"><a href="classResonanceProperties.html">ResonanceProperties</a></div><div class="ttdef"><b>Definition:</b> <a href="ResonanceProperties_8h_source.html#l00015">ResonanceProperties.h:15</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ada1ea36ae0d942daa35d58c696850ab2"></a>
@@ -236,6 +255,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8cpp_source.html#l00119">119</a> of file <a class="el" href="ResonancePropertiesList_8cpp_source.html">ResonancePropertiesList.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                                                      {</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="comment">// assume CPT holds</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">int</span> <span class="keywordtype">id</span> = abs(id_in);</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  std::map&lt;int, ResonanceProperties*&gt;::const_iterator it = <a class="code" href="classResonancePropertiesList.html#a9c71fc00e0e989144dbc179ebd519917">byID</a>.find(<span class="keywordtype">id</span>);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">if</span>(it == <a class="code" href="classResonancePropertiesList.html#a9c71fc00e0e989144dbc179ebd519917">byID</a>.end()) <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">return</span> it-&gt;second;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div><div class="ttc" id="classResonancePropertiesList_html_a9c71fc00e0e989144dbc179ebd519917"><div class="ttname"><a href="classResonancePropertiesList.html#a9c71fc00e0e989144dbc179ebd519917">ResonancePropertiesList::byID</a></div><div class="ttdeci">std::map&lt; int, ResonanceProperties * &gt; byID</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00041">ResonancePropertiesList.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a78628c18a1a6989e864a0c999de41972"></a>
@@ -270,6 +292,11 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8cpp_source.html#l00020">20</a> of file <a class="el" href="ResonancePropertiesList_8cpp_source.html">ResonancePropertiesList.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                                                                            {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">//cout &lt;&lt; &quot;Hello from  ResonancePropertiesList::getMe()&quot; &lt;&lt; endl;</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="classResonancePropertiesList.html">ResonancePropertiesList</a>* ptr(0);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">if</span>(0 == mps) mps = MinuitParameterSet::getDefaultSet();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  std::pair&lt;std::string, const MINT::MinuitParameterSet*&gt; nameAndSet(namePrefix, mps);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="comment">//  auto it=_mapOfLists.find(nameAndSet);</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  map&lt;pair&lt;string, const MinuitParameterSet*&gt;, <a class="code" href="classResonancePropertiesList.html">ResonancePropertiesList</a>*&gt;::iterator it=<a class="code" href="classResonancePropertiesList.html#ad2179fc2b24176f9cf3a574943c9bdd4">_mapOfLists</a>.find(nameAndSet);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classResonancePropertiesList.html#ad2179fc2b24176f9cf3a574943c9bdd4">_mapOfLists</a>.end() != it) ptr=it-&gt;second;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span>(0 == ptr){</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">//cout &lt;&lt; &quot;ResonancePropertiesList: making myself&quot; &lt;&lt; endl;</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ptr = <span class="keyword">new</span> <a class="code" href="classResonancePropertiesList.html#a6988d35a8adce87f985f379f3affe132">ResonancePropertiesList</a>(namePrefix, mps);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">if</span>(0 == ptr){</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;ERROR in ResonanceProperties::getMe( &quot;</span> &lt;&lt; namePrefix &lt;&lt; <span class="stringliteral">&quot; )&quot;</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;     &lt;&lt; <span class="stringliteral">&quot; Couldn&#39;t get ResonancePropertiesList (i.e. myself)&quot;</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\n\t This is a serious problem. Will crash.&quot;</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;     &lt;&lt; endl;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">throw</span> <span class="stringliteral">&quot;No ResonancePropertiesList&quot;</span>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classResonancePropertiesList.html#ad2179fc2b24176f9cf3a574943c9bdd4">_mapOfLists</a>[nameAndSet] = ptr;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> ptr;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div><div class="ttc" id="classResonancePropertiesList_html_a6988d35a8adce87f985f379f3affe132"><div class="ttname"><a href="classResonancePropertiesList.html#a6988d35a8adce87f985f379f3affe132">ResonancePropertiesList::ResonancePropertiesList</a></div><div class="ttdeci">ResonancePropertiesList(const std::string &amp;namePrefix=&quot;&quot;, MINT::MinuitParameterSet *mps=0)</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8cpp_source.html#l00068">ResonancePropertiesList.cpp:68</a></div></div>
+<div class="ttc" id="classResonancePropertiesList_html"><div class="ttname"><a href="classResonancePropertiesList.html">ResonancePropertiesList</a></div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00017">ResonancePropertiesList.h:17</a></div></div>
+<div class="ttc" id="classResonancePropertiesList_html_ad2179fc2b24176f9cf3a574943c9bdd4"><div class="ttname"><a href="classResonancePropertiesList.html#ad2179fc2b24176f9cf3a574943c9bdd4">ResonancePropertiesList::_mapOfLists</a></div><div class="ttdeci">static std::map&lt; std::pair&lt; std::string, const MINT::MinuitParameterSet * &gt;, ResonancePropertiesList * &gt; _mapOfLists</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00029">ResonancePropertiesList.h:29</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a49c609f71b5b046cd1fa2b24848c47b5"></a>
@@ -293,6 +320,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8cpp_source.html#l00097">97</a> of file <a class="el" href="ResonancePropertiesList_8cpp_source.html">ResonancePropertiesList.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                                                      {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">if</span>(0 == <a class="code" href="classResonancePropertiesList.html#ae580049e38d96f6214e41f4ab12e53aa">_mps</a>) <a class="code" href="classResonancePropertiesList.html#ae580049e38d96f6214e41f4ab12e53aa">_mps</a> = MinuitParameterSet::getDefaultSet();</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classResonancePropertiesList.html#ae580049e38d96f6214e41f4ab12e53aa">_mps</a>;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div><div class="ttc" id="classResonancePropertiesList_html_ae580049e38d96f6214e41f4ab12e53aa"><div class="ttname"><a href="classResonancePropertiesList.html#ae580049e38d96f6214e41f4ab12e53aa">ResonancePropertiesList::_mps</a></div><div class="ttdeci">MINT::MinuitParameterSet * _mps</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00034">ResonancePropertiesList.h:34</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5f33d2b5048462ad67517c7eef899c4a"></a>
@@ -316,6 +346,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8cpp_source.html#l00094">94</a> of file <a class="el" href="ResonancePropertiesList_8cpp_source.html">ResonancePropertiesList.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                                                 {</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classResonancePropertiesList.html#ae580049e38d96f6214e41f4ab12e53aa">_mps</a>;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div><div class="ttc" id="classResonancePropertiesList_html_ae580049e38d96f6214e41f4ab12e53aa"><div class="ttname"><a href="classResonancePropertiesList.html#ae580049e38d96f6214e41f4ab12e53aa">ResonancePropertiesList::_mps</a></div><div class="ttdeci">MINT::MinuitParameterSet * _mps</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00034">ResonancePropertiesList.h:34</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7be68e61562a06120917d231037352a1"></a>
@@ -339,6 +372,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8h_source.html#l00051">51</a> of file <a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classResonancePropertiesList.html#ac45a9ab7f57ad3ee60122fabd72ff818">_prefix</a>;}</div><div class="ttc" id="classResonancePropertiesList_html_ac45a9ab7f57ad3ee60122fabd72ff818"><div class="ttname"><a href="classResonancePropertiesList.html#ac45a9ab7f57ad3ee60122fabd72ff818">ResonancePropertiesList::_prefix</a></div><div class="ttdeci">std::string _prefix</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00035">ResonancePropertiesList.h:35</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7f235cdbdf015b1af1919f440dfc6e39"></a>
@@ -362,6 +398,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8h_source.html#l00054">54</a> of file <a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classResonancePropertiesList.html#a1d7547fbdbf023679ff42b997897d2fa">_radius</a>;}</div><div class="ttc" id="classResonancePropertiesList_html_a1d7547fbdbf023679ff42b997897d2fa"><div class="ttname"><a href="classResonancePropertiesList.html#a1d7547fbdbf023679ff42b997897d2fa">ResonancePropertiesList::_radius</a></div><div class="ttdeci">MINT::FitParameter _radius</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8h_source.html#l00037">ResonancePropertiesList.h:37</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -383,6 +422,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8h_source.html#l00029">29</a> of file <a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae580049e38d96f6214e41f4ab12e53aa"></a>
@@ -402,6 +443,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8h_source.html#l00034">34</a> of file <a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a>.</p>
 
 </div>
 </div>
@@ -423,6 +466,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8h_source.html#l00035">35</a> of file <a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1d7547fbdbf023679ff42b997897d2fa"></a>
@@ -442,6 +487,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8h_source.html#l00037">37</a> of file <a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a>.</p>
 
 </div>
 </div>
@@ -463,6 +510,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8h_source.html#l00041">41</a> of file <a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abab0775d14a119e90bd289bc1b286dc2"></a>
@@ -483,11 +532,13 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ResonancePropertiesList_8h_source.html#l00039">39</a> of file <a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/ParticleProperties/<a class="el" href="ResonancePropertiesList_8cpp.html">ResonancePropertiesList.cpp</a></li>
+<li>Mint2/Mint/<a class="el" href="ResonancePropertiesList_8h_source.html">ResonancePropertiesList.h</a></li>
+<li>Mint2/src/Mojito/ParticleProperties/<a class="el" href="ResonancePropertiesList_8cpp_source.html">ResonancePropertiesList.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

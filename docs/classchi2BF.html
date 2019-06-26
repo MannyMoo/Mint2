@@ -156,7 +156,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:abd46865209ec71c2579a8e3009cd387c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMINT_1_1FitParameter.html">FitParameter</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchi2BF.html#abd46865209ec71c2579a8e3009cd387c">_fit_couplings</a></td></tr>
 <tr class="separator:abd46865209ec71c2579a8e3009cd387c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00413">413</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6a62c68c5b80e3fdc1128e3d2bd2b42f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -213,6 +216,17 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00424">424</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                                                                                                                                                           :</div><div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <a class="code" href="classchi2BF.html#ad29673ad9b07c3ec0d1d3948d78ca1bb">_precision</a>(precision), <a class="code" href="classchi2BF.html#af6ff177e1d5fe6fa6adf5752c6e89c35">_BF</a>(BF), <a class="code" href="classchi2BF.html#a0524415182000b4667fa49204c722be0">_m0</a>(m0), <a class="code" href="classchi2BF.html#a4613765414efe7f1d15abbcf79ff8474">_gamma0</a>(gamma0), <a class="code" href="classchi2BF.html#a0354ed39b9a3ee8f98232f199bf620a7">_partialWidths</a>(partialWidths), <a class="code" href="classchi2BF.html#abd46865209ec71c2579a8e3009cd387c">_fit_couplings</a>(fit_couplings)</div><div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    {</div><div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <a class="code" href="classchi2BF.html#a0d9ebe2ecb8457364853adc3d4cd4d46">_s_min</a>= 0;</div><div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            <a class="code" href="classchi2BF.html#a665322747d0af66030fa20aa5c9b7516">_s_max</a>= pow( (<a class="code" href="classchi2BF.html#a0524415182000b4667fa49204c722be0">_m0</a>+10*<a class="code" href="classchi2BF.html#a4613765414efe7f1d15abbcf79ff8474">_gamma0</a>)/<a class="code" href="CLHEPSystemOfUnits_8h.html#aec0e126d9991db8ad0b26139f5860568">GeV</a> , 2);</div><div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    }</div><div class="ttc" id="classchi2BF_html_a0d9ebe2ecb8457364853adc3d4cd4d46"><div class="ttname"><a href="classchi2BF.html#a0d9ebe2ecb8457364853adc3d4cd4d46">chi2BF::_s_min</a></div><div class="ttdeci">double _s_min</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00418">RunningWidthCalculator.cpp:418</a></div></div>
+<div class="ttc" id="classchi2BF_html_a4613765414efe7f1d15abbcf79ff8474"><div class="ttname"><a href="classchi2BF.html#a4613765414efe7f1d15abbcf79ff8474">chi2BF::_gamma0</a></div><div class="ttdeci">double _gamma0</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00417">RunningWidthCalculator.cpp:417</a></div></div>
+<div class="ttc" id="classchi2BF_html_af6ff177e1d5fe6fa6adf5752c6e89c35"><div class="ttname"><a href="classchi2BF.html#af6ff177e1d5fe6fa6adf5752c6e89c35">chi2BF::_BF</a></div><div class="ttdeci">std::vector&lt; double &gt; _BF</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00415">RunningWidthCalculator.cpp:415</a></div></div>
+<div class="ttc" id="classchi2BF_html_a665322747d0af66030fa20aa5c9b7516"><div class="ttname"><a href="classchi2BF.html#a665322747d0af66030fa20aa5c9b7516">chi2BF::_s_max</a></div><div class="ttdeci">double _s_max</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00419">RunningWidthCalculator.cpp:419</a></div></div>
+<div class="ttc" id="classchi2BF_html_ad29673ad9b07c3ec0d1d3948d78ca1bb"><div class="ttname"><a href="classchi2BF.html#ad29673ad9b07c3ec0d1d3948d78ca1bb">chi2BF::_precision</a></div><div class="ttdeci">double _precision</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00414">RunningWidthCalculator.cpp:414</a></div></div>
+<div class="ttc" id="classchi2BF_html_abd46865209ec71c2579a8e3009cd387c"><div class="ttname"><a href="classchi2BF.html#abd46865209ec71c2579a8e3009cd387c">chi2BF::_fit_couplings</a></div><div class="ttdeci">std::vector&lt; FitParameter * &gt; _fit_couplings</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00421">RunningWidthCalculator.cpp:421</a></div></div>
+<div class="ttc" id="CLHEPSystemOfUnits_8h_html_aec0e126d9991db8ad0b26139f5860568"><div class="ttname"><a href="CLHEPSystemOfUnits_8h.html#aec0e126d9991db8ad0b26139f5860568">GeV</a></div><div class="ttdeci">static const double GeV</div><div class="ttdef"><b>Definition:</b> <a href="CLHEPSystemOfUnits_8h_source.html#l00152">CLHEPSystemOfUnits.h:152</a></div></div>
+<div class="ttc" id="classchi2BF_html_a0354ed39b9a3ee8f98232f199bf620a7"><div class="ttname"><a href="classchi2BF.html#a0354ed39b9a3ee8f98232f199bf620a7">chi2BF::_partialWidths</a></div><div class="ttdeci">std::vector&lt; TF1 * &gt; _partialWidths</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00420">RunningWidthCalculator.cpp:420</a></div></div>
+<div class="ttc" id="classchi2BF_html_a0524415182000b4667fa49204c722be0"><div class="ttname"><a href="classchi2BF.html#a0524415182000b4667fa49204c722be0">chi2BF::_m0</a></div><div class="ttdeci">double _m0</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00416">RunningWidthCalculator.cpp:416</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -239,6 +253,17 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1Minimisable.html#aa878cc14692e6bb4218853ecaad830ce">MINT::Minimisable</a>.</p>
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00430">430</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                   {</div><div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <a class="code" href="classBF__Integrand.html">BF_Integrand</a> integrand(<a class="code" href="classchi2BF.html#a0354ed39b9a3ee8f98232f199bf620a7">_partialWidths</a>,<a class="code" href="classchi2BF.html#abd46865209ec71c2579a8e3009cd387c">_fit_couplings</a>,<a class="code" href="classchi2BF.html#a0524415182000b4667fa49204c722be0">_m0</a>,<a class="code" href="classchi2BF.html#a4613765414efe7f1d15abbcf79ff8474">_gamma0</a>);</div><div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keywordtype">double</span> sum = 0.;</div><div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        vector&lt;double&gt; integrals;</div><div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i &lt; <a class="code" href="classchi2BF.html#af6ff177e1d5fe6fa6adf5752c6e89c35">_BF</a>.size() ; i++) {</div><div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;             integrand.setIndex(i);</div><div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;             ROOT::Math::IntegratorOneDim integrator(integrand) ;</div><div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;             <span class="keywordtype">double</span> integral = integrator.Integral( <a class="code" href="classchi2BF.html#a0d9ebe2ecb8457364853adc3d4cd4d46">_s_min</a>, <a class="code" href="classchi2BF.html#a665322747d0af66030fa20aa5c9b7516">_s_max</a> );</div><div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;             integrals.push_back(integral);</div><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        }</div><div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="keywordtype">double</span> norm = 0.;</div><div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i &lt; <a class="code" href="classchi2BF.html#af6ff177e1d5fe6fa6adf5752c6e89c35">_BF</a>.size() ; i++) {</div><div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            norm += integrals[i];</div><div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        }</div><div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i &lt; <a class="code" href="classchi2BF.html#af6ff177e1d5fe6fa6adf5752c6e89c35">_BF</a>.size() ; i++) {</div><div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            sum += pow( (<a class="code" href="classchi2BF.html#af6ff177e1d5fe6fa6adf5752c6e89c35">_BF</a>[i]-integrals[i]/norm) /<a class="code" href="classchi2BF.html#ad29673ad9b07c3ec0d1d3948d78ca1bb">_precision</a> ,2);</div><div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        }</div><div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <span class="keywordflow">return</span> sum;</div><div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    }</div><div class="ttc" id="classchi2BF_html_a0d9ebe2ecb8457364853adc3d4cd4d46"><div class="ttname"><a href="classchi2BF.html#a0d9ebe2ecb8457364853adc3d4cd4d46">chi2BF::_s_min</a></div><div class="ttdeci">double _s_min</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00418">RunningWidthCalculator.cpp:418</a></div></div>
+<div class="ttc" id="classchi2BF_html_a4613765414efe7f1d15abbcf79ff8474"><div class="ttname"><a href="classchi2BF.html#a4613765414efe7f1d15abbcf79ff8474">chi2BF::_gamma0</a></div><div class="ttdeci">double _gamma0</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00417">RunningWidthCalculator.cpp:417</a></div></div>
+<div class="ttc" id="classchi2BF_html_af6ff177e1d5fe6fa6adf5752c6e89c35"><div class="ttname"><a href="classchi2BF.html#af6ff177e1d5fe6fa6adf5752c6e89c35">chi2BF::_BF</a></div><div class="ttdeci">std::vector&lt; double &gt; _BF</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00415">RunningWidthCalculator.cpp:415</a></div></div>
+<div class="ttc" id="classchi2BF_html_a665322747d0af66030fa20aa5c9b7516"><div class="ttname"><a href="classchi2BF.html#a665322747d0af66030fa20aa5c9b7516">chi2BF::_s_max</a></div><div class="ttdeci">double _s_max</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00419">RunningWidthCalculator.cpp:419</a></div></div>
+<div class="ttc" id="classchi2BF_html_ad29673ad9b07c3ec0d1d3948d78ca1bb"><div class="ttname"><a href="classchi2BF.html#ad29673ad9b07c3ec0d1d3948d78ca1bb">chi2BF::_precision</a></div><div class="ttdeci">double _precision</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00414">RunningWidthCalculator.cpp:414</a></div></div>
+<div class="ttc" id="classchi2BF_html_abd46865209ec71c2579a8e3009cd387c"><div class="ttname"><a href="classchi2BF.html#abd46865209ec71c2579a8e3009cd387c">chi2BF::_fit_couplings</a></div><div class="ttdeci">std::vector&lt; FitParameter * &gt; _fit_couplings</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00421">RunningWidthCalculator.cpp:421</a></div></div>
+<div class="ttc" id="classchi2BF_html_a0354ed39b9a3ee8f98232f199bf620a7"><div class="ttname"><a href="classchi2BF.html#a0354ed39b9a3ee8f98232f199bf620a7">chi2BF::_partialWidths</a></div><div class="ttdeci">std::vector&lt; TF1 * &gt; _partialWidths</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00420">RunningWidthCalculator.cpp:420</a></div></div>
+<div class="ttc" id="classBF__Integrand_html"><div class="ttname"><a href="classBF__Integrand.html">BF_Integrand</a></div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00362">RunningWidthCalculator.cpp:362</a></div></div>
+<div class="ttc" id="classchi2BF_html_a0524415182000b4667fa49204c722be0"><div class="ttname"><a href="classchi2BF.html#a0524415182000b4667fa49204c722be0">chi2BF::_m0</a></div><div class="ttdeci">double _m0</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00416">RunningWidthCalculator.cpp:416</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -260,6 +285,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00415">415</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abd46865209ec71c2579a8e3009cd387c"></a>
@@ -279,6 +306,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00421">421</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
 
 </div>
 </div>
@@ -300,6 +329,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00417">417</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0524415182000b4667fa49204c722be0"></a>
@@ -319,6 +350,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00416">416</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
 
 </div>
 </div>
@@ -340,6 +373,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00420">420</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad29673ad9b07c3ec0d1d3948d78ca1bb"></a>
@@ -359,6 +394,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00414">414</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
 
 </div>
 </div>
@@ -380,6 +417,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00419">419</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0d9ebe2ecb8457364853adc3d4cd4d46"></a>
@@ -400,10 +439,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00418">418</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/Lineshapes/<a class="el" href="RunningWidthCalculator_8cpp.html">RunningWidthCalculator.cpp</a></li>
+<li>Mint2/src/Mojito/Lineshapes/<a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

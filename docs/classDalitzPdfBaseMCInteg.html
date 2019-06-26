@@ -224,7 +224,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a0bee2a14e0f43449b3b7ec1c641dc685"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; <a class="el" href="classMINT_1_1IEventGenerator.html">MINT::IEventGenerator</a>&lt; <a class="el" href="classIDalitzEvent.html">IDalitzEvent</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDalitzPdfBaseMCInteg.html#a0bee2a14e0f43449b3b7ec1c641dc685">_defaultGenerator</a></td></tr>
 <tr class="separator:a0bee2a14e0f43449b3b7ec1c641dc685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00050">50</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a28c690e0cb212fccba26674ed6484af2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -267,6 +270,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00062">62</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  : <a class="code" href="classMINT_1_1PdfBase.html">PdfBase&lt;IDalitzEvent&gt;</a>()</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">_mps</a>(mps)</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">_pat</a>(pat)</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a>(-1)</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#a63db0a97f6ec74ae63b98b586bc0db7b">_precision</a>(prec)</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">_amps</a>(amps)</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#aa2ea264cf41bdbf59221330b865627d1">_val</a>(-1)</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">_generator</a>(generator)</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">_integrating</a>(0)</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#a0bee2a14e0f43449b3b7ec1c641dc685">_defaultGenerator</a>(0)</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a63db0a97f6ec74ae63b98b586bc0db7b"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a63db0a97f6ec74ae63b98b586bc0db7b">DalitzPdfBaseMCInteg::_precision</a></div><div class="ttdeci">double _precision</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00058">DalitzPdfBaseMCInteg.h:58</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a716e653c7845827fbec4e1096bf9234d"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">DalitzPdfBaseMCInteg::_generator</a></div><div class="ttdeci">MINT::IEventGenerator&lt; IDalitzEvent &gt; * _generator</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00063">DalitzPdfBaseMCInteg.h:63</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_af071dc2fcbaa46abe5fd9ab84bf9a77e"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">DalitzPdfBaseMCInteg::_norm</a></div><div class="ttdeci">double _norm</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00057">DalitzPdfBaseMCInteg.h:57</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_abcb14f7f3c64afa867b7d1e053c07c35"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">DalitzPdfBaseMCInteg::_mps</a></div><div class="ttdeci">MINT::MinuitParameterSet * _mps</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00055">DalitzPdfBaseMCInteg.h:55</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a3df4da1308382a47fe6afec621050c13"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">DalitzPdfBaseMCInteg::_pat</a></div><div class="ttdeci">DalitzEventPattern _pat</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00056">DalitzPdfBaseMCInteg.h:56</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a0bee2a14e0f43449b3b7ec1c641dc685"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a0bee2a14e0f43449b3b7ec1c641dc685">DalitzPdfBaseMCInteg::_defaultGenerator</a></div><div class="ttdeci">MINT::counted_ptr&lt; MINT::IEventGenerator&lt; IDalitzEvent &gt; &gt; _defaultGenerator</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00065">DalitzPdfBaseMCInteg.h:65</a></div></div>
+<div class="ttc" id="classMINT_1_1PdfBase_html"><div class="ttname"><a href="classMINT_1_1PdfBase.html">MINT::PdfBase&lt; IDalitzEvent &gt;</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a272b490d399b7a2bbcff74305f55d8a0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">DalitzPdfBaseMCInteg::_integrating</a></div><div class="ttdeci">bool _integrating</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00064">DalitzPdfBaseMCInteg.h:64</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_aeb6c103a5c2dafee354083b31c51b3b0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">DalitzPdfBaseMCInteg::_amps</a></div><div class="ttdeci">IFastAmplitudeIntegrable * _amps</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00060">DalitzPdfBaseMCInteg.h:60</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_aa2ea264cf41bdbf59221330b865627d1"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#aa2ea264cf41bdbf59221330b865627d1">DalitzPdfBaseMCInteg::_val</a></div><div class="ttdeci">double _val</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00061">DalitzPdfBaseMCInteg.h:61</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a864c44d26c13b1a55d76817ec8253635"></a>
@@ -283,6 +298,21 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00078">78</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  : <a class="code" href="classMINT_1_1IReturnRealForEvent.html">IReturnRealForEvent&lt;IDalitzEvent&gt;</a>()</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  , <a class="code" href="classMINT_1_1IPdf.html">IPdf&lt;IDalitzEvent&gt;</a>()</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  , <a class="code" href="classIDalitzPdf.html">IDalitzPdf</a>()</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  , <a class="code" href="classMINT_1_1PdfBase.html">PdfBase&lt;IDalitzEvent&gt;</a>(other)</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">_mps</a>(other.<a class="code" href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">_mps</a>)</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">_pat</a>(other.<a class="code" href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">_pat</a>)</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a>(other.<a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a>)</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#a63db0a97f6ec74ae63b98b586bc0db7b">_precision</a>(other.<a class="code" href="classDalitzPdfBaseMCInteg.html#a63db0a97f6ec74ae63b98b586bc0db7b">_precision</a>)</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">_amps</a>(other.<a class="code" href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">_amps</a>)</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#aa2ea264cf41bdbf59221330b865627d1">_val</a>(-1)</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">_generator</a>(other.<a class="code" href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">_generator</a>)</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">_integrating</a>(other.<a class="code" href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">_integrating</a>)</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  , <a class="code" href="classDalitzPdfBaseMCInteg.html#a0bee2a14e0f43449b3b7ec1c641dc685">_defaultGenerator</a>(other.<a class="code" href="classDalitzPdfBaseMCInteg.html#a0bee2a14e0f43449b3b7ec1c641dc685">_defaultGenerator</a>)</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div><div class="ttc" id="classMINT_1_1IPdf_html"><div class="ttname"><a href="classMINT_1_1IPdf.html">MINT::IPdf&lt; IDalitzEvent &gt;</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a63db0a97f6ec74ae63b98b586bc0db7b"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a63db0a97f6ec74ae63b98b586bc0db7b">DalitzPdfBaseMCInteg::_precision</a></div><div class="ttdeci">double _precision</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00058">DalitzPdfBaseMCInteg.h:58</a></div></div>
+<div class="ttc" id="classIDalitzPdf_html"><div class="ttname"><a href="classIDalitzPdf.html">IDalitzPdf</a></div><div class="ttdef"><b>Definition:</b> <a href="IDalitzPdf_8h_source.html#l00009">IDalitzPdf.h:9</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a716e653c7845827fbec4e1096bf9234d"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">DalitzPdfBaseMCInteg::_generator</a></div><div class="ttdeci">MINT::IEventGenerator&lt; IDalitzEvent &gt; * _generator</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00063">DalitzPdfBaseMCInteg.h:63</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_af071dc2fcbaa46abe5fd9ab84bf9a77e"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">DalitzPdfBaseMCInteg::_norm</a></div><div class="ttdeci">double _norm</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00057">DalitzPdfBaseMCInteg.h:57</a></div></div>
+<div class="ttc" id="classMINT_1_1IReturnRealForEvent_html"><div class="ttname"><a href="classMINT_1_1IReturnRealForEvent.html">MINT::IReturnRealForEvent&lt; IDalitzEvent &gt;</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_abcb14f7f3c64afa867b7d1e053c07c35"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">DalitzPdfBaseMCInteg::_mps</a></div><div class="ttdeci">MINT::MinuitParameterSet * _mps</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00055">DalitzPdfBaseMCInteg.h:55</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a3df4da1308382a47fe6afec621050c13"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">DalitzPdfBaseMCInteg::_pat</a></div><div class="ttdeci">DalitzEventPattern _pat</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00056">DalitzPdfBaseMCInteg.h:56</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a0bee2a14e0f43449b3b7ec1c641dc685"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a0bee2a14e0f43449b3b7ec1c641dc685">DalitzPdfBaseMCInteg::_defaultGenerator</a></div><div class="ttdeci">MINT::counted_ptr&lt; MINT::IEventGenerator&lt; IDalitzEvent &gt; &gt; _defaultGenerator</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00065">DalitzPdfBaseMCInteg.h:65</a></div></div>
+<div class="ttc" id="classMINT_1_1PdfBase_html"><div class="ttname"><a href="classMINT_1_1PdfBase.html">MINT::PdfBase&lt; IDalitzEvent &gt;</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a272b490d399b7a2bbcff74305f55d8a0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">DalitzPdfBaseMCInteg::_integrating</a></div><div class="ttdeci">bool _integrating</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00064">DalitzPdfBaseMCInteg.h:64</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_aeb6c103a5c2dafee354083b31c51b3b0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">DalitzPdfBaseMCInteg::_amps</a></div><div class="ttdeci">IFastAmplitudeIntegrable * _amps</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00060">DalitzPdfBaseMCInteg.h:60</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_aa2ea264cf41bdbf59221330b865627d1"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#aa2ea264cf41bdbf59221330b865627d1">DalitzPdfBaseMCInteg::_val</a></div><div class="ttdeci">double _val</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00061">DalitzPdfBaseMCInteg.h:61</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0b6a4b8bb7dde06a25ef57879d2175c1"></a>
@@ -306,6 +336,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00095">95</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                           {</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -323,6 +355,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00185">185</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                                        {</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="comment">//_faint.doFinalStats(mini);</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  (void)mini;</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a01041d2fc4541e2a178a70adf176525c"></a>
@@ -348,6 +382,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classMINT_1_1PdfBase.html#af417184544673b17b16522731d1ee31e">MINT::PdfBase&lt; IDalitzEvent &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00180">180</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                                 {</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="comment">//_faint.doFinalStats();</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a032c132134334b2513c5a5a836116e99"></a>
@@ -371,6 +407,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00098">98</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                                       {</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">if</span>(0 == <a class="code" href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">_amps</a> &amp;&amp; (! <a class="code" href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">_pat</a>.<a class="code" href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">empty</a>())){</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">_amps</a> = <span class="keyword">new</span> <a class="code" href="classFitAmpSum.html">FitAmpSum</a>(<a class="code" href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">_pat</a>, <a class="code" href="classDalitzPdfBaseMCInteg.html#a110e586b215ed3aef2cdba49e3426008">getMPS</a>());</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">_amps</a>;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_ac4fc13b1887479f6f4cdf2e95c373a0f"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">MINT::PolymorphVector::empty</a></div><div class="ttdeci">bool empty() const </div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00047">PolymorphVector.h:47</a></div></div>
+<div class="ttc" id="classFitAmpSum_html"><div class="ttname"><a href="classFitAmpSum.html">FitAmpSum</a></div><div class="ttdef"><b>Definition:</b> <a href="FitAmpSum_8h_source.html#l00026">FitAmpSum.h:26</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a3df4da1308382a47fe6afec621050c13"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">DalitzPdfBaseMCInteg::_pat</a></div><div class="ttdeci">DalitzEventPattern _pat</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00056">DalitzPdfBaseMCInteg.h:56</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a110e586b215ed3aef2cdba49e3426008"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a110e586b215ed3aef2cdba49e3426008">DalitzPdfBaseMCInteg::getMPS</a></div><div class="ttdeci">MINT::MinuitParameterSet * getMPS()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00013">DalitzPdfBaseMCInteg.cpp:13</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_aeb6c103a5c2dafee354083b31c51b3b0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">DalitzPdfBaseMCInteg::_amps</a></div><div class="ttdeci">IFastAmplitudeIntegrable * _amps</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00060">DalitzPdfBaseMCInteg.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a66aa3bd44c9b618d027955b9a1e8eec8"></a>
@@ -386,6 +429,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00041">41</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                                      {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">if</span>(0 == <a class="code" href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">_generator</a>) <a class="code" href="classDalitzPdfBaseMCInteg.html#a9fe7342565aa466f09b7c035bb27041c">makeDefaultGenerator</a>();</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">_generator</a>;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a716e653c7845827fbec4e1096bf9234d"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">DalitzPdfBaseMCInteg::_generator</a></div><div class="ttdeci">MINT::IEventGenerator&lt; IDalitzEvent &gt; * _generator</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00063">DalitzPdfBaseMCInteg.h:63</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a9fe7342565aa466f09b7c035bb27041c"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a9fe7342565aa466f09b7c035bb27041c">DalitzPdfBaseMCInteg::makeDefaultGenerator</a></div><div class="ttdeci">MINT::IEventGenerator&lt; IDalitzEvent &gt; * makeDefaultGenerator()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00032">DalitzPdfBaseMCInteg.cpp:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a175e6923403057548da62bd137caadf8"></a>
@@ -401,6 +448,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00045">45</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                                                 {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span>(0 == <a class="code" href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">_generator</a>){</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;WARNING in DalitzPdfBaseMCInteg::getEventGenerator() const&quot;</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;     &lt;&lt; <span class="stringliteral">&quot; returning 0 pointer.&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">_generator</a>;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a716e653c7845827fbec4e1096bf9234d"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">DalitzPdfBaseMCInteg::_generator</a></div><div class="ttdeci">MINT::IEventGenerator&lt; IDalitzEvent &gt; * _generator</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00063">DalitzPdfBaseMCInteg.h:63</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab25b55d0acbe227fe08197cede172ac2"></a>
@@ -424,6 +474,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00145">145</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">_amps</a>;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_aeb6c103a5c2dafee354083b31c51b3b0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#aeb6c103a5c2dafee354083b31c51b3b0">DalitzPdfBaseMCInteg::_amps</a></div><div class="ttdeci">IFastAmplitudeIntegrable * _amps</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00060">DalitzPdfBaseMCInteg.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4b986d6da497ef2048b127d27bf2bab1"></a>
@@ -447,6 +500,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00148">148</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                 {</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a>;</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  }</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_af071dc2fcbaa46abe5fd9ab84bf9a77e"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">DalitzPdfBaseMCInteg::_norm</a></div><div class="ttdeci">double _norm</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00057">DalitzPdfBaseMCInteg.h:57</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a378b21b69c28377aeb813be28ddc3d5a"></a>
@@ -470,6 +526,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00151">151</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                           {</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a> &lt; 0)</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <a class="code" href="classDalitzPdfBaseMCInteg.html#a1008980f41047250ae0fe1427128914b">getNorm</a>();</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a>;</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  }</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_af071dc2fcbaa46abe5fd9ab84bf9a77e"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">DalitzPdfBaseMCInteg::_norm</a></div><div class="ttdeci">double _norm</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00057">DalitzPdfBaseMCInteg.h:57</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a1008980f41047250ae0fe1427128914b"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a1008980f41047250ae0fe1427128914b">DalitzPdfBaseMCInteg::getNorm</a></div><div class="ttdeci">virtual bool getNorm()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00021">DalitzPdfBaseMCInteg.cpp:21</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a110e586b215ed3aef2cdba49e3426008"></a>
@@ -485,6 +545,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00013">13</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">return</span> (0 == <a class="code" href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">_mps</a> ? MinuitParameterSet::getDefaultSet() : <a class="code" href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">_mps</a>);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_abcb14f7f3c64afa867b7d1e053c07c35"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">DalitzPdfBaseMCInteg::_mps</a></div><div class="ttdeci">MINT::MinuitParameterSet * _mps</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00055">DalitzPdfBaseMCInteg.h:55</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a331088f06f485eb7421b2ad39e2b8e88"></a>
@@ -500,6 +563,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00016">16</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                            {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">return</span> (0 == <a class="code" href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">_mps</a> ? MinuitParameterSet::getDefaultSet() : <a class="code" href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">_mps</a>);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_abcb14f7f3c64afa867b7d1e053c07c35"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#abcb14f7f3c64afa867b7d1e053c07c35">DalitzPdfBaseMCInteg::_mps</a></div><div class="ttdeci">MINT::MinuitParameterSet * _mps</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00055">DalitzPdfBaseMCInteg.h:55</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aef4382a17fe7700b0a00d4760b7eda58"></a>
@@ -526,6 +592,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classMINT_1_1PdfBase.html#ac443a4cec56fa810f2cd619e7d7e1236">MINT::PdfBase&lt; IDalitzEvent &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00102">102</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                             {</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    this-&gt;<a class="code" href="classDalitzPdfBaseMCInteg.html#a06080a6fbe867e8976b4d8ce56e0dc57">parametersChanged</a>();</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a51c24b7d620aa064085f152dc3936b4c">getVal</a>(evt);</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  };</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a06080a6fbe867e8976b4d8ce56e0dc57"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a06080a6fbe867e8976b4d8ce56e0dc57">DalitzPdfBaseMCInteg::parametersChanged</a></div><div class="ttdeci">void parametersChanged()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00058">DalitzPdfBaseMCInteg.cpp:58</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a51c24b7d620aa064085f152dc3936b4c"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a51c24b7d620aa064085f152dc3936b4c">DalitzPdfBaseMCInteg::getVal</a></div><div class="ttdeci">virtual double getVal(IDalitzEvent &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00112">DalitzPdfBaseMCInteg.cpp:112</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9fb596584f726cc621346689b9cca367"></a>
@@ -550,6 +620,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00120">120</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                             {</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    this-&gt;<a class="code" href="classDalitzPdfBaseMCInteg.html#a06080a6fbe867e8976b4d8ce56e0dc57">parametersChanged</a>();</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span>(0 == evt) <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#aef4382a17fe7700b0a00d4760b7eda58">getNewVal</a>(*evt);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  }</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_aef4382a17fe7700b0a00d4760b7eda58"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#aef4382a17fe7700b0a00d4760b7eda58">DalitzPdfBaseMCInteg::getNewVal</a></div><div class="ttdeci">virtual double getNewVal(IDalitzEvent &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00102">DalitzPdfBaseMCInteg.h:102</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a06080a6fbe867e8976b4d8ce56e0dc57"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a06080a6fbe867e8976b4d8ce56e0dc57">DalitzPdfBaseMCInteg::parametersChanged</a></div><div class="ttdeci">void parametersChanged()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00058">DalitzPdfBaseMCInteg.cpp:58</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1008980f41047250ae0fe1427128914b"></a>
@@ -573,6 +647,19 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00021">21</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                  {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">_integrating</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="classDalitzPdfBaseMCInteg.html#ad52f61340438a40e594708797ddcf0d7">_mcint</a>.<a class="code" href="classDalitzMCIntegrator.html#af0e655a685b9340bea9519648b554717">initialised</a>())<a class="code" href="classDalitzPdfBaseMCInteg.html#ad52f61340438a40e594708797ddcf0d7">_mcint</a>.<a class="code" href="classDalitzMCIntegrator.html#a99aac063ea8a8fdd74c798176d8f0cc0">initialise</a>(<a class="code" href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">_pat</a>, <a class="code" href="classDalitzPdfBaseMCInteg.html#a032c132134334b2513c5a5a836116e99">getAmps</a>(), <a class="code" href="classDalitzPdfBaseMCInteg.html#a66aa3bd44c9b618d027955b9a1e8eec8">getEventGenerator</a>(), gRandom, <a class="code" href="classDalitzPdfBaseMCInteg.html#a63db0a97f6ec74ae63b98b586bc0db7b">_precision</a>);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">else</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#ad52f61340438a40e594708797ddcf0d7">_mcint</a>.<a class="code" href="classDalitzMCIntegrator.html#a365f2fecd9be5b2732cff60aa3dfbb54">resetIntegrand</a>(<a class="code" href="classDalitzPdfBaseMCInteg.html#a032c132134334b2513c5a5a836116e99">getAmps</a>());</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a> = <a class="code" href="classDalitzPdfBaseMCInteg.html#ad52f61340438a40e594708797ddcf0d7">_mcint</a>.<a class="code" href="classDalitzMCIntegrator.html#ad1255d6a837a901a138e4461b6dd4e08">getVal</a>();</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">_integrating</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a> &gt; 0;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_ad52f61340438a40e594708797ddcf0d7"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#ad52f61340438a40e594708797ddcf0d7">DalitzPdfBaseMCInteg::_mcint</a></div><div class="ttdeci">DalitzMCIntegrator _mcint</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00059">DalitzPdfBaseMCInteg.h:59</a></div></div>
+<div class="ttc" id="classDalitzMCIntegrator_html_af0e655a685b9340bea9519648b554717"><div class="ttname"><a href="classDalitzMCIntegrator.html#af0e655a685b9340bea9519648b554717">DalitzMCIntegrator::initialised</a></div><div class="ttdeci">bool initialised() const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzMCIntegrator_8h_source.html#l00094">DalitzMCIntegrator.h:94</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a63db0a97f6ec74ae63b98b586bc0db7b"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a63db0a97f6ec74ae63b98b586bc0db7b">DalitzPdfBaseMCInteg::_precision</a></div><div class="ttdeci">double _precision</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00058">DalitzPdfBaseMCInteg.h:58</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a032c132134334b2513c5a5a836116e99"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a032c132134334b2513c5a5a836116e99">DalitzPdfBaseMCInteg::getAmps</a></div><div class="ttdeci">IFastAmplitudeIntegrable * getAmps()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00098">DalitzPdfBaseMCInteg.cpp:98</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_af071dc2fcbaa46abe5fd9ab84bf9a77e"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">DalitzPdfBaseMCInteg::_norm</a></div><div class="ttdeci">double _norm</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00057">DalitzPdfBaseMCInteg.h:57</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a66aa3bd44c9b618d027955b9a1e8eec8"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a66aa3bd44c9b618d027955b9a1e8eec8">DalitzPdfBaseMCInteg::getEventGenerator</a></div><div class="ttdeci">MINT::IEventGenerator&lt; IDalitzEvent &gt; * getEventGenerator()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00041">DalitzPdfBaseMCInteg.cpp:41</a></div></div>
+<div class="ttc" id="classDalitzMCIntegrator_html_a99aac063ea8a8fdd74c798176d8f0cc0"><div class="ttname"><a href="classDalitzMCIntegrator.html#a99aac063ea8a8fdd74c798176d8f0cc0">DalitzMCIntegrator::initialise</a></div><div class="ttdeci">bool initialise(const DalitzEventPattern &amp;pattern, MINT::IReturnRealForEvent&lt; IDalitzEvent &gt; *weightFunction=0, MINT::IEventGenerator&lt; IDalitzEvent &gt; *eventGenerator=0, TRandom *rnd=gRandom, double precision=1.e-2)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzMCIntegrator_8cpp_source.html#l00049">DalitzMCIntegrator.cpp:49</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a3df4da1308382a47fe6afec621050c13"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">DalitzPdfBaseMCInteg::_pat</a></div><div class="ttdeci">DalitzEventPattern _pat</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00056">DalitzPdfBaseMCInteg.h:56</a></div></div>
+<div class="ttc" id="classDalitzMCIntegrator_html_ad1255d6a837a901a138e4461b6dd4e08"><div class="ttname"><a href="classDalitzMCIntegrator.html#ad1255d6a837a901a138e4461b6dd4e08">DalitzMCIntegrator::getVal</a></div><div class="ttdeci">double getVal()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzMCIntegrator_8cpp_source.html#l00238">DalitzMCIntegrator.cpp:238</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a272b490d399b7a2bbcff74305f55d8a0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">DalitzPdfBaseMCInteg::_integrating</a></div><div class="ttdeci">bool _integrating</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00064">DalitzPdfBaseMCInteg.h:64</a></div></div>
+<div class="ttc" id="classDalitzMCIntegrator_html_a365f2fecd9be5b2732cff60aa3dfbb54"><div class="ttname"><a href="classDalitzMCIntegrator.html#a365f2fecd9be5b2732cff60aa3dfbb54">DalitzMCIntegrator::resetIntegrand</a></div><div class="ttdeci">bool resetIntegrand(MINT::IReturnRealForEvent&lt; IDalitzEvent &gt; *weightFunction=0)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzMCIntegrator_8cpp_source.html#l00073">DalitzMCIntegrator.cpp:73</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a51c24b7d620aa064085f152dc3936b4c"></a>
@@ -599,6 +686,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classIDalitzPdf.html#ad8d943f48ce67d1417aa46b972ffd1a8">IDalitzPdf</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00112">112</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                                    {</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">//if(_integrating) return getVal_withPs(evt);else </span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a234f4de85f20d7547084e5b88ab984c2">getVal_noPs</a>(evt);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a234f4de85f20d7547084e5b88ab984c2"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a234f4de85f20d7547084e5b88ab984c2">DalitzPdfBaseMCInteg::getVal_noPs</a></div><div class="ttdeci">virtual double getVal_noPs(IDalitzEvent &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00116">DalitzPdfBaseMCInteg.cpp:116</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7495dc53417f7961282562d07ab803e5"></a>
@@ -625,6 +715,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classIDalitzPdf.html#ac03cff1621650a26d9c44ceeb62e2498">IDalitzPdf</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00108">108</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                          {</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span>(0 == evt) <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a51c24b7d620aa064085f152dc3936b4c">getVal</a>(*evt);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a51c24b7d620aa064085f152dc3936b4c"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a51c24b7d620aa064085f152dc3936b4c">DalitzPdfBaseMCInteg::getVal</a></div><div class="ttdeci">virtual double getVal(IDalitzEvent &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00112">DalitzPdfBaseMCInteg.cpp:112</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a234f4de85f20d7547084e5b88ab984c2"></a>
@@ -651,6 +744,13 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classIDalitzPdf.html#ac635997121f17be5a29f90ce96cf26c0">IDalitzPdf</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00116">116</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                                         {</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">_integrating</a>){</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// shouldn&#39;t really do that - use getVal or getVal_withPs</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// when you integrate (automatically done in getVal()):</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a3693df1b5a520dee419a06d87719ade0">un_normalised_noPs</a>(evt);</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a> == -1) <a class="code" href="classDalitzPdfBaseMCInteg.html#a1008980f41047250ae0fe1427128914b">getNorm</a>();</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">double</span> num = <a class="code" href="classDalitzPdfBaseMCInteg.html#a3693df1b5a520dee419a06d87719ade0">un_normalised_noPs</a>(evt);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;     <a class="code" href="classDalitzPdfBaseMCInteg.html#aa2ea264cf41bdbf59221330b865627d1">_val</a>= num/<a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a>;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      </div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> num/<a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a>;</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  }</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_af071dc2fcbaa46abe5fd9ab84bf9a77e"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">DalitzPdfBaseMCInteg::_norm</a></div><div class="ttdeci">double _norm</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00057">DalitzPdfBaseMCInteg.h:57</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a1008980f41047250ae0fe1427128914b"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a1008980f41047250ae0fe1427128914b">DalitzPdfBaseMCInteg::getNorm</a></div><div class="ttdeci">virtual bool getNorm()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00021">DalitzPdfBaseMCInteg.cpp:21</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a272b490d399b7a2bbcff74305f55d8a0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">DalitzPdfBaseMCInteg::_integrating</a></div><div class="ttdeci">bool _integrating</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00064">DalitzPdfBaseMCInteg.h:64</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a3693df1b5a520dee419a06d87719ade0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a3693df1b5a520dee419a06d87719ade0">DalitzPdfBaseMCInteg::un_normalised_noPs</a></div><div class="ttdeci">virtual double un_normalised_noPs(IDalitzEvent &amp;evt)=0</div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_aa2ea264cf41bdbf59221330b865627d1"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#aa2ea264cf41bdbf59221330b865627d1">DalitzPdfBaseMCInteg::_val</a></div><div class="ttdeci">double _val</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00061">DalitzPdfBaseMCInteg.h:61</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9e84bbadb61390eaa1bf82d6b5ad8db3"></a>
@@ -677,6 +777,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classIDalitzPdf.html#aab66f28668391ed04e920095a42cd9a5">IDalitzPdf</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00116">116</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                               {</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span>(0 == evt) <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a234f4de85f20d7547084e5b88ab984c2">getVal_noPs</a>(*evt);</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a234f4de85f20d7547084e5b88ab984c2"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a234f4de85f20d7547084e5b88ab984c2">DalitzPdfBaseMCInteg::getVal_noPs</a></div><div class="ttdeci">virtual double getVal_noPs(IDalitzEvent &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00116">DalitzPdfBaseMCInteg.cpp:116</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a53d7c0edc693204e3c7520e3a3194ece"></a>
@@ -703,6 +806,13 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classIDalitzPdf.html#a67d0cfc1fc0269d7195e6089aeb90521">IDalitzPdf</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00130">130</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                                           {</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">_integrating</a>){</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a3693df1b5a520dee419a06d87719ade0">un_normalised_noPs</a>(evt)*<a class="code" href="classDalitzPdfBaseMCInteg.html#a30f0046b6e7a338f9b03608b06a17313">phaseSpace</a>(evt);</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a> == -1) <a class="code" href="classDalitzPdfBaseMCInteg.html#a1008980f41047250ae0fe1427128914b">getNorm</a>();</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">double</span> num = <a class="code" href="classDalitzPdfBaseMCInteg.html#a3693df1b5a520dee419a06d87719ade0">un_normalised_noPs</a>(evt)*<a class="code" href="classDalitzPdfBaseMCInteg.html#a30f0046b6e7a338f9b03608b06a17313">phaseSpace</a>(evt);</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> num/<a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a>;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  }</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_af071dc2fcbaa46abe5fd9ab84bf9a77e"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">DalitzPdfBaseMCInteg::_norm</a></div><div class="ttdeci">double _norm</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00057">DalitzPdfBaseMCInteg.h:57</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a1008980f41047250ae0fe1427128914b"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a1008980f41047250ae0fe1427128914b">DalitzPdfBaseMCInteg::getNorm</a></div><div class="ttdeci">virtual bool getNorm()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00021">DalitzPdfBaseMCInteg.cpp:21</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a272b490d399b7a2bbcff74305f55d8a0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">DalitzPdfBaseMCInteg::_integrating</a></div><div class="ttdeci">bool _integrating</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00064">DalitzPdfBaseMCInteg.h:64</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a3693df1b5a520dee419a06d87719ade0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a3693df1b5a520dee419a06d87719ade0">DalitzPdfBaseMCInteg::un_normalised_noPs</a></div><div class="ttdeci">virtual double un_normalised_noPs(IDalitzEvent &amp;evt)=0</div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a30f0046b6e7a338f9b03608b06a17313"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a30f0046b6e7a338f9b03608b06a17313">DalitzPdfBaseMCInteg::phaseSpace</a></div><div class="ttdeci">virtual double phaseSpace(IDalitzEvent &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00109">DalitzPdfBaseMCInteg.cpp:109</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4a8ff2814867afbcb185ac447d496444"></a>
@@ -729,6 +839,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classIDalitzPdf.html#a590a5282c554adb175342586bc3c0c0a">IDalitzPdf</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00112">112</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                                 {</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span>(0 == evt) <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a53d7c0edc693204e3c7520e3a3194ece">getVal_withPs</a>(*evt);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a53d7c0edc693204e3c7520e3a3194ece"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a53d7c0edc693204e3c7520e3a3194ece">DalitzPdfBaseMCInteg::getVal_withPs</a></div><div class="ttdeci">virtual double getVal_withPs(IDalitzEvent &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00130">DalitzPdfBaseMCInteg.cpp:130</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab6102268fc31b708f10384baba72793e"></a>
@@ -754,6 +867,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classIDalitzPdf.html#a4ca1148748c46548a27ed781d8c3475a">IDalitzPdf</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00142">142</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                             {</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">// non-const version to satisfy IDalitzPdf</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classDalitzPdfBaseMCInteg.html#ad52f61340438a40e594708797ddcf0d7">_mcint</a>.<a class="code" href="classDalitzMCIntegrator.html#a28d4adeb376d7e96969e63ad5a8b3d53">histoSet</a>());</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_ad52f61340438a40e594708797ddcf0d7"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#ad52f61340438a40e594708797ddcf0d7">DalitzPdfBaseMCInteg::_mcint</a></div><div class="ttdeci">DalitzMCIntegrator _mcint</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00059">DalitzPdfBaseMCInteg.h:59</a></div></div>
+<div class="ttc" id="classDalitzMCIntegrator_html_a28d4adeb376d7e96969e63ad5a8b3d53"><div class="ttname"><a href="classDalitzMCIntegrator.html#a28d4adeb376d7e96969e63ad5a8b3d53">DalitzMCIntegrator::histoSet</a></div><div class="ttdeci">DalitzHistoSet histoSet()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzMCIntegrator_8h_source.html#l00109">DalitzMCIntegrator.h:109</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a60d2af9a19858e8ce9fbd6330c69e7b9"></a>
@@ -777,6 +894,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00105">105</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                      {</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">_integrating</a>;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a272b490d399b7a2bbcff74305f55d8a0"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a272b490d399b7a2bbcff74305f55d8a0">DalitzPdfBaseMCInteg::_integrating</a></div><div class="ttdeci">bool _integrating</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00064">DalitzPdfBaseMCInteg.h:64</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9fe7342565aa466f09b7c035bb27041c"></a>
@@ -800,6 +920,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00032">32</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                                                         {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">_pat</a>.<a class="code" href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">empty</a>()) <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">if</span>(0 == <a class="code" href="classDalitzPdfBaseMCInteg.html#a032c132134334b2513c5a5a836116e99">getAmps</a>()) <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="classMINT_1_1counted__ptr.html">counted_ptr&lt;IEventGenerator&lt;IDalitzEvent&gt;</a> &gt; </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ptr(<a class="code" href="classDalitzPdfBaseMCInteg.html#a032c132134334b2513c5a5a836116e99">getAmps</a>()-&gt;makeEventGenerator(<a class="code" href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">_pat</a>));</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="classDalitzPdfBaseMCInteg.html#a0bee2a14e0f43449b3b7ec1c641dc685">_defaultGenerator</a> = ptr;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a0bee2a14e0f43449b3b7ec1c641dc685">_defaultGenerator</a>.<a class="code" href="classMINT_1_1counted__ptr.html#a17552fd77fa7f33f96ce0c6377165ebb">get</a>();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_ac4fc13b1887479f6f4cdf2e95c373a0f"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">MINT::PolymorphVector::empty</a></div><div class="ttdeci">bool empty() const </div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00047">PolymorphVector.h:47</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a032c132134334b2513c5a5a836116e99"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a032c132134334b2513c5a5a836116e99">DalitzPdfBaseMCInteg::getAmps</a></div><div class="ttdeci">IFastAmplitudeIntegrable * getAmps()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00098">DalitzPdfBaseMCInteg.cpp:98</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a17552fd77fa7f33f96ce0c6377165ebb"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a17552fd77fa7f33f96ce0c6377165ebb">MINT::counted_ptr::get</a></div><div class="ttdeci">X * get() const </div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00123">counted_ptr.h:123</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a3df4da1308382a47fe6afec621050c13"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a3df4da1308382a47fe6afec621050c13">DalitzPdfBaseMCInteg::_pat</a></div><div class="ttdeci">DalitzEventPattern _pat</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00056">DalitzPdfBaseMCInteg.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00039">counted_ptr.h:39</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a0bee2a14e0f43449b3b7ec1c641dc685"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a0bee2a14e0f43449b3b7ec1c641dc685">DalitzPdfBaseMCInteg::_defaultGenerator</a></div><div class="ttdeci">MINT::counted_ptr&lt; MINT::IEventGenerator&lt; IDalitzEvent &gt; &gt; _defaultGenerator</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00065">DalitzPdfBaseMCInteg.h:65</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a06080a6fbe867e8976b4d8ce56e0dc57"></a>
@@ -825,6 +953,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classMINT_1_1PdfBase.html#ac819b11102e131a9290e34374f7f5464">MINT::PdfBase&lt; IDalitzEvent &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00058">58</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                            {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="classDalitzPdfBaseMCInteg.html#a1008980f41047250ae0fe1427128914b">getNorm</a>();</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="classDalitzPdfBaseMCInteg.html#aa2ea264cf41bdbf59221330b865627d1">_val</a>= -1;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a1008980f41047250ae0fe1427128914b"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a1008980f41047250ae0fe1427128914b">DalitzPdfBaseMCInteg::getNorm</a></div><div class="ttdeci">virtual bool getNorm()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00021">DalitzPdfBaseMCInteg.cpp:21</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_aa2ea264cf41bdbf59221330b865627d1"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#aa2ea264cf41bdbf59221330b865627d1">DalitzPdfBaseMCInteg::_val</a></div><div class="ttdeci">double _val</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00061">DalitzPdfBaseMCInteg.h:61</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a30f0046b6e7a338f9b03608b06a17313"></a>
@@ -849,6 +981,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00109">109</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                                        {</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordflow">return</span> evt.<a class="code" href="classIDalitzEvent.html#a6137df5335f77ae75abd5e5633cd45c4">phaseSpace</a>();</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div><div class="ttc" id="classIDalitzEvent_html_a6137df5335f77ae75abd5e5633cd45c4"><div class="ttname"><a href="classIDalitzEvent.html#a6137df5335f77ae75abd5e5633cd45c4">IDalitzEvent::phaseSpace</a></div><div class="ttdeci">virtual double phaseSpace() const  =0</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab7fd3eaeb3fff38a5b7e0bf3f9c9dda1"></a>
@@ -875,6 +1010,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classMINT_1_1PdfBase.html#af6c96ebdb4fc0bf8dbafc7fa34477519">MINT::PdfBase&lt; IDalitzEvent &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00126">126</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#a51c24b7d620aa064085f152dc3936b4c">getVal</a>(evt);}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a51c24b7d620aa064085f152dc3936b4c"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a51c24b7d620aa064085f152dc3936b4c">DalitzPdfBaseMCInteg::getVal</a></div><div class="ttdeci">virtual double getVal(IDalitzEvent &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00112">DalitzPdfBaseMCInteg.cpp:112</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae518656b0efa003e6211c21b7f0b895b"></a>
@@ -898,6 +1036,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00157">157</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                         {</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a> = -1;</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="classDalitzPdfBaseMCInteg.html#a1008980f41047250ae0fe1427128914b">getNorm</a>();</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">_norm</a>;</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  }</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_af071dc2fcbaa46abe5fd9ab84bf9a77e"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#af071dc2fcbaa46abe5fd9ab84bf9a77e">DalitzPdfBaseMCInteg::_norm</a></div><div class="ttdeci">double _norm</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00057">DalitzPdfBaseMCInteg.h:57</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a1008980f41047250ae0fe1427128914b"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a1008980f41047250ae0fe1427128914b">DalitzPdfBaseMCInteg::getNorm</a></div><div class="ttdeci">virtual bool getNorm()</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8cpp_source.html#l00021">DalitzPdfBaseMCInteg.cpp:21</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aad35c9e49a11247ff868436461d03978"></a>
@@ -922,6 +1064,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00093">93</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{<a class="code" href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">_generator</a>=<a class="code" href="CLHEPSystemOfUnits_8h.html#a6e550921d5c2c78c55be1c0d76512d45">g</a>;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_a716e653c7845827fbec4e1096bf9234d"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a716e653c7845827fbec4e1096bf9234d">DalitzPdfBaseMCInteg::_generator</a></div><div class="ttdeci">MINT::IEventGenerator&lt; IDalitzEvent &gt; * _generator</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00063">DalitzPdfBaseMCInteg.h:63</a></div></div>
+<div class="ttc" id="CLHEPSystemOfUnits_8h_html_a6e550921d5c2c78c55be1c0d76512d45"><div class="ttname"><a href="CLHEPSystemOfUnits_8h.html#a6e550921d5c2c78c55be1c0d76512d45">g</a></div><div class="ttdeci">static const double g</div><div class="ttdef"><b>Definition:</b> <a href="CLHEPSystemOfUnits_8h_source.html#l00165">CLHEPSystemOfUnits.h:165</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a186ef6f2a8be743b602e6d6de9fdd348"></a>
@@ -938,6 +1084,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html#l00053">53</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                             {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="classDalitzPdfBaseMCInteg.html#a63db0a97f6ec74ae63b98b586bc0db7b">_precision</a> = prec;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="classDalitzPdfBaseMCInteg.html#ad52f61340438a40e594708797ddcf0d7">_mcint</a>.<a class="code" href="classDalitzMCIntegrator.html#a3fe98649be6623fbbb4c95e5603eab99">setPrecision</a>(<a class="code" href="classDalitzPdfBaseMCInteg.html#a63db0a97f6ec74ae63b98b586bc0db7b">_precision</a>);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div><div class="ttc" id="classDalitzPdfBaseMCInteg_html_ad52f61340438a40e594708797ddcf0d7"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#ad52f61340438a40e594708797ddcf0d7">DalitzPdfBaseMCInteg::_mcint</a></div><div class="ttdeci">DalitzMCIntegrator _mcint</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00059">DalitzPdfBaseMCInteg.h:59</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseMCInteg_html_a63db0a97f6ec74ae63b98b586bc0db7b"><div class="ttname"><a href="classDalitzPdfBaseMCInteg.html#a63db0a97f6ec74ae63b98b586bc0db7b">DalitzPdfBaseMCInteg::_precision</a></div><div class="ttdeci">double _precision</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseMCInteg_8h_source.html#l00058">DalitzPdfBaseMCInteg.h:58</a></div></div>
+<div class="ttc" id="classDalitzMCIntegrator_html_a3fe98649be6623fbbb4c95e5603eab99"><div class="ttname"><a href="classDalitzMCIntegrator.html#a3fe98649be6623fbbb4c95e5603eab99">DalitzMCIntegrator::setPrecision</a></div><div class="ttdeci">void setPrecision(double prec)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzMCIntegrator_8h_source.html#l00084">DalitzMCIntegrator.h:84</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3693df1b5a520dee419a06d87719ade0"></a>
@@ -983,6 +1134,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00060">60</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a0bee2a14e0f43449b3b7ec1c641dc685"></a>
@@ -1002,6 +1155,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00065">65</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
 
 </div>
 </div>
@@ -1023,6 +1178,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00063">63</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a272b490d399b7a2bbcff74305f55d8a0"></a>
@@ -1042,6 +1199,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00064">64</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
 
 </div>
 </div>
@@ -1063,6 +1222,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00059">59</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abcb14f7f3c64afa867b7d1e053c07c35"></a>
@@ -1082,6 +1243,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00055">55</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
 
 </div>
 </div>
@@ -1103,6 +1266,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00057">57</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3df4da1308382a47fe6afec621050c13"></a>
@@ -1122,6 +1287,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00056">56</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
 
 </div>
 </div>
@@ -1143,6 +1310,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00058">58</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa2ea264cf41bdbf59221330b865627d1"></a>
@@ -1163,11 +1332,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html#l00061">61</a> of file <a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/DalitzFits/<a class="el" href="DalitzPdfBaseMCInteg_8cpp.html">DalitzPdfBaseMCInteg.cpp</a></li>
+<li>Mint2/Mint/<a class="el" href="DalitzPdfBaseMCInteg_8h_source.html">DalitzPdfBaseMCInteg.h</a></li>
+<li>Mint2/src/Mojito/DalitzFits/<a class="el" href="DalitzPdfBaseMCInteg_8cpp_source.html">DalitzPdfBaseMCInteg.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

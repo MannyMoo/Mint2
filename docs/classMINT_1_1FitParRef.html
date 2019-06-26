@@ -149,7 +149,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a9a8b946c04a9784f5b4653a106a434b4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMINT_1_1FitParameter.html">FitParameter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">_fp</a></td></tr>
 <tr class="separator:a9a8b946c04a9784f5b4653a106a434b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00012">12</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="adf9f38e22227e32151d0612e0c4c4819"></a>
 <div class="memitem">
 <div class="memproto">
@@ -174,6 +177,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8cpp_source.html#l00007">7</a> of file <a class="el" href="FitParRef_8cpp_source.html">FitParRef.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  : <a class="code" href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">_lastValue</a>( (-9999. != ((<span class="keywordtype">double</span>) fipa) ? -9999.0 : -9998.0 ))</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  , <a class="code" href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">_fp</a>(&amp;fipa){</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="comment">/*</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">  cout &lt;&lt; &quot;hello from FitParRef::FitParRef with...&quot; &lt;&lt; endl;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">  cout &lt;&lt; &quot;_lastValue = &quot; &lt;&lt; _lastValue &lt;&lt; endl;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">  cout &lt;&lt;  &quot;_fp &quot; &lt;&lt; _fp &lt;&lt; endl;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">  cout &lt;&lt; &quot;daddyPtr = &quot; &lt;&lt; daddyPtr &lt;&lt; endl;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">  */</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">if</span>(0 != daddyPtr) daddyPtr-&gt;<a class="code" href="classMINT_1_1IFitParRegister.html#a1a1ba7eb7a251ea2c4a02e89474f14c4">registerFitParDependence</a>(*<span class="keyword">this</span>);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParRef_html_a9a8b946c04a9784f5b4653a106a434b4"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">MINT::FitParRef::_fp</a></div><div class="ttdeci">const FitParameter * _fp</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00016">FitParRef.h:16</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParRef_html_a37b5d39b9b2f51db2c016286a2750c89"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">MINT::FitParRef::_lastValue</a></div><div class="ttdeci">double _lastValue</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00014">FitParRef.h:14</a></div></div>
+<div class="ttc" id="classMINT_1_1IFitParRegister_html_a1a1ba7eb7a251ea2c4a02e89474f14c4"><div class="ttname"><a href="classMINT_1_1IFitParRegister.html#a1a1ba7eb7a251ea2c4a02e89474f14c4">MINT::IFitParRegister::registerFitParDependence</a></div><div class="ttdeci">virtual bool registerFitParDependence(const IFitParDependent &amp;fpd)=0</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a88207f3db4016a9e6e6aff015abda7d6"></a>
@@ -200,6 +208,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8cpp_source.html#l00019">19</a> of file <a class="el" href="FitParRef_8cpp_source.html">FitParRef.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; : <a class="code" href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">_lastValue</a>( (-9999. != ((<span class="keywordtype">double</span>) other) ? -9999.0 : -9998.0 ))</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//  : _lastValue(other._lastValue)</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  , <a class="code" href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">_fp</a>(other.<a class="code" href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">_fp</a>){</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="comment">/*</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">  cout &lt;&lt; &quot;hello from FitParRef::FitParRef with...&quot; &lt;&lt; endl;</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">  cout &lt;&lt; &quot;_lastValue = &quot; &lt;&lt; _lastValue &lt;&lt; endl;</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">  cout &lt;&lt;  &quot;_fp &quot; &lt;&lt; _fp &lt;&lt; endl;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">  cout &lt;&lt; &quot;daddyPtr = &quot; &lt;&lt; daddyPtr &lt;&lt; endl;</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">  */</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">//cout &lt;&lt; &quot;FitParRef copy constructor called&quot; &lt;&lt; endl;</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span>(0 != newDaddyPtr) newDaddyPtr-&gt;<a class="code" href="classMINT_1_1IFitParRegister.html#a1a1ba7eb7a251ea2c4a02e89474f14c4">registerFitParDependence</a>(*<span class="keyword">this</span>);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParRef_html_a9a8b946c04a9784f5b4653a106a434b4"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">MINT::FitParRef::_fp</a></div><div class="ttdeci">const FitParameter * _fp</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00016">FitParRef.h:16</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParRef_html_a37b5d39b9b2f51db2c016286a2750c89"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">MINT::FitParRef::_lastValue</a></div><div class="ttdeci">double _lastValue</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00014">FitParRef.h:14</a></div></div>
+<div class="ttc" id="classMINT_1_1IFitParRegister_html_a1a1ba7eb7a251ea2c4a02e89474f14c4"><div class="ttname"><a href="classMINT_1_1IFitParRegister.html#a1a1ba7eb7a251ea2c4a02e89474f14c4">MINT::IFitParRegister::registerFitParDependence</a></div><div class="ttdeci">virtual bool registerFitParDependence(const IFitParDependent &amp;fpd)=0</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="adce0a5c77fe06d83f942ffcc3fb38f92"></a>
@@ -223,6 +236,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00051">51</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -249,6 +264,10 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IFitParDependent.html#aaf9bcb940fb899ca6a6191019d93e520">MINT::IFitParDependent</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00028">28</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                             {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordflow">return</span> ( ((<span class="keywordtype">double</span>) <a class="code" href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">fp</a>()) != <a class="code" href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">_lastValue</a>);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div><div class="ttc" id="classMINT_1_1FitParRef_html_a37b5d39b9b2f51db2c016286a2750c89"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">MINT::FitParRef::_lastValue</a></div><div class="ttdeci">double _lastValue</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00014">FitParRef.h:14</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParRef_html_a64929c08d04c9dce89ba345b4fe0604b"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">MINT::FitParRef::fp</a></div><div class="ttdeci">const FitParameter &amp; fp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00017">FitParRef.h:17</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a64929c08d04c9dce89ba345b4fe0604b"></a>
@@ -272,6 +291,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00017">17</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{<span class="keywordflow">return</span> *<a class="code" href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">_fp</a>;}</div><div class="ttc" id="classMINT_1_1FitParRef_html_a9a8b946c04a9784f5b4653a106a434b4"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">MINT::FitParRef::_fp</a></div><div class="ttdeci">const FitParameter * _fp</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00016">FitParRef.h:16</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a185f4630c84e3cd2b2b076b688c7b936"></a>
@@ -295,6 +317,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00045">45</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">_lastValue</a>;}</div><div class="ttc" id="classMINT_1_1FitParRef_html_a37b5d39b9b2f51db2c016286a2750c89"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">MINT::FitParRef::_lastValue</a></div><div class="ttdeci">double _lastValue</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00014">FitParRef.h:14</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a58575c4251a4f9bffb7237635df7ef68"></a>
@@ -321,6 +346,11 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IFitParDependent.html#aad71af0000dec0ce2a14d876b224dbd7">MINT::IFitParDependent</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParRef_8cpp_source.html#l00056">56</a> of file <a class="el" href="FitParRef_8cpp_source.html">FitParRef.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                       {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">bool</span> ch = <a class="code" href="classMINT_1_1FitParRef.html#a064f7fc274bd1e76ce6c4296fed616ec">changedSinceLastCall</a>();</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  os &lt;&lt; <a class="code" href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">fp</a>() &lt;&lt; <span class="stringliteral">&quot;, prev: &quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">_lastValue</a> &lt;&lt; (ch ? <span class="stringliteral">&quot;changed&quot;</span> : <span class="stringliteral">&quot;&quot;</span>) &lt;&lt; endl;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParRef_html_a37b5d39b9b2f51db2c016286a2750c89"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">MINT::FitParRef::_lastValue</a></div><div class="ttdeci">double _lastValue</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00014">FitParRef.h:14</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParRef_html_a064f7fc274bd1e76ce6c4296fed616ec"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a064f7fc274bd1e76ce6c4296fed616ec">MINT::FitParRef::changedSinceLastCall</a></div><div class="ttdeci">virtual bool changedSinceLastCall() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00028">FitParRef.h:28</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParRef_html_a64929c08d04c9dce89ba345b4fe0604b"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">MINT::FitParRef::fp</a></div><div class="ttdeci">const FitParameter &amp; fp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00017">FitParRef.h:17</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a642da01b99365a58229757de40a4e5dd"></a>
@@ -344,6 +374,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00040">40</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                           {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParRef.html#a2d4de390fd8ce441aba656bd6bc4ddca">returnFPVal</a>();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div><div class="ttc" id="classMINT_1_1FitParRef_html_a2d4de390fd8ce441aba656bd6bc4ddca"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a2d4de390fd8ce441aba656bd6bc4ddca">MINT::FitParRef::returnFPVal</a></div><div class="ttdeci">double returnFPVal() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00018">FitParRef.h:18</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4f1f41ec6666f1ae8166558cc091cd1b"></a>
@@ -360,6 +393,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8cpp_source.html#l00034">34</a> of file <a class="el" href="FitParRef_8cpp_source.html">FitParRef.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                   {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">// we seem to need the assignment operator for</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// compatibility with some implementations of </span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">// std::vector. Annoying. Forces us to use ptr</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// instead of refererence for FitParameter.</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">_fp</a> = rhs.<a class="code" href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">_fp</a>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">_lastValue</a> = -9999;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">if</span>( -9999 == (<span class="keywordtype">double</span>) <a class="code" href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">fp</a>()) <a class="code" href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">_lastValue</a>=-9998;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParRef_html_a9a8b946c04a9784f5b4653a106a434b4"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a9a8b946c04a9784f5b4653a106a434b4">MINT::FitParRef::_fp</a></div><div class="ttdeci">const FitParameter * _fp</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00016">FitParRef.h:16</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParRef_html_a37b5d39b9b2f51db2c016286a2750c89"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">MINT::FitParRef::_lastValue</a></div><div class="ttdeci">double _lastValue</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00014">FitParRef.h:14</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParRef_html_a64929c08d04c9dce89ba345b4fe0604b"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">MINT::FitParRef::fp</a></div><div class="ttdeci">const FitParameter &amp; fp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00017">FitParRef.h:17</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa1c1278816c3029e40d66ec6f5916e03"></a>
@@ -386,6 +424,8 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IFitParDependent.html#a27373766458894b2e58eb8b227c5c91e">MINT::IFitParDependent</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00037">37</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                            {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af22d52762b1b13656b1567956c08f79c"></a>
@@ -411,6 +451,10 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IFitParDependent.html#a41f694f03d98eea29930c7fd20b5d6f1">MINT::IFitParDependent</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00032">32</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                       {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <a class="code" href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">_lastValue</a> = (double) <a class="code" href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">fp</a>();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div><div class="ttc" id="classMINT_1_1FitParRef_html_a37b5d39b9b2f51db2c016286a2750c89"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a37b5d39b9b2f51db2c016286a2750c89">MINT::FitParRef::_lastValue</a></div><div class="ttdeci">double _lastValue</div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00014">FitParRef.h:14</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParRef_html_a64929c08d04c9dce89ba345b4fe0604b"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">MINT::FitParRef::fp</a></div><div class="ttdeci">const FitParameter &amp; fp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00017">FitParRef.h:17</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2d4de390fd8ce441aba656bd6bc4ddca"></a>
@@ -434,6 +478,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00018">18</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                              {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordflow">return</span> (<span class="keywordtype">double</span>) <a class="code" href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">fp</a>(); <span class="comment">// (_lastValue = (double) fp());}</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div><div class="ttc" id="classMINT_1_1FitParRef_html_a64929c08d04c9dce89ba345b4fe0604b"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">MINT::FitParRef::fp</a></div><div class="ttdeci">const FitParameter &amp; fp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00017">FitParRef.h:17</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8d3cc97d39ff82f622920c60c2f3ca66"></a>
@@ -459,6 +506,8 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IFitParDependent.html#a5e26c1b58e9c05deb43803fce8cd7377">MINT::IFitParDependent</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00036">36</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{<span class="keywordflow">return</span> 1;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a425ee985eaec684cec7ad318e3e56fe2"></a>
@@ -482,6 +531,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00044">44</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">fp</a>();}</div><div class="ttc" id="classMINT_1_1FitParRef_html_a64929c08d04c9dce89ba345b4fe0604b"><div class="ttname"><a href="classMINT_1_1FitParRef.html#a64929c08d04c9dce89ba345b4fe0604b">MINT::FitParRef::fp</a></div><div class="ttdeci">const FitParameter &amp; fp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParRef_8h_source.html#l00017">FitParRef.h:17</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -503,6 +555,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00016">16</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a37b5d39b9b2f51db2c016286a2750c89"></a>
@@ -523,11 +577,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParRef_8h_source.html#l00014">14</a> of file <a class="el" href="FitParRef_8h_source.html">FitParRef.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="FitParRef_8h_source.html">FitParRef.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mint/FitParameter/<a class="el" href="FitParRef_8cpp.html">FitParRef.cpp</a></li>
+<li>Mint2/Mint/<a class="el" href="FitParRef_8h_source.html">FitParRef.h</a></li>
+<li>Mint2/src/Mint/FitParameter/<a class="el" href="FitParRef_8cpp_source.html">FitParRef.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

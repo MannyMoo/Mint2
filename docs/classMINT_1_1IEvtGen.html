@@ -116,7 +116,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a23898fba1306a35c0e72e3ea25044cd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSignalGenerator.html">SignalGenerator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IEvtGen.html#a23898fba1306a35c0e72e3ea25044cd1">m_sg</a></td></tr>
 <tr class="separator:a23898fba1306a35c0e72e3ea25044cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="IEvtGen_8h_source.html#l00014">14</a> of file <a class="el" href="IEvtGen_8h_source.html">IEvtGen.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa366cc44b5e47a45fdb8acfe330b65fa"></a>
 <div class="memitem">
 <div class="memproto">
@@ -154,6 +157,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Interface to EvtGen Requires Mint steering file as argument The pattern should be deduced in the EvtGen model The random number generator should point to the EvtGen implementation Requires unit conversion rate between Mint and EvtGen as argument Mint 4-vectors will be divided by this factor and returned to EvtGen </p>
 
+<p>Definition at line <a class="el" href="IEvtGen_8cpp_source.html#l00005">5</a> of file <a class="el" href="IEvtGen_8cpp_source.html">IEvtGen.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  : <a class="code" href="classMINT_1_1IEvtGen.html#af9c9d273ac5efccad4924edd0c007aec">m_unitConversion</a>(unitConversion)</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="classMINT_1_1NamedParameterBase.html#a2a4fbb2b908bee2b1af95f829aef957a">NamedParameterBase::setDefaultInputFile</a>(inputFileName);</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="classDalitzEventPattern.html">DalitzEventPattern</a> pdg(pattern);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">if</span>( pattern[0] &lt; 0 )</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    pdg = pdg.makeCPConjugate();</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  std::cout &lt;&lt; <span class="stringliteral">&quot;Mother Particle &quot;</span> &lt;&lt; pattern[0] &lt;&lt; std::endl</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; got event pattern: &quot;</span> &lt;&lt; pdg &lt;&lt; std::endl;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classMINT_1_1IEvtGen.html#a23898fba1306a35c0e72e3ea25044cd1">m_sg</a> = <span class="keyword">new</span> <a class="code" href="classSignalGenerator.html">SignalGenerator</a>(pdg, rand);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div><div class="ttc" id="classSignalGenerator_html"><div class="ttname"><a href="classSignalGenerator.html">SignalGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="SignalGenerator_8h_source.html#l00025">SignalGenerator.h:25</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_a2a4fbb2b908bee2b1af95f829aef957a"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#a2a4fbb2b908bee2b1af95f829aef957a">MINT::NamedParameterBase::setDefaultInputFile</a></div><div class="ttdeci">static bool setDefaultInputFile(const std::string &amp;fname)</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8cpp_source.html#l00019">NamedParameterBase.cpp:19</a></div></div>
+<div class="ttc" id="classMINT_1_1IEvtGen_html_a23898fba1306a35c0e72e3ea25044cd1"><div class="ttname"><a href="classMINT_1_1IEvtGen.html#a23898fba1306a35c0e72e3ea25044cd1">MINT::IEvtGen::m_sg</a></div><div class="ttdeci">SignalGenerator * m_sg</div><div class="ttdef"><b>Definition:</b> <a href="IEvtGen_8h_source.html#l00047">IEvtGen.h:47</a></div></div>
+<div class="ttc" id="classDalitzEventPattern_html"><div class="ttname"><a href="classDalitzEventPattern.html">DalitzEventPattern</a></div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8h_source.html#l00017">DalitzEventPattern.h:17</a></div></div>
+<div class="ttc" id="classMINT_1_1IEvtGen_html_af9c9d273ac5efccad4924edd0c007aec"><div class="ttname"><a href="classMINT_1_1IEvtGen.html#af9c9d273ac5efccad4924edd0c007aec">MINT::IEvtGen::m_unitConversion</a></div><div class="ttdeci">const double m_unitConversion</div><div class="ttdef"><b>Definition:</b> <a href="IEvtGen_8h_source.html#l00045">IEvtGen.h:45</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1bb12a3e65b7237511b737c7c19b4135"></a>
@@ -177,6 +187,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="IEvtGen_8h_source.html#l00029">29</a> of file <a class="el" href="IEvtGen_8h_source.html">IEvtGen.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    { <span class="keyword">delete</span> <a class="code" href="classMINT_1_1IEvtGen.html#a23898fba1306a35c0e72e3ea25044cd1">m_sg</a>; }</div><div class="ttc" id="classMINT_1_1IEvtGen_html_a23898fba1306a35c0e72e3ea25044cd1"><div class="ttname"><a href="classMINT_1_1IEvtGen.html#a23898fba1306a35c0e72e3ea25044cd1">MINT::IEvtGen::m_sg</a></div><div class="ttdeci">SignalGenerator * m_sg</div><div class="ttdef"><b>Definition:</b> <a href="IEvtGen_8h_source.html#l00047">IEvtGen.h:47</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -205,6 +218,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Generate single event in Mint </p>
 
+<p>Definition at line <a class="el" href="IEvtGen_8cpp_source.html#l00022">22</a> of file <a class="el" href="IEvtGen_8cpp_source.html">IEvtGen.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt;IDalitzEvent&gt;</a> newEvt = <a class="code" href="classMINT_1_1IEvtGen.html#a23898fba1306a35c0e72e3ea25044cd1">m_sg</a>-&gt;<a class="code" href="classSignalGenerator.html#a4b29f7e098f3574f29a3601aabaac247">newEvent</a>();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">const</span> <a class="code" href="classIDalitzEvent.html">IDalitzEvent</a>* <span class="keyword">const</span> <span class="keyword">event</span> = newEvt.<a class="code" href="classMINT_1_1counted__ptr.html#a17552fd77fa7f33f96ce0c6377165ebb">get</a>();</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">//const IDalitzEvent* const event = m_sg-&gt;newEvent().get();</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">//0th entry is the mother particle</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=1;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;       i&lt;static_cast&lt;unsigned int&gt;(<span class="keyword">event</span>-&gt;eventPattern().numDaughters()+1);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;       ++i ){</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> std::vector&lt;double&gt; daughter = <a class="code" href="classMINT_1_1IEvtGen.html#afb08140332e77706ea073f31c371196c">GetDaughter</a>(event, i);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    daughters.push_back(daughter);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  weight_gen = <span class="keyword">event</span>-&gt;getGeneratorPdfRelativeToPhaseSpace();</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div><div class="ttc" id="classSignalGenerator_html_a4b29f7e098f3574f29a3601aabaac247"><div class="ttname"><a href="classSignalGenerator.html#a4b29f7e098f3574f29a3601aabaac247">SignalGenerator::newEvent</a></div><div class="ttdeci">virtual MINT::counted_ptr&lt; IDalitzEvent &gt; newEvent()</div><div class="ttdef"><b>Definition:</b> <a href="SignalGenerator_8cpp_source.html#l00130">SignalGenerator.cpp:130</a></div></div>
+<div class="ttc" id="classIDalitzEvent_html"><div class="ttname"><a href="classIDalitzEvent.html">IDalitzEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="IDalitzEvent_8h_source.html#l00017">IDalitzEvent.h:17</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a17552fd77fa7f33f96ce0c6377165ebb"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a17552fd77fa7f33f96ce0c6377165ebb">MINT::counted_ptr::get</a></div><div class="ttdeci">X * get() const </div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00123">counted_ptr.h:123</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt; IDalitzEvent &gt;</a></div></div>
+<div class="ttc" id="classMINT_1_1IEvtGen_html_a23898fba1306a35c0e72e3ea25044cd1"><div class="ttname"><a href="classMINT_1_1IEvtGen.html#a23898fba1306a35c0e72e3ea25044cd1">MINT::IEvtGen::m_sg</a></div><div class="ttdeci">SignalGenerator * m_sg</div><div class="ttdef"><b>Definition:</b> <a href="IEvtGen_8h_source.html#l00047">IEvtGen.h:47</a></div></div>
+<div class="ttc" id="classMINT_1_1IEvtGen_html_afb08140332e77706ea073f31c371196c"><div class="ttname"><a href="classMINT_1_1IEvtGen.html#afb08140332e77706ea073f31c371196c">MINT::IEvtGen::GetDaughter</a></div><div class="ttdeci">std::vector&lt; double &gt; GetDaughter(const IDalitzEvent *const event, const unsigned int &amp;daughter_id)</div><div class="ttdef"><b>Definition:</b> <a href="IEvtGen_8cpp_source.html#l00040">IEvtGen.cpp:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="afb08140332e77706ea073f31c371196c"></a>
@@ -232,6 +253,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Intermediary to go between Mint and EvtGen 4-vector types </p>
 
+<p>Definition at line <a class="el" href="IEvtGen_8cpp_source.html#l00040">40</a> of file <a class="el" href="IEvtGen_8cpp_source.html">IEvtGen.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  std::vector&lt;double&gt; daughter;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  daughter.push_back(event-&gt;<a class="code" href="classIDalitzEvent.html#a1c38c2e512d2e86f71b225b3cf83aa52">p</a>(daughter_id).T()/<a class="code" href="classMINT_1_1IEvtGen.html#af9c9d273ac5efccad4924edd0c007aec">m_unitConversion</a>);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  daughter.push_back(event-&gt;<a class="code" href="classIDalitzEvent.html#a1c38c2e512d2e86f71b225b3cf83aa52">p</a>(daughter_id).X()/<a class="code" href="classMINT_1_1IEvtGen.html#af9c9d273ac5efccad4924edd0c007aec">m_unitConversion</a>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  daughter.push_back(event-&gt;<a class="code" href="classIDalitzEvent.html#a1c38c2e512d2e86f71b225b3cf83aa52">p</a>(daughter_id).Y()/<a class="code" href="classMINT_1_1IEvtGen.html#af9c9d273ac5efccad4924edd0c007aec">m_unitConversion</a>);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  daughter.push_back(event-&gt;<a class="code" href="classIDalitzEvent.html#a1c38c2e512d2e86f71b225b3cf83aa52">p</a>(daughter_id).Z()/<a class="code" href="classMINT_1_1IEvtGen.html#af9c9d273ac5efccad4924edd0c007aec">m_unitConversion</a>);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">return</span> daughter;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div><div class="ttc" id="classIDalitzEvent_html_a1c38c2e512d2e86f71b225b3cf83aa52"><div class="ttname"><a href="classIDalitzEvent.html#a1c38c2e512d2e86f71b225b3cf83aa52">IDalitzEvent::p</a></div><div class="ttdeci">virtual const TLorentzVector &amp; p(unsigned int i) const  =0</div></div>
+<div class="ttc" id="classMINT_1_1IEvtGen_html_af9c9d273ac5efccad4924edd0c007aec"><div class="ttname"><a href="classMINT_1_1IEvtGen.html#af9c9d273ac5efccad4924edd0c007aec">MINT::IEvtGen::m_unitConversion</a></div><div class="ttdeci">const double m_unitConversion</div><div class="ttdef"><b>Definition:</b> <a href="IEvtGen_8h_source.html#l00045">IEvtGen.h:45</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -253,6 +278,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="IEvtGen_8h_source.html#l00047">47</a> of file <a class="el" href="IEvtGen_8h_source.html">IEvtGen.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="af9c9d273ac5efccad4924edd0c007aec"></a>
@@ -273,11 +300,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="IEvtGen_8h_source.html#l00045">45</a> of file <a class="el" href="IEvtGen_8h_source.html">IEvtGen.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="IEvtGen_8h_source.html">IEvtGen.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/EvtGen/<a class="el" href="IEvtGen_8cpp.html">IEvtGen.cpp</a></li>
+<li>Mint2/Mint/<a class="el" href="IEvtGen_8h_source.html">IEvtGen.h</a></li>
+<li>Mint2/src/Mojito/EvtGen/<a class="el" href="IEvtGen_8cpp_source.html">IEvtGen.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

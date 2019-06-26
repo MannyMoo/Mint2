@@ -108,7 +108,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a495f5e4970399c335e59ad7dbc3c329b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDispersion__Integrand.html#a495f5e4970399c335e59ad7dbc3c329b">_singularity</a></td></tr>
 <tr class="separator:a495f5e4970399c335e59ad7dbc3c329b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00500">500</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a16721a457795efef9c71ef18623ab795"></a>
 <div class="memitem">
 <div class="memproto">
@@ -147,6 +150,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00505">505</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                                                                              : </div><div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        <a class="code" href="classDispersion__Integrand.html#abae42de86c51060627332868143ba162">_gamma</a>(f), <a class="code" href="classDispersion__Integrand.html#a9f4ce08f036c684691d05aab22b97b4c">_g</a>(<a class="code" href="CLHEPSystemOfUnits_8h.html#a6e550921d5c2c78c55be1c0d76512d45">g</a>), <a class="code" href="classDispersion__Integrand.html#a495f5e4970399c335e59ad7dbc3c329b">_singularity</a>(singularity){</div><div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    }</div><div class="ttc" id="classDispersion__Integrand_html_abae42de86c51060627332868143ba162"><div class="ttname"><a href="classDispersion__Integrand.html#abae42de86c51060627332868143ba162">Dispersion_Integrand::_gamma</a></div><div class="ttdeci">vector&lt; TF1 * &gt; _gamma</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00501">RunningWidthCalculator.cpp:501</a></div></div>
+<div class="ttc" id="CLHEPSystemOfUnits_8h_html_a6e550921d5c2c78c55be1c0d76512d45"><div class="ttname"><a href="CLHEPSystemOfUnits_8h.html#a6e550921d5c2c78c55be1c0d76512d45">g</a></div><div class="ttdeci">static const double g</div><div class="ttdef"><b>Definition:</b> <a href="CLHEPSystemOfUnits_8h_source.html#l00165">CLHEPSystemOfUnits.h:165</a></div></div>
+<div class="ttc" id="classDispersion__Integrand_html_a495f5e4970399c335e59ad7dbc3c329b"><div class="ttname"><a href="classDispersion__Integrand.html#a495f5e4970399c335e59ad7dbc3c329b">Dispersion_Integrand::_singularity</a></div><div class="ttdeci">double _singularity</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00503">RunningWidthCalculator.cpp:503</a></div></div>
+<div class="ttc" id="classDispersion__Integrand_html_a9f4ce08f036c684691d05aab22b97b4c"><div class="ttname"><a href="classDispersion__Integrand.html#a9f4ce08f036c684691d05aab22b97b4c">Dispersion_Integrand::_g</a></div><div class="ttdeci">vector&lt; double &gt; _g</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00502">RunningWidthCalculator.cpp:502</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -172,6 +181,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00508">508</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                               { </div><div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;            <span class="keywordtype">double</span> sum = 0.;</div><div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classDispersion__Integrand.html#abae42de86c51060627332868143ba162">_gamma</a>.size(); i++) sum += <a class="code" href="classDispersion__Integrand.html#a9f4ce08f036c684691d05aab22b97b4c">_g</a>[i]*<a class="code" href="classDispersion__Integrand.html#abae42de86c51060627332868143ba162">_gamma</a>[i]-&gt;Eval(x);</div><div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;            <span class="keywordflow">return</span> sum/(<a class="code" href="classDispersion__Integrand.html#a495f5e4970399c335e59ad7dbc3c329b">_singularity</a>-x);</div><div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    }</div><div class="ttc" id="classDispersion__Integrand_html_abae42de86c51060627332868143ba162"><div class="ttname"><a href="classDispersion__Integrand.html#abae42de86c51060627332868143ba162">Dispersion_Integrand::_gamma</a></div><div class="ttdeci">vector&lt; TF1 * &gt; _gamma</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00501">RunningWidthCalculator.cpp:501</a></div></div>
+<div class="ttc" id="classDispersion__Integrand_html_a495f5e4970399c335e59ad7dbc3c329b"><div class="ttname"><a href="classDispersion__Integrand.html#a495f5e4970399c335e59ad7dbc3c329b">Dispersion_Integrand::_singularity</a></div><div class="ttdeci">double _singularity</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00503">RunningWidthCalculator.cpp:503</a></div></div>
+<div class="ttc" id="classDispersion__Integrand_html_a9f4ce08f036c684691d05aab22b97b4c"><div class="ttname"><a href="classDispersion__Integrand.html#a9f4ce08f036c684691d05aab22b97b4c">Dispersion_Integrand::_g</a></div><div class="ttdeci">vector&lt; double &gt; _g</div><div class="ttdef"><b>Definition:</b> <a href="RunningWidthCalculator_8cpp_source.html#l00502">RunningWidthCalculator.cpp:502</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -193,6 +207,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00502">502</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abae42de86c51060627332868143ba162"></a>
@@ -212,6 +228,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00501">501</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
 
 </div>
 </div>
@@ -233,10 +251,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RunningWidthCalculator_8cpp_source.html#l00503">503</a> of file <a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/Lineshapes/<a class="el" href="RunningWidthCalculator_8cpp.html">RunningWidthCalculator.cpp</a></li>
+<li>Mint2/src/Mojito/Lineshapes/<a class="el" href="RunningWidthCalculator_8cpp_source.html">RunningWidthCalculator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

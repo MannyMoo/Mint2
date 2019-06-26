@@ -164,7 +164,10 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:a1fe296e28b9220931c1ea5c37d83e4ae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classMINT_1_1MinuitParameterSet.html">MinuitParameterSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1minimisePareto.html#a1fe296e28b9220931c1ea5c37d83e4ae">_mps</a></td></tr>
 <tr class="separator:a1fe296e28b9220931c1ea5c37d83e4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="GeneralisedPareto_8h_source.html#l00033">33</a> of file <a class="el" href="GeneralisedPareto_8h_source.html">GeneralisedPareto.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa227cc83eb69354106373e3dccc8e034"></a>
 <div class="memitem">
 <div class="memproto">
@@ -201,6 +204,14 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="GeneralisedPareto_8cpp_source.html#l00077">77</a> of file <a class="el" href="GeneralisedPareto_8cpp_source.html">GeneralisedPareto.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  : <a class="code" href="classMINT_1_1minimisePareto.html#a7e97bb079e05f0426668ee6cddf5debc">_data</a>(data)</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  , <a class="code" href="classMINT_1_1minimisePareto.html#a244d8dffcef32260279b2fd3219ed8ee">_threshold</a>(threshold)</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  , <a class="code" href="classMINT_1_1minimisePareto.html#a91f549a4bbd4e137f3fddf2408e30b2f">_xi</a>(<span class="stringliteral">&quot;xi&quot;</span>, 0, xiInit, fabs(xiInit)/2.0 + 0.1, 0, 0, &amp;<a class="code" href="classMINT_1_1minimisePareto.html#a1fe296e28b9220931c1ea5c37d83e4ae">_mps</a>)</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  , <a class="code" href="classMINT_1_1minimisePareto.html#aa12a7761cfda48ed5df8d8008e0914d6">_sigma</a>(<span class="stringliteral">&quot;sigma&quot;</span>, 0, fabs(sigInit), fabs(sigInit)/2.0 + 0.1, 0, 0, &amp;<a class="code" href="classMINT_1_1minimisePareto.html#a1fe296e28b9220931c1ea5c37d83e4ae">_mps</a>)</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  this-&gt;<a class="code" href="classMINT_1_1Minimisable.html#abb9fc1bce14015652c14d59c173598b6">setPset</a>(&amp;<a class="code" href="classMINT_1_1minimisePareto.html#a1fe296e28b9220931c1ea5c37d83e4ae">_mps</a>);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div><div class="ttc" id="classMINT_1_1minimisePareto_html_a91f549a4bbd4e137f3fddf2408e30b2f"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#a91f549a4bbd4e137f3fddf2408e30b2f">MINT::minimisePareto::_xi</a></div><div class="ttdeci">FitParameter _xi</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00037">GeneralisedPareto.h:37</a></div></div>
+<div class="ttc" id="classMINT_1_1minimisePareto_html_aa12a7761cfda48ed5df8d8008e0914d6"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#aa12a7761cfda48ed5df8d8008e0914d6">MINT::minimisePareto::_sigma</a></div><div class="ttdeci">FitParameter _sigma</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00037">GeneralisedPareto.h:37</a></div></div>
+<div class="ttc" id="classMINT_1_1minimisePareto_html_a244d8dffcef32260279b2fd3219ed8ee"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#a244d8dffcef32260279b2fd3219ed8ee">MINT::minimisePareto::_threshold</a></div><div class="ttdeci">double _threshold</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00036">GeneralisedPareto.h:36</a></div></div>
+<div class="ttc" id="classMINT_1_1minimisePareto_html_a1fe296e28b9220931c1ea5c37d83e4ae"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#a1fe296e28b9220931c1ea5c37d83e4ae">MINT::minimisePareto::_mps</a></div><div class="ttdeci">static MinuitParameterSet _mps</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00034">GeneralisedPareto.h:34</a></div></div>
+<div class="ttc" id="classMINT_1_1Minimisable_html_abb9fc1bce14015652c14d59c173598b6"><div class="ttname"><a href="classMINT_1_1Minimisable.html#abb9fc1bce14015652c14d59c173598b6">MINT::Minimisable::setPset</a></div><div class="ttdeci">void setPset(MinuitParameterSet *mps)</div><div class="ttdef"><b>Definition:</b> <a href="Minimisable_8cpp_source.html#l00014">Minimisable.cpp:14</a></div></div>
+<div class="ttc" id="classMINT_1_1minimisePareto_html_a7e97bb079e05f0426668ee6cddf5debc"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#a7e97bb079e05f0426668ee6cddf5debc">MINT::minimisePareto::_data</a></div><div class="ttdeci">std::vector&lt; double &gt; &amp; _data</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00035">GeneralisedPareto.h:35</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -217,6 +228,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="GeneralisedPareto_8cpp_source.html#l00102">102</a> of file <a class="el" href="GeneralisedPareto_8cpp_source.html">GeneralisedPareto.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1minimisePareto.html#aa12a7761cfda48ed5df8d8008e0914d6">_sigma</a>;}</div><div class="ttc" id="classMINT_1_1minimisePareto_html_aa12a7761cfda48ed5df8d8008e0914d6"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#aa12a7761cfda48ed5df8d8008e0914d6">MINT::minimisePareto::_sigma</a></div><div class="ttdeci">FitParameter _sigma</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00037">GeneralisedPareto.h:37</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad973cd1ef110ad084a9632af2594ec6f"></a>
@@ -242,6 +256,13 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1Minimisable.html#aa878cc14692e6bb4218853ecaad830ce">MINT::Minimisable</a>.</p>
 
+<p>Definition at line <a class="el" href="GeneralisedPareto_8cpp_source.html#l00087">87</a> of file <a class="el" href="GeneralisedPareto_8cpp_source.html">GeneralisedPareto.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                 {</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">double</span> sum = 0.0;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#if defined(_OPENMP)</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">  #pragma omp parallel for reduction(+:sum)</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i &lt; <a class="code" href="classMINT_1_1minimisePareto.html#a7e97bb079e05f0426668ee6cddf5debc">_data</a>.size(); ++i ){</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> x = <a class="code" href="classMINT_1_1minimisePareto.html#a7e97bb079e05f0426668ee6cddf5debc">_data</a>[i] - <a class="code" href="classMINT_1_1minimisePareto.html#a244d8dffcef32260279b2fd3219ed8ee">_threshold</a>;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span>( x &gt; 0 )</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      sum -= 2.0*<a class="code" href="namespaceMINT.html#a9d63a0e599e64d3fb9ca7c3876088839">generalisedPareto_logPdf</a>(x, <a class="code" href="classMINT_1_1minimisePareto.html#a91f549a4bbd4e137f3fddf2408e30b2f">_xi</a>, <a class="code" href="classMINT_1_1minimisePareto.html#aa12a7761cfda48ed5df8d8008e0914d6">_sigma</a>);</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> sum;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div><div class="ttc" id="classMINT_1_1minimisePareto_html_a91f549a4bbd4e137f3fddf2408e30b2f"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#a91f549a4bbd4e137f3fddf2408e30b2f">MINT::minimisePareto::_xi</a></div><div class="ttdeci">FitParameter _xi</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00037">GeneralisedPareto.h:37</a></div></div>
+<div class="ttc" id="classMINT_1_1minimisePareto_html_aa12a7761cfda48ed5df8d8008e0914d6"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#aa12a7761cfda48ed5df8d8008e0914d6">MINT::minimisePareto::_sigma</a></div><div class="ttdeci">FitParameter _sigma</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00037">GeneralisedPareto.h:37</a></div></div>
+<div class="ttc" id="classMINT_1_1minimisePareto_html_a244d8dffcef32260279b2fd3219ed8ee"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#a244d8dffcef32260279b2fd3219ed8ee">MINT::minimisePareto::_threshold</a></div><div class="ttdeci">double _threshold</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00036">GeneralisedPareto.h:36</a></div></div>
+<div class="ttc" id="classMINT_1_1minimisePareto_html_a7e97bb079e05f0426668ee6cddf5debc"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#a7e97bb079e05f0426668ee6cddf5debc">MINT::minimisePareto::_data</a></div><div class="ttdeci">std::vector&lt; double &gt; &amp; _data</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00035">GeneralisedPareto.h:35</a></div></div>
+<div class="ttc" id="namespaceMINT_html_a9d63a0e599e64d3fb9ca7c3876088839"><div class="ttname"><a href="namespaceMINT.html#a9d63a0e599e64d3fb9ca7c3876088839">MINT::generalisedPareto_logPdf</a></div><div class="ttdeci">double generalisedPareto_logPdf(double y, double xi, double sigma_bar)</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8cpp_source.html#l00036">GeneralisedPareto.cpp:36</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a56ec420cf091cbe4a2844f5f5fca565a"></a>
@@ -257,6 +278,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="GeneralisedPareto_8cpp_source.html#l00101">101</a> of file <a class="el" href="GeneralisedPareto_8cpp_source.html">GeneralisedPareto.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1minimisePareto.html#a91f549a4bbd4e137f3fddf2408e30b2f">_xi</a>;}</div><div class="ttc" id="classMINT_1_1minimisePareto_html_a91f549a4bbd4e137f3fddf2408e30b2f"><div class="ttname"><a href="classMINT_1_1minimisePareto.html#a91f549a4bbd4e137f3fddf2408e30b2f">MINT::minimisePareto::_xi</a></div><div class="ttdeci">FitParameter _xi</div><div class="ttdef"><b>Definition:</b> <a href="GeneralisedPareto_8h_source.html#l00037">GeneralisedPareto.h:37</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -278,6 +302,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="GeneralisedPareto_8h_source.html#l00035">35</a> of file <a class="el" href="GeneralisedPareto_8h_source.html">GeneralisedPareto.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a1fe296e28b9220931c1ea5c37d83e4ae"></a>
@@ -297,6 +323,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="GeneralisedPareto_8h_source.html#l00034">34</a> of file <a class="el" href="GeneralisedPareto_8h_source.html">GeneralisedPareto.h</a>.</p>
 
 </div>
 </div>
@@ -318,6 +346,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="GeneralisedPareto_8h_source.html#l00037">37</a> of file <a class="el" href="GeneralisedPareto_8h_source.html">GeneralisedPareto.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a244d8dffcef32260279b2fd3219ed8ee"></a>
@@ -337,6 +367,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="GeneralisedPareto_8h_source.html#l00036">36</a> of file <a class="el" href="GeneralisedPareto_8h_source.html">GeneralisedPareto.h</a>.</p>
 
 </div>
 </div>
@@ -358,11 +390,13 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="GeneralisedPareto_8h_source.html#l00037">37</a> of file <a class="el" href="GeneralisedPareto_8h_source.html">GeneralisedPareto.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="GeneralisedPareto_8h_source.html">GeneralisedPareto.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mint/Pareto/<a class="el" href="GeneralisedPareto_8cpp.html">GeneralisedPareto.cpp</a></li>
+<li>Mint2/Mint/<a class="el" href="GeneralisedPareto_8h_source.html">GeneralisedPareto.h</a></li>
+<li>Mint2/src/Mint/Pareto/<a class="el" href="GeneralisedPareto_8cpp_source.html">GeneralisedPareto.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

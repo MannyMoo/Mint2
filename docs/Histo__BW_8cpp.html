@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>MINT2: /nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/Lineshapes/Histo_BW.cpp File Reference</title>
+<title>MINT2: Mint2/src/Mojito/Lineshapes/Histo_BW.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_dccea7089c8247a26ee1d0a2e5dad81a.html">Mojito</a></li><li class="navelem"><a class="el" href="dir_5a25257064c459996c7b6e43c6bdac26.html">Lineshapes</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4754f46ea6d4ab9d9c154d70b7241947.html">Mint2</a></li><li class="navelem"><a class="el" href="dir_260d20cafbd34bfc73bb36537eaea320.html">src</a></li><li class="navelem"><a class="el" href="dir_d36f10a6d37ecce8864cd1f1ddc133e2.html">Mojito</a></li><li class="navelem"><a class="el" href="dir_e21ef0cbb382e0f6a9c1febe5f90c3ce.html">Lineshapes</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -102,7 +102,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="phaseSpaceIntegrals_8h_source.html">Mint/phaseSpaceIntegrals.h</a>&quot;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;complex&gt;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="Histo__BW_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a224a1f31baa20b5c99014889b6b03d4b"><td class="memItemLeft" align="right" valign="top">Double_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Histo__BW_8cpp.html#a224a1f31baa20b5c99014889b6b03d4b">phaseSpace</a> (Double_t *x, Double_t *par)</td></tr>
@@ -133,6 +135,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="Histo__BW_8cpp_source.html#l00079">79</a> of file <a class="el" href="Histo__BW_8cpp_source.html">Histo_BW.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                               {</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//x[0]: mumsRecoMass()^2</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//par[0]: mumsMass()</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">//par[i]: final state masses (i=1,2,3)</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classPhaseSpaceIntegral3body.html">PhaseSpaceIntegral3body</a> ps;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">double</span> ps_val = ps.<a class="code" href="classPhaseSpaceIntegral3body.html#a81c64841e6d119c417922948b73b1cf9">getVal</a>(sqrt(x[0])*<a class="code" href="CLHEPSystemOfUnits_8h.html#aec0e126d9991db8ad0b26139f5860568">GeV</a>,par[1],par[2],par[3]);</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">double</span> ps0_val =  ps.<a class="code" href="classPhaseSpaceIntegral3body.html#a81c64841e6d119c417922948b73b1cf9">getVal</a>(par[0],par[1],par[2],par[3]);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">double</span> ps_ratio=0.;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span>(ps0_val&gt;0)ps_ratio= ps_val/ps0_val;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">//cout &lt;&lt; ps_ratio &lt;&lt; endl;</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    </div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> ps_ratio * par[0]/(sqrt(x[0])*<a class="code" href="CLHEPSystemOfUnits_8h.html#aec0e126d9991db8ad0b26139f5860568">GeV</a>);</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div><div class="ttc" id="classPhaseSpaceIntegral3body_html_a81c64841e6d119c417922948b73b1cf9"><div class="ttname"><a href="classPhaseSpaceIntegral3body.html#a81c64841e6d119c417922948b73b1cf9">PhaseSpaceIntegral3body::getVal</a></div><div class="ttdeci">double getVal(const DalitzEventPattern &amp;_pat)</div><div class="ttdef"><b>Definition:</b> <a href="phaseSpaceIntegrals_8cpp_source.html#l00201">phaseSpaceIntegrals.cpp:201</a></div></div>
+<div class="ttc" id="CLHEPSystemOfUnits_8h_html_aec0e126d9991db8ad0b26139f5860568"><div class="ttname"><a href="CLHEPSystemOfUnits_8h.html#aec0e126d9991db8ad0b26139f5860568">GeV</a></div><div class="ttdeci">static const double GeV</div><div class="ttdef"><b>Definition:</b> <a href="CLHEPSystemOfUnits_8h_source.html#l00152">CLHEPSystemOfUnits.h:152</a></div></div>
+<div class="ttc" id="classPhaseSpaceIntegral3body_html"><div class="ttname"><a href="classPhaseSpaceIntegral3body.html">PhaseSpaceIntegral3body</a></div><div class="ttdef"><b>Definition:</b> <a href="phaseSpaceIntegrals_8h_source.html#l00040">phaseSpaceIntegrals.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

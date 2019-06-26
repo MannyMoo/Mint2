@@ -272,7 +272,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ac49df1cbd3acb228966efbad24ea96fc inherit pro_attribs_classMINT_1_1PolymorphVector"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classDecayTreeItem.html">DecayTreeItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1PolymorphVector.html#ac49df1cbd3acb228966efbad24ea96fc">_vec</a></td></tr>
 <tr class="separator:ac49df1cbd3acb228966efbad24ea96fc inherit pro_attribs_classMINT_1_1PolymorphVector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="DalitzEventPattern_8h_source.html#l00017">17</a> of file <a class="el" href="DalitzEventPattern_8h_source.html">DalitzEventPattern.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2e2abd8c9fe44f833367222dc5094625"></a>
 <div class="memitem">
 <div class="memproto">
@@ -294,6 +297,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8h_source.html#l00020">20</a> of file <a class="el" href="DalitzEventPattern_8h_source.html">DalitzEventPattern.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                      {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#ad000455aa00a923fb1dbc6f699aa2104">clear</a>();</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_ad000455aa00a923fb1dbc6f699aa2104"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#ad000455aa00a923fb1dbc6f699aa2104">MINT::PolymorphVector&lt; DecayTreeItem &gt;::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00064">PolymorphVector.h:64</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a51c1834bece73399c08fe116999d585b"></a>
@@ -320,6 +326,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00016">16</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  : <a class="code" href="classMINT_1_1PolymorphVector.html">PolymorphVector&lt;DecayTreeItem&gt;</a>(arrayDimension)</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;arrayDimension; i++){</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a> dti(pdg_ids[i]);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    (*this)[i]=dti;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div><div class="ttc" id="classDecayTreeItem_html"><div class="ttname"><a href="classDecayTreeItem.html">DecayTreeItem</a></div><div class="ttdef"><b>Definition:</b> <a href="DecayTreeItem_8h_source.html#l00011">DecayTreeItem.h:11</a></div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt; DecayTreeItem &gt;</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8bd860493511a41bf8ff9d9710fa405f"></a>
@@ -352,6 +362,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00025">25</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  : <a class="code" href="classMINT_1_1PolymorphVector.html">PolymorphVector&lt;DecayTreeItem&gt;</a>(pdg_ids.size())</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;pdg_ids.size(); i++){</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a> dti(pdg_ids[i]);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    (*this)[i]=dti;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div><div class="ttc" id="classDecayTreeItem_html"><div class="ttname"><a href="classDecayTreeItem.html">DecayTreeItem</a></div><div class="ttdef"><b>Definition:</b> <a href="DecayTreeItem_8h_source.html#l00011">DecayTreeItem.h:11</a></div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt; DecayTreeItem &gt;</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a646278ff2d1de2d853b70efea9bc0d61"></a>
@@ -384,6 +398,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00042">42</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  : <a class="code" href="classMINT_1_1PolymorphVector.html">PolymorphVector&lt;DecayTreeItem&gt;</a>(other)</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt; DecayTreeItem &gt;</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a35dea41c7e46c325add641d6b4d4ac90"></a>
@@ -400,6 +417,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00045">45</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  : <a class="code" href="classMINT_1_1PolymorphVector.html">PolymorphVector&lt;DecayTreeItem&gt;</a>(other)</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt; DecayTreeItem &gt;</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a49dfe2a802638af515af57d4d71c19f3"></a>
@@ -432,6 +452,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00050">50</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  : <a class="code" href="classMINT_1_1PolymorphVector.html">PolymorphVector&lt;DecayTreeItem&gt;</a>(3)</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  (*this)[0] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(mum);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  (*this)[1] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(d1);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  (*this)[2] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(d2);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div><div class="ttc" id="classDecayTreeItem_html"><div class="ttname"><a href="classDecayTreeItem.html">DecayTreeItem</a></div><div class="ttdef"><b>Definition:</b> <a href="DecayTreeItem_8h_source.html#l00011">DecayTreeItem.h:11</a></div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt; DecayTreeItem &gt;</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae250e5445ea1b8eadee4b844ff2d55fb"></a>
@@ -470,6 +494,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00058">58</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  : <a class="code" href="classMINT_1_1PolymorphVector.html">PolymorphVector&lt;DecayTreeItem&gt;</a>(4)</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  (*this)[0] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(mum);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  (*this)[1] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(d1);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  (*this)[2] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(d2);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  (*this)[3] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(d3);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div><div class="ttc" id="classDecayTreeItem_html"><div class="ttname"><a href="classDecayTreeItem.html">DecayTreeItem</a></div><div class="ttdef"><b>Definition:</b> <a href="DecayTreeItem_8h_source.html#l00011">DecayTreeItem.h:11</a></div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt; DecayTreeItem &gt;</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6545756047f79ebd153492799b326065"></a>
@@ -514,6 +542,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00067">67</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  : <a class="code" href="classMINT_1_1PolymorphVector.html">PolymorphVector&lt;DecayTreeItem&gt;</a>(5)</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  (*this)[0] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(mum);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  (*this)[1] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(d1);</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  (*this)[2] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(d2);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  (*this)[3] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(d3);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  (*this)[4] = <a class="code" href="classDecayTreeItem.html">DecayTreeItem</a>(d4);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div><div class="ttc" id="classDecayTreeItem_html"><div class="ttname"><a href="classDecayTreeItem.html">DecayTreeItem</a></div><div class="ttdef"><b>Definition:</b> <a href="DecayTreeItem_8h_source.html#l00011">DecayTreeItem.h:11</a></div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt; DecayTreeItem &gt;</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae80f142c149a3188298f15b0889c0a93"></a>
@@ -530,6 +562,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00078">78</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                            {</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">bool</span> dbThis=<span class="keyword">false</span>;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="classMINT_1_1counted__ptr.html">counted_ptr&lt;std::vector&lt;const DecayTreeItem*&gt;</a> &gt;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    fsTree_pointers( dt_in.<a class="code" href="classDDTree.html#ae4a624ba96b9293665551acde3b1a3a3">finalStatePtr</a>() );</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  std::vector&lt;int&gt; finalState( fsTree_pointers-&gt;size() );</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt; fsTree_pointers-&gt;size(); i++){</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    finalState[i] = (*fsTree_pointers)[i]-&gt;pdg();</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  sort(finalState.begin(), finalState.end());</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a0c2feed0d02f3fad7f3d3ebc28cc87d6">resize</a>(finalState.size() + 1);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  (*this)[0] = dt_in.<a class="code" href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">getVal</a>();</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt; finalState.size(); i++){ <span class="comment">// offspring</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    (*this)[i+1] = finalState[i];</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  </div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span>(dbThis){</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;made this pattern: &quot;</span> &lt;&lt; *<span class="keyword">this</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;out of this tree &quot;</span> &lt;&lt; dt_in &lt;&lt; endl;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a0c2feed0d02f3fad7f3d3ebc28cc87d6"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a0c2feed0d02f3fad7f3d3ebc28cc87d6">MINT::PolymorphVector&lt; DecayTreeItem &gt;::resize</a></div><div class="ttdeci">void resize(unsigned int N)</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00065">PolymorphVector.h:65</a></div></div>
+<div class="ttc" id="classDDTree_html_ae4a624ba96b9293665551acde3b1a3a3"><div class="ttname"><a href="classDDTree.html#ae4a624ba96b9293665551acde3b1a3a3">DDTree::finalStatePtr</a></div><div class="ttdeci">MINT::counted_ptr&lt; std::vector&lt; const ValueType * &gt; &gt; finalStatePtr() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00304">DDTree.h:304</a></div></div>
+<div class="ttc" id="classDDTree_html_acc9c359b50f11e2afe4f9c4906f6e3a8"><div class="ttname"><a href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">DDTree::getVal</a></div><div class="ttdeci">const ValueType &amp; getVal() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00102">DDTree.h:102</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00039">counted_ptr.h:39</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ace036ec5d297a37653cad6463e6e323e"></a>
@@ -553,6 +591,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8h_source.html#l00036">36</a> of file <a class="el" href="DalitzEventPattern_8h_source.html">DalitzEventPattern.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -570,6 +610,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00164">164</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                                                  {</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">empty</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordflow">if</span>(tree.<a class="code" href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">getVal</a>().<a class="code" href="classDecayTreeItem.html#afeea01949b04f8bdea0cc0491c81dee9">pdg</a>() != (*this)[0]) <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// check mother</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">compatibleWithFinalState</a>(tree); <span class="comment">// check daughters</span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_ac4fc13b1887479f6f4cdf2e95c373a0f"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">MINT::PolymorphVector&lt; DecayTreeItem &gt;::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00047">PolymorphVector.h:47</a></div></div>
+<div class="ttc" id="classDDTree_html_acc9c359b50f11e2afe4f9c4906f6e3a8"><div class="ttname"><a href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">DDTree::getVal</a></div><div class="ttdeci">const ValueType &amp; getVal() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00102">DDTree.h:102</a></div></div>
+<div class="ttc" id="classDecayTreeItem_html_afeea01949b04f8bdea0cc0491c81dee9"><div class="ttname"><a href="classDecayTreeItem.html#afeea01949b04f8bdea0cc0491c81dee9">DecayTreeItem::pdg</a></div><div class="ttdeci">int pdg() const </div><div class="ttdef"><b>Definition:</b> <a href="DecayTreeItem_8cpp_source.html#l00082">DecayTreeItem.cpp:82</a></div></div>
+<div class="ttc" id="classDalitzEventPattern_html_a5f792e444983593d81e285bb5d329cf7"><div class="ttname"><a href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">DalitzEventPattern::compatibleWithFinalState</a></div><div class="ttdeci">bool compatibleWithFinalState(const AmpInitialiser &amp;ampInitContainsTree) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00172">DalitzEventPattern.cpp:172</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5f792e444983593d81e285bb5d329cf7"></a>
@@ -586,6 +632,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00172">172</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                                                                               {</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">compatibleWithFinalState</a>(ampInitContainsTree.<a class="code" href="classAmpInitialiser.html#aec544bbbb0e8a07027bb08cc71c7e5a6">tree</a>());</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div><div class="ttc" id="classAmpInitialiser_html_aec544bbbb0e8a07027bb08cc71c7e5a6"><div class="ttname"><a href="classAmpInitialiser.html#aec544bbbb0e8a07027bb08cc71c7e5a6">AmpInitialiser::tree</a></div><div class="ttdeci">const DecayTree &amp; tree() const </div><div class="ttdef"><b>Definition:</b> <a href="AmpInitialiser_8cpp_source.html#l00117">AmpInitialiser.cpp:117</a></div></div>
+<div class="ttc" id="classDalitzEventPattern_html_a5f792e444983593d81e285bb5d329cf7"><div class="ttname"><a href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">DalitzEventPattern::compatibleWithFinalState</a></div><div class="ttdeci">bool compatibleWithFinalState(const AmpInitialiser &amp;ampInitContainsTree) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00172">DalitzEventPattern.cpp:172</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a396f7f6892c29036808298e0a516b1e3"></a>
@@ -602,6 +652,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00177">177</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                                                            {</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">empty</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  std::vector&lt;const DecayTreeItem*&gt; fsTree_pointers = tree.<a class="code" href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">finalState</a>();</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  std::vector&lt;int&gt; fsTree;</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt; fsTree_pointers.size(); i++){</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    fsTree.push_back(fsTree_pointers[i]-&gt;pdg());</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  }</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">compatibleWithFinalState</a>(fsTree);</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_ac4fc13b1887479f6f4cdf2e95c373a0f"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">MINT::PolymorphVector&lt; DecayTreeItem &gt;::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00047">PolymorphVector.h:47</a></div></div>
+<div class="ttc" id="classDDTree_html_a52f26b54defc390d7477814440af1bf6"><div class="ttname"><a href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">DDTree::finalState</a></div><div class="ttdeci">std::vector&lt; const ValueType * &gt; finalState() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00293">DDTree.h:293</a></div></div>
+<div class="ttc" id="classDalitzEventPattern_html_a5f792e444983593d81e285bb5d329cf7"><div class="ttname"><a href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">DalitzEventPattern::compatibleWithFinalState</a></div><div class="ttdeci">bool compatibleWithFinalState(const AmpInitialiser &amp;ampInitContainsTree) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00172">DalitzEventPattern.cpp:172</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae9507db0e475befe258cdd8a611317a5"></a>
@@ -618,6 +673,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00190">190</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                                    {</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">empty</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  std::vector&lt;int&gt; otherFs = pat.<a class="code" href="classDalitzEventPattern.html#ae4ca1f695bde88e38afb547b3962a011">finalStates</a>();</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">compatibleWithFinalState</a>(otherFs);</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_ac4fc13b1887479f6f4cdf2e95c373a0f"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">MINT::PolymorphVector&lt; DecayTreeItem &gt;::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00047">PolymorphVector.h:47</a></div></div>
+<div class="ttc" id="classDalitzEventPattern_html_ae4ca1f695bde88e38afb547b3962a011"><div class="ttname"><a href="classDalitzEventPattern.html#ae4ca1f695bde88e38afb547b3962a011">DalitzEventPattern::finalStates</a></div><div class="ttdeci">std::vector&lt; int &gt; finalStates() const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00156">DalitzEventPattern.cpp:156</a></div></div>
+<div class="ttc" id="classDalitzEventPattern_html_a5f792e444983593d81e285bb5d329cf7"><div class="ttname"><a href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">DalitzEventPattern::compatibleWithFinalState</a></div><div class="ttdeci">bool compatibleWithFinalState(const AmpInitialiser &amp;ampInitContainsTree) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00172">DalitzEventPattern.cpp:172</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac0fa01d63adfdd4ef8bd1a8c1e0f69ac"></a>
@@ -634,6 +694,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00197">197</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                           {</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  std::vector&lt;int&gt; fs = <a class="code" href="classDalitzEventPattern.html#ae4ca1f695bde88e38afb547b3962a011">finalStates</a>(); <span class="comment">// my own;  </span></div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keywordflow">if</span>(otherFs_in.size() != fs.size()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  std::vector&lt;int&gt; otherFs(otherFs_in);</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  sort(fs.begin()     , fs.end());</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  sort(otherFs.begin(), otherFs.end());</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;fs.size(); i++){</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">if</span>(fs[i] != otherFs[i]) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  }</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  </div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  </div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div><div class="ttc" id="classDalitzEventPattern_html_ae4ca1f695bde88e38afb547b3962a011"><div class="ttname"><a href="classDalitzEventPattern.html#ae4ca1f695bde88e38afb547b3962a011">DalitzEventPattern::finalStates</a></div><div class="ttdeci">std::vector&lt; int &gt; finalStates() const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00156">DalitzEventPattern.cpp:156</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="add0a5a28af98441256d049f86371a304"></a>
@@ -658,6 +721,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8h_source.html#l00053">53</a> of file <a class="el" href="DalitzEventPattern_8h_source.html">DalitzEventPattern.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                                             {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">compatibleWithFinalState</a>(otherFs.<a class="code" href="classMINT_1_1PolymorphVector.html#aca2c360b5365baa6ac7bf90ac6a07154">theVector</a>());</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_aca2c360b5365baa6ac7bf90ac6a07154"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#aca2c360b5365baa6ac7bf90ac6a07154">MINT::PolymorphVector::theVector</a></div><div class="ttdeci">std::vector&lt; T &gt; &amp; theVector()</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00022">PolymorphVector.h:22</a></div></div>
+<div class="ttc" id="classDalitzEventPattern_html_a5f792e444983593d81e285bb5d329cf7"><div class="ttname"><a href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">DalitzEventPattern::compatibleWithFinalState</a></div><div class="ttdeci">bool compatibleWithFinalState(const AmpInitialiser &amp;ampInitContainsTree) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00172">DalitzEventPattern.cpp:172</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1da954a6513af80c322241ac6fcc5e2c"></a>
@@ -674,6 +741,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00109">109</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                                                   {</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>() != other.<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span>((*<span class="keyword">this</span>)[i] != other[i]) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  }</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector&lt; DecayTreeItem &gt;::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae4ca1f695bde88e38afb547b3962a011"></a>
@@ -689,6 +759,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00156">156</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                                    {</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  std::vector&lt;int&gt; fs;</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=1; i&lt;this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    fs.push_back((*<span class="keyword">this</span>)[i]);</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  }</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">return</span> fs;</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector&lt; DecayTreeItem &gt;::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="adf6665aeacbe9c87a906fadeaca6f3e3"></a>
@@ -704,6 +777,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00275">275</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                                                        {</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  std::vector&lt;int&gt; v(this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>());</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    v[i] = (int) (*<span class="keyword">this</span>)[i];</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  }</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keywordflow">return</span> v;</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector&lt; DecayTreeItem &gt;::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae71ed461dad5783f966dd1e3a5c62dbf"></a>
@@ -720,6 +796,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00117">117</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                                                {</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classDalitzEventPattern.html#a1da954a6513af80c322241ac6fcc5e2c">equal</a>(other)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>() &lt; other.<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>()) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>() &gt; other.<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span>((*<span class="keyword">this</span>)[i] &lt; other[i]) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span>((*<span class="keyword">this</span>)[i] &gt; other[i]) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  }</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector&lt; DecayTreeItem &gt;::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+<div class="ttc" id="classDalitzEventPattern_html_a1da954a6513af80c322241ac6fcc5e2c"><div class="ttname"><a href="classDalitzEventPattern.html#a1da954a6513af80c322241ac6fcc5e2c">DalitzEventPattern::equal</a></div><div class="ttdeci">bool equal(const DalitzEventPattern &amp;other) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00109">DalitzEventPattern.cpp:109</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac983aedc412a4b9d2fd1124c00188036"></a>
@@ -735,6 +815,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00103">103</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                            {</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="classDalitzEventPattern.html">DalitzEventPattern</a> pat(*<span class="keyword">this</span>);</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i &lt; pat.size(); i++) pat[i].antiThis();</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">return</span> pat;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div><div class="ttc" id="classDalitzEventPattern_html"><div class="ttname"><a href="classDalitzEventPattern.html">DalitzEventPattern</a></div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8h_source.html#l00017">DalitzEventPattern.h:17</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a87e41707f89dd28fc096f4a2b707bc24"></a>
@@ -750,6 +833,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00283">283</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                                        {</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  std::string <a class="code" href="CLHEPSystemOfUnits_8h.html#ae9d0f740ff4383c48fbaaf93a1e7a886">s</a>(<span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>() &lt; 1) <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <a class="code" href="CLHEPSystemOfUnits_8h.html#ae9d0f740ff4383c48fbaaf93a1e7a886">s</a> = (*this)[0].name() + <span class="stringliteral">&quot;-&gt;&quot;</span>;</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=1; i &lt; this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <a class="code" href="CLHEPSystemOfUnits_8h.html#ae9d0f740ff4383c48fbaaf93a1e7a886">s</a> += (*this)[i].name();</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  }</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="CLHEPSystemOfUnits_8h.html#ae9d0f740ff4383c48fbaaf93a1e7a886">s</a>;</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div><div class="ttc" id="CLHEPSystemOfUnits_8h_html_ae9d0f740ff4383c48fbaaf93a1e7a886"><div class="ttname"><a href="CLHEPSystemOfUnits_8h.html#ae9d0f740ff4383c48fbaaf93a1e7a886">s</a></div><div class="ttdeci">static const double s</div><div class="ttdef"><b>Definition:</b> <a href="CLHEPSystemOfUnits_8h_source.html#l00126">CLHEPSystemOfUnits.h:126</a></div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector&lt; DecayTreeItem &gt;::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab3686a91829ead9686afe14723be83d1"></a>
@@ -773,6 +860,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8h_source.html#l00073">73</a> of file <a class="el" href="DalitzEventPattern_8h_source.html">DalitzEventPattern.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                          {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>() -1 ;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector&lt; DecayTreeItem &gt;::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3ebbf70f5088404fb2daec37f3f7f4d5"></a>
@@ -789,6 +879,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00130">130</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                                                      {</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordflow">return</span> ! ((*this) == rhs);</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae35f1b7223a676d52be9301fe6e5637f"></a>
@@ -805,6 +897,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00134">134</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                                                     {</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#ae71ed461dad5783f966dd1e3a5c62dbf">lt</a>(rhs);</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div><div class="ttc" id="classDalitzEventPattern_html_ae71ed461dad5783f966dd1e3a5c62dbf"><div class="ttname"><a href="classDalitzEventPattern.html#ae71ed461dad5783f966dd1e3a5c62dbf">DalitzEventPattern::lt</a></div><div class="ttdeci">bool lt(const DalitzEventPattern &amp;other) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00117">DalitzEventPattern.cpp:117</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae37593e64a075b1d0e63cf668062af56"></a>
@@ -821,6 +916,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00137">137</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                                                      {</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">return</span> (*<span class="keyword">this</span> &lt; rhs || *<span class="keyword">this</span> == rhs);</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af01f4455c3af5070c6e8827e2abebe20"></a>
@@ -837,6 +934,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00127">127</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                                                      {</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#a1da954a6513af80c322241ac6fcc5e2c">equal</a>(rhs);</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div><div class="ttc" id="classDalitzEventPattern_html_a1da954a6513af80c322241ac6fcc5e2c"><div class="ttname"><a href="classDalitzEventPattern.html#a1da954a6513af80c322241ac6fcc5e2c">DalitzEventPattern::equal</a></div><div class="ttdeci">bool equal(const DalitzEventPattern &amp;other) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00109">DalitzEventPattern.cpp:109</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9c37c481fe442c04c9632acf4ea37228"></a>
@@ -853,6 +953,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00143">143</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                                                     {</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordflow">return</span> ! ((*this) &lt;= rhs);</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abeb1f606853a8ba2ad0f1b3db2d305eb"></a>
@@ -869,6 +971,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00140">140</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                                                      {</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordflow">return</span> ! ((*this) &lt; rhs);</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abefdc2a8df7cc1a46144850079848bd0"></a>
@@ -885,6 +989,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00147">147</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                                 {</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;(&quot;</span>;</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt; this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    os &lt;&lt; (*this)[i];</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span>(i + 1&lt; this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>()) os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  }</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector&lt; DecayTreeItem &gt;::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a95e68803eb96d78e015117b8485a827d"></a>
@@ -900,6 +1007,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00215">215</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                              {</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <span class="keywordflow">return</span> this-&gt;<a class="code" href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">compatibleWithFinalState</a>(this-&gt;<a class="code" href="classDalitzEventPattern.html#ac983aedc412a4b9d2fd1124c00188036">makeCPConjugate</a>());</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div><div class="ttc" id="classDalitzEventPattern_html_ac983aedc412a4b9d2fd1124c00188036"><div class="ttname"><a href="classDalitzEventPattern.html#ac983aedc412a4b9d2fd1124c00188036">DalitzEventPattern::makeCPConjugate</a></div><div class="ttdeci">DalitzEventPattern makeCPConjugate() const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00103">DalitzEventPattern.cpp:103</a></div></div>
+<div class="ttc" id="classDalitzEventPattern_html_a5f792e444983593d81e285bb5d329cf7"><div class="ttname"><a href="classDalitzEventPattern.html#a5f792e444983593d81e285bb5d329cf7">DalitzEventPattern::compatibleWithFinalState</a></div><div class="ttdeci">bool compatibleWithFinalState(const AmpInitialiser &amp;ampInitContainsTree) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00172">DalitzEventPattern.cpp:172</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7ac7eb16fe97e4c2f9482e1c8859eae0"></a>
@@ -916,6 +1027,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00254">254</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                                                              {</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">empty</a>()) <span class="keywordflow">return</span> -9999;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordtype">double</span> sum=(*this)[0].mass();</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=1; i&lt;this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    sum -= (*this)[i].mass();</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  }</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="comment">// at this stage, sum = mother mass - (all daugher masses).</span></div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt; indices.<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">if</span>(indices[i] &lt; 1 || indices[i] &gt;= (<span class="keywordtype">int</span>) this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>()){</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      <span class="comment">// indices should be dgtr indices, i.e. from 1 to num-daughters.</span></div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      <span class="keywordflow">return</span> -9999.0;</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    sum += (*this)[indices[i]].mass();</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  }</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="comment">// now sum = mother mass - (missing daughter masses)</span></div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordflow">return</span> sum*sum;</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_ac4fc13b1887479f6f4cdf2e95c373a0f"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">MINT::PolymorphVector&lt; DecayTreeItem &gt;::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00047">PolymorphVector.h:47</a></div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector&lt; DecayTreeItem &gt;::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acb5855cfc236c298ea5bff0be24d5836"></a>
@@ -942,6 +1057,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00224">224</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                                   {</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  std::vector&lt;int&gt; indices(2);</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  indices[0] = i; indices[1] = j;</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#a7ac7eb16fe97e4c2f9482e1c8859eae0">sijMax</a>(indices);</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div><div class="ttc" id="classDalitzEventPattern_html_a7ac7eb16fe97e4c2f9482e1c8859eae0"><div class="ttname"><a href="classDalitzEventPattern.html#a7ac7eb16fe97e4c2f9482e1c8859eae0">DalitzEventPattern::sijMax</a></div><div class="ttdeci">double sijMax(const MINT::PolymorphVector&lt; int &gt; &amp;indices) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00254">DalitzEventPattern.cpp:254</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9e688ceb567a199d143694dd67c572db"></a>
@@ -974,6 +1092,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00236">236</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                                          {</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  std::vector&lt;int&gt; indices(3);</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  indices[0] = i; indices[1] = j; indices[2]=k;</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#a7ac7eb16fe97e4c2f9482e1c8859eae0">sijMax</a>(indices);</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div><div class="ttc" id="classDalitzEventPattern_html_a7ac7eb16fe97e4c2f9482e1c8859eae0"><div class="ttname"><a href="classDalitzEventPattern.html#a7ac7eb16fe97e4c2f9482e1c8859eae0">DalitzEventPattern::sijMax</a></div><div class="ttdeci">double sijMax(const MINT::PolymorphVector&lt; int &gt; &amp;indices) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00254">DalitzEventPattern.cpp:254</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a50544359c1db6335fc9d61c3e5848b32"></a>
@@ -990,6 +1111,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00242">242</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                                                              {</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordtype">double</span> sum=0;</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt; indices.<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span>(indices[i] &lt; 1 || indices[i] &gt;= (<span class="keywordtype">int</span>) this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>()){</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <span class="comment">// indices should be dgtr indices, i.e. from 1 to num-daughters.</span></div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      <span class="keywordflow">return</span> -9999.0;</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    sum += (*this)[indices[i]].mass();</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  }</div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordflow">return</span> sum*sum;</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector::size</a></div><div class="ttdeci">unsigned int size() const </div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a21c574d08d46ab4f7815106cbd7cd5d4"></a>
@@ -1016,6 +1140,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00219">219</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                                   {</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  std::vector&lt;int&gt; indices(2);</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  indices[0] = i; indices[1] = j;</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#a50544359c1db6335fc9d61c3e5848b32">sijMin</a>(indices);</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div><div class="ttc" id="classDalitzEventPattern_html_a50544359c1db6335fc9d61c3e5848b32"><div class="ttname"><a href="classDalitzEventPattern.html#a50544359c1db6335fc9d61c3e5848b32">DalitzEventPattern::sijMin</a></div><div class="ttdeci">double sijMin(const MINT::PolymorphVector&lt; int &gt; &amp;indices) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00242">DalitzEventPattern.cpp:242</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acd1955d3160e9cf46f0a2ed72fea3dc1"></a>
@@ -1048,6 +1175,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8cpp_source.html#l00230">230</a> of file <a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                                          {</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  std::vector&lt;int&gt; indices(3);</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  indices[0] = i; indices[1] = j; indices[2] = k;</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classDalitzEventPattern.html#a50544359c1db6335fc9d61c3e5848b32">sijMin</a>(indices);</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div><div class="ttc" id="classDalitzEventPattern_html_a50544359c1db6335fc9d61c3e5848b32"><div class="ttname"><a href="classDalitzEventPattern.html#a50544359c1db6335fc9d61c3e5848b32">DalitzEventPattern::sijMin</a></div><div class="ttdeci">double sijMin(const MINT::PolymorphVector&lt; int &gt; &amp;indices) const </div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8cpp_source.html#l00242">DalitzEventPattern.cpp:242</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1069,11 +1199,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzEventPattern_8h_source.html#l00019">19</a> of file <a class="el" href="DalitzEventPattern_8h_source.html">DalitzEventPattern.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="DalitzEventPattern_8h_source.html">DalitzEventPattern.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/DalitzEvents/<a class="el" href="DalitzEventPattern_8cpp.html">DalitzEventPattern.cpp</a></li>
+<li>Mint2/Mint/<a class="el" href="DalitzEventPattern_8h_source.html">DalitzEventPattern.h</a></li>
+<li>Mint2/src/Mojito/DalitzEvents/<a class="el" href="DalitzEventPattern_8cpp_source.html">DalitzEventPattern.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

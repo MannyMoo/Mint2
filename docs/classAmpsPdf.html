@@ -288,7 +288,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a36f47b5775788e9f291cdddaf383e8e7 inherit pro_methods_classMINT_1_1IReturnRealForEvent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IReturnRealForEvent.html#a36f47b5775788e9f291cdddaf383e8e7">IReturnRealForEvent</a> ()</td></tr>
 <tr class="separator:a36f47b5775788e9f291cdddaf383e8e7 inherit pro_methods_classMINT_1_1IReturnRealForEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00056">56</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a10c32ff7f87e8ac0b24a704d9403bc34"></a>
 <div class="memitem">
 <div class="memproto">
@@ -351,6 +354,21 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00075">75</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    : <a class="code" href="classDalitzPdfBaseFastInteg.html#af91f038b46af9a130c4f5d5fc920ec26">DalitzPdfBaseFastInteg</a>(pat, 0, amps, precision, mps)</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    , <a class="code" href="classAmpsPdf.html#ad68af393899786dcc770261605b0df47">_localRnd</a>(0)</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    , <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a>(0)</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    , <a class="code" href="classAmpsPdf.html#a7bd35bab9a6198345559403e17344d2b">_fileGen</a>(0)</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    , <a class="code" href="classAmpsPdf.html#a8f02943019793c856a3f87de9fc0a807">_chosenGen</a>(0)</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    , <a class="code" href="classAmpsPdf.html#ad8528b4e5746ea695a6bb707478b6315">_integratorSource</a>(<span class="stringliteral">&quot;IntegratorSource&quot;</span>, (std::string) <span class="stringliteral">&quot;old&quot;</span>, (<span class="keywordtype">char</span>*) 0) </div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      </div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    , <a class="code" href="classAmpsPdf.html#a21bbe940ac3f29a086f61b8dbec4772b">_integratorFileName</a>(fname)</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  {</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot; AmpsPdf with integ method &quot;</span> &lt;&lt; method &lt;&lt; endl;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> nonFlat = <span class="stringliteral">&quot;efficient&quot;</span> == method;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> generateNew = ((string)<a class="code" href="classAmpsPdf.html#ad8528b4e5746ea695a6bb707478b6315">_integratorSource</a> == (<span class="keywordtype">string</span>)<span class="stringliteral">&quot;new&quot;</span>);</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span>(nonFlat){</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;AmpsPdf uses nonFlat integration.&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <span class="keywordflow">if</span>(generateNew){</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a> =  <span class="keyword">new</span> <a class="code" href="classSignalGenerator.html">SignalGenerator</a>(pat, amps);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a>-&gt;<a class="code" href="classBaseGenerator.html#a0a409d73efeade659847f0ea7cf01834">setWeighted</a>();</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a>-&gt;<a class="code" href="classBaseGenerator.html#a56d998784849f1db9e8e91b20bbc43a9">setSaveEvents</a>(<a class="code" href="classAmpsPdf.html#a21bbe940ac3f29a086f61b8dbec4772b">_integratorFileName</a>);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classAmpsPdf.html#a8f02943019793c856a3f87de9fc0a807">_chosenGen</a> = <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a>;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// here, SignalGenerator is used by FromFileGenerator, to fill</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// up missing events in case more are needed than found in the</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// file.  Since we don&#39;t know with which random seed the</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// events in the file were generated, we supply a random</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// number generator with randomised seed.</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Using else, AmpsPdf.h from ampFit &quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="classAmpsPdf.html#ad68af393899786dcc770261605b0df47">_localRnd</a> = <span class="keyword">new</span> TRandom3(time(0));</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a> =  <span class="keyword">new</span> <a class="code" href="classSignalGenerator.html">SignalGenerator</a>(pat, amps, <a class="code" href="classAmpsPdf.html#ad68af393899786dcc770261605b0df47">_localRnd</a>);</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a>-&gt;<a class="code" href="classBaseGenerator.html#a0a409d73efeade659847f0ea7cf01834">setWeighted</a>();</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a>-&gt;<a class="code" href="classBaseGenerator.html#aa9cc02ae020cada7a7eff1a01c86c764">dontSaveEvents</a>();<span class="comment">// saving events is done by FromFileGenerator</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span>(genMoreEvents) <a class="code" href="classAmpsPdf.html#a7bd35bab9a6198345559403e17344d2b">_fileGen</a>   = <span class="keyword">new</span> <a class="code" href="classFromFileGenerator.html">FromFileGenerator</a>(<a class="code" href="classAmpsPdf.html#a21bbe940ac3f29a086f61b8dbec4772b">_integratorFileName</a>, <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a>);</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">else</span>{</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <a class="code" href="classAmpsPdf.html#a7bd35bab9a6198345559403e17344d2b">_fileGen</a> = <span class="keyword">new</span> <a class="code" href="classFromFileGenerator.html">FromFileGenerator</a>(<a class="code" href="classAmpsPdf.html#a21bbe940ac3f29a086f61b8dbec4772b">_integratorFileName</a>, 0);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;not going to generate any more events&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  </div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="classAmpsPdf.html#a8f02943019793c856a3f87de9fc0a807">_chosenGen</a> = <a class="code" href="classAmpsPdf.html#a7bd35bab9a6198345559403e17344d2b">_fileGen</a>;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      }</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      </div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      this-&gt;<a class="code" href="classDalitzPdfBaseFastInteg.html#a507ce55e397e93566a99967ded5bc07a">setEventGenerator</a>(<a class="code" href="classAmpsPdf.html#a8f02943019793c856a3f87de9fc0a807">_chosenGen</a>);</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;AmpsPdf uses flat integration.&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  }</div><div class="ttc" id="classAmpsPdf_html_acff741874d07fe4a411e615b51539888"><div class="ttname"><a href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">AmpsPdf::_sgGen</a></div><div class="ttdeci">SignalGenerator * _sgGen</div><div class="ttdef"><b>Definition:</b> <a href="ampFit_8cpp_source.html#l00061">ampFit.cpp:61</a></div></div>
+<div class="ttc" id="classSignalGenerator_html"><div class="ttname"><a href="classSignalGenerator.html">SignalGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="SignalGenerator_8h_source.html#l00025">SignalGenerator.h:25</a></div></div>
+<div class="ttc" id="classAmpsPdf_html_ad8528b4e5746ea695a6bb707478b6315"><div class="ttname"><a href="classAmpsPdf.html#ad8528b4e5746ea695a6bb707478b6315">AmpsPdf::_integratorSource</a></div><div class="ttdeci">NamedParameter&lt; std::string &gt; _integratorSource</div><div class="ttdef"><b>Definition:</b> <a href="ampFit_8cpp_source.html#l00064">ampFit.cpp:64</a></div></div>
+<div class="ttc" id="classBaseGenerator_html_a56d998784849f1db9e8e91b20bbc43a9"><div class="ttname"><a href="classBaseGenerator.html#a56d998784849f1db9e8e91b20bbc43a9">BaseGenerator::setSaveEvents</a></div><div class="ttdeci">void setSaveEvents(const std::string &amp;fname=&quot;GeneratorEvents.root&quot;, const std::string &amp;opt=&quot;RECREATE&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="BaseGenerator_8cpp_source.html#l00075">BaseGenerator.cpp:75</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseFastInteg_html_af91f038b46af9a130c4f5d5fc920ec26"><div class="ttname"><a href="classDalitzPdfBaseFastInteg.html#af91f038b46af9a130c4f5d5fc920ec26">DalitzPdfBaseFastInteg::DalitzPdfBaseFastInteg</a></div><div class="ttdeci">DalitzPdfBaseFastInteg(const DalitzEventPattern &amp;pat, MINT::IEventGenerator&lt; IDalitzEvent &gt; *generator, IFastAmplitudeIntegrable *amps, double precision=1.e-3, MINT::MinuitParameterSet *mps=0)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseFastInteg_8cpp_source.html#l00124">DalitzPdfBaseFastInteg.cpp:124</a></div></div>
+<div class="ttc" id="classBaseGenerator_html_aa9cc02ae020cada7a7eff1a01c86c764"><div class="ttname"><a href="classBaseGenerator.html#aa9cc02ae020cada7a7eff1a01c86c764">BaseGenerator::dontSaveEvents</a></div><div class="ttdeci">void dontSaveEvents()</div><div class="ttdef"><b>Definition:</b> <a href="BaseGenerator_8cpp_source.html#l00080">BaseGenerator.cpp:80</a></div></div>
+<div class="ttc" id="classFromFileGenerator_html"><div class="ttname"><a href="classFromFileGenerator.html">FromFileGenerator</a></div><div class="ttdef"><b>Definition:</b> <a href="FromFileGenerator_8h_source.html#l00018">FromFileGenerator.h:18</a></div></div>
+<div class="ttc" id="classAmpsPdf_html_a7bd35bab9a6198345559403e17344d2b"><div class="ttname"><a href="classAmpsPdf.html#a7bd35bab9a6198345559403e17344d2b">AmpsPdf::_fileGen</a></div><div class="ttdeci">FromFileGenerator * _fileGen</div><div class="ttdef"><b>Definition:</b> <a href="ampFit_8cpp_source.html#l00062">ampFit.cpp:62</a></div></div>
+<div class="ttc" id="classAmpsPdf_html_a21bbe940ac3f29a086f61b8dbec4772b"><div class="ttname"><a href="classAmpsPdf.html#a21bbe940ac3f29a086f61b8dbec4772b">AmpsPdf::_integratorFileName</a></div><div class="ttdeci">std::string _integratorFileName</div><div class="ttdef"><b>Definition:</b> <a href="ampFit_8cpp_source.html#l00065">ampFit.cpp:65</a></div></div>
+<div class="ttc" id="classBaseGenerator_html_a0a409d73efeade659847f0ea7cf01834"><div class="ttname"><a href="classBaseGenerator.html#a0a409d73efeade659847f0ea7cf01834">BaseGenerator::setWeighted</a></div><div class="ttdeci">void setWeighted(bool w=true)</div><div class="ttdef"><b>Definition:</b> <a href="BaseGenerator_8h_source.html#l00062">BaseGenerator.h:62</a></div></div>
+<div class="ttc" id="classAmpsPdf_html_ad68af393899786dcc770261605b0df47"><div class="ttname"><a href="classAmpsPdf.html#ad68af393899786dcc770261605b0df47">AmpsPdf::_localRnd</a></div><div class="ttdeci">TRandom * _localRnd</div><div class="ttdef"><b>Definition:</b> <a href="ampFit_8cpp_source.html#l00060">ampFit.cpp:60</a></div></div>
+<div class="ttc" id="classDalitzPdfBaseFastInteg_html_a507ce55e397e93566a99967ded5bc07a"><div class="ttname"><a href="classDalitzPdfBaseFastInteg.html#a507ce55e397e93566a99967ded5bc07a">DalitzPdfBaseFastInteg::setEventGenerator</a></div><div class="ttdeci">void setEventGenerator(MINT::IEventGenerator&lt; IDalitzEvent &gt; *g)</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseFastInteg_8h_source.html#l00116">DalitzPdfBaseFastInteg.h:116</a></div></div>
+<div class="ttc" id="classAmpsPdf_html_a8f02943019793c856a3f87de9fc0a807"><div class="ttname"><a href="classAmpsPdf.html#a8f02943019793c856a3f87de9fc0a807">AmpsPdf::_chosenGen</a></div><div class="ttdeci">IEventGenerator&lt; IDalitzEvent &gt; * _chosenGen</div><div class="ttdef"><b>Definition:</b> <a href="ampFit_8cpp_source.html#l00063">ampFit.cpp:63</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a19f9826dd8f5d0e73e94ba07cd195751"></a>
@@ -374,6 +392,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00129">129</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            {</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span>(0 != <a class="code" href="classAmpsPdf.html#a7bd35bab9a6198345559403e17344d2b">_fileGen</a>)  <span class="keyword">delete</span> <a class="code" href="classAmpsPdf.html#a7bd35bab9a6198345559403e17344d2b">_fileGen</a>;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span>(0 != <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a>)    <span class="keyword">delete</span> <a class="code" href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">_sgGen</a>;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span>(0 != <a class="code" href="classAmpsPdf.html#ad68af393899786dcc770261605b0df47">_localRnd</a>) <span class="keyword">delete</span> <a class="code" href="classAmpsPdf.html#ad68af393899786dcc770261605b0df47">_localRnd</a>;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  }</div><div class="ttc" id="classAmpsPdf_html_acff741874d07fe4a411e615b51539888"><div class="ttname"><a href="classAmpsPdf.html#acff741874d07fe4a411e615b51539888">AmpsPdf::_sgGen</a></div><div class="ttdeci">SignalGenerator * _sgGen</div><div class="ttdef"><b>Definition:</b> <a href="ampFit_8cpp_source.html#l00061">ampFit.cpp:61</a></div></div>
+<div class="ttc" id="classAmpsPdf_html_a7bd35bab9a6198345559403e17344d2b"><div class="ttname"><a href="classAmpsPdf.html#a7bd35bab9a6198345559403e17344d2b">AmpsPdf::_fileGen</a></div><div class="ttdeci">FromFileGenerator * _fileGen</div><div class="ttdef"><b>Definition:</b> <a href="ampFit_8cpp_source.html#l00062">ampFit.cpp:62</a></div></div>
+<div class="ttc" id="classAmpsPdf_html_ad68af393899786dcc770261605b0df47"><div class="ttname"><a href="classAmpsPdf.html#ad68af393899786dcc770261605b0df47">AmpsPdf::_localRnd</a></div><div class="ttdeci">TRandom * _localRnd</div><div class="ttdef"><b>Definition:</b> <a href="ampFit_8cpp_source.html#l00060">ampFit.cpp:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -398,6 +421,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00127">127</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classDalitzPdfBaseFastInteg.html#aa8810758b99d603643698e88b14a7c77">_amps</a>;}</div><div class="ttc" id="classDalitzPdfBaseFastInteg_html_aa8810758b99d603643698e88b14a7c77"><div class="ttname"><a href="classDalitzPdfBaseFastInteg.html#aa8810758b99d603643698e88b14a7c77">DalitzPdfBaseFastInteg::_amps</a></div><div class="ttdeci">IFastAmplitudeIntegrable * _amps</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseFastInteg_8h_source.html#l00065">DalitzPdfBaseFastInteg.h:65</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acc1d02da834bb8b0a989c90287e99916"></a>
@@ -424,6 +450,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classDalitzPdfBaseFastInteg.html#adff2cd907d0913d6c4cad81b64b0e8df">DalitzPdfBaseFastInteg</a>.</p>
 
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00067">67</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                              {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">double</span> ampSq =  <a class="code" href="classDalitzPdfBaseFastInteg.html#aa8810758b99d603643698e88b14a7c77">_amps</a>-&gt;<a class="code" href="classMINT_1_1IReturnRealForEvent.html#a6918c33099b2378609a462e6cf736232">RealVal</a>(evt); </div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> ampSq;<span class="comment">// * getEvent()-&gt;phaseSpace();</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div><div class="ttc" id="classMINT_1_1IReturnRealForEvent_html_a6918c33099b2378609a462e6cf736232"><div class="ttname"><a href="classMINT_1_1IReturnRealForEvent.html#a6918c33099b2378609a462e6cf736232">MINT::IReturnRealForEvent::RealVal</a></div><div class="ttdeci">virtual double RealVal(EVENT_TYPE &amp;evt)=0</div></div>
+<div class="ttc" id="classDalitzPdfBaseFastInteg_html_aa8810758b99d603643698e88b14a7c77"><div class="ttname"><a href="classDalitzPdfBaseFastInteg.html#aa8810758b99d603643698e88b14a7c77">DalitzPdfBaseFastInteg::_amps</a></div><div class="ttdeci">IFastAmplitudeIntegrable * _amps</div><div class="ttdef"><b>Definition:</b> <a href="DalitzPdfBaseFastInteg_8h_source.html#l00065">DalitzPdfBaseFastInteg.h:65</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -445,6 +475,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00063">63</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7bd35bab9a6198345559403e17344d2b"></a>
@@ -464,6 +496,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00062">62</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
 
 </div>
 </div>
@@ -485,6 +519,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00065">65</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad8528b4e5746ea695a6bb707478b6315"></a>
@@ -504,6 +540,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00064">64</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
 
 </div>
 </div>
@@ -525,6 +563,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00060">60</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="acff741874d07fe4a411e615b51539888"></a>
@@ -545,10 +585,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ampFit_8cpp_source.html#l00061">61</a> of file <a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/example/<a class="el" href="ampFit_8cpp.html">ampFit.cpp</a></li>
+<li>Mint2/example/<a class="el" href="ampFit_8cpp_source.html">ampFit.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

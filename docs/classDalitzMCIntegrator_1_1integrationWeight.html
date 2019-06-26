@@ -128,7 +128,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a36f47b5775788e9f291cdddaf383e8e7 inherit pro_methods_classMINT_1_1IReturnRealForEvent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IReturnRealForEvent.html#a36f47b5775788e9f291cdddaf383e8e7">IReturnRealForEvent</a> ()</td></tr>
 <tr class="separator:a36f47b5775788e9f291cdddaf383e8e7 inherit pro_methods_classMINT_1_1IReturnRealForEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="DalitzMCIntegrator_8h_source.html#l00031">31</a> of file <a class="el" href="DalitzMCIntegrator_8h_source.html">DalitzMCIntegrator.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="afd1994c494040caf7430cec47246400d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -143,6 +146,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzMCIntegrator_8cpp_source.html#l00268">268</a> of file <a class="el" href="DalitzMCIntegrator_8cpp_source.html">DalitzMCIntegrator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  : <a class="code" href="classDalitzMCIntegrator_1_1integrationWeight.html#a8ecd1d3da619746bf282660cb1e84550">_externalPdf</a>(externalPdf)</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;{</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;after construction, externalPdf = &quot;</span> &lt;&lt; <a class="code" href="classDalitzMCIntegrator_1_1integrationWeight.html#a8ecd1d3da619746bf282660cb1e84550">_externalPdf</a> &lt;&lt; endl;</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div><div class="ttc" id="classDalitzMCIntegrator_1_1integrationWeight_html_a8ecd1d3da619746bf282660cb1e84550"><div class="ttname"><a href="classDalitzMCIntegrator_1_1integrationWeight.html#a8ecd1d3da619746bf282660cb1e84550">DalitzMCIntegrator::integrationWeight::_externalPdf</a></div><div class="ttdeci">MINT::IReturnRealForEvent&lt; IDalitzEvent &gt; * _externalPdf</div><div class="ttdef"><b>Definition:</b> <a href="DalitzMCIntegrator_8h_source.html#l00032">DalitzMCIntegrator.h:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -170,6 +176,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IReturnRealForEvent.html#a6918c33099b2378609a462e6cf736232">MINT::IReturnRealForEvent&lt; IDalitzEvent &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="DalitzMCIntegrator_8cpp_source.html#l00275">275</a> of file <a class="el" href="DalitzMCIntegrator_8cpp_source.html">DalitzMCIntegrator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                                           {</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordtype">double</span> den    = evt.<a class="code" href="classIDalitzEvent.html#afb543455d385f45f2abee15710c03e3c">getGeneratorPdfRelativeToPhaseSpace</a>();</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordtype">double</span> weight = evt.<a class="code" href="classIDalitzEvent.html#af4154e8bbe6943d4d2addd6d31f33348">getWeight</a>();</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordflow">if</span>(0 != den) weight /= den;</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="keywordtype">double</span> val = <a class="code" href="classDalitzMCIntegrator_1_1integrationWeight.html#a8ecd1d3da619746bf282660cb1e84550">_externalPdf</a>-&gt;<a class="code" href="classMINT_1_1IReturnRealForEvent.html#a6918c33099b2378609a462e6cf736232">RealVal</a>(evt) * weight;</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keywordflow">return</span> val;</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div><div class="ttc" id="classIDalitzEvent_html_afb543455d385f45f2abee15710c03e3c"><div class="ttname"><a href="classIDalitzEvent.html#afb543455d385f45f2abee15710c03e3c">IDalitzEvent::getGeneratorPdfRelativeToPhaseSpace</a></div><div class="ttdeci">virtual double getGeneratorPdfRelativeToPhaseSpace() const  =0</div></div>
+<div class="ttc" id="classMINT_1_1IReturnRealForEvent_html_a6918c33099b2378609a462e6cf736232"><div class="ttname"><a href="classMINT_1_1IReturnRealForEvent.html#a6918c33099b2378609a462e6cf736232">MINT::IReturnRealForEvent::RealVal</a></div><div class="ttdeci">virtual double RealVal(EVENT_TYPE &amp;evt)=0</div></div>
+<div class="ttc" id="classDalitzMCIntegrator_1_1integrationWeight_html_a8ecd1d3da619746bf282660cb1e84550"><div class="ttname"><a href="classDalitzMCIntegrator_1_1integrationWeight.html#a8ecd1d3da619746bf282660cb1e84550">DalitzMCIntegrator::integrationWeight::_externalPdf</a></div><div class="ttdeci">MINT::IReturnRealForEvent&lt; IDalitzEvent &gt; * _externalPdf</div><div class="ttdef"><b>Definition:</b> <a href="DalitzMCIntegrator_8h_source.html#l00032">DalitzMCIntegrator.h:32</a></div></div>
+<div class="ttc" id="classIDalitzEvent_html_af4154e8bbe6943d4d2addd6d31f33348"><div class="ttname"><a href="classIDalitzEvent.html#af4154e8bbe6943d4d2addd6d31f33348">IDalitzEvent::getWeight</a></div><div class="ttdeci">virtual double getWeight() const  =0</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2d2ae4ee73e6cb673425dbfe62ed1329"></a>
@@ -186,6 +198,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzMCIntegrator_8cpp_source.html#l00285">285</a> of file <a class="el" href="DalitzMCIntegrator_8cpp_source.html">DalitzMCIntegrator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                                                  {</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <a class="code" href="classDalitzMCIntegrator_1_1integrationWeight.html#a8ecd1d3da619746bf282660cb1e84550">_externalPdf</a> = pdf;</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div><div class="ttc" id="classDalitzMCIntegrator_1_1integrationWeight_html_a8ecd1d3da619746bf282660cb1e84550"><div class="ttname"><a href="classDalitzMCIntegrator_1_1integrationWeight.html#a8ecd1d3da619746bf282660cb1e84550">DalitzMCIntegrator::integrationWeight::_externalPdf</a></div><div class="ttdeci">MINT::IReturnRealForEvent&lt; IDalitzEvent &gt; * _externalPdf</div><div class="ttdef"><b>Definition:</b> <a href="DalitzMCIntegrator_8h_source.html#l00032">DalitzMCIntegrator.h:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -207,11 +222,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DalitzMCIntegrator_8h_source.html#l00032">32</a> of file <a class="el" href="DalitzMCIntegrator_8h_source.html">DalitzMCIntegrator.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="DalitzMCIntegrator_8h_source.html">DalitzMCIntegrator.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/DalitzIntegrator/<a class="el" href="DalitzMCIntegrator_8cpp.html">DalitzMCIntegrator.cpp</a></li>
+<li>Mint2/Mint/<a class="el" href="DalitzMCIntegrator_8h_source.html">DalitzMCIntegrator.h</a></li>
+<li>Mint2/src/Mojito/DalitzIntegrator/<a class="el" href="DalitzMCIntegrator_8cpp_source.html">DalitzMCIntegrator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

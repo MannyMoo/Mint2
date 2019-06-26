@@ -98,7 +98,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e7a64519ea2d847513ca147c5524b16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlessBySVPAT.html#a6e7a64519ea2d847513ca147c5524b16">operator()</a> (<a class="el" href="classMINT_1_1const__counted__ptr.html">MINT::const_counted_ptr</a>&lt; <a class="el" href="DecayTree_8h.html#a42fe819d4831475c437d33b7cd27695a">DecayTree</a> &gt; a, <a class="el" href="classMINT_1_1const__counted__ptr.html">MINT::const_counted_ptr</a>&lt; <a class="el" href="DecayTree_8h.html#a42fe819d4831475c437d33b7cd27695a">DecayTree</a> &gt; b) const </td></tr>
 <tr class="separator:a6e7a64519ea2d847513ca147c5524b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="DecayTreeComparisons_8h_source.html#l00008">8</a> of file <a class="el" href="DecayTreeComparisons_8h_source.html">DecayTreeComparisons.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a6e7a64519ea2d847513ca147c5524b16"></a>
 <div class="memitem">
 <div class="memproto">
@@ -123,11 +126,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DecayTreeComparisons_8cpp_source.html#l00009">9</a> of file <a class="el" href="DecayTreeComparisons_8cpp_source.html">DecayTreeComparisons.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                                                                                {</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="comment">// first handle bad pointers</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0==b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0!=b) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">if</span>(0 !=a  &amp;&amp; 0==b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  </div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">return</span> a-&gt;<a class="code" href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">getVal</a>().<a class="code" href="classDecayTreeItem.html#adaa4ce0f7faeb90de0400cddd8b7788e">SVPAT</a>() &lt; b-&gt;<a class="code" href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">getVal</a>().<a class="code" href="classDecayTreeItem.html#adaa4ce0f7faeb90de0400cddd8b7788e">SVPAT</a>();</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div><div class="ttc" id="classDecayTreeItem_html_adaa4ce0f7faeb90de0400cddd8b7788e"><div class="ttname"><a href="classDecayTreeItem.html#adaa4ce0f7faeb90de0400cddd8b7788e">DecayTreeItem::SVPAT</a></div><div class="ttdeci">std::string SVPAT() const </div><div class="ttdef"><b>Definition:</b> <a href="DecayTreeItem_8cpp_source.html#l00040">DecayTreeItem.cpp:40</a></div></div>
+<div class="ttc" id="classDDTree_html_acc9c359b50f11e2afe4f9c4906f6e3a8"><div class="ttname"><a href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">DDTree::getVal</a></div><div class="ttdeci">const ValueType &amp; getVal() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00102">DDTree.h:102</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="DecayTreeComparisons_8h_source.html">DecayTreeComparisons.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/DecayTrees/<a class="el" href="DecayTreeComparisons_8cpp.html">DecayTreeComparisons.cpp</a></li>
+<li>Mint2/Mint/<a class="el" href="DecayTreeComparisons_8h_source.html">DecayTreeComparisons.h</a></li>
+<li>Mint2/src/Mojito/DecayTrees/<a class="el" href="DecayTreeComparisons_8cpp_source.html">DecayTreeComparisons.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

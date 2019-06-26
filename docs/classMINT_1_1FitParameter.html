@@ -370,7 +370,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad4fff7c38a6fb7bafde6228ff3c7b5ae inherit pro_static_methods_classMINT_1_1NamedParameterBase"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classMINT_1_1ParsedParameterFileList.html">ParsedParameterFileList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1NamedParameterBase.html#ad4fff7c38a6fb7bafde6228ff3c7b5ae">getFlist</a> ()</td></tr>
 <tr class="separator:ad4fff7c38a6fb7bafde6228ff3c7b5ae inherit pro_static_methods_classMINT_1_1NamedParameterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00040">40</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="ac823a25c21ca761c9c2c33dece221f75"></a>
 <div class="memitem">
 <div class="memproto">
@@ -389,6 +392,11 @@ Additional Inherited Members</h2></td></tr>
 </td></tr>
 </table>
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00068">68</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{<a class="code" href="classMINT_1_1FitParameter.html#ac823a25c21ca761c9c2c33dece221f75a7dde34c5d32a148263b76116f1feda42">FIT</a>=0, <a class="code" href="classMINT_1_1FitParameter.html#ac823a25c21ca761c9c2c33dece221f75a5bb3c7a65324cf9c31d568d4b43822c5">HIDE</a>=1, <a class="code" href="classMINT_1_1FitParameter.html#ac823a25c21ca761c9c2c33dece221f75a0ed605a7e33d996d11e032fcac32b52c">FIX</a>=2};<span class="comment">// possible fix options</span></div><div class="ttc" id="classMINT_1_1FitParameter_html_ac823a25c21ca761c9c2c33dece221f75a5bb3c7a65324cf9c31d568d4b43822c5"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ac823a25c21ca761c9c2c33dece221f75a5bb3c7a65324cf9c31d568d4b43822c5">MINT::FitParameter::HIDE</a></div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00068">FitParameter.h:68</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ac823a25c21ca761c9c2c33dece221f75a7dde34c5d32a148263b76116f1feda42"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ac823a25c21ca761c9c2c33dece221f75a7dde34c5d32a148263b76116f1feda42">MINT::FitParameter::FIT</a></div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00068">FitParameter.h:68</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ac823a25c21ca761c9c2c33dece221f75a0ed605a7e33d996d11e032fcac32b52c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ac823a25c21ca761c9c2c33dece221f75a0ed605a7e33d996d11e032fcac32b52c">MINT::FitParameter::FIX</a></div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00068">FitParameter.h:68</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -414,6 +422,23 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00106">106</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  : <a class="code" href="classMINT_1_1INamedParameter.html#aabaeabc31d6624df470993086983e567">INamedParameter</a>()</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  , <a class="code" href="classMINT_1_1NamedParameterBase.html#a383af789812c933044857cc89de9df2d">NamedParameterBase</a>(other)</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  , <a class="code" href="classMINT_1_1IMinuitParameter.html#a25f7506e9b47d476b93e6c00a3cc03a8">IMinuitParameter</a>()</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">//  , _minPtr(other._minPtr)</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>)</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">_psetIndex</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">_psetIndex</a>)</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">//  , _pN(other._pN)</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">_iFixInit</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">_iFixInit</a>)</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">_meanInit</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">_meanInit</a>)</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">_stepInit</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">_stepInit</a>)</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">_minInit</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">_minInit</a>)</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">_maxInit</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">_maxInit</a>)</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">_scanParameters</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">_scanParameters</a>)</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">_meanResult</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">_meanResult</a>)</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a9e928705e4cb5812885252d14edb314a">_errResult</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#a9e928705e4cb5812885252d14edb314a">_errResult</a>)</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a6143671639d3ff495dad6850db6b121a">_errPosResult</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#a6143671639d3ff495dad6850db6b121a">_errPosResult</a>)</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#aa4793129b77d64c4c8202c4ca255e457">_errNegResult</a>(other.<a class="code" href="classMINT_1_1FitParameter.html#aa4793129b77d64c4c8202c4ca255e457">_errNegResult</a>)</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="comment">//cout &lt;&lt; &quot;FitParameter copy-constructed &quot; &lt;&lt; this-&gt;name() &lt;&lt; endl;</span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a06d68b8b107331565bcd81b20a8367eb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">MINT::FitParameter::_iFixInit</a></div><div class="ttdeci">int _iFixInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00055">FitParameter.h:55</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ab9d58e1f634680375ba1043b96d2cb90"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">MINT::FitParameter::_meanResult</a></div><div class="ttdeci">double _meanResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad619e564b2dc18575b160015a06a3c7a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">MINT::FitParameter::_stepInit</a></div><div class="ttdeci">double _stepInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1INamedParameter_html_aabaeabc31d6624df470993086983e567"><div class="ttname"><a href="classMINT_1_1INamedParameter.html#aabaeabc31d6624df470993086983e567">MINT::INamedParameter::INamedParameter</a></div><div class="ttdeci">INamedParameter()</div><div class="ttdef"><b>Definition:</b> <a href="INamedParameter_8h_source.html#l00012">INamedParameter.h:12</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_abf05fe205aecdbf693331fbefe85adc3"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">MINT::FitParameter::_psetIndex</a></div><div class="ttdeci">int _psetIndex</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00053">FitParameter.h:53</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a9e928705e4cb5812885252d14edb314a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a9e928705e4cb5812885252d14edb314a">MINT::FitParameter::_errResult</a></div><div class="ttdeci">double _errResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a24d346ce67f775a82cd7e862e56d1565"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">MINT::FitParameter::_maxInit</a></div><div class="ttdeci">double _maxInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad8c885d8412903aa231f01c3f638d4b8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">MINT::FitParameter::_meanInit</a></div><div class="ttdeci">double _meanInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad5ff99d4331ac7acf875eb7ceb6fa239"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">MINT::FitParameter::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00052">FitParameter.h:52</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a5fc14b1fa92a6fbc87754fd1ddda519c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">MINT::FitParameter::_scanParameters</a></div><div class="ttdeci">NamedParameter&lt; double &gt; _scanParameters</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00058">FitParameter.h:58</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a6143671639d3ff495dad6850db6b121a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a6143671639d3ff495dad6850db6b121a">MINT::FitParameter::_errPosResult</a></div><div class="ttdeci">double _errPosResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_aa4793129b77d64c4c8202c4ca255e457"><div class="ttname"><a href="classMINT_1_1FitParameter.html#aa4793129b77d64c4c8202c4ca255e457">MINT::FitParameter::_errNegResult</a></div><div class="ttdeci">double _errNegResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1IMinuitParameter_html_a25f7506e9b47d476b93e6c00a3cc03a8"><div class="ttname"><a href="classMINT_1_1IMinuitParameter.html#a25f7506e9b47d476b93e6c00a3cc03a8">MINT::IMinuitParameter::IMinuitParameter</a></div><div class="ttdeci">IMinuitParameter()</div><div class="ttdef"><b>Definition:</b> <a href="IMinuitParameter_8h_source.html#l00057">IMinuitParameter.h:57</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a8cf49e4791e91107e0c0c8d21d5df131"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">MINT::FitParameter::_minInit</a></div><div class="ttdeci">double _minInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_a383af789812c933044857cc89de9df2d"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#a383af789812c933044857cc89de9df2d">MINT::NamedParameterBase::NamedParameterBase</a></div><div class="ttdeci">NamedParameterBase(const std::string &amp;name_in=&quot;&quot;, const char *fname=0, VERBOSITY=VERBOSE)</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8cpp_source.html#l00040">NamedParameterBase.cpp:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a99e6266039075d184bab37bcf5c7a031"></a>
@@ -458,6 +483,27 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00013">13</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  : <a class="code" href="classMINT_1_1INamedParameter.html#aabaeabc31d6624df470993086983e567">INamedParameter</a>()</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  , <a class="code" href="classMINT_1_1NamedParameterBase.html#a383af789812c933044857cc89de9df2d">NamedParameterBase</a>(<a class="code" href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">name</a>, fname, vb)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  , <a class="code" href="classMINT_1_1IMinuitParameter.html#a25f7506e9b47d476b93e6c00a3cc03a8">IMinuitParameter</a>()</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">//  , _minPtr(0)</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>(0)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">_psetIndex</a>(-9999)</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">//  , _pN(-1)</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">_iFixInit</a>((<span class="keywordtype">int</span>)fow)</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">_meanInit</a>(0)</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">_stepInit</a>(0)</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">_minInit</a>(0)</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">_maxInit</a>(0)</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">_scanParameters</a>(<a class="code" href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">name</a> + <span class="stringliteral">&quot;_Scan&quot;</span>, fname, <a class="code" href="classMINT_1_1NamedParameterBase.html#ab9dd79eaa49720d146252ac90f70a0b1a3de6c991831287c7c6fe69d2eb7830e4">NamedParameterBase::QUIET</a>)</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#ac045eb16b0c80e0e3d5c78f20fb26a1d">defaultInit</a>();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="classMINT_1_1NamedParameterBase.html#ac223df91ae5d854ce93528e12113becd">setFromParsedFile</a>();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="classMINT_1_1MinuitParameterSet.html">MinuitParameterSet</a>* ps = setPtr;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span>(0 == ps) ps = <a class="code" href="classMINT_1_1MinuitParameterSet.html#aaed853598d1a91ab1d5533da1e5d8bd6">MinuitParameterSet::getDefaultSet</a>();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a44bc0bc375f0b69bbf068f4fbfbd4618">addToParSet</a>(ps);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">initToResult</a>();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">//  cout &lt;&lt; &quot;FitParameter constructed &quot; &lt;&lt; this-&gt;name() &lt;&lt; endl;</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a06d68b8b107331565bcd81b20a8367eb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">MINT::FitParameter::_iFixInit</a></div><div class="ttdeci">int _iFixInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00055">FitParameter.h:55</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_ac223df91ae5d854ce93528e12113becd"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#ac223df91ae5d854ce93528e12113becd">MINT::NamedParameterBase::setFromParsedFile</a></div><div class="ttdeci">virtual bool setFromParsedFile()</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8cpp_source.html#l00131">NamedParameterBase.cpp:131</a></div></div>
+<div class="ttc" id="classMINT_1_1MinuitParameterSet_html"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html">MINT::MinuitParameterSet</a></div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8h_source.html#l00014">MinuitParameterSet.h:14</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad619e564b2dc18575b160015a06a3c7a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">MINT::FitParameter::_stepInit</a></div><div class="ttdeci">double _stepInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1MinuitParameterSet_html_aaed853598d1a91ab1d5533da1e5d8bd6"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html#aaed853598d1a91ab1d5533da1e5d8bd6">MINT::MinuitParameterSet::getDefaultSet</a></div><div class="ttdeci">static MinuitParameterSet * getDefaultSet()</div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8cpp_source.html#l00019">MinuitParameterSet.cpp:19</a></div></div>
+<div class="ttc" id="classMINT_1_1INamedParameter_html_aabaeabc31d6624df470993086983e567"><div class="ttname"><a href="classMINT_1_1INamedParameter.html#aabaeabc31d6624df470993086983e567">MINT::INamedParameter::INamedParameter</a></div><div class="ttdeci">INamedParameter()</div><div class="ttdef"><b>Definition:</b> <a href="INamedParameter_8h_source.html#l00012">INamedParameter.h:12</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_abf05fe205aecdbf693331fbefe85adc3"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">MINT::FitParameter::_psetIndex</a></div><div class="ttdeci">int _psetIndex</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00053">FitParameter.h:53</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a24d346ce67f775a82cd7e862e56d1565"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">MINT::FitParameter::_maxInit</a></div><div class="ttdeci">double _maxInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad8c885d8412903aa231f01c3f638d4b8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">MINT::FitParameter::_meanInit</a></div><div class="ttdeci">double _meanInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_abb0d7b27a71647f741f4f32994a455fb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">MINT::FitParameter::name</a></div><div class="ttdeci">virtual const std::string &amp; name() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00126">FitParameter.h:126</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad5ff99d4331ac7acf875eb7ceb6fa239"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">MINT::FitParameter::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00052">FitParameter.h:52</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ac045eb16b0c80e0e3d5c78f20fb26a1d"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ac045eb16b0c80e0e3d5c78f20fb26a1d">MINT::FitParameter::defaultInit</a></div><div class="ttdeci">void defaultInit()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00298">FitParameter.cpp:298</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_ab9dd79eaa49720d146252ac90f70a0b1a3de6c991831287c7c6fe69d2eb7830e4"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#ab9dd79eaa49720d146252ac90f70a0b1a3de6c991831287c7c6fe69d2eb7830e4">MINT::NamedParameterBase::QUIET</a></div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8h_source.html#l00046">NamedParameterBase.h:46</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a7e90cf91a9b48c8713bdad162f6c8ba7"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">MINT::FitParameter::initToResult</a></div><div class="ttdeci">void initToResult()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00138">FitParameter.cpp:138</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a5fc14b1fa92a6fbc87754fd1ddda519c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">MINT::FitParameter::_scanParameters</a></div><div class="ttdeci">NamedParameter&lt; double &gt; _scanParameters</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00058">FitParameter.h:58</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a44bc0bc375f0b69bbf068f4fbfbd4618"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a44bc0bc375f0b69bbf068f4fbfbd4618">MINT::FitParameter::addToParSet</a></div><div class="ttdeci">bool addToParSet(MinuitParameterSet *ps)</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00148">FitParameter.cpp:148</a></div></div>
+<div class="ttc" id="classMINT_1_1IMinuitParameter_html_a25f7506e9b47d476b93e6c00a3cc03a8"><div class="ttname"><a href="classMINT_1_1IMinuitParameter.html#a25f7506e9b47d476b93e6c00a3cc03a8">MINT::IMinuitParameter::IMinuitParameter</a></div><div class="ttdeci">IMinuitParameter()</div><div class="ttdef"><b>Definition:</b> <a href="IMinuitParameter_8h_source.html#l00057">IMinuitParameter.h:57</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a8cf49e4791e91107e0c0c8d21d5df131"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">MINT::FitParameter::_minInit</a></div><div class="ttdeci">double _minInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_a383af789812c933044857cc89de9df2d"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#a383af789812c933044857cc89de9df2d">MINT::NamedParameterBase::NamedParameterBase</a></div><div class="ttdeci">NamedParameterBase(const std::string &amp;name_in=&quot;&quot;, const char *fname=0, VERBOSITY=VERBOSE)</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8cpp_source.html#l00040">NamedParameterBase.cpp:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3ad1ddee3c2fa0515c3b5ec36b74cdd9"></a>
@@ -526,6 +572,29 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00041">41</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  : <a class="code" href="classMINT_1_1INamedParameter.html#aabaeabc31d6624df470993086983e567">INamedParameter</a>()</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  , <a class="code" href="classMINT_1_1NamedParameterBase.html#a383af789812c933044857cc89de9df2d">NamedParameterBase</a>(<a class="code" href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">name</a>, fname, vb)</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  , <a class="code" href="classMINT_1_1IMinuitParameter.html#a25f7506e9b47d476b93e6c00a3cc03a8">IMinuitParameter</a>()</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">//  , _minPtr(0)</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>(0)</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">_psetIndex</a>(-9999)</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">//  , _pN(-1)</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">_iFixInit</a>(<a class="code" href="classMINT_1_1FitParameter.html#a5219e332b962d7cbce1358bb136ae8c1">fix</a>)</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">_meanInit</a>(<a class="code" href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">mean</a>)</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">_stepInit</a>(step)</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">_minInit</a>(mi)</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">_maxInit</a>(ma)</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">_scanParameters</a>(<a class="code" href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">name</a> + <span class="stringliteral">&quot;_Scan&quot;</span>, 0, <a class="code" href="classMINT_1_1NamedParameterBase.html#ab9dd79eaa49720d146252ac90f70a0b1a3de6c991831287c7c6fe69d2eb7830e4">NamedParameterBase::QUIET</a>)</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="classMINT_1_1NamedParameterBase.html#aaf30842a0732857c1af748992a8f30f1">_gotInitialised</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="classMINT_1_1NamedParameterBase.html#ac223df91ae5d854ce93528e12113becd">setFromParsedFile</a>();<span class="comment">// so the above values are for initialisation but over-ruled by what&#39;s in the file</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="classMINT_1_1MinuitParameterSet.html">MinuitParameterSet</a>* ps = setPtr;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">if</span>(0 == ps) ps = <a class="code" href="classMINT_1_1MinuitParameterSet.html#aaed853598d1a91ab1d5533da1e5d8bd6">MinuitParameterSet::getDefaultSet</a>();</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  </div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a44bc0bc375f0b69bbf068f4fbfbd4618">addToParSet</a>(ps);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">initToResult</a>();</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">//cout &lt;&lt; &quot;FitParameter constructed a &quot; &lt;&lt; this-&gt;name() &lt;&lt; endl;</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a06d68b8b107331565bcd81b20a8367eb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">MINT::FitParameter::_iFixInit</a></div><div class="ttdeci">int _iFixInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00055">FitParameter.h:55</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a5219e332b962d7cbce1358bb136ae8c1"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5219e332b962d7cbce1358bb136ae8c1">MINT::FitParameter::fix</a></div><div class="ttdeci">void fix()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00355">FitParameter.cpp:355</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_ac223df91ae5d854ce93528e12113becd"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#ac223df91ae5d854ce93528e12113becd">MINT::NamedParameterBase::setFromParsedFile</a></div><div class="ttdeci">virtual bool setFromParsedFile()</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8cpp_source.html#l00131">NamedParameterBase.cpp:131</a></div></div>
+<div class="ttc" id="classMINT_1_1MinuitParameterSet_html"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html">MINT::MinuitParameterSet</a></div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8h_source.html#l00014">MinuitParameterSet.h:14</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_af41fb98096ea262369abd6f158cc09d8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">MINT::FitParameter::mean</a></div><div class="ttdeci">double mean() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00279">FitParameter.cpp:279</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad619e564b2dc18575b160015a06a3c7a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">MINT::FitParameter::_stepInit</a></div><div class="ttdeci">double _stepInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1MinuitParameterSet_html_aaed853598d1a91ab1d5533da1e5d8bd6"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html#aaed853598d1a91ab1d5533da1e5d8bd6">MINT::MinuitParameterSet::getDefaultSet</a></div><div class="ttdeci">static MinuitParameterSet * getDefaultSet()</div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8cpp_source.html#l00019">MinuitParameterSet.cpp:19</a></div></div>
+<div class="ttc" id="classMINT_1_1INamedParameter_html_aabaeabc31d6624df470993086983e567"><div class="ttname"><a href="classMINT_1_1INamedParameter.html#aabaeabc31d6624df470993086983e567">MINT::INamedParameter::INamedParameter</a></div><div class="ttdeci">INamedParameter()</div><div class="ttdef"><b>Definition:</b> <a href="INamedParameter_8h_source.html#l00012">INamedParameter.h:12</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_abf05fe205aecdbf693331fbefe85adc3"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">MINT::FitParameter::_psetIndex</a></div><div class="ttdeci">int _psetIndex</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00053">FitParameter.h:53</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a24d346ce67f775a82cd7e862e56d1565"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">MINT::FitParameter::_maxInit</a></div><div class="ttdeci">double _maxInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad8c885d8412903aa231f01c3f638d4b8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">MINT::FitParameter::_meanInit</a></div><div class="ttdeci">double _meanInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_abb0d7b27a71647f741f4f32994a455fb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">MINT::FitParameter::name</a></div><div class="ttdeci">virtual const std::string &amp; name() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00126">FitParameter.h:126</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad5ff99d4331ac7acf875eb7ceb6fa239"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">MINT::FitParameter::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00052">FitParameter.h:52</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_ab9dd79eaa49720d146252ac90f70a0b1a3de6c991831287c7c6fe69d2eb7830e4"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#ab9dd79eaa49720d146252ac90f70a0b1a3de6c991831287c7c6fe69d2eb7830e4">MINT::NamedParameterBase::QUIET</a></div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8h_source.html#l00046">NamedParameterBase.h:46</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a7e90cf91a9b48c8713bdad162f6c8ba7"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">MINT::FitParameter::initToResult</a></div><div class="ttdeci">void initToResult()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00138">FitParameter.cpp:138</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a5fc14b1fa92a6fbc87754fd1ddda519c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">MINT::FitParameter::_scanParameters</a></div><div class="ttdeci">NamedParameter&lt; double &gt; _scanParameters</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00058">FitParameter.h:58</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_aaf30842a0732857c1af748992a8f30f1"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#aaf30842a0732857c1af748992a8f30f1">MINT::NamedParameterBase::_gotInitialised</a></div><div class="ttdeci">bool _gotInitialised</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8h_source.html#l00041">NamedParameterBase.h:41</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a44bc0bc375f0b69bbf068f4fbfbd4618"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a44bc0bc375f0b69bbf068f4fbfbd4618">MINT::FitParameter::addToParSet</a></div><div class="ttdeci">bool addToParSet(MinuitParameterSet *ps)</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00148">FitParameter.cpp:148</a></div></div>
+<div class="ttc" id="classMINT_1_1IMinuitParameter_html_a25f7506e9b47d476b93e6c00a3cc03a8"><div class="ttname"><a href="classMINT_1_1IMinuitParameter.html#a25f7506e9b47d476b93e6c00a3cc03a8">MINT::IMinuitParameter::IMinuitParameter</a></div><div class="ttdeci">IMinuitParameter()</div><div class="ttdef"><b>Definition:</b> <a href="IMinuitParameter_8h_source.html#l00057">IMinuitParameter.h:57</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a8cf49e4791e91107e0c0c8d21d5df131"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">MINT::FitParameter::_minInit</a></div><div class="ttdeci">double _minInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_a383af789812c933044857cc89de9df2d"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#a383af789812c933044857cc89de9df2d">MINT::NamedParameterBase::NamedParameterBase</a></div><div class="ttdeci">NamedParameterBase(const std::string &amp;name_in=&quot;&quot;, const char *fname=0, VERBOSITY=VERBOSE)</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8cpp_source.html#l00040">NamedParameterBase.cpp:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0726c2dc1a28d19b457c7801155ecadc"></a>
@@ -564,6 +633,27 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00076">76</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  : <a class="code" href="classMINT_1_1INamedParameter.html#aabaeabc31d6624df470993086983e567">INamedParameter</a>()</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  , <a class="code" href="classMINT_1_1NamedParameterBase.html#a383af789812c933044857cc89de9df2d">NamedParameterBase</a>(<a class="code" href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">name</a>, 0, vb)</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  , <a class="code" href="classMINT_1_1IMinuitParameter.html#a25f7506e9b47d476b93e6c00a3cc03a8">IMinuitParameter</a>()</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">//  , _minPtr(0)</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>(0)</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">_psetIndex</a>(-9999)</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">//  , _pN(-1)</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">_iFixInit</a>((<span class="keywordtype">int</span>) fow)</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">_meanInit</a>(0)</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">_stepInit</a>(0)</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">_minInit</a>(0)</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">_maxInit</a>(0)</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  , <a class="code" href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">_scanParameters</a>(<a class="code" href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">name</a> + <span class="stringliteral">&quot;_Scan&quot;</span>, 0, <a class="code" href="classMINT_1_1NamedParameterBase.html#ab9dd79eaa49720d146252ac90f70a0b1a3de6c991831287c7c6fe69d2eb7830e4">NamedParameterBase::QUIET</a>)</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#ac045eb16b0c80e0e3d5c78f20fb26a1d">defaultInit</a>();</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="classMINT_1_1NamedParameterBase.html#ac223df91ae5d854ce93528e12113becd">setFromParsedFile</a>();</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="classMINT_1_1MinuitParameterSet.html">MinuitParameterSet</a>* ps = setPtr;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">if</span>(0 == ps) ps = <a class="code" href="classMINT_1_1MinuitParameterSet.html#aaed853598d1a91ab1d5533da1e5d8bd6">MinuitParameterSet::getDefaultSet</a>();</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a44bc0bc375f0b69bbf068f4fbfbd4618">addToParSet</a>(ps);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">initToResult</a>();</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="comment">//cout &lt;&lt; &quot;FitParameter constructed b &quot; &lt;&lt; this-&gt;name() &lt;&lt; endl;</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a06d68b8b107331565bcd81b20a8367eb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">MINT::FitParameter::_iFixInit</a></div><div class="ttdeci">int _iFixInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00055">FitParameter.h:55</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_ac223df91ae5d854ce93528e12113becd"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#ac223df91ae5d854ce93528e12113becd">MINT::NamedParameterBase::setFromParsedFile</a></div><div class="ttdeci">virtual bool setFromParsedFile()</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8cpp_source.html#l00131">NamedParameterBase.cpp:131</a></div></div>
+<div class="ttc" id="classMINT_1_1MinuitParameterSet_html"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html">MINT::MinuitParameterSet</a></div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8h_source.html#l00014">MinuitParameterSet.h:14</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad619e564b2dc18575b160015a06a3c7a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">MINT::FitParameter::_stepInit</a></div><div class="ttdeci">double _stepInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1MinuitParameterSet_html_aaed853598d1a91ab1d5533da1e5d8bd6"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html#aaed853598d1a91ab1d5533da1e5d8bd6">MINT::MinuitParameterSet::getDefaultSet</a></div><div class="ttdeci">static MinuitParameterSet * getDefaultSet()</div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8cpp_source.html#l00019">MinuitParameterSet.cpp:19</a></div></div>
+<div class="ttc" id="classMINT_1_1INamedParameter_html_aabaeabc31d6624df470993086983e567"><div class="ttname"><a href="classMINT_1_1INamedParameter.html#aabaeabc31d6624df470993086983e567">MINT::INamedParameter::INamedParameter</a></div><div class="ttdeci">INamedParameter()</div><div class="ttdef"><b>Definition:</b> <a href="INamedParameter_8h_source.html#l00012">INamedParameter.h:12</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_abf05fe205aecdbf693331fbefe85adc3"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">MINT::FitParameter::_psetIndex</a></div><div class="ttdeci">int _psetIndex</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00053">FitParameter.h:53</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a24d346ce67f775a82cd7e862e56d1565"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">MINT::FitParameter::_maxInit</a></div><div class="ttdeci">double _maxInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad8c885d8412903aa231f01c3f638d4b8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">MINT::FitParameter::_meanInit</a></div><div class="ttdeci">double _meanInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_abb0d7b27a71647f741f4f32994a455fb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">MINT::FitParameter::name</a></div><div class="ttdeci">virtual const std::string &amp; name() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00126">FitParameter.h:126</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad5ff99d4331ac7acf875eb7ceb6fa239"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">MINT::FitParameter::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00052">FitParameter.h:52</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ac045eb16b0c80e0e3d5c78f20fb26a1d"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ac045eb16b0c80e0e3d5c78f20fb26a1d">MINT::FitParameter::defaultInit</a></div><div class="ttdeci">void defaultInit()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00298">FitParameter.cpp:298</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_ab9dd79eaa49720d146252ac90f70a0b1a3de6c991831287c7c6fe69d2eb7830e4"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#ab9dd79eaa49720d146252ac90f70a0b1a3de6c991831287c7c6fe69d2eb7830e4">MINT::NamedParameterBase::QUIET</a></div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8h_source.html#l00046">NamedParameterBase.h:46</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a7e90cf91a9b48c8713bdad162f6c8ba7"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">MINT::FitParameter::initToResult</a></div><div class="ttdeci">void initToResult()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00138">FitParameter.cpp:138</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a5fc14b1fa92a6fbc87754fd1ddda519c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">MINT::FitParameter::_scanParameters</a></div><div class="ttdeci">NamedParameter&lt; double &gt; _scanParameters</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00058">FitParameter.h:58</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a44bc0bc375f0b69bbf068f4fbfbd4618"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a44bc0bc375f0b69bbf068f4fbfbd4618">MINT::FitParameter::addToParSet</a></div><div class="ttdeci">bool addToParSet(MinuitParameterSet *ps)</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00148">FitParameter.cpp:148</a></div></div>
+<div class="ttc" id="classMINT_1_1IMinuitParameter_html_a25f7506e9b47d476b93e6c00a3cc03a8"><div class="ttname"><a href="classMINT_1_1IMinuitParameter.html#a25f7506e9b47d476b93e6c00a3cc03a8">MINT::IMinuitParameter::IMinuitParameter</a></div><div class="ttdeci">IMinuitParameter()</div><div class="ttdef"><b>Definition:</b> <a href="IMinuitParameter_8h_source.html#l00057">IMinuitParameter.h:57</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a8cf49e4791e91107e0c0c8d21d5df131"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">MINT::FitParameter::_minInit</a></div><div class="ttdeci">double _minInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_a383af789812c933044857cc89de9df2d"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#a383af789812c933044857cc89de9df2d">MINT::NamedParameterBase::NamedParameterBase</a></div><div class="ttdeci">NamedParameterBase(const std::string &amp;name_in=&quot;&quot;, const char *fname=0, VERBOSITY=VERBOSE)</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8cpp_source.html#l00040">NamedParameterBase.cpp:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af6355cb12a2ec5b2c882555bd8fbb2f6"></a>
@@ -587,6 +677,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00143">143</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                           {</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="comment">//cout &lt;&lt; &quot;FitParameter destructor destroying &quot; &lt;&lt; this-&gt;name() &lt;&lt; endl;</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordflow">if</span>(0 != <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>) <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>-&gt;<a class="code" href="classMINT_1_1MinuitParameterSet.html#a26ba833d91db6d4885959b6b0fc20c18">unregister</a>(<span class="keyword">this</span>);</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div><div class="ttc" id="classMINT_1_1MinuitParameterSet_html_a26ba833d91db6d4885959b6b0fc20c18"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html#a26ba833d91db6d4885959b6b0fc20c18">MINT::MinuitParameterSet::unregister</a></div><div class="ttdeci">bool unregister(IMinuitParameter *patPtr)</div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8cpp_source.html#l00069">MinuitParameterSet.cpp:69</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad5ff99d4331ac7acf875eb7ceb6fa239"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">MINT::FitParameter::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00052">FitParameter.h:52</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -604,6 +698,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00148">148</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                                    {</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="comment">// now the same as setParSet.</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordflow">if</span>(0 == ps) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#ad036e3a88622b2936a25919e9a33839e">setParSet</a>(ps);</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ad036e3a88622b2936a25919e9a33839e"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad036e3a88622b2936a25919e9a33839e">MINT::FitParameter::setParSet</a></div><div class="ttdeci">virtual bool setParSet(MinuitParameterSet *ps)</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00154">FitParameter.cpp:154</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac045eb16b0c80e0e3d5c78f20fb26a1d"></a>
@@ -619,6 +716,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00298">298</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                              {</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <span class="comment">// defaults to fixed - i.e. won&#39;t be varied in fit</span></div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <span class="comment">// unless explicitly intitialised.</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="comment">// Otherwise all set to zero.</span></div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  this-&gt;<a class="code" href="classMINT_1_1NamedParameterBase.html#ab0d3ec2c2b6633d41e6b138057cf9167">setFromInitStringNoName</a>(<a class="code" href="classMINT_1_1FitParameter.html#a070f0d234ae5cd5374a0cc7383db9333">getInitString</a>());</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a070f0d234ae5cd5374a0cc7383db9333"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a070f0d234ae5cd5374a0cc7383db9333">MINT::FitParameter::getInitString</a></div><div class="ttdeci">static const char * getInitString()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00011">FitParameter.cpp:11</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_ab0d3ec2c2b6633d41e6b138057cf9167"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#ab0d3ec2c2b6633d41e6b138057cf9167">MINT::NamedParameterBase::setFromInitStringNoName</a></div><div class="ttdeci">bool setFromInitStringNoName(const std::string &amp;str_in)</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8cpp_source.html#l00158">NamedParameterBase.cpp:158</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad6d21fef2f237421be6dc922dae7b0d2"></a>
@@ -644,6 +745,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#ae6fd6f4737bcb345245629a2036524bf">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00294">294</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                              {</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#a9e928705e4cb5812885252d14edb314a">_errResult</a>;</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a9e928705e4cb5812885252d14edb314a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a9e928705e4cb5812885252d14edb314a">MINT::FitParameter::_errResult</a></div><div class="ttdeci">double _errResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a827024b503520e59dfdfc75364024c65"></a>
@@ -659,6 +763,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00291">291</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                           {</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#aa4793129b77d64c4c8202c4ca255e457">_errNegResult</a>;</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_aa4793129b77d64c4c8202c4ca255e457"><div class="ttname"><a href="classMINT_1_1FitParameter.html#aa4793129b77d64c4c8202c4ca255e457">MINT::FitParameter::_errNegResult</a></div><div class="ttdeci">double _errNegResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="afacc1fba85cef4e956aba15eb4ff6901"></a>
@@ -674,6 +781,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00288">288</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                           {</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#a6143671639d3ff495dad6850db6b121a">_errPosResult</a>;</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a6143671639d3ff495dad6850db6b121a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a6143671639d3ff495dad6850db6b121a">MINT::FitParameter::_errPosResult</a></div><div class="ttdeci">double _errPosResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5219e332b962d7cbce1358bb136ae8c1"></a>
@@ -689,6 +799,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00355">355</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                      {</div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">_iFixInit</a> = 2;</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a06d68b8b107331565bcd81b20a8367eb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">MINT::FitParameter::_iFixInit</a></div><div class="ttdeci">int _iFixInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00055">FitParameter.h:55</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9885b7cb2123ee916c8d610134b6bb39"></a>
@@ -704,6 +817,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00362">362</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                             {</div><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">_iFixInit</a> = 1;</div><div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a06d68b8b107331565bcd81b20a8367eb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">MINT::FitParameter::_iFixInit</a></div><div class="ttdeci">int _iFixInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00055">FitParameter.h:55</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6242dcad41a29954e3155f660d74e17b"></a>
@@ -719,6 +835,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00358">358</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                            {</div><div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">initToResult</a>();</div><div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a5219e332b962d7cbce1358bb136ae8c1">fix</a>();</div><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a5219e332b962d7cbce1358bb136ae8c1"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5219e332b962d7cbce1358bb136ae8c1">MINT::FitParameter::fix</a></div><div class="ttdeci">void fix()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00355">FitParameter.cpp:355</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a7e90cf91a9b48c8713bdad162f6c8ba7"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">MINT::FitParameter::initToResult</a></div><div class="ttdeci">void initToResult()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00138">FitParameter.cpp:138</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a213816a7b8e08261a75eb8f5afffb789"></a>
@@ -734,6 +854,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00365">365</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                   {</div><div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">initToResult</a>();</div><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a9885b7cb2123ee916c8d610134b6bb39">fixAndHide</a>();</div><div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a9885b7cb2123ee916c8d610134b6bb39"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a9885b7cb2123ee916c8d610134b6bb39">MINT::FitParameter::fixAndHide</a></div><div class="ttdeci">void fixAndHide()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00362">FitParameter.cpp:362</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a7e90cf91a9b48c8713bdad162f6c8ba7"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">MINT::FitParameter::initToResult</a></div><div class="ttdeci">void initToResult()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00138">FitParameter.cpp:138</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac969808f5a10bd4c235907efd366e75b"></a>
@@ -757,6 +881,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00260">260</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                           {</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">_meanResult</a>;</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ab9d58e1f634680375ba1043b96d2cb90"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">MINT::FitParameter::_meanResult</a></div><div class="ttdeci">double _meanResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a070f0d234ae5cd5374a0cc7383db9333"></a>
@@ -780,6 +907,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00011">11</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#a6e1a8d32122dc899b7108ef021be4d17">_initString</a>;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a6e1a8d32122dc899b7108ef021be4d17"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a6e1a8d32122dc899b7108ef021be4d17">MINT::FitParameter::_initString</a></div><div class="ttdeci">static const char * _initString</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00050">FitParameter.h:50</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2627b50aad6eb56038c7af521fd6766d"></a>
@@ -805,6 +935,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#a3b6aabde5056b625064167e79723ee81">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00121">121</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#ab5f4ccd9eff04155b671e4176f7d67ed">iFixInit</a>() == 1;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ab5f4ccd9eff04155b671e4176f7d67ed"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab5f4ccd9eff04155b671e4176f7d67ed">MINT::FitParameter::iFixInit</a></div><div class="ttdeci">int iFixInit() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00210">FitParameter.cpp:210</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab5f4ccd9eff04155b671e4176f7d67ed"></a>
@@ -830,6 +963,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#ab091653d6e968ad78f2776a71182b24f">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00210">210</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">_iFixInit</a>;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a06d68b8b107331565bcd81b20a8367eb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">MINT::FitParameter::_iFixInit</a></div><div class="ttdeci">int _iFixInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00055">FitParameter.h:55</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7e90cf91a9b48c8713bdad162f6c8ba7"></a>
@@ -853,6 +989,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00138">138</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                               {</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="comment">// I once gave it this counter-intuitive name</span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="comment">// (the picture was: init-&gt;Result) keep it for compatibility.</span></div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a7c30173bfc452b4498d3aadc73a11866">resetToInit</a>();</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a7c30173bfc452b4498d3aadc73a11866"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a7c30173bfc452b4498d3aadc73a11866">MINT::FitParameter::resetToInit</a></div><div class="ttdeci">void resetToInit()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00132">FitParameter.cpp:132</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2a3e00524d400ca194a828344368596c"></a>
@@ -868,6 +1007,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00285">285</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                              {</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#aa0db4cc57eade2cce56839fe784c239c">maxInit</a>();</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_aa0db4cc57eade2cce56839fe784c239c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#aa0db4cc57eade2cce56839fe784c239c">MINT::FitParameter::maxInit</a></div><div class="ttdeci">double maxInit() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00214">FitParameter.cpp:214</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa0db4cc57eade2cce56839fe784c239c"></a>
@@ -893,6 +1035,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#a77d20fbacc3f0e6744a8fd328be1d5f8">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00214">214</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">_maxInit</a>;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a24d346ce67f775a82cd7e862e56d1565"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">MINT::FitParameter::_maxInit</a></div><div class="ttdeci">double _maxInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af41fb98096ea262369abd6f158cc09d8"></a>
@@ -918,6 +1063,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#a80dd43ba97e293403617515eebdb2591">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00279">279</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                               {</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">_meanResult</a>;</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ab9d58e1f634680375ba1043b96d2cb90"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">MINT::FitParameter::_meanResult</a></div><div class="ttdeci">double _meanResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a59e557722f17f96b490d3fc99d07b5fb"></a>
@@ -943,6 +1091,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#a8809046279e9e1e377bb751ff1d0afd4">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00211">211</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">_meanInit</a>;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ad8c885d8412903aa231f01c3f638d4b8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">MINT::FitParameter::_meanInit</a></div><div class="ttdeci">double _meanInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a03cc067049f600217dd7191cd5ddec1a"></a>
@@ -958,6 +1109,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00282">282</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                              {</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#aa8735540f4e74f79bb65b907d0cd810c">minInit</a>();</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_aa8735540f4e74f79bb65b907d0cd810c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#aa8735540f4e74f79bb65b907d0cd810c">MINT::FitParameter::minInit</a></div><div class="ttdeci">double minInit() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00213">FitParameter.cpp:213</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa8735540f4e74f79bb65b907d0cd810c"></a>
@@ -983,6 +1137,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#acd5243270f787975826fd70a71aa0bd4">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00213">213</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">_minInit</a>;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a8cf49e4791e91107e0c0c8d21d5df131"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">MINT::FitParameter::_minInit</a></div><div class="ttdeci">double _minInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abb0d7b27a71647f741f4f32994a455fb"></a>
@@ -1008,6 +1165,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#a9656991f00b7a20a5868ff561f58bf49">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00126">126</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                       {</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1NamedParameterBase.html#aff7bdeaaf8a346e7f8e09974292a6fef">NamedParameterBase::name</a>();</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  }</div><div class="ttc" id="classMINT_1_1NamedParameterBase_html_aff7bdeaaf8a346e7f8e09974292a6fef"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#aff7bdeaaf8a346e7f8e09974292a6fef">MINT::NamedParameterBase::name</a></div><div class="ttdeci">virtual const std::string &amp; name() const </div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8h_source.html#l00067">NamedParameterBase.h:67</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7cc966c8287d01405a70cdd3f8ae3179"></a>
@@ -1033,6 +1193,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#ac1b7d9e310fefbb74a7b517933f6871e">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00155">155</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                         {</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">mean</a>();</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  }</div><div class="ttc" id="classMINT_1_1FitParameter_html_af41fb98096ea262369abd6f158cc09d8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">MINT::FitParameter::mean</a></div><div class="ttdeci">double mean() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00279">FitParameter.cpp:279</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab4de60b9b655ed24c42a9437173a4751"></a>
@@ -1059,6 +1222,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00163">163</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                   {</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) * rhs;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a808346f2f93fcfec9241f9147f41ee4f"></a>
@@ -1085,6 +1250,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00167">167</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                                       {</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) * rhs;</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1bf2ca70049065c155a1b6191dba10dc"></a>
@@ -1109,6 +1276,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00170">170</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                                     {</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) * ((double) rhs);</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abe81ff90f12e7001636eb668b6acbe57"></a>
@@ -1135,6 +1304,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00175">175</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                                   {</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) + rhs;</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7c20f88dd1fa7f9ad1ca7178a2aa734d"></a>
@@ -1161,6 +1332,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00179">179</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                                                       {</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) + rhs;</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a63f71fa482cca8bad48a53b379070537"></a>
@@ -1185,6 +1358,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00182">182</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                                     {</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) + ((double) rhs);</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a59bc687376c293f77b991c7243627c45"></a>
@@ -1211,6 +1386,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00199">199</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                   {</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) -  rhs;</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2361c20723b39b573493125e168b6b9d"></a>
@@ -1237,6 +1414,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00203">203</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                                                       {</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) -  rhs;</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0305f6bf62a03e69cd04ffb84bf8031e"></a>
@@ -1261,6 +1440,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00206">206</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                                                     {</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) - ((double) rhs);</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a44f10978e39ee7ee9c3532e0005d50a1"></a>
@@ -1287,6 +1468,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00187">187</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                                   {</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) / rhs;</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae9da92fd3f57fe5bfdb49a3160852925"></a>
@@ -1313,6 +1496,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00191">191</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                                                       {</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) / rhs;</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a67b895b1755f48d9853e36b2e3428bf1"></a>
@@ -1337,6 +1522,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00194">194</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                                     {</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">double</span>) *<span class="keyword">this</span>) / ((double) rhs);</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5f97b562f1d10db65eda8b34ddf0a8b7"></a>
@@ -1361,6 +1548,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00158">158</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                   {</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">_meanResult</a>=d;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  }</div><div class="ttc" id="classMINT_1_1FitParameter_html_ab9d58e1f634680375ba1043b96d2cb90"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">MINT::FitParameter::_meanResult</a></div><div class="ttdeci">double _meanResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae3dd8a7f89bfb6c890e1bb6c697e40e2"></a>
@@ -1386,6 +1576,9 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#afe5f02de87e007ade88e93d19930d7c4">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00102">102</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ad5ff99d4331ac7acf875eb7ceb6fa239"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">MINT::FitParameter::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00052">FitParameter.h:52</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ace374b3cbf1f58644e4054dd09a46dbf"></a>
@@ -1409,6 +1602,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00103">103</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ad5ff99d4331ac7acf875eb7ceb6fa239"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">MINT::FitParameter::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00052">FitParameter.h:52</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a569c473507f1152788ecf7dc6a0124ef"></a>
@@ -1434,6 +1630,9 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#aba045ca94734ab5e118857f8122692b2">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00167">167</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                   {</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">_psetIndex</a>;</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_abf05fe205aecdbf693331fbefe85adc3"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">MINT::FitParameter::_psetIndex</a></div><div class="ttdeci">int _psetIndex</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00053">FitParameter.h:53</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7cd8a800b5d55f52a0c6df5f7a5de65d"></a>
@@ -1460,6 +1659,14 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#af54c5045f7eb04ed55378b158821797f">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00304">304</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                                            {</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="comment">// ... in a format that can be read back in</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span> &lt;&lt;  <a class="code" href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">name</a>() &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span></div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#ab5f4ccd9eff04155b671e4176f7d67ed">iFixInit</a>()</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">mean</a>()</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#ad6d21fef2f237421be6dc922dae7b0d2">err</a>()</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#a03cc067049f600217dd7191cd5ddec1a">min</a>()</div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#a2a3e00524d400ca194a828344368596c">max</a>();</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_af41fb98096ea262369abd6f158cc09d8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">MINT::FitParameter::mean</a></div><div class="ttdeci">double mean() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00279">FitParameter.cpp:279</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a03cc067049f600217dd7191cd5ddec1a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a03cc067049f600217dd7191cd5ddec1a">MINT::FitParameter::min</a></div><div class="ttdeci">double min() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00282">FitParameter.cpp:282</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_abb0d7b27a71647f741f4f32994a455fb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">MINT::FitParameter::name</a></div><div class="ttdeci">virtual const std::string &amp; name() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00126">FitParameter.h:126</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a2a3e00524d400ca194a828344368596c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a2a3e00524d400ca194a828344368596c">MINT::FitParameter::max</a></div><div class="ttdeci">double max() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00285">FitParameter.cpp:285</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad6d21fef2f237421be6dc922dae7b0d2"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad6d21fef2f237421be6dc922dae7b0d2">MINT::FitParameter::err</a></div><div class="ttdeci">double err() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00294">FitParameter.cpp:294</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ab5f4ccd9eff04155b671e4176f7d67ed"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab5f4ccd9eff04155b671e4176f7d67ed">MINT::FitParameter::iFixInit</a></div><div class="ttdeci">int iFixInit() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00210">FitParameter.cpp:210</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a41a12364160d84badb684114c850a712"></a>
@@ -1494,6 +1701,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00332">332</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                                            { <span class="comment">// static</span></div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  std::string nameStr = <span class="stringliteral">&quot;** name&quot;</span>;</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keywordflow">if</span>(namelength &gt; 0) nameStr.resize(namelength, <span class="charliteral">&#39; &#39;</span>);</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  os &lt;&lt; nameStr;</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Fix?&quot;</span></div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;init&quot;</span></div><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;step&quot;</span></div><div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;min&quot;</span></div><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;max&quot;</span></div><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;     &lt;&lt; std::endl;</div><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa29a45462795ed4cfbe602b5c7e47e81"></a>
@@ -1528,6 +1737,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00343">343</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                                                                  { <span class="comment">// static</span></div><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  std::string nameStr = <span class="stringliteral">&quot;** name&quot;</span>;</div><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  <span class="keywordflow">if</span>(namelength &gt; 0) nameStr.resize(namelength, <span class="charliteral">&#39; &#39;</span>);</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  os &lt;&lt; nameStr;</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Fix?&quot;</span></div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;mean&quot;</span></div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;err&quot;</span></div><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;min&quot;</span></div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <span class="stringliteral">&quot;max&quot;</span></div><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;     &lt;&lt; std::endl;</div><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abd005fea95a86bd0a0f0437ba87e531b"></a>
@@ -1554,6 +1765,13 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#a32a9b1dac3f7b0befd87ae0ae63372fc">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00321">321</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                                         {</div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  <span class="keywordtype">double</span> pull = -9999;</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classMINT_1_1FitParameter.html#ad6d21fef2f237421be6dc922dae7b0d2">err</a>() != 0) pull = (<a class="code" href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">mean</a>() - <a class="code" href="classMINT_1_1FitParameter.html#a59e557722f17f96b490d3fc99d07b5fb">meanInit</a>() )/<a class="code" href="classMINT_1_1FitParameter.html#ad6d21fef2f237421be6dc922dae7b0d2">err</a>();</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span> &lt;&lt;  <a class="code" href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">name</a>() &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span></div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#ab5f4ccd9eff04155b671e4176f7d67ed">iFixInit</a>()</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">mean</a>() &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#a59e557722f17f96b490d3fc99d07b5fb">meanInit</a>() &lt;&lt; <span class="stringliteral">&quot; / &quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#ad6d21fef2f237421be6dc922dae7b0d2">err</a>()</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;     &lt;&lt; <span class="stringliteral">&quot; = \t&quot;</span> &lt;&lt; pull;</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_af41fb98096ea262369abd6f158cc09d8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">MINT::FitParameter::mean</a></div><div class="ttdeci">double mean() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00279">FitParameter.cpp:279</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a59e557722f17f96b490d3fc99d07b5fb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a59e557722f17f96b490d3fc99d07b5fb">MINT::FitParameter::meanInit</a></div><div class="ttdeci">double meanInit() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00211">FitParameter.cpp:211</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_abb0d7b27a71647f741f4f32994a455fb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abb0d7b27a71647f741f4f32994a455fb">MINT::FitParameter::name</a></div><div class="ttdeci">virtual const std::string &amp; name() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00126">FitParameter.h:126</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad6d21fef2f237421be6dc922dae7b0d2"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad6d21fef2f237421be6dc922dae7b0d2">MINT::FitParameter::err</a></div><div class="ttdeci">double err() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00294">FitParameter.cpp:294</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ab5f4ccd9eff04155b671e4176f7d67ed"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab5f4ccd9eff04155b671e4176f7d67ed">MINT::FitParameter::iFixInit</a></div><div class="ttdeci">int iFixInit() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00210">FitParameter.cpp:210</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aae813a7afbd081a9aa5989df7050f5ee"></a>
@@ -1578,6 +1796,13 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00313">313</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                               {</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="comment">// ... in a format that can be read back in, w/o the name</span></div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  os &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#ab5f4ccd9eff04155b671e4176f7d67ed">iFixInit</a>()</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">mean</a>()</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#ad6d21fef2f237421be6dc922dae7b0d2">err</a>()</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#a03cc067049f600217dd7191cd5ddec1a">min</a>()</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;     &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1FitParameter.html#a2a3e00524d400ca194a828344368596c">max</a>();</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_af41fb98096ea262369abd6f158cc09d8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#af41fb98096ea262369abd6f158cc09d8">MINT::FitParameter::mean</a></div><div class="ttdeci">double mean() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00279">FitParameter.cpp:279</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a03cc067049f600217dd7191cd5ddec1a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a03cc067049f600217dd7191cd5ddec1a">MINT::FitParameter::min</a></div><div class="ttdeci">double min() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00282">FitParameter.cpp:282</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a2a3e00524d400ca194a828344368596c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a2a3e00524d400ca194a828344368596c">MINT::FitParameter::max</a></div><div class="ttdeci">double max() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00285">FitParameter.cpp:285</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad6d21fef2f237421be6dc922dae7b0d2"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad6d21fef2f237421be6dc922dae7b0d2">MINT::FitParameter::err</a></div><div class="ttdeci">double err() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00294">FitParameter.cpp:294</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ab5f4ccd9eff04155b671e4176f7d67ed"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab5f4ccd9eff04155b671e4176f7d67ed">MINT::FitParameter::iFixInit</a></div><div class="ttdeci">int iFixInit() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00210">FitParameter.cpp:210</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7c30173bfc452b4498d3aadc73a11866"></a>
@@ -1593,6 +1818,15 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00132">132</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                              {</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">_meanResult</a>   = <a class="code" href="classMINT_1_1FitParameter.html#a5736c4c64b73ec8e83e49c4f6d0fc39e">_currentFitVal</a> = <a class="code" href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">_meanInit</a>;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a9e928705e4cb5812885252d14edb314a">_errResult</a>    = <a class="code" href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">_stepInit</a>;</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a6143671639d3ff495dad6850db6b121a">_errPosResult</a> = -9999;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#aa4793129b77d64c4c8202c4ca255e457">_errNegResult</a> = -9999;</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ab9d58e1f634680375ba1043b96d2cb90"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">MINT::FitParameter::_meanResult</a></div><div class="ttdeci">double _meanResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a5736c4c64b73ec8e83e49c4f6d0fc39e"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5736c4c64b73ec8e83e49c4f6d0fc39e">MINT::FitParameter::_currentFitVal</a></div><div class="ttdeci">double _currentFitVal</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00061">FitParameter.h:61</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad619e564b2dc18575b160015a06a3c7a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">MINT::FitParameter::_stepInit</a></div><div class="ttdeci">double _stepInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a9e928705e4cb5812885252d14edb314a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a9e928705e4cb5812885252d14edb314a">MINT::FitParameter::_errResult</a></div><div class="ttdeci">double _errResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad8c885d8412903aa231f01c3f638d4b8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">MINT::FitParameter::_meanInit</a></div><div class="ttdeci">double _meanInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a6143671639d3ff495dad6850db6b121a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a6143671639d3ff495dad6850db6b121a">MINT::FitParameter::_errPosResult</a></div><div class="ttdeci">double _errPosResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_aa4793129b77d64c4c8202c4ca255e457"><div class="ttname"><a href="classMINT_1_1FitParameter.html#aa4793129b77d64c4c8202c4ca255e457">MINT::FitParameter::_errNegResult</a></div><div class="ttdeci">double _errNegResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1637adf585cd97a32284548b5e05233f"></a>
@@ -1618,6 +1852,10 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#a4f534be2e86652ae3180f933781f5d91">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00216">216</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                             {</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">_scanParameters</a>.<a class="code" href="classMINT_1_1NamedParameterBase.html#a252a04b5aa1f771c3f9bc4bb9bbd74cb">gotInitialised</a>();</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div><div class="ttc" id="classMINT_1_1NamedParameterBase_html_a252a04b5aa1f771c3f9bc4bb9bbd74cb"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#a252a04b5aa1f771c3f9bc4bb9bbd74cb">MINT::NamedParameterBase::gotInitialised</a></div><div class="ttdeci">bool gotInitialised() const </div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8h_source.html#l00072">NamedParameterBase.h:72</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a5fc14b1fa92a6fbc87754fd1ddda519c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">MINT::FitParameter::_scanParameters</a></div><div class="ttdeci">NamedParameter&lt; double &gt; _scanParameters</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00058">FitParameter.h:58</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac4c730254bfc7f3037d9d08d25cd3abf"></a>
@@ -1643,6 +1881,11 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#a30c3a7dac0fa7cd63491bb5c89667fa5">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00223">223</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                  {</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">_scanParameters</a>.<a class="code" href="classMINT_1_1NamedParameter.html#aeaee2d891820ec9f53b29760f64f4963">size</a>() &lt; 2) <span class="keywordflow">return</span> 0.0;</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">_scanParameters</a>.<a class="code" href="classMINT_1_1NamedParameter.html#a63a454e41a1a033de5267d848bd63010">getVal</a>(1);</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div><div class="ttc" id="classMINT_1_1NamedParameter_html_a63a454e41a1a033de5267d848bd63010"><div class="ttname"><a href="classMINT_1_1NamedParameter.html#a63a454e41a1a033de5267d848bd63010">MINT::NamedParameter::getVal</a></div><div class="ttdeci">virtual const T &amp; getVal(int i=0) const </div><div class="ttdef"><b>Definition:</b> <a href="NamedParameter_8h_source.html#l00194">NamedParameter.h:194</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a5fc14b1fa92a6fbc87754fd1ddda519c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">MINT::FitParameter::_scanParameters</a></div><div class="ttdeci">NamedParameter&lt; double &gt; _scanParameters</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00058">FitParameter.h:58</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameter_html_aeaee2d891820ec9f53b29760f64f4963"><div class="ttname"><a href="classMINT_1_1NamedParameter.html#aeaee2d891820ec9f53b29760f64f4963">MINT::NamedParameter::size</a></div><div class="ttdeci">virtual int size() const </div><div class="ttdef"><b>Definition:</b> <a href="NamedParameter_8h_source.html#l00191">NamedParameter.h:191</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad01b47dd6a41052b2e07fd5d3d0ffc50"></a>
@@ -1668,6 +1911,11 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#ab1e63649f9ba1ac0e9a42ffb0964246b">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00219">219</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                  {</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">_scanParameters</a>.<a class="code" href="classMINT_1_1NamedParameter.html#aeaee2d891820ec9f53b29760f64f4963">size</a>() &lt; 2) <span class="keywordflow">return</span> 0.0;</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">_scanParameters</a>.<a class="code" href="classMINT_1_1NamedParameter.html#a63a454e41a1a033de5267d848bd63010">getVal</a>(0);</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div><div class="ttc" id="classMINT_1_1NamedParameter_html_a63a454e41a1a033de5267d848bd63010"><div class="ttname"><a href="classMINT_1_1NamedParameter.html#a63a454e41a1a033de5267d848bd63010">MINT::NamedParameter::getVal</a></div><div class="ttdeci">virtual const T &amp; getVal(int i=0) const </div><div class="ttdef"><b>Definition:</b> <a href="NamedParameter_8h_source.html#l00194">NamedParameter.h:194</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a5fc14b1fa92a6fbc87754fd1ddda519c"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5fc14b1fa92a6fbc87754fd1ddda519c">MINT::FitParameter::_scanParameters</a></div><div class="ttdeci">NamedParameter&lt; double &gt; _scanParameters</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00058">FitParameter.h:58</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameter_html_aeaee2d891820ec9f53b29760f64f4963"><div class="ttname"><a href="classMINT_1_1NamedParameter.html#aeaee2d891820ec9f53b29760f64f4963">MINT::NamedParameter::size</a></div><div class="ttdeci">virtual int size() const </div><div class="ttdef"><b>Definition:</b> <a href="NamedParameter_8h_source.html#l00191">NamedParameter.h:191</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1658c93971fe70765a2036bc756634fd"></a>
@@ -1694,6 +1942,9 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#ae0ead7910e1da8d3b35ad7b901cc67a4">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00264">264</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                             {</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">_meanResult</a> = cfv;</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ab9d58e1f634680375ba1043b96d2cb90"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">MINT::FitParameter::_meanResult</a></div><div class="ttdeci">double _meanResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0aa74f64816c8fac93e17e83e2531552"></a>
@@ -1709,6 +1960,11 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00128">128</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                      {</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">_meanResult</a>   = <a class="code" href="classMINT_1_1FitParameter.html#a5736c4c64b73ec8e83e49c4f6d0fc39e">_currentFitVal</a> = <a class="code" href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">_meanInit</a>;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ab9d58e1f634680375ba1043b96d2cb90"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">MINT::FitParameter::_meanResult</a></div><div class="ttdeci">double _meanResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a5736c4c64b73ec8e83e49c4f6d0fc39e"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a5736c4c64b73ec8e83e49c4f6d0fc39e">MINT::FitParameter::_currentFitVal</a></div><div class="ttdeci">double _currentFitVal</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00061">FitParameter.h:61</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad8c885d8412903aa231f01c3f638d4b8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">MINT::FitParameter::_meanInit</a></div><div class="ttdeci">double _meanInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a563249314024e2d4cc2a8e4458cf8307"></a>
@@ -1735,6 +1991,18 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1NamedParameterBase.html#a0934debe2447bea83c0ce31b8bb357f0">MINT::NamedParameterBase</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00171">171</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                                                   {</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; vsl = line.<a class="code" href="classMINT_1_1ParsedParameterLine.html#a6d389f21dbccb78c8c99a4e1a88b5870">parsedStrings</a>();</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordflow">if</span>(vsl.size() &lt; 3){</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">if</span>(! <a class="code" href="classMINT_1_1NamedParameterBase.html#a8f7425817fd7e9d24caf2d0b8be5b04c">_quiet</a>) cout &lt;&lt; <span class="stringliteral">&quot;ERROR in FitParameter::setFromParsedLine&quot;</span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; need at least 3 parameters:\n&quot;</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; iFix, initial mean&quot;</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;              &lt;&lt; endl;</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  }</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordflow">if</span>(vsl[0] != <a class="code" href="classMINT_1_1NamedParameterBase.html#a2f4621c6d130f2843f4158b7b3060b74">_name</a>){</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">if</span>(! <a class="code" href="classMINT_1_1NamedParameterBase.html#a8f7425817fd7e9d24caf2d0b8be5b04c">_quiet</a>) std::cout &lt;&lt; <span class="stringliteral">&quot;ERROR in FitParameter::setFromParsedLine&quot;</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;               &lt;&lt; <span class="stringliteral">&quot; wrong parameter name. My name is &quot;</span> &lt;&lt; <a class="code" href="classMINT_1_1NamedParameterBase.html#a2f4621c6d130f2843f4158b7b3060b74">_name</a></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;               &lt;&lt; <span class="stringliteral">&quot; the line&#39;s first element is &quot;</span> &lt;&lt; vsl[0]</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;               &lt;&lt; endl;</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  }</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start=0;</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="comment">//  if(vsl.size() &gt;=7) ++start; // 1st parameter is index number</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="comment">// above was for compatibility with Mikhail&#39;s code, not needed anymore</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordflow">if</span>(vsl.size() &gt; ++start) <a class="code" href="namespaceMINT.html#a681ad6ca5105828d8d27fa5dddd99639">stringToAnything</a>(vsl[start], <a class="code" href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">_iFixInit</a>);</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="keywordflow">if</span>(vsl.size() &gt; ++start) <a class="code" href="namespaceMINT.html#a681ad6ca5105828d8d27fa5dddd99639">stringToAnything</a>(vsl[start], <a class="code" href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">_meanInit</a>);</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordflow">if</span>(vsl.size() &gt; ++start) <a class="code" href="namespaceMINT.html#a681ad6ca5105828d8d27fa5dddd99639">stringToAnything</a>(vsl[start], <a class="code" href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">_stepInit</a>);</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">if</span>(vsl.size() &gt; ++start) <a class="code" href="namespaceMINT.html#a681ad6ca5105828d8d27fa5dddd99639">stringToAnything</a>(vsl[start], <a class="code" href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">_minInit</a>);</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="keywordflow">if</span>(vsl.size() &gt; ++start) <a class="code" href="namespaceMINT.html#a681ad6ca5105828d8d27fa5dddd99639">stringToAnything</a>(vsl[start], <a class="code" href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">_maxInit</a>);</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">initToResult</a>();</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div><div class="ttc" id="classMINT_1_1NamedParameterBase_html_a8f7425817fd7e9d24caf2d0b8be5b04c"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#a8f7425817fd7e9d24caf2d0b8be5b04c">MINT::NamedParameterBase::_quiet</a></div><div class="ttdeci">bool _quiet</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8h_source.html#l00043">NamedParameterBase.h:43</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a06d68b8b107331565bcd81b20a8367eb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">MINT::FitParameter::_iFixInit</a></div><div class="ttdeci">int _iFixInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00055">FitParameter.h:55</a></div></div>
+<div class="ttc" id="namespaceMINT_html_a681ad6ca5105828d8d27fa5dddd99639"><div class="ttname"><a href="namespaceMINT.html#a681ad6ca5105828d8d27fa5dddd99639">MINT::stringToAnything</a></div><div class="ttdeci">void stringToAnything(const std::string &amp;str, T &amp;anything)</div><div class="ttdef"><b>Definition:</b> <a href="Utils_8h_source.html#l00053">Utils.h:53</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad619e564b2dc18575b160015a06a3c7a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">MINT::FitParameter::_stepInit</a></div><div class="ttdeci">double _stepInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a24d346ce67f775a82cd7e862e56d1565"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a24d346ce67f775a82cd7e862e56d1565">MINT::FitParameter::_maxInit</a></div><div class="ttdeci">double _maxInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameterBase_html_a2f4621c6d130f2843f4158b7b3060b74"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#a2f4621c6d130f2843f4158b7b3060b74">MINT::NamedParameterBase::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8h_source.html#l00032">NamedParameterBase.h:32</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad8c885d8412903aa231f01c3f638d4b8"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad8c885d8412903aa231f01c3f638d4b8">MINT::FitParameter::_meanInit</a></div><div class="ttdeci">double _meanInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a7e90cf91a9b48c8713bdad162f6c8ba7"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a7e90cf91a9b48c8713bdad162f6c8ba7">MINT::FitParameter::initToResult</a></div><div class="ttdeci">void initToResult()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00138">FitParameter.cpp:138</a></div></div>
+<div class="ttc" id="classMINT_1_1ParsedParameterLine_html_a6d389f21dbccb78c8c99a4e1a88b5870"><div class="ttname"><a href="classMINT_1_1ParsedParameterLine.html#a6d389f21dbccb78c8c99a4e1a88b5870">MINT::ParsedParameterLine::parsedStrings</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; parsedStrings() const </div><div class="ttdef"><b>Definition:</b> <a href="ParsedParameterLine_8h_source.html#l00055">ParsedParameterLine.h:55</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a8cf49e4791e91107e0c0c8d21d5df131"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a8cf49e4791e91107e0c0c8d21d5df131">MINT::FitParameter::_minInit</a></div><div class="ttdeci">double _minInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad036e3a88622b2936a25919e9a33839e"></a>
@@ -1761,6 +2029,12 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#aa93bb2752d52e1b5eb10b0ce04516f35">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00154">154</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                                  {</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="comment">//  if(0 == ps) return false;</span></div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordflow">if</span>(ps == <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordflow">if</span>(0 != <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>) <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a>-&gt;<a class="code" href="classMINT_1_1MinuitParameterSet.html#a26ba833d91db6d4885959b6b0fc20c18">unregister</a>(<span class="keyword">this</span>);</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">_pset</a> = ps;</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">_psetIndex</a> = -9999;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordflow">if</span>(0 != ps) ps-&gt;<a class="code" href="classMINT_1_1MinuitParameterSet.html#aeed696ddde663aee690379aa525c4429">add</a>(<span class="keyword">this</span>);</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div><div class="ttc" id="classMINT_1_1MinuitParameterSet_html_a26ba833d91db6d4885959b6b0fc20c18"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html#a26ba833d91db6d4885959b6b0fc20c18">MINT::MinuitParameterSet::unregister</a></div><div class="ttdeci">bool unregister(IMinuitParameter *patPtr)</div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8cpp_source.html#l00069">MinuitParameterSet.cpp:69</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_abf05fe205aecdbf693331fbefe85adc3"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">MINT::FitParameter::_psetIndex</a></div><div class="ttdeci">int _psetIndex</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00053">FitParameter.h:53</a></div></div>
+<div class="ttc" id="classMINT_1_1MinuitParameterSet_html_aeed696ddde663aee690379aa525c4429"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html#aeed696ddde663aee690379aa525c4429">MINT::MinuitParameterSet::add</a></div><div class="ttdeci">bool add(IMinuitParameter *parPtr)</div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8cpp_source.html#l00066">MinuitParameterSet.cpp:66</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ad5ff99d4331ac7acf875eb7ceb6fa239"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad5ff99d4331ac7acf875eb7ceb6fa239">MINT::FitParameter::_pset</a></div><div class="ttdeci">MinuitParameterSet * _pset</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00052">FitParameter.h:52</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="afc5d93aee45bb57122670ce163e945ab"></a>
@@ -1787,6 +2061,9 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#a867156142b51f802654962e5e12f4bf2">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00163">163</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                              {</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">_psetIndex</a> = psetIndex;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_abf05fe205aecdbf693331fbefe85adc3"><div class="ttname"><a href="classMINT_1_1FitParameter.html#abf05fe205aecdbf693331fbefe85adc3">MINT::FitParameter::_psetIndex</a></div><div class="ttdeci">int _psetIndex</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00053">FitParameter.h:53</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a37bd7f276149cf26be9a4122ce29c52a"></a>
@@ -1835,6 +2112,12 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#aa3c2a0f78e6af8cc6345d298a8fac282">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00268">268</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                    {</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">_meanResult</a>   = fitMean;</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a9e928705e4cb5812885252d14edb314a">_errResult</a>    = fitErr;</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a6143671639d3ff495dad6850db6b121a">_errPosResult</a> = fitErrPos;</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#aa4793129b77d64c4c8202c4ca255e457">_errNegResult</a> = fitErrNeg;</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ab9d58e1f634680375ba1043b96d2cb90"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ab9d58e1f634680375ba1043b96d2cb90">MINT::FitParameter::_meanResult</a></div><div class="ttdeci">double _meanResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a9e928705e4cb5812885252d14edb314a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a9e928705e4cb5812885252d14edb314a">MINT::FitParameter::_errResult</a></div><div class="ttdeci">double _errResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a6143671639d3ff495dad6850db6b121a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a6143671639d3ff495dad6850db6b121a">MINT::FitParameter::_errPosResult</a></div><div class="ttdeci">double _errPosResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_aa4793129b77d64c4c8202c4ca255e457"><div class="ttname"><a href="classMINT_1_1FitParameter.html#aa4793129b77d64c4c8202c4ca255e457">MINT::FitParameter::_errNegResult</a></div><div class="ttdeci">double _errNegResult</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00060">FitParameter.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad61907cbcf79b5d6f3880adada712394"></a>
@@ -1860,6 +2143,9 @@ template&lt;typename T &gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinuitParameter.html#a5633d6814d8ce8bdce7d6facb54a916b">MINT::IMinuitParameter</a>.</p>
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00212">212</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">_stepInit</a>;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_ad619e564b2dc18575b160015a06a3c7a"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ad619e564b2dc18575b160015a06a3c7a">MINT::FitParameter::_stepInit</a></div><div class="ttdeci">double _stepInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00056">FitParameter.h:56</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a58662b7231281e2728e03bdd24d8ac2b"></a>
@@ -1875,6 +2161,9 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8cpp_source.html#l00369">369</a> of file <a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                        {</div><div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  <a class="code" href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">_iFixInit</a> = 0;</div><div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a06d68b8b107331565bcd81b20a8367eb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a06d68b8b107331565bcd81b20a8367eb">MINT::FitParameter::_iFixInit</a></div><div class="ttdeci">int _iFixInit</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8h_source.html#l00055">FitParameter.h:55</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="afb08eadc132e1074bc36da5af406cc5b"></a>
@@ -1911,6 +2200,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00061">61</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa4793129b77d64c4c8202c4ca255e457"></a>
@@ -1930,6 +2221,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00060">60</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
 
 </div>
 </div>
@@ -1951,6 +2244,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00060">60</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9e928705e4cb5812885252d14edb314a"></a>
@@ -1970,6 +2265,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00060">60</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
 
 </div>
 </div>
@@ -1991,6 +2288,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00055">55</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6e1a8d32122dc899b7108ef021be4d17"></a>
@@ -2010,6 +2309,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00050">50</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
 
 </div>
 </div>
@@ -2031,6 +2332,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00056">56</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad8c885d8412903aa231f01c3f638d4b8"></a>
@@ -2050,6 +2353,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00056">56</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
 
 </div>
 </div>
@@ -2071,6 +2376,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00060">60</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a8cf49e4791e91107e0c0c8d21d5df131"></a>
@@ -2090,6 +2397,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00056">56</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
 
 </div>
 </div>
@@ -2111,6 +2420,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00052">52</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abf05fe205aecdbf693331fbefe85adc3"></a>
@@ -2130,6 +2441,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00053">53</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
 
 </div>
 </div>
@@ -2151,6 +2464,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00058">58</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ad619e564b2dc18575b160015a06a3c7a"></a>
@@ -2171,11 +2486,13 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitParameter_8h_source.html#l00056">56</a> of file <a class="el" href="FitParameter_8h_source.html">FitParameter.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="FitParameter_8h_source.html">FitParameter.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mint/FitParameter/<a class="el" href="FitParameter_8cpp.html">FitParameter.cpp</a></li>
+<li>Mint2/Mint/<a class="el" href="FitParameter_8h_source.html">FitParameter.h</a></li>
+<li>Mint2/src/Mint/FitParameter/<a class="el" href="FitParameter_8cpp_source.html">FitParameter.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

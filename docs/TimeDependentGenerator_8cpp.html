@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>MINT2: /nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Utils/TimeDependentGenerator.cpp File Reference</title>
+<title>MINT2: Mint2/src/Utils/TimeDependentGenerator.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a7363e98f9e0bdd87618633653859815.html">Utils</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_4754f46ea6d4ab9d9c154d70b7241947.html">Mint2</a></li><li class="navelem"><a class="el" href="dir_260d20cafbd34bfc73bb36537eaea320.html">src</a></li><li class="navelem"><a class="el" href="dir_2d11cd170e90b001576bf34a009e87a4.html">Utils</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -97,7 +97,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;sys/stat.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="DalitzPdfSaveInteg_8h_source.html">Mint/DalitzPdfSaveInteg.h</a>&gt;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="TimeDependentGenerator_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad347954680fc9c9366eb0dfefc9a271a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeDependentGenerator_8cpp.html#ad347954680fc9c9366eb0dfefc9a271a">exists</a> (const string &amp;fname)</td></tr>
@@ -118,6 +120,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="TimeDependentGenerator_8cpp_source.html#l00012">12</a> of file <a class="el" href="TimeDependentGenerator_8cpp_source.html">TimeDependentGenerator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                 {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">struct </span>stat statinfo ;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">return</span> stat(fname.c_str(), &amp;statinfo) == 0 ;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

@@ -132,7 +132,13 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a36f47b5775788e9f291cdddaf383e8e7 inherit pro_methods_classMINT_1_1IReturnRealForEvent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IReturnRealForEvent.html#a36f47b5775788e9f291cdddaf383e8e7">IReturnRealForEvent</a> ()</td></tr>
 <tr class="separator:a36f47b5775788e9f291cdddaf383e8e7 inherit pro_methods_classMINT_1_1IReturnRealForEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename EVENT&gt;<br />
+class MINT::IPdf&lt; EVENT &gt;</h3>
+
+
+<p>Definition at line <a class="el" href="IPdf_8h_source.html#l00013">13</a> of file <a class="el" href="IPdf_8h_source.html">IPdf.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a9a0c8dec8debee7ae34c7fcaf963baf0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -257,6 +263,8 @@ template&lt;typename EVENT&gt; </div>
 
 <p>Reimplemented in <a class="el" href="classDalitzPdfBaseFastInteg.html#af8ecf73b8a5b0fa140436bf493a36f3c">DalitzPdfBaseFastInteg</a>, <a class="el" href="classMINT_1_1SumPdf.html#a3d767e92d7c6be388a264cfe42cb6500">MINT::SumPdf&lt; EVENT_TYPE &gt;</a>, and <a class="el" href="classMINT_1_1SumPdf.html#a3d767e92d7c6be388a264cfe42cb6500">MINT::SumPdf&lt; IDalitzEvent &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="IPdf_8h_source.html#l00022">22</a> of file <a class="el" href="IPdf_8h_source.html">IPdf.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Gradient of pdf is not implemented. Please implement me or set useAnalyticGradient to 0 in your options file. I&#39;ll crash now. &quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">throw</span> <span class="stringliteral">&quot;crash&quot;</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    (void)evt;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    (void)grad;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    (void)mps;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae1216c41d59922ad5b8133157518bc6c"></a>
@@ -341,10 +349,12 @@ template&lt;typename EVENT&gt; </div>
 
 <p>Reimplemented in <a class="el" href="classDalitzPdfBaseFastInteg.html#a30e086647aec81dec9b5e35a25e5da7d">DalitzPdfBaseFastInteg</a>, <a class="el" href="classMINT_1_1SumPdf.html#a205997081cee5b9a3ddc5bf707772061">MINT::SumPdf&lt; EVENT_TYPE &gt;</a>, and <a class="el" href="classMINT_1_1SumPdf.html#a205997081cee5b9a3ddc5bf707772061">MINT::SumPdf&lt; IDalitzEvent &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="IPdf_8h_source.html#l00031">31</a> of file <a class="el" href="IPdf_8h_source.html">IPdf.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="IPdf_8h_source.html">IPdf.h</a></li>
+<li>Mint2/Mint/<a class="el" href="IPdf_8h_source.html">IPdf.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

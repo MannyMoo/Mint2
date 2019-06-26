@@ -453,7 +453,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ac49df1cbd3acb228966efbad24ea96fc inherit pro_attribs_classMINT_1_1PolymorphVector"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMINT_1_1FitParRef.html">FitParRef</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1PolymorphVector.html#ac49df1cbd3acb228966efbad24ea96fc">_vec</a></td></tr>
 <tr class="separator:ac49df1cbd3acb228966efbad24ea96fc inherit pro_attribs_classMINT_1_1PolymorphVector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="RhoOmegaGS_8h_source.html#l00020">20</a> of file <a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a357edd2f27ebdb763647870d7725b0cf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -486,6 +489,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8h_source.html#l00023">23</a> of file <a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                                                             : </div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="classGounarisSakurai.html#ab318873d14292cdcaa4780d6c9a04a17">GounarisSakurai</a>(tree, namePrefix),<a class="code" href="classRhoOmegaGS.html#a3527c3f3a28d95a2d6de6f5e65e0f27a">omega_pid</a>(223)   </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <a class="code" href="classRhoOmegaGS.html#aa1bb48b386d778e3245077fa62281eef">setOmegaFitParameters</a>();</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div><div class="ttc" id="classRhoOmegaGS_html_a3527c3f3a28d95a2d6de6f5e65e0f27a"><div class="ttname"><a href="classRhoOmegaGS.html#a3527c3f3a28d95a2d6de6f5e65e0f27a">RhoOmegaGS::omega_pid</a></div><div class="ttdeci">const int omega_pid</div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8h_source.html#l00043">RhoOmegaGS.h:43</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_aa1bb48b386d778e3245077fa62281eef"><div class="ttname"><a href="classRhoOmegaGS.html#aa1bb48b386d778e3245077fa62281eef">RhoOmegaGS::setOmegaFitParameters</a></div><div class="ttdeci">bool setOmegaFitParameters()</div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8cpp_source.html#l00041">RhoOmegaGS.cpp:41</a></div></div>
+<div class="ttc" id="classGounarisSakurai_html_ab318873d14292cdcaa4780d6c9a04a17"><div class="ttname"><a href="classGounarisSakurai.html#ab318873d14292cdcaa4780d6c9a04a17">GounarisSakurai::GounarisSakurai</a></div><div class="ttdeci">GounarisSakurai(const AssociatedDecayTree &amp;decay, const std::string &amp;namePrefix=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="GounarisSakurai_8h_source.html#l00042">GounarisSakurai.h:42</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8ec78ca1d0782aff19ccb377edd92db6"></a>
@@ -509,6 +517,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8h_source.html#l00033">33</a> of file <a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                       {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keyword">delete</span> <a class="code" href="classRhoOmegaGS.html#ab292c4cc6168cc5975314b997a142f86">_fittableOmegaPropertiesPtr</a>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div><div class="ttc" id="classRhoOmegaGS_html_ab292c4cc6168cc5975314b997a142f86"><div class="ttname"><a href="classRhoOmegaGS.html#ab292c4cc6168cc5975314b997a142f86">RhoOmegaGS::_fittableOmegaPropertiesPtr</a></div><div class="ttdeci">ResonancePropertiesFitRef * _fittableOmegaPropertiesPtr</div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8h_source.html#l00039">RhoOmegaGS.h:39</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -533,6 +544,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8h_source.html#l00054">54</a> of file <a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                           {</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classBW__BW.html#ae11c6d6eccf9a786404e78e6f18b957a">mumsFittableProperties</a>().<a class="code" href="classResonancePropertiesFitRef.html#aa1044396711717f8db0de5d516c4fec6">rhoOmegaDelta_Im</a>();</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div><div class="ttc" id="classBW__BW_html_ae11c6d6eccf9a786404e78e6f18b957a"><div class="ttname"><a href="classBW__BW.html#ae11c6d6eccf9a786404e78e6f18b957a">BW_BW::mumsFittableProperties</a></div><div class="ttdeci">virtual ResonancePropertiesFitRef &amp; mumsFittableProperties() const </div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8cpp_source.html#l00414">BW_BW.cpp:414</a></div></div>
+<div class="ttc" id="classResonancePropertiesFitRef_html_aa1044396711717f8db0de5d516c4fec6"><div class="ttname"><a href="classResonancePropertiesFitRef.html#aa1044396711717f8db0de5d516c4fec6">ResonancePropertiesFitRef::rhoOmegaDelta_Im</a></div><div class="ttdeci">double rhoOmegaDelta_Im() const </div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesFitRef_8h_source.html#l00078">ResonancePropertiesFitRef.h:78</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1f0940b2f162717d3bbc9b12c8381cee"></a>
@@ -556,6 +571,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8h_source.html#l00051">51</a> of file <a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                           {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classBW__BW.html#ae11c6d6eccf9a786404e78e6f18b957a">mumsFittableProperties</a>().<a class="code" href="classResonancePropertiesFitRef.html#a0a56e7871c82f1202ffb342ad2af184d">rhoOmegaDelta_Re</a>();</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div><div class="ttc" id="classResonancePropertiesFitRef_html_a0a56e7871c82f1202ffb342ad2af184d"><div class="ttname"><a href="classResonancePropertiesFitRef.html#a0a56e7871c82f1202ffb342ad2af184d">ResonancePropertiesFitRef::rhoOmegaDelta_Re</a></div><div class="ttdeci">double rhoOmegaDelta_Re() const </div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesFitRef_8h_source.html#l00077">ResonancePropertiesFitRef.h:77</a></div></div>
+<div class="ttc" id="classBW__BW_html_ae11c6d6eccf9a786404e78e6f18b957a"><div class="ttname"><a href="classBW__BW.html#ae11c6d6eccf9a786404e78e6f18b957a">BW_BW::mumsFittableProperties</a></div><div class="ttdeci">virtual ResonancePropertiesFitRef &amp; mumsFittableProperties() const </div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8cpp_source.html#l00414">BW_BW.cpp:414</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac8a30a18ee55e10503fb15992894bfee"></a>
@@ -582,6 +601,14 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classGounarisSakurai.html#a0c77d7d76fccabae76b393fd9dd1a106">GounarisSakurai</a>.</p>
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8cpp_source.html#l00065">65</a> of file <a class="el" href="RhoOmegaGS_8cpp_source.html">RhoOmegaGS.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                      {    </div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">double</span> mass_omega = <a class="code" href="classRhoOmegaGS.html#a2c83d2f93a7532569c7c826d377fd058">omegaMass</a>();</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    complex&lt;double&gt; delta(<a class="code" href="classRhoOmegaGS.html#a1f0940b2f162717d3bbc9b12c8381cee">delta_Re</a>(),<a class="code" href="classRhoOmegaGS.html#abbde2395f585323fc2d9f3bf0f133ed9">delta_Im</a>());</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classGounarisSakurai.html#a0c77d7d76fccabae76b393fd9dd1a106">GounarisSakurai::getVal</a>(evt)*(1. + <a class="code" href="classBW__BW.html#a0cd8cc463780c9d7cb5b00be066a8a73">mumsRecoMass2</a>()/(mass_omega*mass_omega) *  (delta * <a class="code" href="classRhoOmegaGS.html#a1235d3f2bb8eb7f0d3acd4fd412029e0">omegaBW</a>(evt)));</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div><div class="ttc" id="classGounarisSakurai_html_a0c77d7d76fccabae76b393fd9dd1a106"><div class="ttname"><a href="classGounarisSakurai.html#a0c77d7d76fccabae76b393fd9dd1a106">GounarisSakurai::getVal</a></div><div class="ttdeci">virtual std::complex&lt; double &gt; getVal(IDalitzEvent &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="GounarisSakurai_8cpp_source.html#l00094">GounarisSakurai.cpp:94</a></div></div>
+<div class="ttc" id="classBW__BW_html_a0cd8cc463780c9d7cb5b00be066a8a73"><div class="ttname"><a href="classBW__BW.html#a0cd8cc463780c9d7cb5b00be066a8a73">BW_BW::mumsRecoMass2</a></div><div class="ttdeci">virtual double mumsRecoMass2() const </div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8cpp_source.html#l00548">BW_BW.cpp:548</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_abbde2395f585323fc2d9f3bf0f133ed9"><div class="ttname"><a href="classRhoOmegaGS.html#abbde2395f585323fc2d9f3bf0f133ed9">RhoOmegaGS::delta_Im</a></div><div class="ttdeci">double delta_Im() const </div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8h_source.html#l00054">RhoOmegaGS.h:54</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_a1235d3f2bb8eb7f0d3acd4fd412029e0"><div class="ttname"><a href="classRhoOmegaGS.html#a1235d3f2bb8eb7f0d3acd4fd412029e0">RhoOmegaGS::omegaBW</a></div><div class="ttdeci">std::complex&lt; double &gt; omegaBW(IDalitzEvent &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8cpp_source.html#l00054">RhoOmegaGS.cpp:54</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_a1f0940b2f162717d3bbc9b12c8381cee"><div class="ttname"><a href="classRhoOmegaGS.html#a1f0940b2f162717d3bbc9b12c8381cee">RhoOmegaGS::delta_Re</a></div><div class="ttdeci">double delta_Re() const </div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8h_source.html#l00051">RhoOmegaGS.h:51</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_a2c83d2f93a7532569c7c826d377fd058"><div class="ttname"><a href="classRhoOmegaGS.html#a2c83d2f93a7532569c7c826d377fd058">RhoOmegaGS::omegaMass</a></div><div class="ttdeci">double omegaMass() const </div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8h_source.html#l00044">RhoOmegaGS.h:44</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a36cd92af426ee484dfb5852b05c32ec9"></a>
@@ -607,6 +634,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classGounarisSakurai.html#a3920b75efd05ff9aedc17c70d3ea8c48">GounarisSakurai</a>.</p>
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8h_source.html#l00029">29</a> of file <a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;RhoOmegaGS(&quot;</span>+<a class="code" href="classBW__BW.html#a010f40068b7f3aa445a8b8e5eff608c6">_theDecay</a>.<a class="code" href="classDDTree.html#a54e173e910fbed5fe99700a7284bcfb2">oneLiner</a>() +<span class="stringliteral">&quot;)&quot;</span>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div><div class="ttc" id="classBW__BW_html_a010f40068b7f3aa445a8b8e5eff608c6"><div class="ttname"><a href="classBW__BW.html#a010f40068b7f3aa445a8b8e5eff608c6">BW_BW::_theDecay</a></div><div class="ttdeci">const AssociatedDecayTree &amp; _theDecay</div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8h_source.html#l00069">BW_BW.h:69</a></div></div>
+<div class="ttc" id="classDDTree_html_a54e173e910fbed5fe99700a7284bcfb2"><div class="ttname"><a href="classDDTree.html#a54e173e910fbed5fe99700a7284bcfb2">DDTree::oneLiner</a></div><div class="ttdeci">void oneLiner(std::stringstream &amp;seam, int generation=0) const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00375">DDTree.h:375</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1235d3f2bb8eb7f0d3acd4fd412029e0"></a>
@@ -631,6 +662,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8cpp_source.html#l00054">54</a> of file <a class="el" href="RhoOmegaGS_8cpp_source.html">RhoOmegaGS.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                       {  </div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classBW__BW.html#a0ae24fd7b863fa1eeb59813c669991f0">setEventPtr</a>(evt);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classBW__BW.html#ace564f319ac986ca34d2fa19df5179e4">resetInternals</a>();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">double</span> mass_omega = <a class="code" href="classRhoOmegaGS.html#a2c83d2f93a7532569c7c826d377fd058">omegaMass</a>();</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">double</span> width_omega = <a class="code" href="classRhoOmegaGS.html#a67d6840708835e600a26d5e0e8d45a17">omegaWidth</a>();</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::complex&lt;double&gt; invBW(mass_omega*mass_omega - <a class="code" href="classBW__BW.html#a0cd8cc463780c9d7cb5b00be066a8a73">mumsRecoMass2</a>(), - mass_omega * width_omega);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> 1.*<a class="code" href="CLHEPSystemOfUnits_8h.html#aec0e126d9991db8ad0b26139f5860568">GeV</a>*<a class="code" href="CLHEPSystemOfUnits_8h.html#aec0e126d9991db8ad0b26139f5860568">GeV</a>/invBW;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div><div class="ttc" id="classBW__BW_html_ace564f319ac986ca34d2fa19df5179e4"><div class="ttname"><a href="classBW__BW.html#ace564f319ac986ca34d2fa19df5179e4">BW_BW::resetInternals</a></div><div class="ttdeci">virtual void resetInternals()</div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8cpp_source.html#l01114">BW_BW.cpp:1114</a></div></div>
+<div class="ttc" id="classBW__BW_html_a0cd8cc463780c9d7cb5b00be066a8a73"><div class="ttname"><a href="classBW__BW.html#a0cd8cc463780c9d7cb5b00be066a8a73">BW_BW::mumsRecoMass2</a></div><div class="ttdeci">virtual double mumsRecoMass2() const </div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8cpp_source.html#l00548">BW_BW.cpp:548</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_a67d6840708835e600a26d5e0e8d45a17"><div class="ttname"><a href="classRhoOmegaGS.html#a67d6840708835e600a26d5e0e8d45a17">RhoOmegaGS::omegaWidth</a></div><div class="ttdeci">double omegaWidth() const </div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8h_source.html#l00047">RhoOmegaGS.h:47</a></div></div>
+<div class="ttc" id="classBW__BW_html_a0ae24fd7b863fa1eeb59813c669991f0"><div class="ttname"><a href="classBW__BW.html#a0ae24fd7b863fa1eeb59813c669991f0">BW_BW::setEventPtr</a></div><div class="ttdeci">bool setEventPtr(IDalitzEvent &amp;evt) const </div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8cpp_source.html#l00141">BW_BW.cpp:141</a></div></div>
+<div class="ttc" id="CLHEPSystemOfUnits_8h_html_aec0e126d9991db8ad0b26139f5860568"><div class="ttname"><a href="CLHEPSystemOfUnits_8h.html#aec0e126d9991db8ad0b26139f5860568">GeV</a></div><div class="ttdeci">static const double GeV</div><div class="ttdef"><b>Definition:</b> <a href="CLHEPSystemOfUnits_8h_source.html#l00152">CLHEPSystemOfUnits.h:152</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_a2c83d2f93a7532569c7c826d377fd058"><div class="ttname"><a href="classRhoOmegaGS.html#a2c83d2f93a7532569c7c826d377fd058">RhoOmegaGS::omegaMass</a></div><div class="ttdeci">double omegaMass() const </div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8h_source.html#l00044">RhoOmegaGS.h:44</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a78a7259aa63e4eb4b6af5e4078491441"></a>
@@ -654,6 +693,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8cpp_source.html#l00029">29</a> of file <a class="el" href="RhoOmegaGS_8cpp_source.html">RhoOmegaGS.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                                    {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span>(0 == <a class="code" href="classRhoOmegaGS.html#ab292c4cc6168cc5975314b997a142f86">_fittableOmegaPropertiesPtr</a>){</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;something went wrong in RhoOmegaGS::mumsFittableProperties() &quot;</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; _fittableOmegaPropertiesPtr is 0 although it should be&quot;</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; set at construction.&quot;</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; Looking at  this decay tree\n&quot;</span> &lt;&lt; <a class="code" href="classBW__BW.html#a010f40068b7f3aa445a8b8e5eff608c6">_theDecay</a> &lt;&lt; endl;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">throw</span> <span class="stringliteral">&quot;error in RhoOmegaGS::mumsFittableProperties()&quot;</span>;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classRhoOmegaGS.html#ab292c4cc6168cc5975314b997a142f86">_fittableOmegaPropertiesPtr</a>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div><div class="ttc" id="classBW__BW_html_a010f40068b7f3aa445a8b8e5eff608c6"><div class="ttname"><a href="classBW__BW.html#a010f40068b7f3aa445a8b8e5eff608c6">BW_BW::_theDecay</a></div><div class="ttdeci">const AssociatedDecayTree &amp; _theDecay</div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8h_source.html#l00069">BW_BW.h:69</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_ab292c4cc6168cc5975314b997a142f86"><div class="ttname"><a href="classRhoOmegaGS.html#ab292c4cc6168cc5975314b997a142f86">RhoOmegaGS::_fittableOmegaPropertiesPtr</a></div><div class="ttdeci">ResonancePropertiesFitRef * _fittableOmegaPropertiesPtr</div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8h_source.html#l00039">RhoOmegaGS.h:39</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2c83d2f93a7532569c7c826d377fd058"></a>
@@ -677,6 +720,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8h_source.html#l00044">44</a> of file <a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                            {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classRhoOmegaGS.html#a78a7259aa63e4eb4b6af5e4078491441">omegaFittableProperties</a>().<a class="code" href="classResonancePropertiesFitRef.html#abc89689c8221f83aa854904ad922a35e">mass</a>();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div><div class="ttc" id="classRhoOmegaGS_html_a78a7259aa63e4eb4b6af5e4078491441"><div class="ttname"><a href="classRhoOmegaGS.html#a78a7259aa63e4eb4b6af5e4078491441">RhoOmegaGS::omegaFittableProperties</a></div><div class="ttdeci">ResonancePropertiesFitRef &amp; omegaFittableProperties() const </div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8cpp_source.html#l00029">RhoOmegaGS.cpp:29</a></div></div>
+<div class="ttc" id="classResonancePropertiesFitRef_html_abc89689c8221f83aa854904ad922a35e"><div class="ttname"><a href="classResonancePropertiesFitRef.html#abc89689c8221f83aa854904ad922a35e">ResonancePropertiesFitRef::mass</a></div><div class="ttdeci">double mass() const </div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesFitRef_8h_source.html#l00065">ResonancePropertiesFitRef.h:65</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a109043939da8e2b5b3c865730bd25d3e"></a>
@@ -700,6 +747,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8cpp_source.html#l00018">18</a> of file <a class="el" href="RhoOmegaGS_8cpp_source.html">RhoOmegaGS.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                            {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">const</span> <a class="code" href="classResonanceProperties.html">ResonanceProperties</a>* rp = <a class="code" href="classBW__BW.html#ae4a5d51f8b6abe9b1f24af55b82700c2">resonancePropertiesList</a>()-&gt;<a class="code" href="classResonancePropertiesList.html#a37a05871c1074ddbb3e5d56911d4d8a9">AddToListIfMissing</a>(<a class="code" href="classRhoOmegaGS.html#a3527c3f3a28d95a2d6de6f5e65e0f27a">omega_pid</a>);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">if</span>(0 == rp){</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;ERROR in RhoOmegaGS::ResonanceProperties()&quot;</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;     &lt;&lt; <span class="stringliteral">&quot; can&#39;t find properties for first element&quot;</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;     &lt;&lt; <span class="stringliteral">&quot; in this decay tree\n&quot;</span> &lt;&lt; <a class="code" href="classBW__BW.html#a010f40068b7f3aa445a8b8e5eff608c6">_theDecay</a> &lt;&lt; endl;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">throw</span> <span class="stringliteral">&quot;invalid decay tree in RhoOmegaGS::mumsFittableProperties()&quot;</span>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">return</span> rp;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div><div class="ttc" id="classBW__BW_html_a010f40068b7f3aa445a8b8e5eff608c6"><div class="ttname"><a href="classBW__BW.html#a010f40068b7f3aa445a8b8e5eff608c6">BW_BW::_theDecay</a></div><div class="ttdeci">const AssociatedDecayTree &amp; _theDecay</div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8h_source.html#l00069">BW_BW.h:69</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_a3527c3f3a28d95a2d6de6f5e65e0f27a"><div class="ttname"><a href="classRhoOmegaGS.html#a3527c3f3a28d95a2d6de6f5e65e0f27a">RhoOmegaGS::omega_pid</a></div><div class="ttdeci">const int omega_pid</div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8h_source.html#l00043">RhoOmegaGS.h:43</a></div></div>
+<div class="ttc" id="classBW__BW_html_ae4a5d51f8b6abe9b1f24af55b82700c2"><div class="ttname"><a href="classBW__BW.html#ae4a5d51f8b6abe9b1f24af55b82700c2">BW_BW::resonancePropertiesList</a></div><div class="ttdeci">ResonancePropertiesList * resonancePropertiesList() const </div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8cpp_source.html#l00391">BW_BW.cpp:391</a></div></div>
+<div class="ttc" id="classResonanceProperties_html"><div class="ttname"><a href="classResonanceProperties.html">ResonanceProperties</a></div><div class="ttdef"><b>Definition:</b> <a href="ResonanceProperties_8h_source.html#l00015">ResonanceProperties.h:15</a></div></div>
+<div class="ttc" id="classResonancePropertiesList_html_a37a05871c1074ddbb3e5d56911d4d8a9"><div class="ttname"><a href="classResonancePropertiesList.html#a37a05871c1074ddbb3e5d56911d4d8a9">ResonancePropertiesList::AddToListIfMissing</a></div><div class="ttdeci">const ResonanceProperties * AddToListIfMissing(int pdg)</div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesList_8cpp_source.html#l00108">ResonancePropertiesList.cpp:108</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a67d6840708835e600a26d5e0e8d45a17"></a>
@@ -723,6 +777,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8h_source.html#l00047">47</a> of file <a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                             {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classRhoOmegaGS.html#a78a7259aa63e4eb4b6af5e4078491441">omegaFittableProperties</a>().<a class="code" href="classResonancePropertiesFitRef.html#aea34f24072ff033e871e69c71d6e86c0">width</a>();</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div><div class="ttc" id="classRhoOmegaGS_html_a78a7259aa63e4eb4b6af5e4078491441"><div class="ttname"><a href="classRhoOmegaGS.html#a78a7259aa63e4eb4b6af5e4078491441">RhoOmegaGS::omegaFittableProperties</a></div><div class="ttdeci">ResonancePropertiesFitRef &amp; omegaFittableProperties() const </div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8cpp_source.html#l00029">RhoOmegaGS.cpp:29</a></div></div>
+<div class="ttc" id="classResonancePropertiesFitRef_html_aea34f24072ff033e871e69c71d6e86c0"><div class="ttname"><a href="classResonancePropertiesFitRef.html#aea34f24072ff033e871e69c71d6e86c0">ResonancePropertiesFitRef::width</a></div><div class="ttdeci">double width() const </div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesFitRef_8h_source.html#l00066">ResonancePropertiesFitRef.h:66</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa1bb48b386d778e3245077fa62281eef"></a>
@@ -746,6 +804,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8cpp_source.html#l00041">41</a> of file <a class="el" href="RhoOmegaGS_8cpp_source.html">RhoOmegaGS.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                      {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="CLHEPSystemOfUnits_8h.html#ae9d0f740ff4383c48fbaaf93a1e7a886">s</a>=<span class="keyword">true</span>;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(0 == <a class="code" href="classBW__BW.html#ae4a5d51f8b6abe9b1f24af55b82700c2">resonancePropertiesList</a>()){</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;big problem in RhoOmegaGS::setAllFitParameters&quot;</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;, resonancePropertiesList is zero&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">throw</span> <span class="stringliteral">&quot;RhoOmegaGS::setAllFitParameters can&#39;t find resonancePropertiesList()&quot;</span>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classRhoOmegaGS.html#ab292c4cc6168cc5975314b997a142f86">_fittableOmegaPropertiesPtr</a> = <span class="keyword">new</span> <a class="code" href="classResonancePropertiesFitRef.html">ResonancePropertiesFitRef</a>(*<a class="code" href="classRhoOmegaGS.html#a109043939da8e2b5b3c865730bd25d3e">omegaProperties</a>(), <span class="keyword">this</span>);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    s &amp;= (0 != <a class="code" href="classRhoOmegaGS.html#ab292c4cc6168cc5975314b997a142f86">_fittableOmegaPropertiesPtr</a>);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="CLHEPSystemOfUnits_8h.html#ae9d0f740ff4383c48fbaaf93a1e7a886">s</a>;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div><div class="ttc" id="CLHEPSystemOfUnits_8h_html_ae9d0f740ff4383c48fbaaf93a1e7a886"><div class="ttname"><a href="CLHEPSystemOfUnits_8h.html#ae9d0f740ff4383c48fbaaf93a1e7a886">s</a></div><div class="ttdeci">static const double s</div><div class="ttdef"><b>Definition:</b> <a href="CLHEPSystemOfUnits_8h_source.html#l00126">CLHEPSystemOfUnits.h:126</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_ab292c4cc6168cc5975314b997a142f86"><div class="ttname"><a href="classRhoOmegaGS.html#ab292c4cc6168cc5975314b997a142f86">RhoOmegaGS::_fittableOmegaPropertiesPtr</a></div><div class="ttdeci">ResonancePropertiesFitRef * _fittableOmegaPropertiesPtr</div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8h_source.html#l00039">RhoOmegaGS.h:39</a></div></div>
+<div class="ttc" id="classResonancePropertiesFitRef_html"><div class="ttname"><a href="classResonancePropertiesFitRef.html">ResonancePropertiesFitRef</a></div><div class="ttdef"><b>Definition:</b> <a href="ResonancePropertiesFitRef_8h_source.html#l00010">ResonancePropertiesFitRef.h:10</a></div></div>
+<div class="ttc" id="classBW__BW_html_ae4a5d51f8b6abe9b1f24af55b82700c2"><div class="ttname"><a href="classBW__BW.html#ae4a5d51f8b6abe9b1f24af55b82700c2">BW_BW::resonancePropertiesList</a></div><div class="ttdeci">ResonancePropertiesList * resonancePropertiesList() const </div><div class="ttdef"><b>Definition:</b> <a href="BW__BW_8cpp_source.html#l00391">BW_BW.cpp:391</a></div></div>
+<div class="ttc" id="classRhoOmegaGS_html_a109043939da8e2b5b3c865730bd25d3e"><div class="ttname"><a href="classRhoOmegaGS.html#a109043939da8e2b5b3c865730bd25d3e">RhoOmegaGS::omegaProperties</a></div><div class="ttdeci">const ResonanceProperties * omegaProperties() const </div><div class="ttdef"><b>Definition:</b> <a href="RhoOmegaGS_8cpp_source.html#l00018">RhoOmegaGS.cpp:18</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -767,6 +832,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8h_source.html#l00039">39</a> of file <a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3527c3f3a28d95a2d6de6f5e65e0f27a"></a>
@@ -787,11 +854,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="RhoOmegaGS_8h_source.html#l00043">43</a> of file <a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/Lineshapes/<a class="el" href="RhoOmegaGS_8cpp.html">RhoOmegaGS.cpp</a></li>
+<li>Mint2/Mint/<a class="el" href="RhoOmegaGS_8h_source.html">RhoOmegaGS.h</a></li>
+<li>Mint2/src/Mojito/Lineshapes/<a class="el" href="RhoOmegaGS_8cpp_source.html">RhoOmegaGS.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

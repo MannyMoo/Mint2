@@ -229,7 +229,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a514c6eedec5182137e63af4ee16805f7 inherit pro_static_attribs_classSymmLorentzMatrix"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classSymmLorentzMatrix.html">SymmLorentzMatrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSymmLorentzMatrix.html#a514c6eedec5182137e63af4ee16805f7">__gmunu</a> = 0</td></tr>
 <tr class="separator:a514c6eedec5182137e63af4ee16805f7 inherit pro_static_attribs_classSymmLorentzMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="ZTgperp_8h_source.html#l00010">10</a> of file <a class="el" href="ZTgperp_8h_source.html">ZTgperp.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad88f30ca1dbe4db66ddf4fe296799146"></a>
 <div class="memitem">
 <div class="memproto">
@@ -262,6 +265,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ZTgperp_8h_source.html#l00012">12</a> of file <a class="el" href="ZTgperp_8h_source.html">ZTgperp.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                        {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">// the &quot;true&quot; gmunu_perp should be with u = p/sqrt(p^2)</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// however, often we use instead u = p/m_R where m_R is </span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// the &quot;nominal&quot; mass (at the peak) rather than</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// the (off-shell) mass of the resonance.</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// m_R &lt; 0 uses sqrt(p^2), otherwise it&#39;s m_R</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">double</span> mR2 = (mR_in &lt; 0 ? p.M2() : mR_in*mR_in);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classSymmLorentzMatrix.html">SymmLorentzMatrix</a> uu(p);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    uu /= mR2;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    *<span class="keyword">this</span> = (<a class="code" href="classSymmLorentzMatrix.html#ac9cb9af7d3a32c99113393b914cc4467">SymmLorentzMatrix::gmunu</a>() - uu);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  }</div><div class="ttc" id="classSymmLorentzMatrix_html"><div class="ttname"><a href="classSymmLorentzMatrix.html">SymmLorentzMatrix</a></div><div class="ttdef"><b>Definition:</b> <a href="SymmLorentzMatrix_8h_source.html#l00007">SymmLorentzMatrix.h:7</a></div></div>
+<div class="ttc" id="classSymmLorentzMatrix_html_ac9cb9af7d3a32c99113393b914cc4467"><div class="ttname"><a href="classSymmLorentzMatrix.html#ac9cb9af7d3a32c99113393b914cc4467">SymmLorentzMatrix::gmunu</a></div><div class="ttdeci">static const SymmLorentzMatrix &amp; gmunu()</div><div class="ttdef"><b>Definition:</b> <a href="SymmLorentzMatrix_8cpp_source.html#l00010">SymmLorentzMatrix.cpp:10</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -287,10 +294,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="ZTgperp_8h_source.html#l00026">26</a> of file <a class="el" href="ZTgperp_8h_source.html">ZTgperp.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                    {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;4; i++) <a class="code" href="classLorentzMatrix.html#a5e76580b19372f5ae19ac18a769f4d7e">_v</a>[i] = other.<a class="code" href="classLorentzMatrix.html#a7230a1ebeaf1339a12e8258bbda88fa4">v</a>(i);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  }</div><div class="ttc" id="classLorentzMatrix_html_a5e76580b19372f5ae19ac18a769f4d7e"><div class="ttname"><a href="classLorentzMatrix.html#a5e76580b19372f5ae19ac18a769f4d7e">LorentzMatrix::_v</a></div><div class="ttdeci">TLorentzVector _v[4]</div><div class="ttdef"><b>Definition:</b> <a href="LorentzMatrix_8h_source.html#l00009">LorentzMatrix.h:9</a></div></div>
+<div class="ttc" id="classLorentzMatrix_html_a7230a1ebeaf1339a12e8258bbda88fa4"><div class="ttname"><a href="classLorentzMatrix.html#a7230a1ebeaf1339a12e8258bbda88fa4">LorentzMatrix::v</a></div><div class="ttdeci">const TLorentzVector &amp; v(int i) const </div><div class="ttdef"><b>Definition:</b> <a href="LorentzMatrix_8h_source.html#l00019">LorentzMatrix.h:19</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="ZTgperp_8h_source.html">ZTgperp.h</a></li>
+<li>Mint2/Mint/<a class="el" href="ZTgperp_8h_source.html">ZTgperp.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

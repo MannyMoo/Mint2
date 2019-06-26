@@ -137,7 +137,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a72283900ed5d06cbfe684ad43b03c20a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinimisable.html#a72283900ed5d06cbfe684ad43b03c20a">setUseAnalyticGradient</a> (const bool &amp;<a class="el" href="classMINT_1_1IMinimisable.html#ab2f1d1e57611e7a5ed83e78a98113890">useAnalyticGradient</a>)</td></tr>
 <tr class="separator:a72283900ed5d06cbfe684ad43b03c20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="IMinimisable_8h_source.html#l00009">9</a> of file <a class="el" href="IMinimisable_8h_source.html">IMinimisable.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae2c7260bd901dd7273664698bf1b0521"></a>
 <div class="memitem">
 <div class="memproto">
@@ -159,6 +162,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="IMinimisable_8h_source.html#l00012">12</a> of file <a class="el" href="IMinimisable_8h_source.html">IMinimisable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -311,6 +316,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#a8b4ac75a08044bb7366cb988a9ce6997">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#a73b2c89155b48d93fc37ce11d4e8e223">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLSum.html#a3ac169193ac0f16da0b49dfcb285d41f">MINT::Neg2LLSum</a>, and <a class="el" href="classMINT_1_1LASSO.html#af522427fdde6aae63545c1353de9b5c6">MINT::LASSO</a>.</p>
 
+<p>Definition at line <a class="el" href="IMinimisable_8h_source.html#l00030">30</a> of file <a class="el" href="IMinimisable_8h_source.html">IMinimisable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;Gradient of pdf is not implemented. Please implement me or set useAnalyticGradient to 0 in your options file. I&#39;ll crash now. &quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordflow">throw</span> <span class="stringliteral">&quot;crash&quot;</span>;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      (void)par;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4251cacf21d6b88433a455bda0afc424"></a>
@@ -362,6 +369,9 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#a8dae94f7fcb157fd01befc73937b465f">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#ae8462e36769b3d66bc9769832cdf47d9">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, and <a class="el" href="classMINT_1_1Neg2LLSum.html#aafcd5ed7a8bb6e5878dfc4f8e7505ef1">MINT::Neg2LLSum</a>.</p>
 
+<p>Definition at line <a class="el" href="IMinimisable_8h_source.html#l00040">40</a> of file <a class="el" href="IMinimisable_8h_source.html">IMinimisable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    { (void)<a class="code" href="classMINT_1_1IMinimisable.html#ab2f1d1e57611e7a5ed83e78a98113890">useAnalyticGradient</a>; }</div><div class="ttc" id="classMINT_1_1IMinimisable_html_ab2f1d1e57611e7a5ed83e78a98113890"><div class="ttname"><a href="classMINT_1_1IMinimisable.html#ab2f1d1e57611e7a5ed83e78a98113890">MINT::IMinimisable::useAnalyticGradient</a></div><div class="ttdeci">virtual bool useAnalyticGradient()</div><div class="ttdef"><b>Definition:</b> <a href="IMinimisable_8h_source.html#l00037">IMinimisable.h:37</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab2f1d1e57611e7a5ed83e78a98113890"></a>
@@ -387,10 +397,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classMINT_1_1Neg2LL.html#a551a3fb4775c4e7a51fcac5e863815bf">MINT::Neg2LL</a>, <a class="el" href="classMINT_1_1Neg2LLClass.html#aef2a8656b1646b35a7cc48a938d059bb">MINT::Neg2LLClass&lt; PDF_TYPE, EVENTLIST_TYPE &gt;</a>, <a class="el" href="classMINT_1_1Neg2LLSum.html#a2205fa6a3b200431113f3e22e31a3bbd">MINT::Neg2LLSum</a>, and <a class="el" href="classMINT_1_1LASSO.html#abb18f00320868c6fc89cc016d48413dc">MINT::LASSO</a>.</p>
 
+<p>Definition at line <a class="el" href="IMinimisable_8h_source.html#l00037">37</a> of file <a class="el" href="IMinimisable_8h_source.html">IMinimisable.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="IMinimisable_8h_source.html">IMinimisable.h</a></li>
+<li>Mint2/Mint/<a class="el" href="IMinimisable_8h_source.html">IMinimisable.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
