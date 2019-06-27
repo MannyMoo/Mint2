@@ -4,6 +4,7 @@ var searchData=
   ['fermips_5fbw',['FermiPS_BW',['../classFermiPS__BW.html',1,'']]],
   ['findmaxfcn',['FindMaxFCN',['../classFindMaxFCN.html',1,'']]],
   ['fitampincoherentsum',['FitAmpIncoherentSum',['../classFitAmpIncoherentSum.html',1,'']]],
+  ['fitampincoherentsumevtgen',['FitAmpIncoherentSumEvtGen',['../classFitAmpIncoherentSumEvtGen.html',1,'']]],
   ['fitamplist',['FitAmpList',['../classFitAmpList.html',1,'']]],
   ['fitamplistbase',['FitAmpListBase',['../classFitAmpListBase.html',1,'']]],
   ['fitamplitude',['FitAmplitude',['../classFitAmplitude.html',1,'']]],
@@ -24,5 +25,8 @@ var searchData=
   ['flatte',['Flatte',['../classFlatte.html',1,'']]],
   ['flexifastamplitudeintegrator',['FlexiFastAmplitudeIntegrator',['../classFlexiFastAmplitudeIntegrator.html',1,'']]],
   ['foamdalitzmc',['FoamDalitzMC',['../classFoamDalitzMC.html',1,'']]],
-  ['fromfilegenerator',['FromFileGenerator',['../classFromFileGenerator.html',1,'']]]
+  ['focusflatte',['FocusFlatte',['../classFocusFlatte.html',1,'']]],
+  ['fromfilegenerator',['FromFileGenerator',['../classFromFileGenerator.html',1,'']]],
+  ['fullampspdfflexifastcpv',['FullAmpsPdfFlexiFastCPV',['../classFullAmpsPdfFlexiFastCPV.html',1,'']]],
+  ['fulltimepdf',['FullTimePdf',['../classFullTimePdf.html',1,'']]]
 ];

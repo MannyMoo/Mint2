@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -224,7 +225,13 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ac49df1cbd3acb228966efbad24ea96fc inherit pro_attribs_classMINT_1_1PolymorphVector"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; EVENT_TYPE &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1PolymorphVector.html#ac49df1cbd3acb228966efbad24ea96fc">_vec</a></td></tr>
 <tr class="separator:ac49df1cbd3acb228966efbad24ea96fc inherit pro_attribs_classMINT_1_1PolymorphVector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename EVENT_TYPE&gt;<br />
+class MINT::EventPtrList&lt; EVENT_TYPE &gt;</h3>
+
+
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00026">26</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8d95f008c47293fe3361cc45c775aa97"></a>
 <div class="memitem">
 <div class="memproto">
@@ -248,6 +255,8 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00032">32</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a32a45fdc5c655d2a1d946a47a9ee25e2"></a>
@@ -274,6 +283,9 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00036">36</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classMINT_1_1EventPtrList.html#a0405147b7a2238c87a16f86a94d57aa5">Add</a>(evt);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div><div class="ttc" id="classMINT_1_1EventPtrList_html_a0405147b7a2238c87a16f86a94d57aa5"><div class="ttname"><a href="classMINT_1_1EventPtrList.html#a0405147b7a2238c87a16f86a94d57aa5">MINT::EventPtrList::Add</a></div><div class="ttdeci">virtual bool Add(const EVENT_TYPE &amp;evt)</div><div class="ttdef"><b>Definition:</b> <a href="EventPtrList_8h_source.html#l00088">EventPtrList.h:88</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac9ff332e7e3bf63e4ad437853876b88b"></a>
@@ -299,6 +311,8 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00040">40</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7dd339ddede55621e04acf6c955274cb"></a>
@@ -325,6 +339,11 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00055">55</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    : IMinimalEventList&lt;EVENT_TYPE&gt;()</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    , <a class="code" href="classMINT_1_1PolymorphVector.html#aa2c2298fe03edc8713b82fd98729ba47">PolymorphVector</a>&lt;<a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt;EVENT_TYPE&gt;</a> &gt;(</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        (<a class="code" href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector</a>&lt;<a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt;EVENT_TYPE&gt;</a> &gt;)other)</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_aa2c2298fe03edc8713b82fd98729ba47"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#aa2c2298fe03edc8713b82fd98729ba47">MINT::PolymorphVector&lt; MINT::counted_ptr&lt; EVENT_TYPE &gt; &gt;::PolymorphVector</a></div><div class="ttdeci">PolymorphVector()</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00014">PolymorphVector.h:14</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00039">counted_ptr.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector</a></div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00008">PolymorphVector.h:8</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -354,6 +373,9 @@ template&lt;typename EVENT_TYPE&gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinimalEventList.html#ad8be9d41763e9c930ce4da4ca1dbf685">MINT::IMinimalEventList&lt; EVENT_TYPE &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00088">88</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                         {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    counted_ptr&lt;EVENT_TYPE&gt; copy (<span class="keyword">new</span> EVENT_TYPE (evt));</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a0faa1d8b284932524887cf352bb6be6d">push_back</a>(copy);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a0faa1d8b284932524887cf352bb6be6d"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a0faa1d8b284932524887cf352bb6be6d">MINT::PolymorphVector&lt; MINT::counted_ptr&lt; EVENT_TYPE &gt; &gt;::push_back</a></div><div class="ttdeci">void push_back(const MINT::counted_ptr&lt; EVENT_TYPE &gt; &amp;c)</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00050">PolymorphVector.h:50</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abb4c058ae9e2a75baf7d594b6b66e059"></a>
@@ -380,6 +402,9 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00095">95</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                          {</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a0faa1d8b284932524887cf352bb6be6d">push_back</a>(evt);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a0faa1d8b284932524887cf352bb6be6d"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a0faa1d8b284932524887cf352bb6be6d">MINT::PolymorphVector&lt; MINT::counted_ptr&lt; EVENT_TYPE &gt; &gt;::push_back</a></div><div class="ttdeci">void push_back(const MINT::counted_ptr&lt; EVENT_TYPE &gt; &amp;c)</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00050">PolymorphVector.h:50</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a036a47bbf065623ceabd86ceff93a051"></a>
@@ -406,6 +431,9 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00100">100</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                             {</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span>(otherList.empty()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i &lt; otherList.size(); i++){</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a0faa1d8b284932524887cf352bb6be6d">push_back</a>(otherList.getPtr(i));</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a0faa1d8b284932524887cf352bb6be6d"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a0faa1d8b284932524887cf352bb6be6d">MINT::PolymorphVector&lt; MINT::counted_ptr&lt; EVENT_TYPE &gt; &gt;::push_back</a></div><div class="ttdeci">void push_back(const MINT::counted_ptr&lt; EVENT_TYPE &gt; &amp;c)</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00050">PolymorphVector.h:50</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a447b971e56eaa7e5090c9c024169ae82"></a>
@@ -434,6 +462,9 @@ template&lt;typename EVENT_TYPE&gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinimalEventList.html#a3d754ca1eb307141592ab4d24a56721e">MINT::IMinimalEventList&lt; EVENT_TYPE &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00046">46</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                   {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> *(<a class="code" href="classMINT_1_1EventPtrList.html#a1dfee6bf55aedb5061d773cdfd3f168c">getPtr</a>(i));</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  }</div><div class="ttc" id="classMINT_1_1EventPtrList_html_a1dfee6bf55aedb5061d773cdfd3f168c"><div class="ttname"><a href="classMINT_1_1EventPtrList.html#a1dfee6bf55aedb5061d773cdfd3f168c">MINT::EventPtrList::getPtr</a></div><div class="ttdeci">virtual counted_ptr&lt; EVENT_TYPE &gt; getPtr(unsigned int i) const </div><div class="ttdef"><b>Definition:</b> <a href="EventPtrList_8h_source.html#l00042">EventPtrList.h:42</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a21763ce7780de934fbe9533054a83f9c"></a>
@@ -460,6 +491,9 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00049">49</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                             {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> *(<a class="code" href="classMINT_1_1EventPtrList.html#a1dfee6bf55aedb5061d773cdfd3f168c">getPtr</a>(i));</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div><div class="ttc" id="classMINT_1_1EventPtrList_html_a1dfee6bf55aedb5061d773cdfd3f168c"><div class="ttname"><a href="classMINT_1_1EventPtrList.html#a1dfee6bf55aedb5061d773cdfd3f168c">MINT::EventPtrList::getPtr</a></div><div class="ttdeci">virtual counted_ptr&lt; EVENT_TYPE &gt; getPtr(unsigned int i) const </div><div class="ttdef"><b>Definition:</b> <a href="EventPtrList_8h_source.html#l00042">EventPtrList.h:42</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a77d10707fbcef88ad7428a4bfc24ee1b"></a>
@@ -486,6 +520,9 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00052">52</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                 {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> *(<a class="code" href="classMINT_1_1EventPtrList.html#a1dfee6bf55aedb5061d773cdfd3f168c">getPtr</a>(i));</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div><div class="ttc" id="classMINT_1_1EventPtrList_html_a1dfee6bf55aedb5061d773cdfd3f168c"><div class="ttname"><a href="classMINT_1_1EventPtrList.html#a1dfee6bf55aedb5061d773cdfd3f168c">MINT::EventPtrList::getPtr</a></div><div class="ttdeci">virtual counted_ptr&lt; EVENT_TYPE &gt; getPtr(unsigned int i) const </div><div class="ttdef"><b>Definition:</b> <a href="EventPtrList_8h_source.html#l00042">EventPtrList.h:42</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1dfee6bf55aedb5061d773cdfd3f168c"></a>
@@ -512,6 +549,9 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00042">42</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                              {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a1dbf9430b110a9e52aae439b46efcd5e">at</a>(i);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a1dbf9430b110a9e52aae439b46efcd5e"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a1dbf9430b110a9e52aae439b46efcd5e">MINT::PolymorphVector&lt; MINT::counted_ptr&lt; EVENT_TYPE &gt; &gt;::at</a></div><div class="ttdeci">MINT::counted_ptr&lt; EVENT_TYPE &gt; &amp; at(unsigned int i)</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00029">PolymorphVector.h:29</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a112b9f1a4832b2759a21ab8ca9735e8e"></a>
@@ -538,6 +578,10 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00062">62</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                  {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span>(<span class="keyword">this</span> == &amp;other) <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#ad000455aa00a923fb1dbc6f699aa2104">clear</a>();</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;other.size(); i++){</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a0faa1d8b284932524887cf352bb6be6d">push_back</a>(other.getPtr(i));</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">/*</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">    this-&gt;_recordCollection = other._recordCollection;</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">    this-&gt;_recordCollection.pop_front();</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">    this-&gt;_recordCollection.push_front((IEventList&lt; RETURN_TYPE &gt;*) this);</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">    */</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a0faa1d8b284932524887cf352bb6be6d"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a0faa1d8b284932524887cf352bb6be6d">MINT::PolymorphVector&lt; MINT::counted_ptr&lt; EVENT_TYPE &gt; &gt;::push_back</a></div><div class="ttdeci">void push_back(const MINT::counted_ptr&lt; EVENT_TYPE &gt; &amp;c)</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00050">PolymorphVector.h:50</a></div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html_ad000455aa00a923fb1dbc6f699aa2104"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#ad000455aa00a923fb1dbc6f699aa2104">MINT::PolymorphVector&lt; MINT::counted_ptr&lt; EVENT_TYPE &gt; &gt;::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00064">PolymorphVector.h:64</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a03e0be8c4f3e2bfade2f8ba3490a60ce"></a>
@@ -563,6 +607,13 @@ template&lt;typename EVENT_TYPE&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00080">80</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                       {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">empty</a>()) <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt;EVENT_TYPE&gt;</a>(0);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt;EVENT_TYPE&gt;</a> evtPtr(<a class="code" href="classMINT_1_1EventPtrList.html#a1dfee6bf55aedb5061d773cdfd3f168c">getPtr</a>(this-&gt;<a class="code" href="classMINT_1_1EventPtrList.html#ab6bacf860e311ee6a1309b9c82c08a39">size</a>()-1));</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    this-&gt;<a class="code" href="classMINT_1_1PolymorphVector.html#a0c2feed0d02f3fad7f3d3ebc28cc87d6">resize</a>(this-&gt;<a class="code" href="classMINT_1_1EventPtrList.html#ab6bacf860e311ee6a1309b9c82c08a39">size</a>() - 1);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> evtPtr;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_ac4fc13b1887479f6f4cdf2e95c373a0f"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#ac4fc13b1887479f6f4cdf2e95c373a0f">MINT::PolymorphVector&lt; MINT::counted_ptr&lt; EVENT_TYPE &gt; &gt;::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00047">PolymorphVector.h:47</a></div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html_a0c2feed0d02f3fad7f3d3ebc28cc87d6"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a0c2feed0d02f3fad7f3d3ebc28cc87d6">MINT::PolymorphVector&lt; MINT::counted_ptr&lt; EVENT_TYPE &gt; &gt;::resize</a></div><div class="ttdeci">void resize(unsigned int N)</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00065">PolymorphVector.h:65</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00039">counted_ptr.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1EventPtrList_html_a1dfee6bf55aedb5061d773cdfd3f168c"><div class="ttname"><a href="classMINT_1_1EventPtrList.html#a1dfee6bf55aedb5061d773cdfd3f168c">MINT::EventPtrList::getPtr</a></div><div class="ttdeci">virtual counted_ptr&lt; EVENT_TYPE &gt; getPtr(unsigned int i) const </div><div class="ttdef"><b>Definition:</b> <a href="EventPtrList_8h_source.html#l00042">EventPtrList.h:42</a></div></div>
+<div class="ttc" id="classMINT_1_1EventPtrList_html_ab6bacf860e311ee6a1309b9c82c08a39"><div class="ttname"><a href="classMINT_1_1EventPtrList.html#ab6bacf860e311ee6a1309b9c82c08a39">MINT::EventPtrList::size</a></div><div class="ttdeci">virtual unsigned int size() const </div><div class="ttdef"><b>Definition:</b> <a href="EventPtrList_8h_source.html#l00076">EventPtrList.h:76</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab6bacf860e311ee6a1309b9c82c08a39"></a>
@@ -590,10 +641,14 @@ template&lt;typename EVENT_TYPE&gt; </div>
 
 <p>Implements <a class="el" href="classMINT_1_1IMinimalEventList.html#a87494577835bc5e2a2ece26b880b26a8">MINT::IMinimalEventList&lt; EVENT_TYPE &gt;</a>.</p>
 
+<p>Definition at line <a class="el" href="EventPtrList_8h_source.html#l00076">76</a> of file <a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                   {</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt;counted_ptr&lt;EVENT_TYPE&gt;</a> &gt;<a class="code" href="classMINT_1_1EventPtrList.html#ab6bacf860e311ee6a1309b9c82c08a39">::size</a>();</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div><div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector</a></div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00008">PolymorphVector.h:8</a></div></div>
+<div class="ttc" id="classMINT_1_1EventPtrList_html_ab6bacf860e311ee6a1309b9c82c08a39"><div class="ttname"><a href="classMINT_1_1EventPtrList.html#ab6bacf860e311ee6a1309b9c82c08a39">MINT::EventPtrList::size</a></div><div class="ttdeci">virtual unsigned int size() const </div><div class="ttdef"><b>Definition:</b> <a href="EventPtrList_8h_source.html#l00076">EventPtrList.h:76</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a></li>
+<li>Mint/<a class="el" href="EventPtrList_8h_source.html">EventPtrList.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

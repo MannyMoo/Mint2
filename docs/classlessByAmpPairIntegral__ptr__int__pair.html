@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -98,7 +99,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afe4d89b6799276fe25617eacdc98ebdc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlessByAmpPairIntegral__ptr__int__pair.html#afe4d89b6799276fe25617eacdc98ebdc">operator()</a> (const std::pair&lt; <a class="el" href="classAmpPair.html">AmpPair</a> *, int &gt; &amp;a, const std::pair&lt; <a class="el" href="classAmpPair.html">AmpPair</a> *, int &gt; &amp;b) const </td></tr>
 <tr class="separator:afe4d89b6799276fe25617eacdc98ebdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="AmpPair_8h_source.html#l00130">130</a> of file <a class="el" href="AmpPair_8h_source.html">AmpPair.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="afe4d89b6799276fe25617eacdc98ebdc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -123,11 +127,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="AmpPair_8cpp_source.html#l00509">509</a> of file <a class="el" href="AmpPair_8cpp_source.html">AmpPair.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                                                                           {</div><div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;  <span class="keyword">const</span> <a class="code" href="classAmpPair.html">AmpPair</a>* a = apair.first;</div><div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;  <span class="keyword">const</span> <a class="code" href="classAmpPair.html">AmpPair</a>* b = bpair.first;</div><div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;</div><div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0==b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0!=b) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;  <span class="keywordflow">if</span>(0 !=a  &amp;&amp; 0==b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;  <span class="keywordflow">return</span> abs(a-&gt;<a class="code" href="classAmpPair.html#a4be6fdcf11d2e3cdc860e2ff19ba23a8">integral</a>()) &lt; abs(b-&gt;<a class="code" href="classAmpPair.html#a4be6fdcf11d2e3cdc860e2ff19ba23a8">integral</a>());</div><div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;}</div><div class="ttc" id="classAmpPair_html"><div class="ttname"><a href="classAmpPair.html">AmpPair</a></div><div class="ttdef"><b>Definition:</b> <a href="AmpPair_8h_source.html#l00020">AmpPair.h:20</a></div></div>
+<div class="ttc" id="classAmpPair_html_a4be6fdcf11d2e3cdc860e2ff19ba23a8"><div class="ttname"><a href="classAmpPair.html#a4be6fdcf11d2e3cdc860e2ff19ba23a8">AmpPair::integral</a></div><div class="ttdeci">std::complex&lt; double &gt; integral() const </div><div class="ttdef"><b>Definition:</b> <a href="AmpPair_8cpp_source.html#l00396">AmpPair.cpp:396</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="AmpPair_8h_source.html">AmpPair.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/FitAmplitude/<a class="el" href="AmpPair_8cpp.html">AmpPair.cpp</a></li>
+<li>Mint/<a class="el" href="AmpPair_8h_source.html">AmpPair.h</a></li>
+<li>src/Mojito/FitAmplitude/<a class="el" href="AmpPair_8cpp_source.html">AmpPair.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

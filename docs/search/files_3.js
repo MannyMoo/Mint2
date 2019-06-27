@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['d_5fhhhh_2ecpp',['D_hhhh.cpp',['../D__hhhh_8cpp.html',1,'']]],
+  ['d_5fhhhh_2eh',['D_hhhh.h',['../D__hhhh_8h.html',1,'']]],
   ['dalitzarea_2ecpp',['DalitzArea.cpp',['../DalitzArea_8cpp.html',1,'']]],
   ['dalitzarea_2eh',['DalitzArea.h',['../DalitzArea_8h.html',1,'']]],
   ['dalitzbox_2ecpp',['DalitzBox.cpp',['../DalitzBox_8cpp.html',1,'']]],
@@ -64,6 +66,8 @@ var searchData=
   ['decaytreecomparisons_2eh',['DecayTreeComparisons.h',['../DecayTreeComparisons_8h.html',1,'']]],
   ['decaytreeitem_2ecpp',['DecayTreeItem.cpp',['../DecayTreeItem_8cpp.html',1,'']]],
   ['decaytreeitem_2eh',['DecayTreeItem.h',['../DecayTreeItem_8h.html',1,'']]],
+  ['decratecoeff_5fbd_2ecpp',['DecRateCoeff_Bd.cpp',['../DecRateCoeff__Bd_8cpp.html',1,'']]],
+  ['decratecoeff_5fbd_2eh',['DecRateCoeff_Bd.h',['../DecRateCoeff__Bd_8h.html',1,'']]],
   ['diskresidenteventlist_2ecpp',['DiskResidentEventList.cpp',['../DiskResidentEventList_8cpp.html',1,'']]],
   ['diskresidenteventlist_2eh',['DiskResidentEventList.h',['../DiskResidentEventList_8h.html',1,'']]]
 ];

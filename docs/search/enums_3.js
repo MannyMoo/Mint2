@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['verbosity',['VERBOSITY',['../classMINT_1_1NamedParameterBase.html#ab9dd79eaa49720d146252ac90f70a0b1',1,'MINT::NamedParameterBase']]]
+  ['errortype',['ErrorType',['../classMessageSerivce.html#a6f9c58665ac066a2503446aab9248720',1,'MessageSerivce']]]
 ];

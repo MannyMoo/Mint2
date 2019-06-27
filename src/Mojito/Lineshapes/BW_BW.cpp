@@ -1145,7 +1145,8 @@ std::complex<double> BW_BW::getVal(IDalitzEvent& evt){
   if( _normBF == 1 ) formFactor = Fr();
   else if( _normBF == 0 ) formFactor = Fr_PDG_BL();  
   else if(_normBF == 2 ) formFactor = Fr_BELLE(0.);  
-    
+  else if(_normBF == 3 ) formFactor =  pow(pABSq(),GetAlpha());
+ 
   if( nonResonant() ){
         return formFactor;
   }
@@ -1243,11 +1244,23 @@ double BW_BW::peakPosition() const{
 
 void BW_BW::makeGeneratingFunction() const{
     if(! _genFct){
+        
+        std::vector< const_counted_ptr<DDTree<AssociatedDecayTreeItem> > > sister = _theDecay.getSistersTrees() ; 
+        
         if(nonResonant()){
             counted_ptr<IGenFct> gptr(new FlatFct(getDalitzCoordinate()));
             _genFct = gptr;
         }
-        else if (_theDecay.nDgtr()==2 && (_theDecay.getDgtrVal(0).isNonResonant() || _theDecay.getDgtrVal(1).isNonResonant()) ){
+        else if(sister.size()>0){
+            for (unsigned int i = 0; i< sister.size(); i++) {
+                if(sister[i]->getVal().props()->isNonResonant()){
+                    counted_ptr<IGenFct> gptr(new FlatFct(getDalitzCoordinate()));
+                    _genFct = gptr;
+                    return;
+                }
+            }
+        }
+        if (_theDecay.nDgtr()==2 && (_theDecay.getDgtrVal(0).isNonResonant() || _theDecay.getDgtrVal(1).isNonResonant()) ){
             counted_ptr<IGenFct> gptr(new BWFct(getDalitzCoordinate()
                                                 , mumsMass()
                                                 , mumsWidth() * 1.02 ));
@@ -1255,7 +1268,7 @@ void BW_BW::makeGeneratingFunction() const{
         }else{
             counted_ptr<IGenFct> gptr(new BWFct(getDalitzCoordinate()
                                                 , peakPosition()
-                                                , mumsWidth() * 1.02 ));
+                                                , mumsWidth() * 2. ));
             _genFct = gptr;
         }
     }

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -96,7 +97,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afa27113d5a102371d77b281198d6ff2b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAmpInitPairLessThan.html#afa27113d5a102371d77b281198d6ff2b">operator()</a> (const <a class="el" href="FitAmplitude_8cpp.html#a733308606efe0f7f9ed2af67761ebd64">AmpInitPair</a> &amp;a1, const <a class="el" href="FitAmplitude_8cpp.html#a733308606efe0f7f9ed2af67761ebd64">AmpInitPair</a> &amp;a2)</td></tr>
 <tr class="separator:afa27113d5a102371d77b281198d6ff2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="FitAmplitude_8cpp_source.html#l00019">19</a> of file <a class="el" href="FitAmplitude_8cpp_source.html">FitAmplitude.cpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="afa27113d5a102371d77b281198d6ff2b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -129,10 +133,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitAmplitude_8cpp_source.html#l00021">21</a> of file <a class="el" href="FitAmplitude_8cpp_source.html">FitAmplitude.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                                               {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classDalitzEventPattern.html">DalitzEventPattern</a> p1 = a1.second.getEventPattern();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classDalitzEventPattern.html">DalitzEventPattern</a> p2 = a2.second.getEventPattern();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//    cout &lt;&lt; &quot;compare: got event pattern p1 &quot; &lt;&lt; p1 &lt;&lt; endl;</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span>(p1 == p2){</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keywordflow">return</span> a1.first &lt; a2.first;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordflow">return</span> p1 &lt; p2;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/* this sorts the list such that</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">       the same final states are grouped</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">       together - good for printing</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">    */</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div><div class="ttc" id="classDalitzEventPattern_html"><div class="ttname"><a href="classDalitzEventPattern.html">DalitzEventPattern</a></div><div class="ttdef"><b>Definition:</b> <a href="DalitzEventPattern_8h_source.html#l00017">DalitzEventPattern.h:17</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/FitAmplitude/<a class="el" href="FitAmplitude_8cpp.html">FitAmplitude.cpp</a></li>
+<li>src/Mojito/FitAmplitude/<a class="el" href="FitAmplitude_8cpp_source.html">FitAmplitude.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

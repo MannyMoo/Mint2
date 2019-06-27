@@ -88,9 +88,9 @@ void BaseGenerator::FillEventList(DiskResidentEventList& evtList, int NEvents){
   time_t t0 = time(0);
   for(int i=0; i < NEvents; i++){
     if(!_noPrintout){
-        int printEvery  = 1000;
-        if(i < 1000) printEvery=100;
-        bool printout = ( i%printEvery == 0 || i < 100);
+        int printEvery  = 10000;
+        //if(i < 1000) printEvery=100;
+        bool printout = ( i%printEvery == 0 || i < 1);
         if(dbThis || printout){
             cout << "BaseGenerator::FillEventList (disk resident)" << endl;
             cout << " about to make event number " << i << endl;
@@ -120,9 +120,9 @@ void BaseGenerator::FillEventList(DalitzEventList& evtList, int NEvents){
   time_t t0 = time(0);
   for(int i=0; i < NEvents; i++){
     if(!_noPrintout){
-        int printEvery  = 1000;
-        if(i < 1000) printEvery=100;
-        bool printout = ( i%printEvery == 0 || i < 100);
+        int printEvery  = 10000;
+        //if(i < 1000) printEvery=100;
+        bool printout = ( i%printEvery == 0 || i < 1);
         if(dbThis || printout){
             cout << "BaseGenerator::FillEventList (memory resident)" << endl;
             cout << " about to make event number " << i << endl;

@@ -6,6 +6,8 @@ var searchData=
   ['mappeddalitzarea_2eh',['MappedDalitzArea.h',['../MappedDalitzArea_8h.html',1,'']]],
   ['mappeddalitzbwarea_2ecpp',['MappedDalitzBWArea.cpp',['../MappedDalitzBWArea_8cpp.html',1,'']]],
   ['mappeddalitzbwarea_2eh',['MappedDalitzBWArea.h',['../MappedDalitzBWArea_8h.html',1,'']]],
+  ['messageservice_2ecpp',['MessageService.cpp',['../MessageService_8cpp.html',1,'']]],
+  ['messageservice_2eh',['MessageService.h',['../MessageService_8h.html',1,'']]],
   ['minimisable_2ecpp',['Minimisable.cpp',['../Minimisable_8cpp.html',1,'']]],
   ['minimisable_2eh',['Minimisable.h',['../Minimisable_8h.html',1,'']]],
   ['minimiser_2ecpp',['Minimiser.cpp',['../Minimiser_8cpp.html',1,'']]],

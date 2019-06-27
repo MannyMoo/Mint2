@@ -10,5 +10,6 @@ var searchData=
   ['no_5freuse',['no_reuse',['../DalitzBox_8cpp.html#aded449c404848b4b005410d356685307',1,'DalitzBox.cpp']]],
   ['nopattern',['NoPattern',['../classDalitzEventPattern.html#a0fb6406bec7f379b54ccbb5d771905fb',1,'DalitzEventPattern']]],
   ['ns',['ns',['../CLHEPSystemOfUnits_8h.html#ae9508134491d8a9621d23f07281096c7',1,'CLHEPSystemOfUnits.h']]],
-  ['ntpnamechars',['ntpNameChars',['../classDalitzEvent.html#abf9715186d55185a2da6f988455a0594',1,'DalitzEvent::ntpNameChars()'],['../classDalitzEventBase.html#a3c1db33155a9d77c98430d476e6a49e7',1,'DalitzEventBase::ntpNameChars()'],['../classMINT_1_1MinuitParameterSet.html#a2a28da7cb8493470aaa49504c317466a',1,'MINT::MinuitParameterSet::ntpNameChars()']]]
+  ['ntpnamechars',['ntpNameChars',['../classDalitzEvent.html#abf9715186d55185a2da6f988455a0594',1,'DalitzEvent::ntpNameChars()'],['../classDalitzEventBase.html#a3c1db33155a9d77c98430d476e6a49e7',1,'DalitzEventBase::ntpNameChars()'],['../classMINT_1_1MinuitParameterSet.html#a2a28da7cb8493470aaa49504c317466a',1,'MINT::MinuitParameterSet::ntpNameChars()']]],
+  ['nu',['nu',['../classRooJohnsonSU.html#ad51abebf0592bd78f82426fb0f4d577c',1,'RooJohnsonSU']]]
 ];

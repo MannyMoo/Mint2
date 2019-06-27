@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -194,7 +195,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ac49df1cbd3acb228966efbad24ea96fc inherit pro_attribs_classMINT_1_1PolymorphVector"><td class="memItemLeft" align="right" valign="top">std::vector&lt; TObject * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1PolymorphVector.html#ac49df1cbd3acb228966efbad24ea96fc">_vec</a></td></tr>
 <tr class="separator:ac49df1cbd3acb228966efbad24ea96fc inherit pro_attribs_classMINT_1_1PolymorphVector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="PlotSet_8h_source.html#l00014">14</a> of file <a class="el" href="PlotSet_8h_source.html">PlotSet.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa6c0f13ead2755823a98a262e19b1b12"></a>
 <div class="memitem">
 <div class="memproto">
@@ -216,6 +220,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="PlotSet_8h_source.html#l00017">17</a> of file <a class="el" href="PlotSet_8h_source.html">PlotSet.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    : <a class="code" href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt;TObject*&gt;</a>(){}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt; TObject * &gt;</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac120caffaac480b12c4a3be047c83a4e"></a>
@@ -240,6 +247,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="PlotSet_8h_source.html#l00020">20</a> of file <a class="el" href="PlotSet_8h_source.html">PlotSet.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    : <a class="code" href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt;TObject*&gt;</a>(other)</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html">MINT::PolymorphVector&lt; TObject * &gt;</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -257,11 +267,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="PlotSet_8cpp_source.html#l00006">6</a> of file <a class="el" href="PlotSet_8cpp_source.html">PlotSet.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                           {</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  TFile f(filename.c_str(), <span class="stringliteral">&quot;RECREATE&quot;</span>);</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  f.cd();</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt; <a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    ((*this)[i])-&gt;Write();</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  }</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  f.Close();</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div><div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector&lt; TObject * &gt;::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="PlotSet_8h_source.html">PlotSet.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/DalitzEvents/<a class="el" href="PlotSet_8cpp.html">PlotSet.cpp</a></li>
+<li>Mint/<a class="el" href="PlotSet_8h_source.html">PlotSet.h</a></li>
+<li>src/Mojito/DalitzEvents/<a class="el" href="PlotSet_8cpp_source.html">PlotSet.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

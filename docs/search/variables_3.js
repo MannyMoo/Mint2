@@ -10,8 +10,12 @@ var searchData=
   ['cm',['cm',['../CLHEPSystemOfUnits_8h.html#ad0b9a58075a15c1cb674a2b879402853',1,'CLHEPSystemOfUnits.h']]],
   ['cm2',['cm2',['../CLHEPSystemOfUnits_8h.html#af4fd634101dec3b743a8a45c34785da4',1,'CLHEPSystemOfUnits.h']]],
   ['cm3',['cm3',['../CLHEPSystemOfUnits_8h.html#a046dca340e49e34b46cf351f7fb997ba',1,'CLHEPSystemOfUnits.h']]],
+  ['coeff_5ftype_5f',['coeff_type_',['../classDecRateCoeff__Bd.html#a1c1b0e89ecc12f6cb767204a77277e02',1,'DecRateCoeff_Bd']]],
   ['comparetooldroofit',['compareToOldRooFit',['../BW__BW_8cpp.html#a5ca9e8ce5944d4bd71ce8eae8fc97c6d',1,'BW_BW.cpp']]],
   ['coulomb',['coulomb',['../CLHEPSystemOfUnits_8h.html#a9f729835f8d7ddb8ab71fce2108d7566',1,'CLHEPSystemOfUnits.h']]],
   ['count',['count',['../classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e',1,'MINT::counted_ptr_counter']]],
+  ['cp_5fcoeff_5f',['cp_coeff_',['../classDecRateCoeff__Bd.html#afb3b649ec46c343b8850a66a9321d213',1,'DecRateCoeff_Bd']]],
+  ['cp_5fcoeff_5fbar_5f',['cp_coeff_bar_',['../classDecRateCoeff__Bd.html#a6009bd8931b6b0ada38768d6fed301e3',1,'DecRateCoeff_Bd']]],
+  ['csi',['csi',['../classRooHILLdini.html#ada7632b6a503aad1a13f2d785f96f98e',1,'RooHILLdini::csi()'],['../classRooHILLdini__misID.html#ab98050b6fd918977f811a483afa01000',1,'RooHILLdini_misID::csi()'],['../classRooHORNSdini.html#a0a752bcbdb892c2fd715336b3b054ed3',1,'RooHORNSdini::csi()'],['../classRooHORNSdini__misID.html#a31d40f3d6133b4d5ddd22043674ba07b',1,'RooHORNSdini_misID::csi()']]],
   ['curie',['curie',['../CLHEPSystemOfUnits_8h.html#ad5ac57d612b8ca7a2c317b84fcbb9202',1,'CLHEPSystemOfUnits.h']]]
 ];

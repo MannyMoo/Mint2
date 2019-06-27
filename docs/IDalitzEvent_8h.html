@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>MINT2: /nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/IDalitzEvent.h File Reference</title>
+<title>MINT2: Mint/IDalitzEvent.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -96,7 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;TVector3.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="IWeightedEvent_8h_source.html">Mint/IWeightedEvent.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="DalitzEventPattern_8h_source.html">Mint/DalitzEventPattern.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PolymorphVector_8h_source.html">Mint/PolymorphVector.h</a>&quot;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;complex&gt;</code><br />
@@ -140,6 +140,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="IDalitzEvent_8cpp_source.html#l00005">5</a> of file <a class="el" href="IDalitzEvent_8cpp_source.html">IDalitzEvent.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                                                             {</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0 == b) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0 != b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">if</span>(0 != a &amp;&amp; 0 == b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">if</span>( a-&gt;<a class="code" href="classIDalitzEvent.html#a3be3815fc1159d8b04f104d01800a990">eventPattern</a>() != b-&gt;<a class="code" href="classIDalitzEvent.html#a3be3815fc1159d8b04f104d01800a990">eventPattern</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt; a-&gt;<a class="code" href="classIDalitzEvent.html#a3be3815fc1159d8b04f104d01800a990">eventPattern</a>().<a class="code" href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">size</a>(); i++){</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span>(a-&gt;<a class="code" href="classIDalitzEvent.html#a1c38c2e512d2e86f71b225b3cf83aa52">p</a>(i) != b-&gt;<a class="code" href="classIDalitzEvent.html#a1c38c2e512d2e86f71b225b3cf83aa52">p</a>(i)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  }</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div><div class="ttc" id="classIDalitzEvent_html_a1c38c2e512d2e86f71b225b3cf83aa52"><div class="ttname"><a href="classIDalitzEvent.html#a1c38c2e512d2e86f71b225b3cf83aa52">IDalitzEvent::p</a></div><div class="ttdeci">virtual const TLorentzVector &amp; p(unsigned int i) const  =0</div></div>
+<div class="ttc" id="classMINT_1_1PolymorphVector_html_a82c1e496babdbebf7887321845a25340"><div class="ttname"><a href="classMINT_1_1PolymorphVector.html#a82c1e496babdbebf7887321845a25340">MINT::PolymorphVector::size</a></div><div class="ttdeci">unsigned int size() const </div><div class="ttdef"><b>Definition:</b> <a href="PolymorphVector_8h_source.html#l00046">PolymorphVector.h:46</a></div></div>
+<div class="ttc" id="classIDalitzEvent_html_a3be3815fc1159d8b04f104d01800a990"><div class="ttname"><a href="classIDalitzEvent.html#a3be3815fc1159d8b04f104d01800a990">IDalitzEvent::eventPattern</a></div><div class="ttdeci">virtual const DalitzEventPattern &amp; eventPattern() const  =0</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5eeabdd26ad9b43d6bcc3cf91af5682d"></a>
@@ -166,6 +171,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="IDalitzEvent_8cpp_source.html#l00020">20</a> of file <a class="el" href="IDalitzEvent_8cpp_source.html">IDalitzEvent.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                              {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  de.<a class="code" href="classIDalitzEvent.html#a6a00092f0451b0ba6c915bf0064caedc">print</a>(os);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">return</span> os;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div><div class="ttc" id="classIDalitzEvent_html_a6a00092f0451b0ba6c915bf0064caedc"><div class="ttname"><a href="classIDalitzEvent.html#a6a00092f0451b0ba6c915bf0064caedc">IDalitzEvent::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;os=std::cout) const  =0</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -329,7 +330,10 @@ Additional Inherited Members</h2></td></tr>
  }</td></tr>
 <tr class="separator:a759e10b8f4a501bb68a0b155fc3be478 inherit pub_types_classMINT_1_1FitComplex"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00022">22</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a787a23d8fa4525f0b38e486a4f6828c2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -378,6 +382,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00041">41</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  : <a class="code" href="classMINT_1_1FitComplex.html#af3cd2d3d9495f20a3caaa84e19abab6e">FitComplex</a>(daddy)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  , <a class="code" href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">_amp</a>  (<a class="code" href="classMINT_1_1FitComplexPolar.html#a2708aac1c4ccc15eb21fc582609af7fa">makeAmpName</a>(  varName), fname, pset, fow, vb)</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  , <a class="code" href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">_phase</a>(<a class="code" href="classMINT_1_1FitComplexPolar.html#a15552c665300b9940d1d5dc02f6bcabe">makePhaseName</a>(varName), fname, pset, fow, vb)</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">//cout &lt;&lt; &quot;FitComplexPolar, just made: &quot; &lt;&lt; _amp</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">//     &lt;&lt; &quot; and &quot; &lt;&lt; _phase &lt;&lt; endl;</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_a2708aac1c4ccc15eb21fc582609af7fa"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a2708aac1c4ccc15eb21fc582609af7fa">MINT::FitComplexPolar::makeAmpName</a></div><div class="ttdeci">static std::string makeAmpName(const std::string &amp;varName)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8cpp_source.html#l00034">FitComplexPolar.cpp:34</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_ae3734ddb176fd1a855d7c56bf780d29a"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">MINT::FitComplexPolar::_amp</a></div><div class="ttdeci">FitParameter _amp</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00031">FitComplexPolar.h:31</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_a15552c665300b9940d1d5dc02f6bcabe"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a15552c665300b9940d1d5dc02f6bcabe">MINT::FitComplexPolar::makePhaseName</a></div><div class="ttdeci">static std::string makePhaseName(const std::string &amp;varName)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8cpp_source.html#l00037">FitComplexPolar.cpp:37</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplex_html_af3cd2d3d9495f20a3caaa84e19abab6e"><div class="ttname"><a href="classMINT_1_1FitComplex.html#af3cd2d3d9495f20a3caaa84e19abab6e">MINT::FitComplex::FitComplex</a></div><div class="ttdeci">FitComplex(IFitParRegister *daddy=0)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplex_8cpp_source.html#l00066">FitComplex.cpp:66</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_a22706cb7470345219011a3430e410d64"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">MINT::FitComplexPolar::_phase</a></div><div class="ttdeci">FitParameter _phase</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00032">FitComplexPolar.h:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="addb1354f9384842c287ab2786835ae24"></a>
@@ -422,6 +433,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00056">56</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  : <a class="code" href="classMINT_1_1FitComplex.html#af3cd2d3d9495f20a3caaa84e19abab6e">FitComplex</a>(daddy)</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  , <a class="code" href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">_amp</a>  (<a class="code" href="classMINT_1_1FitComplexPolar.html#a2708aac1c4ccc15eb21fc582609af7fa">makeAmpName</a>(  varName), pset, fow, vb)</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  , <a class="code" href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">_phase</a>(<a class="code" href="classMINT_1_1FitComplexPolar.html#a15552c665300b9940d1d5dc02f6bcabe">makePhaseName</a>(varName), pset, fow, vb)</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_a2708aac1c4ccc15eb21fc582609af7fa"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a2708aac1c4ccc15eb21fc582609af7fa">MINT::FitComplexPolar::makeAmpName</a></div><div class="ttdeci">static std::string makeAmpName(const std::string &amp;varName)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8cpp_source.html#l00034">FitComplexPolar.cpp:34</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_ae3734ddb176fd1a855d7c56bf780d29a"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">MINT::FitComplexPolar::_amp</a></div><div class="ttdeci">FitParameter _amp</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00031">FitComplexPolar.h:31</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_a15552c665300b9940d1d5dc02f6bcabe"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a15552c665300b9940d1d5dc02f6bcabe">MINT::FitComplexPolar::makePhaseName</a></div><div class="ttdeci">static std::string makePhaseName(const std::string &amp;varName)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8cpp_source.html#l00037">FitComplexPolar.cpp:37</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplex_html_af3cd2d3d9495f20a3caaa84e19abab6e"><div class="ttname"><a href="classMINT_1_1FitComplex.html#af3cd2d3d9495f20a3caaa84e19abab6e">MINT::FitComplex::FitComplex</a></div><div class="ttdeci">FitComplex(IFitParRegister *daddy=0)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplex_8cpp_source.html#l00066">FitComplex.cpp:66</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_a22706cb7470345219011a3430e410d64"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">MINT::FitComplexPolar::_phase</a></div><div class="ttdeci">FitParameter _phase</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00032">FitComplexPolar.h:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a26c6b46b1dc7936b702acd7768c945a8"></a>
@@ -445,6 +463,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00068">68</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                 {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -469,6 +489,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00039">39</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">_amp</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_ae3734ddb176fd1a855d7c56bf780d29a"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">MINT::FitComplexPolar::_amp</a></div><div class="ttdeci">FitParameter _amp</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00031">FitComplexPolar.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="adfc77ced22957d91da1fb9ee17d7dc12"></a>
@@ -492,6 +515,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00042">42</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">_amp</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_ae3734ddb176fd1a855d7c56bf780d29a"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">MINT::FitComplexPolar::_amp</a></div><div class="ttdeci">FitParameter _amp</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00031">FitComplexPolar.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae7d95557b3ac29a0e48759ddbea4c986"></a>
@@ -515,6 +541,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00016">16</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                     {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="classMINT_1_1NamedParameter.html">NamedParameter&lt;std::string&gt;</a> phaseOpt(<span class="stringliteral">&quot;Phases given in&quot;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                       , (std::string) <span class="stringliteral">&quot;degrees&quot;</span>);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">if</span>(phaseOpt.getVal() == (std::string) <span class="stringliteral">&quot;degrees&quot;</span>){</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classMINT_1_1FitComplexPolar.html#abafef977cf54e57226bbe53ca44576f6">_degFac</a> = <a class="code" href="CLHEPPhysicalConstants_8h.html#a43016d873124d39034edb8cd164794db">pi</a>/180.0;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(phaseOpt.getVal() == (std::string) <span class="stringliteral">&quot;rad&quot;</span>){</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classMINT_1_1FitComplexPolar.html#abafef977cf54e57226bbe53ca44576f6">_degFac</a> = 1.0;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot; ERROR in FitComplexPolar::calculateDegFac()&quot;</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;     &lt;&lt; <span class="stringliteral">&quot; Unknown option &quot;</span> &lt;&lt; phaseOpt</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;     &lt;&lt; <span class="stringliteral">&quot; Allowed values are are: \&quot;degrees\&quot; and \&quot;rad\&quot;.&quot;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;     &lt;&lt; <span class="stringliteral">&quot; Assuming you mean rad.&quot;</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;     &lt;&lt; endl;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classMINT_1_1FitComplexPolar.html#abafef977cf54e57226bbe53ca44576f6">_degFac</a>=1.0;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">return</span>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div><div class="ttc" id="CLHEPPhysicalConstants_8h_html_a43016d873124d39034edb8cd164794db"><div class="ttname"><a href="CLHEPPhysicalConstants_8h.html#a43016d873124d39034edb8cd164794db">pi</a></div><div class="ttdeci">static const double pi</div><div class="ttdef"><b>Definition:</b> <a href="CLHEPPhysicalConstants_8h_source.html#l00044">CLHEPPhysicalConstants.h:44</a></div></div>
+<div class="ttc" id="classMINT_1_1NamedParameter_html"><div class="ttname"><a href="classMINT_1_1NamedParameter.html">MINT::NamedParameter&lt; std::string &gt;</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_abafef977cf54e57226bbe53ca44576f6"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#abafef977cf54e57226bbe53ca44576f6">MINT::FitComplexPolar::_degFac</a></div><div class="ttdeci">static double _degFac</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00036">FitComplexPolar.h:36</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6b3e9f87b2fd0fcd10dff723dfdfab62"></a>
@@ -538,6 +569,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00104">104</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                 {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">amp</a>().<a class="code" href="classMINT_1_1FitParameter.html#ac045eb16b0c80e0e3d5c78f20fb26a1d">defaultInit</a>();</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="classMINT_1_1FitComplexPolar.html#ad7378d1563129727088598bfe5bf6bb4">phase</a>().<a class="code" href="classMINT_1_1FitParameter.html#ac045eb16b0c80e0e3d5c78f20fb26a1d">defaultInit</a>();</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_adc20a3efd3b11155654408c942382073"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">MINT::FitComplexPolar::amp</a></div><div class="ttdeci">const FitParameter &amp; amp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00039">FitComplexPolar.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ac045eb16b0c80e0e3d5c78f20fb26a1d"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ac045eb16b0c80e0e3d5c78f20fb26a1d">MINT::FitParameter::defaultInit</a></div><div class="ttdeci">void defaultInit()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00334">FitParameter.cpp:334</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_ad7378d1563129727088598bfe5bf6bb4"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ad7378d1563129727088598bfe5bf6bb4">MINT::FitComplexPolar::phase</a></div><div class="ttdeci">const FitParameter &amp; phase() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00040">FitComplexPolar.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0ec516ca7baf46eaff97d5a9fcf0fa10"></a>
@@ -561,6 +597,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00044">44</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classMINT_1_1FitComplexPolar.html#abafef977cf54e57226bbe53ca44576f6">_degFac</a> &lt; 0) <a class="code" href="classMINT_1_1FitComplexPolar.html#ae7d95557b3ac29a0e48759ddbea4c986">calculateDegFac</a>();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#abafef977cf54e57226bbe53ca44576f6">_degFac</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_ae7d95557b3ac29a0e48759ddbea4c986"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ae7d95557b3ac29a0e48759ddbea4c986">MINT::FitComplexPolar::calculateDegFac</a></div><div class="ttdeci">static void calculateDegFac()</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8cpp_source.html#l00016">FitComplexPolar.cpp:16</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_abafef977cf54e57226bbe53ca44576f6"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#abafef977cf54e57226bbe53ca44576f6">MINT::FitComplexPolar::_degFac</a></div><div class="ttdeci">static double _degFac</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00036">FitComplexPolar.h:36</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5aec04e34c9107b9248d69de914a5712"></a>
@@ -586,6 +626,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#a64dc8fdd60fc888c90c733368286a586">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00082">82</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                               {</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">double</span> a(<a class="code" href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">amp</a>());</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span>(0.0 == a) <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">double</span> p(<a class="code" href="classMINT_1_1FitComplexPolar.html#ad7378d1563129727088598bfe5bf6bb4">phase</a>());</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  p*=<a class="code" href="classMINT_1_1FitComplexPolar.html#a0ec516ca7baf46eaff97d5a9fcf0fa10">degFac</a>();</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">return</span> std::complex&lt;double&gt;(a*cos(p), a*sin(p));</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="comment">/*</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">  double a(amp());</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">  if(0.0 == a) return 0;</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">  double p(phase());</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">  p*=degFac();</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">  return std::polar(a,p);</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">  */</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_adc20a3efd3b11155654408c942382073"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">MINT::FitComplexPolar::amp</a></div><div class="ttdeci">const FitParameter &amp; amp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00039">FitComplexPolar.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_a0ec516ca7baf46eaff97d5a9fcf0fa10"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a0ec516ca7baf46eaff97d5a9fcf0fa10">MINT::FitComplexPolar::degFac</a></div><div class="ttdeci">static double degFac()</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00044">FitComplexPolar.h:44</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_ad7378d1563129727088598bfe5bf6bb4"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ad7378d1563129727088598bfe5bf6bb4">MINT::FitComplexPolar::phase</a></div><div class="ttdeci">const FitParameter &amp; phase() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00040">FitComplexPolar.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a61da58582b3a2e8770b5de9131449027"></a>
@@ -611,6 +656,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#af5d2e3c8ff616c214e900073726b8a7d">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00096">96</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                   {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">double</span> a=<a class="code" href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">amp</a>().<a class="code" href="classMINT_1_1FitParameter.html#a59e557722f17f96b490d3fc99d07b5fb">meanInit</a>();</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">double</span> p = <a class="code" href="classMINT_1_1FitComplexPolar.html#ad7378d1563129727088598bfe5bf6bb4">phase</a>().<a class="code" href="classMINT_1_1FitParameter.html#a59e557722f17f96b490d3fc99d07b5fb">meanInit</a>() * <a class="code" href="classMINT_1_1FitComplexPolar.html#a0ec516ca7baf46eaff97d5a9fcf0fa10">degFac</a>();</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">return</span> std::complex&lt;double&gt;(a*cos(p), a*sin(p));</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="comment">//  return std::polar( amp().meanInit(), phase().meanInit() * degFac());</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_adc20a3efd3b11155654408c942382073"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">MINT::FitComplexPolar::amp</a></div><div class="ttdeci">const FitParameter &amp; amp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00039">FitComplexPolar.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_a59e557722f17f96b490d3fc99d07b5fb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a59e557722f17f96b490d3fc99d07b5fb">MINT::FitParameter::meanInit</a></div><div class="ttdeci">double meanInit() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00243">FitParameter.cpp:243</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_a0ec516ca7baf46eaff97d5a9fcf0fa10"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a0ec516ca7baf46eaff97d5a9fcf0fa10">MINT::FitComplexPolar::degFac</a></div><div class="ttdeci">static double degFac()</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00044">FitComplexPolar.h:44</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_ad7378d1563129727088598bfe5bf6bb4"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ad7378d1563129727088598bfe5bf6bb4">MINT::FitComplexPolar::phase</a></div><div class="ttdeci">const FitParameter &amp; phase() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00040">FitComplexPolar.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac3868e6467069a62985d1b2cc14536e9"></a>
@@ -634,6 +685,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00070">70</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                         {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">amp</a>().<a class="code" href="classMINT_1_1NamedParameterBase.html#a252a04b5aa1f771c3f9bc4bb9bbd74cb">gotInitialised</a>() &amp;&amp; <a class="code" href="classMINT_1_1FitComplexPolar.html#ad7378d1563129727088598bfe5bf6bb4">phase</a>().<a class="code" href="classMINT_1_1NamedParameterBase.html#a252a04b5aa1f771c3f9bc4bb9bbd74cb">gotInitialised</a>();</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div><div class="ttc" id="classMINT_1_1NamedParameterBase_html_a252a04b5aa1f771c3f9bc4bb9bbd74cb"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#a252a04b5aa1f771c3f9bc4bb9bbd74cb">MINT::NamedParameterBase::gotInitialised</a></div><div class="ttdeci">bool gotInitialised() const </div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8h_source.html#l00072">NamedParameterBase.h:72</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_adc20a3efd3b11155654408c942382073"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">MINT::FitComplexPolar::amp</a></div><div class="ttdeci">const FitParameter &amp; amp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00039">FitComplexPolar.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_ad7378d1563129727088598bfe5bf6bb4"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ad7378d1563129727088598bfe5bf6bb4">MINT::FitComplexPolar::phase</a></div><div class="ttdeci">const FitParameter &amp; phase() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00040">FitComplexPolar.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad4f0b5b6d7ce9f3f4f46cd04ef52b586"></a>
@@ -659,6 +715,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classMINT_1_1FitComplex.html#a72fec2ae6be33d14462ffa2e9665be2b">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00085">85</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                            {</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> (0.0 == <a class="code" href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">amp</a>());</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_adc20a3efd3b11155654408c942382073"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">MINT::FitComplexPolar::amp</a></div><div class="ttdeci">const FitParameter &amp; amp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00039">FitComplexPolar.h:39</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2708aac1c4ccc15eb21fc582609af7fa"></a>
@@ -683,6 +742,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00034">34</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                              {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">return</span> varName + <span class="stringliteral">&quot;_Amp&quot;</span>;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a15552c665300b9940d1d5dc02f6bcabe"></a>
@@ -707,6 +768,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00037">37</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                                {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">return</span> varName + <span class="stringliteral">&quot;_Phase&quot;</span>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2fe5cf8ce19116d5bbf92d556eb6c121"></a>
@@ -732,6 +795,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classMINT_1_1FitComplex.html#a509e07d186991b50ec6fd52c765e4386">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00081">81</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                             {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#a5aec04e34c9107b9248d69de914a5712">getVal</a>();</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_a5aec04e34c9107b9248d69de914a5712"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a5aec04e34c9107b9248d69de914a5712">MINT::FitComplexPolar::getVal</a></div><div class="ttdeci">virtual std::complex&lt; double &gt; getVal() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8cpp_source.html#l00082">FitComplexPolar.cpp:82</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab3d69efffd57f8f495ce24dc2ff855d4"></a>
@@ -757,6 +823,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#a72848f603746f43a048ad24d1b7708e6">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00051">51</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">_amp</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_ae3734ddb176fd1a855d7c56bf780d29a"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">MINT::FitComplexPolar::_amp</a></div><div class="ttdeci">FitParameter _amp</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00031">FitComplexPolar.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae301a52085100f9fbe5d2bd73627b59c"></a>
@@ -782,6 +851,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#a30d1df296e9c8a5a9cda47c6f7ce962d">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00053">53</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">_amp</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_ae3734ddb176fd1a855d7c56bf780d29a"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">MINT::FitComplexPolar::_amp</a></div><div class="ttdeci">FitParameter _amp</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00031">FitComplexPolar.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4b89c79148c15c3db5f7889995ed17f4"></a>
@@ -807,6 +879,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#aed08df90ec1aacadfed233aaf8b1c4d5">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00052">52</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">_phase</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_a22706cb7470345219011a3430e410d64"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">MINT::FitComplexPolar::_phase</a></div><div class="ttdeci">FitParameter _phase</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00032">FitComplexPolar.h:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a86009603d963824376934337c3dd9a6e"></a>
@@ -832,6 +907,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#ac5c3d612f8a55f1ce58564d625d774ce">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00054">54</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">_phase</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_a22706cb7470345219011a3430e410d64"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">MINT::FitComplexPolar::_phase</a></div><div class="ttdeci">FitParameter _phase</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00032">FitComplexPolar.h:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad7378d1563129727088598bfe5bf6bb4"></a>
@@ -855,6 +933,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00040">40</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">_phase</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_a22706cb7470345219011a3430e410d64"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">MINT::FitComplexPolar::_phase</a></div><div class="ttdeci">FitParameter _phase</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00032">FitComplexPolar.h:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a102f920b1d6bb18b8eb210f461bedb34"></a>
@@ -878,6 +959,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00043">43</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">_phase</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_a22706cb7470345219011a3430e410d64"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">MINT::FitComplexPolar::_phase</a></div><div class="ttdeci">FitParameter _phase</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00032">FitComplexPolar.h:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aee7a976c8a6d762c479024dc7e80549e"></a>
@@ -904,6 +988,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classMINT_1_1FitComplex.html#a75b7502d45d1241d11ded85d6d1948b2">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00114">114</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                               {</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  os &lt;&lt; <a class="code" href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">amp</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;     &lt;&lt; <a class="code" href="classMINT_1_1FitComplexPolar.html#ad7378d1563129727088598bfe5bf6bb4">phase</a>();</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_adc20a3efd3b11155654408c942382073"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#adc20a3efd3b11155654408c942382073">MINT::FitComplexPolar::amp</a></div><div class="ttdeci">const FitParameter &amp; amp() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00039">FitComplexPolar.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_ad7378d1563129727088598bfe5bf6bb4"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ad7378d1563129727088598bfe5bf6bb4">MINT::FitComplexPolar::phase</a></div><div class="ttdeci">const FitParameter &amp; phase() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00040">FitComplexPolar.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a124273d040357f183f31f8a86c3b6d10"></a>
@@ -930,6 +1018,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#ac96de7de39f5a78f8527756c8ea6bc7a">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8cpp_source.html#l00109">109</a> of file <a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                             {</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">_amp</a> = abs(z);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">_phase</a> = arg(z);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexPolar_html_ae3734ddb176fd1a855d7c56bf780d29a"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#ae3734ddb176fd1a855d7c56bf780d29a">MINT::FitComplexPolar::_amp</a></div><div class="ttdeci">FitParameter _amp</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00031">FitComplexPolar.h:31</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexPolar_html_a22706cb7470345219011a3430e410d64"><div class="ttname"><a href="classMINT_1_1FitComplexPolar.html#a22706cb7470345219011a3430e410d64">MINT::FitComplexPolar::_phase</a></div><div class="ttdeci">FitParameter _phase</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexPolar_8h_source.html#l00032">FitComplexPolar.h:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0f048895aaae6c90f0fafd42fd77ec4e"></a>
@@ -955,6 +1047,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#ae99e294d4075d48288c8a2c712fda4e0">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00049">49</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplex.html#a759e10b8f4a501bb68a0b155fc3be478ac49c37cf9c8cc89751d808a24a63e80b">FitComplex::POLAR</a>;}</div><div class="ttc" id="classMINT_1_1FitComplex_html_a759e10b8f4a501bb68a0b155fc3be478ac49c37cf9c8cc89751d808a24a63e80b"><div class="ttname"><a href="classMINT_1_1FitComplex.html#a759e10b8f4a501bb68a0b155fc3be478ac49c37cf9c8cc89751d808a24a63e80b">MINT::FitComplex::POLAR</a></div><div class="ttdef"><b>Definition:</b> <a href="FitComplex_8h_source.html#l00038">FitComplex.h:38</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -976,6 +1071,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00031">31</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abafef977cf54e57226bbe53ca44576f6"></a>
@@ -995,6 +1092,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00036">36</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
 
 </div>
 </div>
@@ -1016,11 +1115,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexPolar_8h_source.html#l00032">32</a> of file <a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mint/FitParameter/<a class="el" href="FitComplexPolar_8cpp.html">FitComplexPolar.cpp</a></li>
+<li>Mint/<a class="el" href="FitComplexPolar_8h_source.html">FitComplexPolar.h</a></li>
+<li>src/Mint/FitParameter/<a class="el" href="FitComplexPolar_8cpp_source.html">FitComplexPolar.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

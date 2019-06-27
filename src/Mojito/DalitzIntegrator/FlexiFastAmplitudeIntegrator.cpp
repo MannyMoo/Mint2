@@ -11,6 +11,7 @@
 #include <iostream>
 #include <sstream>
 
+#include <ctime>
 #include <sys/types.h>
 #include <sys/stat.h>
 
@@ -34,6 +35,7 @@ FlexiFastAmplitudeIntegrator
 
 FlexiFastAmplitudeIntegrator::FlexiFastAmplitudeIntegrator(const std::string& fastFlexiEventFileName)
   : _sumT(0.0), _sumTRe(0.0), _sumTfast(0.0), _initialised(0), _db(false)//, _fastFlexiEventList(fastFlexiEventFileName, "RECREATE")
+
 {
   (void)fastFlexiEventFileName;
 }
@@ -236,6 +238,7 @@ int FlexiFastAmplitudeIntegrator::addEvents(long int Nevents){
     if(maxTries < (unsigned long int) Nevents) maxTries = Nevents * 10;
     if(maxTries < (unsigned long int) Nevents) maxTries = Nevents;
 
+    time_t startTime = time(0);
     for(unsigned long int i=0; i < maxTries && N_success < Nevents; i++){
       counted_ptr<IDalitzEvent> ptr(_generator->newEvent());
       if(dbThis) cout << "got event with ptr: " << ptr << endl;
@@ -261,9 +264,11 @@ int FlexiFastAmplitudeIntegrator::addEvents(long int Nevents){
 	  evaluateSum();
 	  double v= variance();
 	  double sigma = -9999;
-	  if( v > 0 )
-	    sigma = sqrt(v);
+	  if(v > 0) sigma = sqrt(v);
 	  cout << "\t integ= " << _mean << " +/- " << sigma;
+	  cout << "\t("
+	       << MINT::stringtime(difftime(time(0), startTime))
+	       << ")";
 	  cout << endl;
 	}
       }

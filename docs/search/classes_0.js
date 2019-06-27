@@ -1,12 +1,18 @@
 var searchData=
 [
+  ['algoption',['AlgOption',['../classAlgOption.html',1,'']]],
   ['allpossiblesij',['AllPossibleSij',['../classAllPossibleSij.html',1,'']]],
   ['ampinitialiser',['AmpInitialiser',['../classAmpInitialiser.html',1,'']]],
   ['ampinitpairlessthan',['AmpInitPairLessThan',['../classAmpInitPairLessThan.html',1,'']]],
   ['amplitude',['Amplitude',['../classAmplitude.html',1,'']]],
   ['amppair',['AmpPair',['../classAmpPair.html',1,'']]],
+  ['ampratio',['AmpRatio',['../classAmpRatio.html',1,'']]],
   ['ampratios',['AmpRatios',['../classAmpRatios.html',1,'']]],
   ['ampspdf',['AmpsPdf',['../classAmpsPdf.html',1,'']]],
+  ['ampspdfflexifast',['AmpsPdfFlexiFast',['../classAmpsPdfFlexiFast.html',1,'']]],
+  ['ampspdfflexifastcpv',['AmpsPdfFlexiFastCPV',['../classAmpsPdfFlexiFastCPV.html',1,'']]],
+  ['ampspdfflexifastcpv_5fmod',['AmpsPdfFlexiFastCPV_mod',['../classAmpsPdfFlexiFastCPV__mod.html',1,'']]],
+  ['ampspdfflexifastcpv_5ftime_5fintegrated',['AmpsPdfFlexiFastCPV_time_integrated',['../classAmpsPdfFlexiFastCPV__time__integrated.html',1,'']]],
   ['antismallerfitfractionbymagnitude',['antiSmallerFitFractionByMagnitude',['../classFitFractionList_1_1antiSmallerFitFractionByMagnitude.html',1,'FitFractionList']]],
   ['antismallerfitfractionbysize',['antiSmallerFitFractionBySize',['../classFitFractionList_1_1antiSmallerFitFractionBySize.html',1,'FitFractionList']]],
   ['associateddecaytreeitem',['AssociatedDecayTreeItem',['../classAssociatedDecayTreeItem.html',1,'']]],

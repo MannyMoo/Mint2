@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>MINT2: /nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/Utils.h File Reference</title>
+<title>MINT2: Mint/Utils.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -94,11 +95,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;map&gt;</code><br />
+<code>#include &quot;TLorentzVector.h&quot;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;TLorentzVector.h&quot;</code><br />
 <code>#include &quot;TMatrixT.h&quot;</code><br />
 <code>#include &quot;TMatrixTSym.h&quot;</code><br />
 </div>
@@ -136,11 +137,20 @@ Functions</h2></td></tr>
 <tr class="memitem:ac00c7056b425951a49bd8abe71f60e20"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ac00c7056b425951a49bd8abe71f60e20"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMINT.html#ac00c7056b425951a49bd8abe71f60e20">MINT::anyVectorToString</a> (const std::vector&lt; T &gt; &amp;anyV)</td></tr>
 <tr class="separator:ac00c7056b425951a49bd8abe71f60e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ba1705941bba6db0c3de013f30b37d9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINT.html#a8ba1705941bba6db0c3de013f30b37d9">MINT::stringtime</a> (double dt)</td></tr>
+<tr class="separator:a8ba1705941bba6db0c3de013f30b37d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a586f7eea6153394c94e404f71cb66327"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINT.html#a586f7eea6153394c94e404f71cb66327">MINT::nearestInt</a> (double f)</td></tr>
+<tr class="separator:a586f7eea6153394c94e404f71cb66327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6720e799df234338bd6e95f4a0a80afc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINT.html#a6720e799df234338bd6e95f4a0a80afc">MINT::A_is_in_B</a> (const std::string &amp;a, const std::string &amp;b)</td></tr>
 <tr class="separator:a6720e799df234338bd6e95f4a0a80afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36c9888ea0a6e167945b76109e882c2a"><td class="memTemplParams" colspan="2">template&lt;typename... INTS&gt; </td></tr>
-<tr class="memitem:a36c9888ea0a6e167945b76109e882c2a"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMINT.html#a36c9888ea0a6e167945b76109e882c2a">MINT::LeviCita</a> (const INTS &amp;...ints)</td></tr>
-<tr class="separator:a36c9888ea0a6e167945b76109e882c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada0e13550461d2b133cdc8d18b72285"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINT.html#aada0e13550461d2b133cdc8d18b72285">MINT::LeviCita</a> (int a, int b)</td></tr>
+<tr class="separator:aada0e13550461d2b133cdc8d18b72285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fed8304a41aef73f0474e718e3fb191"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINT.html#a3fed8304a41aef73f0474e718e3fb191">MINT::LeviCita</a> (int a, int b, int c)</td></tr>
+<tr class="separator:a3fed8304a41aef73f0474e718e3fb191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b1c2ad68750cfe21c011a2a28a49ee3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINT.html#a8b1c2ad68750cfe21c011a2a28a49ee3">MINT::LeviCita</a> (int a, int b, int c, int d)</td></tr>
+<tr class="separator:a8b1c2ad68750cfe21c011a2a28a49ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5cc197b654934775fa0244c6be94e48"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINT.html#aa5cc197b654934775fa0244c6be94e48">MINT::LeviCita</a> (int a, int b, int c, int d, int e)</td></tr>
+<tr class="separator:aa5cc197b654934775fa0244c6be94e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1685a7fbfe29e394767081d8cfbf6707"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINT.html#a1685a7fbfe29e394767081d8cfbf6707">MINT::LeviCita</a> (const std::vector&lt; int &gt; &amp;v)</td></tr>
 <tr class="separator:a1685a7fbfe29e394767081d8cfbf6707"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49ff5c79299f126a003c1b2932b75510"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utils_8h.html#a49ff5c79299f126a003c1b2932b75510">operator&lt;&lt;</a> (std::ostream &amp;os, const TLorentzVector &amp;v)</td></tr>
@@ -174,6 +184,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00007">7</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                                {</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  out &lt;&lt; <span class="stringliteral">&quot;(&quot;</span>;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;3; i++) out &lt;&lt; v[i] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  out &lt;&lt; v[3] &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">return</span> out;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4b8db62a17e01a839e499a4c59112df5"></a>
@@ -202,6 +214,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="Utils_8h_source.html#l00099">99</a> of file <a class="el" href="Utils_8h_source.html">Utils.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                                             {</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;(&quot;</span>;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;v.size(); i++){</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    os &lt;&lt; v[i];</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span>(i + 1 &lt; v.size()) os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">return</span> os;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

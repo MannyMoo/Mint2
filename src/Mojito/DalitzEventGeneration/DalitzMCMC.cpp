@@ -16,7 +16,7 @@ DalitzMCMC::DalitzMCMC( const DalitzEventPattern& pat,
   _P.SetXYZM( 0.0, 0.0, 0.0, _pat[0].mass() );
 
   std::vector<double> masses(_nbody);
-  for( unsigned int i=0; i<_nbody; ++i )
+  for( unsigned int i=0; i<_nbody; i++ )
     masses[i] = _pat[i+1].mass();
 
   gRandom->SetSeed(seed);
@@ -35,7 +35,7 @@ void DalitzMCMC::FillEventList( DalitzEventList& evtList,
   //Next event
   DalitzEvent candEvent_next;
 
-  for( unsigned int i=0; i<NEvents; ++i ){
+  for( unsigned int i=0; i<NEvents; i++ ){
     candEvent_next = GetFlatEvent();
 
     const double pdf_start = _pdf.Prob(candEvent_start);
@@ -71,7 +71,7 @@ DalitzEvent DalitzMCMC::GetFlatEvent()
     const double height = gRandom->Uniform(1.0/weight);
 
     if( height < 1.0 ){
-      for( unsigned int i=0; i<_nbody; ++i )
+      for( unsigned int i=0; i<_nbody; i++ )
 	p4_mumAndDgtr[i+1] = *(_event.GetDecay(i));
 
       break;

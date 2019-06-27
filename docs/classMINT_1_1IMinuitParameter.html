@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -110,8 +111,6 @@ Inheritance diagram for MINT::IMinuitParameter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad45fdc4ef342f7c568692f8e534d0204"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinuitParameter.html#ad45fdc4ef342f7c568692f8e534d0204">~IMinuitParameter</a> ()</td></tr>
-<tr class="separator:ad45fdc4ef342f7c568692f8e534d0204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab091653d6e968ad78f2776a71182b24f"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinuitParameter.html#ab091653d6e968ad78f2776a71182b24f">iFixInit</a> () const  =0</td></tr>
 <tr class="separator:ab091653d6e968ad78f2776a71182b24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b6aabde5056b625064167e79723ee81"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinuitParameter.html#a3b6aabde5056b625064167e79723ee81">hidden</a> () const  =0</td></tr>
@@ -150,6 +149,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af54c5045f7eb04ed55378b158821797f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32a9b1dac3f7b0befd87ae0ae63372fc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinuitParameter.html#a32a9b1dac3f7b0befd87ae0ae63372fc">printResultVsInput</a> (std::ostream &amp;os=std::cout) const  =0</td></tr>
 <tr class="separator:a32a9b1dac3f7b0befd87ae0ae63372fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad45fdc4ef342f7c568692f8e534d0204"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinuitParameter.html#ad45fdc4ef342f7c568692f8e534d0204">~IMinuitParameter</a> ()</td></tr>
+<tr class="separator:ad45fdc4ef342f7c568692f8e534d0204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -159,36 +160,20 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:aa93bb2752d52e1b5eb10b0ce04516f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a867156142b51f802654962e5e12f4bf2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinuitParameter.html#a867156142b51f802654962e5e12f4bf2">setParSetIndex</a> (int psetIndex)=0</td></tr>
 <tr class="separator:a867156142b51f802654962e5e12f4bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075d37b9dda32b39ff93104f7c68722a"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinuitParameter.html#a075d37b9dda32b39ff93104f7c68722a">blinding</a> () const  =0</td></tr>
+<tr class="separator:a075d37b9dda32b39ff93104f7c68722a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a1f1b56cd4d59a7376b3e22d4b99f63b1"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinuitParameter.html#a1f1b56cd4d59a7376b3e22d4b99f63b1">MinuitParameterSet</a></td></tr>
 <tr class="separator:a1f1b56cd4d59a7376b3e22d4b99f63b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb063c57c84df6fcd27abd7db18b02d9"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1IMinuitParameter.html#adb063c57c84df6fcd27abd7db18b02d9">Minimiser</a></td></tr>
+<tr class="separator:adb063c57c84df6fcd27abd7db18b02d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad45fdc4ef342f7c568692f8e534d0204"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual MINT::IMinuitParameter::~IMinuitParameter </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="IMinuitParameter_8h_source.html#l00014">14</a> of file <a class="el" href="IMinuitParameter_8h_source.html">IMinuitParameter.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a25f7506e9b47d476b93e6c00a3cc03a8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -210,9 +195,61 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="IMinuitParameter_8h_source.html#l00016">16</a> of file <a class="el" href="IMinuitParameter_8h_source.html">IMinuitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{};</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad45fdc4ef342f7c568692f8e534d0204"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual MINT::IMinuitParameter::~IMinuitParameter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="IMinuitParameter_8h_source.html#l00055">55</a> of file <a class="el" href="IMinuitParameter_8h_source.html">IMinuitParameter.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a075d37b9dda32b39ff93104f7c68722a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double MINT::IMinuitParameter::blinding </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classMINT_1_1FitParameter.html#a4611191c102f07abbbd0de229cf6ae1b">MINT::FitParameter</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae6fd6f4737bcb345245629a2036524bf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -767,6 +804,28 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="adb063c57c84df6fcd27abd7db18b02d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classMINT_1_1Minimiser.html">Minimiser</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="IMinuitParameter_8h_source.html#l00058">58</a> of file <a class="el" href="IMinuitParameter_8h_source.html">IMinuitParameter.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a1f1b56cd4d59a7376b3e22d4b99f63b1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -785,10 +844,12 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="IMinuitParameter_8h_source.html#l00057">57</a> of file <a class="el" href="IMinuitParameter_8h_source.html">IMinuitParameter.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="IMinuitParameter_8h_source.html">IMinuitParameter.h</a></li>
+<li>Mint/<a class="el" href="IMinuitParameter_8h_source.html">IMinuitParameter.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

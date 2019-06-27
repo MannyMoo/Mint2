@@ -34,6 +34,7 @@ var searchData=
   ['ddtree_3c_20associateddecaytreeitem_20_3e',['DDTree&lt; AssociatedDecayTreeItem &gt;',['../classDDTree.html',1,'']]],
   ['ddtree_3c_20decaytreeitem_20_3e',['DDTree&lt; DecayTreeItem &gt;',['../classDDTree.html',1,'']]],
   ['decaytreeitem',['DecayTreeItem',['../classDecayTreeItem.html',1,'']]],
+  ['decratecoeff_5fbd',['DecRateCoeff_Bd',['../classDecRateCoeff__Bd.html',1,'']]],
   ['diskresidenteventlist',['DiskResidentEventList',['../classDiskResidentEventList.html',1,'']]],
   ['dispersion_5fintegrand',['Dispersion_Integrand',['../classDispersion__Integrand.html',1,'']]]
 ];

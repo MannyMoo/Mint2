@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -132,7 +133,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a13f714b5187d8d2bdbb931a70b33436e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1MintFcnGrad.html#a13f714b5187d8d2bdbb931a70b33436e">_best_min</a> = 0.0</td></tr>
 <tr class="separator:a13f714b5187d8d2bdbb931a70b33436e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="MintFcnGrad_8h_source.html#l00010">10</a> of file <a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a106274eec15044685b5e171a507877bd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -156,6 +160,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Constructor </p>
 
+<p>Definition at line <a class="el" href="MintFcnGrad_8h_source.html#l00016">16</a> of file <a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      :<a class="code" href="classMINT_1_1MintFcnGrad.html#a8f5ad0e962c75c70af579ce15b05eb65">_theFunction</a>(theFunction)</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {}</div><div class="ttc" id="classMINT_1_1MintFcnGrad_html_a8f5ad0e962c75c70af579ce15b05eb65"><div class="ttname"><a href="classMINT_1_1MintFcnGrad.html#a8f5ad0e962c75c70af579ce15b05eb65">MINT::MintFcnGrad::_theFunction</a></div><div class="ttdeci">IMinimisable * _theFunction</div><div class="ttdef"><b>Definition:</b> <a href="MintFcnGrad_8h_source.html#l00058">MintFcnGrad.h:58</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -182,6 +189,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>User-supplied gradient </p>
 
+<p>Definition at line <a class="el" href="MintFcnGrad_8h_source.html#l00040">40</a> of file <a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    { <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1MintFcnGrad.html#a8f5ad0e962c75c70af579ce15b05eb65">_theFunction</a>-&gt;<a class="code" href="classMINT_1_1IMinimisable.html#ad44658489f606ecfa9fc9f96bd8da425">Gradient</a>(par); }</div><div class="ttc" id="classMINT_1_1IMinimisable_html_ad44658489f606ecfa9fc9f96bd8da425"><div class="ttname"><a href="classMINT_1_1IMinimisable.html#ad44658489f606ecfa9fc9f96bd8da425">MINT::IMinimisable::Gradient</a></div><div class="ttdeci">virtual void Gradient(std::vector&lt; double &gt; &amp;grad)</div><div class="ttdef"><b>Definition:</b> <a href="IMinimisable_8h_source.html#l00024">IMinimisable.h:24</a></div></div>
+<div class="ttc" id="classMINT_1_1MintFcnGrad_html_a8f5ad0e962c75c70af579ce15b05eb65"><div class="ttname"><a href="classMINT_1_1MintFcnGrad.html#a8f5ad0e962c75c70af579ce15b05eb65">MINT::MintFcnGrad::_theFunction</a></div><div class="ttdeci">IMinimisable * _theFunction</div><div class="ttdef"><b>Definition:</b> <a href="MintFcnGrad_8h_source.html#l00058">MintFcnGrad.h:58</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a22d4b725f09d47f86ddf8387e46f8753"></a>
@@ -207,6 +218,15 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Calculate test-statistic from Minuit2 fit parameter guesses </p>
 
+<p>Definition at line <a class="el" href="MintFcnGrad_8h_source.html#l00023">23</a> of file <a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;par.size(); ++i )</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classMINT_1_1MintFcnGrad.html#a8f5ad0e962c75c70af579ce15b05eb65">_theFunction</a>-&gt;<a class="code" href="classMINT_1_1IMinimisable.html#a40c926f3a5c6fbfadd8f563c5e806728">getParSet</a>()-&gt;<a class="code" href="classMINT_1_1MinuitParameterSet.html#a5b37a0c92a8c1859badc66abf43a6b95">getParPtr</a>(i)-&gt;<a class="code" href="classMINT_1_1IMinuitParameter.html#ae0ead7910e1da8d3b35ad7b901cc67a4">setCurrentFitVal</a>(par[i]);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <a class="code" href="classMINT_1_1MintFcnGrad.html#a8f5ad0e962c75c70af579ce15b05eb65">_theFunction</a>-&gt;<a class="code" href="classMINT_1_1IMinimisable.html#a4251cacf21d6b88433a455bda0afc424">parametersChanged</a>();</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">double</span> negll = <a class="code" href="classMINT_1_1MintFcnGrad.html#a8f5ad0e962c75c70af579ce15b05eb65">_theFunction</a>-&gt;<a class="code" href="classMINT_1_1IMinimisable.html#ad8dfbf20f19065ff6268e898991b5355">getVal</a>()-<a class="code" href="classMINT_1_1MintFcnGrad.html#a13f714b5187d8d2bdbb931a70b33436e">_best_min</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      std::cout &lt;&lt; std::setprecision(std::numeric_limits&lt;double&gt;::digits10);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;-2logL = &quot;</span> &lt;&lt; negll &lt;&lt; std::endl;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordflow">return</span> negll;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div><div class="ttc" id="classMINT_1_1MinuitParameterSet_html_a5b37a0c92a8c1859badc66abf43a6b95"><div class="ttname"><a href="classMINT_1_1MinuitParameterSet.html#a5b37a0c92a8c1859badc66abf43a6b95">MINT::MinuitParameterSet::getParPtr</a></div><div class="ttdeci">IMinuitParameter * getParPtr(unsigned int i)</div><div class="ttdef"><b>Definition:</b> <a href="MinuitParameterSet_8cpp_source.html#l00093">MinuitParameterSet.cpp:93</a></div></div>
+<div class="ttc" id="classMINT_1_1IMinimisable_html_ad8dfbf20f19065ff6268e898991b5355"><div class="ttname"><a href="classMINT_1_1IMinimisable.html#ad8dfbf20f19065ff6268e898991b5355">MINT::IMinimisable::getVal</a></div><div class="ttdeci">virtual double getVal()=0</div></div>
+<div class="ttc" id="classMINT_1_1IMinimisable_html_a40c926f3a5c6fbfadd8f563c5e806728"><div class="ttname"><a href="classMINT_1_1IMinimisable.html#a40c926f3a5c6fbfadd8f563c5e806728">MINT::IMinimisable::getParSet</a></div><div class="ttdeci">virtual MinuitParameterSet * getParSet()=0</div></div>
+<div class="ttc" id="classMINT_1_1IMinimisable_html_a4251cacf21d6b88433a455bda0afc424"><div class="ttname"><a href="classMINT_1_1IMinimisable.html#a4251cacf21d6b88433a455bda0afc424">MINT::IMinimisable::parametersChanged</a></div><div class="ttdeci">virtual void parametersChanged()=0</div></div>
+<div class="ttc" id="classMINT_1_1MintFcnGrad_html_a8f5ad0e962c75c70af579ce15b05eb65"><div class="ttname"><a href="classMINT_1_1MintFcnGrad.html#a8f5ad0e962c75c70af579ce15b05eb65">MINT::MintFcnGrad::_theFunction</a></div><div class="ttdeci">IMinimisable * _theFunction</div><div class="ttdef"><b>Definition:</b> <a href="MintFcnGrad_8h_source.html#l00058">MintFcnGrad.h:58</a></div></div>
+<div class="ttc" id="classMINT_1_1MintFcnGrad_html_a13f714b5187d8d2bdbb931a70b33436e"><div class="ttname"><a href="classMINT_1_1MintFcnGrad.html#a13f714b5187d8d2bdbb931a70b33436e">MINT::MintFcnGrad::_best_min</a></div><div class="ttdeci">double _best_min</div><div class="ttdef"><b>Definition:</b> <a href="MintFcnGrad_8h_source.html#l00062">MintFcnGrad.h:62</a></div></div>
+<div class="ttc" id="classMINT_1_1IMinuitParameter_html_ae0ead7910e1da8d3b35ad7b901cc67a4"><div class="ttname"><a href="classMINT_1_1IMinuitParameter.html#ae0ead7910e1da8d3b35ad7b901cc67a4">MINT::IMinuitParameter::setCurrentFitVal</a></div><div class="ttdeci">virtual void setCurrentFitVal(double pval)=0</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a57654b56d4920432cdf39d3ec12054f7"></a>
@@ -232,6 +252,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>If minimisation fails due to edm being above tolerance, set the best known -2logL and reminimise </p>
 
+<p>Definition at line <a class="el" href="MintFcnGrad_8h_source.html#l00048">48</a> of file <a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    { <a class="code" href="classMINT_1_1MintFcnGrad.html#a13f714b5187d8d2bdbb931a70b33436e">_best_min</a> += best_min; }</div><div class="ttc" id="classMINT_1_1MintFcnGrad_html_a13f714b5187d8d2bdbb931a70b33436e"><div class="ttname"><a href="classMINT_1_1MintFcnGrad.html#a13f714b5187d8d2bdbb931a70b33436e">MINT::MintFcnGrad::_best_min</a></div><div class="ttdeci">double _best_min</div><div class="ttdef"><b>Definition:</b> <a href="MintFcnGrad_8h_source.html#l00062">MintFcnGrad.h:62</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6f587587ea8292b4def259e6a3f77a56"></a>
@@ -256,6 +279,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Change in test-statistic that defines the uncertainty of fit parameters </p>
 
+<p>Definition at line <a class="el" href="MintFcnGrad_8h_source.html#l00055">55</a> of file <a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    { <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1MintFcnGrad.html#ab9e4c9778faaf5f6833122a717c167ae">_error_def</a>; }</div><div class="ttc" id="classMINT_1_1MintFcnGrad_html_ab9e4c9778faaf5f6833122a717c167ae"><div class="ttname"><a href="classMINT_1_1MintFcnGrad.html#ab9e4c9778faaf5f6833122a717c167ae">MINT::MintFcnGrad::_error_def</a></div><div class="ttdeci">const double _error_def</div><div class="ttdef"><b>Definition:</b> <a href="MintFcnGrad_8h_source.html#l00060">MintFcnGrad.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -277,6 +303,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="MintFcnGrad_8h_source.html#l00062">62</a> of file <a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab9e4c9778faaf5f6833122a717c167ae"></a>
@@ -296,6 +324,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="MintFcnGrad_8h_source.html#l00060">60</a> of file <a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a>.</p>
 
 </div>
 </div>
@@ -317,10 +347,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="MintFcnGrad_8h_source.html#l00058">58</a> of file <a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a></li>
+<li>Mint/<a class="el" href="MintFcnGrad_8h_source.html">MintFcnGrad.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

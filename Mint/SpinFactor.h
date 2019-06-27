@@ -33,7 +33,8 @@ class SpinFactor
  public:
   virtual double getVal(IDalitzEvent& evt)=0;
   virtual double RealVal(IDalitzEvent& evt){return getVal(evt);}// some dublication here...
-  virtual std::complex<double> ComplexVal(IDalitzEvent& evt){     
+  virtual std::complex<double> ComplexVal(IDalitzEvent& evt){   
+            //return getNewVal(evt);
             return getValWithCachingPermutation(evt);
             //return std::complex<double>(getVal(evt),0);
   }
@@ -78,7 +79,7 @@ class SpinFactor
     , _theDecay(decay)
     , _nFinal(nFinal)
     , fsPS(nFinal, (MINT::const_counted_ptr<AssociatedDecayTree>) 0)
-    , _useZemachTensors("useZemachTensors",1)
+    , _useZemachTensors("useZemachTensors",1,MINT::NamedParameterBase::QUIET)
     {}
   
   SpinFactor(const SpinFactor& other) // just create a new one
@@ -91,7 +92,7 @@ class SpinFactor
     , _theDecay(other._theDecay)
     , _nFinal(other._nFinal)
     , fsPS(other._nFinal, (MINT::const_counted_ptr<AssociatedDecayTree>) 0)
-    , _useZemachTensors("useZemachTensors",1)
+    , _useZemachTensors("useZemachTensors",1,MINT::NamedParameterBase::QUIET)
     {}
   virtual void printYourself(std::ostream& os=std::cout) const=0;
   virtual void printParsing(std::ostream& os=std::cout) const;

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -88,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classMINT_1_1counted__ptr-members.html">List of all members</a>  </div>
@@ -104,9 +106,15 @@ Inheritance diagram for MINT::counted_ptr&lt; X &gt;:</div>
   <img src="classMINT_1_1counted__ptr.png" usemap="#MINT::counted_5Fptr_3C_20X_20_3E_map" alt=""/>
   <map id="MINT::counted_5Fptr_3C_20X_20_3E_map" name="MINT::counted_ptr&lt; X &gt;_map">
 <area href="classMINT_1_1const__counted__ptr.html" alt="MINT::const_counted_ptr&lt; X &gt;" shape="rect" coords="0,56,185,80"/>
+<area href="classMINT_1_1const__counted__ptr.html" alt="MINT::const_counted_ptr&lt; X &gt;" shape="rect" coords="195,56,380,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a10ba080f2df7b214800926ee8ad01c56"><td class="memItemLeft" align="right" valign="top">typedef X&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a10ba080f2df7b214800926ee8ad01c56">element_type</a></td></tr>
+<tr class="separator:a10ba080f2df7b214800926ee8ad01c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0cdd9e8f8d2d7e29094110e662daada"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#ad0cdd9e8f8d2d7e29094110e662daada">ok</a> () const </td></tr>
@@ -142,14 +150,65 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a32c1153be365e2fc8294bc1f3b6958cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a554f471f0a8fff94699965ae1e7d3d25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a554f471f0a8fff94699965ae1e7d3d25">operator const void *</a> () const </td></tr>
 <tr class="separator:a554f471f0a8fff94699965ae1e7d3d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d5480eb848237f794ad8abf9222481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#ac4d5480eb848237f794ad8abf9222481">acquire</a> (<a class="el" href="classMINT_1_1counted__ptr__counter.html">counted_ptr_counter</a> *c)  throw ()</td></tr>
+<tr class="separator:ac4d5480eb848237f794ad8abf9222481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1014fd6c07e636730f26c648d68fc59f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">release</a> ()</td></tr>
+<tr class="separator:a1014fd6c07e636730f26c648d68fc59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a503a483f89b1a74872d8cfbcc4d1dbe5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a503a483f89b1a74872d8cfbcc4d1dbe5">counted_ptr</a> (X *p=0)</td></tr>
+<tr class="separator:a503a483f89b1a74872d8cfbcc4d1dbe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ede2a89e63e797f9ae723795bf59156"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a8ede2a89e63e797f9ae723795bf59156">~counted_ptr</a> ()</td></tr>
+<tr class="separator:a8ede2a89e63e797f9ae723795bf59156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7b68e6a3c0f38b2ad62d74c98ba759d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#af7b68e6a3c0f38b2ad62d74c98ba759d">counted_ptr</a> (const <a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a> &amp;r)  throw ()</td></tr>
+<tr class="separator:af7b68e6a3c0f38b2ad62d74c98ba759d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eb3afe5f7ae1738ca7225d5e3f561d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a6eb3afe5f7ae1738ca7225d5e3f561d1">operator=</a> (const <a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a> &amp;r)</td></tr>
+<tr class="separator:a6eb3afe5f7ae1738ca7225d5e3f561d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba8b04fcc719e2870568b663c58bf8d5"><td class="memTemplParams" colspan="2">template&lt;class Y &gt; </td></tr>
+<tr class="memitem:aba8b04fcc719e2870568b663c58bf8d5"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#aba8b04fcc719e2870568b663c58bf8d5">counted_ptr</a> (const <a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a>&lt; Y &gt; &amp;r)  throw ()</td></tr>
+<tr class="separator:aba8b04fcc719e2870568b663c58bf8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a898ae29ba19bbd0606dd7cac51f10c7b"><td class="memTemplParams" colspan="2">template&lt;class Y &gt; </td></tr>
+<tr class="memitem:a898ae29ba19bbd0606dd7cac51f10c7b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a898ae29ba19bbd0606dd7cac51f10c7b">operator=</a> (const <a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a>&lt; Y &gt; &amp;r)</td></tr>
+<tr class="separator:a898ae29ba19bbd0606dd7cac51f10c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2e20b2f4073085ad4884166d8a2b10d"><td class="memItemLeft" align="right" valign="top">X &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#af2e20b2f4073085ad4884166d8a2b10d">operator*</a> () const   throw ()</td></tr>
+<tr class="separator:af2e20b2f4073085ad4884166d8a2b10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae7203c31fc535315bc4a46c65223948"><td class="memItemLeft" align="right" valign="top">X *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#aae7203c31fc535315bc4a46c65223948">operator-&gt;</a> () const   throw ()</td></tr>
+<tr class="separator:aae7203c31fc535315bc4a46c65223948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17552fd77fa7f33f96ce0c6377165ebb"><td class="memItemLeft" align="right" valign="top">X *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a17552fd77fa7f33f96ce0c6377165ebb">get</a> () const   throw ()</td></tr>
+<tr class="separator:a17552fd77fa7f33f96ce0c6377165ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c1153be365e2fc8294bc1f3b6958cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a32c1153be365e2fc8294bc1f3b6958cb">unique</a> () const   throw ()</td></tr>
+<tr class="separator:a32c1153be365e2fc8294bc1f3b6958cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bbd5bfa045bb5fbf45d6291d4dbfe4b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a6bbd5bfa045bb5fbf45d6291d4dbfe4b">operator void *</a> () const </td></tr>
+<tr class="separator:a6bbd5bfa045bb5fbf45d6291d4dbfe4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa342cc8b10241d4d34b258857218dbd0"><td class="memItemLeft" align="right" valign="top">X *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">ptr</a></td></tr>
 <tr class="separator:aa342cc8b10241d4d34b258857218dbd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18e07d6cc0e6e90cdc3269af1857145c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMINT_1_1counted__ptr__counter.html">counted_ptr_counter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a18e07d6cc0e6e90cdc3269af1857145c">itsCounter</a></td></tr>
-<tr class="separator:a18e07d6cc0e6e90cdc3269af1857145c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a234418c67d0b7af6cfdd4e6a79973736"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMINT_1_1counted__ptr__counter.html">counted_ptr_counter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a></td></tr>
+<tr class="separator:a234418c67d0b7af6cfdd4e6a79973736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename X&gt;<br />
+class MINT::counted_ptr&lt; X &gt;</h3>
+
+
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00039">39</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a10ba080f2df7b214800926ee8ad01c56"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef X <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::<a class="el" href="classMINT_1_1counted__ptr.html#a10ba080f2df7b214800926ee8ad01c56">element_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00067">67</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a503a483f89b1a74872d8cfbcc4d1dbe5"></a>
 <div class="memitem">
@@ -175,6 +234,10 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00080">80</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   : <a class="code" href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">ptr</a>(p)</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    , <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>(0){</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (0 != p){</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a> = <span class="keyword">new</span> counted_ptr_counter(1);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">ptr</a> = p;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_aa342cc8b10241d4d34b258857218dbd0"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">MINT::counted_ptr::ptr</a></div><div class="ttdeci">X * ptr</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00043">counted_ptr.h:43</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8ede2a89e63e797f9ae723795bf59156"></a>
@@ -200,6 +263,9 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00088">88</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {<a class="code" href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">release</a>();}</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a1014fd6c07e636730f26c648d68fc59f"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">MINT::counted_ptr::release</a></div><div class="ttdeci">void release()</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00067">counted_ptr.h:67</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af7b68e6a3c0f38b2ad62d74c98ba759d"></a>
@@ -232,6 +298,9 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00090">90</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="comment">// std::cout &lt;&lt; &quot;copy-constructing&quot; &lt;&lt; std::endl;</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">acquire</a>(r);</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a4fd594ca7a320c9aa4c74add84d6d270"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">MINT::counted_ptr::acquire</a></div><div class="ttdeci">void acquire(const counted_ptr&lt; X &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00050">counted_ptr.h:50</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aba8b04fcc719e2870568b663c58bf8d5"></a>
@@ -266,9 +335,176 @@ template&lt;typename Y &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00107">107</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        {</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="comment">// std::cout &lt;&lt; &quot;copy-constructing other&quot; &lt;&lt; std::endl;</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">acquire</a>(r);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a4fd594ca7a320c9aa4c74add84d6d270"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">MINT::counted_ptr::acquire</a></div><div class="ttdeci">void acquire(const counted_ptr&lt; X &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00050">counted_ptr.h:50</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a503a483f89b1a74872d8cfbcc4d1dbe5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::<a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a> </td>
+          <td>(</td>
+          <td class="paramtype">X *&#160;</td>
+          <td class="paramname"><em>p</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00069">69</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    : <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>(0) {<span class="keywordflow">if</span> (p) <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a> = <span class="keyword">new</span> counted_ptr_counter(p);}</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a8ede2a89e63e797f9ae723795bf59156"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::~<a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00071">71</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {<a class="code" href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">release</a>();}</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a1014fd6c07e636730f26c648d68fc59f"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">MINT::counted_ptr::release</a></div><div class="ttdeci">void release()</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00067">counted_ptr.h:67</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af7b68e6a3c0f38b2ad62d74c98ba759d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::<a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a>&lt; X &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00073">73</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {<a class="code" href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">acquire</a>(r.itsCounter);}</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a4fd594ca7a320c9aa4c74add84d6d270"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">MINT::counted_ptr::acquire</a></div><div class="ttdeci">void acquire(const counted_ptr&lt; X &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00050">counted_ptr.h:50</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aba8b04fcc719e2870568b663c58bf8d5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<div class="memtemplate">
+template&lt;class Y &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::<a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a>&lt; Y &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00086">86</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        {</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="comment">// with this trick we check (I hope) if the conversion</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="comment">// is legal (jr):</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keyword">static_cast&lt;</span>X*<span class="keyword">&gt;</span>(r.get());</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">acquire</a>(r.itsCounter);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a4fd594ca7a320c9aa4c74add84d6d270"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">MINT::counted_ptr::acquire</a></div><div class="ttdeci">void acquire(const counted_ptr&lt; X &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00050">counted_ptr.h:50</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac4d5480eb848237f794ad8abf9222481"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::acquire </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMINT_1_1counted__ptr__counter.html">counted_ptr_counter</a> *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00049">49</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    { <span class="comment">// increment the count</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a> = c;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (c) ++(c-&gt;count);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="a4fd594ca7a320c9aa4c74add84d6d270"></a>
 <div class="memitem">
 <div class="memproto">
@@ -299,6 +535,12 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00050">50</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  { <span class="comment">// increment the count</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// std::cout &lt;&lt; &quot;acquiring&quot; &lt;&lt; std::endl;</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a> = other.itsCounter;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">ptr</a> = other.ptr;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMINT_1_1counted__ptr.html#ad0cdd9e8f8d2d7e29094110e662daada">ok</a>()) ++(<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>-&gt;<a class="code" href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">count</a>);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_aa342cc8b10241d4d34b258857218dbd0"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">MINT::counted_ptr::ptr</a></div><div class="ttdeci">X * ptr</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00043">counted_ptr.h:43</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_ad0cdd9e8f8d2d7e29094110e662daada"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#ad0cdd9e8f8d2d7e29094110e662daada">MINT::counted_ptr::ok</a></div><div class="ttdeci">bool ok() const </div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00046">counted_ptr.h:46</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr__counter_html_a2e0fdc3910454583eec167b1b24e0d5e"><div class="ttname"><a href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">MINT::counted_ptr_counter::count</a></div><div class="ttdeci">unsigned count</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00035">counted_ptr.h:35</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa768420ed5a1c5074547626bbd7fd9d5"></a>
@@ -333,6 +575,12 @@ template&lt;typename Y &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00059">59</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  { <span class="comment">// increment the count</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// std::cout &lt;&lt; &quot;acquiring different type&quot; &lt;&lt; std::endl;</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a> = other.itsCounter;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">ptr</a> = (X*) (other.ptr);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMINT_1_1counted__ptr.html#ad0cdd9e8f8d2d7e29094110e662daada">ok</a>()) ++(<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>-&gt;<a class="code" href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">count</a>);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_aa342cc8b10241d4d34b258857218dbd0"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">MINT::counted_ptr::ptr</a></div><div class="ttdeci">X * ptr</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00043">counted_ptr.h:43</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_ad0cdd9e8f8d2d7e29094110e662daada"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#ad0cdd9e8f8d2d7e29094110e662daada">MINT::counted_ptr::ok</a></div><div class="ttdeci">bool ok() const </div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00046">counted_ptr.h:46</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr__counter_html_a2e0fdc3910454583eec167b1b24e0d5e"><div class="ttname"><a href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">MINT::counted_ptr_counter::count</a></div><div class="ttdeci">unsigned count</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00035">counted_ptr.h:35</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a17552fd77fa7f33f96ce0c6377165ebb"></a>
@@ -364,6 +612,45 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00108">108</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{<span class="keywordflow">return</span> ((<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>) ? static_cast&lt;X*&gt;(<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>-&gt;<a class="code" href="classMINT_1_1counted__ptr__counter.html#a87cdf14f337b74a95c4f0c3f702ee102">ptr</a>) : 0);}</div><div class="ttc" id="classMINT_1_1counted__ptr__counter_html_a87cdf14f337b74a95c4f0c3f702ee102"><div class="ttname"><a href="classMINT_1_1counted__ptr__counter.html#a87cdf14f337b74a95c4f0c3f702ee102">MINT::counted_ptr_counter::ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition:</b> <a href="old__counted__ptr_8h_source.html#l00036">old_counted_ptr.h:36</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a17552fd77fa7f33f96ce0c6377165ebb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">X* <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00123">123</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{<span class="keywordflow">return</span> (this-&gt;<a class="code" href="classMINT_1_1counted__ptr.html#ad0cdd9e8f8d2d7e29094110e662daada">ok</a>() ? <a class="code" href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">ptr</a> : 0);}</div><div class="ttc" id="classMINT_1_1counted__ptr_html_aa342cc8b10241d4d34b258857218dbd0"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">MINT::counted_ptr::ptr</a></div><div class="ttdeci">X * ptr</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00043">counted_ptr.h:43</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_ad0cdd9e8f8d2d7e29094110e662daada"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#ad0cdd9e8f8d2d7e29094110e662daada">MINT::counted_ptr::ok</a></div><div class="ttdeci">bool ok() const </div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00046">counted_ptr.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad0cdd9e8f8d2d7e29094110e662daada"></a>
@@ -389,6 +676,10 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00046">46</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                 {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> (0 != <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>) &amp;&amp; (0 != <a class="code" href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">ptr</a>);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_aa342cc8b10241d4d34b258857218dbd0"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">MINT::counted_ptr::ptr</a></div><div class="ttdeci">X * ptr</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00043">counted_ptr.h:43</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a554f471f0a8fff94699965ae1e7d3d25"></a>
@@ -414,6 +705,35 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00130">130</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                { <span class="comment">// jr</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      <span class="keywordflow">return</span> (<span class="keyword">const</span> <span class="keywordtype">void</span>*) <span class="keyword">get</span>();</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6bbd5bfa045bb5fbf45d6291d4dbfe4b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::operator void * </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00113">113</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                          { <span class="comment">// jr</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keywordflow">return</span> (<span class="keywordtype">void</span>*) <span class="keyword">get</span>();</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af2e20b2f4073085ad4884166d8a2b10d"></a>
@@ -445,6 +765,43 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00106">106</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{<span class="keywordflow">return</span> *(<span class="keyword">static_cast&lt;</span>X*<span class="keyword">&gt;</span>(<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>-&gt;<a class="code" href="classMINT_1_1counted__ptr__counter.html#a87cdf14f337b74a95c4f0c3f702ee102">ptr</a>));}</div><div class="ttc" id="classMINT_1_1counted__ptr__counter_html_a87cdf14f337b74a95c4f0c3f702ee102"><div class="ttname"><a href="classMINT_1_1counted__ptr__counter.html#a87cdf14f337b74a95c4f0c3f702ee102">MINT::counted_ptr_counter::ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition:</b> <a href="old__counted__ptr_8h_source.html#l00036">old_counted_ptr.h:36</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af2e20b2f4073085ad4884166d8a2b10d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">X&amp; <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00124">124</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{<span class="keywordflow">return</span> *(<span class="keyword">get</span>());}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aae7203c31fc535315bc4a46c65223948"></a>
@@ -476,6 +833,43 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00107">107</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{<span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>X*<span class="keyword">&gt;</span>(<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>-&gt;<a class="code" href="classMINT_1_1counted__ptr__counter.html#a87cdf14f337b74a95c4f0c3f702ee102">ptr</a>);}</div><div class="ttc" id="classMINT_1_1counted__ptr__counter_html_a87cdf14f337b74a95c4f0c3f702ee102"><div class="ttname"><a href="classMINT_1_1counted__ptr__counter.html#a87cdf14f337b74a95c4f0c3f702ee102">MINT::counted_ptr_counter::ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition:</b> <a href="old__counted__ptr_8h_source.html#l00036">old_counted_ptr.h:36</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aae7203c31fc535315bc4a46c65223948"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">X* <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00125">125</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{<span class="keywordflow">return</span> <span class="keyword">get</span>();}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6eb3afe5f7ae1738ca7225d5e3f561d1"></a>
@@ -502,6 +896,72 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00075">75</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;r) {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">release</a>();</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">acquire</a>(r.itsCounter);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      }</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a4fd594ca7a320c9aa4c74add84d6d270"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">MINT::counted_ptr::acquire</a></div><div class="ttdeci">void acquire(const counted_ptr&lt; X &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00050">counted_ptr.h:50</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a1014fd6c07e636730f26c648d68fc59f"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">MINT::counted_ptr::release</a></div><div class="ttdeci">void release()</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00067">counted_ptr.h:67</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a898ae29ba19bbd0606dd7cac51f10c7b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<div class="memtemplate">
+template&lt;class Y &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a>&amp; <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a>&lt; Y &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00093">93</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;r) {</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <span class="comment">// with this trick we check (I hope) if the conversion</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="comment">// is legal (jr):</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keyword">static_cast&lt;</span>X*<span class="keyword">&gt;</span>(r.get());</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">release</a>();</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">acquire</a>(r.itsCounter);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a4fd594ca7a320c9aa4c74add84d6d270"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">MINT::counted_ptr::acquire</a></div><div class="ttdeci">void acquire(const counted_ptr&lt; X &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00050">counted_ptr.h:50</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a1014fd6c07e636730f26c648d68fc59f"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">MINT::counted_ptr::release</a></div><div class="ttdeci">void release()</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00067">counted_ptr.h:67</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6eb3afe5f7ae1738ca7225d5e3f561d1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a>&amp; <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMINT_1_1counted__ptr.html">counted_ptr</a>&lt; X &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00095">95</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="comment">// std::cout &lt;&lt; &quot;copy- = &quot; &lt;&lt; std::endl;</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;r) {</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">release</a>();</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">acquire</a>(r);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      }</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a4fd594ca7a320c9aa4c74add84d6d270"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">MINT::counted_ptr::acquire</a></div><div class="ttdeci">void acquire(const counted_ptr&lt; X &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00050">counted_ptr.h:50</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a1014fd6c07e636730f26c648d68fc59f"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">MINT::counted_ptr::release</a></div><div class="ttdeci">void release()</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00067">counted_ptr.h:67</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a898ae29ba19bbd0606dd7cac51f10c7b"></a>
@@ -530,6 +990,10 @@ template&lt;typename Y &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00112">112</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      {</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> ((<span class="keyword">const</span> <span class="keywordtype">void</span>*)<span class="keyword">this</span> != (<span class="keyword">const</span> <span class="keywordtype">void</span>*) (&amp;r)) {</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">release</a>();</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <span class="comment">// std::cout &lt;&lt; &quot;copy = other&quot; &lt;&lt; std::endl;</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">acquire</a>(r);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_a4fd594ca7a320c9aa4c74add84d6d270"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a4fd594ca7a320c9aa4c74add84d6d270">MINT::counted_ptr::acquire</a></div><div class="ttdeci">void acquire(const counted_ptr&lt; X &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00050">counted_ptr.h:50</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a1014fd6c07e636730f26c648d68fc59f"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a1014fd6c07e636730f26c648d68fc59f">MINT::counted_ptr::release</a></div><div class="ttdeci">void release()</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00067">counted_ptr.h:67</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1014fd6c07e636730f26c648d68fc59f"></a>
@@ -555,6 +1019,42 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00055">55</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    { <span class="comment">// decrement the count, delete if it is 0</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>) {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (--<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>-&gt;<a class="code" href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">count</a> == 0) {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keyword">delete</span> (X*)(<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>-&gt;<a class="code" href="classMINT_1_1counted__ptr__counter.html#a87cdf14f337b74a95c4f0c3f702ee102">ptr</a>);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keyword">delete</span> <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a> = 0;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div><div class="ttc" id="classMINT_1_1counted__ptr__counter_html_a87cdf14f337b74a95c4f0c3f702ee102"><div class="ttname"><a href="classMINT_1_1counted__ptr__counter.html#a87cdf14f337b74a95c4f0c3f702ee102">MINT::counted_ptr_counter::ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition:</b> <a href="old__counted__ptr_8h_source.html#l00036">old_counted_ptr.h:36</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr__counter_html_a2e0fdc3910454583eec167b1b24e0d5e"><div class="ttname"><a href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">MINT::counted_ptr_counter::count</a></div><div class="ttdeci">unsigned count</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00035">counted_ptr.h:35</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1014fd6c07e636730f26c648d68fc59f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00067">67</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  { <span class="comment">// decrement the count, delete if it is 0</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// std::cout &lt;&lt; &quot;releasing&quot; &lt;&lt; std::endl;</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMINT_1_1counted__ptr.html#ad0cdd9e8f8d2d7e29094110e662daada">ok</a>()) {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordflow">if</span> (--(<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>-&gt;<a class="code" href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">count</a>) == 0) {</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">ptr</a>;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      }</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">ptr</a>=0;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a> = 0;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div><div class="ttc" id="classMINT_1_1counted__ptr_html_aa342cc8b10241d4d34b258857218dbd0"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#aa342cc8b10241d4d34b258857218dbd0">MINT::counted_ptr::ptr</a></div><div class="ttdeci">X * ptr</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00043">counted_ptr.h:43</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_ad0cdd9e8f8d2d7e29094110e662daada"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#ad0cdd9e8f8d2d7e29094110e662daada">MINT::counted_ptr::ok</a></div><div class="ttdeci">bool ok() const </div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00046">counted_ptr.h:46</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr__counter_html_a2e0fdc3910454583eec167b1b24e0d5e"><div class="ttname"><a href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">MINT::counted_ptr_counter::count</a></div><div class="ttdeci">unsigned count</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00035">counted_ptr.h:35</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a32c1153be365e2fc8294bc1f3b6958cb"></a>
@@ -586,20 +1086,61 @@ template&lt;typename X&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="old__counted__ptr_8h_source.html#l00109">109</a> of file <a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {<span class="keywordflow">return</span> (<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a> ? <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>-&gt;<a class="code" href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">count</a> == 1 : <span class="keyword">true</span>);}</div><div class="ttc" id="classMINT_1_1counted__ptr__counter_html_a2e0fdc3910454583eec167b1b24e0d5e"><div class="ttname"><a href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">MINT::counted_ptr_counter::count</a></div><div class="ttdeci">unsigned count</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00035">counted_ptr.h:35</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a32c1153be365e2fc8294bc1f3b6958cb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename X&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::unique </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00126">126</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        {<span class="keywordflow">return</span> (<a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a> ? <a class="code" href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">itsCounter</a>-&gt;<a class="code" href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">count</a> == 1 : <span class="keyword">true</span>);}</div><div class="ttc" id="classMINT_1_1counted__ptr__counter_html_a2e0fdc3910454583eec167b1b24e0d5e"><div class="ttname"><a href="classMINT_1_1counted__ptr__counter.html#a2e0fdc3910454583eec167b1b24e0d5e">MINT::counted_ptr_counter::count</a></div><div class="ttdeci">unsigned count</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00035">counted_ptr.h:35</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html_a234418c67d0b7af6cfdd4e6a79973736"><div class="ttname"><a href="classMINT_1_1counted__ptr.html#a234418c67d0b7af6cfdd4e6a79973736">MINT::counted_ptr::itsCounter</a></div><div class="ttdeci">counted_ptr_counter * itsCounter</div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00044">counted_ptr.h:44</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a18e07d6cc0e6e90cdc3269af1857145c"></a>
+<a class="anchor" id="a234418c67d0b7af6cfdd4e6a79973736"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename X&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMINT_1_1counted__ptr__counter.html">counted_ptr_counter</a>* <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::itsCounter</td>
+          <td class="memname"><a class="el" href="classMINT_1_1counted__ptr__counter.html">counted_ptr_counter</a> * <a class="el" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a>&lt; X &gt;::itsCounter</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00044">44</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
 
 </div>
 </div>
@@ -615,10 +1156,13 @@ template&lt;typename X&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="counted__ptr_8h_source.html#l00043">43</a> of file <a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>Mint/<a class="el" href="counted__ptr_8h_source.html">counted_ptr.h</a></li>
+<li>Mint/<a class="el" href="old__counted__ptr_8h_source.html">old_counted_ptr.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

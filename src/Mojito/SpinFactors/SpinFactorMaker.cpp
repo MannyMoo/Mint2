@@ -142,8 +142,14 @@ ISpinFactor* SpinFactorMaker(const AssociatedDecayTree& thisDcy
     // either 2 or less bodies, or non-resonant.
     sf = new SpinFactorTrivial;
   }else if( 3 == nFinalStates){
-    cout << " calling  SpinFactorMaker3Body " << endl;
-    sf = SpinFactorMaker3Body(thisDcy, SPD_Wave,lopt); // new SpinFactor3(thisDcy);
+    if(A_is_in_B("GS", lopt)){
+      if(dbThis) cout << "... returning GS spin factor" << endl;
+      sf = new GSSpinFactor(thisDcy);
+      if(dbThis) cout << " .. with name: " << sf->name() << endl;
+    }else{
+      cout << " calling  SpinFactorMaker3Body " << endl;
+      sf = SpinFactorMaker3Body(thisDcy, SPD_Wave,lopt); // new SpinFactor3(thisDcy);
+    }
   }else if( 4 == nFinalStates){
     sf = SpinFactorMaker4Body(thisDcy, SPD_Wave,lopt);
   }else{

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -119,6 +120,22 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1dc86fdb434ae939b3301f4201f450d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb543455d385f45f2abee15710c03e3c"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#afb543455d385f45f2abee15710c03e3c">getGeneratorPdfRelativeToPhaseSpace</a> () const  =0</td></tr>
 <tr class="separator:afb543455d385f45f2abee15710c03e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fa7de5abc45d0e8498d6c981e25f9c5"><td class="memItemLeft" align="right" valign="top">virtual const std::vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#a8fa7de5abc45d0e8498d6c981e25f9c5">getVectorOfValues</a> () const  =0</td></tr>
+<tr class="separator:a8fa7de5abc45d0e8498d6c981e25f9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1516dc751b24c6f112dd6f95d518c88"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#ac1516dc751b24c6f112dd6f95d518c88">getVectorOfValues</a> ()=0</td></tr>
+<tr class="separator:ac1516dc751b24c6f112dd6f95d518c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1ef27b2dc83890788fe4e86c3592163"><td class="memItemLeft" align="right" valign="top">virtual const std::vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#ab1ef27b2dc83890788fe4e86c3592163">getVectorOfWeights</a> () const  =0</td></tr>
+<tr class="separator:ab1ef27b2dc83890788fe4e86c3592163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a217220762278ea831deedbd5e84cdb29"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#a217220762278ea831deedbd5e84cdb29">getVectorOfWeights</a> ()=0</td></tr>
+<tr class="separator:a217220762278ea831deedbd5e84cdb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2456a368ee7c68fdc185415d6b507b71"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#a2456a368ee7c68fdc185415d6b507b71">setValueInVector</a> (unsigned int i, double value)=0</td></tr>
+<tr class="separator:a2456a368ee7c68fdc185415d6b507b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af41cce132e148e0a5994fc663d1a77c3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#af41cce132e148e0a5994fc663d1a77c3">setWeightInVector</a> (unsigned int i, double weight)=0</td></tr>
+<tr class="separator:af41cce132e148e0a5994fc663d1a77c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48dbf7d445cc6f0829cce402abbcd67f"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#a48dbf7d445cc6f0829cce402abbcd67f">getValueFromVector</a> (unsigned int i) const  =0</td></tr>
+<tr class="separator:a48dbf7d445cc6f0829cce402abbcd67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0d66c65c04c977a550d32413698421a"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#aa0d66c65c04c977a550d32413698421a">getWeightFromVector</a> (unsigned int i) const  =0</td></tr>
+<tr class="separator:aa0d66c65c04c977a550d32413698421a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3be3815fc1159d8b04f104d01800a990"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classDalitzEventPattern.html">DalitzEventPattern</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#a3be3815fc1159d8b04f104d01800a990">eventPattern</a> () const  =0</td></tr>
 <tr class="separator:a3be3815fc1159d8b04f104d01800a990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c38c2e512d2e86f71b225b3cf83aa52"><td class="memItemLeft" align="right" valign="top">virtual const TLorentzVector &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#a1c38c2e512d2e86f71b225b3cf83aa52">p</a> (unsigned int i) const  =0</td></tr>
@@ -163,7 +180,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:abe6fab34ef600e245b70abed5a3f71eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDalitzEvent.html#abe6fab34ef600e245b70abed5a3f71eb">IDalitzEvent</a> ()</td></tr>
 <tr class="separator:abe6fab34ef600e245b70abed5a3f71eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="IDalitzEvent_8h_source.html#l00016">16</a> of file <a class="el" href="IDalitzEvent_8h_source.html">IDalitzEvent.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="abe6fab34ef600e245b70abed5a3f71eb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -185,6 +205,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="IDalitzEvent_8h_source.html#l00018">18</a> of file <a class="el" href="IDalitzEvent_8h_source.html">IDalitzEvent.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a76f3052add04ded5e10b967c85845e02"></a>
@@ -208,6 +230,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="IDalitzEvent_8h_source.html#l00065">65</a> of file <a class="el" href="IDalitzEvent_8h_source.html">IDalitzEvent.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -311,6 +335,132 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a48dbf7d445cc6f0829cce402abbcd67f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IDalitzEvent::getValueFromVector </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classDalitzEvent.html#ab7cfcf7d091d09163aac0f27c32b7320">DalitzEvent</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fa7de5abc45d0e8498d6c981e25f9c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const std::vector&lt;double&gt;&amp; IDalitzEvent::getVectorOfValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classDalitzEvent.html#accd4b98774834db37d41bdabaf04f2ae">DalitzEvent</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1516dc751b24c6f112dd6f95d518c88"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::vector&lt;double&gt;&amp; IDalitzEvent::getVectorOfValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classDalitzEvent.html#a7a2123a132cb166e6278d9f5505c87ef">DalitzEvent</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1ef27b2dc83890788fe4e86c3592163"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const std::vector&lt;double&gt;&amp; IDalitzEvent::getVectorOfWeights </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classDalitzEvent.html#aa40022e4db8865b1986ab6103eb23a21">DalitzEvent</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a217220762278ea831deedbd5e84cdb29"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::vector&lt;double&gt;&amp; IDalitzEvent::getVectorOfWeights </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classDalitzEvent.html#aab3a211ce130896e74382792e1bbee7b">DalitzEvent</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="af4154e8bbe6943d4d2addd6d31f33348"></a>
 <div class="memitem">
 <div class="memproto">
@@ -335,6 +485,32 @@ Protected Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="classMINT_1_1IWeightedEvent.html#a938600a9e1d358a8e89a87bf5789c12b">MINT::IWeightedEvent</a>.</p>
 
 <p>Implemented in <a class="el" href="classDalitzEvent.html#a00714b1fb5fcb87d9b1c4d42fa6c0646">DalitzEvent</a>, and <a class="el" href="classDalitzEventBase.html#ab18e5ac53dc25a15e51f789c2d73b8c1">DalitzEventBase</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa0d66c65c04c977a550d32413698421a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double IDalitzEvent::getWeightFromVector </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classDalitzEvent.html#ad03295a18f9f468a5f784b5ec6be931d">DalitzEvent</a>.</p>
 
 </div>
 </div>
@@ -773,6 +949,42 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2456a368ee7c68fdc185415d6b507b71"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IDalitzEvent::setValueInVector </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classDalitzEvent.html#a5f9cfe62352b61abe5ff4a61206f0566">DalitzEvent</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a777af1a2ad51021e1941dd8ff90451d5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -796,6 +1008,42 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="classDalitzEvent.html#a4756321fbcb419699517310200c1454b">DalitzEvent</a>, and <a class="el" href="classDalitzEventBase.html#ae79179748743bb79bb1dc4b71b56bf2c">DalitzEventBase</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af41cce132e148e0a5994fc663d1a77c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IDalitzEvent::setWeightInVector </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>weight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classDalitzEvent.html#ab74c24f40fb73557a4f4a1bd297016c9">DalitzEvent</a>.</p>
 
 </div>
 </div>
@@ -914,7 +1162,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="IDalitzEvent_8h_source.html">IDalitzEvent.h</a></li>
+<li>Mint/<a class="el" href="IDalitzEvent_8h_source.html">IDalitzEvent.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

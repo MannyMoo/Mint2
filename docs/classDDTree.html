@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -219,7 +220,13 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a77baeb727e3b309512547f073aac4fd1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classDDTree.html">DDTree</a>&lt; ValueType &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a></td></tr>
 <tr class="separator:a77baeb727e3b309512547f073aac4fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename ValueType&gt;<br />
+class DDTree&lt; ValueType &gt;</h3>
+
+
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00037">37</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5e9b450957b773a0694a1a5be1b9c06c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -243,6 +250,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00136">136</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;: <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>(0){};</div><div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5a6ebf3c447e4a83c54d7e0cc6035d0e"></a>
@@ -269,6 +279,11 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00144">144</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    : <a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a>(pdg_id)</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    , <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>(0){</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.clear();</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+<div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aaeca32124c8803d3553de62cf87c7806"></a>
@@ -295,6 +310,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00149">149</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;: <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>(parent){}; </div><div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a942c31e370b23ebec38d35204c9f02fe"></a>
@@ -331,6 +349,10 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00150">150</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    : <a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a>(val)</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    , <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>(parent){};</div><div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+<div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a86e3d8837c0fa8efe13f2fb83bf3d294"></a>
@@ -357,6 +379,10 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00189">189</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    :<a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>(0){</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    this-&gt;<a class="code" href="classDDTree.html#a05210acc512a91c02d0e859abfac1208">Copy</a>(other);</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a05210acc512a91c02d0e859abfac1208"><div class="ttname"><a href="classDDTree.html#a05210acc512a91c02d0e859abfac1208">DDTree::Copy</a></div><div class="ttdeci">void Copy(const DDTree&lt; COMPATIBLE_ITEM &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00179">DDTree.h:179</a></div></div>
+<div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab9f51effd568a2b651d025c4753efa6c"></a>
@@ -385,6 +411,10 @@ template&lt;typename COMPATIBLE_ITEM &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00195">195</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    : <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>(0){</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    this-&gt;<a class="code" href="classDDTree.html#a05210acc512a91c02d0e859abfac1208">Copy</a>(other);</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a05210acc512a91c02d0e859abfac1208"><div class="ttname"><a href="classDDTree.html#a05210acc512a91c02d0e859abfac1208">DDTree::Copy</a></div><div class="ttdeci">void Copy(const DDTree&lt; COMPATIBLE_ITEM &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00179">DDTree.h:179</a></div></div>
+<div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac8104c300cd926de0507a9883f15332b"></a>
@@ -410,6 +440,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00257">257</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                   {</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="classDDTree.html#a98ca8850abf1cf7b4e89938073f81163">disconnectAllDaughters</a>();</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a98ca8850abf1cf7b4e89938073f81163"><div class="ttname"><a href="classDDTree.html#a98ca8850abf1cf7b4e89938073f81163">DDTree::disconnectAllDaughters</a></div><div class="ttdeci">void disconnectAllDaughters()</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00060">DDTree.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -437,6 +470,11 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00211">211</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                             {</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt; DDTree&lt;ValueType&gt;</a> &gt; newDgtr(treePtr-&gt;<a class="code" href="classDDTree.html#aecb4a89f18866a0d6a14167ea2334811">Clone</a>(<span class="keyword">this</span>));</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.push_back(newDgtr);</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">//sortDaughters();</span></div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">return</span> newDgtr;</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classDDTree_html_aecb4a89f18866a0d6a14167ea2334811"><div class="ttname"><a href="classDDTree.html#aecb4a89f18866a0d6a14167ea2334811">DDTree::Clone</a></div><div class="ttdeci">MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; Clone(DDTree&lt; ValueType &gt; *parent=0) const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00174">DDTree.h:174</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00039">counted_ptr.h:39</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a963bdc6f8dd557edccdd3bb1e1fe1dfe"></a>
@@ -463,6 +501,11 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00217">217</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                                                      {</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt; DDTree&lt;ValueType&gt;</a> &gt; dgtrTree(<span class="keyword">new</span> <a class="code" href="classDDTree.html#a5e9b450957b773a0694a1a5be1b9c06c">DDTree</a>(pdg_id, <span class="keyword">this</span>));</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.push_back(dgtrTree);</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">//sortDaughters();</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">return</span> dgtrTree;</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00039">counted_ptr.h:39</a></div></div>
+<div class="ttc" id="classDDTree_html_a5e9b450957b773a0694a1a5be1b9c06c"><div class="ttname"><a href="classDDTree.html#a5e9b450957b773a0694a1a5be1b9c06c">DDTree::DDTree</a></div><div class="ttdeci">DDTree()</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00136">DDTree.h:136</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abb49703bdf68f7a478341f0939b2c682"></a>
@@ -499,6 +542,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00224">224</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                                               {</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(pdg_id1);</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="comment">//sortDaughters();</span></div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(pdg_id2);</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a2e13a54e40dce38258b66f50a15fe7c7"><div class="ttname"><a href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">DDTree::addDgtr</a></div><div class="ttdeci">MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; addDgtr(const DDTree&lt; ValueType &gt; *treePtr)</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00211">DDTree.h:211</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae2934373924662851cddc6b460918471"></a>
@@ -541,6 +587,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00229">229</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                       {</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(pdg_id1);</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(pdg_id2);</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(pdg_id3);</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a2e13a54e40dce38258b66f50a15fe7c7"><div class="ttname"><a href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">DDTree::addDgtr</a></div><div class="ttdeci">MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; addDgtr(const DDTree&lt; ValueType &gt; *treePtr)</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00211">DDTree.h:211</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa1a9637698f5daced46329c40ea3f9dc"></a>
@@ -589,6 +638,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00237">237</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                       {</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(pdg_id1);</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(pdg_id2);</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(pdg_id3);</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(pdg_id4);</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a2e13a54e40dce38258b66f50a15fe7c7"><div class="ttname"><a href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">DDTree::addDgtr</a></div><div class="ttdeci">MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; addDgtr(const DDTree&lt; ValueType &gt; *treePtr)</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00211">DDTree.h:211</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a06fda1709f1312ee929f492aeab7df10"></a>
@@ -625,6 +677,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00247">247</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                              {</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++){</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(pdg_id[i]);</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a2e13a54e40dce38258b66f50a15fe7c7"><div class="ttname"><a href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">DDTree::addDgtr</a></div><div class="ttdeci">MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; addDgtr(const DDTree&lt; ValueType &gt; *treePtr)</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00211">DDTree.h:211</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a807f23ddd17026b0dab5e082f1c97198"></a>
@@ -661,6 +716,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00252">252</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                                                        {</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++){</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      <a class="code" href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">addDgtr</a>(treePtr[i]);</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a2e13a54e40dce38258b66f50a15fe7c7"><div class="ttname"><a href="classDDTree.html#a2e13a54e40dce38258b66f50a15fe7c7">DDTree::addDgtr</a></div><div class="ttdeci">MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; addDgtr(const DDTree&lt; ValueType &gt; *treePtr)</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00211">DDTree.h:211</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aecb4a89f18866a0d6a14167ea2334811"></a>
@@ -687,6 +745,8 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00174">174</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                                            {</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> CloneVariableType&lt;ValueType&gt;(parent);</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a13b6e0594acab1b20baabaa921fa4253"></a>
@@ -715,6 +775,12 @@ template&lt;typename COMPATIBLE_TYPE &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00159">159</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                                              {</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">//CloneVariableType(counted_ptr&lt;DDTree&lt;COMPATIBLE_TYPE&gt; &gt; parent=0) const{ // BIG DEBUG</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    </div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt;DDTree&lt;COMPATIBLE_TYPE&gt;</a> &gt; </div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      top(<span class="keyword">new</span> <a class="code" href="classDDTree.html">DDTree&lt;COMPATIBLE_TYPE&gt;</a>(static_cast&lt;COMPATIBLE_TYPE&gt;(<a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a>)</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                      , parent)</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      );</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    </div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    top-&gt;setDgtrSize(<a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.size());</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i &lt; <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.size(); i++){</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      top-&gt;setDgtr(i, <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;<span class="keyword">template</span> CloneVariableType&lt;COMPATIBLE_TYPE&gt;(top.get()));</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> top;</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00039">counted_ptr.h:39</a></div></div>
+<div class="ttc" id="classDDTree_html"><div class="ttname"><a href="classDDTree.html">DDTree</a></div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00037">DDTree.h:37</a></div></div>
+<div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a05210acc512a91c02d0e859abfac1208"></a>
@@ -743,6 +809,13 @@ template&lt;typename COMPATIBLE_ITEM &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00179">179</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;           {</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a> = (ValueType) (other.<a class="code" href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">getVal</a>());</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.resize(other.<a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>());</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i &lt; other.<a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>(); i++){</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i] = other.<a class="code" href="classDDTree.html#a8d1e234efb54c8bcf19c2761c1808e74">getDgtrTreePtr</a>(i)-&gt;template CloneVariableType&lt;ValueType&gt;(<span class="keyword">this</span>);</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">return</span>;</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a8856aab8f6079c6fd5a704f7ac3c3bbd"><div class="ttname"><a href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">DDTree::nDgtr</a></div><div class="ttdeci">int nDgtr() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00096">DDTree.h:96</a></div></div>
+<div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classDDTree_html_a8d1e234efb54c8bcf19c2761c1808e74"><div class="ttname"><a href="classDDTree.html#a8d1e234efb54c8bcf19c2761c1808e74">DDTree::getDgtrTreePtr</a></div><div class="ttdeci">MINT::const_counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; getDgtrTreePtr(int i) const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00114">DDTree.h:114</a></div></div>
+<div class="ttc" id="classDDTree_html_acc9c359b50f11e2afe4f9c4906f6e3a8"><div class="ttname"><a href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">DDTree::getVal</a></div><div class="ttdeci">const ValueType &amp; getVal() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00102">DDTree.h:102</a></div></div>
+<div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a98ca8850abf1cf7b4e89938073f81163"></a>
@@ -768,6 +841,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00060">60</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                               {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.empty()) <span class="keywordflow">return</span>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.size(); i++){</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">if</span>(0!=<a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]) {</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;setParent(0);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Now using counted pointers - no need</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// to delete daughters, just &quot;disconnect&quot;</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">//daughters[i]-&gt;deleteAllDaughters();</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">//delete daughters[i]; // MINT::counted_ptr, no need to delete</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      }</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.clear();</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a52f26b54defc390d7477814440af1bf6"></a>
@@ -793,6 +869,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00293">293</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                                {</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    std::vector&lt;const ValueType*&gt; listOfStableDaughters;</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">finalState</a>(listOfStableDaughters);</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">return</span> listOfStableDaughters;</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a52f26b54defc390d7477814440af1bf6"><div class="ttname"><a href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">DDTree::finalState</a></div><div class="ttdeci">std::vector&lt; const ValueType * &gt; finalState() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00293">DDTree.h:293</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aea2bd335b03fe3075cd381d767727759"></a>
@@ -818,6 +897,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00298">298</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                    {</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    std::vector&lt;ValueType*&gt; listOfStableDaughters;</div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">finalState</a>(listOfStableDaughters);</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">return</span> listOfStableDaughters;</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a52f26b54defc390d7477814440af1bf6"><div class="ttname"><a href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">DDTree::finalState</a></div><div class="ttdeci">std::vector&lt; const ValueType * &gt; finalState() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00293">DDTree.h:293</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a18ef179f3b869c6025d43de6c8f52a1a"></a>
@@ -844,6 +926,11 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00316">316</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                                             {</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.empty()){</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      theList.push_back(&amp;<a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a>);</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>(); i++){</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;finalState(theList);</div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;      }</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a8856aab8f6079c6fd5a704f7ac3c3bbd"><div class="ttname"><a href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">DDTree::nDgtr</a></div><div class="ttdeci">int nDgtr() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00096">DDTree.h:96</a></div></div>
+<div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aee5d586f2c913df4966c9574938f299a"></a>
@@ -870,6 +957,11 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00325">325</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                                 {</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.empty()){</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;      theList.push_back(&amp;<a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a>);</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>(); i++){</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;finalState(theList);</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;      }</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a8856aab8f6079c6fd5a704f7ac3c3bbd"><div class="ttname"><a href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">DDTree::nDgtr</a></div><div class="ttdeci">int nDgtr() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00096">DDTree.h:96</a></div></div>
+<div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae7f67811a9a5c38c5673e3a51d421c9c"></a>
@@ -898,6 +990,9 @@ template&lt;typename COMPARABLE_CLASS &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00337">337</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                                                                     {</div><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    std::vector&lt;ValueType*&gt; stableDaughters = <a class="code" href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">finalState</a>();</div><div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    std::vector&lt;ValueType*&gt; sorted;</div><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">if</span>(stableDaughters.size() != pattern.size()){</div><div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;      <span class="keywordflow">return</span> sorted;</div><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    }</div><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;pattern.size(); i++){</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;      <span class="keywordflow">for</span>(<span class="keyword">typename</span> std::vector&lt;ValueType*&gt;::iterator jt = stableDaughters.begin();</div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;      jt != stableDaughters.end();</div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;      jt++){</div><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">if</span>( *(*jt) == pattern[i] ){</div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;      sorted.push_back(*jt);</div><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;      stableDaughters.erase(jt);</div><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;      <span class="keywordflow">break</span>;</div><div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    }</div><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      }</div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">return</span> sorted;</div><div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a52f26b54defc390d7477814440af1bf6"><div class="ttname"><a href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">DDTree::finalState</a></div><div class="ttdeci">std::vector&lt; const ValueType * &gt; finalState() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00293">DDTree.h:293</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae4a624ba96b9293665551acde3b1a3a3"></a>
@@ -923,6 +1018,10 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00304">304</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                                                                     {</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt;std::vector&lt;const ValueType*&gt;</a> &gt;</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      listOfStableDaughtersPtr( <span class="keyword">new</span> std::vector&lt;const ValueType*&gt; );</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <a class="code" href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">finalState</a>(*listOfStableDaughtersPtr);</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">return</span> listOfStableDaughtersPtr;</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  }</div><div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00039">counted_ptr.h:39</a></div></div>
+<div class="ttc" id="classDDTree_html_a52f26b54defc390d7477814440af1bf6"><div class="ttname"><a href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">DDTree::finalState</a></div><div class="ttdeci">std::vector&lt; const ValueType * &gt; finalState() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00293">DDTree.h:293</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac1237626db5121317c1a6419c444abb5"></a>
@@ -948,6 +1047,10 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00310">310</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                                         {</div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt;std::vector&lt;ValueType*&gt;</a> &gt;</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      listOfStableDaughtersPtr( <span class="keyword">new</span> std::vector&lt;ValueType*&gt; );</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <a class="code" href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">finalState</a>(*listOfStableDaughtersPtr);</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">return</span> listOfStableDaughtersPtr;</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  }</div><div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00039">counted_ptr.h:39</a></div></div>
+<div class="ttc" id="classDDTree_html_a52f26b54defc390d7477814440af1bf6"><div class="ttname"><a href="classDDTree.html#a52f26b54defc390d7477814440af1bf6">DDTree::finalState</a></div><div class="ttdeci">std::vector&lt; const ValueType * &gt; finalState() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00293">DDTree.h:293</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8d1e234efb54c8bcf19c2761c1808e74"></a>
@@ -974,6 +1077,11 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00114">114</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                                                       {</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span>(i &lt; 0 || i &gt;= <a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>()){</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1const__counted__ptr.html">MINT::const_counted_ptr&lt; DDTree&lt;ValueType&gt;</a> &gt;(0);</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i];</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a8856aab8f6079c6fd5a704f7ac3c3bbd"><div class="ttname"><a href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">DDTree::nDgtr</a></div><div class="ttdeci">int nDgtr() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00096">DDTree.h:96</a></div></div>
+<div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classMINT_1_1const__counted__ptr_html"><div class="ttname"><a href="classMINT_1_1const__counted__ptr.html">MINT::const_counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00150">counted_ptr.h:150</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a70c01e057b7a53379ce689245de7d38b"></a>
@@ -1000,6 +1108,11 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00120">120</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                           {</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span>(i &lt; 0 || i &gt;= <a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>()){</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1counted__ptr.html">MINT::counted_ptr&lt;DDTree&lt;ValueType&gt;</a> &gt;(0);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i];</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a8856aab8f6079c6fd5a704f7ac3c3bbd"><div class="ttname"><a href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">DDTree::nDgtr</a></div><div class="ttdeci">int nDgtr() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00096">DDTree.h:96</a></div></div>
+<div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classMINT_1_1counted__ptr_html"><div class="ttname"><a href="classMINT_1_1counted__ptr.html">MINT::counted_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="counted__ptr_8h_source.html#l00039">counted_ptr.h:39</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a779bb4922babe0346bf9fdf7b7d76e3a"></a>
@@ -1026,6 +1139,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00108">108</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                          {</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;getVal();</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae2f05124062d1750125bfded44f72848"></a>
@@ -1052,6 +1168,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00111">111</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                              {</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;getVal();</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abcf145fbab591e54baad93b8dd6aafb1"></a>
@@ -1077,6 +1196,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00261">261</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                            {</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>;</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a833df83da6592f55e39bc96cea29611a"></a>
@@ -1102,6 +1224,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00271">271</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                           { </div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">// i.e. parent&#39;s daughters,except yourself</span></div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    std::vector&lt;MINT::const_counted_ptr&lt; DDTree&lt;ValueType&gt; &gt; &gt; sistersTree;</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span>(0 == <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>) <span class="keywordflow">return</span> sistersTree;</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    </div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i &lt; <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>-&gt;nDgtr(); i++){</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      <span class="keywordflow">if</span>(<a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>-&gt;daughters[i].get() != <span class="keyword">this</span>){</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    sistersTree.push_back(<a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>-&gt;daughters[i]);</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      }</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    }</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">return</span> sistersTree;</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acc9c359b50f11e2afe4f9c4906f6e3a8"></a>
@@ -1127,6 +1252,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00102">102</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                 {</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a>;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a126db221fdf523b823de303f607cfc74"></a>
@@ -1152,6 +1280,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00105">105</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                     {</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a>;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a51ed699fef7d4d436f3e50825399676c"></a>
@@ -1177,6 +1308,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00154">154</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                        {</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">return</span> ! (0 == <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>);</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a701acbdcec6e868e8f30d9ca2c634ae0"></a>
@@ -1202,6 +1336,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00093">93</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                           {</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>() == 0;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a8856aab8f6079c6fd5a704f7ac3c3bbd"><div class="ttname"><a href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">DDTree::nDgtr</a></div><div class="ttdeci">int nDgtr() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00096">DDTree.h:96</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8856aab8f6079c6fd5a704f7ac3c3bbd"></a>
@@ -1227,6 +1364,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00096">96</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                   {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.size();</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2075b1c9c73c7d47eb580500f736fa4e"></a>
@@ -1252,6 +1392,10 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00283">283</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                          {</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">int</span> nMax=0;</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">if</span>(! <a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>()) <span class="keywordflow">return</span> 1;</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>(); i++){</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      <span class="keywordtype">int</span> n = <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;nGenerations();</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      <span class="keywordflow">if</span>(n &gt; nMax) nMax = n;</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">return</span> nMax + 1;</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a8856aab8f6079c6fd5a704f7ac3c3bbd"><div class="ttname"><a href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">DDTree::nDgtr</a></div><div class="ttdeci">int nDgtr() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00096">DDTree.h:96</a></div></div>
+<div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a569f5544833f01c4ea2c2760fae246ed"></a>
@@ -1277,6 +1421,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00265">265</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                      {</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">if</span>(0 == <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>) <span class="keywordflow">return</span> 0;    </div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>-&gt;nDgtr() -1;</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a54e173e910fbed5fe99700a7284bcfb2"></a>
@@ -1313,6 +1460,11 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00375">375</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                                 {</div><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    seam &lt;&lt; <a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a>;</div><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>() &lt;= 0) <span class="keywordflow">return</span>;</div><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">if</span>(generation &gt; 0) seam &lt;&lt; <span class="stringliteral">&quot;(&quot;</span>;</div><div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    seam &lt;&lt; <span class="stringliteral">&quot;-&gt;&quot;</span>;</div><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>(); i++){</div><div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;      <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;oneLiner(seam, generation + 1);</div><div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;      <span class="keywordflow">if</span>(i &lt; <a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>()-1) seam &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    }</div><div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordflow">if</span>(generation &gt; 0) seam &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a8856aab8f6079c6fd5a704f7ac3c3bbd"><div class="ttname"><a href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">DDTree::nDgtr</a></div><div class="ttdeci">int nDgtr() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00096">DDTree.h:96</a></div></div>
+<div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6c1cc5ecb1300a243b4a60ca5d98d917"></a>
@@ -1339,6 +1491,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00387">387</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                      {</div><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    std::stringstream seam;</div><div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <a class="code" href="classDDTree.html#a48314662f99a1b8f66562902961c3dd6">oneLiner</a>(seam);</div><div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    seam &gt;&gt; ring;</div><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a48314662f99a1b8f66562902961c3dd6"><div class="ttname"><a href="classDDTree.html#a48314662f99a1b8f66562902961c3dd6">DDTree::oneLiner</a></div><div class="ttdeci">std::string oneLiner() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00392">DDTree.h:392</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a48314662f99a1b8f66562902961c3dd6"></a>
@@ -1364,6 +1519,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00392">392</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                            {</div><div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    std::string ring;</div><div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <a class="code" href="classDDTree.html#a48314662f99a1b8f66562902961c3dd6">oneLiner</a>(ring);</div><div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keywordflow">return</span> ring;</div><div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a48314662f99a1b8f66562902961c3dd6"><div class="ttname"><a href="classDDTree.html#a48314662f99a1b8f66562902961c3dd6">DDTree::oneLiner</a></div><div class="ttdeci">std::string oneLiner() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00392">DDTree.h:392</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af5ab760c52567021938374f68d80d163"></a>
@@ -1390,6 +1548,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00199">199</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                                             {</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    this-&gt;<a class="code" href="classDDTree.html#a05210acc512a91c02d0e859abfac1208">Copy</a>(other);</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a05210acc512a91c02d0e859abfac1208"><div class="ttname"><a href="classDDTree.html#a05210acc512a91c02d0e859abfac1208">DDTree::Copy</a></div><div class="ttdeci">void Copy(const DDTree&lt; COMPATIBLE_ITEM &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00179">DDTree.h:179</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a26f2d9637ebb89253758eb401d0972c0"></a>
@@ -1418,6 +1579,9 @@ template&lt;typename COMPATIBLE_ITEM &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00205">205</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                                                                   {</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    this-&gt;<a class="code" href="classDDTree.html#a05210acc512a91c02d0e859abfac1208">Copy</a>(other);</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a05210acc512a91c02d0e859abfac1208"><div class="ttname"><a href="classDDTree.html#a05210acc512a91c02d0e859abfac1208">DDTree::Copy</a></div><div class="ttdeci">void Copy(const DDTree&lt; COMPATIBLE_ITEM &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00179">DDTree.h:179</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1acf549b1f8e4d5d04df8a51090afc01"></a>
@@ -1454,6 +1618,11 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00360">360</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                {</div><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div><div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    os &lt;&lt; <a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a> &lt;&lt; std::endl;</div><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>(); i++){</div><div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;      <span class="keywordflow">if</span>(i==<a class="code" href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">nDgtr</a>()-1){</div><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    os &lt;&lt; indentString + <span class="stringliteral">&quot; &#39;--&quot;</span>;</div><div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;print(os, indentString + <span class="stringliteral">&quot;    &quot;</span>);</div><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;      } <span class="keywordflow">else</span>{ </div><div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    os &lt;&lt; indentString + <span class="stringliteral">&quot; |--&quot;</span>;</div><div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;print(os, indentString + <span class="stringliteral">&quot; |  &quot;</span>);</div><div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;      }</div><div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    }</div><div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a8856aab8f6079c6fd5a704f7ac3c3bbd"><div class="ttname"><a href="classDDTree.html#a8856aab8f6079c6fd5a704f7ac3c3bbd">DDTree::nDgtr</a></div><div class="ttdeci">int nDgtr() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00096">DDTree.h:96</a></div></div>
+<div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+<div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1618933d5381e1ea2cb14f987a5dc945"></a>
@@ -1490,6 +1659,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00131">131</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                                                             {</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span>(i &gt;= <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.size()) <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.resize(i+0);</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i] = tr;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acc6d34bfc8d312f63a3094bd32e8b329"></a>
@@ -1516,6 +1688,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00127">127</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                        {</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.resize(i);</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.size();</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1910f44e37635001b111194308d5e5ff"></a>
@@ -1542,6 +1717,9 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00057">57</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{<a class="code" href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">_parentPtr</a>=parent;}</div><div class="ttc" id="classDDTree_html_a77baeb727e3b309512547f073aac4fd1"><div class="ttname"><a href="classDDTree.html#a77baeb727e3b309512547f073aac4fd1">DDTree::_parentPtr</a></div><div class="ttdeci">const DDTree&lt; ValueType &gt; * _parentPtr</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00043">DDTree.h:43</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a075a3762f121f6078219650f6c55555e"></a>
@@ -1568,6 +1746,10 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00099">99</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                 {</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">_thisVal</a> = <a class="code" href="CLHEPSystemOfUnits_8h.html#a9990e99e87d163c58817550b21d35a83">m</a>;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div><div class="ttc" id="CLHEPSystemOfUnits_8h_html_a9990e99e87d163c58817550b21d35a83"><div class="ttname"><a href="CLHEPSystemOfUnits_8h.html#a9990e99e87d163c58817550b21d35a83">m</a></div><div class="ttdeci">static const double m</div><div class="ttdef"><b>Definition:</b> <a href="CLHEPSystemOfUnits_8h_source.html#l00086">CLHEPSystemOfUnits.h:86</a></div></div>
+<div class="ttc" id="classDDTree_html_a4bdcb735e56d07d834eeadfb0f53a5db"><div class="ttname"><a href="classDDTree.html#a4bdcb735e56d07d834eeadfb0f53a5db">DDTree::_thisVal</a></div><div class="ttdeci">ValueType _thisVal</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00041">DDTree.h:41</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af8d0639e761fd929a676c502a3ea7a4c"></a>
@@ -1595,6 +1777,9 @@ template&lt;typename SORTERTYPE &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00082">82</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                {</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    sortDaughtersBy&lt;SORTERTYPE&gt;();</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.size(); i++){</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>[i]-&gt;template sortDaughtersBy&lt;SORTERTYPE&gt;();</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0841f455df7f508222c912177ca959e7"></a>
@@ -1620,6 +1805,8 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00089">89</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                      {</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> sortDaughtersBy&lt;lessByPointedTo&lt; MINT::counted_ptr&lt;DDTree&lt;ValueType&gt; &gt; &gt; &gt;();</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4f2ce49f4c1f1ea823626a508f37a1f9"></a>
@@ -1647,6 +1834,9 @@ template&lt;typename SORTERTYPE &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00075">75</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                      {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    SORTERTYPE sorter;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    stable_sort(<a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.begin(), <a class="code" href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">daughters</a>.end(), sorter);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">//    lessByPointedTo&lt;ValueType&gt; sorter;</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//    daughters.sort(sorter);</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div><div class="ttc" id="classDDTree_html_a0bdf88739ce72775f8b25ed7764c350f"><div class="ttname"><a href="classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f">DDTree::daughters</a></div><div class="ttdeci">std::vector&lt; MINT::counted_ptr&lt; DDTree&lt; ValueType &gt; &gt; &gt; daughters</div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00040">DDTree.h:40</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1670,6 +1860,8 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00043">43</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4bdcb735e56d07d834eeadfb0f53a5db"></a>
@@ -1691,6 +1883,8 @@ template&lt;typename ValueType&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00041">41</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
 
 </div>
 </div>
@@ -1714,10 +1908,12 @@ template&lt;typename ValueType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DDTree_8h_source.html#l00040">40</a> of file <a class="el" href="DDTree_8h_source.html">DDTree.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="DDTree_8h_source.html">DDTree.h</a></li>
+<li>Mint/<a class="el" href="DDTree_8h_source.html">DDTree.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

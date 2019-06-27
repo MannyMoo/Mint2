@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -116,7 +117,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aff49e7c2acfe10272291eb6c8647a043"><td class="memItemLeft" align="right" valign="top">TRandom *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTGenPhaseSpaceWithRnd.html#aff49e7c2acfe10272291eb6c8647a043">_rnd</a></td></tr>
 <tr class="separator:aff49e7c2acfe10272291eb6c8647a043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html#l00007">7</a> of file <a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html">TGenPhaseSpaceWithRnd.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7cd17485aed29cc6b9d5fd72c8078ade"></a>
 <div class="memitem">
 <div class="memproto">
@@ -139,6 +143,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html#l00010">10</a> of file <a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html">TGenPhaseSpaceWithRnd.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;: <a class="code" href="classTGenPhaseSpaceWithRnd.html#aff49e7c2acfe10272291eb6c8647a043">_rnd</a>(rnd){}</div><div class="ttc" id="classTGenPhaseSpaceWithRnd_html_aff49e7c2acfe10272291eb6c8647a043"><div class="ttname"><a href="classTGenPhaseSpaceWithRnd.html#aff49e7c2acfe10272291eb6c8647a043">TGenPhaseSpaceWithRnd::_rnd</a></div><div class="ttdeci">TRandom * _rnd</div><div class="ttdef"><b>Definition:</b> <a href="TGenPhaseSpaceWithRnd_8h_source.html#l00008">TGenPhaseSpaceWithRnd.h:8</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -163,6 +170,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html#l00012">12</a> of file <a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html">TGenPhaseSpaceWithRnd.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                     {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    TRandom* oldGRandom = gRandom;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    gRandom = <a class="code" href="classTGenPhaseSpaceWithRnd.html#aff49e7c2acfe10272291eb6c8647a043">_rnd</a>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Double_t returnVal = TGenPhaseSpace::Generate();</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    gRandom = oldGRandom;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> returnVal;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  }</div><div class="ttc" id="classTGenPhaseSpaceWithRnd_html_aff49e7c2acfe10272291eb6c8647a043"><div class="ttname"><a href="classTGenPhaseSpaceWithRnd.html#aff49e7c2acfe10272291eb6c8647a043">TGenPhaseSpaceWithRnd::_rnd</a></div><div class="ttdeci">TRandom * _rnd</div><div class="ttdef"><b>Definition:</b> <a href="TGenPhaseSpaceWithRnd_8h_source.html#l00008">TGenPhaseSpaceWithRnd.h:8</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8d4eed3de1cbfe700d667b272a32c2ad"></a>
@@ -187,6 +197,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html#l00011">11</a> of file <a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html">TGenPhaseSpaceWithRnd.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{<a class="code" href="classTGenPhaseSpaceWithRnd.html#aff49e7c2acfe10272291eb6c8647a043">_rnd</a> = rnd;}</div><div class="ttc" id="classTGenPhaseSpaceWithRnd_html_aff49e7c2acfe10272291eb6c8647a043"><div class="ttname"><a href="classTGenPhaseSpaceWithRnd.html#aff49e7c2acfe10272291eb6c8647a043">TGenPhaseSpaceWithRnd::_rnd</a></div><div class="ttdeci">TRandom * _rnd</div><div class="ttdef"><b>Definition:</b> <a href="TGenPhaseSpaceWithRnd_8h_source.html#l00008">TGenPhaseSpaceWithRnd.h:8</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -208,10 +221,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html#l00008">8</a> of file <a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html">TGenPhaseSpaceWithRnd.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html">TGenPhaseSpaceWithRnd.h</a></li>
+<li>Mint/<a class="el" href="TGenPhaseSpaceWithRnd_8h_source.html">TGenPhaseSpaceWithRnd.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -98,7 +99,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a862d0f0958587b3ebb3b88b5a976d373"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmoreByMass.html#a862d0f0958587b3ebb3b88b5a976d373">operator()</a> (<a class="el" href="classMINT_1_1const__counted__ptr.html">MINT::const_counted_ptr</a>&lt; <a class="el" href="DecayTree_8h.html#a42fe819d4831475c437d33b7cd27695a">DecayTree</a> &gt; a, <a class="el" href="classMINT_1_1const__counted__ptr.html">MINT::const_counted_ptr</a>&lt; <a class="el" href="DecayTree_8h.html#a42fe819d4831475c437d33b7cd27695a">DecayTree</a> &gt; b) const </td></tr>
 <tr class="separator:a862d0f0958587b3ebb3b88b5a976d373"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="DecayTreeComparisons_8h_source.html#l00026">26</a> of file <a class="el" href="DecayTreeComparisons_8h_source.html">DecayTreeComparisons.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a862d0f0958587b3ebb3b88b5a976d373"></a>
 <div class="memitem">
 <div class="memproto">
@@ -123,11 +127,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="DecayTreeComparisons_8cpp_source.html#l00058">58</a> of file <a class="el" href="DecayTreeComparisons_8cpp_source.html">DecayTreeComparisons.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                                                               {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// first handle bad pointers</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0==b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">if</span>(0 == a &amp;&amp; 0!=b) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span>(0 !=a  &amp;&amp; 0==b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  </div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">return</span> a-&gt;<a class="code" href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">getVal</a>().<a class="code" href="classDecayTreeItem.html#a13f5918d41d6dcb28bb8c74683187202">mass</a>() &gt; b-&gt;<a class="code" href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">getVal</a>().<a class="code" href="classDecayTreeItem.html#a13f5918d41d6dcb28bb8c74683187202">mass</a>();</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div><div class="ttc" id="classDDTree_html_acc9c359b50f11e2afe4f9c4906f6e3a8"><div class="ttname"><a href="classDDTree.html#acc9c359b50f11e2afe4f9c4906f6e3a8">DDTree::getVal</a></div><div class="ttdeci">const ValueType &amp; getVal() const </div><div class="ttdef"><b>Definition:</b> <a href="DDTree_8h_source.html#l00102">DDTree.h:102</a></div></div>
+<div class="ttc" id="classDecayTreeItem_html_a13f5918d41d6dcb28bb8c74683187202"><div class="ttname"><a href="classDecayTreeItem.html#a13f5918d41d6dcb28bb8c74683187202">DecayTreeItem::mass</a></div><div class="ttdeci">double mass() const </div><div class="ttdef"><b>Definition:</b> <a href="DecayTreeItem_8cpp_source.html#l00047">DecayTreeItem.cpp:47</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="DecayTreeComparisons_8h_source.html">DecayTreeComparisons.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mojito/DecayTrees/<a class="el" href="DecayTreeComparisons_8cpp.html">DecayTreeComparisons.cpp</a></li>
+<li>Mint/<a class="el" href="DecayTreeComparisons_8h_source.html">DecayTreeComparisons.h</a></li>
+<li>src/Mojito/DecayTrees/<a class="el" href="DecayTreeComparisons_8cpp_source.html">DecayTreeComparisons.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

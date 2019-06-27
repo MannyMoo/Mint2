@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['genlist',['GenList',['../classTimeDependentGenerator.html#a4fa66d1ebf652473404a69103d75278e',1,'TimeDependentGenerator']]],
-  ['genmap',['GenMap',['../classTimeDependentGenerator.html#a0448aa22e1d9975cc641fa0c48b2aa9c',1,'TimeDependentGenerator']]]
+  ['dalitzcoordkey',['DalitzCoordKey',['../DalitzCoordinate_8h.html#a73266dac7b6a2d5d22c617278ccd16b0',1,'DalitzCoordinate.h']]],
+  ['decaytree',['DecayTree',['../DecayTree_8h.html#a42fe819d4831475c437d33b7cd27695a',1,'DecayTree.h']]]
 ];

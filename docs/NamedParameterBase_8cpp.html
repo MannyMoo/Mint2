@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>MINT2: /nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mint/NamedParameter/NamedParameterBase.cpp File Reference</title>
+<title>MINT2: src/Mint/NamedParameter/NamedParameterBase.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -94,7 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &quot;<a class="el" href="NamedParameterBase_8h_source.html">Mint/NamedParameterBase.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ParsedParameterFileList_8h_source.html">Mint/ParsedParameterFileList.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ParsedParameterFile_8h_source.html">Mint/ParsedParameterFile.h</a>&quot;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="NamedParameterBase_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa05539050922b11a7f68024f41dfc290"><td class="memItemLeft" align="right" valign="top">std::stringstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NamedParameterBase_8cpp.html#aa05539050922b11a7f68024f41dfc290">operator&gt;&gt;</a> (std::stringstream &amp;is, <a class="el" href="classMINT_1_1NamedParameterBase.html">MINT::NamedParameterBase</a> &amp;npb)</td></tr>
@@ -125,6 +128,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="NamedParameterBase_8cpp_source.html#l00164">164</a> of file <a class="el" href="NamedParameterBase_8cpp_source.html">NamedParameterBase.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                                {</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  std::string str;</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  is &gt;&gt; str;</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  npb.<a class="code" href="classMINT_1_1NamedParameterBase.html#ab0d3ec2c2b6633d41e6b138057cf9167">setFromInitStringNoName</a>(str);</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordflow">return</span> is;</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div><div class="ttc" id="classMINT_1_1NamedParameterBase_html_ab0d3ec2c2b6633d41e6b138057cf9167"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#ab0d3ec2c2b6633d41e6b138057cf9167">MINT::NamedParameterBase::setFromInitStringNoName</a></div><div class="ttdeci">bool setFromInitStringNoName(const std::string &amp;str_in)</div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8cpp_source.html#l00158">NamedParameterBase.cpp:158</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

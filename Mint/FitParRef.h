@@ -24,6 +24,7 @@ namespace MINT{
   public:
     FitParRef(const FitParameter& fipa, IFitParRegister* daddyPtr=0);
     FitParRef(const FitParRef& other, IFitParRegister* newDaddyPtr=0);
+	
 
     virtual bool changedSinceLastCall() const{
       return ( ((double) fp()) != _lastValue);

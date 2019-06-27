@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -327,7 +328,10 @@ Additional Inherited Members</h2></td></tr>
  }</td></tr>
 <tr class="separator:a759e10b8f4a501bb68a0b155fc3be478 inherit pub_types_classMINT_1_1FitComplex"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00022">22</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af79ef48ad0e3d63bdbd86d98efd84f6a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -376,6 +380,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00022">22</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  : <a class="code" href="classMINT_1_1FitComplex.html#af3cd2d3d9495f20a3caaa84e19abab6e">FitComplex</a>(daddy)</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  , <a class="code" href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">_real</a>(<a class="code" href="classMINT_1_1FitComplexCart.html#acc5114e871a6fc9a832f0e6a1bd7610f">makeRealName</a>(varName), fname, pset, fow, vb)</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  , <a class="code" href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">_imag</a>(<a class="code" href="classMINT_1_1FitComplexCart.html#a7feb1631a3f0178617d5a68671aad582">makeImagName</a>(varName), fname, pset, fow, vb)</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// cout &lt;&lt; &quot;pset pointer in FitComplexCart &quot; &lt;&lt; pset &lt;&lt; endl;</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_a7feb1631a3f0178617d5a68671aad582"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a7feb1631a3f0178617d5a68671aad582">MINT::FitComplexCart::makeImagName</a></div><div class="ttdeci">static std::string makeImagName(const std::string &amp;varName)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8cpp_source.html#l00018">FitComplexCart.cpp:18</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_acc5114e871a6fc9a832f0e6a1bd7610f"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#acc5114e871a6fc9a832f0e6a1bd7610f">MINT::FitComplexCart::makeRealName</a></div><div class="ttdeci">static std::string makeRealName(const std::string &amp;varName)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8cpp_source.html#l00015">FitComplexCart.cpp:15</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_afb7b1be7161ae4a01cac649ea0046a83"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">MINT::FitComplexCart::_imag</a></div><div class="ttdeci">FitParameter _imag</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_a602e1013426a6bc2eb2dafe01148eba0"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">MINT::FitComplexCart::_real</a></div><div class="ttdeci">FitParameter _real</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplex_html_af3cd2d3d9495f20a3caaa84e19abab6e"><div class="ttname"><a href="classMINT_1_1FitComplex.html#af3cd2d3d9495f20a3caaa84e19abab6e">MINT::FitComplex::FitComplex</a></div><div class="ttdeci">FitComplex(IFitParRegister *daddy=0)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplex_8cpp_source.html#l00066">FitComplex.cpp:66</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a24aad77e1495e29ebbd2611ca7f96e51"></a>
@@ -420,6 +431,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00035">35</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  : <a class="code" href="classMINT_1_1FitComplex.html#af3cd2d3d9495f20a3caaa84e19abab6e">FitComplex</a>(daddy)</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  , <a class="code" href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">_real</a>(<a class="code" href="classMINT_1_1FitComplexCart.html#acc5114e871a6fc9a832f0e6a1bd7610f">makeRealName</a>(varName), pset, fow, vb)</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  , <a class="code" href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">_imag</a>(<a class="code" href="classMINT_1_1FitComplexCart.html#a7feb1631a3f0178617d5a68671aad582">makeImagName</a>(varName), pset, fow, vb)</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_a7feb1631a3f0178617d5a68671aad582"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a7feb1631a3f0178617d5a68671aad582">MINT::FitComplexCart::makeImagName</a></div><div class="ttdeci">static std::string makeImagName(const std::string &amp;varName)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8cpp_source.html#l00018">FitComplexCart.cpp:18</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_acc5114e871a6fc9a832f0e6a1bd7610f"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#acc5114e871a6fc9a832f0e6a1bd7610f">MINT::FitComplexCart::makeRealName</a></div><div class="ttdeci">static std::string makeRealName(const std::string &amp;varName)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8cpp_source.html#l00015">FitComplexCart.cpp:15</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_afb7b1be7161ae4a01cac649ea0046a83"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">MINT::FitComplexCart::_imag</a></div><div class="ttdeci">FitParameter _imag</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_a602e1013426a6bc2eb2dafe01148eba0"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">MINT::FitComplexCart::_real</a></div><div class="ttdeci">FitParameter _real</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplex_html_af3cd2d3d9495f20a3caaa84e19abab6e"><div class="ttname"><a href="classMINT_1_1FitComplex.html#af3cd2d3d9495f20a3caaa84e19abab6e">MINT::FitComplex::FitComplex</a></div><div class="ttdeci">FitComplex(IFitParRegister *daddy=0)</div><div class="ttdef"><b>Definition:</b> <a href="FitComplex_8cpp_source.html#l00066">FitComplex.cpp:66</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a73723661e4e82502ea8dfa61ba6a6074"></a>
@@ -443,6 +461,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00047">47</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                               {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -467,6 +487,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00068">68</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">real</a>().<a class="code" href="classMINT_1_1FitParameter.html#ac045eb16b0c80e0e3d5c78f20fb26a1d">defaultInit</a>();</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">imag</a>().<a class="code" href="classMINT_1_1FitParameter.html#ac045eb16b0c80e0e3d5c78f20fb26a1d">defaultInit</a>();</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_ad72a190a8395b582ce72be27e9cd7cdc"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">MINT::FitComplexCart::imag</a></div><div class="ttdeci">const FitParameter &amp; imag() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00039">FitComplexCart.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitParameter_html_ac045eb16b0c80e0e3d5c78f20fb26a1d"><div class="ttname"><a href="classMINT_1_1FitParameter.html#ac045eb16b0c80e0e3d5c78f20fb26a1d">MINT::FitParameter::defaultInit</a></div><div class="ttdeci">void defaultInit()</div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00334">FitParameter.cpp:334</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_a92e6b7b2cde9403b725d53c896c99dd5"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">MINT::FitComplexCart::real</a></div><div class="ttdeci">const FitParameter &amp; real() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00038">FitComplexCart.h:38</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a61f698e0a502e15711f4f8921d6573c8"></a>
@@ -515,6 +540,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#a64dc8fdd60fc888c90c733368286a586">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00057">57</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                              {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">return</span> complex&lt;double&gt;((double)<a class="code" href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">real</a>(), (double) <a class="code" href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">imag</a>() );</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_ad72a190a8395b582ce72be27e9cd7cdc"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">MINT::FitComplexCart::imag</a></div><div class="ttdeci">const FitParameter &amp; imag() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00039">FitComplexCart.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_a92e6b7b2cde9403b725d53c896c99dd5"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">MINT::FitComplexCart::real</a></div><div class="ttdeci">const FitParameter &amp; real() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00038">FitComplexCart.h:38</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5fcd5d250d1177cdfbed4f501eab82cb"></a>
@@ -540,6 +569,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#af5d2e3c8ff616c214e900073726b8a7d">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00060">60</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                  {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">return</span> complex&lt;double&gt;( <a class="code" href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">real</a>().<a class="code" href="classMINT_1_1FitParameter.html#a59e557722f17f96b490d3fc99d07b5fb">meanInit</a>(), <a class="code" href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">imag</a>().<a class="code" href="classMINT_1_1FitParameter.html#a59e557722f17f96b490d3fc99d07b5fb">meanInit</a>());</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitParameter_html_a59e557722f17f96b490d3fc99d07b5fb"><div class="ttname"><a href="classMINT_1_1FitParameter.html#a59e557722f17f96b490d3fc99d07b5fb">MINT::FitParameter::meanInit</a></div><div class="ttdeci">double meanInit() const </div><div class="ttdef"><b>Definition:</b> <a href="FitParameter_8cpp_source.html#l00243">FitParameter.cpp:243</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_ad72a190a8395b582ce72be27e9cd7cdc"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">MINT::FitComplexCart::imag</a></div><div class="ttdeci">const FitParameter &amp; imag() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00039">FitComplexCart.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_a92e6b7b2cde9403b725d53c896c99dd5"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">MINT::FitComplexCart::real</a></div><div class="ttdeci">const FitParameter &amp; real() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00038">FitComplexCart.h:38</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a767553923446f2f21fa082f8083fba28"></a>
@@ -563,6 +597,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00064">64</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                        {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">real</a>().<a class="code" href="classMINT_1_1NamedParameterBase.html#a252a04b5aa1f771c3f9bc4bb9bbd74cb">gotInitialised</a>() &amp;&amp; <a class="code" href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">imag</a>().<a class="code" href="classMINT_1_1NamedParameterBase.html#a252a04b5aa1f771c3f9bc4bb9bbd74cb">gotInitialised</a>();</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div><div class="ttc" id="classMINT_1_1NamedParameterBase_html_a252a04b5aa1f771c3f9bc4bb9bbd74cb"><div class="ttname"><a href="classMINT_1_1NamedParameterBase.html#a252a04b5aa1f771c3f9bc4bb9bbd74cb">MINT::NamedParameterBase::gotInitialised</a></div><div class="ttdeci">bool gotInitialised() const </div><div class="ttdef"><b>Definition:</b> <a href="NamedParameterBase_8h_source.html#l00072">NamedParameterBase.h:72</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_ad72a190a8395b582ce72be27e9cd7cdc"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">MINT::FitComplexCart::imag</a></div><div class="ttdeci">const FitParameter &amp; imag() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00039">FitComplexCart.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_a92e6b7b2cde9403b725d53c896c99dd5"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">MINT::FitComplexCart::real</a></div><div class="ttdeci">const FitParameter &amp; real() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00038">FitComplexCart.h:38</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad72a190a8395b582ce72be27e9cd7cdc"></a>
@@ -586,6 +625,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00039">39</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">_imag</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_afb7b1be7161ae4a01cac649ea0046a83"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">MINT::FitComplexCart::_imag</a></div><div class="ttdeci">FitParameter _imag</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a072e91e3ee9d122bfb4cf439a4dc6ec7"></a>
@@ -609,6 +651,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00042">42</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">_imag</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_afb7b1be7161ae4a01cac649ea0046a83"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">MINT::FitComplexCart::_imag</a></div><div class="ttdeci">FitParameter _imag</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aac5ee2e4b7d08741479e46e2192f6f0a"></a>
@@ -634,6 +679,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classMINT_1_1FitComplex.html#a72fec2ae6be33d14462ffa2e9665be2b">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00081">81</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                            {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> (0.0 == <a class="code" href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">real</a>() &amp;&amp; 0.0 == <a class="code" href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">imag</a>());</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_ad72a190a8395b582ce72be27e9cd7cdc"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">MINT::FitComplexCart::imag</a></div><div class="ttdeci">const FitParameter &amp; imag() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00039">FitComplexCart.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_a92e6b7b2cde9403b725d53c896c99dd5"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">MINT::FitComplexCart::real</a></div><div class="ttdeci">const FitParameter &amp; real() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00038">FitComplexCart.h:38</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7feb1631a3f0178617d5a68671aad582"></a>
@@ -658,6 +707,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00018">18</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                              {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">return</span> varName + <span class="stringliteral">&quot;_Im&quot;</span>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acc5114e871a6fc9a832f0e6a1bd7610f"></a>
@@ -682,6 +733,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00015">15</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                              {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">return</span> varName + <span class="stringliteral">&quot;_Re&quot;</span>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acdf6679968612d063d57daaa213152e9"></a>
@@ -707,6 +760,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classMINT_1_1FitComplex.html#a509e07d186991b50ec6fd52c765e4386">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00077">77</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                             {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexCart.html#ae17c536a5e91ec73f934a8288520fe6e">getVal</a>();</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_ae17c536a5e91ec73f934a8288520fe6e"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#ae17c536a5e91ec73f934a8288520fe6e">MINT::FitComplexCart::getVal</a></div><div class="ttdeci">virtual std::complex&lt; double &gt; getVal() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8cpp_source.html#l00057">FitComplexCart.cpp:57</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af86d4a85fa618aef3b53d59c0756fce0"></a>
@@ -732,6 +788,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#a72848f603746f43a048ad24d1b7708e6">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00046">46</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">_real</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_a602e1013426a6bc2eb2dafe01148eba0"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">MINT::FitComplexCart::_real</a></div><div class="ttdeci">FitParameter _real</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a045f5ba280d986b1a57e99892ea0301a"></a>
@@ -757,6 +816,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#a30d1df296e9c8a5a9cda47c6f7ce962d">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00048">48</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">_real</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_a602e1013426a6bc2eb2dafe01148eba0"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">MINT::FitComplexCart::_real</a></div><div class="ttdeci">FitParameter _real</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad07f9a7f254d2926af8e5e4ee0f4960a"></a>
@@ -782,6 +844,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#aed08df90ec1aacadfed233aaf8b1c4d5">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00047">47</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">_imag</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_afb7b1be7161ae4a01cac649ea0046a83"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">MINT::FitComplexCart::_imag</a></div><div class="ttdeci">FitParameter _imag</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab4f7baf71ed6f5b833ab0a2e7488a5e6"></a>
@@ -807,6 +872,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#ac5c3d612f8a55f1ce58564d625d774ce">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00049">49</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">_imag</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_afb7b1be7161ae4a01cac649ea0046a83"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">MINT::FitComplexCart::_imag</a></div><div class="ttdeci">FitParameter _imag</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae492d0aa899f5da79c094eb8730a809d"></a>
@@ -833,6 +901,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classMINT_1_1FitComplex.html#a75b7502d45d1241d11ded85d6d1948b2">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00072">72</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                              {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  os &lt;&lt; <a class="code" href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">real</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;     &lt;&lt; <a class="code" href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">imag</a>();</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_ad72a190a8395b582ce72be27e9cd7cdc"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#ad72a190a8395b582ce72be27e9cd7cdc">MINT::FitComplexCart::imag</a></div><div class="ttdeci">const FitParameter &amp; imag() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00039">FitComplexCart.h:39</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_a92e6b7b2cde9403b725d53c896c99dd5"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a92e6b7b2cde9403b725d53c896c99dd5">MINT::FitComplexCart::real</a></div><div class="ttdeci">const FitParameter &amp; real() const </div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00038">FitComplexCart.h:38</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a92e6b7b2cde9403b725d53c896c99dd5"></a>
@@ -856,6 +928,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00038">38</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">_real</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_a602e1013426a6bc2eb2dafe01148eba0"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">MINT::FitComplexCart::_real</a></div><div class="ttdeci">FitParameter _real</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae5fa97feb36b5af473d1b047d14a7aa8"></a>
@@ -879,6 +954,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00041">41</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">_real</a>;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_a602e1013426a6bc2eb2dafe01148eba0"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">MINT::FitComplexCart::_real</a></div><div class="ttdeci">FitParameter _real</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0aa7ea4182225091c474136c84811786"></a>
@@ -905,6 +983,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#ac96de7de39f5a78f8527756c8ea6bc7a">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8cpp_source.html#l00077">77</a> of file <a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                            {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">_real</a> = z.real();</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">_imag</a> = z.imag();</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div><div class="ttc" id="classMINT_1_1FitComplexCart_html_afb7b1be7161ae4a01cac649ea0046a83"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#afb7b1be7161ae4a01cac649ea0046a83">MINT::FitComplexCart::_imag</a></div><div class="ttdeci">FitParameter _imag</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+<div class="ttc" id="classMINT_1_1FitComplexCart_html_a602e1013426a6bc2eb2dafe01148eba0"><div class="ttname"><a href="classMINT_1_1FitComplexCart.html#a602e1013426a6bc2eb2dafe01148eba0">MINT::FitComplexCart::_real</a></div><div class="ttdeci">FitParameter _real</div><div class="ttdef"><b>Definition:</b> <a href="FitComplexCart_8h_source.html#l00031">FitComplexCart.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9f84712e178722684767a93c3c6ee5c2"></a>
@@ -930,6 +1012,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMINT_1_1FitComplex.html#ae99e294d4075d48288c8a2c712fda4e0">MINT::FitComplex</a>.</p>
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00044">44</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{<span class="keywordflow">return</span> <a class="code" href="classMINT_1_1FitComplex.html#a759e10b8f4a501bb68a0b155fc3be478abf15f148d6e9ed35c94a8ac400d70ecf">FitComplex::CARTESIAN</a>;}</div><div class="ttc" id="classMINT_1_1FitComplex_html_a759e10b8f4a501bb68a0b155fc3be478abf15f148d6e9ed35c94a8ac400d70ecf"><div class="ttname"><a href="classMINT_1_1FitComplex.html#a759e10b8f4a501bb68a0b155fc3be478abf15f148d6e9ed35c94a8ac400d70ecf">MINT::FitComplex::CARTESIAN</a></div><div class="ttdef"><b>Definition:</b> <a href="FitComplex_8h_source.html#l00038">FitComplex.h:38</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -951,6 +1036,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00035">35</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afb7b1be7161ae4a01cac649ea0046a83"></a>
@@ -970,6 +1057,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00031">31</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
 
 </div>
 </div>
@@ -991,11 +1080,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="FitComplexCart_8h_source.html#l00031">31</a> of file <a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/Mint/<a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a></li>
-<li>/nfs/lhcb/malexander01/charm/hhpi0/DaVinciDev_v44r3/Mint2/src/Mint/FitParameter/<a class="el" href="FitComplexCart_8cpp.html">FitComplexCart.cpp</a></li>
+<li>Mint/<a class="el" href="FitComplexCart_8h_source.html">FitComplexCart.h</a></li>
+<li>src/Mint/FitParameter/<a class="el" href="FitComplexCart_8cpp_source.html">FitComplexCart.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

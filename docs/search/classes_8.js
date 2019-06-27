@@ -26,6 +26,7 @@ var searchData=
   ['iminimaleventlist_3c_20dalitzevent_20_3e',['IMinimalEventList&lt; DalitzEvent &gt;',['../classMINT_1_1IMinimalEventList.html',1,'MINT']]],
   ['iminimaleventlist_3c_20idalitzevent_20_3e',['IMinimalEventList&lt; IDalitzEvent &gt;',['../classMINT_1_1IMinimalEventList.html',1,'MINT']]],
   ['iminimisable',['IMinimisable',['../classMINT_1_1IMinimisable.html',1,'MINT']]],
+  ['imintgen',['IMintGen',['../classMINT_1_1IMintGen.html',1,'MINT']]],
   ['iminuitparameter',['IMinuitParameter',['../classMINT_1_1IMinuitParameter.html',1,'MINT']]],
   ['inamedparameter',['INamedParameter',['../classMINT_1_1INamedParameter.html',1,'MINT']]],
   ['integcalculator',['IntegCalculator',['../classIntegCalculator.html',1,'']]],

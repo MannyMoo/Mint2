@@ -184,6 +184,22 @@ class DalitzPdfBaseFlexiFastInteg
     getNorm();
     return _norm;
   }
+    
+  double integralForMatchingPatterns(bool match,int pattern_sign){
+        if(!_faint.initialised())getNorm();
+        return _faint.integralForMatchingPatterns(match, pattern_sign);
+  }
+    
+  std::complex<double> ComplexSumForMatchingPatterns(bool match){
+        if(!_faint.initialised())getNorm();
+        return _faint.ComplexSumForMatchingPatterns(match);
+  }
+  
+  
+  std::complex<double> ComplexIntegralForTags(int tag1, int tag2){
+        if(!_faint.initialised())getNorm();
+        return _faint.ComplexIntegralForTags(tag1, tag2);
+  }
 
   double sumOfFitFractions() {
         if(!_faint.initialised())getNorm();
@@ -208,6 +224,10 @@ class DalitzPdfBaseFlexiFastInteg
   int numberOfFitFractionsLargerThanThreshold(double threshold){
         return _faint.numberOfFitFractionsLargerThanThreshold(threshold);
   }
+    
+  FitFractionList getFractions() const{return _faint.getFractions();}
+  FitFractionList getInterferenceTerms() const{return _faint.getInterferenceTerms();}
+  bool doFractions() {return _faint.doFractions();}  
     
   void doFinalStats(MINT::Minimiser* mini=0);
   void doFinalStatsAndSave(MINT::Minimiser* min=0,const std::string& fname = "FitAmpResults.txt", const std::string& fnameROOT="fitFractions.root");
