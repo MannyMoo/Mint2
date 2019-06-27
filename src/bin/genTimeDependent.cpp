@@ -60,7 +60,13 @@ int genTimeDependent(){
   NamedParameter<string> name("integratorsDirectory", string("integrators"), (char*)0) ;
 
   NamedParameter<int> saveIntegEvents("saveIntegEvents", 1) ;
+
+  NamedParameter<string> efficiencyFile("efficiencyFile", string("h_efficiency.root")) ;
   
+  TFile* eff_infile = new TFile( efficiencyFile, "READ" ) ;
+  TH1F* h_efficiency = new TH1F() ;
+  eff_infile->GetObject( "h_efficiency", h_efficiency ) ;
+
   cout << " got event pattern: " << pat << endl;
 
   unique_ptr<TimeDependentGenerator> timedepgen ;
@@ -68,7 +74,7 @@ int genTimeDependent(){
     int startinit(time(0)) ;
     timedepgen.reset(new TimeDependentGenerator(name, overwrite, &ranLux, integPrecision, pat,
 						width, deltam, deltagamma, qoverp, phi, tmax, ntimepoints,
-						(bool)saveIntegEvents, tmin)) ;
+						(bool)saveIntegEvents, tmin, h_efficiency)) ;
     cout << "Initialise TimeDependentGenerator took " << time(0) - startinit << " s" << endl ;
   }
 

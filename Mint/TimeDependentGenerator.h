@@ -57,12 +57,13 @@ public :
    phi : the phase of q/p.
    tmax : the maximum decay time that'll be generated.
    ntimepoints : the number of points to sample between 0 and tmax when building the generators.
+   h_efficiency : (optional) histogram to which efficiency plot will be fitted
   */
   TimeDependentGenerator(const std::string& name, const bool overwrite, TRandom3* rndm, double precision,
 			 const DalitzEventPattern& pattern, double width, double deltam,
 			 double deltagamma,
 			 double qoverp, double phi, double tmax, int ntimepoints,
-			 const bool saveIntegEvents = true, double tmin = 0.) ;
+			 const bool saveIntegEvents = true, double tmin = 0., TH1F* h_efficiency = NULL) ;
 
   // Get the coefficients of the amplitudes for the produced flavour and the mixed flavour
   // given the tag and decay time.
@@ -105,6 +106,8 @@ private :
 
   double m_tagintegralfrac ;
   double m_precision ;
+
+  TH1F* m_h_efficiency;
 } ;
 
 #endif
