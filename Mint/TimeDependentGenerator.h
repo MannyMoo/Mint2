@@ -108,6 +108,7 @@ private :
   double m_precision ;
 
   TH1F* m_h_efficiency;
+  TSpline3 m_efficiencyFit;
 } ;
 
 #endif

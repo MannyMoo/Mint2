@@ -163,7 +163,7 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
   cout << "Tau plus: " << tauplus << endl ;
   cout << "AGamma: " << (tauminus - tauplus)/(tauminus + tauplus) << endl ;
 
-  TSpline3 efficiencyFit = TSpline3(m_h_efficiency) ;
+  m_efficiencyFit = TSpline3(m_h_efficiency) ;
 }
 
 // Get the coefficients of the amplitudes for the produced flavour and the mixed flavour
@@ -203,7 +203,7 @@ double TimeDependentGenerator::generate_decay_time(const int tag) const {
     float r_num = 0, efficiency = 0 ;
     int maxiter = 100000 ;
     while(true){
-      efficiency = efficiencyFit.Eval(decaytime) ;
+      efficiency = m_efficiencyFit.Eval(decaytime) ;
       r_num = rand() / RAND_MAX ;
 
       if(r_num < efficiency){

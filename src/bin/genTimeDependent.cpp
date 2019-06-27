@@ -63,7 +63,7 @@ int genTimeDependent(){
 
   NamedParameter<string> efficiencyFile("efficiencyFile", string("h_efficiency.root")) ;
   
-  TFile* eff_infile = new TFile( efficiencyFile, "READ" ) ;
+  TFile* eff_infile = TFile::Open( ((string)efficiencyFile).c_str() ) ;
   TH1F* h_efficiency = new TH1F() ;
   eff_infile->GetObject( "h_efficiency", h_efficiency ) ;
 
