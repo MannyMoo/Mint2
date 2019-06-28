@@ -44,14 +44,22 @@ def gen_time_dependent(name, integratorsdir, mintdatadir, configs = [], number =
             number += 1
 
     outputdir = os.path.join(topdir, str(number).zfill(zfill))
-    if not os.path.exists(outputdir) :
+    try :
         os.makedirs(outputdir)
+    except OSError :
+        if not os.path.exists(outputdir) :
+            raise
+
     integsdir = os.path.join(topdir, 'integrators')
     config['integratorsDirectory'] = [integsdir]
 
     datadir = os.path.join(mintdatadir, name)
-    if not os.path.exists(datadir) :
+    try :
         os.makedirs(datadir)
+    except OSError :
+        if not os.path.exists(datadir) :
+            raise
+
     config['outputFileName'] = [os.path.join(datadir, os.path.split(config['outputFileName'][0])[1])]
 
     return run_job(exe = 'genTimeDependent.exe', workingdir = outputdir, configs = config,
