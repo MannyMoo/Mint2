@@ -65,7 +65,8 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
   m_timegenerators(),
   m_tagintegralfrac(0.),
   m_precision(precision),
-  m_h_efficiency(h_efficiency)
+  m_h_efficiency(h_efficiency),
+  m_efficiencyFit()
 {
   // If overwrite is true and the integrators directory exists, delete it.
   if(overwrite && exists(name)){
@@ -162,8 +163,10 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
   cout << "Tau minus: " << tauminus << endl ;
   cout << "Tau plus: " << tauplus << endl ;
   cout << "AGamma: " << (tauminus - tauplus)/(tauminus + tauplus) << endl ;
-
-  m_efficiencyFit = TSpline3(m_h_efficiency) ;
+  
+  if( m_h_efficiency != NULL){
+    m_efficiencyFit = TSpline3(m_h_efficiency) ;
+  }
 }
 
 // Get the coefficients of the amplitudes for the produced flavour and the mixed flavour
@@ -197,20 +200,28 @@ double TimeDependentGenerator::generate_decay_time(const int tag) const {
     return decaytime ; 
   }
   else{
-    srand(1) ;
 
     int i = 0 ;
     float r_num = 0, efficiency = 0 ;
     int maxiter = 100000 ;
     while(true){
-      efficiency = m_efficiencyFit.Eval(decaytime) ;
-      r_num = rand() / RAND_MAX ;
+      if( decaytime < m_efficiencyFit.GetXmax() ){
+        efficiency = m_efficiencyFit.Eval(decaytime) ;
+      } 
+      else{
+        efficiency = 1. ;
+      }
+      r_num = m_rndm->Rndm() ;
 
       if(r_num < efficiency){
         return decaytime ;
       }
  
       decaytime =  m_timegenerators.find(tag)->second.gen_random() ;
+      while(decaytime > m_tmax){
+        decaytime =  m_timegenerators.find(tag)->second.gen_random() ;
+      }
+
       i += 1 ;
       if( i > maxiter ){ 
         cout << "WARNING: Decay time generation limit exceeded." << endl ; 

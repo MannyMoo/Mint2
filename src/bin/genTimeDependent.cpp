@@ -61,11 +61,12 @@ int genTimeDependent(){
 
   NamedParameter<int> saveIntegEvents("saveIntegEvents", 1) ;
 
-  NamedParameter<string> efficiencyFile("efficiencyFile", string("h_efficiency.root")) ;
+  NamedParameter<string> efficiencyFile("efficiencyFile", string("/home/ppe/n/nmchugh/SummerProject/DaVinciDev_v44r10p1/AGammaD0Tohhpi0/scripts/mint/h_efficiency.root")) ;
+  NamedParameter<string> h_efficiencyName( "h_efficiencyName", string("h_efficiency") );
   
-  TFile* eff_infile = TFile::Open( ((string)efficiencyFile).c_str() ) ;
-  TH1F* h_efficiency = new TH1F() ;
-  eff_infile->GetObject( "h_efficiency", h_efficiency ) ;
+  TFile* eff_infile = TFile::Open( ((string) efficiencyFile).c_str() ) ;
+  TH1F* h_efficiency = NULL ; 
+  eff_infile->GetObject(((string) h_efficiencyName).c_str(), h_efficiency) ;
 
   cout << " got event pattern: " << pat << endl;
 
