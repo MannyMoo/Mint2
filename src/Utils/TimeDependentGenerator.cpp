@@ -41,13 +41,14 @@ DalitzEventPattern TimeDependentGenerator::anti(DalitzEventPattern pat) {
    phi : the phase of q/p.
    tmax : the maximum decay time that'll be generated.
    ntimepoints : the number of points to sample between 0 and tmax when building the generators.
+   h_efficiency : (optional) histogram to which efficiency plot will be fitted
 */
 TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool overwrite, TRandom3* rndm,
 					       double precision,
 					       const DalitzEventPattern& pattern, double width, double deltam,
 					       double deltagamma,
 					       double qoverp, double phi, double tmax, int ntimepoints,
-					       const bool saveIntegEvents, const double tmin) :
+					       const bool saveIntegEvents, const double tmin, TH1F* h_efficiency) :
   m_name(name),
   m_rndm(rndm),
   m_pattern(pattern),
@@ -63,7 +64,9 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
   m_genmap(),
   m_timegenerators(),
   m_tagintegralfrac(0.),
-  m_precision(precision)
+  m_precision(precision),
+  m_h_efficiency(h_efficiency),
+  m_efficiencyFit()
 {
   // If overwrite is true and the integrators directory exists, delete it.
   if(overwrite && exists(name)){
@@ -160,6 +163,10 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
   cout << "Tau minus: " << tauminus << endl ;
   cout << "Tau plus: " << tauplus << endl ;
   cout << "AGamma: " << (tauminus - tauplus)/(tauminus + tauplus) << endl ;
+  
+  if( m_h_efficiency != NULL){
+    m_efficiencyFit = TSpline3(m_h_efficiency) ;
+  }
 }
 
 // Get the coefficients of the amplitudes for the produced flavour and the mixed flavour
@@ -188,7 +195,42 @@ double TimeDependentGenerator::generate_decay_time(const int tag) const {
   double decaytime = m_tmax + 1. ;
   while(decaytime > m_tmax)
     decaytime = m_timegenerators.find(tag)->second.gen_random() ;
-  return decaytime ;
+ 
+  if(m_h_efficiency == NULL){ 
+    return decaytime ; 
+  }
+  else{
+
+    int i = 0 ;
+    float r_num = 0, efficiency = 0 ;
+    int maxiter = 100000 ;
+    while(true){
+      if( decaytime < m_efficiencyFit.GetXmax() ){
+        efficiency = m_efficiencyFit.Eval(decaytime) ;
+      } 
+      else{
+        efficiency = 1. ;
+      }
+      r_num = m_rndm->Rndm() ;
+
+      if(r_num < efficiency){
+        return decaytime ;
+      }
+ 
+      decaytime =  m_timegenerators.find(tag)->second.gen_random() ;
+      while(decaytime > m_tmax){
+        decaytime =  m_timegenerators.find(tag)->second.gen_random() ;
+      }
+
+      i += 1 ;
+      if( i > maxiter ){ 
+        cout << "WARNING: Decay time generation limit exceeded." << endl ; 
+        return decaytime ;
+      }
+
+    }
+  }
+  return decaytime ; 
 }
 
 // Generate a Dalitz event for the given flavour and decay time.
