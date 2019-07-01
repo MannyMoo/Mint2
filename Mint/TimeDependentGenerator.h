@@ -35,10 +35,21 @@ public :
 
   // Class to hold the tag (production flavour), decay time and
   // Dalitz event that's generated.
-  struct GenTimeEvent {
-    int tag ;
-    double decaytime ;
-    MINT::counted_ptr<IDalitzEvent> evt ;
+  class GenTimeEvent : public DalitzEvent {
+  public :
+    GenTimeEvent(const IDalitzEvent&, const int, const double,
+		 const double smeareddecaytime = -999.) ;
+    GenTimeEvent(const IDalitzEvent&) ;
+    int getTag() const ;
+    void setTag(int) ;
+    double getDecayTime() const ;
+    void setDecayTime(double) ;
+    double getSmearedDecayTime() const ;
+    void setSmearedDecayTime(double) ;
+    enum InfoIndex{ITAG = 0, IDECAYTIME, ISMEAREDDECAYTIME} ;
+    static std::map<std::string, unsigned> infoNames ;
+  private :
+    static std::map<std::string, unsigned> makeInfoNames() ;
   } ;
 
   // Take the CP conjugate of the head of the decay pattern.
@@ -78,7 +89,7 @@ public :
   MINT::counted_ptr<IDalitzEvent> generate_dalitz_event(const int tag, const double decaytime) const ;
 
   // Generate a flavour, decay time and Dalitz event.
-  GenTimeEvent generate_event() const ;
+  MINT::counted_ptr<IDalitzEvent> generate_event() const ;
 
   // Get the decay time generators.
   const std::map<int, SplineGenerator> time_generators() const ;

@@ -22,6 +22,58 @@ TimeDependentGenerator::GenTimePoint::GenTimePoint(const double _decaytime, FitA
   generator(_generator)
 {}
 
+//
+map<string, unsigned> TimeDependentGenerator::GenTimeEvent::infoNames = \
+  TimeDependentGenerator::GenTimeEvent::makeInfoNames() ;
+
+map<string, unsigned> TimeDependentGenerator::GenTimeEvent::makeInfoNames() {
+  map<string, unsigned> infoNames ;
+  infoNames["tag"] = TimeDependentGenerator::GenTimeEvent::ITAG ;
+  infoNames["decaytime"] = TimeDependentGenerator::GenTimeEvent::IDECAYTIME ;
+  infoNames["smeareddecaytime"] = TimeDependentGenerator::GenTimeEvent::ISMEAREDDECAYTIME ;
+  return infoNames ;
+}
+
+TimeDependentGenerator::GenTimeEvent::GenTimeEvent(const IDalitzEvent& evt, const int tag, const double decaytime,
+						   const double smeareddecaytime) :
+  DalitzEvent(evt)
+{
+  setTag(tag) ;
+  setDecayTime(decaytime) ;
+  setSmearedDecayTime(smeareddecaytime) ;
+} 
+
+TimeDependentGenerator::GenTimeEvent::GenTimeEvent(const IDalitzEvent& evt) :
+  DalitzEvent(evt)
+{
+  while(getVectorOfValues().size() < 3)
+    getVectorOfValues().push_back(-999.) ;
+}
+
+int TimeDependentGenerator::GenTimeEvent::getTag() const {
+  return getValueFromVector(ITAG) ;
+}
+
+void TimeDependentGenerator::GenTimeEvent::setTag(int tag) {
+  setValueInVector(ITAG, tag) ;
+}
+
+double TimeDependentGenerator::GenTimeEvent::getDecayTime() const {
+  return getValueFromVector(IDECAYTIME) ;
+}
+
+void TimeDependentGenerator::GenTimeEvent::setDecayTime(double decaytime) {
+  setValueInVector(IDECAYTIME, decaytime) ;
+}
+
+double TimeDependentGenerator::GenTimeEvent::getSmearedDecayTime() const {
+  return getValueFromVector(ISMEAREDDECAYTIME) ;
+}
+
+void TimeDependentGenerator::GenTimeEvent::setSmearedDecayTime(double decaytime) {
+  setValueInVector(ISMEAREDDECAYTIME, decaytime) ;
+}
+
 // Take the CP conjugate of the head of the decay pattern.
 DalitzEventPattern TimeDependentGenerator::anti(DalitzEventPattern pat) {
   pat[0].antiThis() ;
@@ -215,12 +267,12 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_dalitz_event(co
 }
 
 // Generate a flavour, decay time and Dalitz event.
-TimeDependentGenerator::GenTimeEvent TimeDependentGenerator::generate_event() const {
-  GenTimeEvent evt ;
-  evt.tag = generate_tag() ;
-  evt.decaytime = generate_decay_time(evt.tag) ;
-  evt.evt = generate_dalitz_event(evt.tag, evt.decaytime) ;
-  return evt ;
+MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() const {
+  int tag = generate_tag() ;
+  double decaytime = generate_decay_time(tag) ;
+  double smeareddecaytime = -999. ;
+  MINT::counted_ptr<IDalitzEvent> evt = generate_dalitz_event(tag, decaytime) ;
+  return MINT::counted_ptr<IDalitzEvent>(new GenTimeEvent(*evt, tag, decaytime, smeareddecaytime)) ;
 }
 
 // Get the decay time generators.

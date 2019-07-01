@@ -78,37 +78,37 @@ int genTimeDependent(){
   DalitzEventList eventList1 ;
 
   cout << "Generating " << Nevents << " signal events (1)." << endl;
-  list<int> tags ;
-  list<double> taus ;
   int startTimeGen(time(0)) ;
   for(int i = 0 ; i < Nevents ; ++i){
-    // Decide if it's a D0 or D0bar that's being generated.
-    SignalGenerator* gen(&genD0) ;
-    int tag = 1 ;
-    if(ranLux.Rndm() > 0.5){
-      gen = &genD0bar ;
-      tag = -1 ;
-    }
-    tags.push_back(tag) ;
-
-    // Generate the decay time of the candidate.
-    double decaytime = tmax + 1. ;
-    while(decaytime > tmax)
-      decaytime = ranLux.Exp(lifetime) ;
-    taus.push_back(decaytime) ;
 
     if(i%1000 == 0)
-      cout << "Generating candidate " << i << " (" << (time(0)-startTimeGen)/float(i) << " s per candidate)" << endl ;
+      cout << "Generating candidate " << i << " (" << (time(0)-startTimeGen)/float(i)
+	   << " s per candidate)" << endl ;
 
+    MINT::counted_ptr<IDalitzEvent> evt(0) ;
     if(genTimeDependent){
-      TimeDependentGenerator::GenTimeEvent evt = timedepgen->generate_event() ;
-      tags.back() = evt.tag ;
-      taus.back() = evt.decaytime ;
-      eventList1.Add(DalitzEvent(*evt.evt)) ;
+      evt = timedepgen->generate_event() ;
     }
     else {
-      gen->FillEventList(eventList1, 1);
+      // Decide if it's a D0 or D0bar that's being generated.
+      SignalGenerator* gen(&genD0) ;
+      int tag = 1 ;
+      if(ranLux.Rndm() > 0.5){
+	gen = &genD0bar ;
+	tag = -1 ;
+      }
+
+      // Generate the decay time of the candidate.
+      double decaytime = tmax + 1. ;
+      while(decaytime > tmax)
+	decaytime = ranLux.Exp(lifetime) ;
+
+      evt = gen->newEvent() ;
+      evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::ITAG, tag) ;
+      evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::IDECAYTIME, decaytime) ;
+      evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::ISMEAREDDECAYTIME, -999.) ;
     }
+    eventList1.Add(*evt) ;
   }
   
   // Make sure the first event in the list is a D0 so the naming scheme is consistent.
@@ -118,20 +118,9 @@ int genTimeDependent(){
     for( ; ievt->eventPattern() != pat && ievt != eventList1.end() ; ++ievt)
       continue ;
     if(ievt != eventList1.end()){
-      DalitzEvent evt(*ievt) ;
-      int i = ievt - eventList1.begin() ;
+      DalitzEvent evt = *ievt ;
       eventList1.erase(ievt) ;
       eventList1.theVector().insert(eventList1.begin(), evt) ;
-      auto itag = tags.begin() ;
-      advance(itag, i) ;
-      int tag = *itag ;
-      tags.erase(itag) ;
-      tags.insert(tags.begin(), tag) ;
-      auto itau = taus.begin() ;
-      advance(itau, i) ;
-      double tau = *itau ;
-      taus.erase(itau) ;
-      taus.insert(taus.begin(), tau) ;
     }
   }
 
@@ -141,18 +130,19 @@ int genTimeDependent(){
   TFile tuplefile(fnamestr.c_str(), "update") ;
   TNtupleD* ntuple = (TNtupleD*)tuplefile.Get("DalitzEventList") ;
   int tag(0) ;
-  double tau(0.) ;
+  double decaytime(0.) ;
+  double smeareddecaytime(0.) ;
   TBranch* tagbranch = ntuple->Branch("tag", &tag, "tag/I") ;
-  TBranch* taubranch = ntuple->Branch("decaytime", &tau, "decaytime/D") ;
-  list<int>::const_iterator itag = tags.begin() ;
-  list<double>::const_iterator itau = taus.begin() ;
-  for(int i = 0 ; i < Nevents ; ++i){
-    tag = *itag ;
-    tau = *itau ;
+  TBranch* decaytimebranch = ntuple->Branch("decaytime", &decaytime, "decaytime/D") ;
+  TBranch* smeareddecaytimebranch = ntuple->Branch("smeareddecaytime", &smeareddecaytime, "smeareddecaytime/D") ;
+  for(const auto& ievt : eventList1){
+    tag = ievt.getValueFromVector(TimeDependentGenerator::GenTimeEvent::infoNames["tag"]) ;
+    decaytime = ievt.getValueFromVector(TimeDependentGenerator::GenTimeEvent::infoNames["decaytime"]) ;
+    smeareddecaytime = ievt.getValueFromVector(TimeDependentGenerator::GenTimeEvent
+					       ::infoNames["smeareddecaytime"]) ;
     tagbranch->Fill() ;
-    taubranch->Fill() ;
-    ++itag ;
-    ++itau ;
+    decaytimebranch->Fill() ;
+    smeareddecaytimebranch->Fill() ;
   }
   ntuple->Write(ntuple->GetName(), TObject::kWriteDelete) ;
   if(genTimeDependent){
