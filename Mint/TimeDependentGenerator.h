@@ -74,7 +74,8 @@ public :
 			 const DalitzEventPattern& pattern, double width, double deltam,
 			 double deltagamma,
 			 double qoverp, double phi, double tmax, int ntimepoints,
-			 const bool saveIntegEvents = true, double tmin = 0., TH1F* h_efficiency = NULL) ;
+			 const bool saveIntegEvents = true, double tmin = 0., TH1F* h_efficiency = NULL,
+                         float resWidth = 0.05, bool addExpEffects = false) ;
 
   // Get the coefficients of the amplitudes for the produced flavour and the mixed flavour
   // given the tag and decay time.
@@ -120,6 +121,9 @@ private :
 
   TH1F* m_h_efficiency;
   TSpline3 m_efficiencyFit;
+
+  float m_resWidth;
+  bool m_addExpEffects;
 } ;
 
 #endif
