@@ -64,11 +64,11 @@ int genTimeDependent(){
   NamedParameter<string> efficiencyFile("efficiencyFile", string("/home/ppe/n/nmchugh/SummerProject/DaVinciDev_v44r10p1/AGammaD0Tohhpi0/scripts/mint/h_efficiency.root")) ;
   NamedParameter<string> h_efficiencyName( "h_efficiencyName", string("h_efficiency") ) ;
   
-  NamedParameter<bool> addExpEffects("addExpEffects", false) ;
+  NamedParameter<int> addExpEffects("addExpEffects", 0) ;
   NamedParameter <float> resWidth("resWidth", 0.05) ;
 
   TH1F* h_efficiency = NULL ; 
-  if(addExpEffects){
+  if((bool)addExpEffects){
     TFile* eff_infile = TFile::Open( ((string) efficiencyFile).c_str() ) ;
     eff_infile->GetObject(((string) h_efficiencyName).c_str(), h_efficiency) ;
   }
@@ -80,7 +80,7 @@ int genTimeDependent(){
     int startinit(time(0)) ;
     timedepgen.reset(new TimeDependentGenerator(name, overwrite, &ranLux, integPrecision, pat,
 						width, deltam, deltagamma, qoverp, phi, tmax, ntimepoints,
-						(bool)saveIntegEvents, tmin, h_efficiency, resWidth, addExpEffects)) ;
+						(bool)saveIntegEvents, tmin, h_efficiency, resWidth, (bool)addExpEffects)) ;
     cout << "Initialise TimeDependentGenerator took " << time(0) - startinit << " s" << endl ;
   }
 
