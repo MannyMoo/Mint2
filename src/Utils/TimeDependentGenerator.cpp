@@ -281,7 +281,6 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() const {
   int tag = generate_tag() ;
   double decaytime = generate_decay_time(tag) ;
   double smeareddecaytime = -999. ;
-  MINT::counted_ptr<IDalitzEvent> evt = NULL ;
 
   smeareddecaytime = decaytime + m_rndm->Gaus(0, m_resWidth) ;
 
@@ -308,23 +307,14 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() const {
       decaytime = generate_decay_time(tag) ;
       smeareddecaytime =  decaytime + m_rndm->Gaus(0, m_resWidth);
 
-      while( (smeareddecaytime > m_tmax) || (decaytime > m_tmax) ){
-        tag = generate_tag() ;
-        decaytime = generate_decay_time(tag) ;
-        smeareddecaytime =  decaytime + m_rndm->Gaus(0, m_resWidth);
-      }
-
       i += 1 ;
       if( i > maxiter ){ 
         cout << "WARNING: Decay time generation limit exceeded." << endl ; 
         break ;
       }
     }
-    evt = generate_dalitz_event(tag, smeareddecaytime) ;
-  }
-  else{
-    evt = generate_dalitz_event(tag, decaytime) ;
-  }
+
+  MINT::counted_ptr<IDalitzEvent> evt = generate_dalitz_event(tag, decaytime) ;
   return MINT::counted_ptr<IDalitzEvent>(new GenTimeEvent(*evt, tag, decaytime, smeareddecaytime)) ;
 }
 
