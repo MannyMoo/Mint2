@@ -293,6 +293,9 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() const {
       if( smeareddecaytime < m_efficiencyFit.GetXmax() ){
         efficiency = m_efficiencyFit.Eval(smeareddecaytime) ;
       } 
+      else if( smeareddecaytime < 0 ){
+        efficiency = m_efficiencyFit.Eval(smeareddecaytime) ;
+      }
       else{
         efficiency = 1. ;
       }
