@@ -286,18 +286,18 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() const {
 
   if ( (m_h_efficiency != NULL) && (m_addExpEffects) ){
     int i = 0 ;
-    float r_num = 0, efficiency = 0 ;
+    float efficiency = 0 ;
     int maxiter = 100000 ;
     while(true){
-      if( smeareddecaytime < m_efficiencyFit.GetXmax() ){
-        efficiency = m_efficiencyFit.Eval(smeareddecaytime) ;
+      if( smeareddecaytime > m_efficiencyFit.GetXmax() ){
+        efficiency = m_efficiencyFit.Eval( m_efficiencyFit.GetXmax() ) ;
       } 
-      else if( smeareddecaytime < 0 ){
-        efficiency = m_efficiencyFit.Eval(smeareddecaytime) ;
+      else if( smeareddecaytime > m_efficiencyFit.GetXmin() ){
+	efficiency = m_efficiencyFit.Eval( smeareddecaytime ) ;
       }
       else{
-        efficiency = 1. ;
-      }
+        efficiency = m_efficiencyFit.Eval( m_efficiencyFit.GetXmin() ) ;
+      }      
 
       if(m_rndm->Rndm() < efficiency){
         break;
@@ -313,7 +313,7 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() const {
         break ;
       }
     }
-
+  }
   MINT::counted_ptr<IDalitzEvent> evt = generate_dalitz_event(tag, decaytime) ;
   return MINT::counted_ptr<IDalitzEvent>(new GenTimeEvent(*evt, tag, decaytime, smeareddecaytime)) ;
 }
