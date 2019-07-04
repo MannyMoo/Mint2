@@ -8,13 +8,8 @@ using namespace std;
 
 class binflipChi2 : public Minimisable{
     
-   
   public:
     binflipChi2();
-   
-    double getVal(){
-        float chi2 = 0 ;
-        return chi2 ;
-    }
+    double getVal();
 };
 

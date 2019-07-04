@@ -4,5 +4,9 @@ using namespace MINT;
 using namespace std;
 
 binflipChi2::binflipChi2(){
-  cout << "binflipChi2 created." << endl ;
+}
+
+double binflipChi2::getVal(){
+  double chi2 = 0. ;
+  return chi2 ;
 }
