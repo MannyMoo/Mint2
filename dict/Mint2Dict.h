@@ -12,6 +12,8 @@
 #include <Mint/SplineGenerator.h>
 #include <Mint/FitAmpSum.h>
 #include <Mint/DalitzEvent.h>
+#include <Mint/binflipChi2.h>
+#include <Mint/Minimiser.h>
 /*
 #include <Mint/DalitzBox.h>
 #include <Mint/Model_independent.h>

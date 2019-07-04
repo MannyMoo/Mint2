@@ -7,6 +7,8 @@
   <class name="SplineGenerator" />
   <class name="FitAmpSum" />
   <class name="DalitzEvent" />
+  <class name="MINT::binflipChi2" />
+  <class name="MINT::Minimiser" />
   <!--
   <class name="AmpInitialiser" />
   <class name="AmpPair" />
@@ -91,7 +93,6 @@
   <class name="MINT::IEvtGen" />
   <class name="MINT::LASSO" />
   <class name="MINT::Minimisable" />
-  <class name="MINT::Minimiser" />
   <class name="MINT::MintFcn" />
   <class name="MINT::MintFcnGrad" />
   <class name="MINT::NamedParameter<double>" />
