@@ -100,7 +100,8 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
 					       const DalitzEventPattern& pattern, double width, double deltam,
 					       double deltagamma,
 					       double qoverp, double phi, double tmax, int ntimepoints,
-					       const bool saveIntegEvents, const double tmin, TH1F* h_efficiency) :
+					       const bool saveIntegEvents, const double tmin, TH1F* h_efficiency, 
+                                               float resWidth, bool addExpEffects) :
   m_name(name),
   m_rndm(rndm),
   m_pattern(pattern),
@@ -118,6 +119,8 @@ TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool ov
   m_tagintegralfrac(0.),
   m_precision(precision),
   m_h_efficiency(h_efficiency),
+  m_resWidth(resWidth),
+  m_addExpEffects(addExpEffects),
   m_efficiencyFit()
 {
   // If overwrite is true and the integrators directory exists, delete it.
@@ -247,41 +250,6 @@ double TimeDependentGenerator::generate_decay_time(const int tag) const {
   double decaytime = m_tmax + 1. ;
   while(decaytime > m_tmax)
     decaytime = m_timegenerators.find(tag)->second.gen_random() ;
- 
-  if(m_h_efficiency == NULL){ 
-    return decaytime ; 
-  }
-  else{
-
-    int i = 0 ;
-    float r_num = 0, efficiency = 0 ;
-    int maxiter = 100000 ;
-    while(true){
-      if( decaytime < m_efficiencyFit.GetXmax() ){
-        efficiency = m_efficiencyFit.Eval(decaytime) ;
-      } 
-      else{
-        efficiency = 1. ;
-      }
-      r_num = m_rndm->Rndm() ;
-
-      if(r_num < efficiency){
-        return decaytime ;
-      }
- 
-      decaytime =  m_timegenerators.find(tag)->second.gen_random() ;
-      while(decaytime > m_tmax){
-        decaytime =  m_timegenerators.find(tag)->second.gen_random() ;
-      }
-
-      i += 1 ;
-      if( i > maxiter ){ 
-        cout << "WARNING: Decay time generation limit exceeded." << endl ; 
-        return decaytime ;
-      }
-
-    }
-  }
   return decaytime ; 
 }
 
@@ -313,6 +281,39 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() const {
   int tag = generate_tag() ;
   double decaytime = generate_decay_time(tag) ;
   double smeareddecaytime = -999. ;
+
+  smeareddecaytime = decaytime + m_rndm->Gaus(0, m_resWidth) ;
+
+  if ( (m_h_efficiency != NULL) && (m_addExpEffects) ){
+    int i = 0 ;
+    float efficiency = 0 ;
+    int maxiter = 100000 ;
+    while(true){
+      if( smeareddecaytime > m_efficiencyFit.GetXmax() ){
+        efficiency = m_efficiencyFit.Eval( m_efficiencyFit.GetXmax() ) ;
+      } 
+      else if( smeareddecaytime > m_efficiencyFit.GetXmin() ){
+	efficiency = m_efficiencyFit.Eval( smeareddecaytime ) ;
+      }
+      else{
+        efficiency = m_efficiencyFit.Eval( m_efficiencyFit.GetXmin() ) ;
+      }      
+
+      if(m_rndm->Rndm() < efficiency){
+        break;
+      }
+ 
+      tag = generate_tag() ;
+      decaytime = generate_decay_time(tag) ;
+      smeareddecaytime =  decaytime + m_rndm->Gaus(0, m_resWidth);
+
+      i += 1 ;
+      if( i > maxiter ){ 
+        cout << "WARNING: Decay time generation limit exceeded." << endl ; 
+        break ;
+      }
+    }
+  }
   MINT::counted_ptr<IDalitzEvent> evt = generate_dalitz_event(tag, decaytime) ;
   return MINT::counted_ptr<IDalitzEvent>(new GenTimeEvent(*evt, tag, decaytime, smeareddecaytime)) ;
 }
