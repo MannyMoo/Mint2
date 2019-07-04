@@ -25,13 +25,14 @@ Minimiser* Minimiser::getDefaultMinimiser(){
 }
 
 
-Minimiser::Minimiser(IMinimisable* fitFunction)
+Minimiser::Minimiser(IMinimisable* fitFunction, const double errdef)
   : TMinuit(0)
   , ierflg(0)
   , _useAnalyticGradient(false)
   , _theFunction(fitFunction)
   , _maxCalls(_defaultMaxCalls)
   , _printLevel(3)
+  , _errdef(errdef)
 {
   if(0 != theFunction()){
     init();
@@ -297,7 +298,7 @@ bool Minimiser::resetPrintLevel(){
 bool Minimiser::SetSomeMinuitOptions(){
   bool success = true;
   success &= setPrintLevel();
-  arglist[0] = 1.;
+  arglist[0] = _errdef ;
   TMinuit::mnexcm("SET ERR", arglist , 1, ierflg);
   success &= (! ierflg);
   arglist[0] = 1;

@@ -32,6 +32,7 @@ class Minimiser : public TMinuit{
   int _maxCalls;
 
   int _printLevel;
+  double _errdef ;
 
   bool init();  
   bool MakeSpace(int needSpace);
@@ -51,7 +52,7 @@ class Minimiser : public TMinuit{
  public:
   static Minimiser* getDefaultMinimiser();
 
-  Minimiser(IMinimisable* fitFunction=0);
+  Minimiser(IMinimisable* fitFunction=0, const double errdef = 1.);
   virtual ~Minimiser();
   bool attachFunction(IMinimisable* fcn);
   IMinimisable* theFunction(){ return _theFunction;}
