@@ -1,4 +1,5 @@
 #include "Mint/binflipChi2.h"
+#include "typeinfo"
 
 using namespace MINT;
 using namespace std;
@@ -28,16 +29,16 @@ binflipChi2::binflipChi2(int nbinsPhase, int nbinsTime, float* Xreal, float* Xim
 double binflipChi2::getVal(){    
 
     double chi2 = 0.;
-    vector<vector<TGraph> > fits;
+    vector<vector<TGraph> > fits(m_nbinsPhase);
     complex<float> zcp(m_ReZcp.getCurrentFitVal(), m_ImZcp.getCurrentFitVal());
     complex<float> deltaz(m_ReDz.getCurrentFitVal(), m_ImDz.getCurrentFitVal());
 
     fits = getFits(zcp, deltaz);
-
+    /*
     for(int b = 1; b <= m_nbinsPhase; b++){
     
-        double* Rvals_pl = fits[0][b-1].GetY();
-        double* Rvals_mi = fits[0][b-1].GetY();  
+        double* Rvals_pl = fits[0][b-1]->GetY();
+        double* Rvals_mi = fits[0][b-1]->GetY();  
     
         for(int j = 0; j <= m_nbinsTime; j++){
 	    double R_pl = Rvals_pl[j-1];
@@ -61,38 +62,38 @@ double binflipChi2::getVal(){
             
         }
     }
-  
+    */
     return chi2;
 }
 
 
 vector<vector<TGraph> > binflipChi2::getFits(complex<float >zcp, complex<float> deltaz){
 
-    vector<vector<TGraph> > fits;
-
+  vector<vector<TGraph> > fits(m_nbinsPhase);
+    
     for(int i : {0,1}){
 
         for(int b = 1; b <= m_nbinsPhase; b++){
-
-            fits[i].push_back( TGraph(m_nbinsTime) );
+	    TGraph temp = TGraph(m_nbinsTime);
+	    fits[i].push_back( temp );
 
             for(int j = 1; j <= m_nbinsTime; j++){
                 float numerator = 0., denominator = 0.;
      
-                numerator = m_r[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(zcp,2) - pow(deltaz,2) ).real() );
-                numerator += 0.25 * m_tSqAv[j-1] * abs(zcp + (float)pow(-1, i) * pow(deltaz, 2));
-	        numerator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( conj(m_X[b-1]) * (zcp + (float)pow(-1, i) * deltaz) ).real();
+    //             numerator = m_r[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(zcp,2) - pow(deltaz,2) ).real() );
+    //             numerator += 0.25 * m_tSqAv[j-1] * abs(zcp + (float)pow(-1, i) * pow(deltaz, 2));
+    // 	        numerator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( conj(m_X[b-1]) * (zcp + (float)pow(-1, i) * deltaz) ).real();
 
-                denominator = 1 + 0.25 * m_tSqAv[j-1] * ( pow(zcp,2) - pow(deltaz,2) ).real();
-                denominator += m_r[b-1] * 0.25 * m_tSqAv[j-1] * abs(zcp + (float)pow(-1, i) * pow(deltaz, 2));
-	        denominator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( m_X[b-1] * (zcp + (float)pow(-1, i) * deltaz) ).real();
+    //             denominator = 1 + 0.25 * m_tSqAv[j-1] * ( pow(zcp,2) - pow(deltaz,2) ).real();
+    //             denominator += m_r[b-1] * 0.25 * m_tSqAv[j-1] * abs(zcp + (float)pow(-1, i) * pow(deltaz, 2));
+    // 	        denominator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( m_X[b-1] * (zcp + (float)pow(-1, i) * deltaz) ).real();
 
-                float Rval = numerator / denominator;
-	        fits[i][b-1].SetPoint(j-1, m_tAv[j-1], Rval);
+    //             float Rval = numerator / denominator;
+    // 	        fits[i][b-1]->SetPoint(j-1, m_tAv[j-1], Rval);
             }
         }
     }
-
+    
     return fits;
 }
 
