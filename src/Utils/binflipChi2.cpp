@@ -34,7 +34,7 @@ double binflipChi2::getVal(){
     complex<float> deltaz(m_ReDz.getCurrentFitVal(), m_ImDz.getCurrentFitVal());
 
     fits = getFits(zcp, deltaz);
-    /*
+    
     for(int b = 1; b <= m_nbinsPhase; b++){
     
         double* Rvals_pl = fits[0][b-1]->GetY();
@@ -62,7 +62,7 @@ double binflipChi2::getVal(){
             
         }
     }
-    */
+    
     return chi2;
 }
 
@@ -80,16 +80,16 @@ vector<vector<TGraph> > binflipChi2::getFits(complex<float >zcp, complex<float> 
             for(int j = 1; j <= m_nbinsTime; j++){
                 float numerator = 0., denominator = 0.;
      
-    //             numerator = m_r[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(zcp,2) - pow(deltaz,2) ).real() );
-    //             numerator += 0.25 * m_tSqAv[j-1] * abs(zcp + (float)pow(-1, i) * pow(deltaz, 2));
-    // 	        numerator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( conj(m_X[b-1]) * (zcp + (float)pow(-1, i) * deltaz) ).real();
+                numerator = m_r[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(zcp,2) - pow(deltaz,2) ).real() );
+                numerator += 0.25 * m_tSqAv[j-1] * abs(zcp + (float)pow(-1, i) * pow(deltaz, 2));
+    	        numerator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( conj(m_X[b-1]) * (zcp + (float)pow(-1, i) * deltaz) ).real();
 
-    //             denominator = 1 + 0.25 * m_tSqAv[j-1] * ( pow(zcp,2) - pow(deltaz,2) ).real();
-    //             denominator += m_r[b-1] * 0.25 * m_tSqAv[j-1] * abs(zcp + (float)pow(-1, i) * pow(deltaz, 2));
-    // 	        denominator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( m_X[b-1] * (zcp + (float)pow(-1, i) * deltaz) ).real();
+                denominator = 1 + 0.25 * m_tSqAv[j-1] * ( pow(zcp,2) - pow(deltaz,2) ).real();
+                denominator += m_r[b-1] * 0.25 * m_tSqAv[j-1] * abs(zcp + (float)pow(-1, i) * pow(deltaz, 2));
+    	        denominator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( m_X[b-1] * (zcp + (float)pow(-1, i) * deltaz) ).real();
 
-    //             float Rval = numerator / denominator;
-    // 	        fits[i][b-1]->SetPoint(j-1, m_tAv[j-1], Rval);
+                float Rval = numerator / denominator;
+    	        fits[i][b-1]->SetPoint(j-1, m_tAv[j-1], Rval);
             }
         }
     }
