@@ -37,8 +37,8 @@ double binflipChi2::getVal(){
     
     for(int b = 1; b <= m_nbinsPhase; b++){
     
-        double* Rvals_pl = fits[0][b-1]->GetY();
-        double* Rvals_mi = fits[0][b-1]->GetY();  
+        double* Rvals_pl = fits[0][b-1].GetY();
+        double* Rvals_mi = fits[0][b-1].GetY();  
     
         for(int j = 0; j <= m_nbinsTime; j++){
 	    double R_pl = Rvals_pl[j-1];
@@ -89,7 +89,7 @@ vector<vector<TGraph> > binflipChi2::getFits(complex<float >zcp, complex<float> 
     	        denominator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( m_X[b-1] * (zcp + (float)pow(-1, i) * deltaz) ).real();
 
                 float Rval = numerator / denominator;
-    	        fits[i][b-1]->SetPoint(j-1, m_tAv[j-1], Rval);
+    	        fits[i][b-1].SetPoint(j-1, m_tAv[j-1], Rval);
             }
         }
     }
