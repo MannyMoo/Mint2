@@ -30,7 +30,7 @@ class binflipChi2 : public Minimisable{
   public:
     binflipChi2(vector<complex<float> > X, vector<float> r, vector<float> tAv, vector<float> tSqAv, 
                        TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, float ReDz, 
-                       float ImDz);
+		       float ImDz, float stepSize);
     ~binflipChi2();
     double getVal();
     vector<vector<TGraph> > getFits(complex<float> zcp, complex<float> deltaz);
