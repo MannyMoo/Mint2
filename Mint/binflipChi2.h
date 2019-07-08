@@ -15,9 +15,9 @@ class binflipChi2 : public Minimisable{
     int m_nbinsPhase;
     int m_nbinsTime;
     vector<complex<float> > m_X;
-    float* m_r;
-    float* m_tAv;
-    float* m_tSqAv;
+    vector<float> m_r;
+    vector<float> m_tAv;
+    vector<float> m_tSqAv;
     TH2F m_pHistD0;
     TH2F m_pHistD0bar;
     TH2F m_nHistD0;
@@ -28,8 +28,10 @@ class binflipChi2 : public Minimisable{
     FitParameter m_ImDz;
 
   public:
-    binflipChi2(int nbinsPhase, int nbinsTime, float* Xreal, float* Ximag, float* r, float* tAv, float* tSqAv,
-		TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, float ReDz, float ImDz);
+    binflipChi2(vector<complex<float> > X, vector<float> r, vector<float> tAv, vector<float> tSqAv, 
+                       TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, float ReDz, 
+                       float ImDz);
+    ~binflipChi2();
     double getVal();
     vector<vector<TGraph> > getFits(complex<float> zcp, complex<float> deltaz);
 };

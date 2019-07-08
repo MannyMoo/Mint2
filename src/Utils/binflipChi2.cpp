@@ -4,11 +4,11 @@
 using namespace MINT;
 using namespace std;
 
-binflipChi2::binflipChi2(int nbinsPhase, int nbinsTime, float* Xreal, float* Ximag, float* r, float* tAv, float* tSqAv,
-			 TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, float ReDz, float ImDz):
+binflipChi2::binflipChi2(vector<complex<float> > X, vector<float> r, vector<float> tAv, vector<float> tSqAv, TH2F pHistD0, 
+                                      TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, float ReDz, float ImDz):
+
   Minimisable(new MinuitParameterSet),
-  m_nbinsPhase(nbinsPhase),
-  m_nbinsTime(nbinsTime),
+  m_X(X),
   m_r(r),
   m_tAv(tAv),
   m_tSqAv(tSqAv),
@@ -16,15 +16,15 @@ binflipChi2::binflipChi2(int nbinsPhase, int nbinsTime, float* Xreal, float* Xim
   m_pHistD0bar(pHistD0bar),
   m_nHistD0(nHistD0),
   m_nHistD0bar(nHistD0bar),
-  m_ReZcp("ReZcp", FitParameter::FIT, ReZcp, 0.00001, 0, 0, getParSet()),
-  m_ImZcp("ImZcp", FitParameter::FIT, ImZcp, 0.00001, 0, 0, getParSet()),
-  m_ReDz("ReDz", FitParameter::FIT, ReDz, 0.00001, 0, 0, getParSet()),
-  m_ImDz("ImDz", FitParameter::FIT, ImDz, 0.00001, 0, 0, getParSet())
+  m_ReZcp("ReZcp", FitParameter::FIT, ReZcp, 0.0001, 0, 0, getParSet()),
+  m_ImZcp("ImZcp", FitParameter::FIT, ImZcp, 0.0001, 0, 0, getParSet()),
+  m_ReDz("ReDz", FitParameter::FIT, ReDz, 0.0001, 0, 0, getParSet()),
+  m_ImDz("ImDz", FitParameter::FIT, ImDz, 0.0001, 0, 0, getParSet())
+
 {
-    for(int i = 0; i < m_nbinsPhase; i++){
-        complex<float> Xb(Xreal[i], Ximag[i]);
-        m_X.push_back(Xb);
-    }
+    m_nbinsPhase = m_r.size();
+    m_nbinsTime = m_tAv.size();
+    cout << m_nbinsPhase << m_nbinsTime << endl;
 }
 
 binflipChi2::~binflipChi2(){
