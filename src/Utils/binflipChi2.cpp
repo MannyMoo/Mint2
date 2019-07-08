@@ -5,7 +5,8 @@ using namespace MINT;
 using namespace std;
 
 binflipChi2::binflipChi2(vector<complex<float> > X, vector<float> r, vector<float> tAv, vector<float> tSqAv, TH2F pHistD0, 
-			 TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, float ReDz, float ImDz, float stepSize):
+			 TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, float ReDz, float ImDz, float stepSize,
+                         bool fakeData, vector<float> Fm, vector<float> Fp):
 
   Minimisable(new MinuitParameterSet),
   m_X(X),
@@ -19,11 +20,16 @@ binflipChi2::binflipChi2(vector<complex<float> > X, vector<float> r, vector<floa
   m_ReZcp("ReZcp", FitParameter::FIT, ReZcp, stepSize, 0, 0, getParSet()),
   m_ImZcp("ImZcp", FitParameter::FIT, ImZcp, stepSize, 0, 0, getParSet()),
   m_ReDz("ReDz", FitParameter::FIT, ReDz, stepSize, 0, 0, getParSet()),
-  m_ImDz("ImDz", FitParameter::FIT, ImDz, stepSize, 0, 0, getParSet())
+  m_ImDz("ImDz", FitParameter::FIT, ImDz, stepSize, 0, 0, getParSet()),
+  m_fakeData(fakeData)
 
 {
     m_nbinsPhase = m_r.size();
     m_nbinsTime = m_tAv.size();
+
+    if (( m_fakeData ) && ( Fm.size() == m_nbinsPhase ) && ( Fp.size() == m_nbinsPhase )){
+      genFakeData(Fm, Fp);
+    }
 }
 
 
@@ -103,3 +109,53 @@ vector<vector<TGraph> > binflipChi2::getFits(complex<float >zcp, complex<float> 
     return fits;
 }
 
+
+void binflipChi2::genFakeData(vector<float> Fm, vector<float> Fp){
+    TRandom3 rndm = TRandom3(1);
+    complex<float> zcp(m_ReZcp.getCurrentFitVal(), m_ImZcp.getCurrentFitVal());
+    complex<float> deltaz(m_ReDz.getCurrentFitVal(), m_ImDz.getCurrentFitVal());
+
+    complex<float> qoverp = sqrt( (zcp + deltaz) / (zcp - deltaz) );
+    complex<float> z = sqrt( pow(zcp,2) - pow(deltaz,2) );
+        
+    for(int i : {0,1}){
+
+        complex<float> pqterm;
+        if ( i == 0 ){
+	    pqterm = qoverp;
+	}
+	else{
+	    pqterm = pow(qoverp, -1); 
+        }
+
+        for(int b = 1; b <= m_nbinsPhase; b++){
+     	    for(int j = 1; j <= m_nbinsTime; j++){
+
+	        float pval = 0., nval = 0., rNum = 0.;
+
+                pval = Fp[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(z, 2) ).real() );
+                pval += 0.25 * m_tSqAv[j-1] * pow(abs(z), 2) * pow(abs(pqterm), 2) * Fm[b-1];
+                pval += m_tAv[j-1] * sqrt(Fm[b-1] * Fp[b-1]) * (pqterm * m_X[b-1] * z).real();
+
+                nval = Fm[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(z, 2) ).real() );
+                nval += 0.25 * m_tSqAv[j-1] * pow(abs(z), 2) * pow(abs(pqterm), 2) * Fp[b-1];
+                nval += m_tAv[j-1] * sqrt(Fm[b-1] * Fp[b-1]) * (pqterm * m_X[b-1] * z).real();
+
+                if( i == 0 ){
+                    rNum = rndm.Gaus(0, m_pHistD0.GetBinError(j, b));
+		    m_pHistD0.SetBinContent(j, b, pval + rNum);
+                        
+                    rNum = rndm.Gaus(0, m_nHistD0.GetBinError(j, b));
+                    m_nHistD0.SetBinContent(j, b, nval + rNum);
+		}
+                else{
+                    rNum = rndm.Gaus(0, m_pHistD0bar.GetBinError(j, b));
+		    m_pHistD0bar.SetBinContent(j, b, pval + rNum);
+                        
+                    rNum = rndm.Gaus(0, m_nHistD0bar.GetBinError(j, b));
+                    m_nHistD0bar.SetBinContent(j, b, nval + rNum);     
+		}
+	    }
+	}
+    }       
+}
