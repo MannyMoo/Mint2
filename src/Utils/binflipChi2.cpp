@@ -6,6 +6,7 @@ using namespace std;
 
 binflipChi2::binflipChi2(int nbinsPhase, int nbinsTime, float* Xreal, float* Ximag, float* r, float* tAv, float* tSqAv,
 			 TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, float ReDz, float ImDz):
+  Minimisable(new MinuitParameterSet),
   m_nbinsPhase(nbinsPhase),
   m_nbinsTime(nbinsTime),
   m_r(r),
@@ -15,10 +16,10 @@ binflipChi2::binflipChi2(int nbinsPhase, int nbinsTime, float* Xreal, float* Xim
   m_pHistD0bar(pHistD0bar),
   m_nHistD0(nHistD0),
   m_nHistD0bar(nHistD0bar),
-  m_ReZcp("ReZcp", FitParameter::FIT, ReZcp, 0.0001, 0, 0, getParSet()),
-  m_ImZcp("ImZcp", FitParameter::FIT, ImZcp, 0.0001, 0, 0, getParSet()),
-  m_ReDz("ReDz", FitParameter::FIT, ReDz, 0.0001, 0, 0, getParSet()),
-  m_ImDz("ImDz", FitParameter::FIT, ImDz, 0.0001, 0, 0, getParSet())
+  m_ReZcp("ReZcp", FitParameter::FIT, ReZcp, 0.00001, 0, 0, getParSet()),
+  m_ImZcp("ImZcp", FitParameter::FIT, ImZcp, 0.00001, 0, 0, getParSet()),
+  m_ReDz("ReDz", FitParameter::FIT, ReDz, 0.00001, 0, 0, getParSet()),
+  m_ImDz("ImDz", FitParameter::FIT, ImDz, 0.00001, 0, 0, getParSet())
 {
     for(int i = 0; i < m_nbinsPhase; i++){
         complex<float> Xb(Xreal[i], Ximag[i]);
@@ -26,10 +27,14 @@ binflipChi2::binflipChi2(int nbinsPhase, int nbinsTime, float* Xreal, float* Xim
     }
 }
 
+binflipChi2::~binflipChi2(){
+    delete getParSet();
+}
+
 double binflipChi2::getVal(){    
 
     double chi2 = 0.;
-    vector<vector<TGraph> > fits(m_nbinsPhase);
+    vector<vector<TGraph> > fits(2);
     complex<float> zcp(m_ReZcp.getCurrentFitVal(), m_ImZcp.getCurrentFitVal());
     complex<float> deltaz(m_ReDz.getCurrentFitVal(), m_ImDz.getCurrentFitVal());
 
@@ -69,7 +74,7 @@ double binflipChi2::getVal(){
 
 vector<vector<TGraph> > binflipChi2::getFits(complex<float >zcp, complex<float> deltaz){
 
-  vector<vector<TGraph> > fits(m_nbinsPhase);
+  vector<vector<TGraph> > fits(2);
     
     for(int i : {0,1}){
 
