@@ -139,7 +139,7 @@ void binflipChi2::genFakeData(vector<float> Fm, vector<float> Fp){
 
                 nval = Fm[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(z, 2) ).real() );
                 nval += 0.25 * m_tSqAv[j-1] * pow(abs(z), 2) * pow(abs(pqterm), 2) * Fp[b-1];
-                nval += m_tAv[j-1] * sqrt(Fm[b-1] * Fp[b-1]) * (pqterm * m_X[b-1] * z).real();
+                nval += m_tAv[j-1] * sqrt(Fm[b-1] * Fp[b-1]) * (pqterm * conj(m_X[b-1]) * z).real();
 
                 if( i == 0 ){
 		    if( (m_pHistD0.GetBinContent(j,b) != 0) && (m_pHistD0.GetBinError(j, b) != 0) ){
