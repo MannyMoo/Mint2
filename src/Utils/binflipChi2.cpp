@@ -28,7 +28,7 @@ binflipChi2::binflipChi2(vector<complex<float> > X, vector<float> r, vector<floa
     m_nbinsTime = m_tAv.size();
 
     if (( m_fakeData ) && ( Fm.size() == m_nbinsPhase ) && ( Fp.size() == m_nbinsPhase )){
-      genFakeData(Fm, Fp);
+        genFakeData(Fm, Fp);
     }
 }
 
@@ -52,7 +52,7 @@ double binflipChi2::getVal(){
         double* Rvals_pl = fits[0][b-1].GetY();
         double* Rvals_mi = fits[1][b-1].GetY();  
     
-        for(int j = 0; j <= m_nbinsTime; j++){
+        for(int j = 1; j <= m_nbinsTime; j++){
 	    double R_pl = Rvals_pl[j-1];
             double R_mi = Rvals_mi[j-1]; 
             float D0_term = 0, D0bar_term = 0;
@@ -111,7 +111,7 @@ vector<vector<TGraph> > binflipChi2::getFits(complex<float >zcp, complex<float> 
 
 
 void binflipChi2::genFakeData(vector<float> Fm, vector<float> Fp){
-    TRandom3 rndm = TRandom3(1);
+    TRandom3 rndm = TRandom3(0);
     complex<float> zcp(m_ReZcp.getCurrentFitVal(), m_ImZcp.getCurrentFitVal());
     complex<float> deltaz(m_ReDz.getCurrentFitVal(), m_ImDz.getCurrentFitVal());
 
@@ -131,7 +131,7 @@ void binflipChi2::genFakeData(vector<float> Fm, vector<float> Fp){
         for(int b = 1; b <= m_nbinsPhase; b++){
      	    for(int j = 1; j <= m_nbinsTime; j++){
 
-	      float pval = 0., nval = 0., rNum = 0., err = 0.;
+	        float pval = 0., nval = 0., rNum = 0., err = 0.;
 
                 pval = Fp[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(z, 2) ).real() );
                 pval += 0.25 * m_tSqAv[j-1] * pow(abs(z), 2) * pow(abs(pqterm), 2) * Fm[b-1];
@@ -146,7 +146,7 @@ void binflipChi2::genFakeData(vector<float> Fm, vector<float> Fp){
 			err = pval * m_pHistD0.GetBinError(j, b) / m_pHistD0.GetBinContent(j,b);
 		    }
                     else{
-		        err = 0.05 * pval;
+		        err = sqrt(pval);
 		    }
 		    rNum = rndm.Gaus(0, err);
 		    m_pHistD0.SetBinContent(j, b, pval + rNum);
@@ -156,7 +156,7 @@ void binflipChi2::genFakeData(vector<float> Fm, vector<float> Fp){
 			err = nval * m_nHistD0.GetBinError(j, b) / m_nHistD0.GetBinContent(j,b);
 		    }
                     else{
-		        err = 0.05 * nval;
+		        err = sqrt(nval);
 		    }
 		    rNum = rndm.Gaus(0, err);
 		    m_nHistD0.SetBinContent(j, b, nval + rNum);
@@ -168,7 +168,7 @@ void binflipChi2::genFakeData(vector<float> Fm, vector<float> Fp){
 			err = pval * m_pHistD0bar.GetBinError(j, b) / m_pHistD0bar.GetBinContent(j,b);
 		    }
                     else{
-		        err = 0.05 * pval;
+		        err = sqrt(pval);
 		    }
 		    rNum = rndm.Gaus(0, err);
 		    m_pHistD0bar.SetBinContent(j, b, pval + rNum);
@@ -178,7 +178,7 @@ void binflipChi2::genFakeData(vector<float> Fm, vector<float> Fp){
 			err = nval * m_nHistD0bar.GetBinError(j, b) / m_nHistD0bar.GetBinContent(j,b);
 		    }
                     else{
-		        err = 0.05 * nval;
+		        err = sqrt(nval);
 		    }
 		    rNum = rndm.Gaus(0, err);
 		    m_nHistD0.SetBinContent(j, b, nval + rNum);
