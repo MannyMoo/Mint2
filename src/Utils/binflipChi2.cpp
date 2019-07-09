@@ -131,7 +131,7 @@ void binflipChi2::genFakeData(vector<float> Fm, vector<float> Fp){
         for(int b = 1; b <= m_nbinsPhase; b++){
      	    for(int j = 1; j <= m_nbinsTime; j++){
 
-	        float pval = 0., nval = 0., rNum = 0.;
+	      float pval = 0., nval = 0., rNum = 0., err = 0.;
 
                 pval = Fp[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(z, 2) ).real() );
                 pval += 0.25 * m_tSqAv[j-1] * pow(abs(z), 2) * pow(abs(pqterm), 2) * Fm[b-1];
@@ -142,18 +142,47 @@ void binflipChi2::genFakeData(vector<float> Fm, vector<float> Fp){
                 nval += m_tAv[j-1] * sqrt(Fm[b-1] * Fp[b-1]) * (pqterm * m_X[b-1] * z).real();
 
                 if( i == 0 ){
-                    rNum = rndm.Gaus(0, m_pHistD0.GetBinError(j, b));
+		    if( (m_pHistD0.GetBinContent(j,b) != 0) && (m_pHistD0.GetBinError(j, b) != 0) ){
+			err = pval * m_pHistD0.GetBinError(j, b) / m_pHistD0.GetBinContent(j,b);
+		    }
+                    else{
+		        err = 0.05 * pval;
+		    }
+		    rNum = rndm.Gaus(0, err);
 		    m_pHistD0.SetBinContent(j, b, pval + rNum);
-                        
-                    rNum = rndm.Gaus(0, m_nHistD0.GetBinError(j, b));
-                    m_nHistD0.SetBinContent(j, b, nval + rNum);
+		    m_pHistD0.SetBinError(j, b, err);
+                         
+		    if( (m_nHistD0.GetBinContent(j,b) != 0) && (m_nHistD0.GetBinError(j, b) != 0) ){
+			err = nval * m_nHistD0.GetBinError(j, b) / m_nHistD0.GetBinContent(j,b);
+		    }
+                    else{
+		        err = 0.05 * nval;
+		    }
+		    rNum = rndm.Gaus(0, err);
+		    m_nHistD0.SetBinContent(j, b, nval + rNum);
+		    m_nHistD0.SetBinError(j, b, err);
+
 		}
                 else{
-                    rNum = rndm.Gaus(0, m_pHistD0bar.GetBinError(j, b));
+		    if( (m_pHistD0bar.GetBinContent(j,b) != 0) && (m_pHistD0bar.GetBinError(j, b) != 0) ){
+			err = pval * m_pHistD0bar.GetBinError(j, b) / m_pHistD0bar.GetBinContent(j,b);
+		    }
+                    else{
+		        err = 0.05 * pval;
+		    }
+		    rNum = rndm.Gaus(0, err);
 		    m_pHistD0bar.SetBinContent(j, b, pval + rNum);
-                        
-                    rNum = rndm.Gaus(0, m_nHistD0bar.GetBinError(j, b));
-                    m_nHistD0bar.SetBinContent(j, b, nval + rNum);     
+		    m_pHistD0bar.SetBinError(j, b, err);
+                         
+		    if( (m_nHistD0bar.GetBinContent(j,b) != 0) && (m_nHistD0bar.GetBinError(j, b) != 0) ){
+			err = nval * m_nHistD0bar.GetBinError(j, b) / m_nHistD0bar.GetBinContent(j,b);
+		    }
+                    else{
+		        err = 0.05 * nval;
+		    }
+		    rNum = rndm.Gaus(0, err);
+		    m_nHistD0.SetBinContent(j, b, nval + rNum);
+		    m_nHistD0.SetBinError(j, b, err);
 		}
 	    }
 	}

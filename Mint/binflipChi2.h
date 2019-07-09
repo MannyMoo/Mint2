@@ -13,8 +13,8 @@ using namespace std;
 
 
 class binflipChi2 : public Minimisable{
-    int m_nbinsPhase;
-    int m_nbinsTime;
+    unsigned int m_nbinsPhase;
+    unsigned int m_nbinsTime;
     vector<complex<float> > m_X;
     vector<float> m_r;
     vector<float> m_tAv;
