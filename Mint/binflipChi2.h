@@ -13,8 +13,8 @@ using namespace std;
 
 
 class binflipChi2 : public Minimisable{
-    unsigned int m_nbinsPhase;
-    unsigned int m_nbinsTime;
+    int m_nbinsPhase;
+    int m_nbinsTime;
     vector<complex<float> > m_X;
     vector<float> m_r;
     vector<float> m_tAv;
@@ -28,6 +28,8 @@ class binflipChi2 : public Minimisable{
     FitParameter m_ReDz;
     FitParameter m_ImDz;
     bool m_fakeData;
+    vector<float> m_Fm;
+    vector<float> m_Fp;
 
   public:
     binflipChi2(vector<complex<float> > X, vector<float> r, vector<float> tAv, vector<float> tSqAv, 
@@ -37,6 +39,6 @@ class binflipChi2 : public Minimisable{
     ~binflipChi2();
     double getVal();
     vector<vector<TGraph> > getFits(complex<float> zcp, complex<float> deltaz);
-    void genFakeData(vector<float> Fm, vector<float> Fp);
+    void genFakeData();
 };
 
