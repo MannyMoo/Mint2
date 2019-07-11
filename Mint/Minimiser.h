@@ -114,6 +114,26 @@ class Minimiser : public TMinuit{
 
   /** Get the fit status */
   int status() ;
+
+  /** Fit status enumerators. */
+  enum FitStatus {
+    NOTCALCULATED = 0, ///< FAILED: Covariance matrix not calculated at all
+    NOTACCURATE, ///< FAILED: Covariance matrix approximation only, not accurate
+    NOTPOSDEF, ///< FAILED: Full covariance matrix, but forced positive-definite
+    CONVERGED ///< CONVERGED: Full accurate covariance matrix
+  } ;
+
+  /** Check if the fit status is of the given type. */
+  bool isStatus(Minimiser::FitStatus) ;
+
+  /** Check if the fit status is >= the given status type. */
+  bool isStatusAtLeast(Minimiser::FitStatus) ;
+
+  /** Print the fit status. */
+  int printStatus() ;
+
+  /** Check if the fit status is CONVERGED */
+  bool isConverged() ;
 };
 }//namespace MINT
 #endif
