@@ -5,7 +5,7 @@ var searchData=
   ['_7eamplitude',['~Amplitude',['../classAmplitude.html#acae45dabc2fba3a6ddab149271140e01',1,'Amplitude']]],
   ['_7eamppair',['~AmpPair',['../classAmpPair.html#aa0803aba334c597735a6d9e5b1e4488e',1,'AmpPair']]],
   ['_7eampspdf',['~AmpsPdf',['../classAmpsPdf.html#a19f9826dd8f5d0e73e94ba07cd195751',1,'AmpsPdf']]],
-  ['_7eampspdfflexifast',['~AmpsPdfFlexiFast',['../classAmpsPdfFlexiFast.html#aa23e29c4ab520b0a6a4d508b6f6dde73',1,'AmpsPdfFlexiFast']]],
+  ['_7eampspdfflexifast',['~AmpsPdfFlexiFast',['../classAmpsPdfFlexiFast.html#aa23e29c4ab520b0a6a4d508b6f6dde73',1,'AmpsPdfFlexiFast::~AmpsPdfFlexiFast()'],['../classAmpsPdfFlexiFast.html#aa23e29c4ab520b0a6a4d508b6f6dde73',1,'AmpsPdfFlexiFast::~AmpsPdfFlexiFast()']]],
   ['_7ebasegenerator',['~BaseGenerator',['../classBaseGenerator.html#a848210761b969d7435c76adb74f981a5',1,'BaseGenerator']]],
   ['_7ebasiccomplex',['~BasicComplex',['../classMINT_1_1BasicComplex.html#adc1a468d9ca1ec64d83c4a441ee70b3c',1,'MINT::BasicComplex']]],
   ['_7ebinningbase',['~BinningBase',['../classBinningBase.html#adf886f1d542185bdec60b50417f00ba0',1,'BinningBase']]],

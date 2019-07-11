@@ -2,7 +2,7 @@ var searchData=
 [
   ['d',['d',['../classRooCubicSplineKnot_1_1S__jk.html#a798c6e7f23ee369958b8185cab04f40b',1,'RooCubicSplineKnot::S_jk']]],
   ['daughters',['daughters',['../classDDTree.html#a0bdf88739ce72775f8b25ed7764c350f',1,'DDTree']]],
-  ['decaytime',['decaytime',['../classTimeDependentGenerator_1_1GenTimePoint.html#adcb0e86ca8f5feb32e30801aa644ed8d',1,'TimeDependentGenerator::GenTimePoint::decaytime()'],['../structTimeDependentGenerator_1_1GenTimeEvent.html#a85fd0adb8a79ebfc45b9b62c0ca0908f',1,'TimeDependentGenerator::GenTimeEvent::decaytime()']]],
+  ['decaytime',['decaytime',['../classTimeDependentGenerator_1_1GenTimePoint.html#adcb0e86ca8f5feb32e30801aa644ed8d',1,'TimeDependentGenerator::GenTimePoint']]],
   ['deg',['deg',['../CLHEPSystemOfUnits_8h.html#a2f5042227e4fdba943844e169f5cf010',1,'CLHEPSystemOfUnits.h']]],
   ['degree',['degree',['../CLHEPSystemOfUnits_8h.html#a2675edd2140472f1d48c6178d4052018',1,'CLHEPSystemOfUnits.h']]],
   ['delta_5fp0_5fos_5f',['delta_p0_os_',['../classDecRateCoeff__Bd.html#a68dea88e5cf7f04354249bb2f38c726b',1,'DecRateCoeff_Bd']]],

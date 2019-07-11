@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['m',['M',['../classBugg__BW.html#aa5d56e4688549bd59fa6302ef7426781',1,'Bugg_BW::M()'],['../classDalitzEvent.html#aedc1a686bbe87ca1cba5eeb5ee767883',1,'DalitzEvent::m()'],['../classDalitzEventBase.html#a4eee19bf52f67df70ec863f078e268b5',1,'DalitzEventBase::m()']]],
+  ['m',['m',['../classDalitzEvent.html#aedc1a686bbe87ca1cba5eeb5ee767883',1,'DalitzEvent::m()'],['../classDalitzEventBase.html#a4eee19bf52f67df70ec863f078e268b5',1,'DalitzEventBase::m()'],['../classBugg__BW.html#aa5d56e4688549bd59fa6302ef7426781',1,'Bugg_BW::M()']]],
   ['m0',['m0',['../classCalculate4BodyProps.html#adb3eb1861b1093c8f95b564485c9e0f3',1,'Calculate4BodyProps']]],
   ['m0sq',['m0sq',['../classCalculate4BodyProps.html#adc442407df0990d72adf8de8cc779f6a',1,'Calculate4BodyProps']]],
   ['m1',['m1',['../classCalculate4BodyProps.html#a4ba53bdf6e3f7124628b07d9ba4655fa',1,'Calculate4BodyProps']]],
@@ -85,6 +85,7 @@ var searchData=
   ['makehistograms',['makeHistograms',['../classDalitzHistoSet.html#a928a42d7208281b6928f4d5afcd10610',1,'DalitzHistoSet']]],
   ['makehstack',['makeHStack',['../classDalitzHistoStackSet.html#af61022e2d6d7f1a8f7968d303f9f6080',1,'DalitzHistoStackSet']]],
   ['makeimagname',['makeImagName',['../classMINT_1_1FitComplexCart.html#a7feb1631a3f0178617d5a68671aad582',1,'MINT::FitComplexCart']]],
+  ['makeinfonames',['makeInfoNames',['../classTimeDependentGenerator_1_1GenTimeEvent.html#a3cdc64ed02181071764f12e5bc8c8b46',1,'TimeDependentGenerator::GenTimeEvent']]],
   ['makeintegcalculator',['makeIntegCalculator',['../classFitAmpIncoherentSum.html#a2af8e19bbdf2385a64268411861a533e',1,'FitAmpIncoherentSum::makeIntegCalculator()'],['../classFitAmpIncoherentSumEvtGen.html#aab98aa5b884fcd4dff0b146f89a5e268',1,'FitAmpIncoherentSumEvtGen::makeIntegCalculator()'],['../classFitAmpListBase.html#ae78abb214f2ed09001be7487466d86d7',1,'FitAmpListBase::makeIntegCalculator()'],['../classFitAmpSum.html#a63a0fe518f1984029397ef9480d044e6',1,'FitAmpSum::makeIntegCalculator()'],['../classIFastAmplitudeIntegrable.html#acc5071ecfec647ddfd4694afce058114',1,'IFastAmplitudeIntegrable::makeIntegCalculator()'],['../classILookLikeFitAmpSum.html#aa2829498bc1b5e5c86e9e23dc9b7c4eb',1,'ILookLikeFitAmpSum::makeIntegCalculator()'],['../classMultiTopHat.html#ad57d56386f7a17efb63ccab8f17d7a02',1,'MultiTopHat::makeIntegCalculator()'],['../classSumOfFitAmpLists.html#a3f9f7491810321f39edff666a67fdc0c',1,'SumOfFitAmpLists::makeIntegCalculator()']]],
   ['makeintegralcovariance',['makeIntegralCovariance',['../classFitAmpPairCovariance.html#a2ab6151971291ba724fb9210d1b07f4a',1,'FitAmpPairCovariance']]],
   ['makeintegrationcalculator',['makeIntegrationCalculator',['../classFitAmpIncoherentSum.html#ac6917810c06a9daa5e97e74c3ae85a1a',1,'FitAmpIncoherentSum::makeIntegrationCalculator()'],['../classFitAmpIncoherentSumEvtGen.html#a97ef2fd54633fd293242f31262ad1bb3',1,'FitAmpIncoherentSumEvtGen::makeIntegrationCalculator()'],['../classFitAmpListBase.html#a581907f6f7057eb6970686272c89638b',1,'FitAmpListBase::makeIntegrationCalculator()'],['../classFitAmpSum.html#a89bdac9d31ab65f8ce4752a4819c8d74',1,'FitAmpSum::makeIntegrationCalculator()'],['../classIFastAmplitudeIntegrable.html#a1935fb1db3c9f360d57fff2a50e619de',1,'IFastAmplitudeIntegrable::makeIntegrationCalculator()'],['../classILookLikeFitAmpSum.html#a841f7410c071a362198c594bb777c57d',1,'ILookLikeFitAmpSum::makeIntegrationCalculator()'],['../classMultiTopHat.html#a04865ff0d4b8771d2bfea6259ac23993',1,'MultiTopHat::makeIntegrationCalculator()'],['../classSumOfFitAmpLists.html#a02083b6a8b2593772615c3de6909864d',1,'SumOfFitAmpLists::makeIntegrationCalculator()']]],
@@ -177,7 +178,7 @@ var searchData=
   ['mindaughterspinsum4',['minDaughterSpinSum4',['../classBW__BW.html#a948a2b47152a543bdcaff8e0fb72276f',1,'BW_BW']]],
   ['minimisable',['Minimisable',['../classMINT_1_1Minimisable.html#aa802159b079eb79abdc093d2b18dab3b',1,'MINT::Minimisable::Minimisable(MinuitParameterSet *mps=0)'],['../classMINT_1_1Minimisable.html#a0841ec04c72fb4ea4212708e4a071020',1,'MINT::Minimisable::Minimisable(const Minimisable &amp;other)']]],
   ['minimisepareto',['minimisePareto',['../classMINT_1_1minimisePareto.html#aa227cc83eb69354106373e3dccc8e034',1,'MINT::minimisePareto']]],
-  ['minimiser',['Minimiser',['../classMINT_1_1Minimiser.html#ab95d4eb8de31e07c737fc51980aac8be',1,'MINT::Minimiser']]],
+  ['minimiser',['Minimiser',['../classMINT_1_1Minimiser.html#a4a41cdca73c9a83177558001a2ecd341',1,'MINT::Minimiser']]],
   ['mininit',['minInit',['../classMINT_1_1FitParameter.html#aa8735540f4e74f79bb65b907d0cd810c',1,'MINT::FitParameter::minInit()'],['../classMINT_1_1IMinuitParameter.html#acd5243270f787975826fd70a71aa0bd4',1,'MINT::IMinuitParameter::minInit()']]],
   ['minmaxfinder',['MinMaxFinder',['../classMinMaxFinder.html#a8a22672ce4b5f78eee2b8652a6651b94',1,'MinMaxFinder']]],
   ['minshadowbincontent',['MinShadowBinContent',['../classAlgOption.html#a41dec7953bff15ba8c901047e239b1cb',1,'AlgOption']]],
