@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['type',['Type',['../structHyperBinningMaker_1_1VolumeStatus.html#a832fd411a990befccdf5e967b224ae7c',1,'HyperBinningMaker::VolumeStatus::Type()'],['../classMINT_1_1FitComplex.html#a759e10b8f4a501bb68a0b155fc3be478',1,'MINT::FitComplex::TYPE()']]]
+  ['optionname',['OptionName',['../classAlgOption.html#a803493389f892d3b420b7354f9535dab',1,'AlgOption']]],
+  ['ownership',['OWNERSHIP',['../namespaceMINT.html#abf06311e72b2ecdd63c54664d1cb4e1c',1,'MINT']]]
 ];

@@ -546,3 +546,44 @@ TMatrixTSym<double> Minimiser::covMatrixFull() {
   }
   return matrix;
 }
+
+int Minimiser::status() {
+  double fmin, fedm, errdef ;
+  int npari, nparx, status ;
+  mnstat( fmin, fedm, errdef, npari, nparx, status ) ;
+  return status ;
+}
+
+bool Minimiser::isStatus(Minimiser::FitStatus stat) {
+  return status() == stat ;
+}
+
+bool Minimiser::isStatusAtLeast(Minimiser::FitStatus stat) {
+  return status() >= stat ;
+}
+
+int Minimiser::printStatus() {
+  int stat = status() ;
+  cout << "Fit status: " << stat << endl ;
+  switch(stat) {
+    case NOTCALCULATED :
+      cout << "FAILED: Covariance matrix not calculated at all." << endl ;
+      break ;
+    case NOTACCURATE :
+      cout << "FAILED: Covariance matrix approximation only, not accurate." << endl ;
+      break ;
+    case NOTPOSDEF :
+      cout << "FAILED: Full covariance matrix, but forced positive-definite." << endl ;
+      break ;
+    case CONVERGED :
+      cout << "CONVERGED: Full accurate covariance matrix." << endl ;
+      break ;
+    default :
+      cout << "UNKNOWN." << endl ;
+    }
+  return stat ;
+}
+
+bool Minimiser::isConverged() {
+  return isStatus(Minimiser::CONVERGED) ;
+}

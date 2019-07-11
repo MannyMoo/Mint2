@@ -24,7 +24,6 @@ var searchData=
   ['counted_5fptr_3c_20ddtree_20_3e',['counted_ptr&lt; DDTree &gt;',['../classMINT_1_1counted__ptr.html',1,'MINT']]],
   ['counted_5fptr_3c_20diskresidenteventlist_20_3e',['counted_ptr&lt; DiskResidentEventList &gt;',['../classMINT_1_1counted__ptr.html',1,'MINT']]],
   ['counted_5fptr_3c_20fitamppairlist_20_3e',['counted_ptr&lt; FitAmpPairList &gt;',['../classMINT_1_1counted__ptr.html',1,'MINT']]],
-  ['counted_5fptr_3c_20idalitzevent_20_3e',['counted_ptr&lt; IDalitzEvent &gt;',['../classMINT_1_1counted__ptr.html',1,'MINT']]],
   ['counted_5fptr_3c_20ifastamplitudeintegrable_20_3e',['counted_ptr&lt; IFastAmplitudeIntegrable &gt;',['../classMINT_1_1counted__ptr.html',1,'MINT']]],
   ['counted_5fptr_3c_20igenfct_20_3e',['counted_ptr&lt; IGenFct &gt;',['../classMINT_1_1counted__ptr.html',1,'MINT']]],
   ['counted_5fptr_3c_20iintegrationcalculator_20_3e',['counted_ptr&lt; IIntegrationCalculator &gt;',['../classMINT_1_1counted__ptr.html',1,'MINT']]],
