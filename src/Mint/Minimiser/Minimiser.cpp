@@ -546,3 +546,10 @@ TMatrixTSym<double> Minimiser::covMatrixFull() {
   }
   return matrix;
 }
+
+int Minimiser::status() {
+  double fmin, fedm, errdef ;
+  int npari, nparx, status ;
+  mnstat( fmin, fedm, errdef, npari, nparx, status ) ;
+  return status ;
+}

@@ -93,11 +93,11 @@ class Minimiser : public TMinuit{
 
   bool scanMarked();
   bool scanAll();
+  /// note that the index i is the one in the parameter list
+  /// which goes from 0 to n-1 (i.e. C-style).
+  /// This corresponds to Minuit's parameter number i+1.
+  /// (so if you want Minuit's fit parameter 1, pass it 1-1=0)
   TGraph* scan(int i, double from=0, double to=0);
-  // note that the index i is the one in the parameter list
-  // which goes from 0 to n-1 (i.e. C-style).
-  // This corresponds to Minuit's parameter number i+1.
-  // (so if you want Minuit's fit parameter 1, pass it 1-1=0)
   TGraph* scan(IMinuitParameter& fp, double from=0, double to=0);
 
 
@@ -112,6 +112,8 @@ class Minimiser : public TMinuit{
   TMatrixTSym<double> covMatrix();
   TMatrixTSym<double> covMatrixFull();
 
+  /** Get the fit status */
+  int status() ;
 };
 }//namespace MINT
 #endif
