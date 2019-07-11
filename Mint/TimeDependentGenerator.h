@@ -69,6 +69,9 @@ public :
   double get_scale() const ;
   float get_gen_efficiency() const ;
 
+  double pdf_value(int, double, IDalitzEvent&) ;
+  double pdf_value(IDalitzEvent&) ;
+
 private :
   TRandom3* m_rndm ;
   const DalitzEventPattern m_pattern ;

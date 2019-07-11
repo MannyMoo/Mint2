@@ -68,19 +68,16 @@ DalitzEventPattern TimeDependentGenerator::anti(DalitzEventPattern pat) {
 }
 
 /* Constructor, takes:
-   name : the name of the generator and the directory in which the integrators will be saved.
-   overwrite : whether to overwrite the existing integrator files (if they exist).
-   rndm : The random number generator to use.
-   precision : The precision to which the integrals must be calculated.
    pattern : The event pattern to be used (the CP conjugate will automatically be added).
    width : the decay width in 1/ps.
    deltam : the delta-mass in 1/ps.
    deltagamma : the delta-gamma in 1/ps.
    qoverp : the magnitude of q/p.
    phi : the phase of q/p.
-   tmax : the maximum decay time that'll be generated.
-   ntimepoints : the number of points to sample between 0 and tmax when building the generators.
+   rndm : The random number generator to use.
    h_efficiency : (optional) histogram to which efficiency plot will be fitted
+   resWidth : the width of the Gaussian decay-time resolution to apply
+   addExpEffects : whether to add efficiency and resolution to the decay time.
 */
 TimeDependentGenerator::TimeDependentGenerator(const DalitzEventPattern& pattern, double width, double deltam,
 					       double deltagamma, double qoverp, double phi, 
@@ -112,6 +109,19 @@ TimeDependentGenerator::TimeDependentGenerator(const DalitzEventPattern& pattern
 }
 
 
+/* Constructor, takes:
+   model : the amplitude model for the decay
+   cpmodel : the amplitude model for the CP conjugate decay
+   width : the decay width in 1/ps.
+   deltam : the delta-mass in 1/ps.
+   deltagamma : the delta-gamma in 1/ps.
+   qoverp : the magnitude of q/p.
+   phi : the phase of q/p.
+   rndm : The random number generator to use.
+   h_efficiency : (optional) histogram to which efficiency plot will be fitted
+   resWidth : the width of the Gaussian decay-time resolution to apply
+   addExpEffects : whether to add efficiency and resolution to the decay time.
+*/
 TimeDependentGenerator::TimeDependentGenerator(MINT::counted_ptr<FitAmpSum> model, 
 					       MINT::counted_ptr<FitAmpSum> cpmodel,
 					       double width, double deltam,
@@ -201,21 +211,8 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() {
     evt = m_generator.newEvent() ;
     ++m_ngen ;
 
-    complex<double> Ap = m_model->ComplexVal(*evt) ;
-    complex<double> Am = m_cpmodel->ComplexVal(*evt) ;
-    if(tag == -1)
-      swap(Ap, Am) ;
-    double magAp = norm(Ap) ;
-    double magAm = norm(Am) ;
-    complex<double> crossterm = pow(m_qoverp, tag) * conj(Ap) * Am ;
-    double magqoverp = pow(norm(m_qoverp), tag) ;
-    double deltamt = m_deltam * decaytime ;
-    double halfdgammat = 0.5 * m_deltagamma * decaytime ;
-    double pdfval = 0.5 * ((magAp + magqoverp * magAm) * cosh(halfdgammat)
-			   + (magAp - magqoverp * magAm) * cos(deltamt)
-			   - 2 * crossterm.real() * sinh(halfdgammat)
-			   - 2 * crossterm.imag() * sin(deltamt)) ;
-    
+    double pdfval = pdf_value(tag, decaytime, *evt) ;
+
     double maxval = m_bothmodel.Prob(*evt) * m_scale ;
     if(pdfval > maxval){
       /*cout << "pdfval " << pdfval << " maxval " << maxval << endl ;
@@ -243,3 +240,28 @@ double TimeDependentGenerator::get_scale() const {
 float TimeDependentGenerator::get_gen_efficiency() const {
   return m_ngen > 0 ? float(m_naccept)/m_ngen : 0. ;
 }
+
+double TimeDependentGenerator::pdf_value(int tag, double decaytime, IDalitzEvent& evt) {
+  complex<double> Ap = m_model->ComplexVal(evt) ;
+  complex<double> Am = m_cpmodel->ComplexVal(evt) ;
+  if(tag == -1)
+    swap(Ap, Am) ;
+  double magAp = norm(Ap) ;
+  double magAm = norm(Am) ;
+  complex<double> crossterm = pow(m_qoverp, tag) * conj(Ap) * Am ;
+  double magqoverp = pow(norm(m_qoverp), tag) ;
+  double deltamt = m_deltam * decaytime ;
+  double halfdgammat = 0.5 * m_deltagamma * decaytime ;
+  double pdfval = 0.5 * ((magAp + magqoverp * magAm) * cosh(halfdgammat)
+			 + (magAp - magqoverp * magAm) * cos(deltamt)
+			 - 2 * crossterm.real() * sinh(halfdgammat)
+			 - 2 * crossterm.imag() * sin(deltamt)) ;
+  return pdfval ;
+}
+
+double TimeDependentGenerator::pdf_value(IDalitzEvent& evt) {
+  return pdf_value(evt.getValueFromVector(GenTimeEvent::ITAG),
+		   evt.getValueFromVector(GenTimeEvent::IDECAYTIME),
+		   evt) ;
+}
+
