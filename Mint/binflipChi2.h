@@ -4,6 +4,7 @@
 #include "Mint/FitParameter.h"
 #include "TH2F.h"
 #include "TGraph.h"
+#include "TGraphErrors.h"
 #include "TRandom3.h"
 #include "cmath"
 #include "complex"
@@ -30,15 +31,18 @@ class binflipChi2 : public Minimisable{
     bool m_fakeData;
     vector<float> m_Fm;
     vector<float> m_Fp;
+    vector<float> m_Fmbar;
+    vector<float> m_Fpbar;
 
   public:
     binflipChi2(vector<complex<float> > X, vector<float> r, vector<float> tAv, vector<float> tSqAv, 
                        TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, 
                        float ReDz, float ImDz, float stepSize, bool fakeData = false, vector<float> Fm = vector<float>(), 
-                       vector<float> Fp = vector<float>());
+                       vector<float> Fp = vector<float>(), vector<float> Fmbar = vector<float>(), 
+                       vector<float> Fpbar = vector<float>());
     ~binflipChi2();
     double getVal();
-    vector<vector<TGraph> > getFits(complex<float> zcp, complex<float> deltaz);
+    vector<vector<TGraph> > getFits();
     void genFakeData();
 };
 
