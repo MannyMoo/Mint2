@@ -28,14 +28,14 @@ class binflipChi2 : public Minimisable{
     FitParameter m_ImZcp;
     FitParameter m_ReDz;
     FitParameter m_ImDz;
-    bool m_fakeData;
+    int m_fakeData;
     vector<float> m_Fm;
     vector<float> m_Fp;
 
   public:
     binflipChi2(vector<complex<float> > X, vector<float> r, vector<float> tAv, vector<float> tSqAv, 
                        TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, 
-                       float ReDz, float ImDz, float stepSize, bool fakeData = false, vector<float> Fm = vector<float>(), 
+                       float ReDz, float ImDz, float stepSize, int fakeData = 0, vector<float> Fm = vector<float>(), 
                        vector<float> Fp = vector<float>());
     ~binflipChi2();
     double getVal();
