@@ -32,6 +32,8 @@ class binflipChi2 : public Minimisable{
     vector<float> m_Fm;
     vector<float> m_Fp;
 
+    double getChi2(const int, const int, const TH2F&, const TH2F&, const double[]) const ;
+
   public:
     binflipChi2(vector<complex<float> > X, vector<float> r, vector<float> tAv, vector<float> tSqAv, 
                        TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, 
@@ -42,4 +44,3 @@ class binflipChi2 : public Minimisable{
     vector<vector<TGraph> > getFits();
     void genFakeData();
 };
-

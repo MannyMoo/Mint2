@@ -38,6 +38,19 @@ binflipChi2::~binflipChi2(){
 }
 
 
+double binflipChi2::getChi2(const int j, const int b, const TH2F& nHist, const TH2F& pHist,
+			    const double Rvals[]) const {
+  if(nHist.GetBinContent(j, b) == 0 || pHist.GetBinContent(j, b) == 0)
+    return 0. ;
+  const double& R = Rvals[j-1] ;
+  double den =  pow(nHist.GetBinError(j,b), 2) + pow(pHist.GetBinError(j,b) * R, 2); 
+  if(den == 0.)
+    return 0. ;
+
+  double num = pow(nHist.GetBinContent(j,b) - pHist.GetBinContent(j,b) * R, 2);
+  return num/den ;
+} 
+
 double binflipChi2::getVal(){    
 
     double chi2 = 0.;
@@ -53,49 +66,12 @@ double binflipChi2::getVal(){
     
         for(int j = 1; j <= m_nbinsTime; j++){
 
-	    double R_pl = Rvals_pl[j-1];
-            double R_mi = Rvals_mi[j-1]; 
-            float D0_term = 0, D0bar_term = 0;
-            float D0_num = 0, D0_den = 0, D0bar_num = 0, D0bar_den = 0; 
-
-            if(( m_nHistD0.GetBinContent(j,b) != 0 )&&( m_pHistD0.GetBinContent(j,b) != 0 )){
-		D0_num = pow(m_nHistD0.GetBinContent(j,b) - m_pHistD0.GetBinContent(j,b) * R_pl, 2);
-		D0_den =  pow(m_nHistD0.GetBinError(j,b), 2) + pow(m_pHistD0.GetBinError(j,b) * R_pl, 2); 
-		if(D0_den != 0){
-		    D0_term = D0_num/D0_den;
-		}
-	    } 
-     
-            if(( m_nHistD0bar.GetBinContent(j,b) != 0 )&&( m_pHistD0bar.GetBinContent(j,b) != 0 )){
-		D0bar_num = pow(m_nHistD0bar.GetBinContent(j,b) - m_pHistD0bar.GetBinContent(j,b) * R_mi, 2);
-		D0bar_den =  pow(m_nHistD0bar.GetBinError(j,b), 2) + pow(m_pHistD0bar.GetBinError(j,b) * R_mi, 2); 
-		if(D0bar_den != 0){
-		    D0bar_term = D0bar_num/D0bar_den;
-		}
-	    }
-       
-            // float tol = 0.00001;
-            // if((m_nHistD0.GetBinContent(j,b)/m_pHistD0.GetBinContent(j,b) - R_pl > tol)&&( m_nHistD0.GetBinContent(j,b) != 0 )&&( m_pHistD0.GetBinContent(j,b) != 0 )){
-	    // 	  cout << "Disagreement at b=" << b << ", j="<<j<<endl;
-            //       cout <<  m_nHistD0.GetBinContent(j,b)/m_pHistD0.GetBinContent(j,b)<< "\t" << R_pl << "\n\n";
-	    // }
-            // if((m_nHistD0bar.GetBinContent(j,b)/m_pHistD0bar.GetBinContent(j,b) - R_mi > tol)&&( m_nHistD0bar.GetBinContent(j,b) != 0 )&&( m_pHistD0bar.GetBinContent(j,b) != 0 )){
-	    // 	  cout << "Disagreement at b=" << b << ", j="<<j<<endl;
-            //       cout <<  m_nHistD0bar.GetBinContent(j,b)/m_pHistD0bar.GetBinContent(j,b)<< "\t" << R_mi << "\n\n";
-	    // }
+            double D0_term = getChi2(j, b, m_nHistD0, m_pHistD0, Rvals_pl) ;
+	    double D0bar_term = getChi2(j, b, m_nHistD0bar, m_pHistD0bar, Rvals_mi) ;
    
             chi2 += D0_term + D0bar_term;
-       
-            float tol = 0.01;
-            if(D0_term > tol){
-	        count += 1;
-	    }
-            if(D0bar_term > tol){
-	        count += 1;
-	    }
         }
     }
-    cout << "Number of terms contributing to chi2 is: " << count << endl;
     return chi2;
 }
 
