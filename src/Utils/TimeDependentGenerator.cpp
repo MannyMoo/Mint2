@@ -153,7 +153,7 @@ TimeDependentGenerator::TimeDependentGenerator(MINT::counted_ptr<FitAmpSum> mode
   }
 }
 
-// Generate a decay time for the given flavour.
+// Generate a decay time.
 pair<double, double> TimeDependentGenerator::generate_decay_time() const {
   double decaytime = m_rndm->Exp(1./m_width) ;
   double smeareddecaytime = decaytime ;
@@ -213,7 +213,7 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() {
 
     double pdfval = pdf_value(tag, decaytime, *evt) ;
 
-    double maxval = m_bothmodel.Prob(*evt) * m_scale ;
+    double maxval = m_bothmodel.Prob(*evt) * m_scale * exp(-decaytime * m_width) ;
     if(pdfval > maxval){
       /*cout << "pdfval " << pdfval << " maxval " << maxval << endl ;
 	throw out_of_range("pdfval > maxval. That shouldn't happen!") ;*/
@@ -246,7 +246,7 @@ double TimeDependentGenerator::pdf_value(int tag, double decaytime, IDalitzEvent
   complex<double> Am = m_cpmodel->ComplexVal(evt) ;
   if(tag == -1)
     swap(Ap, Am) ;
-  double magAp = norm(Ap) ;
+  /*double magAp = norm(Ap) ;
   double magAm = norm(Am) ;
   complex<double> crossterm = pow(m_qoverp, tag) * conj(Ap) * Am ;
   double magqoverp = pow(norm(m_qoverp), tag) ;
@@ -255,8 +255,11 @@ double TimeDependentGenerator::pdf_value(int tag, double decaytime, IDalitzEvent
   double pdfval = 0.5 * ((magAp + magqoverp * magAm) * cosh(halfdgammat)
 			 + (magAp - magqoverp * magAm) * cos(deltamt)
 			 - 2 * crossterm.real() * sinh(halfdgammat)
-			 - 2 * crossterm.imag() * sin(deltamt)) ;
-  return pdfval ;
+			 + 2 * crossterm.imag() * sin(deltamt)) ;
+			 return pdfval ;*/
+  AmpPair coeffs = amplitude_coefficients(tag, decaytime) ;
+  complex<double> Amp = coeffs.first * Ap + coeffs.second * Am ;
+  return norm(Amp) ;
 }
 
 double TimeDependentGenerator::pdf_value(IDalitzEvent& evt) {
@@ -265,3 +268,13 @@ double TimeDependentGenerator::pdf_value(IDalitzEvent& evt) {
 		   evt) ;
 }
 
+TimeDependentGenerator::AmpPair 
+TimeDependentGenerator::amplitude_coefficients(const int tag, const double decaytime) {
+  double coeff = exp(-decaytime * 0.5 * (m_width + 0.5 * m_deltagamma)) ;
+  complex<double> expterm = exp(complex<double>(0.5 * m_deltagamma * decaytime, m_deltam * decaytime)) ;
+  complex<double> plusterm = 1. + expterm ;
+  complex<double> minusterm = 1. - expterm ;
+  complex<double> coeffprod = coeff * plusterm ;
+  complex<double> coeffmix = pow(m_qoverp, tag) * coeff * minusterm ;
+  return AmpPair(coeffprod, coeffmix) ;
+}

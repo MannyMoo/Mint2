@@ -72,6 +72,11 @@ public :
   double pdf_value(int, double, IDalitzEvent&) ;
   double pdf_value(IDalitzEvent&) ;
 
+  typedef std::pair<std::complex<double>, std::complex<double> > AmpPair ;
+  /** Get the coefficients of the amplitudes for the produced flavour and the mixed flavour
+      given the tag and decay time. */
+  AmpPair amplitude_coefficients(const int tag, const double decaytime) ;
+
 private :
   TRandom3* m_rndm ;
   const DalitzEventPattern m_pattern ;
