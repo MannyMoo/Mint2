@@ -16,10 +16,10 @@ using namespace std;
 class binflipChi2 : public Minimisable{
     int m_nbinsPhase;
     int m_nbinsTime;
-    vector<complex<float> > m_X;
-    vector<float> m_r;
-    vector<float> m_tAv;
-    vector<float> m_tSqAv;
+    vector<complex<double> > m_X;
+    vector<double> m_r;
+    vector<double> m_tAv;
+    vector<double> m_tSqAv;
     TH2F m_pHistD0;
     TH2F m_pHistD0bar;
     TH2F m_nHistD0;
@@ -29,14 +29,14 @@ class binflipChi2 : public Minimisable{
     FitParameter m_ReDz;
     FitParameter m_ImDz;
     int m_fakeData;
-    vector<float> m_Fm;
-    vector<float> m_Fp;
+    vector<double> m_Fm;
+    vector<double> m_Fp;
 
   public:
-    binflipChi2(vector<complex<float> > X, vector<float> r, vector<float> tAv, vector<float> tSqAv, 
-                       TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, 
-                       float ReDz, float ImDz, float stepSize, int fakeData = 0, vector<float> Fm = vector<float>(), 
-                       vector<float> Fp = vector<float>());
+    binflipChi2(vector<complex<double> > X, vector<double> r, vector<double> tAv, vector<double> tSqAv, 
+                       TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, double ReZcp, double ImZcp, 
+                       double ReDz, double ImDz, double stepSize, int fakeData = 0, vector<double> Fm = vector<double>(), 
+                       vector<double> Fp = vector<double>());
     ~binflipChi2();
     double getVal();
     vector<vector<TGraph> > getFits();

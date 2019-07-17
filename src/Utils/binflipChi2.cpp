@@ -3,9 +3,9 @@
 using namespace MINT;
 using namespace std;
 
-binflipChi2::binflipChi2(vector<complex<float> > X, vector<float> r, vector<float> tAv, vector<float> tSqAv, TH2F pHistD0, 
-			 TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, float ReZcp, float ImZcp, float ReDz, float ImDz, float stepSize,
-                         int fakeData, vector<float> Fm, vector<float> Fp):
+binflipChi2::binflipChi2(vector<complex<double> > X, vector<double> r, vector<double> tAv, vector<double> tSqAv, TH2F pHistD0, 
+			 TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, double ReZcp, double ImZcp, double ReDz, double ImDz, double stepSize,
+                         int fakeData, vector<double> Fm, vector<double> Fp):
 
   Minimisable(new MinuitParameterSet),
   m_X(X),
@@ -104,8 +104,8 @@ vector<vector<TGraph> > binflipChi2::getFits(){
 
     vector<vector<TGraph> > fits(2);
 
-    complex<float> zcp(m_ReZcp.getCurrentFitVal(), m_ImZcp.getCurrentFitVal());
-    complex<float> deltaz(m_ReDz.getCurrentFitVal(), m_ImDz.getCurrentFitVal());
+    complex<double> zcp(m_ReZcp.getCurrentFitVal(), m_ImZcp.getCurrentFitVal());
+    complex<double> deltaz(m_ReDz.getCurrentFitVal(), m_ImDz.getCurrentFitVal());
     
     for(int i : {0,1}){
 
@@ -117,12 +117,12 @@ vector<vector<TGraph> > binflipChi2::getFits(){
 	        double numerator = 0., denominator = 0.;
      
                 numerator = m_r[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(zcp,2) - pow(deltaz,2) ).real() );
-                numerator += 0.25 * m_tSqAv[j-1] * pow(abs(zcp + (float)pow(-1, i) * deltaz), 2);
-    	        numerator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( conj(m_X[b-1]) * (zcp + (float)pow(-1, i) * deltaz) ).real();
+                numerator += 0.25 * m_tSqAv[j-1] * pow(abs(zcp + (double)pow(-1, i) * deltaz), 2);
+    	        numerator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( conj(m_X[b-1]) * (zcp + (double)pow(-1, i) * deltaz) ).real();
 
                 denominator = 1 + 0.25 * m_tSqAv[j-1] * ( pow(zcp,2) - pow(deltaz,2) ).real();
-                denominator += m_r[b-1] * 0.25 * m_tSqAv[j-1] * pow(abs(zcp + (float)pow(-1, i) * deltaz), 2);
-    	        denominator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( m_X[b-1] * (zcp + (float)pow(-1, i) * deltaz) ).real();
+                denominator += m_r[b-1] * 0.25 * m_tSqAv[j-1] * pow(abs(zcp + (double)pow(-1, i) * deltaz), 2);
+    	        denominator += sqrt(m_r[b-1]) * m_tAv[j-1] * ( m_X[b-1] * (zcp + (double)pow(-1, i) * deltaz) ).real();
 
                 double Rval = numerator/denominator;
     	        fits[i][b-1].SetPoint(j-1, m_tAv[j-1], Rval);
@@ -136,21 +136,21 @@ vector<vector<TGraph> > binflipChi2::getFits(){
 
 
 void binflipChi2::genFakeData(){
-  TRandom3 rndm = TRandom3(m_fakeData);
-    complex<float> zcp(m_ReZcp.getCurrentFitVal(), m_ImZcp.getCurrentFitVal());
-    complex<float> deltaz(m_ReDz.getCurrentFitVal(), m_ImDz.getCurrentFitVal());
+    TRandom3 rndm = TRandom3(m_fakeData);
+    complex<double> zcp(m_ReZcp.getCurrentFitVal(), m_ImZcp.getCurrentFitVal());
+    complex<double> deltaz(m_ReDz.getCurrentFitVal(), m_ImDz.getCurrentFitVal());
 
-    complex<float> qoverp = sqrt( (zcp + deltaz) / (zcp - deltaz) );
-    complex<float> z = sqrt( pow(zcp,2) - pow(deltaz,2) );
+    complex<double> qoverp = sqrt( (zcp + deltaz) / (zcp - deltaz) );
+    complex<double> z = sqrt( pow(zcp,2) - pow(deltaz,2) );
         
     for(int i : {0,1}){
 
-        complex<float> pqterm;
+        complex<double> pqterm;
         if ( i == 0 ){
-	    pqterm = ((float)-1)*qoverp;
+	    pqterm = ((double)-1)*qoverp;
 	}
 	else{
-	    pqterm = ((float)-1)*pow(qoverp, -1); 
+	    pqterm = ((double)-1)*pow(qoverp, -1); 
         }
 
 
