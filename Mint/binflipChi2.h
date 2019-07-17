@@ -31,12 +31,13 @@ class binflipChi2 : public Minimisable{
     int m_fakeData;
     vector<double> m_Fm;
     vector<double> m_Fp;
+    int m_verbosity;
 
   public:
     binflipChi2(vector<complex<double> > X, vector<double> r, vector<double> tAv, vector<double> tSqAv, 
                        TH2F pHistD0, TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, double ReZcp, double ImZcp, 
                        double ReDz, double ImDz, double stepSize, int fakeData = 0, vector<double> Fm = vector<double>(), 
-                       vector<double> Fp = vector<double>());
+		       vector<double> Fp = vector<double>(), int verbosity = 0);
     ~binflipChi2();
     double getVal();
     vector<vector<TGraph> > getFits();

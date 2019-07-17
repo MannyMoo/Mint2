@@ -5,7 +5,7 @@ using namespace std;
 
 binflipChi2::binflipChi2(vector<complex<double> > X, vector<double> r, vector<double> tAv, vector<double> tSqAv, TH2F pHistD0, 
 			 TH2F pHistD0bar, TH2F nHistD0, TH2F nHistD0bar, double ReZcp, double ImZcp, double ReDz, double ImDz, double stepSize,
-                         int fakeData, vector<double> Fm, vector<double> Fp):
+                         int fakeData, vector<double> Fm, vector<double> Fp, int verbosity):
 
   Minimisable(new MinuitParameterSet),
   m_X(X),
@@ -22,7 +22,8 @@ binflipChi2::binflipChi2(vector<complex<double> > X, vector<double> r, vector<do
   m_ImDz("ImDz", FitParameter::FIT, ImDz, stepSize, 0, 0, getParSet()),
   m_fakeData(fakeData),
   m_Fm(Fm),
-  m_Fp(Fp)
+  m_Fp(Fp),
+  m_verbosity(verbosity)
 {
     m_nbinsPhase = m_r.size();
     m_nbinsTime = m_tAv.size();
@@ -73,16 +74,6 @@ double binflipChi2::getVal(){
 		    D0bar_term = D0bar_num/D0bar_den;
 		}
 	    }
-       
-            // float tol = 0.00001;
-            // if((m_nHistD0.GetBinContent(j,b)/m_pHistD0.GetBinContent(j,b) - R_pl > tol)&&( m_nHistD0.GetBinContent(j,b) != 0 )&&( m_pHistD0.GetBinContent(j,b) != 0 )){
-	    // 	  cout << "Disagreement at b=" << b << ", j="<<j<<endl;
-            //       cout <<  m_nHistD0.GetBinContent(j,b)/m_pHistD0.GetBinContent(j,b)<< "\t" << R_pl << "\n\n";
-	    // }
-            // if((m_nHistD0bar.GetBinContent(j,b)/m_pHistD0bar.GetBinContent(j,b) - R_mi > tol)&&( m_nHistD0bar.GetBinContent(j,b) != 0 )&&( m_pHistD0bar.GetBinContent(j,b) != 0 )){
-	    // 	  cout << "Disagreement at b=" << b << ", j="<<j<<endl;
-            //       cout <<  m_nHistD0bar.GetBinContent(j,b)/m_pHistD0bar.GetBinContent(j,b)<< "\t" << R_mi << "\n\n";
-	    // }
    
             chi2 += D0_term + D0bar_term;
        
@@ -95,7 +86,11 @@ double binflipChi2::getVal(){
 	    }
         }
     }
-    cout << "Number of terms contributing to chi2 is: " << count << endl;
+
+    if( m_verbosity > 0 ){
+        cout << "Number of terms contributing to chi2 is: " << count << endl;
+    }
+
     return chi2;
 }
 
@@ -158,7 +153,6 @@ void binflipChi2::genFakeData(){
 
      	    for(int j = 1; j <= m_nbinsTime; j++){
 
-
                 double pval = 0., nval = 0., rNum = 0., err = 0.;
 
                 pval = m_Fp[b-1] * ( 1 + 0.25 * m_tSqAv[j-1] * ( pow(z, 2) ).real() );
@@ -175,9 +169,7 @@ void binflipChi2::genFakeData(){
 		    }
                     else{
 		        err = sqrt(pval);
-		        //err = pval * 0.01;
 		    }
-                    err = sqrt(pval);//testing
                     if (m_pHistD0.GetBinContent(j,b) != 0){
 			rNum = rndm.Gaus(0, err);
 			m_pHistD0.SetBinContent(j, b, pval + rNum);
@@ -189,9 +181,7 @@ void binflipChi2::genFakeData(){
 		    }
                     else{
 		        err = sqrt(nval);
-                        //err = nval * 0.01;
 		    }
-                    err = sqrt(nval);//testing
                     if (m_nHistD0.GetBinContent(j,b) != 0){
 			rNum = rndm.Gaus(0, err);
 			m_nHistD0.SetBinContent(j, b, nval + rNum);
@@ -204,9 +194,7 @@ void binflipChi2::genFakeData(){
 		    }
                     else{
 		        err = sqrt(pval);
-                        //err = pval * 0.01;
 		    }
-                    err = sqrt(pval);//testing
                     if( m_pHistD0bar.GetBinContent(j,b) != 0 ){
 			rNum = rndm.Gaus(0, err);
 			m_pHistD0bar.SetBinContent(j, b, pval + rNum);
@@ -218,9 +206,7 @@ void binflipChi2::genFakeData(){
 		    }
                     else{
 		        err = sqrt(nval);
-                        //err = nval * 0.01;
 		    }
-                    err = sqrt(nval);//testing
                     if( m_nHistD0bar.GetBinContent(j,b) != 0 ){
 			rNum = rndm.Gaus(0, err);
 			m_nHistD0bar.SetBinContent(j, b, nval + rNum);
