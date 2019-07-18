@@ -4,23 +4,10 @@
 #include <iostream>
 #include <sys/stat.h>
 #include <Mint/DalitzPdfSaveInteg.h>
+#include <stdexcept>
 
 using namespace std;
 using namespace MINT;
-
-// check if a file exists.
-bool exists(const string& fname) {
-  struct stat statinfo ;
-  return stat(fname.c_str(), &statinfo) == 0 ;
-}
-
-TimeDependentGenerator::GenTimePoint::GenTimePoint(const double _decaytime, FitAmpSum* _model,
-						   const double _integral, SignalGenerator* _generator) :
-  decaytime(_decaytime),
-  integral(_integral),
-  model(_model),
-  generator(_generator)
-{}
 
 //
 map<string, unsigned> TimeDependentGenerator::GenTimeEvent::infoNames = \
@@ -80,214 +67,78 @@ DalitzEventPattern TimeDependentGenerator::anti(DalitzEventPattern pat) {
   return pat ;
 }
 
-/* Constructor, takes:
-   name : the name of the generator and the directory in which the integrators will be saved.
-   overwrite : whether to overwrite the existing integrator files (if they exist).
-   rndm : The random number generator to use.
-   precision : The precision to which the integrals must be calculated.
-   pattern : The event pattern to be used (the CP conjugate will automatically be added).
-   width : the decay width in 1/ps.
-   deltam : the delta-mass in 1/ps.
-   deltagamma : the delta-gamma in 1/ps.
-   qoverp : the magnitude of q/p.
-   phi : the phase of q/p.
-   tmax : the maximum decay time that'll be generated.
-   ntimepoints : the number of points to sample between 0 and tmax when building the generators.
-   h_efficiency : (optional) histogram to which efficiency plot will be fitted
-*/
-TimeDependentGenerator::TimeDependentGenerator(const string& name, const bool overwrite, TRandom3* rndm,
-					       double precision,
-					       const DalitzEventPattern& pattern, double width, double deltam,
-					       double deltagamma,
-					       double qoverp, double phi, double tmax, int ntimepoints,
-					       const bool saveIntegEvents, const double tmin, TH1F* h_efficiency, 
+TimeDependentGenerator::TimeDependentGenerator(const DalitzEventPattern& pattern, double width, double deltam,
+					       double deltagamma, double qoverp, double phi, 
+					       TRandom3* rndm, TH1F* h_efficiency, 
                                                float resWidth, bool addExpEffects) :
-  m_name(name),
   m_rndm(rndm),
   m_pattern(pattern),
   m_cppattern(anti(pattern)),
+  m_model(new FitAmpSum(pattern)),
+  m_cpmodel(new FitAmpSum(m_cppattern)),
+  m_bothmodel(*m_model),
+  m_generator(m_pattern, &m_bothmodel),
   m_width(width),
   m_deltam(deltam),
   m_deltagamma(deltagamma),
-  m_qoverp(qoverp),
-  m_phi(phi),
-  m_tmax(tmax),
-  m_tmin(tmin),
-  m_ntimepoints(ntimepoints),
-  m_genmap(),
-  m_timegenerators(),
-  m_tagintegralfrac(0.),
-  m_precision(precision),
+  m_qoverp(polar(qoverp, phi)),
+  m_scale(1.),
+  m_ngen(0),
+  m_naccept(0),
   m_h_efficiency(h_efficiency),
+  m_efficiencyFit(),
   m_resWidth(resWidth),
-  m_addExpEffects(addExpEffects),
-  m_efficiencyFit()
+  m_addExpEffects(addExpEffects)
 {
-  // If overwrite is true and the integrators directory exists, delete it.
-  if(overwrite && exists(name)){
-    cout << "Deleting previous integrators in directory " << name << endl ;
-    string cmd("rm -rf " + name) ;
-    system(cmd.c_str()) ;
-  }
-
-  if(!exists(name)){
-    string cmd("mkdir -p " + name) ;
-    system(cmd.c_str()) ;
-  }
-    
-  const DalitzEventPattern* patterns[] = {&m_cppattern, &m_pattern} ;
-  double sampleinterval = m_ntimepoints > 1 ? (m_tmax - m_tmin)/(m_ntimepoints-1) : 0. ;
-  // Loop over flavours.
-  for(int tag = -1 ; tag <= 1 ; tag += 2) {
-    m_genmap[tag] = GenList() ;
-    const DalitzEventPattern* evtpat = patterns[(tag+1)/2] ;
-    const DalitzEventPattern* antipat = patterns[((tag+1)/2 + 1) % 2] ;
-    // cout << "evtpat " ;
-    // evtpat->print() ;
-    // cout << " antipat " ;
-    // antipat->print() ;
-    // cout << endl ;
-    vector<double> times ;
-    vector<double> integrals ;
-    // Loop over decay time sample points.
-    for(int i = 0 ; i < m_ntimepoints ; ++i){
-      double decaytime = m_tmin + i * sampleinterval ;
-      AmpPair amps = amplitude_coefficients(tag, decaytime) ;
-      FitAmpSum* model(new FitAmpSum(*evtpat)) ;
-      *model *= amps.first ;
-      if(amps.second != complex<double>(0., 0.)){
-	FitAmpSum antimodel(*antipat) ;
-	antimodel *= amps.second ;
-	model->add(antimodel) ;
-      }
-      SignalGenerator* generator = new SignalGenerator(*evtpat, model) ;
-      //cout << "Time point " << i << endl ;
-      //model->print() ;
-      //auto evt = generator->newEvent() ;
-      //model->printAllAmps(*evt) ;
-      ostringstream fname ;
-      fname << m_name << "/tag_" << tag << "_decaytime_" << decaytime ;
-      double integral(0.) ;
-      // Calculate the integral if necessary.
-      if(!exists(fname.str())){
-	const string eventsFile(fname.str() + "_events.root") ;
-	DalitzPdfSaveInteg dalitz(*evtpat, model, m_precision, fname.str(),
-				  eventsFile, "topUp", fname.str()) ;
-	integral = dalitz.getIntegralValue() ;
-	dalitz.saveIntegrator(fname.str()) ;
-	if(!saveIntegEvents){
-	  string cmd("rm " + eventsFile) ;
-	  system(cmd.c_str()) ;
-	}
-      }
-      // Else retrive the integral from a file.
-      else {
-	auto intcalc = model->makeIntegrationCalculator() ;
-	intcalc->retrieve(fname.str()) ;
-	integral = intcalc->integral() ;
-      }
-      cout << "Make generator with tag " << tag << ", decay time " << decaytime
-	   << ", coeffprod " << amps.first.real()
-	   << " + " << amps.first.imag() << " j, "
-	   << " coeffmix " << amps.second.real() << " + " << amps.second.imag()
-	   << " j, integral " << integral << endl ;
-      if(integral == 0.){
-	complex<double> coeff = amps.first + amps.second ;
-	integral = sqrt(coeff.real() * coeff.real() + coeff.imag() * coeff.imag()) ;
-      }
-      m_genmap[tag].push_back(GenTimePoint(decaytime, model, integral, generator)) ;
-      times.push_back(decaytime) ;
-      integrals.push_back(integral) ;
-    }
-    // Make a spline interpolator of the decay time distributions, to be used to generate
-    // the decay times.
-    ostringstream splinename ;
-    splinename << "timespline_tag_" << tag ;
-    string splinenamestr = splinename.str() ;
-    TSpline3 timespline(splinenamestr.c_str(), &times[0], &integrals[0], times.size()) ;
-    timespline.SetName(splinenamestr.c_str()) ;
-    m_timegenerators.insert(make_pair(tag, SplineGenerator(rndm, timespline))) ;
-  }
-  // Calculate the integrated CP asymmetry.
-  double integminus = m_timegenerators.find(-1)->second.integral() ;
-  double integplus = m_timegenerators.find(1)->second.integral() ;
-  cout << "Integrated CP asymmetry is " << (integplus - integminus)/(integplus + integminus) << endl ;
-  m_tagintegralfrac = integminus/(integminus + integplus) ;
-  double tauminus = m_timegenerators.find(-1)->second.mean() ;
-  double tauplus = m_timegenerators.find(1)->second.mean() ;
-  cout << "Tau minus: " << tauminus << endl ;
-  cout << "Tau plus: " << tauplus << endl ;
-  cout << "AGamma: " << (tauminus - tauplus)/(tauminus + tauplus) << endl ;
-  
+  m_bothmodel.addAsList(*m_cpmodel) ;
   if( m_h_efficiency != NULL){
     m_efficiencyFit = TSpline3(m_h_efficiency) ;
   }
 }
 
-// Get the coefficients of the amplitudes for the produced flavour and the mixed flavour
-// given the tag and decay time.
-TimeDependentGenerator::AmpPair 
-TimeDependentGenerator::amplitude_coefficients(const int tag, const double decaytime) {
-  double coeff = exp(-decaytime * 0.5 * (m_width + 0.5 * m_deltagamma)) ;
-  complex<double> expterm = exp(complex<double>(0.5 * m_deltagamma * decaytime, m_deltam * decaytime)) ;
-  complex<double> plusterm = 1. + expterm ;
-  complex<double> minusterm = 1. - expterm ;
-  complex<double> coeffprod = coeff * plusterm ;
-  complex<double> coeffmix = pow(polar(m_qoverp, m_phi), tag) * coeff * minusterm ;
-  return AmpPair(coeffprod, coeffmix) ;
-}
 
-// Generate a flavour.
-int TimeDependentGenerator::generate_tag() const {
-  double rndm = m_rndm->Rndm() ;
-  if(rndm < m_tagintegralfrac)
-    return -1 ;
-  return 1 ;
-}
-
-// Generate a decay time for the given flavour.
-double TimeDependentGenerator::generate_decay_time(const int tag) const {
-  double decaytime = m_tmax + 1. ;
-  while(decaytime > m_tmax)
-    decaytime = m_timegenerators.find(tag)->second.gen_random() ;
-  return decaytime ; 
-}
-
-// Generate a Dalitz event for the given flavour and decay time.
-MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_dalitz_event(const int tag, const double decaytime) const {
-  const GenList& genlist = m_genmap.find(tag)->second ;
-  GenList::const_iterator igen = genlist.begin() ;
-  while(igen->decaytime < decaytime && igen != genlist.end())
-    ++igen ;
-  if(igen == genlist.end()){
-    cerr << "TimeDependentGenerator::generate_dalitz_event: ERROR: Got impossible decay time: "
-	 << decaytime << " (tmax = " << m_tmax << ")" << endl ;
-    return MINT::counted_ptr<IDalitzEvent>(0) ;
+TimeDependentGenerator::TimeDependentGenerator(MINT::counted_ptr<FitAmpSum> model, 
+					       MINT::counted_ptr<FitAmpSum> cpmodel,
+					       double width, double deltam,
+					       double deltagamma, double qoverp, double phi, 
+					       TRandom3* rndm, TH1F* h_efficiency, 
+                                               float resWidth, bool addExpEffects) :
+  m_rndm(rndm),
+  m_pattern(model->getAmpPtr(0)->getTreePattern()),
+  m_cppattern(cpmodel->getAmpPtr(0)->getTreePattern()),
+  m_model(model),
+  m_cpmodel(cpmodel),
+  m_bothmodel(*m_model),
+  m_generator(m_pattern, &m_bothmodel),
+  m_width(width),
+  m_deltam(deltam),
+  m_deltagamma(deltagamma),
+  m_qoverp(polar(qoverp, phi)),
+  m_scale(1.),
+  m_ngen(0),
+  m_naccept(0),
+  m_h_efficiency(h_efficiency),
+  m_efficiencyFit(),
+  m_resWidth(resWidth),
+  m_addExpEffects(addExpEffects)
+{
+  m_bothmodel.addAsList(*m_cpmodel) ;
+  if( m_h_efficiency != NULL){
+    m_efficiencyFit = TSpline3(m_h_efficiency) ;
   }
-  // Unlikely, but best to check.
-  if(decaytime == igen->decaytime)
-    return igen->generator->newEvent() ;
-  GenList::const_iterator igenprev(igen) ;
-  --igen ;
-  // Pick between the generators either side of the decay time according to how close they are to it.
-  double gensel = m_rndm->Rndm() ;
-  if(gensel < 1. - (decaytime - igenprev->decaytime)/(igen->decaytime - igenprev->decaytime))
-    return igenprev->generator->newEvent() ;
-  return igen->generator->newEvent() ;
 }
 
-// Generate a flavour, decay time and Dalitz event.
-MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() const {
-  int tag = generate_tag() ;
-  double decaytime = generate_decay_time(tag) ;
-  double smeareddecaytime = -999. ;
-
-  smeareddecaytime = decaytime + m_rndm->Gaus(0, m_resWidth) ;
-
+pair<double, double> TimeDependentGenerator::generate_decay_time() const {
+  double decaytime = m_rndm->Exp(1./m_width) ;
+  double smeareddecaytime = decaytime ;
+  
   if ( (m_h_efficiency != NULL) && (m_addExpEffects) ){
     int i = 0 ;
     float efficiency = 0 ;
     int maxiter = 100000 ;
+    
+    smeareddecaytime =  decaytime + m_rndm->Gaus(0, m_resWidth);
+
     while(true){
       if( smeareddecaytime > m_efficiencyFit.GetXmax() ){
         efficiency = m_efficiencyFit.Eval( m_efficiencyFit.GetXmax() ) ;
@@ -303,8 +154,7 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() const {
         break;
       }
  
-      tag = generate_tag() ;
-      decaytime = generate_decay_time(tag) ;
+      decaytime = m_rndm->Exp(1./m_width) ;
       smeareddecaytime =  decaytime + m_rndm->Gaus(0, m_resWidth);
 
       i += 1 ;
@@ -314,11 +164,93 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() const {
       }
     }
   }
-  MINT::counted_ptr<IDalitzEvent> evt = generate_dalitz_event(tag, decaytime) ;
+  return pair<double, double>(decaytime, smeareddecaytime) ;
+}
+
+MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() {
+  int tag(0) ;
+  double decaytime(0.) ;
+  double smeareddecaytime(0.) ;
+
+  MINT::counted_ptr<IDalitzEvent> evt(0) ;
+  
+  unsigned i = 0 ;
+  unsigned maxattempts = 100000 ;
+  // Accept/reject using the incoherent sum in m_bothmodel as an envelope to generate
+  // events.
+  while(true) {
+    tag = m_rndm->Rndm() > 0.5 ? 1 : -1 ;
+    tie(decaytime, smeareddecaytime) = generate_decay_time() ;
+    evt = m_generator.newEvent() ;
+    ++m_ngen ;
+
+    double pdfval = pdf_value(tag, decaytime, *evt) ;
+
+    double maxval = m_bothmodel.Prob(*evt) * m_scale * exp(-decaytime * m_width) ;
+    if(pdfval > maxval){
+      /*cout << "pdfval " << pdfval << " maxval " << maxval << endl ;
+	throw out_of_range("pdfval > maxval. That shouldn't happen!") ;*/
+      m_scale *= pdfval / maxval ;
+      ++m_naccept ;
+      break ;
+    }
+    if(m_rndm->Rndm() * maxval < pdfval){
+      ++m_naccept ;
+      break ;
+    }
+    i += 1 ;
+    if( i >= maxattempts)
+      throw range_error("Failed to generate an event in 100000 attempts!") ;
+  }
+
   return MINT::counted_ptr<IDalitzEvent>(new GenTimeEvent(*evt, tag, decaytime, smeareddecaytime)) ;
 }
 
-// Get the decay time generators.
-const map<int, SplineGenerator> TimeDependentGenerator::time_generators() const {
-  return m_timegenerators;
+double TimeDependentGenerator::get_scale() const {
+  return m_scale ;
+}
+
+float TimeDependentGenerator::get_gen_efficiency() const {
+  return m_ngen > 0 ? float(m_naccept)/m_ngen : 0. ;
+}
+
+double TimeDependentGenerator::pdf_value(int tag, double decaytime, IDalitzEvent& evt) {
+  complex<double> Ap = m_model->ComplexVal(evt) ;
+  complex<double> Am = m_cpmodel->ComplexVal(evt) ;
+  if(tag == -1)
+    swap(Ap, Am) ;
+  // This is gives the same values as the below using the amplitude coefficients.
+  /*double magAp = norm(Ap) ;
+  double magAm = norm(Am) ;
+  complex<double> crossterm = pow(m_qoverp, tag) * conj(Ap) * Am ;
+  double magqoverp = pow(norm(m_qoverp), tag) ;
+  double deltamt = m_deltam * decaytime ;
+  double halfdgammat = 0.5 * m_deltagamma * decaytime ;
+  double pdfval = 0.5 * exp(-m_width * decaytime) 
+  * ((magAp + magqoverp * magAm) * cosh(halfdgammat)
+  + (magAp - magqoverp * magAm) * cos(deltamt)
+  - 2 * crossterm.real() * sinh(halfdgammat)
+  + 2 * crossterm.imag() * sin(deltamt)) ;
+  return pdfval ;*/
+  AmpPair coeffs = amplitude_coefficients(tag, decaytime) ;
+  complex<double> Amp = coeffs.first * Ap + coeffs.second * Am ;
+  double ampnorm = norm(Amp) ;
+  return ampnorm ;
+}
+
+double TimeDependentGenerator::pdf_value(IDalitzEvent& evt) {
+  return pdf_value(evt.getValueFromVector(GenTimeEvent::ITAG),
+		   evt.getValueFromVector(GenTimeEvent::IDECAYTIME),
+		   evt) ;
+}
+
+TimeDependentGenerator::AmpPair 
+TimeDependentGenerator::amplitude_coefficients(const int tag, const double decaytime) {
+  double coeff = 0.5 * exp(-decaytime * 0.5 * (m_width + 0.5 * m_deltagamma)) ;
+  complex<double> expterm = exp(complex<double>(0.5 * m_deltagamma * decaytime, m_deltam * decaytime)) ;
+  complex<double> plusterm = 1. + expterm ;
+  complex<double> minusterm = 1. - expterm ;
+  complex<double> coeffprod = coeff * plusterm ;
+  complex<double> coeffmix = pow(m_qoverp, tag) * coeff * minusterm ;
+  return AmpPair(coeffprod, coeffmix) ;
 }

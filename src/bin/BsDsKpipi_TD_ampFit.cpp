@@ -1431,7 +1431,11 @@ int ampFit(int step=0){
         tree->Branch("q",&q,"q/I");
         tree->Branch("w",&w,"w/D");
         tree->Branch("f",&f,"f/I");
-        
+
+	// This returns the incoherent sum of the amplitudes, ie, the sum of their magnitudes, rather than
+	// the magnitude of the sum of their complex values, like FitAmpSum.
+	// So, gives the maximum possible value of the PDF at any decay time?
+	// But it's only for one flavour?
         FitAmpIncoherentSum fasGen((DalitzEventPattern)pat); 
         fasGen.getVal(eventListPhsp[0]);
         fasGen.normalizeAmps(eventListPhsp);
@@ -1441,14 +1445,18 @@ int ampFit(int step=0){
         //simple hit and miss
         for(int i = 0; i < Nevents; i++){
             while(true){
+	        // Simple exponential. Where does the mixing come in? At the accept/reject stage?
                 t = ranLux.Exp(tau);
                 dt = ranLux.Uniform(0.,0.25);
 		//pdf.getSmearedTime(t,dt,ranLux);
+		// Initial flavour.
                 const double q_rand = ranLux.Uniform();
                 q = 0;
                 if (q_rand < 1./3.) q = -1;
                 if (q_rand > 2./3.) q = 1;
+		// Mistag
                 w = mistag;
+		// Final state (Ds-K+pipi or Ds+K-pipi)
                 const double f_rand = ranLux.Uniform();
                 if(f_rand < 0.5)f = 1; 
                 else f = -1;
@@ -1458,18 +1466,22 @@ int ampFit(int step=0){
                 counted_ptr<IDalitzEvent> evtPtr(sg.newEvent());
                 DalitzEvent evt(evtPtr.get());
 		//if(!(sqrt(evt.sij(s234)/(GeV*GeV)) < 1.95 && sqrt(evt.s(2,4)/(GeV*GeV)) < 1.2 && sqrt(evt.s(3,4)/(GeV*GeV)) < 1.2))continue;
-
+		// pdf_max is user configurable, seems weird ... I guess it saves computationally finding the maximum?
+		// What is evt.getGeneratorPdfRelativeToPhaseSpace() returning?
                 double maxVal = evt.getGeneratorPdfRelativeToPhaseSpace()*exp(-fabs(t)/(tau))/(tau)*pdf_max;
                 
+		// These are accessed by AmpsPdfFlexiFastCPV::un_normalised_noPs to calculate the PDF value.
                 evt.setValueInVector(0, t);
                 evt.setValueInVector(1, dt);
                 evt.setValueInVector(2, q);
                 evt.setValueInVector(3, w);
                 evt.setValueInVector(4, f);
                 
+		// This just returns the decay rate using Eq 2.1 of the note.
                 const double pdfVal = pdf.un_normalised_noPs(evt);
                 //const double pdfVal = pdf.getValForGeneration(evt);
                 
+		// Random number to determine if it's accepted.
                 const double height = ranLux.Uniform(0,maxVal);
                 //Safety check on the maxmimum generated height
                 if( pdfVal > maxVal ){
