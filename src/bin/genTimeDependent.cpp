@@ -30,9 +30,6 @@ int genTimeDependent(){
   FitAmplitude::AutogenerateFitFile();
 
   NamedParameter<int>  Nevents("Nevents", 10000);
-  NamedParameter<int>  doScan("doScan", 0);
-  NamedParameter<std::string> integMethod("IntegMethod", (std::string) "efficient");
-  NamedParameter<double> integPrecision("IntegPrecision", 1.e-4);
 
   NamedParameter<int> EventPattern("Event Pattern", 421, -321, 211, 211, -211);
   DalitzEventPattern pat(EventPattern.getVector());
@@ -53,13 +50,6 @@ int genTimeDependent(){
   NamedParameter<double> qoverp("qoverp", 1.) ;
   NamedParameter<double> phi("phi", 0.) ;
 
-  NamedParameter<double> tmax("tmax", 10.) ;
-  NamedParameter<double> tmin("tmin", 0.) ;
-  NamedParameter<double> ntimepoints("nTimePoints", 101) ;
-  NamedParameter<int> overwrite("overwriteIntegrators", 1) ;
-  NamedParameter<string> name("integratorsDirectory", string("integrators"), (char*)0) ;
-
-  NamedParameter<int> saveIntegEvents("saveIntegEvents", 1) ;
 
   NamedParameter<string> efficiencyFile("efficiencyFile", string("/home/ppe/n/nmchugh/SummerProject/DaVinciDev_v44r10p1/AGammaD0Tohhpi0/scripts/mint/h_efficiency.root")) ;
   NamedParameter<string> h_efficiencyName( "h_efficiencyName", string("h_efficiency") ) ;
@@ -78,9 +68,9 @@ int genTimeDependent(){
   unique_ptr<TimeDependentGenerator> timedepgen ;
   if(genTimeDependent){
     int startinit(time(0)) ;
-    timedepgen.reset(new TimeDependentGenerator(name, overwrite, &ranLux, integPrecision, pat,
-						width, deltam, deltagamma, qoverp, phi, tmax, ntimepoints,
-						(bool)saveIntegEvents, tmin, h_efficiency, resWidth, (bool)addExpEffects)) ;
+    timedepgen.reset(new TimeDependentGenerator(pat,
+						width, deltam, deltagamma, qoverp, phi, &ranLux, 
+						h_efficiency, resWidth, (bool)addExpEffects)) ;
     cout << "Initialise TimeDependentGenerator took " << time(0) - startinit << " s" << endl ;
   }
 
@@ -111,9 +101,7 @@ int genTimeDependent(){
       }
 
       // Generate the decay time of the candidate.
-      double decaytime = tmax + 1. ;
-      while(decaytime > tmax)
-	decaytime = ranLux.Exp(lifetime) ;
+      double decaytime = ranLux.Exp(lifetime) ;
 
       evt = gen->newEvent() ;
       evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::ITAG, tag) ;
@@ -121,6 +109,11 @@ int genTimeDependent(){
       evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::ISMEAREDDECAYTIME, -999.) ;
     }
     eventList1.Add(*evt) ;
+  }
+  
+  if(genTimeDependent){
+    cout << "Generator efficiency: " << timedepgen->get_gen_efficiency() << endl ;
+    cout << "Generator scale: " << timedepgen->get_scale() << endl ;
   }
   
   // Make sure the first event in the list is a D0 so the naming scheme is consistent.
@@ -157,10 +150,6 @@ int genTimeDependent(){
     smeareddecaytimebranch->Fill() ;
   }
   ntuple->Write(ntuple->GetName(), TObject::kWriteDelete) ;
-  if(genTimeDependent){
-    timedepgen->time_generators().find(-1)->second.spline().Write() ;
-    timedepgen->time_generators().find(1)->second.spline().Write() ;
-  }
   tuplefile.Close() ;
   
   DalitzHistoSet datH = eventList1.histoSet();
