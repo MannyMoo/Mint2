@@ -67,18 +67,6 @@ DalitzEventPattern TimeDependentGenerator::anti(DalitzEventPattern pat) {
   return pat ;
 }
 
-/* Constructor, takes:
-   pattern : The event pattern to be used (the CP conjugate will automatically be added).
-   width : the decay width in 1/ps.
-   deltam : the delta-mass in 1/ps.
-   deltagamma : the delta-gamma in 1/ps.
-   qoverp : the magnitude of q/p.
-   phi : the phase of q/p.
-   rndm : The random number generator to use.
-   h_efficiency : (optional) histogram to which efficiency plot will be fitted
-   resWidth : the width of the Gaussian decay-time resolution to apply
-   addExpEffects : whether to add efficiency and resolution to the decay time.
-*/
 TimeDependentGenerator::TimeDependentGenerator(const DalitzEventPattern& pattern, double width, double deltam,
 					       double deltagamma, double qoverp, double phi, 
 					       TRandom3* rndm, TH1F* h_efficiency, 
@@ -109,19 +97,6 @@ TimeDependentGenerator::TimeDependentGenerator(const DalitzEventPattern& pattern
 }
 
 
-/* Constructor, takes:
-   model : the amplitude model for the decay
-   cpmodel : the amplitude model for the CP conjugate decay
-   width : the decay width in 1/ps.
-   deltam : the delta-mass in 1/ps.
-   deltagamma : the delta-gamma in 1/ps.
-   qoverp : the magnitude of q/p.
-   phi : the phase of q/p.
-   rndm : The random number generator to use.
-   h_efficiency : (optional) histogram to which efficiency plot will be fitted
-   resWidth : the width of the Gaussian decay-time resolution to apply
-   addExpEffects : whether to add efficiency and resolution to the decay time.
-*/
 TimeDependentGenerator::TimeDependentGenerator(MINT::counted_ptr<FitAmpSum> model, 
 					       MINT::counted_ptr<FitAmpSum> cpmodel,
 					       double width, double deltam,
@@ -153,7 +128,6 @@ TimeDependentGenerator::TimeDependentGenerator(MINT::counted_ptr<FitAmpSum> mode
   }
 }
 
-// Generate a decay time.
 pair<double, double> TimeDependentGenerator::generate_decay_time() const {
   double decaytime = m_rndm->Exp(1./m_width) ;
   double smeareddecaytime = decaytime ;
@@ -193,7 +167,6 @@ pair<double, double> TimeDependentGenerator::generate_decay_time() const {
   return pair<double, double>(decaytime, smeareddecaytime) ;
 }
 
-// Generate a flavour, decay time and Dalitz event.
 MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() {
   int tag(0) ;
   double decaytime(0.) ;
@@ -246,20 +219,23 @@ double TimeDependentGenerator::pdf_value(int tag, double decaytime, IDalitzEvent
   complex<double> Am = m_cpmodel->ComplexVal(evt) ;
   if(tag == -1)
     swap(Ap, Am) ;
+  // This is gives the same values as the below using the amplitude coefficients.
   /*double magAp = norm(Ap) ;
   double magAm = norm(Am) ;
   complex<double> crossterm = pow(m_qoverp, tag) * conj(Ap) * Am ;
   double magqoverp = pow(norm(m_qoverp), tag) ;
   double deltamt = m_deltam * decaytime ;
   double halfdgammat = 0.5 * m_deltagamma * decaytime ;
-  double pdfval = 0.5 * ((magAp + magqoverp * magAm) * cosh(halfdgammat)
-			 + (magAp - magqoverp * magAm) * cos(deltamt)
-			 - 2 * crossterm.real() * sinh(halfdgammat)
-			 + 2 * crossterm.imag() * sin(deltamt)) ;
-			 return pdfval ;*/
+  double pdfval = 0.5 * exp(-m_width * decaytime) 
+  * ((magAp + magqoverp * magAm) * cosh(halfdgammat)
+  + (magAp - magqoverp * magAm) * cos(deltamt)
+  - 2 * crossterm.real() * sinh(halfdgammat)
+  + 2 * crossterm.imag() * sin(deltamt)) ;
+  return pdfval ;*/
   AmpPair coeffs = amplitude_coefficients(tag, decaytime) ;
   complex<double> Amp = coeffs.first * Ap + coeffs.second * Am ;
-  return norm(Amp) ;
+  double ampnorm = norm(Amp) ;
+  return ampnorm ;
 }
 
 double TimeDependentGenerator::pdf_value(IDalitzEvent& evt) {
@@ -270,7 +246,7 @@ double TimeDependentGenerator::pdf_value(IDalitzEvent& evt) {
 
 TimeDependentGenerator::AmpPair 
 TimeDependentGenerator::amplitude_coefficients(const int tag, const double decaytime) {
-  double coeff = exp(-decaytime * 0.5 * (m_width + 0.5 * m_deltagamma)) ;
+  double coeff = 0.5 * exp(-decaytime * 0.5 * (m_width + 0.5 * m_deltagamma)) ;
   complex<double> expterm = exp(complex<double>(0.5 * m_deltagamma * decaytime, m_deltam * decaytime)) ;
   complex<double> plusterm = 1. + expterm ;
   complex<double> minusterm = 1. - expterm ;

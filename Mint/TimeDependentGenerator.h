@@ -37,39 +37,57 @@ public :
     static std::map<std::string, unsigned> makeInfoNames() ;
   } ;
 
-  // Take the CP conjugate of the head of the decay pattern.
+  /// Take the CP conjugate of the head of the decay pattern.
   static DalitzEventPattern anti(DalitzEventPattern pat) ;
 
-  /* Constructor, takes:
-   pattern : The event pattern to be used (the CP conjugate will automatically be added).
-   width : the decay width in 1/ps.
-   deltam : the delta-mass in 1/ps.
-   deltagamma : the delta-gamma in 1/ps.
-   qoverp : the magnitude of q/p.
-   phi : the phase of q/p.
-   rndm : The random number generator to use.
-   h_efficiency : (optional) histogram to which efficiency plot will be fitted
+  /** Constructor, takes:
+      pattern : The event pattern to be used (the CP conjugate will automatically be added).
+      width : the decay width in 1/ps.
+      deltam : the delta-mass in 1/ps.
+      deltagamma : the delta-gamma in 1/ps.
+      qoverp : the magnitude of q/p.
+      phi : the phase of q/p.
+      rndm : The random number generator to use.
+      h_efficiency : (optional) histogram to which efficiency plot will be fitted
+      resWidth : the width of the Gaussian decay-time resolution to apply
+      addExpEffects : whether to add efficiency and resolution to the decay time.
   */
   TimeDependentGenerator(const DalitzEventPattern& pattern, double width, double deltam,
 			 double deltagamma, double qoverp, double phi,
 			 TRandom3* rndm, TH1F* h_efficiency = NULL,
                          float resWidth = 0.05, bool addExpEffects = false) ;
+  /** Constructor, takes:
+      model : the amplitude model for the decay
+      cpmodel : the amplitude model for the CP conjugate decay
+      width : the decay width in 1/ps.
+      deltam : the delta-mass in 1/ps.
+      deltagamma : the delta-gamma in 1/ps.
+      qoverp : the magnitude of q/p.
+      phi : the phase of q/p.
+      rndm : The random number generator to use.
+      h_efficiency : (optional) histogram to which efficiency plot will be fitted
+      resWidth : the width of the Gaussian decay-time resolution to apply
+      addExpEffects : whether to add efficiency and resolution to the decay time.
+  */
   TimeDependentGenerator(MINT::counted_ptr<FitAmpSum> model, MINT::counted_ptr<FitAmpSum> cpmodel,
 			 double width, double deltam,
 			 double deltagamma, double qoverp, double phi,
 			 TRandom3*, TH1F* h_efficiency = NULL,
                          float resWidth = 0.05, bool addExpEffects = false) ;
 
-  // Generate a decay time for the given flavour.
+  /// Generate a decay time, optionally including experimental effects.
   std::pair<double, double> generate_decay_time() const ;
 
-  // Generate a flavour, decay time and Dalitz event.
+  /// Generate a flavour, decay time and Dalitz event.
   MINT::counted_ptr<IDalitzEvent> generate_event() ;
 
   double get_scale() const ;
   float get_gen_efficiency() const ;
 
+  /** Get the value of the PDF given the tag, decay time and point in phase space */
   double pdf_value(int, double, IDalitzEvent&) ;
+  /** Get the value of the PDF, assuming the tag & decay time are stored in the 
+      DalitzEvent like a GenTimeEvent */
   double pdf_value(IDalitzEvent&) ;
 
   typedef std::pair<std::complex<double>, std::complex<double> > AmpPair ;
