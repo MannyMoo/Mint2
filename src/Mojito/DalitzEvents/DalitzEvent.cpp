@@ -126,6 +126,88 @@ DalitzEvent::DalitzEvent(const DalitzEventPattern& pat
   _eventCounter++;
 }
 
+DalitzEvent::DalitzEvent(const DalitzEventPattern& pat,
+			 const double s13, const double s23
+			 )
+  : _pat(pat)
+  , _rememberPhaseSpace(-9999.)
+  , _aValue(-9999.)
+  , _weight(1)
+  , _generatorPdfRelativeToPhaseSpace(1)
+  , _vectorOfValues()
+  , _vectorOfWeights()
+  , _s(pat.size())
+  , _t(pat.size())
+  , _permutationIndex(0)
+  , _perm(pat)
+{
+  bool dbThis=false;
+
+  if(_pat.size() != 4){
+    cout << "DalitzEvent::DalitzEvent ERROR "
+	 << " event pattern " << pat
+	 << " doesn't fit 4-body constructor"
+	 << endl;
+    throw "shit happens";
+  }
+
+  double m0 = pat[0].mass() ;
+  double m1 = pat[1].mass() ;
+  double m2 = pat[2].mass() ;
+  double m3 = pat[3].mass() ;
+
+  // Calculate energies of pi+, pi- from known parameters
+  double E1 = ( m0 * m0 + m1 * m1 - s23 ) / (2 * m0) ;
+  double E2 = ( m0 * m0 + m2 * m2 - s13 ) / (2 * m0) ;
+
+  // Get E3 from conservation of energy
+  double E3 = m0 - E1 - E2 ;
+
+  // Reject events where kinematics are impossible
+  double pz1Sq = E1 * E1 - m1 * m1 ;
+  if(pz1Sq < 0){
+    cout << "Invalid phase space point for the given pattern (s13, s23) = ("
+	 << s13 << ", " << s23 << ")" << endl ;
+    throw out_of_range("") ;
+  }
+
+  // Get pz1 from mass/energy relation (co-ordinate system defined so that px1 = py1 = 0)
+  double pz1 = sqrt(pz1Sq) ;
+
+  // Calculate pz3 from conservation of momentum 
+  double pz3 = ( E2 * E2 - m2 * m2 - E3 * E3 + m3 * m3 - pz1 * pz1 ) / ( 2*pz1 ) ;
+
+  // Use pz3 to get py3 (co-ordinate system designed so that px3 = 0)
+  double py3Sq =  E3 * E3 - m3 * m3 - pz3 * pz3 ;
+
+  // Reject events where kinematics are impossible
+  if(py3Sq < 0){
+    cout << "Invalid phase space point for the given pattern (s13, s23) = ("
+	 << s13 << ", " << s23 << ")" << endl ;
+    throw out_of_range("") ;
+  }
+
+  double py3 = sqrt(py3Sq) ;
+  // Conservation of momentum => py2 = -py3 and pz2 = -(pz1 + pz3)
+  double py2 = -1 * py3 ;
+  double pz2 = -1 * (pz1 + pz3) ;
+  std::vector<TLorentzVector> p4List(4, TLorentzVector(0, 0, 0, m0));
+  p4List[1] = TLorentzVector(0., 0., pz1, E1) ;
+  p4List[2] = TLorentzVector(0., py2, pz2, E2) ;
+  p4List[3] = TLorentzVector(0., py3, pz3, E3) ;
+
+  setMomenta(p4List);
+  if(_pat.size() < 3 || _pat.size() != _p.size()) shoutAndKill();
+  resetST();
+
+  if(!kinematicallyAllowed()){
+    cout << "Event not kinematically allowed! Was given (s13, s23) = ("
+	 << s13 << ", " << s23 << "), got (" << s_intern(1, 3) << ", "
+	 << s_intern(2, 3) << ")" << endl ;
+  throw out_of_range("") ;
+  }
+  _eventCounter++;
+}
 
 DalitzEvent::DalitzEvent(const DalitzEventPattern& pat
 			 , const std::vector<TVector3>& mumAndDgtrs_p3
