@@ -186,7 +186,7 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() {
 
     double pdfval = pdf_value(tag, decaytime, *evt) ;
 
-    double maxval = m_bothmodel.Prob(*evt) * m_scale * exp(-decaytime * m_width) ;
+    double maxval = m_bothmodel.Prob(*evt) * m_scale * exp(-decaytime * m_width) * m_width ;
     if(pdfval > maxval){
       /*cout << "pdfval " << pdfval << " maxval " << maxval << endl ;
 	throw out_of_range("pdfval > maxval. That shouldn't happen!") ;*/

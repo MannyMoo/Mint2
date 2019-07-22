@@ -93,11 +93,14 @@ public:
   DalitzEvent(const DalitzEventPattern& pat
 	      , const std::vector<TLorentzVector>& mumAndDgtr_p4
 	      );
+  /// Constructor for a 4-body decay at a given point in phase space.
   DalitzEvent(const DalitzEventPattern& pat
 	      , double t01_in
 	      , double s12_in, double s23_in, double s34_in
 	      , double t40_in
 	      );
+  /// Constructor for a 3-body decay at a given point in phase space.
+  DalitzEvent(const DalitzEventPattern& pat, const double s13, const double s23) ;
   DalitzEvent(const DalitzEventPattern& pat
 	      , const std::vector<TVector3>& mumAndDgtr_p3
 	      );
