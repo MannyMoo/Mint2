@@ -11,6 +11,7 @@
 
 #include <Mint/SplineGenerator.h>
 #include <Mint/TimeDependentGenerator.h>
+#include <Mint/Eff3piSymmetric.h>
 
 using namespace std;
 using namespace MINT;
@@ -50,7 +51,6 @@ int genTimeDependent(){
   NamedParameter<double> qoverp("qoverp", 1.) ;
   NamedParameter<double> phi("phi", 0.) ;
 
-
   NamedParameter<string> efficiencyFile("efficiencyFile", string("/home/ppe/n/nmchugh/SummerProject/DaVinciDev_v44r10p1/AGammaD0Tohhpi0/scripts/mint/h_efficiency.root")) ;
   NamedParameter<string> h_efficiencyName( "h_efficiencyName", string("h_efficiency") ) ;
   
@@ -58,10 +58,13 @@ int genTimeDependent(){
   NamedParameter <float> resWidth("resWidth", 0.05) ;
 
   TH1F* h_efficiency = NULL ; 
+  Eff3piSymmetric* sEfficiency = NULL;
   if((bool)addExpEffects){
     TFile* eff_infile = TFile::Open( ((string) efficiencyFile).c_str() ) ;
     eff_infile->GetObject(((string) h_efficiencyName).c_str(), h_efficiency) ;
+    sEfficiency = new Eff3piSymmetric();
   }
+
   
   cout << " got event pattern: " << pat << endl;
 
@@ -70,7 +73,7 @@ int genTimeDependent(){
     int startinit(time(0)) ;
     timedepgen.reset(new TimeDependentGenerator(pat,
 						width, deltam, deltagamma, qoverp, phi, &ranLux, 
-						h_efficiency, resWidth, (bool)addExpEffects)) ;
+						h_efficiency, resWidth, (bool)addExpEffects, sEfficiency)) ;
     cout << "Initialise TimeDependentGenerator took " << time(0) - startinit << " s" << endl ;
   }
 

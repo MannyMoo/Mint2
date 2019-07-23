@@ -1,3 +1,6 @@
+#ifndef MINT_EFF_THREE_PI_SYMMETRIC_HH
+#define MINT_EFF_THREE_PI_SYMMETRIC_HH
+
 #include "Mint/IReturnRealForEvent.h"
 #include "Mint/IDalitzEvent.h"
 #include "math.h"
@@ -17,5 +20,7 @@ class Eff3piSymmetric : public IReturnRealForEvent<IDalitzEvent> {
     virtual double RealVal(IDalitzEvent& evt);
 
 };
+
+#endif
 
 
