@@ -73,3 +73,10 @@ class ConfigFile(dict) :
                 f.write(line + '\n')
 
     
+    def float(self, name) :
+        '''Get a (the first) parameter value as a float.'''
+        return float(self[name][0])
+
+    def floats(self, name) :
+        '''Get the parameter values as a list of floats.'''
+        return map(float, self[name])
