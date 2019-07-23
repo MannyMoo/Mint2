@@ -75,7 +75,7 @@ double binflipChi2::getVal(){
 		}
 	    }
    
-            chi2 += D0_term + D0bar_term;
+            chi2 += D0_term + D0bar_term; 
        
             float tol = 0.01;
             if(D0_term > tol){
@@ -148,7 +148,6 @@ void binflipChi2::genFakeData(){
 	    pqterm = ((double)-1)*pow(qoverp, -1); 
         }
 
-
         for(int b = 1; b <= m_nbinsPhase; b++){
 
      	    for(int j = 1; j <= m_nbinsTime; j++){
@@ -218,3 +217,11 @@ void binflipChi2::genFakeData(){
     }       
 }
 
+
+TGraph binflipChi2::getFit(int i, int b){
+
+    TGraph fit = TGraph(m_nbinsTime);
+    fit = getFits()[i][b];
+    return fit;
+
+}

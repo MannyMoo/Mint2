@@ -42,5 +42,6 @@ class binflipChi2 : public Minimisable{
     double getVal();
     vector<vector<TGraph> > getFits();
     void genFakeData();
+    TGraph getFit(int i, int b);
 };
 
