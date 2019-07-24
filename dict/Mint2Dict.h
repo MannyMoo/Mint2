@@ -14,6 +14,8 @@
 #include <Mint/DalitzEvent.h>
 #include <Mint/binflipChi2.h>
 #include <Mint/Minimiser.h>
+#include <Mint/Eff3piSymmetric.h>
+#include <Mint/IReturnRealForEvent.h>
 /*
 #include <Mint/DalitzBox.h>
 #include <Mint/Model_independent.h>

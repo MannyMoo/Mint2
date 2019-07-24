@@ -9,6 +9,8 @@
   <class name="DalitzEvent" />
   <class name="MINT::binflipChi2" />
   <class name="MINT::Minimiser" />
+  <class name="MINT::Eff3piSymmetric" />
+  <class name="MINT::IReturnRealForEvent" />
   <!--
   <class name="AmpInitialiser" />
   <class name="AmpPair" />

@@ -70,7 +70,7 @@ DalitzEventPattern TimeDependentGenerator::anti(DalitzEventPattern pat) {
 TimeDependentGenerator::TimeDependentGenerator(const DalitzEventPattern& pattern, double width, double deltam,
 					       double deltagamma, double qoverp, double phi, 
 					       TRandom3* rndm, TH1F* h_efficiency, 
-                                               float resWidth, bool addExpEffects) :
+                                               float resWidth, bool addExpEffects, Eff3piSymmetric* sEfficiency) :
   m_rndm(rndm),
   m_pattern(pattern),
   m_cppattern(anti(pattern)),
@@ -88,11 +88,16 @@ TimeDependentGenerator::TimeDependentGenerator(const DalitzEventPattern& pattern
   m_h_efficiency(h_efficiency),
   m_efficiencyFit(),
   m_resWidth(resWidth),
-  m_addExpEffects(addExpEffects)
+  m_addExpEffects(addExpEffects),
+  m_sEfficiency(sEfficiency)
 {
   m_bothmodel.addAsList(*m_cpmodel) ;
-  if( m_h_efficiency != NULL){
+  if( m_h_efficiency != NULL ){
     m_efficiencyFit = TSpline3(m_h_efficiency) ;
+  }
+  if( m_sEfficiency != NULL ){
+    m_model->setEfficiency(m_sEfficiency);
+    m_cpmodel->setEfficiency(m_sEfficiency);
   }
 }
 
@@ -102,7 +107,7 @@ TimeDependentGenerator::TimeDependentGenerator(MINT::counted_ptr<FitAmpSum> mode
 					       double width, double deltam,
 					       double deltagamma, double qoverp, double phi, 
 					       TRandom3* rndm, TH1F* h_efficiency, 
-                                               float resWidth, bool addExpEffects) :
+                                               float resWidth, bool addExpEffects, Eff3piSymmetric* sEfficiency) :
   m_rndm(rndm),
   m_pattern(model->getAmpPtr(0)->getTreePattern()),
   m_cppattern(cpmodel->getAmpPtr(0)->getTreePattern()),
@@ -120,11 +125,16 @@ TimeDependentGenerator::TimeDependentGenerator(MINT::counted_ptr<FitAmpSum> mode
   m_h_efficiency(h_efficiency),
   m_efficiencyFit(),
   m_resWidth(resWidth),
-  m_addExpEffects(addExpEffects)
+  m_addExpEffects(addExpEffects),
+  m_sEfficiency(sEfficiency)
 {
   m_bothmodel.addAsList(*m_cpmodel) ;
-  if( m_h_efficiency != NULL){
+  if( m_h_efficiency != NULL ){
     m_efficiencyFit = TSpline3(m_h_efficiency) ;
+  }
+  if( m_sEfficiency != NULL ){
+    m_model->setEfficiency(m_sEfficiency);
+    m_cpmodel->setEfficiency(m_sEfficiency);
   }
 }
 

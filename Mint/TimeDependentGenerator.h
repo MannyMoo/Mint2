@@ -11,6 +11,7 @@
 #include <complex>
 #include <string>
 #include <TSpline.h>
+#include <Mint/Eff3piSymmetric.h>
 
 class TRandom3 ;
 
@@ -55,7 +56,8 @@ public :
   TimeDependentGenerator(const DalitzEventPattern& pattern, double width, double deltam,
 			 double deltagamma, double qoverp, double phi,
 			 TRandom3* rndm, TH1F* h_efficiency = NULL,
-                         float resWidth = 0.05, bool addExpEffects = false) ;
+                         float resWidth = 0.05, bool addExpEffects = false,
+                         Eff3piSymmetric* sEfficiency = NULL) ;
   /** Constructor, takes:
       model : the amplitude model for the decay
       cpmodel : the amplitude model for the CP conjugate decay
@@ -73,7 +75,8 @@ public :
 			 double width, double deltam,
 			 double deltagamma, double qoverp, double phi,
 			 TRandom3*, TH1F* h_efficiency = NULL,
-                         float resWidth = 0.05, bool addExpEffects = false) ;
+                         float resWidth = 0.05, bool addExpEffects = false,
+                         Eff3piSymmetric* sEfficiency = NULL) ;
 
   /// Generate a decay time, optionally including experimental effects.
   std::pair<double, double> generate_decay_time() const ;
@@ -117,6 +120,8 @@ private :
 
   float m_resWidth;
   bool m_addExpEffects;
+
+  Eff3piSymmetric* m_sEfficiency;
 } ;
 
 #endif
