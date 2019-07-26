@@ -220,8 +220,12 @@ void binflipChi2::genFakeData(){
 
 TGraph binflipChi2::getFit(int i, int b){
 
+    //Not the most efficient, but just a simple way of returning the fits in a 
+    //python friendly type for debugging
     TGraph fit = TGraph(m_nbinsTime);
     fit = getFits()[i][b];
     return fit;
 
 }
+
+
