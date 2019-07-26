@@ -62,7 +62,7 @@ int genTimeDependent(){
   if((bool)addExpEffects){
     TFile* eff_infile = TFile::Open( ((string) efficiencyFile).c_str() ) ;
     eff_infile->GetObject(((string) h_efficiencyName).c_str(), h_efficiency) ;
-    sEfficiency = new Eff3piSymmetric();
+    /*sEfficiency = new Eff3piSymmetric(); Removed for now since not verified to be working */
   }
 
   
