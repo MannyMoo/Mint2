@@ -84,6 +84,12 @@ public :
   /// Generate a flavour, decay time and Dalitz event.
   MINT::counted_ptr<IDalitzEvent> generate_event() ;
 
+  /// Generate an event at a given point in phase space.
+  MINT::counted_ptr<IDalitzEvent> generate_event(const double s13, const double s23) ;
+
+  /// Decide whether the generated event should be accepted or rejected
+  bool accept_or_reject(const int tag, const double decaytime, IDalitzEvent&) ;
+
   double get_scale() const ;
   float get_gen_efficiency() const ;
 

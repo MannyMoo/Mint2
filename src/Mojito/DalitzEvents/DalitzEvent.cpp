@@ -1261,6 +1261,8 @@ bool DalitzEvent::parseNtpEntryName(const std::string& entry
 				    , std::string& part1
 				    , std::string& part2){
   int posOf_ = entry.find_last_of('_');
+  if(std::string::npos == posOf_)
+    return false ;
   part1 = entry.substr(0, posOf_);
   part2 = entry.substr(posOf_ +1);
   return true;
@@ -1297,7 +1299,10 @@ bool DalitzEvent::fromParasTree(TTree* ntp){
     else if("genPdf" == leafName) genPdf = leafVal;
     else{
       std::string parName, element;
-      parseNtpEntryName(leafName, parName, element);
+      if(!parseNtpEntryName(leafName, parName, element)){
+	// leafName doesn't contain an underscore.
+	continue ;
+      }
       (prtMap[parName])[element] = leafVal;
       if(dbThis){
 	cout << "\t leaf[ " << i << "] name parsed: " 

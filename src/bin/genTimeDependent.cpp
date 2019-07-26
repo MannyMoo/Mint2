@@ -51,6 +51,9 @@ int genTimeDependent(){
   NamedParameter<double> qoverp("qoverp", 1.) ;
   NamedParameter<double> phi("phi", 0.) ;
 
+  NamedParameter<double> s13("s13", 0., NamedParameterBase::QUIET) ;
+  NamedParameter<double> s23("s23", 0., NamedParameterBase::QUIET) ;
+
   NamedParameter<string> efficiencyFile("efficiencyFile", string("/home/ppe/n/nmchugh/SummerProject/DaVinciDev_v44r10p1/AGammaD0Tohhpi0/scripts/mint/h_efficiency.root")) ;
   NamedParameter<string> h_efficiencyName( "h_efficiencyName", string("h_efficiency") ) ;
   
@@ -92,7 +95,10 @@ int genTimeDependent(){
 
     MINT::counted_ptr<IDalitzEvent> evt(0) ;
     if(genTimeDependent){
-      evt = timedepgen->generate_event() ;
+      if(s13 && s23)
+	evt = timedepgen->generate_event(s13, s23) ;
+      else 
+	evt = timedepgen->generate_event() ;
     }
     else {
       // Decide if it's a D0 or D0bar that's being generated.
@@ -120,18 +126,28 @@ int genTimeDependent(){
   }
   
   // Make sure the first event in the list is a D0 so the naming scheme is consistent.
-  if(eventList1.begin()->eventPattern() != pat){
+  cout << "Check D0 is first." << endl ;
+  if(eventList1.begin()->eventPattern()[0] != pat[0]){
+    cout << "Try to find a D0" << endl ;
+    pat.print() ;
+    cout << endl ;
+    eventList1.begin()->eventPattern().print() ;
+    cout << endl ;
     auto ievt = eventList1.begin() ;
     ++ievt ;
-    for( ; ievt->eventPattern() != pat && ievt != eventList1.end() ; ++ievt)
+    for( ; ievt != eventList1.end() && ievt->eventPattern()[0] != pat[0] ; ++ievt)
       continue ;
     if(ievt != eventList1.end()){
+      cout << "Found a D0" << endl ;
       DalitzEvent evt = *ievt ;
       eventList1.erase(ievt) ;
       eventList1.theVector().insert(eventList1.begin(), evt) ;
     }
+    else
+      cout << "No D0 found in the list!" << endl ;
   }
 
+  cout << "Save data" << endl ;
   NamedParameter<string> outputfname("outputFileName", string("pipipi0_1.root"), (char*)0) ;
   eventList1.save(outputfname);
   string fnamestr(outputfname) ;
@@ -143,6 +159,7 @@ int genTimeDependent(){
   TBranch* tagbranch = ntuple->Branch("tag", &tag, "tag/I") ;
   TBranch* decaytimebranch = ntuple->Branch("decaytime", &decaytime, "decaytime/D") ;
   TBranch* smeareddecaytimebranch = ntuple->Branch("smeareddecaytime", &smeareddecaytime, "smeareddecaytime/D") ;
+  cout << "Save decay time info." << endl ;
   for(const auto& ievt : eventList1){
     tag = ievt.getValueFromVector(TimeDependentGenerator::GenTimeEvent::infoNames["tag"]) ;
     decaytime = ievt.getValueFromVector(TimeDependentGenerator::GenTimeEvent::infoNames["decaytime"]) ;
@@ -152,9 +169,12 @@ int genTimeDependent(){
     decaytimebranch->Fill() ;
     smeareddecaytimebranch->Fill() ;
   }
+  cout << "Write tuple" << endl ;
   ntuple->Write(ntuple->GetName(), TObject::kWriteDelete) ;
+
   tuplefile.Close() ;
   
+  cout << "Save Dalitz plots." << endl ;
   DalitzHistoSet datH = eventList1.histoSet();
   datH.save("plotsFromEventList.root");
 

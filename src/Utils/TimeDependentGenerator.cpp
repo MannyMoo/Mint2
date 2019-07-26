@@ -177,6 +177,31 @@ pair<double, double> TimeDependentGenerator::generate_decay_time() const {
   return pair<double, double>(decaytime, smeareddecaytime) ;
 }
 
+MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event(const double s13, const double s23) {
+  int tag(0) ;
+  double decaytime(0.) ;
+  double smeareddecaytime(0.) ;
+
+  MINT::counted_ptr<IDalitzEvent> evt(0) ;
+  
+  unsigned i = 0 ;
+  unsigned maxattempts = 100000 ;
+  // Accept/reject using the incoherent sum in m_bothmodel as an envelope to generate
+  // events.
+  while(true) {
+    tag = m_rndm->Rndm() > 0.5 ? 1 : -1 ;
+    tie(decaytime, smeareddecaytime) = generate_decay_time() ;
+    evt = MINT::counted_ptr<IDalitzEvent>(new DalitzEvent(m_model->getAmpPtr(0)->getTreePattern(), s13, s23)) ;
+    if(accept_or_reject(tag, decaytime, *evt))
+      break ;
+    i += 1 ;
+    if( i >= maxattempts)
+      throw range_error("Failed to generate an event in 100000 attempts!") ;
+  }
+
+  return MINT::counted_ptr<IDalitzEvent>(new GenTimeEvent(*evt, tag, decaytime, smeareddecaytime)) ;
+}
+
 MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() {
   int tag(0) ;
   double decaytime(0.) ;
@@ -192,28 +217,34 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() {
     tag = m_rndm->Rndm() > 0.5 ? 1 : -1 ;
     tie(decaytime, smeareddecaytime) = generate_decay_time() ;
     evt = m_generator.newEvent() ;
-    ++m_ngen ;
-
-    double pdfval = pdf_value(tag, decaytime, *evt) ;
-
-    double maxval = m_bothmodel.Prob(*evt) * m_scale * exp(-decaytime * m_width) * m_width ;
-    if(pdfval > maxval){
-      /*cout << "pdfval " << pdfval << " maxval " << maxval << endl ;
-	throw out_of_range("pdfval > maxval. That shouldn't happen!") ;*/
-      m_scale *= pdfval / maxval ;
-      ++m_naccept ;
+    if(accept_or_reject(tag, decaytime, *evt))
       break ;
-    }
-    if(m_rndm->Rndm() * maxval < pdfval){
-      ++m_naccept ;
-      break ;
-    }
     i += 1 ;
     if( i >= maxattempts)
       throw range_error("Failed to generate an event in 100000 attempts!") ;
   }
 
   return MINT::counted_ptr<IDalitzEvent>(new GenTimeEvent(*evt, tag, decaytime, smeareddecaytime)) ;
+}
+
+bool TimeDependentGenerator::accept_or_reject(const int tag, const double decaytime, IDalitzEvent& evt) {
+  ++m_ngen ;
+
+  double pdfval = pdf_value(tag, decaytime, evt) ;
+
+  double maxval = m_bothmodel.Prob(evt) * m_scale * exp(-decaytime * m_width) * m_width ;
+  if(pdfval > maxval){
+    /*cout << "pdfval " << pdfval << " maxval " << maxval << endl ;
+      throw out_of_range("pdfval > maxval. That shouldn't happen!") ;*/
+    m_scale *= pdfval / maxval ;
+    ++m_naccept ;
+    return true ;
+  }
+  if(m_rndm->Rndm() * maxval < pdfval){
+    ++m_naccept ;
+    return true ;
+  }
+  return false ;
 }
 
 double TimeDependentGenerator::get_scale() const {
