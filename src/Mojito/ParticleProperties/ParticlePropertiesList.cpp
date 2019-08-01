@@ -89,7 +89,7 @@ const std::vector<std::string>& ParticlePropertiesList::dirList(){
 void ParticlePropertiesList::fillDirList(){
   _dirList.clear();
   NamedParameter<std::string> userDir("ParticlePropertiesList::ParticlePropertiesDir",
-				      "", NamedParameterBase::QUIET);
+				      (char*)0, NamedParameterBase::QUIET);
   for(int i=0; i < userDir.size(); i++){
     if("" != userDir.getVal(i)){
       _dirList.push_back(userDir.getVal(i) + "/");
