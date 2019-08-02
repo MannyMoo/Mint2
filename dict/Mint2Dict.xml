@@ -2,6 +2,7 @@
   <class name="PhaseDifferenceCalc" />
   <class name="DalitzEventPattern" />
   <class name="DalitzEventList" />
+  <class name="DiskResidentEventList" />
   <class name="MINT::NamedParameterBase" />
   <class name="TimeDependentGenerator" />
   <class name="SplineGenerator" />

@@ -12,6 +12,7 @@
 #include <string>
 #include <TSpline.h>
 #include <Mint/Eff3piSymmetric.h>
+#include <TH1F.h>
 
 class TRandom3 ;
 
@@ -84,7 +85,7 @@ public :
   /// Generate a flavour, decay time and Dalitz event.
   MINT::counted_ptr<IDalitzEvent> generate_event() ;
 
-  /// Generate an event at a given point in phase space.
+  /// Generate a 3-body event at a given point in phase space.
   MINT::counted_ptr<IDalitzEvent> generate_event(const double s13, const double s23) ;
 
   /// Decide whether the generated event should be accepted or rejected
@@ -98,13 +99,24 @@ public :
   /** Get the value of the PDF, assuming the tag & decay time are stored in the 
       DalitzEvent like a GenTimeEvent */
   double pdf_value(IDalitzEvent&) ;
+  /** Get the value of the incoherent sum PDF that's used as an envelope to generate
+      events at the given point in phase space and time. */
+  double envelope_value(const double, IDalitzEvent&) ;
 
   typedef std::pair<std::complex<double>, std::complex<double> > AmpPair ;
   /** Get the coefficients of the amplitudes for the produced flavour and the mixed flavour
       given the tag and decay time. */
   AmpPair amplitude_coefficients(const int tag, const double decaytime) ;
 
+  /** Draw the PDF value vs time at the given point in phase space (assumes the event has
+      a tag).*/
+  TH1F draw_pdf_vs_time(IDalitzEvent&, unsigned, float, float, const std::string& name = "pdf_vs_time") ;
+  /** Draw the envelope value vs time at the given point in phase space. */
+  TH1F draw_envelope_vs_time(IDalitzEvent&, unsigned, float, float, const std::string& name = "envelope_vs_time") ;
+
 private :
+  void init() ;
+
   TRandom3* m_rndm ;
   const DalitzEventPattern m_pattern ;
   const DalitzEventPattern m_cppattern ;

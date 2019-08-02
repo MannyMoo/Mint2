@@ -91,14 +91,7 @@ TimeDependentGenerator::TimeDependentGenerator(const DalitzEventPattern& pattern
   m_addExpEffects(addExpEffects),
   m_sEfficiency(sEfficiency)
 {
-  m_bothmodel.addAsList(*m_cpmodel) ;
-  if( m_h_efficiency != NULL ){
-    m_efficiencyFit = TSpline3(m_h_efficiency) ;
-  }
-  if( m_sEfficiency != NULL ){
-    m_model->setEfficiency(m_sEfficiency);
-    m_cpmodel->setEfficiency(m_sEfficiency);
-  }
+  init() ;
 }
 
 
@@ -128,6 +121,10 @@ TimeDependentGenerator::TimeDependentGenerator(MINT::counted_ptr<FitAmpSum> mode
   m_addExpEffects(addExpEffects),
   m_sEfficiency(sEfficiency)
 {
+  init() ;
+}
+
+void TimeDependentGenerator::init() {
   m_bothmodel.addAsList(*m_cpmodel) ;
   if( m_h_efficiency != NULL ){
     m_efficiencyFit = TSpline3(m_h_efficiency) ;
@@ -136,6 +133,11 @@ TimeDependentGenerator::TimeDependentGenerator(MINT::counted_ptr<FitAmpSum> mode
     m_model->setEfficiency(m_sEfficiency);
     m_cpmodel->setEfficiency(m_sEfficiency);
   }
+  // Ensure the models are fully initialised.
+  DalitzEvent evt(m_pattern, m_rndm) ;
+  m_model->getVal(evt) ;
+  m_cpmodel->getVal(evt) ;
+  m_bothmodel.getVal(evt) ;
 }
 
 pair<double, double> TimeDependentGenerator::generate_decay_time() const {
@@ -191,7 +193,7 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event(const dou
   while(true) {
     tag = m_rndm->Rndm() > 0.5 ? 1 : -1 ;
     tie(decaytime, smeareddecaytime) = generate_decay_time() ;
-    evt = MINT::counted_ptr<IDalitzEvent>(new DalitzEvent(m_model->getAmpPtr(0)->getTreePattern(), s13, s23)) ;
+    evt = MINT::counted_ptr<IDalitzEvent>(new DalitzEvent(tag == 1 ? m_pattern : m_cppattern, s13, s23)) ;
     if(accept_or_reject(tag, decaytime, *evt))
       break ;
     i += 1 ;
@@ -227,16 +229,21 @@ MINT::counted_ptr<IDalitzEvent> TimeDependentGenerator::generate_event() {
   return MINT::counted_ptr<IDalitzEvent>(new GenTimeEvent(*evt, tag, decaytime, smeareddecaytime)) ;
 }
 
+double TimeDependentGenerator::envelope_value(const double decaytime, IDalitzEvent& evt) {
+  return m_bothmodel.Prob(evt) * m_scale * exp(-decaytime * m_width) * m_width ;
+}
+
 bool TimeDependentGenerator::accept_or_reject(const int tag, const double decaytime, IDalitzEvent& evt) {
   ++m_ngen ;
 
   double pdfval = pdf_value(tag, decaytime, evt) ;
 
-  double maxval = m_bothmodel.Prob(evt) * m_scale * exp(-decaytime * m_width) * m_width ;
+  double maxval = envelope_value(decaytime, evt) ;
   if(pdfval > maxval){
-    /*cout << "pdfval " << pdfval << " maxval " << maxval << endl ;
-      throw out_of_range("pdfval > maxval. That shouldn't happen!") ;*/
+    cout << "pdfval " << pdfval << " maxval " << maxval << endl ;
+    //throw out_of_range("pdfval > maxval. That shouldn't happen!") ;
     m_scale *= pdfval / maxval ;
+    cout << "scale " << m_scale << endl ;
     ++m_naccept ;
     return true ;
   }
@@ -295,3 +302,29 @@ TimeDependentGenerator::amplitude_coefficients(const int tag, const double decay
   complex<double> coeffmix = pow(m_qoverp, tag) * coeff * minusterm ;
   return AmpPair(coeffprod, coeffmix) ;
 }
+
+TH1F TimeDependentGenerator::draw_pdf_vs_time(IDalitzEvent& evt, unsigned nbins, float tmin, float tmax,
+					      const std::string& name) {
+  TH1F histo(name.c_str(), "", nbins, tmin, tmax) ;
+  int tag = int(evt.getValueFromVector(GenTimeEvent::ITAG)) ;
+  for(unsigned i = 1 ; i < nbins + 1 ; ++i){
+    double time = histo.GetXaxis()->GetBinCenter(i) ;
+    double val = pdf_value(tag, time, evt) ;
+    histo.SetBinContent(i, val) ;
+    histo.SetBinError(i, 0.) ;
+  }
+  return histo ;
+}
+
+TH1F TimeDependentGenerator::draw_envelope_vs_time(IDalitzEvent& evt, unsigned nbins, float tmin, float tmax,
+						   const std::string& name) {
+  TH1F histo(name.c_str(), "", nbins, tmin, tmax) ;
+  for(unsigned i = 1 ; i < nbins + 1 ; ++i){
+    double time = histo.GetXaxis()->GetBinCenter(i) ;
+    double val = envelope_value(time, evt) ;
+    histo.SetBinContent(i, val) ;
+    histo.SetBinError(i, 0.) ;
+  }
+  return histo ;
+}
+

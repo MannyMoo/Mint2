@@ -1,14 +1,15 @@
 // author: Jonas Rademacker (Jonas.Rademacker@bristol.ac.uk)
 // status:  Mon 9 Feb 2009 19:18:00 GMT
-#include "Mint/DiskResidentEventList.h"
-#include "Mint/Utils.h"
+#include <Mint/DiskResidentEventList.h>
+#include <Mint/Utils.h>
 
-#include "TNtupleD.h"
-#include "TFile.h"
-#include "TRandom.h"
+#include <TNtupleD.h>
+#include <TFile.h>
+#include <TRandom.h>
 
 #include <iostream>
 #include <fstream>
+#include <boost/algorithm/string.hpp>
 
 using namespace std;
 using namespace MINT;
@@ -59,7 +60,7 @@ DiskResidentEventList::DiskResidentEventList(const std::string& fname
 		    								, const std::string& treeName
 		    								, const std::string& opt)
   : _fname(fname)
-  , _opt(opt)
+  , _opt(boost::to_upper_copy(opt))
   , _f(0)//new TFile(fname.c_str(), opt.c_str()))
   , _ntp(0)
   , _scaleData(scale)
@@ -78,7 +79,7 @@ DiskResidentEventList::DiskResidentEventList(const std::string& fname
 DiskResidentEventList::DiskResidentEventList(const std::string& fname
 		    								, const std::string& opt)
   : _fname(fname)
-  , _opt(opt)
+  , _opt(boost::to_upper_copy(opt))
   , _f(0)//new TFile(fname.c_str(), opt.c_str()))
   , _ntp(0)
   , _scaleData(1)
@@ -126,7 +127,7 @@ DiskResidentEventList::DiskResidentEventList(const IMinimalEventList<DalitzEvent
 					     , const std::string& opt
 					     )
   : _fname(newFname)
-  , _opt(opt)
+  , _opt(boost::to_upper_copy(opt))
   , _f(0)//new TFile(newFname.c_str(), opt.c_str()))
     //  , _counted_ntp(0)
   , _ntp(0)
@@ -193,7 +194,7 @@ DiskResidentEventList::DiskResidentEventList(const DalitzEventPattern& pat
 					     , const std::string& opt
 					     )
   : _fname(fname)
-  , _opt(opt)
+  , _opt(boost::to_upper_copy(opt))
   , _f(0)//new TFile(fname.c_str(), opt.c_str()))
   , _ntp(0)
   , _scaleData(1)
@@ -403,9 +404,11 @@ bool DiskResidentEventList::Close(){
   }
   if(0 == _f) return false;
   if(0 == _ntp) return false;
+  // Don't understand why sometimes the TFile is already closed by the time the destructor is called,
+  // but this avoids crases since _ntp is invalidated.
+  if(!_f->IsOpen()) return false ;
 
-
-  if(_opt != "OPEN"){
+  if(_opt.size() != 0 && _opt != "OPEN" && _opt != "READ"){
 	success &= save();
 	if(dbThis && ! success){
 	cout << "DiskResidentEventList::Close() failure in saving when closing" 
@@ -416,7 +419,13 @@ bool DiskResidentEventList::Close(){
   //_f->cd();
   //_ntp->Write();
   //_f->Write();
-  if(dbThis) cout << "getting current file" << endl;
+  if(dbThis) {
+    cout << "_f " << _f << " _ntp " << _ntp << endl ;
+    cout << "_f->IsOpen() " << _f->IsOpen() << endl ;
+    cout << "mustcleanup " << _f->TestBit(kMustCleanup) << endl ;
+    cout << "_ntp->GetName() " << _ntp->GetName() << endl ;
+    cout << "getting current file" << endl;
+  }
   _f = _ntp->GetCurrentFile();
   if(dbThis) cout << "_f = " << _f << endl;
   _f->cd();

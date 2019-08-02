@@ -7,6 +7,7 @@
 #include <Mint/PhaseDifferenceCalc.h>
 #include <Mint/DalitzEventPattern.h>
 #include <Mint/DalitzEventList.h>
+#include <Mint/DiskResidentEventList.h>
 #include <Mint/NamedParameterBase.h>
 #include <Mint/TimeDependentGenerator.h>
 #include <Mint/SplineGenerator.h>

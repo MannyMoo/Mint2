@@ -1,7 +1,7 @@
 // author: Jonas Rademacker (Jonas.Rademacker@bristol.ac.uk)
 // status:  Mon 9 Feb 2009 19:18:01 GMT
 #include "Mint/NamedParameter.h"
-#include "Mint/DalitzEventList.h"
+#include "Mint/DiskResidentEventList.h"
 #include "Mint/DalitzEvent.h"
 #include "TFile.h"
 #include "TRandom3.h"
@@ -60,6 +60,8 @@ int genTimeDependent(){
   NamedParameter<int> addExpEffects("addExpEffects", 0) ;
   NamedParameter <float> resWidth("resWidth", 0.05) ;
 
+  NamedParameter<string> outputfname("outputFileName", string("pipipi0_1.root"), (char*)0) ;
+
   TH1F* h_efficiency = NULL ; 
   Eff3piSymmetric* sEfficiency = NULL;
   if((bool)addExpEffects){
@@ -83,7 +85,16 @@ int genTimeDependent(){
   if(!(bool)saveEvents)
     return 0 ;
 
-  DalitzEventList eventList1 ;
+  DiskResidentEventList eventList1(pat, outputfname) ;
+  TNtupleD* evttuple = (TNtupleD*)gDirectory->Get("DalitzEventList") ;
+  TTree* ntuple = new TTree("TimeEventList", "TimeEventList") ;
+  evttuple->AddFriend(ntuple) ;
+  int tag(0) ;
+  double decaytime(0.) ;
+  double smeareddecaytime(0.) ;
+  TBranch* tagbranch = ntuple->Branch("tag", &tag, "tag/I") ;
+  TBranch* decaytimebranch = ntuple->Branch("decaytime", &decaytime, "decaytime/D") ;
+  TBranch* smeareddecaytimebranch = ntuple->Branch("smeareddecaytime", &smeareddecaytime, "smeareddecaytime/D") ;
 
   cout << "Generating " << Nevents << " signal events (1)." << endl;
   int startTimeGen(time(0)) ;
@@ -103,21 +114,25 @@ int genTimeDependent(){
     else {
       // Decide if it's a D0 or D0bar that's being generated.
       SignalGenerator* gen(&genD0) ;
-      int tag = 1 ;
+      int _tag = 1 ;
       if(ranLux.Rndm() > 0.5){
 	gen = &genD0bar ;
-	tag = -1 ;
+	_tag = -1 ;
       }
 
       // Generate the decay time of the candidate.
-      double decaytime = ranLux.Exp(lifetime) ;
+      double _decaytime = ranLux.Exp(lifetime) ;
 
       evt = gen->newEvent() ;
-      evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::ITAG, tag) ;
-      evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::IDECAYTIME, decaytime) ;
-      evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::ISMEAREDDECAYTIME, -999.) ;
+      evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::ITAG, _tag) ;
+      evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::IDECAYTIME, _decaytime) ;
+      evt->setValueInVector(TimeDependentGenerator::GenTimeEvent::ISMEAREDDECAYTIME, _decaytime) ;
     }
     eventList1.Add(*evt) ;
+    tag = evt->getValueFromVector(TimeDependentGenerator::GenTimeEvent::ITAG) ;
+    decaytime = evt->getValueFromVector(TimeDependentGenerator::GenTimeEvent::IDECAYTIME) ;
+    smeareddecaytime = evt->getValueFromVector(TimeDependentGenerator::GenTimeEvent::ISMEAREDDECAYTIME) ;
+    ntuple->Fill() ;
   }
   
   if(genTimeDependent){
@@ -125,54 +140,9 @@ int genTimeDependent(){
     cout << "Generator scale: " << timedepgen->get_scale() << endl ;
   }
   
-  // Make sure the first event in the list is a D0 so the naming scheme is consistent.
-  cout << "Check D0 is first." << endl ;
-  if(eventList1.begin()->eventPattern()[0] != pat[0]){
-    cout << "Try to find a D0" << endl ;
-    pat.print() ;
-    cout << endl ;
-    eventList1.begin()->eventPattern().print() ;
-    cout << endl ;
-    auto ievt = eventList1.begin() ;
-    ++ievt ;
-    for( ; ievt != eventList1.end() && ievt->eventPattern()[0] != pat[0] ; ++ievt)
-      continue ;
-    if(ievt != eventList1.end()){
-      cout << "Found a D0" << endl ;
-      DalitzEvent evt = *ievt ;
-      eventList1.erase(ievt) ;
-      eventList1.theVector().insert(eventList1.begin(), evt) ;
-    }
-    else
-      cout << "No D0 found in the list!" << endl ;
-  }
-
   cout << "Save data" << endl ;
-  NamedParameter<string> outputfname("outputFileName", string("pipipi0_1.root"), (char*)0) ;
-  eventList1.save(outputfname);
-  string fnamestr(outputfname) ;
-  TFile tuplefile(fnamestr.c_str(), "update") ;
-  TNtupleD* ntuple = (TNtupleD*)tuplefile.Get("DalitzEventList") ;
-  int tag(0) ;
-  double decaytime(0.) ;
-  double smeareddecaytime(0.) ;
-  TBranch* tagbranch = ntuple->Branch("tag", &tag, "tag/I") ;
-  TBranch* decaytimebranch = ntuple->Branch("decaytime", &decaytime, "decaytime/D") ;
-  TBranch* smeareddecaytimebranch = ntuple->Branch("smeareddecaytime", &smeareddecaytime, "smeareddecaytime/D") ;
-  cout << "Save decay time info." << endl ;
-  for(const auto& ievt : eventList1){
-    tag = ievt.getValueFromVector(TimeDependentGenerator::GenTimeEvent::infoNames["tag"]) ;
-    decaytime = ievt.getValueFromVector(TimeDependentGenerator::GenTimeEvent::infoNames["decaytime"]) ;
-    smeareddecaytime = ievt.getValueFromVector(TimeDependentGenerator::GenTimeEvent
-					       ::infoNames["smeareddecaytime"]) ;
-    tagbranch->Fill() ;
-    decaytimebranch->Fill() ;
-    smeareddecaytimebranch->Fill() ;
-  }
-  cout << "Write tuple" << endl ;
-  ntuple->Write(ntuple->GetName(), TObject::kWriteDelete) ;
-
-  tuplefile.Close() ;
+  ntuple->Write() ;
+  eventList1.Close() ;
   
   cout << "Save Dalitz plots." << endl ;
   DalitzHistoSet datH = eventList1.histoSet();
@@ -180,6 +150,28 @@ int genTimeDependent(){
 
   cout << " genTimeDependent done. Took " << (time(0) - startTime)/60. 
        << " min. Returning 0." << endl;
+
+  // For debugging, plot PDF vs time at given point in phase space for each tag.
+  if(s13 && s23){
+    TFile fplots("plotsVsTime.root", "recreate") ;
+    unsigned nbins = 1000 ;
+    float tmin = 0. ;
+    float tmax = 8.2 ;
+    DalitzEvent evt(cpPat, s13, s23) ;
+    for(int tag = -1 ; tag < 2 ; tag += 2){
+      evt.setValueInVector(TimeDependentGenerator::GenTimeEvent::ITAG, tag) ;
+      std::ostringstream tagstr ; 
+      tagstr << tag ;
+      TH1F pdf = timedepgen->draw_pdf_vs_time(evt, nbins, tmin, tmax,
+					      "pdf_vs_time_tag" + tagstr.str()) ;
+      TH1F env = timedepgen->draw_envelope_vs_time(evt, nbins, tmin, tmax,
+						   "env_vs_time_tag" + tagstr.str()) ;
+      pdf.Write() ;
+      env.Write() ;
+      evt = DalitzEvent(pat, s13, s23) ;
+    }
+    fplots.Close() ;
+  }
 
   return 0;
 }
