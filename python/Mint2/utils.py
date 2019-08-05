@@ -11,6 +11,12 @@ def run_job(exe, workingdir, configs = [], parameters = {}, stdout = 'stdout', s
     if configs and isinstance(configs, (str, ConfigFile)) :
         configs = [configs]
 
+    try :
+        os.makedirs(workingdir)
+    except OSError :
+        if not os.path.exists(workingdir) :
+            raise
+
     pwd = os.getcwd()
     os.chdir(workingdir)
 
@@ -26,6 +32,28 @@ def run_job(exe, workingdir, configs = [], parameters = {}, stdout = 'stdout', s
     fstderr.close()
     os.chdir(pwd)
     return retval
+
+def run_job_main() :
+    '''Run a MINT job from a main script.'''
+
+    from argparse import ArgumentParser
+    import sys
+
+    parser = ArgumentParser()
+    parser.add_argument('exe', help = 'Executable to call.')
+    parser.add_argument('workingdir', help = 'Name of the dataset to generate')
+    parser.add_argument('--configs', nargs = '+', help = 'Config files to use')
+
+    args, remainder = parser.parse_known_args()
+    variableslists = {}
+    for arg in remainder :
+        if arg.startswith('--') :
+            varargs = []
+            variableslists[arg[2:]] = varargs
+            continue
+        varargs.append(arg)
+
+    sys.exit(run_job(exe = args.exe, workingdir = args.workingdir, configs = args.configs, parameters = variableslists))
 
 def gen_time_dependent(name, integratorsdir, mintdatadir, configs = [], number = None, zfill = 3, **parameters) :
     '''Generate time dependent MINT MC with genTimeDependent.exe.'''

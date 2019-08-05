@@ -35,6 +35,7 @@ gaudi_add_dictionary(Mint2
 gaudi_add_library(Mint2Lib
                   src/*/*/*.cpp
 		  src/Utils/*.cpp
+		  src/BinFlip/*.cpp
                   PUBLIC_HEADERS Mint
                   INCLUDE_DIRS Boost ROOT
                   LINK_LIBRARIES Boost ROOT QFTLib)
@@ -47,5 +48,6 @@ gaudi_add_library(Mint2Lib
 gaudi_add_executable(genTimeDependent src/bin/genTimeDependent.cpp LINK_LIBRARIES Mint2Lib)
 gaudi_add_executable(printKnownTrees src/bin/printKnownTrees.cpp LINK_LIBRARIES Mint2Lib)
 gaudi_add_executable(BsDsKpipi_TD_ampFit src/bin/BsDsKpipi_TD_ampFit.cpp LINK_LIBRARIES Mint2Lib ROOT)
+gaudi_add_executable(calculateHadronicParameters src/bin/calculateHadronicParameters.cpp LINK_LIBRARIES Mint2Lib ROOT)
 
 gaudi_env(SET MINT2 \$MINT2ROOT)

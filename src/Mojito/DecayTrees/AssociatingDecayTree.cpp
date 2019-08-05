@@ -96,11 +96,14 @@ bool AssociatingDecayTree::patternHasChanged(const IDalitzEvent& evt) const{
   return patternHasChanged(evt.eventPattern());
 }
 bool AssociatingDecayTree::patternHasChanged(const DalitzEventPattern& pat) const{
+  bool dbThis=false ;
   if(pat.empty()) return false;
   if(_prevPattern.size() != pat.size()){
-    std::cout << "prev pattern size != new pattern size: " 
-	      << _prevPattern.size() << " != " << pat.size() << endl;
-    std::cout << " returning pattern has changed = true " << std::endl;
+    if(dbThis){
+      std::cout << "prev pattern size != new pattern size: " 
+		<< _prevPattern.size() << " != " << pat.size() << endl;
+      std::cout << " returning pattern has changed = true " << std::endl;
+    }
     return true;
   }
   // only compare final state:
@@ -108,7 +111,8 @@ bool AssociatingDecayTree::patternHasChanged(const DalitzEventPattern& pat) cons
   //  as having the same pattern).
   for(unsigned int i=1; i< _prevPattern.size(); i++){
     if (_prevPattern[i] != pat[i]){
-      std::cout << " returning pattern has changed = true " << std::endl;
+      if(dbThis)
+	std::cout << " returning pattern has changed = true " << std::endl;
       return true;
     }
   }
