@@ -7,6 +7,7 @@
 #include <complex>
 #include <deque>
 #include <utility>
+#include <iostream>
 
 class TRandom3 ;
 
@@ -35,6 +36,7 @@ class HadronicParameters {
   class IBinSign {
   public :
     virtual EventPair classifyEvent(const IDalitzEvent&) const = 0 ;
+    virtual std::string type() const = 0 ;
     virtual ~IBinSign() {} ;
   } ;
   /// Class for determining if an event lives in a +ve or -ve bin.
@@ -43,6 +45,7 @@ class HadronicParameters {
     BinSign(ModelPtr) ;
     virtual ~BinSign() {} ;
     virtual EventPair classifyEvent(const IDalitzEvent&) const override ;
+    virtual std::string type() const override ;
   private :
     ModelPtr m_model ;
   } ;
@@ -72,6 +75,8 @@ class HadronicParameters {
     Bin(double, double, const std::complex<double>&, double sumw = 1., double sumw2 = 1., double norm = 1.) ;
     /// Initialise from a model and its conjugate.
     Bin(ModelPtr, ModelPtr) ;
+    /// Initialise from a config file.
+    Bin(const std::string&, unsigned, const std::string& fname = "") ;
 
     /// Add a DalitzEvent and its conjugate.
     void add(const HadronicParameters::EventPair&, double weight = 1.) ;
@@ -88,17 +93,19 @@ class HadronicParameters {
     /// Set the normalisation.
     void setNorm(double) ;
     /// Print the parameters.
-    void Print() const ;
+    void Print(const std::string& name, unsigned, std::ostream& os=std::cout) const ;
+    /// Get the name string.
+    static std::string getName(const std::string&, unsigned) ;
   } ;
 
   /// A set of bins.
   typedef std::deque<Bin> Bins ;
   /// Initialise from a predetermined set of bins.
-  HadronicParameters(const DalitzEventPattern&, const DalitzEventPattern&,
-		     const Bins&, MINT::counted_ptr<IBinSign>) ;
+  HadronicParameters(const Bins&, MINT::counted_ptr<IBinSign>) ;
   /// Initialise from a model and its conjugate, and a number of bins.
-  HadronicParameters(const DalitzEventPattern&, const DalitzEventPattern&,
-		     ModelPtr, ModelPtr, unsigned, MINT::counted_ptr<IBinSign>) ;
+  HadronicParameters(ModelPtr, ModelPtr, unsigned, MINT::counted_ptr<IBinSign>) ;
+  /// Initialise from a config file.
+  HadronicParameters(const std::string&, const std::string& fname = "") ;
 
   /// Get the number of bins.
   unsigned nBins() const ;
@@ -124,11 +131,12 @@ class HadronicParameters {
   /// Normalise the parameters.
   double normalise() ;
   /// Print the parameters.
-  void Print() const ;
+  void Print(const std::string&, std::ostream& os = std::cout) const ;
+
+  /// Get the BinSign type.
+  static MINT::counted_ptr<IBinSign> getBinSign(ModelPtr, const std::string&) ;
 
  private :
-  DalitzEventPattern m_pat ;
-  DalitzEventPattern m_cppat ;
   Bins m_bins ;
   ModelPtr m_model ;
   ModelPtr m_cpmodel ;

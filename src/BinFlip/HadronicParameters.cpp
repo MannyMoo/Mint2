@@ -1,8 +1,9 @@
 #include <Mint/HadronicParameters.h>
 #include <TMath.h>
-#include <iostream>
+#include <Mint/NamedParameter.h>
 
 using namespace std ;
+using MINT::NamedParameter ;
 
 int HadronicParameters::EventPair::binSign() const {
   return isPlus() ? 1 : -1 ;
@@ -15,6 +16,10 @@ bool HadronicParameters::EventPair::isPlus() const {
 HadronicParameters::BinSign::BinSign(HadronicParameters::ModelPtr model) :
   m_model(model)
 {}
+
+string HadronicParameters::BinSign::type() const {
+  return "std" ;
+}
 
 HadronicParameters::EventPair HadronicParameters::BinSign::classifyEvent(const IDalitzEvent& evt) const {
   HadronicParameters::EventPair evtPair ;
@@ -41,8 +46,8 @@ HadronicParameters::EventPair HadronicParameters::BinSign::classifyEvent(const I
 
 HadronicParameters::Bin::Bin(double _Fplus, double _Fminus, const complex<double>& X,
 			     double sumw, double sumw2, double norm) :
-  m_Fplus(_Fplus),
-  m_Fminus(_Fminus),
+  m_Fplus(_Fplus * sumw * norm),
+  m_Fminus(_Fminus * sumw * norm),
   m_X(X),
   m_sumw(sumw),
   m_sumw2(sumw2),
@@ -50,7 +55,7 @@ HadronicParameters::Bin::Bin(double _Fplus, double _Fminus, const complex<double
   m_model(0),
   m_cpmodel(0)
 {
-  m_X *= sqrt(Fplus() * Fminus()) ;
+  m_X *= sqrt(Fplus() * Fminus()) * sumw * norm ;
 }
 
 HadronicParameters::Bin::Bin(ModelPtr model, ModelPtr cpmodel) :
@@ -63,6 +68,34 @@ HadronicParameters::Bin::Bin(ModelPtr model, ModelPtr cpmodel) :
   m_model(model),
   m_cpmodel(cpmodel)
 {}
+
+HadronicParameters::Bin::Bin(const string& _name, unsigned number, const string& fname) :
+  m_Fplus(0.),
+  m_Fminus(0.),
+  m_X(0., 0.),
+  m_sumw(0.),
+  m_sumw2(0.),
+  m_norm(0.),
+  m_model(0),
+  m_cpmodel(0)
+{
+  string name = getName(_name, number) ;
+  NamedParameter<double> _Fplus(name + "_Fplus", fname.c_str()) ;
+  NamedParameter<double> _Fminus(name + "_Fminus", fname.c_str()) ;
+  NamedParameter<double> Xplus_Re(name + "_Xplus_Re", fname.c_str()) ;
+  NamedParameter<double> Xplus_Im(name + "_Xplus_Im", fname.c_str()) ;
+  NamedParameter<double> sumw(name + "_sumw", fname.c_str()) ;
+  NamedParameter<double> sumw2(name + "_sumw2", fname.c_str()) ;
+  NamedParameter<double> norm(name + "_norm", fname.c_str()) ;
+
+  m_norm = norm ;
+  m_sumw = sumw ;
+  m_sumw2 = sumw2 ;
+  m_Fplus = _Fplus * m_sumw * m_norm ;
+  m_Fminus = _Fminus * m_sumw * m_norm ;
+  m_X = complex<double>(Xplus_Re, Xplus_Im) * sqrt(Fplus() * Fminus()) * m_sumw * m_norm ;
+}
+
 
 void HadronicParameters::Bin::add(const HadronicParameters::EventPair& evtpair,
 				  double weight) {
@@ -99,37 +132,62 @@ void HadronicParameters::Bin::setNorm(double norm) {
   m_norm = norm ;
 }
 
-void HadronicParameters::Bin::Print() const {
+void HadronicParameters::Bin::Print(const string& _name, unsigned number, ostream& os) const {
+  string name = getName(_name, number) ;
   complex<double> Xp = Xplus() ;
   complex<double> Xm = Xminus() ;
-  cout << "Fplus: " << Fplus() << ", Fminus: " << Fminus() << " Xplus: "
-       << Xp.real() << " + " << Xp.imag() << "i, Xminus: " 
-       << Xm.real() << " + " << Xm.imag() << "i." << endl ;
+  os.precision(16) ;
+  os << name << "_Fplus\t" << Fplus() << endl ;
+  os << name << "_Fminus\t" << Fminus() << endl ;
+  os << name << "_Xplus_Re\t" << Xp.real() << endl ;
+  os << name << "_Xplus_Im\t" << Xp.imag() << endl ;
+  os << name << "_Xminus_Re\t" << Xm.real() << endl ;
+  os << name << "_Xminus_Im\t" << Xm.imag() << endl ;
+  os << name << "_sumw\t" << m_sumw << endl ;
+  os << name << "_sumw2\t" << m_sumw2 << endl ;
+  os << name << "_norm\t" << m_norm << endl ;
 }
 
-HadronicParameters::HadronicParameters(const DalitzEventPattern& pat, const DalitzEventPattern& cppat,
-				       const HadronicParameters::Bins& bins, 
+string HadronicParameters::Bin::getName(const string& name, unsigned number) {
+  ostringstream sstr ;
+  sstr << name << "_bin_" << number ;
+  return sstr.str() ;
+}
+
+HadronicParameters::HadronicParameters(const HadronicParameters::Bins& bins, 
 				       MINT::counted_ptr<IBinSign> binSign) :
-  m_pat(pat),
-  m_cppat(cppat),
   m_bins(bins),
   m_model(0),
   m_cpmodel(0),
   m_binSign(binSign)
 {}
 
-HadronicParameters::HadronicParameters(const DalitzEventPattern& pat, const DalitzEventPattern& cppat,
-				       HadronicParameters::ModelPtr model,
+HadronicParameters::HadronicParameters(HadronicParameters::ModelPtr model,
 				       HadronicParameters::ModelPtr cpmodel,
 				       unsigned nbins,
 				       MINT::counted_ptr<IBinSign> binSign) :
-  m_pat(pat),
-  m_cppat(cppat),
   m_bins(nbins, HadronicParameters::Bin(model, cpmodel)),
   m_model(model),
   m_cpmodel(cpmodel),
   m_binSign(binSign)
 {}
+
+HadronicParameters::HadronicParameters(const string& name, const string& fname) :
+  m_bins(),
+  m_model(0),
+  m_cpmodel(0),
+  m_binSign(0)
+{
+  NamedParameter<int> nbins(name + "_nBins", fname.c_str()) ;
+  for(int i = 1 ; i < nbins + 1 ; ++i)
+    m_bins.push_back(Bin(name, i, fname)) ;
+  
+  NamedParameter<int> evtPattern(name + "_eventPattern", fname.c_str()) ;
+  m_model = ModelPtr(new FitAmpSum(DalitzEventPattern(evtPattern.getVector()), fname)) ;
+
+  NamedParameter<string> binType(name + "_binType", fname.c_str()) ;
+  m_binSign = getBinSign(m_model, binType) ;
+}
 
 unsigned HadronicParameters::nBins() const {
   return m_bins.size() ;
@@ -163,7 +221,7 @@ void HadronicParameters::add(TRandom3& rndm, unsigned nevt) {
 }
 
 void HadronicParameters::add(TRandom3& rndm) {
-  DalitzEvent evt(m_pat, (TRandom*)&rndm) ;
+  DalitzEvent evt(m_model->getAmpPtr(0)->getTreePattern(), (TRandom*)&rndm) ;
   add(evt) ;
 }
 
@@ -178,12 +236,23 @@ double HadronicParameters::normalise() {
   return norm ;
 }
 
-void HadronicParameters::Print() const {
+void HadronicParameters::Print(const string& name, ostream& os) const {
   unsigned i = 1 ;
+  os << name << "_eventPattern" ;
+  for(const auto& ipat : m_model->getAmpPtr(0)->getTreePattern().getVectorOfInts())
+    os << "\t" << ipat ;
+  os << endl ;
+  os << name << "_nBins\t" << nBins() << endl ;
+  os << name << "_binType\t" << m_binSign->type() << endl ;
   for(const auto& bin : m_bins){
-    cout << "Bin " << i << ":" << endl ;
-    bin.Print() ;
+    bin.Print(name, i, os) ;
     i += 1 ;
   }
 }
   
+MINT::counted_ptr<HadronicParameters::IBinSign> 
+HadronicParameters::getBinSign(HadronicParameters::ModelPtr model, const string& type) {
+  if(type == string("std"))
+    return MINT::counted_ptr<IBinSign>(new HadronicParameters::BinSign(model)) ;
+  throw invalid_argument("Unknown binning type: " + type) ;
+}

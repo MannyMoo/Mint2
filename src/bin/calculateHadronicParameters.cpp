@@ -6,6 +6,7 @@
 #include <TRandom3.h>
 #include <Mint/FitAmpSum.h>
 #include <iostream>
+#include <fstream>
 
 using MINT::NamedParameter ;
 using namespace std ;
@@ -34,8 +35,8 @@ int calculateHadronicParameters(const string& config = string()) {
   MINT::counted_ptr<HadronicParameters::IBinSign> binSignPlus(new HadronicParameters::BinSign(model)) ;
   MINT::counted_ptr<HadronicParameters::IBinSign> binSignMinus(new HadronicParameters::BinSign(cpmodel)) ;
   
-  HadronicParameters parsPlus(pat, cpPat, model, cpmodel, nBinsPhase, binSignPlus) ;
-  HadronicParameters parsMinus(cpPat, pat, cpmodel, model, nBinsPhase, binSignMinus) ;
+  HadronicParameters parsPlus(model, cpmodel, nBinsPhase, binSignPlus) ;
+  HadronicParameters parsMinus(cpmodel, model, nBinsPhase, binSignMinus) ;
 
   NamedParameter<int>  Nevents("Nevents", 10000);
   for(unsigned i = 0 ; i < int(Nevents) ; ++i){
@@ -47,10 +48,17 @@ int calculateHadronicParameters(const string& config = string()) {
   parsPlus.normalise() ;
   parsMinus.normalise() ;
   cout << "Plus parameters (" << pat << ") :" << endl ;
-  parsPlus.Print() ;
+  parsPlus.Print("plusPars") ;
   cout << endl ;
   cout << "Minus parameters (" << cpPat << ") :" << endl ;
-  parsMinus.Print() ;
+  parsMinus.Print("minusPars") ;
+
+  NamedParameter<string> outputFile("outputFile", string("hadronicParameters.txt"), (char*)0) ;
+  ofstream fout ;
+  fout.open(outputFile) ;
+  parsPlus.Print("parsPlus", fout) ;
+  parsMinus.Print("parsMinus", fout) ;
+  fout.close() ;
 
   return 0 ;
 }
