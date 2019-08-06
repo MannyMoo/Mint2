@@ -17,37 +17,45 @@ class HadronicParameters {
  public :
   typedef MINT::counted_ptr<FitAmpSum> ModelPtr ;
 
-  /// Event and its CP conjugate - output of BinSign::classifyEvent.
-  class EventPair {
+  /// Info on the bin number of an Event - output of IPhaseBin::binNumber. Caches as much as possible for efficiency.
+  class EventBinNumber {
   public :
-    MINT::counted_ptr<IDalitzEvent> evt ;
-    MINT::counted_ptr<IDalitzEvent> cpevt ;
-    MINT::counted_ptr<IDalitzEvent> evtPlus ;
-    MINT::counted_ptr<IDalitzEvent> evtMinus ;
-    double Fplus ;
-    double Fminus ;
+    // Should I use a counted_ptr?
+    IDalitzEvent* evt ;
+    std::complex<double> amp ;
+    std::complex<double> ampBar ;
+    double F ;
+    double Fbar ;
+    int binNumber ;
 
     /// Get the bin sign, +1 or -1.
     int binSign() const ;
     /// Check if the event is in a +ve bin.
     bool isPlus() const ;
   } ;
-  /// Interface class for determining if an event lives in a +ve or -ve bin.
-  class IBinSign {
+  /// Interface class for determining which bin an event lives in.
+  class PhaseBinningBase {
   public :
-    virtual EventPair classifyEvent(const IDalitzEvent&) const = 0 ;
+    PhaseBinningBase(unsigned nBins) ;
+    virtual EventBinNumber binNumber(IDalitzEvent&) const = 0 ;
     virtual std::string type() const = 0 ;
-    virtual ~IBinSign() {} ;
+    virtual void Print(const std::string&, std::ostream& os = std::cout) const = 0 ;
+    virtual ~PhaseBinningBase() {} ;
+    const unsigned nBins ;
   } ;
   /// Class for determining if an event lives in a +ve or -ve bin.
-  class BinSign : public IBinSign {
+  class ModelPhaseBinning : public PhaseBinningBase {
   public :
-    BinSign(ModelPtr) ;
-    virtual ~BinSign() {} ;
-    virtual EventPair classifyEvent(const IDalitzEvent&) const override ;
+    ModelPhaseBinning(ModelPtr, ModelPtr, unsigned) ;
+    virtual ~ModelPhaseBinning() {} ;
+    virtual EventBinNumber binNumber(IDalitzEvent&) const override ;
     virtual std::string type() const override ;
+    virtual void Print(const std::string&, std::ostream& os = std::cout) const override ;
+    static MINT::counted_ptr<PhaseBinningBase> 
+      fromConfig(const std::string&, const std::string& fname = "") ;
   private :
     ModelPtr m_model ;
+    ModelPtr m_cpmodel ;
   } ;
 
   /// Hadronic parameters in a bin of phase space.
@@ -59,27 +67,32 @@ class HadronicParameters {
     double m_Fminus ;
     /// Cross term.
     std::complex<double> m_X ;
+    /// Magnitude sq. in the favoured region, for the CP-conjugate decay.
+    double m_Fbarplus ;
+    /// Magnitude sq. in the suppressed region, for the CP-conjugate decay.
+    double m_Fbarminus ;
+    /// Cross term, for the CP-conjugate decay.
+    std::complex<double> m_Xbar ;
     /// Sum of weights.
     double m_sumw ;
     /// Sum of weights sq.
     double m_sumw2 ;
-    /// The normalisation scale.
+    /// The normalisation scale. - Are there potentially issues with having different normalisation for D0 and D0bar?
     double m_norm ;
+    /// The normalisation scale for the CP-conjugate decay.
+    double m_normBar ;
 
-    /// The model.
-    ModelPtr m_model ;
-    /// The conjugate model.
-    ModelPtr m_cpmodel ;
   public :
     /// Initialise from predetermined parameters.
-    Bin(double, double, const std::complex<double>&, double sumw = 1., double sumw2 = 1., double norm = 1.) ;
-    /// Initialise from a model and its conjugate.
-    Bin(ModelPtr, ModelPtr) ;
+    Bin(double, double, const std::complex<double>&, double, double, const std::complex<double>&,
+	double norm = 1., double normbar = 1., double sumw = 1., double sumw2 = 1.) ;
+    /// Initialise an empty bin.
+    Bin() ;
     /// Initialise from a config file.
     Bin(const std::string&, unsigned, const std::string& fname = "") ;
 
     /// Add a DalitzEvent and its conjugate.
-    void add(const HadronicParameters::EventPair&, double weight = 1.) ;
+    void add(const EventBinNumber&, const EventBinNumber&, double weight = 1.) ;
     /// Get the magnitude sq in the favoured region.
     double Fplus() const ;
     /// Get the magnitude sq in the suppressed region.
@@ -88,59 +101,72 @@ class HadronicParameters {
     std::complex<double> Xplus() const ;
     /// Get the cross term for the suppressed region.
     std::complex<double> Xminus() const ;
+    /// Get the magnitude sq in the favoured region, for the CP-conjugate decay.
+    double Fbarplus() const ;
+    /// Get the magnitude sq in the suppressed region, for the CP-conjugate decay.
+    double Fbarminus() const ;
+    /// Get the cross term for the favoured region, for the CP-conjugate decay.
+    std::complex<double> Xbarplus() const ;
+    /// Get the cross term for the suppressed region, for the CP-conjugate decay.
+    std::complex<double> Xbarminus() const ;
     /// Get the normalisation.
     double norm() const ;
     /// Set the normalisation.
     void setNorm(double) ;
+    /// Get the normalisation, for the CP-conjugate decay.
+    double normBar() const ;
+    /// Set the normalisation, for the CP-conjugate decay.
+    void setNormBar(double) ;
     /// Print the parameters.
     void Print(const std::string& name, unsigned, std::ostream& os=std::cout) const ;
     /// Get the name string.
     static std::string getName(const std::string&, unsigned) ;
+
+    /// Get the number of expected events at the given time.
+    //double n
   } ;
 
   /// A set of bins.
   typedef std::deque<Bin> Bins ;
+  /// Pointer to the binning scheme.
+  typedef MINT::counted_ptr<PhaseBinningBase> BinningPtr ;
+
   /// Initialise from a predetermined set of bins.
-  HadronicParameters(const Bins&, MINT::counted_ptr<IBinSign>) ;
-  /// Initialise from a model and its conjugate, and a number of bins.
-  HadronicParameters(ModelPtr, ModelPtr, unsigned, MINT::counted_ptr<IBinSign>) ;
+  HadronicParameters(const Bins&, BinningPtr) ;
+  /// Initialise from a binning scheme.
+  HadronicParameters(BinningPtr) ;
   /// Initialise from a config file.
   HadronicParameters(const std::string&, const std::string& fname = "") ;
 
-  /// Get the number of bins.
-  unsigned nBins() const ;
+  /// Get the binning scheme.
+  const PhaseBinningBase& binning() const ;
 
   /// Get the bin number for a DalitzEvent.
-  int binNumber(const IDalitzEvent&) const ;
-  /// Get the bin number for an EventPair.
-  int binNumber(const EventPair&) const ;
+  int binNumber(IDalitzEvent&) const ;
   /// Get the bin for a DalitzEvent.
-  Bin& bin(IDalitzEvent&) const ;
-  /// Get the bin for an EventPair.
-  Bin& bin(const EventPair&) const ;
+  const Bin& bin(IDalitzEvent&) const ;
 
   /// Add a DalitzEvent.
-  void add(const IDalitzEvent&, double weight = 1.) ;
-  /// Add an EventPair.
-  void add(const EventPair&, double weight = 1.) ;
+  void add(IDalitzEvent&, double weight = 1.) ;
   /// Add a number of DalitzEvents generated from flat phase space.
-  void add(TRandom3&, unsigned) ;
+  void add(const DalitzEventPattern&, TRandom3&, unsigned) ;
   /// Add a DalitzEvent generated from flat phase space.
-  void add(TRandom3&) ;
+  void add(const DalitzEventPattern&, TRandom3&) ;
+
+  /// Get the integral over phase space.
+  std::pair<double, double> integral() const ;
 
   /// Normalise the parameters.
-  double normalise() ;
+  std::pair<double, double> normalise(double norm = 1., double normBar = 1.) ;
   /// Print the parameters.
   void Print(const std::string&, std::ostream& os = std::cout) const ;
 
-  /// Get the BinSign type.
-  static MINT::counted_ptr<IBinSign> getBinSign(ModelPtr, const std::string&) ;
+  /// Get the PhaseBinning type.
+  static BinningPtr getPhaseBinning(const std::string&, const std::string& fname = "") ;
 
  private :
   Bins m_bins ;
-  ModelPtr m_model ;
-  ModelPtr m_cpmodel ;
-  MINT::counted_ptr<IBinSign> m_binSign ;
+  BinningPtr m_phaseBinning ;
 } ;
 
 #endif

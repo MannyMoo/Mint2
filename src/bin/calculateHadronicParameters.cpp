@@ -32,32 +32,23 @@ int calculateHadronicParameters(const string& config = string()) {
 
   NamedParameter<int> nBinsPhase("nBinsPhase", 8) ;
 
-  MINT::counted_ptr<HadronicParameters::IBinSign> binSignPlus(new HadronicParameters::BinSign(model)) ;
-  MINT::counted_ptr<HadronicParameters::IBinSign> binSignMinus(new HadronicParameters::BinSign(cpmodel)) ;
+  HadronicParameters::BinningPtr binning(new HadronicParameters::ModelPhaseBinning(model, cpmodel, nBinsPhase)) ;
   
-  HadronicParameters parsPlus(model, cpmodel, nBinsPhase, binSignPlus) ;
-  HadronicParameters parsMinus(cpmodel, model, nBinsPhase, binSignMinus) ;
+  HadronicParameters pars(binning) ;
 
   NamedParameter<int>  Nevents("Nevents", 10000);
-  for(unsigned i = 0 ; i < int(Nevents) ; ++i){
-    DalitzEvent evt(pat, &ranLux) ;
-    parsPlus.add(evt) ;
-    parsMinus.add(evt) ;
-  }
+  pars.add(pat, ranLux, int(Nevents)) ;
 
-  parsPlus.normalise() ;
-  parsMinus.normalise() ;
-  cout << "Plus parameters (" << pat << ") :" << endl ;
-  parsPlus.Print("plusPars") ;
-  cout << endl ;
-  cout << "Minus parameters (" << cpPat << ") :" << endl ;
-  parsMinus.Print("minusPars") ;
+  pars.normalise() ;
+
+  NamedParameter<string> parsName("parsName", string("hadronicPars"), (char*)0) ;
+  cout << "Calculated parameters:" << endl ;
+  pars.Print(string(parsName)) ;
 
   NamedParameter<string> outputFile("outputFile", string("hadronicParameters.txt"), (char*)0) ;
   ofstream fout ;
   fout.open(outputFile) ;
-  parsPlus.Print("parsPlus", fout) ;
-  parsMinus.Print("parsMinus", fout) ;
+  pars.Print(string(parsName), fout) ;
   fout.close() ;
 
   return 0 ;
