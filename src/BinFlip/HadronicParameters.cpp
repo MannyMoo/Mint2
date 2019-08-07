@@ -5,17 +5,21 @@
 using namespace std ;
 using MINT::NamedParameter ;
 
-int HadronicParameters::EventBinNumber::binSign() const {
+int HadronicParameters::EventBinInfo::binSign() const {
   return binNumber > 0 ? 1 : -1 ;
 }
 
-bool HadronicParameters::EventBinNumber::isPlus() const {
+bool HadronicParameters::EventBinInfo::isPlus() const {
   return binNumber > 0 ;
 }
 
 HadronicParameters::PhaseBinningBase::PhaseBinningBase(unsigned nBins) :
   nBins(nBins)
 {}
+
+int HadronicParameters::PhaseBinningBase::binNumber(IDalitzEvent& evt) const {
+  return binInfo(evt).binNumber ;
+}
 
 HadronicParameters::ModelPhaseBinning::ModelPhaseBinning(HadronicParameters::ModelPtr model,
 							 HadronicParameters::ModelPtr cpmodel,
@@ -29,8 +33,8 @@ string HadronicParameters::ModelPhaseBinning::type() const {
   return "model" ;
 }
 
-HadronicParameters::EventBinNumber HadronicParameters::ModelPhaseBinning::binNumber(IDalitzEvent& evt) const {
-  EventBinNumber binNo ;
+HadronicParameters::EventBinInfo HadronicParameters::ModelPhaseBinning::binInfo(IDalitzEvent& evt) const {
+  EventBinInfo binNo ;
   binNo.evt = &evt ;
   binNo.amp = m_model->ComplexVal(evt) ;
   binNo.ampBar = m_cpmodel->ComplexVal(evt) ;
@@ -147,8 +151,8 @@ HadronicParameters::Bin::Bin(const string& _name, unsigned number, const string&
 }
 
 
-void HadronicParameters::Bin::add(const HadronicParameters::EventBinNumber& evtPlus,
-				  const HadronicParameters::EventBinNumber& evtMinus,
+void HadronicParameters::Bin::add(const HadronicParameters::EventBinInfo& evtPlus,
+				  const HadronicParameters::EventBinInfo& evtMinus,
 				  double weight) {
   m_Fplus += evtPlus.F * weight ;
   m_Fminus += evtMinus.F * weight ;
@@ -278,20 +282,16 @@ HadronicParameters::HadronicParameters(const string& name, const string& fname) 
     m_bins.push_back(Bin(name, i, fname)) ;  
 }
 
-int HadronicParameters::binNumber(IDalitzEvent& evt) const {
-  return m_phaseBinning->binNumber(evt).binNumber ;
-}
-
 const HadronicParameters::Bin& HadronicParameters::bin(IDalitzEvent& evt) const {
-  int binNo = abs(binNumber(evt)) ;
+  int binNo = abs(m_phaseBinning->binNumber(evt)) ;
   return m_bins.at(binNo-1) ;
 }
 
 void HadronicParameters::add(IDalitzEvent& evt, double weight) {
-  EventBinNumber binNo = m_phaseBinning->binNumber(evt) ;
+  EventBinInfo binNo = m_phaseBinning->binInfo(evt) ;
   DalitzEvent cpEvt(evt) ;
   cpEvt.CP_conjugateYourself() ;
-  EventBinNumber cpBinNo = m_phaseBinning->binNumber(cpEvt) ;
+  EventBinInfo cpBinNo = m_phaseBinning->binInfo(cpEvt) ;
   if(binNo.isPlus())
     m_bins.at(binNo.binNumber-1).add(binNo, cpBinNo, weight) ;
   else 

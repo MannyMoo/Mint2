@@ -17,8 +17,8 @@ class HadronicParameters {
  public :
   typedef MINT::counted_ptr<FitAmpSum> ModelPtr ;
 
-  /// Info on the bin number of an Event - output of IPhaseBin::binNumber. Caches as much as possible for efficiency.
-  class EventBinNumber {
+  /// Info on the bin of an Event - output of IPhaseBin::binInfo. Caches as much as possible for efficiency.
+  class EventBinInfo {
   public :
     // Should I use a counted_ptr?
     IDalitzEvent* evt ;
@@ -37,18 +37,19 @@ class HadronicParameters {
   class PhaseBinningBase {
   public :
     PhaseBinningBase(unsigned nBins) ;
-    virtual EventBinNumber binNumber(IDalitzEvent&) const = 0 ;
+    virtual EventBinInfo binInfo(IDalitzEvent&) const = 0 ;
     virtual std::string type() const = 0 ;
     virtual void Print(const std::string&, std::ostream& os = std::cout) const = 0 ;
     virtual ~PhaseBinningBase() {} ;
     const unsigned nBins ;
+    int binNumber(IDalitzEvent&) const ;
   } ;
   /// Class for determining if an event lives in a +ve or -ve bin.
   class ModelPhaseBinning : public PhaseBinningBase {
   public :
     ModelPhaseBinning(ModelPtr, ModelPtr, unsigned) ;
     virtual ~ModelPhaseBinning() {} ;
-    virtual EventBinNumber binNumber(IDalitzEvent&) const override ;
+    virtual EventBinInfo binInfo(IDalitzEvent&) const override ;
     virtual std::string type() const override ;
     virtual void Print(const std::string&, std::ostream& os = std::cout) const override ;
     static MINT::counted_ptr<PhaseBinningBase> 
@@ -95,7 +96,7 @@ class HadronicParameters {
     Bin(const std::string&, unsigned, const std::string& fname = "") ;
 
     /// Add a DalitzEvent and its conjugate.
-    void add(const EventBinNumber&, const EventBinNumber&, double weight = 1.) ;
+    void add(const EventBinInfo&, const EventBinInfo&, double weight = 1.) ;
     /// Get the magnitude sq in the favoured region.
     double Fplus() const ;
     /// Get the magnitude sq in the suppressed region.
@@ -148,8 +149,6 @@ class HadronicParameters {
   /// Get the binning scheme.
   const PhaseBinningBase& binning() const ;
 
-  /// Get the bin number for a DalitzEvent.
-  int binNumber(IDalitzEvent&) const ;
   /// Get the bin for a DalitzEvent.
   const Bin& bin(IDalitzEvent&) const ;
 
