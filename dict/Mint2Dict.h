@@ -17,6 +17,8 @@
 #include <Mint/Minimiser.h>
 #include <Mint/Eff3piSymmetric.h>
 #include <Mint/IReturnRealForEvent.h>
+#include <Mint/HadronicParameters.h>
+#include <Mint/TimeBinning.h>
 /*
 #include <Mint/DalitzBox.h>
 #include <Mint/Model_independent.h>

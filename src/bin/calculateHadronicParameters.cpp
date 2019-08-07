@@ -53,10 +53,7 @@ int calculateHadronicParameters(const string& config = string()) {
   pars.Print(string(parsName)) ;
 
   NamedParameter<string> outputFile("outputFile", string("hadronicParameters.txt"), (char*)0) ;
-  ofstream fout ;
-  fout.open(outputFile) ;
-  pars.Print(string(parsName), fout) ;
-  fout.close() ;
+  pars.write(parsName, outputFile) ;
 
   return 0 ;
 }

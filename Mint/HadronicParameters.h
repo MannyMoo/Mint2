@@ -148,6 +148,8 @@ class HadronicParameters {
 
   /// Get the binning scheme.
   const PhaseBinningBase& binning() const ;
+  /// Get a pointer to the binning scheme.
+  HadronicParameters::BinningPtr binningPtr() const ;
 
   /// Get the bin for a DalitzEvent.
   const Bin& bin(IDalitzEvent&) const ;
@@ -166,6 +168,8 @@ class HadronicParameters {
   std::pair<double, double> normalise(double norm = 1., double normBar = 1.) ;
   /// Print the parameters.
   void Print(const std::string&, std::ostream& os = std::cout) const ;
+  /// Write to a file.
+  void write(const std::string&, const std::string&) const ;
 
   /// Get the PhaseBinning type.
   static BinningPtr getPhaseBinning(const std::string&, const std::string& fname = "") ;

@@ -1,6 +1,7 @@
 #include <Mint/HadronicParameters.h>
 #include <TMath.h>
 #include <Mint/NamedParameter.h>
+#include <fstream>
 
 using namespace std ;
 using MINT::NamedParameter ;
@@ -66,14 +67,14 @@ void HadronicParameters::ModelPhaseBinning::Print(const std::string& _name, std:
 
 HadronicParameters::BinningPtr HadronicParameters::ModelPhaseBinning::fromConfig(const string& _name,
 										 const string& fname) {
-  string name = _name + "_binning_ " ;
+  string name = _name + "_binning_" ;
   if(string(NamedParameter<string>(name + "type", fname.c_str())) != "model")
     return BinningPtr(0) ;
   NamedParameter<int> nBins(name + "nBins", fname.c_str()) ;
   NamedParameter<int> pat(name + "eventPattern", fname.c_str()) ;
   NamedParameter<int> cpPat(name + "cpEventPattern", fname.c_str()) ;
-  ModelPtr model(new FitAmpSum(DalitzEventPattern(pat), fname)) ;
-  ModelPtr cpModel(new FitAmpSum(DalitzEventPattern(cpPat), fname)) ;
+  ModelPtr model(new FitAmpSum(DalitzEventPattern(pat), fname.c_str())) ;
+  ModelPtr cpModel(new FitAmpSum(DalitzEventPattern(cpPat), fname.c_str())) ;
   return BinningPtr(new ModelPhaseBinning(model, cpModel, nBins)) ;
 }
 
@@ -341,6 +342,13 @@ void HadronicParameters::Print(const string& name, ostream& os) const {
     i += 1 ;
   }
 }
+
+void HadronicParameters::write(const string& name, const string& fname) const {
+  ofstream fout ;
+  fout.open(fname) ;
+  Print(name, fout) ;
+  fout.close() ;
+}
   
 HadronicParameters::BinningPtr
 HadronicParameters::getPhaseBinning(const string& name, const string& fname) {
@@ -349,4 +357,12 @@ HadronicParameters::getPhaseBinning(const string& name, const string& fname) {
   if(strtype == string("model"))
     return BinningPtr(ModelPhaseBinning::fromConfig(name, fname)) ;
   throw invalid_argument("Unknown binning type: " + strtype) ;
+}
+
+const HadronicParameters::PhaseBinningBase& HadronicParameters::binning() const {
+  return *m_phaseBinning ;
+}
+
+HadronicParameters::BinningPtr HadronicParameters::binningPtr() const {
+  return m_phaseBinning ;
 }

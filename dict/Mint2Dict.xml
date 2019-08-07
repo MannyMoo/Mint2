@@ -12,6 +12,8 @@
   <class name="MINT::Minimiser" />
   <class name="MINT::Eff3piSymmetric" />
   <class name="MINT::IReturnRealForEvent" />
+  <class name="HadronicParameters" />
+  <class name="TimeBinning" />
   <!--
   <class name="AmpInitialiser" />
   <class name="AmpPair" />
