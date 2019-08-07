@@ -7,6 +7,7 @@
 #include <Mint/FitAmpSum.h>
 #include <iostream>
 #include <fstream>
+#include <ctime>
 
 using MINT::NamedParameter ;
 using namespace std ;
@@ -37,7 +38,13 @@ int calculateHadronicParameters(const string& config = string()) {
   HadronicParameters pars(binning) ;
 
   NamedParameter<int>  Nevents("Nevents", 10000);
+  cout << "Calculating parameters with random seed " << int(RandomSeed) << " for " 
+       << int(Nevents) << " events." << endl ;
+  int startTime(time(0)) ;
   pars.add(pat, ranLux, int(Nevents)) ;
+  int endTime(time(0)) ;
+  cout << "Finished calculating. Took " << (endTime - startTime) << " s, " 
+       << float(endTime - startTime)/Nevents << " s/event." << endl ;
 
   pars.normalise() ;
 

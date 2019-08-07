@@ -192,7 +192,7 @@ complex<double> HadronicParameters::Bin::Xbarminus() const {
   return conj(Xbarplus()) ;
 }
 
-double HadronicParameters::Bin::norm() const {
+double HadronicParameters::Bin::getNorm() const {
   return m_norm ;
 }
 
@@ -200,7 +200,7 @@ void HadronicParameters::Bin::setNorm(double norm) {
   m_norm = norm ;
 }
 
-double HadronicParameters::Bin::normBar() const {
+double HadronicParameters::Bin::getNormBar() const {
   return m_normBar ;
 }
 
@@ -233,6 +233,32 @@ string HadronicParameters::Bin::getName(const string& name, unsigned number) {
   return sstr.str() ;
 }
 
+double HadronicParameters::Bin::R(double t, double t2,
+				  const complex<double>& zcp, const complex<double>& dz) const {
+  complex<double> sumz(zcp + dz) ;
+  return _R(t, t2, zcp, dz, Fplus(), Fminus(), Xplus(), sumz) ;
+}
+
+double HadronicParameters::Bin::Rbar(double t, double t2,
+				     const complex<double>& zcp, const complex<double>& dz) const {
+  complex<double> sumz(zcp - dz) ;
+  return _R(t, t2, zcp, dz, Fbarplus(), Fbarminus(), Xbarplus(), sumz) ;
+}
+
+double HadronicParameters::Bin::_R(double t, double t2,
+				   const complex<double>& zcp, const complex<double>& dz,
+				   double _Fplus, double _Fminus,
+				   const complex<double>& X, const complex<double>& sumz) const {
+  double r = _Fminus/_Fplus ;
+  double term1 = (1 + 0.25 * t2 * (zcp*zcp - dz*dz).real()) ;
+  double term2 = 0.25 * t2 * norm(sumz) ;
+  double term3 = sqrt(r) * t * (conj(X) * sumz).real() ;
+  double numerator = r * term1 + term2 + term3 ;
+  double term4 = sqrt(r) * t * (X * sumz).real() ;
+  double denominator = term1 + r * term2 + term4 ;
+  return numerator/denominator ;
+}
+
 HadronicParameters::HadronicParameters(const HadronicParameters::Bins& bins, 
 				       BinningPtr phaseBinning) :
   m_bins(bins),
@@ -248,7 +274,7 @@ HadronicParameters::HadronicParameters(const string& name, const string& fname) 
   m_bins(),
   m_phaseBinning(HadronicParameters::getPhaseBinning(name, fname))
 {
-  for(int i = 1 ; i < m_phaseBinning->nBins + 1 ; ++i)
+  for(unsigned i = 1 ; i < m_phaseBinning->nBins + 1 ; ++i)
     m_bins.push_back(Bin(name, i, fname)) ;  
 }
 
