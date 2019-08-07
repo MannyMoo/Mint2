@@ -110,6 +110,16 @@ bool TimeBinning::Bin::usePoissonErrs() const {
   return m_sumw == m_sumw2 ;
 }
 
+double TimeBinning::Bin::chiSquared(double R) const {
+  if(nMinus() == 0. or nPlus() == 0.)
+    return 0. ;
+  double numerator = nMinus() - nPlus() * R ;
+  double denominator = m_sumw2minus + m_sumw2plus * R*R ;
+  if(denominator == 0.)
+    return 0. ;
+  return numerator/denominator ;
+}
+
 TimeBinning::TimeBinning(const vector<double>& timeBins, HadronicParameters::BinningPtr phaseBinning) :
   m_timeBins(timeBins),
   m_bins(timeBins.size(), Bins(phaseBinning->nBins)),
@@ -192,4 +202,29 @@ void TimeBinning::add(IDalitzEvent& evt, int tag, double t, double weight) {
     m_bins[timeBinNo][abs(phaseBin-1)].add(t, (phaseBin > 0), weight) ;
   else
     m_binsBar[timeBinNo][abs(phaseBin-1)].add(t, (phaseBin > 0), weight) ;
+}
+
+double TimeBinning::chiSquared(unsigned iTimeBin, unsigned iPhaseBin, double Rplus, double Rminus) const {
+  return m_bins.at(iTimeBin).at(iPhaseBin).chiSquared(Rplus)
+    + m_binsBar.at(iTimeBin).at(iPhaseBin).chiSquared(Rminus) ;
+}
+
+unsigned TimeBinning::nBinsTime() const {
+  return m_timeBins.size() ;
+}
+
+unsigned TimeBinning::nBinsPhase() const {
+  return m_phaseBinning->nBins ;
+}
+
+const TimeBinning::Bin& TimeBinning::integratedBin(unsigned i) const {
+  return m_binsInt.at(i) ;
+}
+
+const TimeBinning::Bin& TimeBinning::bin(unsigned iTimeBin, unsigned iPhaseBin) const {
+  return m_bins.at(iTimeBin).at(iPhaseBin) ;
+}
+
+const TimeBinning::Bin& TimeBinning::binBar(unsigned iTimeBin, unsigned iPhaseBin) const {
+  return m_binsBar.at(iTimeBin).at(iPhaseBin) ;
 }

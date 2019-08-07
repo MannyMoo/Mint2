@@ -22,6 +22,14 @@ int HadronicParameters::PhaseBinningBase::binNumber(IDalitzEvent& evt) const {
   return binInfo(evt).binNumber ;
 }
 
+bool HadronicParameters::PhaseBinningBase::operator==(const HadronicParameters::PhaseBinningBase& other) const {
+  return other.nBins == nBins && other.type() == type() ;
+}
+
+bool HadronicParameters::PhaseBinningBase::operator!=(const HadronicParameters::PhaseBinningBase& other) const {
+  return !(operator==(other)) ;
+}
+
 HadronicParameters::ModelPhaseBinning::ModelPhaseBinning(HadronicParameters::ModelPtr model,
 							 HadronicParameters::ModelPtr cpmodel,
 							 unsigned nBins) :
@@ -77,6 +85,13 @@ HadronicParameters::BinningPtr HadronicParameters::ModelPhaseBinning::fromConfig
   ModelPtr cpModel(new FitAmpSum(DalitzEventPattern(cpPat), fname.c_str())) ;
   return BinningPtr(new ModelPhaseBinning(model, cpModel, nBins)) ;
 }
+
+/*bool HadronicParameters::ModelPhaseBinning::operator==(const PhaseBinningBase& other) const {
+  if(!PhaseBiningBase::operator==(other))
+    return false ;
+  const ModelPhaseBinning* ptr = (ModelPhaseBinning*)(&other) ;
+  }
+*/
 
 HadronicParameters::Bin::Bin(double _Fplus, double _Fminus, const complex<double>& X,
 			     double _Fbarplus, double _Fbarminus, const complex<double>& Xbar,
@@ -286,6 +301,10 @@ HadronicParameters::HadronicParameters(const string& name, const string& fname) 
 const HadronicParameters::Bin& HadronicParameters::bin(IDalitzEvent& evt) const {
   int binNo = abs(m_phaseBinning->binNumber(evt)) ;
   return m_bins.at(binNo-1) ;
+}
+
+const HadronicParameters::Bin& HadronicParameters::bin(unsigned i) const {
+  return m_bins.at(i-1) ;
 }
 
 void HadronicParameters::add(IDalitzEvent& evt, double weight) {

@@ -22,6 +22,7 @@ class TimeBinning {
     void add(double, bool, double weight = 1.) ;
     void Print(const std::string&, unsigned, std::ostream& os = std::cout) const ;
     static std::string getName(const std::string&, unsigned) ;
+    double chiSquared(double) const ;
   private :
     double m_t ;
     double m_t2 ;
@@ -43,6 +44,13 @@ class TimeBinning {
   int timeBin(double) const ;
   void Print(const std::string&, std::ostream& os = std::cout) const ;
   void write(const std::string&, const std::string&) const ;
+
+  double chiSquared(unsigned, unsigned, double, double) const ;
+  unsigned nBinsTime() const ;
+  unsigned nBinsPhase() const ;
+  const Bin& integratedBin(unsigned) const ;
+  const Bin& bin(unsigned, unsigned) const ;
+  const Bin& binBar(unsigned, unsigned) const ;
 
  private :
   std::vector<double> m_timeBins ;

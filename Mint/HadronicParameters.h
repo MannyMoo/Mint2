@@ -43,6 +43,8 @@ class HadronicParameters {
     virtual ~PhaseBinningBase() {} ;
     const unsigned nBins ;
     int binNumber(IDalitzEvent&) const ;
+    virtual bool operator==(const PhaseBinningBase&) const ;
+    bool operator!=(const PhaseBinningBase&) const ;
   } ;
   /// Class for determining if an event lives in a +ve or -ve bin.
   class ModelPhaseBinning : public PhaseBinningBase {
@@ -54,6 +56,8 @@ class HadronicParameters {
     virtual void Print(const std::string&, std::ostream& os = std::cout) const override ;
     static MINT::counted_ptr<PhaseBinningBase> 
       fromConfig(const std::string&, const std::string& fname = "") ;
+    // TODO: implement this - not really sure how best to check that the models are the same.
+    //virtual bool operator==(const PhaseBinningBase&) const override ;
   private :
     ModelPtr m_model ;
     ModelPtr m_cpmodel ;
@@ -153,6 +157,8 @@ class HadronicParameters {
 
   /// Get the bin for a DalitzEvent.
   const Bin& bin(IDalitzEvent&) const ;
+  /// Get a bin by number.
+  const Bin& bin(unsigned) const ;
 
   /// Add a DalitzEvent.
   void add(IDalitzEvent&, double weight = 1.) ;
