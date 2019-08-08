@@ -51,7 +51,9 @@ HadronicParameters::EventBinInfo HadronicParameters::ModelPhaseBinning::binInfo(
   binNo.Fbar = norm(binNo.ampBar) ;
   double phasediff = arg(binNo.amp/binNo.ampBar) ;
   // Invert the phase difference in the suppressed region, effectively using the phase difference
-  // from the favoured CP-conjugate point to determine the bin.
+  // from the favoured CP-conjugate point to determine the bin. This assumes no direct CPV, ie, that
+  // arg(Fminus/Fbarplus) = -arg(Fplus/Fbarminus). Could use the CP-conjugate event to determine
+  // the phase difference if we need to allow for direct CPV.
   if(binNo.Fbar > binNo.F)
     phasediff *= -1 ;
   if(phasediff < 0.)

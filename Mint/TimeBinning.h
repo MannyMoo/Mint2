@@ -63,6 +63,10 @@ class TimeBinning {
   Bins2D m_binsBar ;
   Bins m_binsInt ;
   HadronicParameters::BinningPtr m_phaseBinning ;
+
+  Bin& _integratedBin(unsigned) ;
+  Bin& _bin(unsigned, unsigned)  ;
+  Bin& _binBar(unsigned, unsigned)  ;
 } ;
 
 #endif

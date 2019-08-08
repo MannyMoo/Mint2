@@ -198,12 +198,16 @@ void TimeBinning::add(IDalitzEvent& evt, int tag, double t, double weight) {
   int timeBinNo = timeBin(t) ;
   if(timeBinNo < 0)
     return ;
-  int phaseBin = m_phaseBinning->binNumber(evt) * tag ;
-  m_binsInt[timeBinNo].add(t, (phaseBin > 0), weight) ;
-  if(tag > 0)
-    m_bins[timeBinNo][abs(phaseBin-1)].add(t, (phaseBin > 0), weight) ;
-  else
-    m_binsBar[timeBinNo][abs(phaseBin-1)].add(t, (phaseBin > 0), weight) ;
+  int phaseBin = m_phaseBinning->binNumber(evt) ;
+  bool isPlus = phaseBin > 0 ;
+  if(tag > 0){
+    _bin(timeBinNo, abs(phaseBin)).add(t, isPlus, weight) ;
+  }
+  else{
+    isPlus = !isPlus ;
+    _binBar(timeBinNo, abs(phaseBin)).add(t, isPlus, weight) ;
+  }
+  _integratedBin(timeBinNo).add(t, isPlus, weight) ;
 }
 
 double TimeBinning::chiSquared(unsigned iTimeBin, unsigned iPhaseBin, double Rplus, double Rminus) const {
@@ -228,6 +232,18 @@ const TimeBinning::Bin& TimeBinning::bin(unsigned iTimeBin, unsigned iPhaseBin) 
 }
 
 const TimeBinning::Bin& TimeBinning::binBar(unsigned iTimeBin, unsigned iPhaseBin) const {
+  return m_binsBar.at(iTimeBin).at(iPhaseBin-1) ;
+}
+
+TimeBinning::Bin& TimeBinning::_integratedBin(unsigned i) {
+  return m_binsInt.at(i) ;
+}
+
+TimeBinning::Bin& TimeBinning::_bin(unsigned iTimeBin, unsigned iPhaseBin) {
+  return m_bins.at(iTimeBin).at(iPhaseBin-1) ;
+}
+
+TimeBinning::Bin& TimeBinning::_binBar(unsigned iTimeBin, unsigned iPhaseBin) {
   return m_binsBar.at(iTimeBin).at(iPhaseBin-1) ;
 }
 
