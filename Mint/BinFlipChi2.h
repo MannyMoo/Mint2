@@ -31,7 +31,8 @@ class BinFlipChi2Base : public MINT::Minimisable {
  public :
   BinFlipChi2Base(BinFlipParSet*) ;
   virtual void parametersChanged() override ;
-  TH2F scan2D(unsigned, unsigned, float nSigmaRange = 5., unsigned nBins = 300, bool zeroCentre = true) ;
+  TH2F scan2D(unsigned, unsigned, float nSigmaRange = 5., unsigned nBins = 300,
+	      bool zeroCentre = true, float scale = 1.) ;
   BinFlipParSet* getBinFlipParSet() ;
  protected :
   BinFlipParSet* m_fitPars ;

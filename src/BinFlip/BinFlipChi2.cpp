@@ -55,14 +55,14 @@ void BinFlipChi2Base::parametersChanged() {
   m_dz = m_fitPars->deltaz() ;
 }
 
-TH2F BinFlipChi2Base::scan2D(unsigned ip1, unsigned ip2, float nSigmaRange, unsigned nBins, bool zeroCentre) {
+TH2F BinFlipChi2Base::scan2D(unsigned ip1, unsigned ip2, float nSigmaRange, unsigned nBins, bool zeroCentre,
+			     float scale) {
   FitParameter* p1 = (FitParameter*)m_fitPars->getParPtr(ip1) ;
   FitParameter* p2 = (FitParameter*)m_fitPars->getParPtr(ip2) ;
   const double v1 = p1->getCurrentFitVal() ;
   const double v2 = p2->getCurrentFitVal() ;
   const double s1 = p1->err() ;
   const double s2 = p2->err() ;
-  nSigmaRange = sqrt(nSigmaRange) ;
   const double d1 = s1 * nSigmaRange * 2 / (nBins-1) ;
   const double d2 = s2 * nSigmaRange * 2 / (nBins-1) ;
   double iv1 = v1 - s1 * nSigmaRange ;
@@ -78,7 +78,7 @@ TH2F BinFlipChi2Base::scan2D(unsigned ip1, unsigned ip2, float nSigmaRange, unsi
     v2max -= v2 ;
   }
   TH2F hscan(("deltachi2_" + p2->name() + "_vs_" + p1->name()).c_str(), "",
-	     nBins, v1min, v1max, nBins, v2min, v2max) ;
+	     nBins, v1min*scale, v1max*scale, nBins, v2min*scale, v2max*scale) ;
   const double chi2 = getVal() ;
   for(unsigned i1 = 1 ; i1 < nBins + 1 ; ++i1){
     iv2 = v2 - s2 * nSigmaRange ;
@@ -87,7 +87,11 @@ TH2F BinFlipChi2Base::scan2D(unsigned ip1, unsigned ip2, float nSigmaRange, unsi
       p2->setCurrentFitVal(iv2) ;
       parametersChanged() ;
       double ichi2 = getVal() ;
-      hscan.SetBinContent(i1, i2, ichi2 - chi2) ;
+      double dsigma = sqrt(ichi2 - chi2) ;
+      if(dsigma <= nSigmaRange)
+	hscan.SetBinContent(i1, i2, dsigma) ;
+      else
+	hscan.SetBinContent(i1, i2, 0.) ;
       iv2 += d2 ;
     }
     iv1 += d1 ;
@@ -105,6 +109,9 @@ TH2F BinFlipChi2Base::scan2D(unsigned ip1, unsigned ip2, float nSigmaRange, unsi
   }
   hscan.SetXTitle(xtitle.c_str()) ;
   hscan.SetYTitle(ytitle.c_str()) ;
+  hscan.SetZTitle("N. #sigma") ;
+  hscan.SetContour(nSigmaRange) ;
+  hscan.SetStats(false) ;
 
   p1->setCurrentFitVal(v1) ;
   p2->setCurrentFitVal(v2) ;
