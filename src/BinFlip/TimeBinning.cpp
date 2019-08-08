@@ -1,6 +1,7 @@
 #include <Mint/TimeBinning.h>
 #include <Mint/NamedParameter.h>
 #include <fstream>
+#include <TFile.h>
 
 using namespace std ;
 using MINT::NamedParameter ;
@@ -114,6 +115,7 @@ double TimeBinning::Bin::chiSquared(double R) const {
   if(nMinus() == 0. or nPlus() == 0.)
     return 0. ;
   double numerator = nMinus() - nPlus() * R ;
+  numerator *= numerator ;
   double denominator = m_sumw2minus + m_sumw2plus * R*R ;
   if(denominator == 0.)
     return 0. ;
@@ -147,7 +149,7 @@ TimeBinning::TimeBinning(const string& name, const string& fname) :
     m_binsBar.push_back(Bins()) ;
     string nameplusbin = Bin::getName(nameplus + "_time", iTimeBin) + "phase" ;
     string nameminusbin = Bin::getName(nameminus + "_time", iTimeBin) + "phase" ;
-    for(unsigned iPhaseBin = 1 ; iPhaseBin < m_phaseBinning->nBins ; ++iPhaseBin){
+    for(unsigned iPhaseBin = 1 ; iPhaseBin < m_phaseBinning->nBins + 1 ; ++iPhaseBin){
       m_bins.back().push_back(Bin(nameplusbin, iPhaseBin, fname)) ;
       m_binsBar.back().push_back(Bin(nameminusbin, iPhaseBin, fname)) ;
     }
@@ -166,9 +168,9 @@ void TimeBinning::Print(const string& name, ostream& os) const {
     m_binsInt[iTimeBin].Print(nameint, iTimeBin, os) ;
     string nameplusbin = Bin::getName(nameplus + "_time", iTimeBin) + "phase" ;
     string nameminusbin = Bin::getName(nameminus + "_time", iTimeBin) + "phase" ;
-    for(unsigned iPhaseBin = 1 ; iPhaseBin < m_phaseBinning->nBins ; ++iPhaseBin){
-      m_bins[iTimeBin][iPhaseBin-1].Print(nameplusbin, iPhaseBin, os) ;
-      m_binsBar[iTimeBin][iPhaseBin-1].Print(nameminusbin, iPhaseBin, os) ;
+    for(unsigned iPhaseBin = 1 ; iPhaseBin < m_phaseBinning->nBins + 1; ++iPhaseBin){
+      bin(iTimeBin, iPhaseBin).Print(nameplusbin, iPhaseBin, os) ;
+      binBar(iTimeBin, iPhaseBin).Print(nameminusbin, iPhaseBin, os) ;
     }
   }
   m_phaseBinning->Print(name, os) ;
@@ -197,7 +199,7 @@ void TimeBinning::add(IDalitzEvent& evt, int tag, double t, double weight) {
   if(timeBinNo < 0)
     return ;
   int phaseBin = m_phaseBinning->binNumber(evt) * tag ;
-  m_binsInt[timeBinNo].add(t, weight) ;
+  m_binsInt[timeBinNo].add(t, (phaseBin > 0), weight) ;
   if(tag > 0)
     m_bins[timeBinNo][abs(phaseBin-1)].add(t, (phaseBin > 0), weight) ;
   else
@@ -205,8 +207,8 @@ void TimeBinning::add(IDalitzEvent& evt, int tag, double t, double weight) {
 }
 
 double TimeBinning::chiSquared(unsigned iTimeBin, unsigned iPhaseBin, double Rplus, double Rminus) const {
-  return m_bins.at(iTimeBin).at(iPhaseBin).chiSquared(Rplus)
-    + m_binsBar.at(iTimeBin).at(iPhaseBin).chiSquared(Rminus) ;
+  return bin(iTimeBin, iPhaseBin).chiSquared(Rplus)
+    + binBar(iTimeBin, iPhaseBin).chiSquared(Rminus) ;
 }
 
 unsigned TimeBinning::nBinsTime() const {
@@ -222,9 +224,46 @@ const TimeBinning::Bin& TimeBinning::integratedBin(unsigned i) const {
 }
 
 const TimeBinning::Bin& TimeBinning::bin(unsigned iTimeBin, unsigned iPhaseBin) const {
-  return m_bins.at(iTimeBin).at(iPhaseBin) ;
+  return m_bins.at(iTimeBin).at(iPhaseBin-1) ;
 }
 
 const TimeBinning::Bin& TimeBinning::binBar(unsigned iTimeBin, unsigned iPhaseBin) const {
-  return m_binsBar.at(iTimeBin).at(iPhaseBin) ;
+  return m_binsBar.at(iTimeBin).at(iPhaseBin-1) ;
+}
+
+deque<TH1F> TimeBinning::plotVsTime(const string& _name, unsigned phaseBin, int tag) const {
+  ostringstream stag ;
+  stag << tag ;
+  string name = Bin::getName(_name + "_" + stag.str() + "_phase", phaseBin) ;
+  
+  TH1F hplus((name + "nPlus").c_str(), "", m_timeBins.size()-1, &m_timeBins[0]) ;
+  TH1F hminus((name + "nMinus").c_str(), "", m_timeBins.size()-1, &m_timeBins[0]) ;
+  TH1F hr((name + "ratio").c_str(), "", m_timeBins.size()-1, &m_timeBins[0]) ;
+  for(unsigned i = 0 ; i < nBinsTime() ; ++i) {
+    const Bin& pbin = tag > 0 ? bin(i, phaseBin) : binBar(i, phaseBin) ;
+    hplus.SetBinContent(i, pbin.nPlus()) ;
+    hplus.SetBinError(i, pbin.nPlusErr()) ;
+    hminus.SetBinContent(i, pbin.nMinus()) ;
+    hminus.SetBinError(i, pbin.nMinusErr()) ;
+    double r = pbin.nPlus() > 0. ? pbin.nMinus()/pbin.nPlus() : 0. ;
+    double rerr = r > 0 && pbin.nMinus() > 0 ? r * sqrt(pow(pbin.nPlusErr()/pbin.nPlus(), 2) + pow(pbin.nMinusErr()/pbin.nMinus(), 2)) : 0. ;
+    hr.SetBinContent(i, r) ;
+    hr.SetBinError(i, rerr) ;
+  }
+  deque<TH1F> histos ;
+  histos.push_back(hplus) ;
+  histos.push_back(hminus) ;
+  histos.push_back(hr) ;
+  return histos ;
+}
+
+void TimeBinning::savePlotsVsTime(const string& name, TFile& outputfile) const {
+  outputfile.cd() ;
+  for(int tag = -1 ; tag < 2 ; tag += 2){
+    for(unsigned iphase = 1 ; iphase < m_phaseBinning->nBins + 1 ; ++iphase){
+      deque<TH1F> histos = plotVsTime(name, iphase, tag) ;
+      for(const auto& h : histos)
+	h.Write() ;
+    }
+  }
 }

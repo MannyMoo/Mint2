@@ -5,6 +5,9 @@
 #include <string>
 #include <ostream>
 #include <Mint/HadronicParameters.h>
+#include <TH1F.h>
+
+class TFile ;
 
 class TimeBinning {
  public :
@@ -52,6 +55,8 @@ class TimeBinning {
   const Bin& bin(unsigned, unsigned) const ;
   const Bin& binBar(unsigned, unsigned) const ;
 
+  std::deque<TH1F> plotVsTime(const std::string&, unsigned, int) const ;
+  void savePlotsVsTime(const std::string&, TFile&) const ;
  private :
   std::vector<double> m_timeBins ;
   Bins2D m_bins ;

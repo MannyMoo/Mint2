@@ -84,7 +84,7 @@ void BinFlipChi2::parametersChanged() {
 double BinFlipChi2::getVal() {
   double chi2 = 0. ;
   for(unsigned iTimeBin = 0 ; iTimeBin < m_timeBinning.nBinsTime() ; ++iTimeBin){
-    for(unsigned iPhaseBin = 1 ; iPhaseBin < m_timeBinning.nBinsPhase() ; ++iPhaseBin){
+    for(unsigned iPhaseBin = 1 ; iPhaseBin < m_timeBinning.nBinsPhase() + 1; ++iPhaseBin){
       // Could use the t & t2 for each phase space bin here.
       double Rplus = m_hadronicPars.bin(iPhaseBin).R(m_timeBinning.integratedBin(iTimeBin).t(),
 						     m_timeBinning.integratedBin(iTimeBin).t2(),
