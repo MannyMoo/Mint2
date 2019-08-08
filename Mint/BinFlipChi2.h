@@ -10,6 +10,7 @@
 #include <complex>
 #include <Mint/FitParameter.h>
 #include <utility>
+#include <TH2F.h>
 
 class BinFlipParSet : public MINT::MinuitParameterSet {
  public :
@@ -26,23 +27,43 @@ class BinFlipParSet : public MINT::MinuitParameterSet {
   static std::pair<std::complex<double>, std::complex<double> > fromXY(double, double, double, double) ;
 } ;
 
-class BinFlipChi2 : public MINT::Minimisable {
+class BinFlipChi2Base : public MINT::Minimisable {
+ public :
+  BinFlipChi2Base(BinFlipParSet*) ;
+  virtual void parametersChanged() override ;
+  TH2F scan2D(unsigned, unsigned, float nSigmaRange = 5., unsigned nBins = 300, bool zeroCentre = true) ;
+  BinFlipParSet* getBinFlipParSet() ;
+ protected :
+  BinFlipParSet* m_fitPars ;
+  std::complex<double> m_zcp ;
+  std::complex<double> m_dz ;
+} ;  
+
+class BinFlipChi2 : public BinFlipChi2Base {
  public :
   BinFlipChi2(BinFlipParSet*, const HadronicParameters&, const TimeBinning&) ;
   BinFlipChi2(BinFlipParSet*, const std::string&, const std::string&, const std::string& fname = "") ;
 
   virtual double getVal() override ;
-  virtual void parametersChanged() override ;
 
  private :
-  BinFlipParSet* m_fitPars ;
   HadronicParameters m_hadronicPars ;
   TimeBinning m_timeBinning ;
-  std::complex<double> m_zcp ;
-  std::complex<double> m_dz ;
 
   void checkPhaseBinning() const ;
   void init() ;
+} ;
+
+class BinFlipChi2Simul : public BinFlipChi2Base {
+ public :
+  typedef std::deque<BinFlipChi2*> BinFlippers ;
+  BinFlipChi2Simul(BinFlipChi2*, BinFlipChi2*) ;
+  BinFlipChi2Simul(const BinFlippers&) ;
+
+  virtual double getVal() override ;
+  virtual void parametersChanged() override ;
+ private :
+  BinFlippers m_flippers ;
 } ;
 
 #endif

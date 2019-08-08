@@ -50,6 +50,7 @@ TimeBinning::Bin::Bin(const string& _name, unsigned number, const string& fname)
 }
 
 void TimeBinning::Bin::Print(const std::string& _name, unsigned number, ostream& os) const {
+  os.precision(16) ;
   string name = getName(_name, number) ;
   os << name << "t\t" << t() << endl ;
   os << name << "t2\t" << t2() << endl ;
@@ -157,6 +158,7 @@ TimeBinning::TimeBinning(const string& name, const string& fname) :
 }
       
 void TimeBinning::Print(const string& name, ostream& os) const {
+  os.precision(16) ;
   os << name << "_timeBins" ;
   for(const auto& bin : m_timeBins)
     os << "\t" << bin ;
