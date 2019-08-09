@@ -123,20 +123,23 @@ BinFlipParSet* BinFlipChi2Base::getBinFlipParSet() {
   return m_fitPars ;
 }
 
-BinFlipChi2::BinFlipChi2(BinFlipParSet* fitPars, const HadronicParameters& hadronicPars,
+BinFlipChi2::BinFlipChi2(BinFlipParSet* fitPars, double lifetime, const HadronicParameters& hadronicPars,
 			 const TimeBinning& timeBins) :
   BinFlipChi2Base(fitPars),
   m_hadronicPars(hadronicPars),
-  m_timeBinning(timeBins)
+  m_timeBinning(timeBins),
+  m_lifetime(lifetime)
 {
   init() ;
 }
 
-BinFlipChi2::BinFlipChi2(BinFlipParSet* fitPars, const string& hadronicParsName, const string& timeBinsName,
+BinFlipChi2::BinFlipChi2(BinFlipParSet* fitPars, double lifetime,
+			 const string& hadronicParsName, const string& timeBinsName,
 			 const string& fname) :
   BinFlipChi2Base(fitPars),
   m_hadronicPars(hadronicParsName, fname),
-  m_timeBinning(timeBinsName, fname)
+  m_timeBinning(timeBinsName, fname),
+  m_lifetime(lifetime)
 {
   init() ;
 }
@@ -157,10 +160,10 @@ double BinFlipChi2::getVal() {
       // Could use the t & t2 for each phase space bin here.
       double Rplus = m_hadronicPars.bin(iPhaseBin).R(m_timeBinning.integratedBin(iTimeBin).t(),
 						     m_timeBinning.integratedBin(iTimeBin).t2(),
-						     m_zcp, m_dz) ;
+						     m_lifetime, m_zcp, m_dz) ;
       double Rminus = m_hadronicPars.bin(iPhaseBin).Rbar(m_timeBinning.integratedBin(iTimeBin).t(),
 							 m_timeBinning.integratedBin(iTimeBin).t2(),
-							 m_zcp, m_dz) ;
+							 m_lifetime, m_zcp, m_dz) ;
       chi2 += m_timeBinning.chiSquared(iTimeBin, iPhaseBin, Rplus, Rminus) ;
     }
   }

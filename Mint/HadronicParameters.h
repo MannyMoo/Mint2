@@ -88,7 +88,7 @@ class HadronicParameters {
     double m_normBar ;
 
     /// Get the expected ratio of events (suppressed)/(favoured) at the given time for the given mixing parameters.
-    double _R(double, double, const std::complex<double>&, const std::complex<double>&,
+    double _R(double, double, double, const std::complex<double>&, const std::complex<double>&,
 	      double, double, const std::complex<double>&, const std::complex<double>&) const ;
   public :
     /// Initialise from predetermined parameters.
@@ -131,10 +131,10 @@ class HadronicParameters {
     static std::string getName(const std::string&, unsigned) ;
 
     /// Get expected ratio of events (suppressed)/(favoured) at the given time for the given mixing parameters.
-    double R(double, double, const std::complex<double>&, const std::complex<double>&) const ;
+    double R(double, double, double, const std::complex<double>&, const std::complex<double>&) const ;
     /** Get expected ratio of events (suppressed)/(favoured) at the given time for the given mixing parameters,
 	for the CP-conjugate decay.*/
-    double Rbar(double, double, const std::complex<double>&, const std::complex<double>&) const ;
+    double Rbar(double, double, double, const std::complex<double>&, const std::complex<double>&) const ;
     
   } ;
 

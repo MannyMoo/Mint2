@@ -259,22 +259,24 @@ string HadronicParameters::Bin::getName(const string& name, unsigned number) {
   return sstr.str() ;
 }
 
-double HadronicParameters::Bin::R(double t, double t2,
+double HadronicParameters::Bin::R(double t, double t2, double lifetime,
 				  const complex<double>& zcp, const complex<double>& dz) const {
   complex<double> sumz(zcp + dz) ;
-  return _R(t, t2, zcp, dz, Fplus(), Fminus(), Xplus(), sumz) ;
+  return _R(t, t2, lifetime, zcp, dz, Fplus(), Fminus(), Xplus(), sumz) ;
 }
 
-double HadronicParameters::Bin::Rbar(double t, double t2,
+double HadronicParameters::Bin::Rbar(double t, double t2, double lifetime,
 				     const complex<double>& zcp, const complex<double>& dz) const {
   complex<double> sumz(zcp - dz) ;
-  return _R(t, t2, zcp, dz, Fbarplus(), Fbarminus(), Xbarplus(), sumz) ;
+  return _R(t, t2, lifetime, zcp, dz, Fbarplus(), Fbarminus(), Xbarplus(), sumz) ;
 }
 
-double HadronicParameters::Bin::_R(double t, double t2,
+double HadronicParameters::Bin::_R(double t, double t2, double lifetime,
 				   const complex<double>& zcp, const complex<double>& dz,
 				   double _Fplus, double _Fminus,
 				   const complex<double>& X, const complex<double>& sumz) const {
+  t /= lifetime ;
+  t2 /= lifetime * lifetime ;
   double r = _Fminus/_Fplus ;
   double term1 = (1 + 0.25 * t2 * (zcp*zcp - dz*dz).real()) ;
   double term2 = 0.25 * t2 * norm(sumz) ;

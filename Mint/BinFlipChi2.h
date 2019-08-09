@@ -42,14 +42,15 @@ class BinFlipChi2Base : public MINT::Minimisable {
 
 class BinFlipChi2 : public BinFlipChi2Base {
  public :
-  BinFlipChi2(BinFlipParSet*, const HadronicParameters&, const TimeBinning&) ;
-  BinFlipChi2(BinFlipParSet*, const std::string&, const std::string&, const std::string& fname = "") ;
+  BinFlipChi2(BinFlipParSet*, double, const HadronicParameters&, const TimeBinning&) ;
+  BinFlipChi2(BinFlipParSet*, double, const std::string&, const std::string&, const std::string& fname = "") ;
 
   virtual double getVal() override ;
 
  private :
   HadronicParameters m_hadronicPars ;
   TimeBinning m_timeBinning ;
+  double m_lifetime ;
 
   void checkPhaseBinning() const ;
   void init() ;
