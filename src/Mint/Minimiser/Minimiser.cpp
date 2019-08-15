@@ -251,6 +251,7 @@ bool Minimiser::endOfFit(){
   if(! parsOK())return false;
   setParametersToResult();
   theFunction()->endFit();
+  parSet()->setCovMatrix(covMatrixFull()) ;
   return true;
 }
 
@@ -615,7 +616,7 @@ TGraph* Minimiser::contour(unsigned iparx, unsigned ipary, float nsigma, unsigne
   ostringstream title ;
   title << pary->name() << "_vs_" << parx->name() << "_" << nsigma << "_sigma_contour" ;
   string titlestr(title.str()) ;
-  graph->SetTitle(titlestr.c_str()) ;
+  graph->SetName(titlestr.c_str()) ;
   
 
   for(unsigned i = 0 ; i < parSet()->size() ; ++i)

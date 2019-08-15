@@ -21,6 +21,9 @@
 #include <Mint/TimeBinning.h>
 #include <Mint/BinFlipChi2.h>
 #include <Mint/SimulMinimisable.h>
+#include <Mint/MinuitParameterSet.h>
+#include <Mint/FitParameter.h>
+#include <Mint/GaussianConstraintChi2.h>
 
 /*
 #include <Mint/DalitzBox.h>

@@ -9,6 +9,7 @@
 
 #include "Mint/IMinuitParameter.h"
 #include "Mint/Utils.h"
+#include "TMatrixTSym.h"
 
 
 class TNtupleD;
@@ -17,6 +18,8 @@ class TFile;
 namespace MINT{
 
 class MinuitParameterSet{
+ public :
+  typedef TMatrixTSym<double> CovMatrix ;
  protected:
   std::vector<IMinuitParameter*> _parPtrList;
   static MinuitParameterSet* _defaultMinuitParameterSet;
@@ -27,6 +30,8 @@ class MinuitParameterSet{
 
   bool addToEnd(IMinuitParameter* parPtr);
   bool setAllIndices();
+  
+  CovMatrix _covMatrix ;
  public:
   static MinuitParameterSet* getDefaultSet();
 
@@ -88,6 +93,11 @@ class MinuitParameterSet{
   void print(std::ostream& os = std::cout) const;
   void printVariable(std::ostream& os = std::cout) const;
   void printResultVsInput(std::ostream& os = std::cout) const;
+
+  /// Set the covariance matrix.
+  bool setCovMatrix(const CovMatrix&) ;
+  /// Get the covariance matrix.
+  const CovMatrix& covMatrix() const ;
 };
 
 }//namespace MINT

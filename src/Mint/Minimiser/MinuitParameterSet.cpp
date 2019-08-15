@@ -240,4 +240,20 @@ void MinuitParameterSet::printResultVsInput(std::ostream& os) const{
      << endl;
 }
 
+bool MinuitParameterSet::setCovMatrix(const CovMatrix& covMatrix) {
+  if(covMatrix.GetNcols() != size() || covMatrix.GetNrows() != size()){
+    cout << "WARNING: MiniutParameterSet::setCovMatrix: given matrix has the wrong size!" << endl ;
+    cout << "N. parameters: " << size() << ", matrix is " << covMatrix.GetNcols() << "x" 
+	 << covMatrix.GetNrows() << endl ;
+    return false ;
+  }
+  _covMatrix.ResizeTo(covMatrix) ;
+  _covMatrix = covMatrix ;
+  return true ;
+}
+
+const MinuitParameterSet::CovMatrix& MinuitParameterSet::covMatrix() const {
+  return _covMatrix ;
+}
+
 //
