@@ -10,7 +10,7 @@
 #include <complex>
 #include <Mint/FitParameter.h>
 #include <utility>
-#include <TH2F.h>
+#include <TH2D.h>
 
 class BinFlipParSet : public MINT::MinuitParameterSet {
  public :
@@ -31,7 +31,7 @@ class BinFlipChi2Base : public MINT::Minimisable {
  public :
   BinFlipChi2Base(BinFlipParSet*) ;
   virtual void parametersChanged() override ;
-  TH2F scan2D(unsigned, unsigned, float nSigmaRange = 5., unsigned nBins = 300,
+  TH2D scan2D(unsigned, unsigned, float nSigmaRange = 5., unsigned nBins = 300,
 	      bool zeroCentre = true, float scale = 1.) ;
   BinFlipParSet* getBinFlipParSet() ;
  protected :

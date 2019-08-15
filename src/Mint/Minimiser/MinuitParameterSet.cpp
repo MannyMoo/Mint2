@@ -52,6 +52,13 @@ bool MinuitParameterSet::addToEnd(IMinuitParameter* parPtr){
     cout << "MinuitParameterSet::add "
 	 << " adding parPtr " << parPtr->name() << endl;
   }
+  if(find(_parPtrList.begin(), _parPtrList.end(), parPtr) != _parPtrList.end()){
+    if(dbThis){
+      cout << "MinuitParameterSet::add "
+	   << " already have parPtr " << parPtr->name() << endl;
+    }
+    return true ;
+  }
   _parPtrList.push_back(parPtr);
   success &= parPtr->setParSet(this);
   success &= parPtr->setParSetIndex(_parPtrList.size()-1);

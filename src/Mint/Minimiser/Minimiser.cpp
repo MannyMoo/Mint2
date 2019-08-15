@@ -1,14 +1,18 @@
 // author: Jonas Rademacker (Jonas.Rademacker@bristol.ac.uk)
 // status:  Mon 9 Feb 2009 19:17:55 GMT
-#include "Mint/Minimiser.h"
-#include "Mint/IMinuitParameter.h"
+#include <Mint/Minimiser.h>
+#include <Mint/IMinuitParameter.h>
+#include <Mint/FitParameter.h>
 
-#include "TGraph.h"
-#include "TFile.h"
+#include <TGraph.h>
+#include <TH2D.h>
+#include <TFile.h>
 
-#include "Mint/TwoDArray.h"
+#include <Mint/TwoDArray.h>
 
 #include <iostream>
+#include <utility>
+#include <deque>
 
 using namespace std;
 using namespace MINT;
@@ -586,4 +590,37 @@ int Minimiser::printStatus() {
 
 bool Minimiser::isConverged() {
   return isStatus(Minimiser::CONVERGED) ;
+}
+
+TGraph* Minimiser::contour(unsigned iparx, unsigned ipary, float nsigma, unsigned npoints) {
+  // Cache the initial values and errors.
+  deque<deque<double> > initvals ;
+  for(unsigned i = 0 ; i < parSet()->size() ; ++i){
+    FitParameter* par = (FitParameter*)getParPtr(i) ;
+    initvals.push_back(deque<double>()) ;
+    deque<double>& parvals = initvals.back() ;
+    parvals.push_back(par->mean()) ;
+    parvals.push_back(par->err()) ;
+    parvals.push_back(par->errPos()) ;
+    parvals.push_back(par->errNeg()) ;
+  }
+
+  FitParameter* parx = (FitParameter*)getParPtr(iparx) ;
+  FitParameter* pary = (FitParameter*)getParPtr(ipary) ;
+
+  float errdef = _errdef * nsigma * nsigma ;
+  SetErrorDef(errdef) ;
+  TGraph* graph = (TGraph*)Contour(npoints, iparx, ipary) ;
+  SetErrorDef(_errdef) ;
+  ostringstream title ;
+  title << pary->name() << "_vs_" << parx->name() << "_" << nsigma << "_sigma_contour" ;
+  string titlestr(title.str()) ;
+  graph->SetTitle(titlestr.c_str()) ;
+  
+
+  for(unsigned i = 0 ; i < parSet()->size() ; ++i)
+    getParPtr(i)->setResult(initvals[i][0], initvals[i][1], initvals[i][2], initvals[i][3]) ;
+  theFunction()->parametersChanged() ;
+
+  return graph ;
 }

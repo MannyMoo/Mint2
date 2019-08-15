@@ -12,6 +12,8 @@
 #include <vector>
 
 class TGraph;
+class TH2D;
+
 namespace MINT{
 
 class IMinuitParameter;
@@ -134,6 +136,11 @@ class Minimiser : public TMinuit{
 
   /** Check if the fit status is CONVERGED */
   bool isConverged() ;
+
+  /** Make the nsigma contour plot for the given parameters - note that parameter numbers run from 0-N. */
+  TGraph* contour(unsigned, unsigned, float nsigma = 1., unsigned npoints = 40) ;
+
+  
 };
 }//namespace MINT
 #endif

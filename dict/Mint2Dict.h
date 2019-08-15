@@ -20,6 +20,8 @@
 #include <Mint/HadronicParameters.h>
 #include <Mint/TimeBinning.h>
 #include <Mint/BinFlipChi2.h>
+#include <Mint/SimulMinimisable.h>
+
 /*
 #include <Mint/DalitzBox.h>
 #include <Mint/Model_independent.h>
