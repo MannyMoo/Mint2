@@ -33,7 +33,12 @@ int calculateHadronicParameters(const string& config = string()) {
 
   NamedParameter<int> nBinsPhase("nBinsPhase", 8) ;
 
-  HadronicParameters::BinningPtr binning(new HadronicParameters::ModelPhaseBinning(model, cpmodel, nBinsPhase)) ;
+  NamedParameter<string> binningType("binning_type", string("model"), (char*)0) ;
+  HadronicParameters::BinningPtr binning(0) ;
+  if(string(binningType) == string("model3body"))
+    binning = HadronicParameters::BinningPtr(new HadronicParameters::ModelBinning3Body(model, cpmodel, nBinsPhase)) ;
+  else
+    binning = HadronicParameters::BinningPtr(new HadronicParameters::ModelPhaseBinning(model, cpmodel, nBinsPhase)) ;
   
   HadronicParameters pars(binning) ;
 

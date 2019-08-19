@@ -42,6 +42,10 @@ string HadronicParameters::ModelPhaseBinning::type() const {
   return "model" ;
 }
 
+bool HadronicParameters::ModelPhaseBinning::isFavoured(const double F, const double Fbar, IDalitzEvent&) const {
+  return F > Fbar ;
+}
+
 HadronicParameters::EventBinInfo HadronicParameters::ModelPhaseBinning::binInfo(IDalitzEvent& evt) const {
   EventBinInfo binNo ;
   binNo.evt = &evt ;
@@ -54,7 +58,7 @@ HadronicParameters::EventBinInfo HadronicParameters::ModelPhaseBinning::binInfo(
   // from the favoured CP-conjugate point to determine the bin. This assumes no direct CPV, ie, that
   // arg(Fminus/Fbarplus) = -arg(Fplus/Fbarminus). Could use the CP-conjugate event to determine
   // the phase difference if we need to allow for direct CPV.
-  if(binNo.Fbar > binNo.F)
+  if(!isFavoured(binNo.Fbar, binNo.F, evt))
     phasediff *= -1 ;
   if(phasediff < 0.)
     phasediff += 2. * TMath::Pi() ;
@@ -98,6 +102,47 @@ HadronicParameters::BinningPtr HadronicParameters::ModelPhaseBinning::fromConfig
   const ModelPhaseBinning* ptr = (ModelPhaseBinning*)(&other) ;
   }
 */
+
+HadronicParameters::ModelBinning3Body::ModelBinning3Body(HadronicParameters::ModelPtr model,
+							 HadronicParameters::ModelPtr cpmodel,
+							 unsigned nBins) :
+  ModelPhaseBinning(model, cpmodel, nBins)
+{}
+
+string HadronicParameters::ModelBinning3Body::type() const {
+  return "model3body" ;
+}
+
+bool HadronicParameters::ModelBinning3Body::isFavoured(const double, const double, IDalitzEvent& evt) const {
+  const DalitzEventPattern& pat = evt.eventPattern() ;
+  int i1(1), i2(2), i3(3) ;
+  // Assuming we have a decay of the form P->h+h-h0 (in some order).
+  for(unsigned i = 1 ; i < pat.size() ; ++i){
+    if(pat[i].charge() > 0)
+      i1 = i ;
+    else if(pat[i].charge() < 0)
+      i2 = i ;
+    else 
+      i3 = i ;
+  }
+  double s13 = evt.s(i1, i3) ;
+  double s23 = evt.s(i2, i3) ;
+  return s13 > s23 ;
+}
+
+HadronicParameters::BinningPtr HadronicParameters::ModelBinning3Body::fromConfig(const string& _name,
+										 const string& fname) {
+  string name = _name + "_binning_" ;
+  if(string(NamedParameter<string>(name + "type", fname.c_str())) != "model3body")
+    return BinningPtr(0) ;
+  NamedParameter<int> nBins(name + "nBins", fname.c_str()) ;
+  NamedParameter<int> pat(name + "eventPattern", fname.c_str()) ;
+  NamedParameter<int> cpPat(name + "cpEventPattern", fname.c_str()) ;
+  ModelPtr model(new FitAmpSum(DalitzEventPattern(pat), fname.c_str())) ;
+  ModelPtr cpModel(new FitAmpSum(DalitzEventPattern(cpPat), fname.c_str())) ;
+  return BinningPtr(new ModelBinning3Body(model, cpModel, nBins)) ;
+}
+  
 
 HadronicParameters::Bin::Bin(double _Fplus, double _Fminus, const complex<double>& X,
 			     double _Fbarplus, double _Fbarminus, const complex<double>& Xbar,
@@ -383,6 +428,8 @@ HadronicParameters::getPhaseBinning(const string& name, const string& fname) {
   string strtype(type) ;
   if(strtype == string("model"))
     return BinningPtr(ModelPhaseBinning::fromConfig(name, fname)) ;
+  if(strtype == string("model3body"))
+    return BinningPtr(ModelBinning3Body::fromConfig(name, fname)) ;
   throw invalid_argument("Unknown binning type: " + strtype) ;
 }
 

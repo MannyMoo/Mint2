@@ -123,16 +123,24 @@ double TimeBinning::Bin::chiSquared(double R) const {
   return numerator/denominator ;
 }
 
-TimeBinning::TimeBinning(const vector<double>& timeBins, HadronicParameters::BinningPtr phaseBinning) :
+TimeBinning::TimeBinning(const vector<double>& timeBins, HadronicParameters::BinningPtr phaseBinning, double lifetime) :
   m_timeBins(timeBins),
-  m_bins(timeBins.size(), Bins(phaseBinning->nBins)),
-  m_binsBar(timeBins.size(), Bins(phaseBinning->nBins)),
-  m_binsInt(timeBins.size()),
+  m_meant(nBinsTime(), 0.),
+  m_meant2(nBinsTime(), 0.),
+  m_lifetime(lifetime),
+  m_bins(nBinsTime(), Bins(phaseBinning->nBins)),
+  m_binsBar(nBinsTime(), Bins(phaseBinning->nBins)),
+  m_binsInt(nBinsTime()),
   m_phaseBinning(phaseBinning)
-{}
+{
+  setLifetime(lifetime) ;
+}
 
 TimeBinning::TimeBinning(const string& name, const string& fname) :
   m_timeBins(),
+  m_meant(),
+  m_meant2(),
+  m_lifetime(),
   m_bins(),
   m_binsBar(),
   m_binsInt(),
@@ -140,11 +148,15 @@ TimeBinning::TimeBinning(const string& name, const string& fname) :
 {
   NamedParameter<double> timeBins(name + "_timeBins", fname.c_str()) ;
   m_timeBins = timeBins.getVector() ;
+  m_meant = vector<double>(nBinsTime(), 0.) ;
+  m_meant2 = vector<double>(nBinsTime(), 0.) ;
+  NamedParameter<double> lifetime(name + "_lifetime", fname.c_str()) ;
+  setLifetime(lifetime) ;
   m_phaseBinning = HadronicParameters::getPhaseBinning(name, fname) ;
   string nameint = name + "_int" ;
   string nameplus = name + "_plus" ;
   string nameminus = name + "_minus" ;
-  for(unsigned iTimeBin = 0 ; iTimeBin < m_timeBins.size() ; ++iTimeBin){
+  for(unsigned iTimeBin = 0 ; iTimeBin < nBinsTime() ; ++iTimeBin){
     m_binsInt.push_back(Bin(nameint, iTimeBin, fname)) ;
     m_bins.push_back(Bins()) ;
     m_binsBar.push_back(Bins()) ;
@@ -163,10 +175,11 @@ void TimeBinning::Print(const string& name, ostream& os) const {
   for(const auto& bin : m_timeBins)
     os << "\t" << bin ;
   os << endl ;
+  os << name << "_lifetime\t" << m_lifetime << endl ;
   string nameint = name + "_int" ;
   string nameplus = name + "_plus" ;
   string nameminus = name + "_minus" ;
-  for(unsigned iTimeBin = 0 ; iTimeBin < m_timeBins.size() ; ++iTimeBin){
+  for(unsigned iTimeBin = 0 ; iTimeBin < nBinsTime() ; ++iTimeBin){
     m_binsInt[iTimeBin].Print(nameint, iTimeBin, os) ;
     string nameplusbin = Bin::getName(nameplus + "_time", iTimeBin) + "phase" ;
     string nameminusbin = Bin::getName(nameminus + "_time", iTimeBin) + "phase" ;
@@ -190,7 +203,7 @@ HadronicParameters::BinningPtr TimeBinning::phaseBinning() const {
 }
 
 int TimeBinning::timeBin(double t) const {
-  for(unsigned i = 0 ; i < m_timeBins.size()-1 ; ++i)
+  for(unsigned i = 0 ; i < nBinsTime() ; ++i)
     if(t < m_timeBins[i+1])
       return i ;
   return -1 ;
@@ -218,7 +231,7 @@ double TimeBinning::chiSquared(unsigned iTimeBin, unsigned iPhaseBin, double Rpl
 }
 
 unsigned TimeBinning::nBinsTime() const {
-  return m_timeBins.size() ;
+  return m_timeBins.size()-1 ;
 }
 
 unsigned TimeBinning::nBinsPhase() const {
@@ -254,11 +267,11 @@ deque<TH1F> TimeBinning::plotVsTime(const string& _name, unsigned phaseBin, int 
   stag << tag ;
   string name = Bin::getName(_name + "_" + stag.str() + "_phase", phaseBin) ;
   
-  TH1F hplus((name + "nPlus").c_str(), "", m_timeBins.size()-1, &m_timeBins[0]) ;
-  TH1F hminus((name + "nMinus").c_str(), "", m_timeBins.size()-1, &m_timeBins[0]) ;
-  TH1F hr((name + "ratio").c_str(), "", m_timeBins.size()-1, &m_timeBins[0]) ;
-  for(unsigned i = 0 ; i < nBinsTime() ; ++i) {
-    const Bin& pbin = tag > 0 ? bin(i, phaseBin) : binBar(i, phaseBin) ;
+  TH1F hplus((name + "nPlus").c_str(), "", nBinsTime(), &m_timeBins[0]) ;
+  TH1F hminus((name + "nMinus").c_str(), "", nBinsTime(), &m_timeBins[0]) ;
+  TH1F hr((name + "ratio").c_str(), "", nBinsTime(), &m_timeBins[0]) ;
+  for(unsigned i = 1 ; i < nBinsTime()+1 ; ++i) {
+    const Bin& pbin = tag > 0 ? bin(i-1, phaseBin) : binBar(i-1, phaseBin) ;
     hplus.SetBinContent(i, pbin.nPlus()) ;
     hplus.SetBinError(i, pbin.nPlusErr()) ;
     hminus.SetBinContent(i, pbin.nMinus()) ;
@@ -275,13 +288,59 @@ deque<TH1F> TimeBinning::plotVsTime(const string& _name, unsigned phaseBin, int 
   return histos ;
 }
 
+deque<deque<TH1F> > TimeBinning::plotsVsTime(const string& name) const {
+  deque<deque<TH1F> > histos ;
+  for(unsigned iphase = 1 ; iphase < m_phaseBinning->nBins + 1 ; ++iphase){
+    histos.push_back(deque<TH1F>()) ;
+    deque<TH1F>& binhistos = histos.back() ;
+    for(int tag = -1 ; tag < 2 ; tag += 2){
+      deque<TH1F> taghistos = plotVsTime(name, iphase, tag) ;
+      binhistos.insert(binhistos.end(), taghistos.begin(), taghistos.end()) ;
+    }
+    TH1F rdiff(binhistos.back()) ;
+    string rdiffname(Bin::getName(name + "_phase", iphase) + "ratiodiff") ;
+    rdiff.SetName(rdiffname.c_str()) ;
+    rdiff.Add(&binhistos[2], -1.) ;
+    binhistos.push_back(rdiff) ;
+  }
+  return histos ;
+}
+
 void TimeBinning::savePlotsVsTime(const string& name, TFile& outputfile) const {
   outputfile.cd() ;
-  for(int tag = -1 ; tag < 2 ; tag += 2){
-    for(unsigned iphase = 1 ; iphase < m_phaseBinning->nBins + 1 ; ++iphase){
-      deque<TH1F> histos = plotVsTime(name, iphase, tag) ;
-      for(const auto& h : histos)
-	h.Write() ;
-    }
+  deque<deque<TH1F> > histos = plotsVsTime(name) ;
+  for(auto& binhistos : histos)
+    for(auto& histo : binhistos)
+      histo.Write() ;
+}
+
+double TimeBinning::unmixedTimeMoment(unsigned ibin, double lifetime, int moment) const {
+  const double& tmin = m_timeBins.at(ibin) ;
+  const double& tmax = m_timeBins.at(ibin+1) ;
+  double norm = exp(-tmin/lifetime) - exp(-tmax/lifetime) ;
+  double timeMoment = (pow(tmin, moment) * exp(-tmin/lifetime) - pow(tmax, moment) * exp(-tmax/lifetime))/norm ;
+  if(moment == 0)
+    return timeMoment ;
+  timeMoment += moment * lifetime * unmixedTimeMoment(ibin, lifetime, moment-1) ;
+  return timeMoment ;
+}
+
+void TimeBinning::setLifetime(double lifetime) {
+  m_lifetime = lifetime ;
+  for(unsigned ibin = 0 ; ibin < nBinsTime() ; ++ibin){
+    m_meant.at(ibin) = unmixedTimeMoment(ibin, lifetime, 1) ;
+    m_meant2.at(ibin) = unmixedTimeMoment(ibin, lifetime, 2) ;
   }
+}
+
+double TimeBinning::getLifetime() const {
+  return m_lifetime ;
+}
+
+double TimeBinning::meanUnmixedTime(unsigned ibin) const {
+  return m_meant.at(ibin) ;
+}
+
+double TimeBinning::meanUnmixedTime2(unsigned ibin) const {
+  return m_meant2.at(ibin) ;
 }

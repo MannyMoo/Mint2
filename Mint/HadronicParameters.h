@@ -58,11 +58,22 @@ class HadronicParameters {
       fromConfig(const std::string&, const std::string& fname = "") ;
     // TODO: implement this - not really sure how best to check that the models are the same.
     //virtual bool operator==(const PhaseBinningBase&) const override ;
-  private :
+  protected :
+    virtual bool isFavoured(const double, const double, IDalitzEvent&) const ;
     ModelPtr m_model ;
     ModelPtr m_cpmodel ;
   } ;
-
+  /// Phase binning class for 3-body decays using the line s13=s23 to determine favoured/suppressed.
+  class ModelBinning3Body : public ModelPhaseBinning {
+  public :
+    ModelBinning3Body(ModelPtr, ModelPtr, unsigned) ;
+    virtual ~ModelBinning3Body() {} ;
+    virtual std::string type() const override ;
+    static MINT::counted_ptr<PhaseBinningBase> 
+      fromConfig(const std::string&, const std::string& fname = "") ;
+  protected :
+    virtual bool isFavoured(const double, const double, IDalitzEvent&) const override ;
+  } ;
   /// Hadronic parameters in a bin of phase space.
   class Bin {
   private :

@@ -39,7 +39,7 @@ class TimeBinning {
   typedef std::deque<Bin> Bins ;
   typedef std::deque<Bins> Bins2D ;
 
-  TimeBinning(const std::vector<double>&, HadronicParameters::BinningPtr) ;
+  TimeBinning(const std::vector<double>&, HadronicParameters::BinningPtr, double) ;
   TimeBinning(const std::string&, const std::string& fname = "") ;
 
   void add(IDalitzEvent&, int, double, double weight = 1.) ;
@@ -56,9 +56,18 @@ class TimeBinning {
   const Bin& binBar(unsigned, unsigned) const ;
 
   std::deque<TH1F> plotVsTime(const std::string&, unsigned, int) const ;
+  std::deque<std::deque<TH1F> > plotsVsTime(const std::string&) const ;
   void savePlotsVsTime(const std::string&, TFile&) const ;
+
+  double meanUnmixedTime(unsigned) const ;
+  double meanUnmixedTime2(unsigned) const ;
+  void setLifetime(double) ;
+  double getLifetime() const ;
  private :
   std::vector<double> m_timeBins ;
+  std::vector<double> m_meant ;
+  std::vector<double> m_meant2 ;
+  double m_lifetime ;
   Bins2D m_bins ;
   Bins2D m_binsBar ;
   Bins m_binsInt ;
@@ -67,6 +76,8 @@ class TimeBinning {
   Bin& _integratedBin(unsigned) ;
   Bin& _bin(unsigned, unsigned)  ;
   Bin& _binBar(unsigned, unsigned)  ;
+
+  virtual double unmixedTimeMoment(unsigned, double, int) const ;
 } ;
 
 #endif
