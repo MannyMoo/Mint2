@@ -58,7 +58,7 @@ HadronicParameters::EventBinInfo HadronicParameters::ModelPhaseBinning::binInfo(
   // from the favoured CP-conjugate point to determine the bin. This assumes no direct CPV, ie, that
   // arg(Fminus/Fbarplus) = -arg(Fplus/Fbarminus). Could use the CP-conjugate event to determine
   // the phase difference if we need to allow for direct CPV.
-  if(!isFavoured(binNo.Fbar, binNo.F, evt))
+  if(!isFavoured(binNo.F, binNo.Fbar, evt))
     phasediff *= -1 ;
   if(phasediff < 0.)
     phasediff += 2. * TMath::Pi() ;

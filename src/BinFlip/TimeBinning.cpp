@@ -204,7 +204,7 @@ HadronicParameters::BinningPtr TimeBinning::phaseBinning() const {
 
 int TimeBinning::timeBin(double t) const {
   for(unsigned i = 0 ; i < nBinsTime() ; ++i)
-    if(t < m_timeBins[i+1])
+    if(m_timeBins[i] <= t && t < m_timeBins[i+1])
       return i ;
   return -1 ;
 }
