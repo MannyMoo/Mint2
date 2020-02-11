@@ -15,6 +15,8 @@ find_package(ROOT COMPONENTS Core RIO Hist Graf Graf3d Postscript Gpad
                              Proof ProofBench ProofDraw ProofPlayer MathMore
 			     Minuit2 Matrix Imt TreePlayer Rint Postscript
 			     Thread MultiProc Minuit)
+find_package(GSL)
+find_package(TBB)
 
 gaudi_install_python_modules()
 
@@ -38,7 +40,7 @@ gaudi_add_library(Mint2Lib
 		  src/BinFlip/*.cpp
                   PUBLIC_HEADERS Mint
                   INCLUDE_DIRS Boost ROOT
-                  LINK_LIBRARIES Boost ROOT QFTLib)
+                  LINK_LIBRARIES Boost ROOT QFTLib GSL TBB)
 
 # # ensure that genreflex is not called twice (in parallel builds)
 # add_dependencies(Mint2Lib Mint2Gen)
@@ -47,7 +49,7 @@ gaudi_add_library(Mint2Lib
 # This can be used to build a C++ executable and add it to PATH
 gaudi_add_executable(genTimeDependent src/bin/genTimeDependent.cpp LINK_LIBRARIES Mint2Lib)
 gaudi_add_executable(printKnownTrees src/bin/printKnownTrees.cpp LINK_LIBRARIES Mint2Lib)
-gaudi_add_executable(BsDsKpipi_TD_ampFit src/bin/BsDsKpipi_TD_ampFit.cpp LINK_LIBRARIES Mint2Lib ROOT)
-gaudi_add_executable(calculateHadronicParameters src/bin/calculateHadronicParameters.cpp LINK_LIBRARIES Mint2Lib ROOT)
+gaudi_add_executable(BsDsKpipi_TD_ampFit src/bin/BsDsKpipi_TD_ampFit.cpp LINK_LIBRARIES Mint2Lib)
+gaudi_add_executable(calculateHadronicParameters src/bin/calculateHadronicParameters.cpp LINK_LIBRARIES Mint2Lib)
 
 gaudi_env(SET MINT2 \$MINT2ROOT)
