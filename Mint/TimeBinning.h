@@ -41,7 +41,7 @@ class TimeBinning {
 
   TimeBinning(const std::vector<double>&, HadronicParameters::BinningPtr, double) ;
   TimeBinning(const std::string&, const std::string& fname = "") ;
-
+  virtual ~TimeBinning() {};
   void add(IDalitzEvent&, int, double, double weight = 1.) ;
   HadronicParameters::BinningPtr phaseBinning() const ;
   int timeBin(double) const ;

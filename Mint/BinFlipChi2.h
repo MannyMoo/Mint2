@@ -12,10 +12,14 @@
 #include <utility>
 #include <TH2D.h>
 
+class BinFlipChi2Base;
+
 class BinFlipParSet : public MINT::MinuitParameterSet {
+  friend class BinFlipChi2Base;
  public :
   BinFlipParSet(double, double, double, double,
-		double, double, double, double) ;
+		double, double, double, double,
+		unsigned long blindingSeed = 0, double zBlindRange = 0., double deltazBlindRange = 0.) ;
   BinFlipParSet(const std::string&) ;
   MINT::FitParameter zcp_Re ;
   MINT::FitParameter zcp_Im ;
@@ -25,6 +29,9 @@ class BinFlipParSet : public MINT::MinuitParameterSet {
   std::complex<double> zcp() const ;
   std::complex<double> deltaz() const ;
   static std::pair<std::complex<double>, std::complex<double> > fromXY(double, double, double, double) ;
+ private:
+  std::complex<double> unblindZcp() const ;
+  std::complex<double> unblindDeltaz() const ;
 } ;
 
 class BinFlipChi2Base : public MINT::Minimisable {

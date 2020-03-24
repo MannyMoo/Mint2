@@ -51,6 +51,7 @@ FitParameter::FitParameter(const std::string& name
 			   , MinuitParameterSet* setPtr
 			   , NamedParameterBase::VERBOSITY vb
 			   , const char* fname
+			   , const std::vector<double>& blindingPars
 			   )
   : INamedParameter()
   , NamedParameterBase(name, fname, vb)
@@ -66,7 +67,7 @@ FitParameter::FitParameter(const std::string& name
   , _minInit(mi)
   , _maxInit(ma)
   , _scanParameters(name + "_Scan", 0, NamedParameterBase::QUIET)
-  , _blindingParameters(name + "_Blind", 0, NamedParameterBase::QUIET)
+  , _blindingParameters(name + "_Blind", blindingPars, 0, NamedParameterBase::QUIET)
 {
   _gotInitialised = true;
   setFromParsedFile();// so the above values are for initialisation but over-ruled by what's in the file

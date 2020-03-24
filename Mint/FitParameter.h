@@ -97,6 +97,7 @@ class FitParameter : public NamedParameterBase, public IMinuitParameter, virtual
 	       , MinuitParameterSet* pset=0
 	       , NamedParameterBase::VERBOSITY fb=VERBOSE
 	       , const char* fname = 0
+	       , const std::vector<double>& blindingPars = std::vector<double>()
 	       );
  // Above: so you can fully initialise the FitParameter in your code, 
   // but have that initialisation been overriden by a parameter file (default: stdin))

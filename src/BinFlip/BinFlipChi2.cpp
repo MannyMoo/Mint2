@@ -1,14 +1,30 @@
 #include <Mint/BinFlipChi2.h>
+#include <Mint/NamedParameterBase.h>
 
 using namespace std ;
 using MINT::FitParameter ;
+using MINT::NamedParameterBase ;
+
+vector<double> _blindingPars(unsigned long seed, double range, unsigned long offset){
+  if(seed == 0)
+    return vector<double>();
+  vector<double> pars(3, seed + offset);
+  pars[1] = -range;
+  pars[2] = range;
+  return pars;
+}
 
 BinFlipParSet::BinFlipParSet(double _zcp_Re, double zcp_Re_step, double _zcp_Im, double zcp_Im_step,
-			     double _deltaz_Re, double deltaz_Re_step, double _deltaz_Im, double deltaz_Im_step) :
-  zcp_Re("zcp_Re", FitParameter::FIT, _zcp_Re, zcp_Re_step, 0., 0., this),
-  zcp_Im("zcp_Im", FitParameter::FIT, _zcp_Im, zcp_Im_step, 0., 0., this),
-  deltaz_Re("deltaz_Re", FitParameter::FIT, _deltaz_Re, deltaz_Re_step, 0., 0., this),
-  deltaz_Im("deltaz_Im", FitParameter::FIT, _deltaz_Im, deltaz_Im_step, 0., 0., this)
+			     double _deltaz_Re, double deltaz_Re_step, double _deltaz_Im, double deltaz_Im_step,
+			     unsigned long blindingSeed, double zBlindRange, double deltazBlindRange) :
+  zcp_Re("zcp_Re", FitParameter::FIT, _zcp_Re, zcp_Re_step, 0., 0., this, 
+	 NamedParameterBase::VERBOSE, nullptr, _blindingPars(blindingSeed, zBlindRange, 0)),
+  zcp_Im("zcp_Im", FitParameter::FIT, _zcp_Im, zcp_Im_step, 0., 0., this, 
+	 NamedParameterBase::VERBOSE, nullptr, _blindingPars(blindingSeed, zBlindRange, 1)),
+  deltaz_Re("deltaz_Re", FitParameter::FIT, _deltaz_Re, deltaz_Re_step, 0., 0., this, 
+	    NamedParameterBase::VERBOSE, nullptr, _blindingPars(blindingSeed, deltazBlindRange, 2)),
+  deltaz_Im("deltaz_Im", FitParameter::FIT, _deltaz_Im, deltaz_Im_step, 0., 0., this, 
+	    NamedParameterBase::VERBOSE, nullptr, _blindingPars(blindingSeed, deltazBlindRange, 3))
 {
 }
 
@@ -27,10 +43,18 @@ void BinFlipParSet::fixZeroCPV() {
 }
 
 complex<double> BinFlipParSet::zcp() const {
-  return complex<double>(zcp_Re.getCurrentFitVal(), zcp_Im.getCurrentFitVal()) ;
+  return complex<double>(zcp_Re.blindedMean(), zcp_Im.blindedMean()) ;
 }
 
 complex<double> BinFlipParSet::deltaz() const {
+  return complex<double>(deltaz_Re.blindedMean(), deltaz_Im.blindedMean()) ;
+}
+
+complex<double> BinFlipParSet::unblindZcp() const {
+  return complex<double>(zcp_Re.getCurrentFitVal(), zcp_Im.getCurrentFitVal()) ;
+}
+
+complex<double> BinFlipParSet::unblindDeltaz() const {
   return complex<double>(deltaz_Re.getCurrentFitVal(), deltaz_Im.getCurrentFitVal()) ;
 }
 
@@ -46,13 +70,13 @@ pair<complex<double>, complex<double> > BinFlipParSet::fromXY(double x, double y
 BinFlipChi2Base::BinFlipChi2Base(BinFlipParSet* fitPars) :
   Minimisable(fitPars),
   m_fitPars(fitPars),
-  m_zcp(fitPars->zcp()),
-  m_dz(fitPars->deltaz())
+  m_zcp(fitPars->unblindZcp()),
+  m_dz(fitPars->unblindDeltaz())
 {}
 
 void BinFlipChi2Base::parametersChanged() {
-  m_zcp = m_fitPars->zcp() ;
-  m_dz = m_fitPars->deltaz() ;
+  m_zcp = m_fitPars->unblindZcp() ;
+  m_dz = m_fitPars->unblindDeltaz() ;
 }
 
 TH2D BinFlipChi2Base::scan2D(unsigned ip1, unsigned ip2, float nSigmaRange, unsigned nBins, bool zeroCentre,
