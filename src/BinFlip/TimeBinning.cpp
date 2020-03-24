@@ -2,6 +2,7 @@
 #include <Mint/NamedParameter.h>
 #include <fstream>
 #include <TFile.h>
+#include <stdexcept>
 
 using namespace std ;
 using MINT::NamedParameter ;
@@ -121,6 +122,22 @@ double TimeBinning::Bin::chiSquared(double R) const {
   if(denominator == 0.)
     return 0. ;
   return numerator/denominator ;
+}
+
+TimeBinning::Bin TimeBinning::Bin::operator+(TimeBinning::Bin other) const {
+  return other += *this;
+}
+
+TimeBinning::Bin& TimeBinning::Bin::operator+=(const TimeBinning::Bin& other) {
+  m_t += other.m_t;
+  m_t2 += other.m_t2;
+  m_sumw += other.m_sumw;
+  m_sumw2 += other.m_sumw2;
+  m_sumwplus += other.m_sumwplus;
+  m_sumw2plus += other.m_sumw2plus;
+  m_sumwminus += other.m_sumwminus;
+  m_sumw2minus += other.m_sumw2minus;
+  return *this;
 }
 
 TimeBinning::TimeBinning(const vector<double>& timeBins, HadronicParameters::BinningPtr phaseBinning, double lifetime) :
@@ -343,4 +360,45 @@ double TimeBinning::meanUnmixedTime(unsigned ibin) const {
 
 double TimeBinning::meanUnmixedTime2(unsigned ibin) const {
   return m_meant2.at(ibin) ;
+}
+
+/// Check that two TimeBinnings use the same binning scheme.
+bool TimeBinning::isConsistent(const TimeBinning& other) const {
+  return m_timeBins == other.m_timeBins && m_meant == other.m_meant && m_meant2 == other.m_meant2 \
+    && m_lifetime == other.m_lifetime && *m_phaseBinning == *other.m_phaseBinning;
+}
+
+TimeBinning TimeBinning::operator+(TimeBinning other) const {
+  return other += *this;
+}
+
+/*
+I feel like this should work, but it doesn't build, giving
+error: need ‘typename’ before ‘std::deque<T>::const_iterator’ because ‘std::deque<T>’ is a dependent scope
+
+template <typename T>
+std::deque<T>& operator+=(std::deque<T>& self, const std::deque<T>& other) {
+  if(self.size() != other.size())
+    throw std::invalid_argument("Attempt to add deques of different length!");
+  std::deque<T>::const_iterator iother = other.begin();
+  for(std::deque<T>::iterator iself = self.begin(); iself != self.end(); ++iself)
+    *iself += *iother++;
+  return self;
+}
+*/
+
+TimeBinning& TimeBinning::operator+=(const TimeBinning& other) {
+  if(!isConsistent(other))
+    throw std::invalid_argument("Attempt to combine incompatible TimeBinning instances!");
+  //m_bins += other.m_bins;
+  //m_binsBar += other.m_binsBar;
+  //m_binsInt += other.m_binsInt;
+  for(unsigned iTimeBin = 0; iTimeBin < nBinsTime(); ++iTimeBin){
+    m_binsInt.at(iTimeBin) += other.m_binsInt.at(iTimeBin);
+    for(unsigned iPhaseBin = 0; iPhaseBin < nBinsPhase(); ++iPhaseBin){
+      m_bins.at(iTimeBin).at(iPhaseBin) += other.m_bins.at(iTimeBin).at(iPhaseBin);
+      m_binsBar.at(iTimeBin).at(iPhaseBin) += other.m_binsBar.at(iTimeBin).at(iPhaseBin);
+    }
+  }
+  return *this;
 }

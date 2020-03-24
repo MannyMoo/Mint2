@@ -26,6 +26,8 @@ class TimeBinning {
     void Print(const std::string&, unsigned, std::ostream& os = std::cout) const ;
     static std::string getName(const std::string&, unsigned) ;
     double chiSquared(double) const ;
+    Bin operator+(Bin) const;
+    Bin& operator+=(const Bin&);
   private :
     double m_t ;
     double m_t2 ;
@@ -63,6 +65,9 @@ class TimeBinning {
   double meanUnmixedTime2(unsigned) const ;
   void setLifetime(double) ;
   double getLifetime() const ;
+  bool isConsistent(const TimeBinning&) const;
+  TimeBinning operator+(TimeBinning) const;
+  TimeBinning& operator+=(const TimeBinning&);
  private :
   std::vector<double> m_timeBins ;
   std::vector<double> m_meant ;
