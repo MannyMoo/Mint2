@@ -113,7 +113,7 @@ FitParameter::FitParameter(const std::string& name
 }
 
 bool FitParameter::setupBlinding(){
-    if(! _blindingParameters.gotInitialised()) return true;
+  if(! _blindingParameters.gotInitialised() || _blindingParameters.size() == 0) return true;
     int seed = (int) fabs(_blindingParameters.getVal(0));
     double min=-1, max=1;
     
