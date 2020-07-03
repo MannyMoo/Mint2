@@ -339,6 +339,7 @@ int NamedDecayTreeList::make3BodyList(){
   makeB02DDKList();
   makeBp2DDKList();
   makePiPiPi0List();
+  makeKKPi0List();
   return _trees.size();
 }
 
@@ -1045,6 +1046,56 @@ int NamedDecayTreeList::makePiPiPi0List() {
 
   return _trees.size() ;
 }
+
+int NamedDecayTreeList::makeKKPi0List(){
+  //D0 -> (K*(892)+ -> K+ pi0) K-
+  DecayTree dkKstKm(421);
+  dkKstKm.addDgtr(-321,323)->addDgtr(321,111);
+  add(dkKstKm);
+
+  //D0 -> (K*(1410)+ -> K+ pi0) K-
+  DecayTree dkKst_1410Km(421);
+  dkKst_1410Km.addDgtr(-321,100323)->addDgtr(321,111);
+  add(dkKst_1410Km);
+
+  //D0 -> (K+ pi0(S)) ->
+
+  //D0 -> (phi(1020) -> K+ K-) pi0
+  DecayTree dkPhiPi0(421);
+  dkPhiPi0.addDgtr(111,333)->add.Dgtr(321,-321);
+  add(dkPhiPi0);
+
+  //D0 -> (f0(980) -> K+ K-) pi0
+  DecayTree dkf0Pi0(421);
+  dkf0Pi0.addDgtr(111,9010221)->add.Dgtr(321,-321);
+  add(dkf0Pi0);
+
+  //D0 -> (a0(980)0 -> K+ K-) pi0
+  //Show the a0 contribution when it is included in place of the f0(980)?
+  DecayTree dka0Pi0(421);
+  dka0Pi0.addDgtr(111,9000111)->add.Dgtr(321,-321);
+  add(dka0Pi0);
+
+  //D0 -> (f2'(1525) -> K+ K-) pi0
+  DecayTree dkf2Pi0(421);
+  dkf2Pi0.addDgtr(111,335)->add.Dgtr(321,-321);
+  add(dkf2Pi0);
+
+  //D0 -> (K*(892)- -> K- pi0) K+
+  DecayTree dkKstKp(421);
+  dkKstKp.addDgtr(321,-323)->add.Dgtr(-321,111);
+  add(dkKstKp);
+
+  //D0 -> (K*(1410) -> K- pi0) K+
+  DecayTree dkKst_1410Kp(421);
+  dkKst_1410Kp.addDgtr(321,-100323)->add.Dgtr(-321,111);
+  add(dkKst_1410Kp);
+
+  //D0 -> (K- pi0(S)) ->
+
+  return _trees.size();
+}
+
 
 //======================== 4 body decays ========================
 int NamedDecayTreeList::makePsiKpipiList(){
