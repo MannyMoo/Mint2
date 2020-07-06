@@ -1058,7 +1058,11 @@ int NamedDecayTreeList::makeKKPi0List(){
   dkKst_1410Km.addDgtr(-321,100323)->addDgtr(321,111);
   add(dkKst_1410Km);
 
-  //D0 -> (K+ pi0(S)) ->
+  //D0 -> (K*(1430) -> K+ pi0(S)) K-, LASS model.
+  DecayTree dkKstLASS(421);
+  dkKstLASS.addDgtr(-321, 10321)->addDgtr(321, 111);
+  add(dkKstLASS);
+  add(AmpInitialiser(dkKstLASS, "Lass"));
 
   //D0 -> (phi(1020) -> K+ K-) pi0
   DecayTree dkPhiPi0(421);
