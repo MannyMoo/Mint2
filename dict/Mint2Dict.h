@@ -24,6 +24,8 @@
 #include <Mint/MinuitParameterSet.h>
 #include <Mint/FitParameter.h>
 #include <Mint/GaussianConstraintChi2.h>
+#include <Mint/FlexiFastAmplitudeIntegrator.h>
+#include <Mint/DalitzPdfSaveInteg.h>
 
 /*
 #include <Mint/DalitzBox.h>
@@ -55,7 +57,6 @@
 #include <Mint/RunningWidthCalculator.h>
 #include <Mint/Amplitude.h>
 #include <Mint/ParticleProperties.h>
-#include <Mint/FlexiFastAmplitudeIntegrator.h>
 #include <Mint/MappedDalitzBWArea.h>
 #include <Mint/DecayTreeItem.h>
 #include <Mint/DDTree.h>
@@ -121,7 +122,6 @@
 #include <Mint/MultiTopHat.h>
 #include <Mint/NamedDecayTreeList.h>
 #include <Mint/Neg2LLConstraint.h>
-#include <Mint/DalitzPdfSaveInteg.h>
 #include <Mint/FitParameter.h>
 #include <Mint/FitComplexCart.h>
 #include <Mint/Minimisable.h>

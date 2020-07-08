@@ -21,6 +21,8 @@
   <class name="MinuitParameterSet" />
   <class name="MINT::FitParameter" />
   <class name="GaussianConstraintChi2" />
+  <class name="FlexiFastAmplitudeIntegrator" />
+  <class name="DalitzPdfSaveInteg" />
   <!--
   <class name="AmpInitialiser" />
   <class name="AmpPair" />
@@ -61,7 +63,6 @@
   <class name="DalitzPdfBaseFlexiFastInteg" />
   <class name="DalitzPdfBaseMCInteg" />
   <class name="DalitzPdfNormChecker" />
-  <class name="DalitzPdfSaveInteg" />
   <class name="DalitzPhaseSpaceBox" />
   <class name="DalitzSet<THStack>" />
   <class name="DalitzSumPdf" />
@@ -84,7 +85,6 @@
   <class name="FitFractionList" />
   <class name="FlatFct" />
   <class name="Flatte" />
-  <class name="FlexiFastAmplitudeIntegrator" />
   <class name="FromFileGenerator" />
   <class name="GounarisSakurai" />
   <class name="Histo_BW" />
