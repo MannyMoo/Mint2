@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['resonancepropertiesfitref',['ResonancePropertiesFitRef',['../classResonanceProperties.html#af4f265f712e3bdb8b238901c2925c4d9',1,'ResonanceProperties']]],
-  ['roomultieffresmodel',['RooMultiEffResModel',['../classRooEffResModel.html#ae0c8260c11945d41fe121be88aed0659',1,'RooEffResModel']]],
-  ['roosplineproduct',['RooSplineProduct',['../classRooCubicSplineFun.html#a147b53e34752f8b0c99bca9c307f2a26',1,'RooCubicSplineFun']]]
+  ['operator_3c_3c',['operator&lt;&lt;',['../classHyperPoint.html#a8536104cd5eac1b31560ecf13fd312af',1,'HyperPoint']]],
+  ['operator_3e_3e',['operator&gt;&gt;',['../classMINT_1_1NamedParameterBase.html#aa05539050922b11a7f68024f41dfc290',1,'MINT::NamedParameterBase']]]
 ];

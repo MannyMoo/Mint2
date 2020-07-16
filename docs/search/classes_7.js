@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['hadronicparameters',['HadronicParameters',['../classHadronicParameters.html',1,'']]],
   ['histo_5fbw',['Histo_BW',['../classHisto__BW.html',1,'']]],
   ['histogrambase',['HistogramBase',['../classHistogramBase.html',1,'']]],
   ['hyperbinning',['HyperBinning',['../classHyperBinning.html',1,'']]],

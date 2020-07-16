@@ -1,7 +1,9 @@
 var searchData=
 [
   ['tgenphasespacewithrnd',['TGenPhaseSpaceWithRnd',['../classTGenPhaseSpaceWithRnd.html',1,'']]],
+  ['timebinning',['TimeBinning',['../classTimeBinning.html',1,'']]],
   ['timedependentgenerator',['TimeDependentGenerator',['../classTimeDependentGenerator.html',1,'']]],
+  ['timedependentgeneratorold',['TimeDependentGeneratorOld',['../classTimeDependentGeneratorOld.html',1,'']]],
   ['timepdf',['TimePdf',['../classTimePdf.html',1,'']]],
   ['timepdf_5fmod',['TimePdf_mod',['../classTimePdf__mod.html',1,'']]],
   ['timepdfintegrator',['TimePdfIntegrator',['../classTimePdfIntegrator.html',1,'']]],

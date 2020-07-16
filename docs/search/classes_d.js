@@ -10,6 +10,7 @@ var searchData=
   ['permutation',['Permutation',['../classPermutation.html',1,'']]],
   ['permutator',['Permutator',['../classPermutator.html',1,'']]],
   ['phase',['Phase',['../classMINT_1_1Phase.html',1,'MINT']]],
+  ['phasebinningbase',['PhaseBinningBase',['../classHadronicParameters_1_1PhaseBinningBase.html',1,'HadronicParameters']]],
   ['phasedifferencecalc',['PhaseDifferenceCalc',['../classPhaseDifferenceCalc.html',1,'']]],
   ['phasespaceintegral3body',['PhaseSpaceIntegral3body',['../classPhaseSpaceIntegral3body.html',1,'']]],
   ['phasespaceintegral4body',['PhaseSpaceIntegral4body',['../classPhaseSpaceIntegral4body.html',1,'']]],

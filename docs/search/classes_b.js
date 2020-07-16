@@ -16,6 +16,8 @@ var searchData=
   ['mintgen',['MintGen',['../classMINT_1_1MintGen.html',1,'MINT']]],
   ['minuitparameterset',['MinuitParameterSet',['../classMINT_1_1MinuitParameterSet.html',1,'MINT']]],
   ['model_5findependent',['Model_independent',['../classModel__independent.html',1,'']]],
+  ['modelbinning3body',['ModelBinning3Body',['../classHadronicParameters_1_1ModelBinning3Body.html',1,'HadronicParameters']]],
+  ['modelphasebinning',['ModelPhaseBinning',['../classHadronicParameters_1_1ModelPhaseBinning.html',1,'HadronicParameters']]],
   ['moreboxbyguessedheight',['moreBoxByGuessedHeight',['../classmoreBoxByGuessedHeight.html',1,'']]],
   ['morebyabsid_5fstillunique',['moreByAbsID_stillUnique',['../classmoreByAbsID__stillUnique.html',1,'']]],
   ['morebyid',['moreByID',['../classmoreByID.html',1,'']]],

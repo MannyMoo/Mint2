@@ -3,6 +3,8 @@ var searchData=
   ['sbw_2eh',['SBW.h',['../SBW_8h.html',1,'']]],
   ['signalgenerator_2ecpp',['SignalGenerator.cpp',['../SignalGenerator_8cpp.html',1,'']]],
   ['signalgenerator_2eh',['SignalGenerator.h',['../SignalGenerator_8h.html',1,'']]],
+  ['simulminimisable_2ecpp',['SimulMinimisable.cpp',['../SimulMinimisable_8cpp.html',1,'']]],
+  ['simulminimisable_2eh',['SimulMinimisable.h',['../SimulMinimisable_8h.html',1,'']]],
   ['singletophatshape_2ecpp',['singleTopHatShape.cpp',['../singleTopHatShape_8cpp.html',1,'']]],
   ['singletophatshape_2eh',['singleTopHatShape.h',['../singleTopHatShape_8h.html',1,'']]],
   ['spinfactor_2ecpp',['SpinFactor.cpp',['../SpinFactor_8cpp.html',1,'']]],

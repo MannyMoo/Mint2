@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tvectord',['TVectorD',['../RooCubicSplineKnot_8h.html#a901d7ac901e3fd3b94ba0aef558b4a0e',1,'RooCubicSplineKnot.h']]]
+  ['rangemap',['RangeMap',['../classRooEffResModel.html#ae445843e9087d46907c0eb527745ad25',1,'RooEffResModel']]]
 ];

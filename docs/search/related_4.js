@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['neg2ll',['Neg2LL',['../classMINT_1_1Neg2LLClass.html#a2c880dffed969fb5244e09e63d183a7a',1,'MINT::Neg2LLClass']]]
+  ['minimiser',['Minimiser',['../classMINT_1_1IMinuitParameter.html#adb063c57c84df6fcd27abd7db18b02d9',1,'MINT::IMinuitParameter']]],
+  ['minuitparameterset',['MinuitParameterSet',['../classMINT_1_1IMinuitParameter.html#a1f1b56cd4d59a7376b3e22d4b99f63b1',1,'MINT::IMinuitParameter']]]
 ];

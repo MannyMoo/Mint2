@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['standardendline',['StandardEndLine',['../classMessageSerivce.html#ad8036fea6bd11b0cc310ba0e214b9d06',1,'MessageSerivce']]]
+  ['namedvmap',['namedVMap',['../AllPossibleSij_8h.html#af0fc5225ab49a31d870bea8d25e1eb68',1,'AllPossibleSij.h']]]
 ];

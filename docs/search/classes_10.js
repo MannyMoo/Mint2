@@ -105,6 +105,7 @@ var searchData=
   ['sf_5fvtov0p1_5fv0top2p3',['SF_VtoV0P1_V0toP2P3',['../classSF__VtoV0P1__V0toP2P3.html',1,'']]],
   ['sf_5fvtov0p1_5fv0top2p3_5fbase',['SF_VtoV0P1_V0toP2P3_BASE',['../classSF__VtoV0P1__V0toP2P3__BASE.html',1,'']]],
   ['signalgenerator',['SignalGenerator',['../classSignalGenerator.html',1,'']]],
+  ['simulminimisable',['SimulMinimisable',['../classMINT_1_1SimulMinimisable.html',1,'MINT']]],
   ['singletophatshape',['singleTopHatShape',['../classsingleTopHatShape.html',1,'']]],
   ['smallerfitfractionbymagnitude',['smallerFitFractionByMagnitude',['../classFitFractionList_1_1smallerFitFractionByMagnitude.html',1,'FitFractionList']]],
   ['smallerfitfractionbyname',['smallerFitFractionByName',['../classFitFractionList_1_1smallerFitFractionByName.html',1,'FitFractionList']]],

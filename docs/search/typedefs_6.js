@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['idalitzeventlist',['IDalitzEventList',['../IDalitzEventList_8h.html#a2eefce781e0a38ba908675d48fff9cd7',1,'IDalitzEventList.h']]]
+  ['hypercuboidset',['HyperCuboidSet',['../HyperCuboidSet_8h.html#ad137b1d3e30fca72703999cccd254c34',1,'HyperCuboidSet.h']]]
 ];

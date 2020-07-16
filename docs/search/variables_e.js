@@ -5,6 +5,7 @@ var searchData=
   ['nanofarad',['nanofarad',['../CLHEPSystemOfUnits_8h.html#a56a602b129d9e14a025ae14979097cd9',1,'CLHEPSystemOfUnits.h']]],
   ['nanometer',['nanometer',['../CLHEPSystemOfUnits_8h.html#a01f39c7eda230ad26a4b5a0de29fcc7d',1,'CLHEPSystemOfUnits.h']]],
   ['nanosecond',['nanosecond',['../CLHEPSystemOfUnits_8h.html#ab1ad77ec7ae37ba36c2c7f8785440281',1,'CLHEPSystemOfUnits.h']]],
+  ['nbins',['nBins',['../classHadronicParameters_1_1PhaseBinningBase.html#ac89f699d804b721ed8bbc8ccfbf997e0',1,'HadronicParameters::PhaseBinningBase']]],
   ['neutron_5fmass_5fc2',['neutron_mass_c2',['../CLHEPPhysicalConstants_8h.html#a24b9f68b1c48a814e939956b2a766e9d',1,'CLHEPPhysicalConstants.h']]],
   ['newton',['newton',['../CLHEPSystemOfUnits_8h.html#a86cabed6b39944d7bada06028f98c864',1,'CLHEPSystemOfUnits.h']]],
   ['no_5freuse',['no_reuse',['../DalitzBox_8cpp.html#aded449c404848b4b005410d356685307',1,'DalitzBox.cpp']]],
