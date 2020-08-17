@@ -25,6 +25,8 @@ class TimeBinning {
     void add(double, bool, double weight = 1.) ;
     void Print(const std::string&, unsigned, std::ostream& os = std::cout) const ;
     static std::string getName(const std::string&, unsigned) ;
+    static void poissonErrors2(const double, double&, double&);
+    void errors2(double&, double&, double&, double&) const ;
     double chiSquared(double) const ;
     Bin operator+(Bin) const;
     Bin& operator+=(const Bin&);

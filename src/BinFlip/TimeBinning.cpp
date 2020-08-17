@@ -3,6 +3,7 @@
 #include <fstream>
 #include <TFile.h>
 #include <stdexcept>
+#include <RooHistError.h>
 
 using namespace std ;
 using MINT::NamedParameter ;
@@ -109,8 +110,30 @@ double TimeBinning::Bin::nMinusErr() const {
   return sqrt(m_sumw2minus) ;
 }
 
+/// Whether to use Poisson errors (weights are all 1).
 bool TimeBinning::Bin::usePoissonErrs() const {
   return m_sumw == m_sumw2 ;
+}
+
+/// Get the low and high Poisson errors squared on a count.
+void TimeBinning::Bin::poissonErrors2(const double n, double& err2low, double& err2high) {
+  RooHistError::instance().getPoissonInterval(n, err2low, err2high);
+  err2low = n - err2low;
+  err2high -= n;
+  err2low *= err2low;
+  err2high *= err2high;
+}
+
+/// Get the low and high errors squared on n. plus and n. minus.
+void TimeBinning::Bin::errors2(double& err2pluslow, double& err2plushigh,
+			       double& err2minuslow, double& err2minushigh) const {
+  if(!usePoissonErrs()){
+    err2pluslow = err2plushigh = m_sumw2plus;
+    err2minuslow = err2minushigh = m_sumw2minus;
+    return;
+  }
+  poissonErrors2(m_sumwplus, err2pluslow, err2plushigh);
+  poissonErrors2(m_sumwminus, err2minuslow, err2minushigh);
 }
 
 double TimeBinning::Bin::chiSquared(double R) const {
@@ -118,7 +141,18 @@ double TimeBinning::Bin::chiSquared(double R) const {
     return 0. ;
   double numerator = nMinus() - nPlus() * R ;
   numerator *= numerator ;
-  double denominator = m_sumw2minus + m_sumw2plus * R*R ;
+  double err2pluslow(0.), err2plushigh(0.), err2minuslow(0.), err2minushigh(0.);
+  errors2(err2pluslow, err2plushigh, err2minuslow, err2minushigh);
+
+  // There's probably a more correct way to do this, but this should do.
+  // It only matters in the case of Poisson errors, which should only occur
+  // in pure signal samples (toys or MC).
+  double denominator(0.);
+  if(nMinus() > nPlus() * R)
+    denominator = err2minuslow + err2plushigh * R*R ;
+  else
+    denominator = err2minushigh + err2pluslow * R*R ;
+    
   if(denominator == 0.)
     return 0. ;
   return numerator/denominator ;
