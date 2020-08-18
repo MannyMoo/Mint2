@@ -1,6 +1,12 @@
 '''A class to access parameters in a MINT config file.'''
 
-import os
+import os, Mint2
+from ROOT.MINT import NamedParameterBase
+from ROOT import DalitzEventPattern, FitAmpSum
+
+def set_default_config(config) :
+    '''Set the default MINT config file.'''
+    NamedParameterBase.setDefaultInputFile(config)
 
 def parse_line(line) :
     '''Parse a line from a config file, taking into account quotes.'''
@@ -48,6 +54,7 @@ class ConfigFile(dict) :
         fname = os.path.abspath(os.path.expandvars(fname))
         if not os.path.exists(fname) :
             raise OSError('ConfigFile.add_config_file: Could not find file "{0}"!'.format(fname))
+        set_default_config(fname)
 
         self.fnames.append(fname)
         with open(fname) as configFile :
@@ -80,3 +87,11 @@ class ConfigFile(dict) :
     def floats(self, name) :
         '''Get the parameter values as a list of floats.'''
         return map(float, self[name])
+
+    def event_pattern(self):
+        '''Get the event pattern.'''
+        return DalitzEventPattern(*map(int, self['Event Pattern']))
+
+    def get_FitAmpSum(self):
+        '''Get the FitAmpSum from the config.'''
+        return FitAmpSum(self.event_pattern())

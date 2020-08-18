@@ -1,8 +1,8 @@
 '''General utils for MINT.'''
 
 import os, subprocess
-from Mint2.ConfigFile import ConfigFile
-from ROOT import TVector3, DalitzEvent
+from Mint2.ConfigFile import ConfigFile, set_default_config
+from ROOT import TVector3, DalitzEvent, FlexiFastAmplitudeIntegrator, FitAmpSum, DalitzEventPattern
 import ROOT
 
 def run_job(exe, workingdir, configs = [], parameters = {}, stdout = 'stdout', stderr = 'stderr') :
@@ -180,3 +180,39 @@ def three_body_event(pattern, s13, s23) :
     momenta.push_back(TVector3(px3, py3, pz3))
 
     return DalitzEvent(pattern, momenta)
+
+def get_fit_fractions(fname, precision = 1e-2):
+    '''Get the fit fractions for each resonance from the model in the given file.'''
+    
+    set_default_config(fname)
+    config = ConfigFile(fname)
+    pattern = DalitzEventPattern(*map(int, config['Event Pattern']))
+    amps = FitAmpSum(pattern)
+    integ = FlexiFastAmplitudeIntegrator(pattern, amps)
+    integ.setPrecision(precision)
+    integ.doFractions()
+    return {frac.name() : frac.frac() for frac in integ.getFractions()}
+
+def get_amp_scales(fname, targetfracs, normchannel, fout = None, precision = 1e-2):
+    '''Get the scale factors for the amplitudes from the fit fractions, given the target fractions.
+    Optionally save updated config to a new file.'''
+    
+    fracs = get_fit_fractions(fname, precision)
+    scales = {normchannel : 1.}
+    for name, frac in fracs.items():
+        if name == normchannel:
+            continue
+        rexp = targetfracs[name]/targetfracs[normchannel]
+        robs = frac/fracs[normchannel]
+        scale = (rexp/robs)**.5
+        scales[name] = scale
+    if not fout:
+        return scales
+    config = ConfigFile(fname)
+    for name, scale in scales.items():
+        for suff in 'Re', 'Im':
+            val = float(config[name + '_' + suff][1])
+            val *= scale
+            config[name + '_' + suff][1] = str(val)
+    config.write_file(fout)
+    return scales
