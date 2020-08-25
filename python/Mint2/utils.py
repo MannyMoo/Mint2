@@ -2,8 +2,10 @@
 
 import os, subprocess
 from Mint2.ConfigFile import ConfigFile, set_default_config
-from ROOT import TVector3, DalitzEvent, FlexiFastAmplitudeIntegrator, FitAmpSum, DalitzEventPattern
+from ROOT import TVector3, DalitzEvent, FlexiFastAmplitudeIntegrator, FitAmpSum, DalitzEventPattern, \
+    DalitzEventList, DiskResidentEventList
 import ROOT
+from array import array
 
 def run_job(exe, workingdir, configs = [], parameters = {}, stdout = 'stdout', stderr = 'stderr') :
     '''Run a MINT executable with the given config files/parameters.'''
@@ -216,3 +218,86 @@ def get_amp_scales(fname, targetfracs, normchannel, fout = None, precision = 1e-
             config[name + '_' + suff][1] = str(val)
     config.write_file(fout)
     return scales
+
+def smear_momenta(evt, preslist):
+    ptot = ROOT.TLorentzVector(0, 0, 0, 0)
+    momenta = ROOT.vector('TLorentzVector')()
+    for i in xrange(1, evt.eventPattern().size()):
+        p = evt.p(i)
+        m = p.M()
+        ptot = p.P()
+        psmeared = preslist[i-1](ptot)
+        pscale = psmeared/ptot
+        psmeared = ROOT.TLorentzVector(p.Px()*pscale, p.Py()*pscale, p.Pz()*pscale, (m**2+psmeared**2)**.5)
+        ptot += psmeared
+        momenta.push_back(psmeared)
+    momenta.insert(momenta.begin(), ptot)
+    return DalitzEvent(evt.eventPattern(), momenta)
+
+class MomentumResolution(object):
+    '''Callable to generate momentum smearing values.'''
+    def __init__(self, c0 = 0.005, c1 = 0.01/100e3, seed = 0):
+        '''Resolution generated is (c0 + c1*p)*p. Defaults are for charged tracks.'''
+        self.c0 = c0
+        self.c1 = c1
+        self.rndm = ROOT.TRandom3(seed)
+
+    def resolution(self, p):
+        return (self.c0 + self.c1*p)*p        
+
+    def __call__(self, p):
+        return self.rndm.Gaus(0, self.resolution(p))
+
+def add_resolutions_and_efficiencies(fname, fout, plab = (lambda : 0.), timeeff = (lambda t : True), 
+                                     phasespaceeff = (lambda evt : True), timeres = (lambda t : 0.),
+                                     pres = (lambda p : 0.), pres0 = (lambda p : 0.)):
+    '''Add efficiencies and resolutions to an existing DalitzEventList.'''
+    fin = ROOT.TFile.Open(fout)
+    tdalitz = fin.Get('DalitzEventList')
+    
+    newlist = DiskResidentEventList(fout, 'recreate')
+    ttime = ROOT.TTree('TimeEventList')
+    t = array('f', [0])
+    tsmeared = array('f', [0])
+    tag = array('i', [0])
+    ttime.Branch('decaytime', 'decaytime/F', t)
+    ttime.Branch('smeareddecaytime', 'smeareddecaytime/F', tsmeared)
+    ttime.Branch('tag', 'tag/I', tag)
+    
+    tdalitz.GetEntry(0)
+    evt = DalitzEvent()
+    evt.fromNtuple(tdalitz)
+
+    pattern = DalitzEventPattern(evt.eventPattern())
+    preslist = []
+    for i in xrange(1, pattern.size()):
+        if pattern[i].charge() == '0':
+            preslist.append(pres0)
+        else:
+            preslist.append(pres)
+
+    rand = ROOT.TRandom3()
+    for i in xrange(tdalitz.GetEntries()):
+        tdalitz.GetEntry(i)
+        evt = DalitzEvent()
+        evt.fromNtuple(tdalitz)
+        t[0] = tdalitz.decaytime
+        tag[0] = tdalitz.tag
+        if not (rand.Rndm() < timeeff(t[0]) and rand.Rndm() < phasespaceeff(evt)):
+            continue
+        tsmeared[0] = timeres(t[0])
+        p = ROOT.TVector3(0., 0., plab())
+        evt.setMother3Momentum(p)
+        smearedevt = smear_momenta(evt, preslist)
+        ismear = 1
+        while not smearedevt.kinematicallyAllowed() and ismear < 1000:
+            smearedevt = smear_momenta(evt, preslist)
+            ismear += 1
+        if ismear == 1000:
+            continue
+        newlist.Add(evt)
+        ttime.Fill()
+    ROOT.gDirectory.Get('DalitzEventList').AddFriend(ttime)
+    ttime.Write()
+    newlist.save()
+    newlist.Close()
