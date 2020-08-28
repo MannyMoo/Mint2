@@ -24,6 +24,7 @@
 #include <Mint/MinuitParameterSet.h>
 #include <Mint/FitParameter.h>
 #include <Mint/GaussianConstraintChi2.h>
+#include <Mint/XYConstraintChi2.h>
 #include <Mint/FlexiFastAmplitudeIntegrator.h>
 #include <Mint/DalitzPdfSaveInteg.h>
 

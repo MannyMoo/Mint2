@@ -21,6 +21,7 @@
   <class name="MinuitParameterSet" />
   <class name="MINT::FitParameter" />
   <class name="GaussianConstraintChi2" />
+  <class name="XYConstraintChi2" />
   <class name="FlexiFastAmplitudeIntegrator" />
   <class name="DalitzPdfSaveInteg" />
   <!--

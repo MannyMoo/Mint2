@@ -1,7 +1,7 @@
 #include <Mint/GaussianConstraintChi2.h>
-#include <TVectorT.h>
 
 using MINT::MinuitParameterSet ;
+
 GaussianConstraintChi2::GaussianConstraintChi2(MinuitParameterSet* parset) :
   Minimisable(parset),
   m_covMatrixInv(parset->size())
@@ -16,11 +16,16 @@ GaussianConstraintChi2::GaussianConstraintChi2(MinuitParameterSet* parset) :
   m_covMatrixInv.Invert() ;
 }
 
-double GaussianConstraintChi2::getVal() {
+TVectorT<double> GaussianConstraintChi2::getDiffs() {
   TVectorT<double> diffs(getParSet()->size()) ;
   for(unsigned i = 0 ; i < getParSet()->size() ; ++i){
     auto* par = getParSet()->getParPtr(i) ;
     diffs[i] = par->mean() - par->meanInit() ;
   }
+  return diffs;
+}
+
+double GaussianConstraintChi2::getVal() {
+  TVectorT<double> diffs = getDiffs();
   return m_covMatrixInv.Similarity(diffs) ;
 }
