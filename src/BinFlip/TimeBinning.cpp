@@ -233,7 +233,6 @@ TimeBinning::TimeBinning(const string& name, const string& fname) :
   m_meant = vector<double>(nBinsTime(), 0.) ;
   m_meant2 = vector<double>(nBinsTime(), 0.) ;
   NamedParameter<double> lifetime(name + "_lifetime", fname.c_str()) ;
-  setLifetime(lifetime) ;
   m_phaseBinning = HadronicParameters::getPhaseBinning(name, fname) ;
   string nameint = name + "_int" ;
   string nameplus = name + "_plus" ;
@@ -257,6 +256,7 @@ TimeBinning::TimeBinning(const string& name, const string& fname) :
     if(efficiencySpline)
       m_efficiencySpline = MINT::counted_ptr<TSpline3>(efficiencySpline);
   }
+  setLifetime(lifetime) ;
 }
       
 void TimeBinning::Print(const string& name, ostream& os) const {
@@ -426,9 +426,10 @@ double TimeBinning::unmixedTimeMoment(unsigned ibin, double lifetime, int moment
   double norm = 0.;
   unsigned npoints = 1000;
   double deltat = (tmax-tmin)/npoints;
-  double t = deltat/2;
+  double t = tmin + deltat/2;
   for(unsigned i = 0; i < npoints; ++i){
-    double val = exp(-t/lifetime) * m_efficiencySpline->Eval(t);
+    double val = exp(-t/lifetime) * m_efficiencySpline->Eval(min(max(m_efficiencySpline->GetXmin(), t),
+								 m_efficiencySpline->GetXmax()));
     timeMoment += val * pow(t, moment);
     norm += val;
     t += deltat;
