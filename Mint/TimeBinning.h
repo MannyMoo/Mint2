@@ -6,8 +6,10 @@
 #include <ostream>
 #include <Mint/HadronicParameters.h>
 #include <TH1F.h>
+#include <Mint/counted_ptr.h>
 
 class TFile ;
+class TSpline3;
 
 class TimeBinning {
  public :
@@ -43,7 +45,8 @@ class TimeBinning {
   typedef std::deque<Bin> Bins ;
   typedef std::deque<Bins> Bins2D ;
 
-  TimeBinning(const std::vector<double>&, HadronicParameters::BinningPtr, double) ;
+  TimeBinning(const std::vector<double>&, HadronicParameters::BinningPtr, double,
+	      const TH1* hefficiency = nullptr) ;
   TimeBinning(const std::string&, const std::string& fname = "") ;
   virtual ~TimeBinning() {};
   void add(IDalitzEvent&, int, double, double weight = 1.) ;
@@ -83,6 +86,8 @@ class TimeBinning {
   Bin& _integratedBin(unsigned) ;
   Bin& _bin(unsigned, unsigned)  ;
   Bin& _binBar(unsigned, unsigned)  ;
+
+  MINT::counted_ptr<TSpline3> m_efficiencySpline;
 
   virtual double unmixedTimeMoment(unsigned, double, int) const ;
 } ;

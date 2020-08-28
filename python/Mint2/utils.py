@@ -220,18 +220,18 @@ def get_amp_scales(fname, targetfracs, normchannel, fout = None, precision = 1e-
     return scales
 
 def smear_momenta(evt, preslist):
-    ptot = ROOT.TLorentzVector(0, 0, 0, 0)
+    pmother = ROOT.TLorentzVector(0, 0, 0, 0)
     momenta = ROOT.vector('TLorentzVector')()
     for i in xrange(1, evt.eventPattern().size()):
         p = evt.p(i)
         m = p.M()
         ptot = p.P()
-        psmeared = preslist[i-1](ptot)
+        psmeared = ptot + preslist[i-1](ptot)
         pscale = psmeared/ptot
         psmeared = ROOT.TLorentzVector(p.Px()*pscale, p.Py()*pscale, p.Pz()*pscale, (m**2+psmeared**2)**.5)
-        ptot += psmeared
+        pmother += psmeared
         momenta.push_back(psmeared)
-    momenta.insert(momenta.begin(), ptot)
+    momenta.insert(momenta.begin(), pmother)
     return DalitzEvent(evt.eventPattern(), momenta)
 
 class MomentumResolution(object):
@@ -252,17 +252,17 @@ def add_resolutions_and_efficiencies(fname, fout, plab = (lambda : 0.), timeeff 
                                      phasespaceeff = (lambda evt : True), timeres = (lambda t : 0.),
                                      pres = (lambda p : 0.), pres0 = (lambda p : 0.)):
     '''Add efficiencies and resolutions to an existing DalitzEventList.'''
-    fin = ROOT.TFile.Open(fout)
+    fin = ROOT.TFile.Open(fname)
     tdalitz = fin.Get('DalitzEventList')
     
     newlist = DiskResidentEventList(fout, 'recreate')
-    ttime = ROOT.TTree('TimeEventList')
+    ttime = ROOT.TTree('TimeEventList', 'TimeEventList')
     t = array('f', [0])
     tsmeared = array('f', [0])
     tag = array('i', [0])
-    ttime.Branch('decaytime', 'decaytime/F', t)
-    ttime.Branch('smeareddecaytime', 'smeareddecaytime/F', tsmeared)
-    ttime.Branch('tag', 'tag/I', tag)
+    ttime.Branch('decaytime', t, 'decaytime/F')
+    ttime.Branch('smeareddecaytime', tsmeared, 'smeareddecaytime/F')
+    ttime.Branch('tag', tag, 'tag/I')
     
     tdalitz.GetEntry(0)
     evt = DalitzEvent()
@@ -276,28 +276,37 @@ def add_resolutions_and_efficiencies(fname, fout, plab = (lambda : 0.), timeeff 
         else:
             preslist.append(pres)
 
-    rand = ROOT.TRandom3()
     for i in xrange(tdalitz.GetEntries()):
         tdalitz.GetEntry(i)
         evt = DalitzEvent()
         evt.fromNtuple(tdalitz)
         t[0] = tdalitz.decaytime
         tag[0] = tdalitz.tag
-        if not (rand.Rndm() < timeeff(t[0]) and rand.Rndm() < phasespaceeff(evt)):
+        if not (ROOT.gRandom.Rndm() < timeeff(t[0]) and ROOT.gRandom.Rndm() < phasespaceeff(evt)):
             continue
-        tsmeared[0] = timeres(t[0])
+        tsmeared[0] = t[0] + timeres(t[0])
         p = ROOT.TVector3(0., 0., plab())
-        evt.setMother3Momentum(p)
+        evt.setMothers3Momentum(p)
         smearedevt = smear_momenta(evt, preslist)
-        ismear = 1
-        while not smearedevt.kinematicallyAllowed() and ismear < 1000:
-            smearedevt = smear_momenta(evt, preslist)
-            ismear += 1
-        if ismear == 1000:
-            continue
-        newlist.Add(evt)
+        # ismear = 1
+        # while not smearedevt.kinematicallyAllowed() and ismear < 1000:
+        #     smearedevt = smear_momenta(evt, preslist)
+        #     ismear += 1
+        # if ismear == 1000:
+        #     continue
+        newlist.Add(smearedevt)
         ttime.Fill()
+    print 'selected', ttime.GetEntries(), '/', tdalitz.GetEntries()
     ROOT.gDirectory.Get('DalitzEventList').AddFriend(ttime)
     ttime.Write()
     newlist.save()
     newlist.Close()
+    fin.Close()
+
+def event_loop(tree):
+    '''Loop over events in the tree and build DalitzEvents from them.'''
+    for i in xrange(tree.GetEntries()):
+        tree.GetEntry(i)
+        evt = DalitzEvent()
+        evt.fromTree(tree)
+        yield evt

@@ -4,9 +4,37 @@
 #include <TFile.h>
 #include <stdexcept>
 #include <RooHistError.h>
+#include <TSpline.h>
+#include <sys/stat.h>
 
 using namespace std ;
 using MINT::NamedParameter ;
+
+bool fileExists( const string fileName ) {
+
+  struct stat stFileInfo;
+  bool blnReturn;
+  int intStat;
+
+  // Attempt to get the file attributes
+  intStat = stat(fileName.c_str(),&stFileInfo);
+  if(intStat == 0) {
+    // We were able to get the file attributes
+    // so the file obviously exists.
+    blnReturn = true;
+  } else {
+    //cout << "ConfigurationFileList: WARNING: File \"" << fileName << "\" cannot be accessed!" << endl ;
+    // We were not able to get the file attributes.
+    // This may mean that we don't have permission to
+    // access the folder which contains this file. If you
+    // need to do that level of checking, lookup the
+    // return values of stat which will give you
+    // more details on why stat failed.
+    blnReturn = false;
+  }
+
+  return(blnReturn);
+}
 
 TimeBinning::Bin::Bin() :
   m_t(0.),
@@ -174,7 +202,8 @@ TimeBinning::Bin& TimeBinning::Bin::operator+=(const TimeBinning::Bin& other) {
   return *this;
 }
 
-TimeBinning::TimeBinning(const vector<double>& timeBins, HadronicParameters::BinningPtr phaseBinning, double lifetime) :
+TimeBinning::TimeBinning(const vector<double>& timeBins, HadronicParameters::BinningPtr phaseBinning,
+			 double lifetime, const TH1* hefficiency) :
   m_timeBins(timeBins),
   m_meant(nBinsTime(), 0.),
   m_meant2(nBinsTime(), 0.),
@@ -182,7 +211,8 @@ TimeBinning::TimeBinning(const vector<double>& timeBins, HadronicParameters::Bin
   m_bins(nBinsTime(), Bins(phaseBinning->nBins)),
   m_binsBar(nBinsTime(), Bins(phaseBinning->nBins)),
   m_binsInt(nBinsTime()),
-  m_phaseBinning(phaseBinning)
+  m_phaseBinning(phaseBinning),
+  m_efficiencySpline(hefficiency != nullptr ? new TSpline3(hefficiency) : 0)
 {
   setLifetime(lifetime) ;
 }
@@ -195,7 +225,8 @@ TimeBinning::TimeBinning(const string& name, const string& fname) :
   m_bins(),
   m_binsBar(),
   m_binsInt(),
-  m_phaseBinning(0)
+  m_phaseBinning(0),
+  m_efficiencySpline(nullptr)
 {
   NamedParameter<double> timeBins(name + "_timeBins", fname.c_str()) ;
   m_timeBins = timeBins.getVector() ;
@@ -217,6 +248,14 @@ TimeBinning::TimeBinning(const string& name, const string& fname) :
       m_bins.back().push_back(Bin(nameplusbin, iPhaseBin, fname)) ;
       m_binsBar.back().push_back(Bin(nameminusbin, iPhaseBin, fname)) ;
     }
+  }
+  string rootfile = fname + ".root";
+  if(fileExists(rootfile)){
+    TFile feff(rootfile.c_str());
+    string splinename = name + "_efficiencySpline";
+    TSpline3* efficiencySpline = (TSpline3*)feff.Get(splinename.c_str());
+    if(efficiencySpline)
+      m_efficiencySpline = MINT::counted_ptr<TSpline3>(efficiencySpline);
   }
 }
       
@@ -247,6 +286,13 @@ void TimeBinning::write(const string& name, const string& fname) const {
   outfile.open(fname) ;
   Print(name, outfile) ;
   outfile.close() ;
+  if(m_efficiencySpline.get() == nullptr)
+    return;
+  string rootfile = fname + ".root";
+  TFile feff(rootfile.c_str(), "recreate");
+  string savename = name + "_efficiencySpline";
+  m_efficiencySpline->Write(savename.c_str());
+  feff.Close();
 }
 
 HadronicParameters::BinningPtr TimeBinning::phaseBinning() const {
@@ -368,12 +414,27 @@ void TimeBinning::savePlotsVsTime(const string& name, TFile& outputfile) const {
 double TimeBinning::unmixedTimeMoment(unsigned ibin, double lifetime, int moment) const {
   const double& tmin = m_timeBins.at(ibin) ;
   const double& tmax = m_timeBins.at(ibin+1) ;
-  double norm = exp(-tmin/lifetime) - exp(-tmax/lifetime) ;
-  double timeMoment = (pow(tmin, moment) * exp(-tmin/lifetime) - pow(tmax, moment) * exp(-tmax/lifetime))/norm ;
-  if(moment == 0)
+  if(m_efficiencySpline.get() == 0){
+    double norm = exp(-tmin/lifetime) - exp(-tmax/lifetime) ;
+    double timeMoment = (pow(tmin, moment) * exp(-tmin/lifetime) - pow(tmax, moment) * exp(-tmax/lifetime))/norm ;
+    if(moment == 0)
+      return timeMoment ;
+    timeMoment += moment * lifetime * unmixedTimeMoment(ibin, lifetime, moment-1) ;
     return timeMoment ;
-  timeMoment += moment * lifetime * unmixedTimeMoment(ibin, lifetime, moment-1) ;
-  return timeMoment ;
+  }
+  double timeMoment = 0.;
+  double norm = 0.;
+  unsigned npoints = 1000;
+  double deltat = (tmax-tmin)/npoints;
+  double t = deltat/2;
+  for(unsigned i = 0; i < npoints; ++i){
+    double val = exp(-t/lifetime) * m_efficiencySpline->Eval(t);
+    timeMoment += val * pow(t, moment);
+    norm += val;
+    t += deltat;
+  }
+  timeMoment /= norm;
+  return timeMoment;
 }
 
 void TimeBinning::setLifetime(double lifetime) {
