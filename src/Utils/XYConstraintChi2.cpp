@@ -10,8 +10,8 @@ using std::complex;
 
 MinuitParameterSet* XYConstraintChi2::makeParSet(BinFlipParSet* binflipParSet){
   MinuitParameterSet* parset = new MinuitParameterSet();
-  parset->add(new FitParameter("x", 0, 0.004, 0.001));
-  parset->add(new FitParameter("y", 0, 0.006, 0.001));
+  parset->add(new FitParameter("x", 0, 0.4, 0.001));
+  parset->add(new FitParameter("y", 0, 0.6, 0.001));
   parset->add(new FitParameter("qoverpm1", 0, 0., 0.001));
   parset->add(new FitParameter("phi", 0, 0., 0.001));
   parset->setCovMatrix(binflipParSet->covMatrix());
@@ -30,7 +30,8 @@ XYConstraintChi2::~XYConstraintChi2(){
 }
 
 TVectorT<double> XYConstraintChi2::getDiffs() {
-  auto vals = BinFlipParSet::fromXY(getParSet()->getParPtr(0)->mean(), getParSet()->getParPtr(1)->mean(),
+  auto vals = BinFlipParSet::fromXY(getParSet()->getParPtr(0)->mean()/100.,
+				    getParSet()->getParPtr(1)->mean()/100.,
 				    getParSet()->getParPtr(2)->mean()+1,
 				    getParSet()->getParPtr(3)->mean()*TMath::Pi()/180.);
   complex<double> zdiff = vals.first - m_binflipParSet->zcp();
