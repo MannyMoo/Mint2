@@ -327,6 +327,32 @@ double TimeBinning::chiSquared(unsigned iTimeBin, unsigned iPhaseBin, double Rpl
     + binBar(iTimeBin, iPhaseBin).chiSquared(Rminus) ;
 }
 
+pair<double, double> TimeBinning::asymmetry(unsigned iTimeBin, unsigned iPhaseBin) const {
+  const Bin& _bin = bin(iTimeBin, iPhaseBin);
+  const Bin& _binBar = binBar(iTimeBin, iPhaseBin);
+  double n = _bin.nPlus() + _bin.nMinus();
+  double nbar = _binBar.nPlus() + _binBar.nMinus();
+  double denominator = n + nbar;
+  if(0. == denominator)
+    return pair<double, double>(0., 0.);
+  double asym = (n-nbar)/denominator;
+  // Note: this doesn't use Poisson errors.
+  double err2n = _bin.nPlusErr()*_bin.nPlusErr() + _bin.nMinusErr()*_bin.nMinusErr();
+  double err2nbar = _binBar.nPlusErr()*_binBar.nPlusErr() + _binBar.nMinusErr()*_binBar.nMinusErr();
+  double dadn = 2 * nbar/denominator/denominator;
+  double dadnbar = 2 * n/denominator/denominator;
+  double err2a = err2n * dadn*dadn + err2nbar * dadnbar*dadnbar;
+  return pair((n - nbar)/denominator, sqrt(err2a));
+}
+  
+double TimeBinning::asymmetryChiSquared(unsigned iTimeBin, unsigned iPhaseBin, double expectedA) const {
+  const auto asym = asymmetry(iTimeBin, iPhaseBin);
+  if(0. == asym.second)
+    return 0.;
+  double chi = (asym.first - expectedA)/asym.second;
+  return chi*chi;
+}
+
 unsigned TimeBinning::nBinsTime() const {
   return m_timeBins.size()-1 ;
 }

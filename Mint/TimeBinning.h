@@ -62,6 +62,11 @@ class TimeBinning {
   const Bin& bin(unsigned, unsigned) const ;
   const Bin& binBar(unsigned, unsigned) const ;
 
+  /// Get the asymmetry of D0 to D0bar in the given time & phase bin.
+  std::pair<double, double> asymmetry(unsigned, unsigned) const;
+  /// Get the chi-squared of the asymmetry in the given time & phase bin, given the expected value
+  double asymmetryChiSquared(unsigned, unsigned, double) const;
+
   std::deque<TH1F> plotVsTime(const std::string&, unsigned, int) const ;
   std::deque<std::deque<TH1F> > plotsVsTime(const std::string&) const ;
   void savePlotsVsTime(const std::string&, TFile&) const ;

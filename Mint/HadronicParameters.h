@@ -98,6 +98,15 @@ class HadronicParameters {
     /// The normalisation scale for the CP-conjugate decay.
     double m_normBar ;
 
+    /// Get zcp + dz
+    std::complex<double> sumz(const std::complex<double>& z, const std::complex<double>& dz) const;
+    /// Get zcp - dz
+    std::complex<double> sumzBar(const std::complex<double>& z, const std::complex<double>& dz) const;
+
+    /// Get the number of suppressed & favoured decays at the given time for the given mixing parameters.
+    std::pair<double, double> _N(double, double, double, const std::complex<double>&, const std::complex<double>&,
+				 double, double, const std::complex<double>&, const std::complex<double>&) const ;
+
     /// Get the expected ratio of events (suppressed)/(favoured) at the given time for the given mixing parameters.
     double _R(double, double, double, const std::complex<double>&, const std::complex<double>&,
 	      double, double, const std::complex<double>&, const std::complex<double>&) const ;
@@ -146,7 +155,19 @@ class HadronicParameters {
     /** Get expected ratio of events (suppressed)/(favoured) at the given time for the given mixing parameters,
 	for the CP-conjugate decay.*/
     double Rbar(double, double, double, const std::complex<double>&, const std::complex<double>&) const ;
+
+    /// Get the expected number of suppressed & favoured decays at the given time for the given mixing parameters.
+    std::pair<double, double> N(double, double, double, const std::complex<double>&,
+				const std::complex<double>&) const ;
+    /** Get the expected number of suppressed & favoured decays at the given time for the given mixing parameters
+	for the CP-conjugate decay.*/
+    std::pair<double, double> Nbar(double, double, double, const std::complex<double>&,
+				   const std::complex<double>&) const ;
     
+    /** Get the asymmetry in the number of decays between D0 & D0bar at the given time for the given mixing
+	parameters.*/
+    double asymmetry(double, double, double, const std::complex<double>&,
+		     const std::complex<double>&) const ;
   } ;
 
   /// A set of bins.

@@ -304,22 +304,28 @@ string HadronicParameters::Bin::getName(const string& name, unsigned number) {
   return sstr.str() ;
 }
 
+complex<double> HadronicParameters::Bin::sumz(const complex<double>& zcp, const complex<double>& dz) const {
+  return zcp + dz;
+}
+
+complex<double> HadronicParameters::Bin::sumzBar(const complex<double>& zcp, const complex<double>& dz) const {
+  return zcp - dz;
+}
+
 double HadronicParameters::Bin::R(double t, double t2, double lifetime,
 				  const complex<double>& zcp, const complex<double>& dz) const {
-  complex<double> sumz(zcp + dz) ;
-  return _R(t, t2, lifetime, zcp, dz, Fplus(), Fminus(), Xplus(), sumz) ;
+  return _R(t, t2, lifetime, zcp, dz, Fplus(), Fminus(), Xplus(), sumz(zcp, dz)) ;
 }
 
 double HadronicParameters::Bin::Rbar(double t, double t2, double lifetime,
 				     const complex<double>& zcp, const complex<double>& dz) const {
-  complex<double> sumz(zcp - dz) ;
-  return _R(t, t2, lifetime, zcp, dz, Fbarplus(), Fbarminus(), Xbarplus(), sumz) ;
+  return _R(t, t2, lifetime, zcp, dz, Fbarplus(), Fbarminus(), Xbarplus(), sumzBar(zcp, dz)) ;
 }
 
-double HadronicParameters::Bin::_R(double t, double t2, double lifetime,
-				   const complex<double>& zcp, const complex<double>& dz,
-				   double _Fplus, double _Fminus,
-				   const complex<double>& X, const complex<double>& sumz) const {
+pair<double, double> HadronicParameters::Bin::_N(double t, double t2, double lifetime,
+						 const complex<double>& zcp, const complex<double>& dz,
+						 double _Fplus, double _Fminus,
+						 const complex<double>& X, const complex<double>& sumz) const {
   t /= lifetime ;
   t2 /= lifetime * lifetime ;
   double r = _Fminus/_Fplus ;
@@ -329,7 +335,34 @@ double HadronicParameters::Bin::_R(double t, double t2, double lifetime,
   double numerator = r * term1 + term2 + term3 ;
   double term4 = sqrt(r) * t * (X * sumz).real() ;
   double denominator = term1 + r * term2 + term4 ;
-  return numerator/denominator ;
+  return pair(numerator, denominator) ;
+}
+
+double HadronicParameters::Bin::_R(double t, double t2, double lifetime,
+				   const complex<double>& zcp, const complex<double>& dz,
+				   double _Fplus, double _Fminus,
+				   const complex<double>& X, const complex<double>& _sumz) const {
+  auto n = _N(t, t2, lifetime, zcp, dz, _Fplus, _Fminus, X, _sumz);
+  return n.first/n.second;
+}
+
+pair<double, double> HadronicParameters::Bin::N(double t, double t2, double lifetime,
+						const complex<double>& zcp, const complex<double>& dz) const {
+  return _N(t, t2, lifetime, zcp, dz, Fplus(), Fminus(), Xplus(), sumz(zcp, dz)) ;
+}
+
+pair<double, double> HadronicParameters::Bin::Nbar(double t, double t2, double lifetime,
+						   const complex<double>& zcp, const complex<double>& dz) const {
+  return _N(t, t2, lifetime, zcp, dz, Fbarplus(), Fbarminus(), Xbarplus(), sumzBar(zcp, dz)) ;
+}
+
+double HadronicParameters::Bin::asymmetry(double t, double t2, double lifetime,
+					  const complex<double>& zcp, const complex<double>& dz) const {
+  auto _n = N(t, t2, lifetime, zcp, dz);
+  auto _nbar = Nbar(t, t2, lifetime, zcp, dz);
+  double n = _n.first + _n.second;
+  double nbar = _nbar.first + _nbar.second;
+  return (n - nbar)/(n + nbar);
 }
 
 HadronicParameters::HadronicParameters(const HadronicParameters::Bins& bins, 
