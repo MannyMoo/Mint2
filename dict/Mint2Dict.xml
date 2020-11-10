@@ -16,6 +16,7 @@
   <class name="TimeBinning" />
   <class name="BinFlipParSet" />
   <class name="BinFlipChi2" />
+  <class name="AsymmetryChi2" />
   <class name="BinFlipChi2Simul" />
   <class name="SimulMinimisable" />
   <class name="MinuitParameterSet" />

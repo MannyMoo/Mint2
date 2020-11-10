@@ -67,9 +67,9 @@ class TimeBinning {
   /// Get the chi-squared of the asymmetry in the given time & phase bin, given the expected value
   double asymmetryChiSquared(unsigned, unsigned, double) const;
 
-  std::deque<TH1F> plotVsTime(const std::string&, unsigned, int) const ;
-  std::deque<std::deque<TH1F> > plotsVsTime(const std::string&) const ;
-  void savePlotsVsTime(const std::string&, TFile&) const ;
+  std::deque<TH1F> plotVsTime(const std::string&, unsigned, int, const std::string& unit = "ps") const ;
+  std::deque<std::deque<TH1F> > plotsVsTime(const std::string&, const std::string& unit = "ps") const ;
+  void savePlotsVsTime(const std::string&, TFile&, const std::string& unit = "ps") const ;
 
   double meanUnmixedTime(unsigned) const ;
   double meanUnmixedTime2(unsigned) const ;

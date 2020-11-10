@@ -170,18 +170,22 @@ void BinFlipChi2::checkPhaseBinning() const {
     throw invalid_argument("The phase binning of the hadronic parameters and binned data don't match!") ;
 }
 
+double BinFlipChi2::binChiSquared(unsigned iTimeBin, unsigned iPhaseBin) const {
+  // Needs the unmixed time.
+  double Rplus = m_hadronicPars.bin(iPhaseBin).R(m_timeBinning.meanUnmixedTime(iTimeBin),
+						 m_timeBinning.meanUnmixedTime2(iTimeBin),
+						 m_timeBinning.getLifetime(), m_zcp, m_dz) ;
+  double Rminus = m_hadronicPars.bin(iPhaseBin).Rbar(m_timeBinning.meanUnmixedTime(iTimeBin),
+						     m_timeBinning.meanUnmixedTime2(iTimeBin),
+						     m_timeBinning.getLifetime(), m_zcp, m_dz) ;
+  return m_timeBinning.chiSquared(iTimeBin, iPhaseBin, Rplus, Rminus) ;
+}
+
 double BinFlipChi2::getVal() {
   double chi2 = 0. ;
   for(unsigned iTimeBin = 0 ; iTimeBin < m_timeBinning.nBinsTime() ; ++iTimeBin){
     for(unsigned iPhaseBin = 1 ; iPhaseBin < m_timeBinning.nBinsPhase() + 1; ++iPhaseBin){
-      // Needs the unmixed time.
-      double Rplus = m_hadronicPars.bin(iPhaseBin).R(m_timeBinning.meanUnmixedTime(iTimeBin),
-						     m_timeBinning.meanUnmixedTime2(iTimeBin),
-						     m_timeBinning.getLifetime(), m_zcp, m_dz) ;
-      double Rminus = m_hadronicPars.bin(iPhaseBin).Rbar(m_timeBinning.meanUnmixedTime(iTimeBin),
-							 m_timeBinning.meanUnmixedTime2(iTimeBin),
-							 m_timeBinning.getLifetime(), m_zcp, m_dz) ;
-      chi2 += m_timeBinning.chiSquared(iTimeBin, iPhaseBin, Rplus, Rminus) ;
+      chi2 += binChiSquared(iTimeBin, iPhaseBin);
     }
   }
   return chi2 ;
@@ -190,32 +194,41 @@ double BinFlipChi2::getVal() {
 deque<deque<TH1F> > BinFlipChi2::plotsVsTime(const string& name) const {
   deque<deque<TH1F> > histos = m_timeBinning.plotsVsTime(name) ;
   unsigned iPhaseBin = 1 ;
+  // Loop over histos for each phase bin.
   for(auto& binhistos : histos) {
-    TH1F& rminus = binhistos[2] ;
-    TH1F& rplus = binhistos[5] ;
-    TH1F& rdiff = binhistos[6] ;
-    TH1F rminusfit = TH1F(rminus) ;
-    rminusfit.SetName((string(rminus.GetName()) + "_fit").c_str()) ;
-    TH1F rplusfit = TH1F(rplus) ;
-    rplusfit.SetName((string(rplus.GetName()) + "_fit").c_str()) ;
-    TH1F rdifffit = TH1F(rdiff) ;
-    rdifffit.SetName((string(rdiff.GetName()) + "_fit").c_str()) ;
+    // Histos are Nbar+, Nbar-, Rbar, N+, N-, R, R-Rbar, ACP.
+    TH1F& hrminus = binhistos[2] ;
+    TH1F& hrplus = binhistos[5] ;
+    TH1F& hrdiff = binhistos[6] ;
+    TH1F& hacp = binhistos[7] ;
+    TH1F rminusfit = TH1F(hrminus) ;
+    rminusfit.SetName((string(hrminus.GetName()) + "_fit").c_str()) ;
+    TH1F rplusfit = TH1F(hrplus) ;
+    rplusfit.SetName((string(hrplus.GetName()) + "_fit").c_str()) ;
+    TH1F rdifffit = TH1F(hrdiff) ;
+    rdifffit.SetName((string(hrdiff.GetName()) + "_fit").c_str()) ;
+    TH1F acpfit = TH1F(hacp);
+    acpfit.SetName((string(hacp.GetName()) + "_fit").c_str());
     for(unsigned iTimeBin = 0 ; iTimeBin < m_timeBinning.nBinsTime() ; ++iTimeBin){
       double t = m_timeBinning.meanUnmixedTime(iTimeBin) ;
       double t2 = m_timeBinning.meanUnmixedTime2(iTimeBin) ;
       double rplus = m_hadronicPars.bin(iPhaseBin).R(t, t2, m_timeBinning.getLifetime(), m_zcp, m_dz) ;
       double rminus = m_hadronicPars.bin(iPhaseBin).Rbar(t, t2, m_timeBinning.getLifetime(), m_zcp, m_dz) ;
       double rdiff = rplus-rminus ;
+      double acp = m_hadronicPars.bin(iPhaseBin).asymmetry(t, t2, m_timeBinning.getLifetime(), m_zcp, m_dz);
       rminusfit.SetBinContent(iTimeBin+1, rminus) ;
       rminusfit.SetBinError(iTimeBin+1, 0.) ;
       rplusfit.SetBinContent(iTimeBin+1, rplus) ;
       rplusfit.SetBinError(iTimeBin+1, 0.) ;
       rdifffit.SetBinContent(iTimeBin+1, rdiff) ;
       rdifffit.SetBinError(iTimeBin+1, 0.) ;
+      acpfit.SetBinContent(iTimeBin+1, acp);
+      acpfit.SetBinError(iTimeBin+1, 0.);
     }
     binhistos.push_back(rminusfit) ;
     binhistos.push_back(rplusfit) ;
     binhistos.push_back(rdifffit) ;
+    binhistos.push_back(acpfit);
     ++iPhaseBin ;
   }
   return histos ;
@@ -229,8 +242,25 @@ void BinFlipChi2::savePlotsVsTime(const string& name, TFile& outputfile) const {
       histo.Write() ;
 }
 
+AsymmetryChi2::AsymmetryChi2(BinFlipParSet* fitPars, const HadronicParameters& hadronicPars,
+			     const TimeBinning& timeBins) :
+  BinFlipChi2(fitPars, hadronicPars, timeBins)
+{}
 
-BinFlipChi2Simul::BinFlipChi2Simul(BinFlipChi2* flip1, BinFlipChi2* flip2) :
+AsymmetryChi2::AsymmetryChi2(BinFlipParSet* fitPars,
+			     const string& hadronicParsName, const string& timeBinsName,
+			     const string& fname) :
+  BinFlipChi2(fitPars, hadronicParsName, timeBinsName, fname)
+{}
+
+double AsymmetryChi2::binChiSquared(unsigned iTimeBin, unsigned iPhaseBin) const {
+  double expectedA = m_hadronicPars.bin(iPhaseBin).asymmetry(m_timeBinning.meanUnmixedTime(iTimeBin),
+							     m_timeBinning.meanUnmixedTime2(iTimeBin),
+							     m_timeBinning.getLifetime(), m_zcp, m_dz);
+  return m_timeBinning.asymmetryChiSquared(iTimeBin, iPhaseBin, expectedA);
+}
+
+BinFlipChi2Simul::BinFlipChi2Simul(BinFlipChi2Base* flip1, BinFlipChi2Base* flip2) :
   BinFlipChi2Base((BinFlipParSet*)flip1->getParSet()),
   m_flippers(1, flip1)
 {

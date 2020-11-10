@@ -335,7 +335,6 @@ pair<double, double> TimeBinning::asymmetry(unsigned iTimeBin, unsigned iPhaseBi
   double denominator = n + nbar;
   if(0. == denominator)
     return pair<double, double>(0., 0.);
-  double asym = (n-nbar)/denominator;
   // Note: this doesn't use Poisson errors.
   double err2n = _bin.nPlusErr()*_bin.nPlusErr() + _bin.nMinusErr()*_bin.nMinusErr();
   double err2nbar = _binBar.nPlusErr()*_binBar.nPlusErr() + _binBar.nMinusErr()*_binBar.nMinusErr();
@@ -385,14 +384,26 @@ TimeBinning::Bin& TimeBinning::_binBar(unsigned iTimeBin, unsigned iPhaseBin) {
   return m_binsBar.at(iTimeBin).at(iPhaseBin-1) ;
 }
 
-deque<TH1F> TimeBinning::plotVsTime(const string& _name, unsigned phaseBin, int tag) const {
+deque<TH1F> TimeBinning::plotVsTime(const string& _name, unsigned phaseBin, int tag, const string& unit) const {
   ostringstream stag ;
   stag << tag ;
   string name = Bin::getName(_name + "_" + stag.str() + "_phase", phaseBin) ;
   
   TH1F hplus((name + "nPlus").c_str(), "", nBinsTime(), &m_timeBins[0]) ;
-  TH1F hminus((name + "nMinus").c_str(), "", nBinsTime(), &m_timeBins[0]) ;
-  TH1F hr((name + "ratio").c_str(), "", nBinsTime(), &m_timeBins[0]) ;
+  hplus.SetXTitle(("Decay time [" + unit + "]").c_str());
+  string n("N");
+  if(tag < 0)
+    n = "#bar{N}";
+  hplus.SetYTitle((n + "^{+}").c_str());
+  TH1F hminus(hplus);
+  hminus.SetName((name + "nMinus").c_str());
+  hminus.SetYTitle((n + "^{-}").c_str());
+  TH1F hr(hplus);
+  hr.SetName((name + "ratio").c_str());
+  if(tag < 0)
+    hr.SetYTitle("#bar{R}");
+  else
+    hr.SetYTitle("R");
   for(unsigned i = 1 ; i < nBinsTime()+1 ; ++i) {
     const Bin& pbin = tag > 0 ? bin(i-1, phaseBin) : binBar(i-1, phaseBin) ;
     hplus.SetBinContent(i, pbin.nPlus()) ;
@@ -411,27 +422,41 @@ deque<TH1F> TimeBinning::plotVsTime(const string& _name, unsigned phaseBin, int 
   return histos ;
 }
 
-deque<deque<TH1F> > TimeBinning::plotsVsTime(const string& name) const {
+deque<deque<TH1F> > TimeBinning::plotsVsTime(const string& name, const string& unit) const {
   deque<deque<TH1F> > histos ;
   for(unsigned iphase = 1 ; iphase < m_phaseBinning->nBins + 1 ; ++iphase){
     histos.push_back(deque<TH1F>()) ;
     deque<TH1F>& binhistos = histos.back() ;
     for(int tag = -1 ; tag < 2 ; tag += 2){
-      deque<TH1F> taghistos = plotVsTime(name, iphase, tag) ;
+      // add nplus, nminus, & r vs time for the given tag.
+      deque<TH1F> taghistos = plotVsTime(name, iphase, tag, unit) ;
       binhistos.insert(binhistos.end(), taghistos.begin(), taghistos.end()) ;
     }
+    // Get the difference in r vs time between tags.
     TH1F rdiff(binhistos.back()) ;
     string rdiffname(Bin::getName(name + "_phase", iphase) + "ratiodiff") ;
     rdiff.SetName(rdiffname.c_str()) ;
     rdiff.Add(&binhistos[2], -1.) ;
+    rdiff.SetYTitle("R - #bar{R}");
     binhistos.push_back(rdiff) ;
+    // Get the asymmetry vs time.
+    TH1F hasym(rdiff);
+    string hasymname(Bin::getName(name + "_phase", iphase) + "asymmetry");
+    hasym.SetName(hasymname.c_str());
+    hasym.SetYTitle("A_{CP}");
+    for(unsigned itime = 0; itime < nBinsTime(); ++itime){
+      auto asym = asymmetry(itime, iphase);
+      hasym.SetBinContent(itime+1, asym.first);
+      hasym.SetBinError(itime+1, asym.second);
+    }
+    binhistos.push_back(hasym);
   }
   return histos ;
 }
 
-void TimeBinning::savePlotsVsTime(const string& name, TFile& outputfile) const {
+void TimeBinning::savePlotsVsTime(const string& name, TFile& outputfile, const string& unit) const {
   outputfile.cd() ;
-  deque<deque<TH1F> > histos = plotsVsTime(name) ;
+  deque<deque<TH1F> > histos = plotsVsTime(name, unit) ;
   for(auto& binhistos : histos)
     for(auto& histo : binhistos)
       histo.Write() ;
