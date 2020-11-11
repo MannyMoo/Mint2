@@ -25,7 +25,10 @@ class BinFlipParSet : public MINT::MinuitParameterSet {
   MINT::FitParameter zcp_Im ;
   MINT::FitParameter deltaz_Re ;
   MINT::FitParameter deltaz_Im ;
+
   void fixZeroCPV() ;
+  void floatOnlyDeltaY();
+
   std::complex<double> zcp() const ;
   std::complex<double> deltaz() const ;
   static std::pair<std::complex<double>, std::complex<double> > fromXY(double, double, double, double) ;

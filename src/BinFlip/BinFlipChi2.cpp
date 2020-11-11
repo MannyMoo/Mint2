@@ -42,6 +42,12 @@ void BinFlipParSet::fixZeroCPV() {
   deltaz_Im.fixAndHide() ;
 }
 
+void BinFlipParSet::floatOnlyDeltaY() {
+  zcp_Re.fixAndHide();
+  zcp_Im.fixAndHide();
+  deltaz_Im.fixAndHide();
+}
+
 complex<double> BinFlipParSet::zcp() const {
   return complex<double>(zcp_Re.blindedMean(), zcp_Im.blindedMean()) ;
 }
