@@ -14,7 +14,7 @@
 // also available as:
 // arXiv:0803.4451[hep-ex], SLAC-PUB-13189, BABAR-PUB-08/005 
 // (and of course originally developed by Flatte,
-// S. M. Flatt´e, Phys. Lett. B63, 224 (1976))
+// S. M. Flatte, Phys. Lett. B63, 224 (1976))
 
 class Flatte : public BW_BW, virtual public ILineshape{
  protected:
