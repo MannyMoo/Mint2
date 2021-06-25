@@ -51,7 +51,7 @@ int calculateHadronicParameters(const string& config = string()) {
   cout << "Finished calculating. Took " << (endTime - startTime) << " s, " 
        << float(endTime - startTime)/Nevents << " s/event." << endl ;
 
-  pars.normalise() ;
+  pars.finaliseSum() ;
 
   NamedParameter<string> parsName("parsName", string("hadronicPars"), (char*)0) ;
   cout << "Calculated parameters:" << endl ;
