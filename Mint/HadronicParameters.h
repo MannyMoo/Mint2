@@ -4,6 +4,7 @@
 #include <Mint/DalitzEvent.h>
 #include <Mint/counted_ptr.h>
 #include <Mint/FitAmpSum.h>
+#include <Mint/FitParameter.h>
 #include <complex>
 #include <deque>
 #include <utility>
@@ -16,7 +17,8 @@ class TRandom3 ;
 class HadronicParameters {
  public :
   typedef MINT::counted_ptr<FitAmpSum> ModelPtr ;
-
+  typedef MINT::counted_ptr<MINT::FitParameter> FitParPtr;
+  
   /// Info on the bin of an Event - output of IPhaseBin::binInfo. Caches as much as possible for efficiency.
   class EventBinInfo {
   public :
@@ -78,25 +80,27 @@ class HadronicParameters {
   class Bin {
   private :
     /// Magnitude sq. in the favoured region.
-    double m_Fplus ;
+    FitParPtr m_Fplus(nullptr) ;
     /// Magnitude sq. in the suppressed region.
-    double m_Fminus ;
+    FitParPtr m_Fminus(nullptr) ;
     /// Cross term.
-    std::complex<double> m_X ;
+    FitParPtr m_C(nullptr);
+    FitParPtr m_S(nullptr);
     /// Magnitude sq. in the favoured region, for the CP-conjugate decay.
-    double m_Fbarplus ;
+    FitParPtr m_Fbarplus(nullptr) ;
     /// Magnitude sq. in the suppressed region, for the CP-conjugate decay.
-    double m_Fbarminus ;
+    FitParPtr m_Fbarminus(nullptr) ;
     /// Cross term, for the CP-conjugate decay.
-    std::complex<double> m_Xbar ;
+    FitParPtr m_Cbar(nullptr);
+    FitParPtr m_Sbar(nullptr);
     /// Sum of weights.
-    double m_sumw ;
+    double m_sumw = 1. ;
     /// Sum of weights sq.
-    double m_sumw2 ;
+    double m_sumw2 = 1.;
     /// The normalisation scale. - Are there potentially issues with having different normalisation for D0 and D0bar?
-    double m_norm ;
+    double m_norm = 1.;
     /// The normalisation scale for the CP-conjugate decay.
-    double m_normBar ;
+    double m_normBar = 1.;
 
     /// Get zcp + dz
     std::complex<double> sumz(const std::complex<double>& z, const std::complex<double>& dz) const;
