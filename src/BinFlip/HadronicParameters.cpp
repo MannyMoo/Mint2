@@ -147,20 +147,17 @@ HadronicParameters::BinningPtr HadronicParameters::ModelBinning3Body::fromConfig
 HadronicParameters::Bin::Bin(double _Fplus, double _Fminus, const complex<double>& X,
 			     double _Fbarplus, double _Fbarminus, const complex<double>& Xbar,
 			     double norm, double normBar, double sumw, double sumw2) :
-  m_Fplus(_Fplus * sumw * norm),
-  m_Fminus(_Fminus * sumw * norm),
+  m_Fplus(_Fplus),
+  m_Fminus(_Fminus),
   m_X(X),
-  m_Fbarplus(_Fbarplus * sumw * normBar),
-  m_Fbarminus(_Fbarminus * sumw * normBar),
+  m_Fbarplus(_Fbarplus),
+  m_Fbarminus(_Fbarminus),
   m_Xbar(Xbar),
   m_sumw(sumw),
   m_sumw2(sumw2),
   m_norm(norm),
   m_normBar(normBar)
-{
-  m_X *= sqrt(Fplus() * Fminus()) * sumw * norm ;
-  m_Xbar *= sqrt(Fbarplus() * Fbarminus()) * sumw * normBar ;
-}
+{}
 
 HadronicParameters::Bin::Bin() :
   m_Fplus(0.),
@@ -208,13 +205,13 @@ HadronicParameters::Bin::Bin(const string& _name, unsigned number, const string&
   m_sumw = sumw ;
   m_sumw2 = sumw2 ;
 
-  m_Fplus = _Fplus * m_sumw * m_norm ;
-  m_Fminus = _Fminus * m_sumw * m_norm ;
-  m_X = complex<double>(Xplus_Re, Xplus_Im) * sqrt(Fplus() * Fminus()) * m_sumw * m_norm ;
+  m_Fplus = _Fplus ;
+  m_Fminus = _Fminus ;
+  m_X = complex<double>(Xplus_Re, Xplus_Im) ;
 
   m_Fbarplus = _Fbarplus * m_sumw * m_normBar ;
   m_Fbarminus = _Fbarminus * m_sumw * m_normBar ;
-  m_Xbar = complex<double>(Xbarplus_Re, Xbarplus_Im) * sqrt(Fbarplus() * Fbarminus()) * m_sumw * m_normBar ;
+  m_Xbar = complex<double>(Xbarplus_Re, Xbarplus_Im) ;
 }
 
 
@@ -231,16 +228,30 @@ void HadronicParameters::Bin::add(const HadronicParameters::EventBinInfo& evtPlu
   m_sumw2 += weight*weight ;
 }
 
+void HadronicParameters::Bin::finaliseSum() {
+  m_X /= sqrt(m_Fplus*m_Fbarminus);
+  m_Xbar /= sqrt(m_Fbarplus*m_Fminus);
+  m_Fplus /= m_sumw;
+  m_Fminus /= m_sumw;
+  m_Fbarplus /= m_sumw;
+  m_Fbarminus /= m_sumw;
+}
+
+void HadronicParameters::Bin::normalise(double _norm, double _normBar) {
+  setNorm(_norm);
+  setNormBar(_norm);
+}
+
 double HadronicParameters::Bin::Fplus() const {
-  return m_Fplus / m_sumw / m_norm ;
+  return m_Fplus;
 }
 
 double HadronicParameters::Bin::Fminus() const {
-  return m_Fminus / m_sumw / m_norm ;
+  return m_Fminus;
 }
 
 complex<double> HadronicParameters::Bin::Xplus() const {
-  return m_X / m_sumw / sqrt(Fplus() * Fbarminus()) / m_norm ;
+  return m_X;
 }
 
 complex<double> HadronicParameters::Bin::Xminus() const {
@@ -248,15 +259,15 @@ complex<double> HadronicParameters::Bin::Xminus() const {
 }
 
 double HadronicParameters::Bin::Fbarplus() const {
-  return m_Fbarplus / m_sumw / m_normBar ;
+  return m_Fbarplus;
 }
 
 double HadronicParameters::Bin::Fbarminus() const {
-  return m_Fbarminus / m_sumw / m_normBar ;
+  return m_Fbarminus;
 }
 
 complex<double> HadronicParameters::Bin::Xbarplus() const {
-  return m_Xbar / m_sumw / sqrt(Fbarplus() * Fminus()) / m_normBar ;
+  return m_Xbar;
 }
 
 complex<double> HadronicParameters::Bin::Xbarminus() const {
@@ -268,7 +279,11 @@ double HadronicParameters::Bin::getNorm() const {
 }
 
 void HadronicParameters::Bin::setNorm(double norm) {
+  m_Fplus *= m_norm;
+  m_Fminus *= m_norm;
   m_norm = norm ;
+  m_Fplus /= norm;
+  m_Fminus /= norm;
 }
 
 double HadronicParameters::Bin::getNormBar() const {
@@ -276,7 +291,11 @@ double HadronicParameters::Bin::getNormBar() const {
 }
 
 void HadronicParameters::Bin::setNormBar(double norm) {
+  m_Fbarplus *= m_normBar;
+  m_Fbarminus *= m_normBar;
   m_normBar = norm ;
+  m_Fbarplus /= norm;
+  m_Fbarminus /= norm;
 }
 
 void HadronicParameters::Bin::Print(const string& _name, unsigned number, ostream& os) const {
@@ -422,6 +441,12 @@ pair<double, double> HadronicParameters::integral() const {
     normBar += bin.Fbarplus() + bin.Fbarminus() ;
   }
   return pair<double, double>(norm, normBar) ;
+}
+
+void HadronicParameters::finaliseSum() {
+  for(auto& bin : m_bins)
+    bin.finaliseSum();
+  normalise();
 }
 
 pair<double, double> HadronicParameters::normalise(double _norm, double _normBar) {

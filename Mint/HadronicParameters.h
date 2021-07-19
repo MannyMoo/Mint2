@@ -149,6 +149,10 @@ class HadronicParameters {
     double getNormBar() const ;
     /// Set the normalisation, for the CP-conjugate decay.
     void setNormBar(double) ;
+    /// Set the normalisation for both the decay and CP-conjugate decay.
+    void normalise(double norm = 1., double normBar = 1);
+    /// Call when the sum over MC events is finished when calculating pars
+    void finaliseSum();
     /// Print the parameters.
     void Print(const std::string& name, unsigned, std::ostream& os=std::cout) const ;
     /// Get the name string.
@@ -206,6 +210,8 @@ class HadronicParameters {
   /// Get the integral over phase space.
   std::pair<double, double> integral() const ;
 
+  /// Call when the sum to generate hadronic pars from MC is finished
+  void finaliseSum();
   /// Normalise the parameters.
   std::pair<double, double> normalise(double norm = 1., double normBar = 1.) ;
   /// Print the parameters.
