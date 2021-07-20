@@ -79,24 +79,26 @@ class HadronicParameters {
   /// Hadronic parameters in a bin of phase space.
   class Bin {
   private :
+    /// Name of the bin
+    std::string m_name;
     /// Magnitude sq. in the favoured region.
-    FitParPtr m_Fplus(nullptr) ;
+    FitParPtr m_Fplus = nullptr ;
     /// Magnitude sq. in the suppressed region.
-    FitParPtr m_Fminus(nullptr) ;
+    FitParPtr m_Fminus = nullptr ;
     /// Cross term.
-    FitParPtr m_C(nullptr);
-    FitParPtr m_S(nullptr);
+    FitParPtr m_C = nullptr;
+    FitParPtr m_S = nullptr;
     /// Magnitude sq. in the favoured region, for the CP-conjugate decay.
-    FitParPtr m_Fbarplus(nullptr) ;
+    FitParPtr m_Fbarplus = nullptr ;
     /// Magnitude sq. in the suppressed region, for the CP-conjugate decay.
-    FitParPtr m_Fbarminus(nullptr) ;
+    FitParPtr m_Fbarminus = nullptr ;
     /// Cross term, for the CP-conjugate decay.
-    FitParPtr m_Cbar(nullptr);
-    FitParPtr m_Sbar(nullptr);
+    FitParPtr m_Cbar = nullptr;
+    FitParPtr m_Sbar = nullptr;
     /// Sum of weights.
-    double m_sumw = 1. ;
+    double m_sumw = 0. ;
     /// Sum of weights sq.
-    double m_sumw2 = 1.;
+    double m_sumw2 = 0.;
     /// The normalisation scale. - Are there potentially issues with having different normalisation for D0 and D0bar?
     double m_norm = 1.;
     /// The normalisation scale for the CP-conjugate decay.
@@ -114,15 +116,26 @@ class HadronicParameters {
     /// Get the expected ratio of events (suppressed)/(favoured) at the given time for the given mixing parameters.
     double _R(double, double, double, const std::complex<double>&, const std::complex<double>&,
 	      double, double, const std::complex<double>&, const std::complex<double>&) const ;
+
+    /// Initialise a fit parameter from an input file
+    void initFitPar(FitParPtr&, FitParPtr, const std::string& fname,
+		    const std::string& parName, const std::string& altParName = "");
+    
   public :
     /// Initialise from predetermined parameters.
-    Bin(double, double, const std::complex<double>&, double, double, const std::complex<double>&,
+    Bin(const std::string&, unsigned, double, double, const std::complex<double>&,
+	double, double, const std::complex<double>&,
 	double norm = 1., double normbar = 1., double sumw = 1., double sumw2 = 1.) ;
     /// Initialise an empty bin.
-    Bin() ;
+    Bin(const std::string&, unsigned) ;
     /// Initialise from a config file.
-    Bin(const std::string&, unsigned, const std::string& fname = "") ;
+    Bin(const std::string&, unsigned, const std::string& fname) ;
 
+    /// Set Abar == A
+    void setNoCPV();
+    /// Check if CPV is allowed
+    bool allowsCPV() const;
+    
     /// Add a DalitzEvent and its conjugate.
     void add(const EventBinInfo&, const EventBinInfo&, double weight = 1.) ;
     /// Get the magnitude sq in the favoured region.
@@ -184,9 +197,9 @@ class HadronicParameters {
   typedef MINT::counted_ptr<PhaseBinningBase> BinningPtr ;
 
   /// Initialise from a predetermined set of bins.
-  HadronicParameters(const Bins&, BinningPtr) ;
+  //HadronicParameters(const Bins&, BinningPtr) ;
   /// Initialise from a binning scheme.
-  HadronicParameters(BinningPtr) ;
+  HadronicParameters(const std::string&, BinningPtr) ;
   /// Initialise from a config file.
   HadronicParameters(const std::string&, const std::string& fname = "") ;
 
@@ -215,14 +228,15 @@ class HadronicParameters {
   /// Normalise the parameters.
   std::pair<double, double> normalise(double norm = 1., double normBar = 1.) ;
   /// Print the parameters.
-  void Print(const std::string&, std::ostream& os = std::cout) const ;
+  void Print(std::ostream& os = std::cout) const ;
   /// Write to a file.
-  void write(const std::string&, const std::string&) const ;
+  void write(const std::string&) const ;
 
   /// Get the PhaseBinning type.
   static BinningPtr getPhaseBinning(const std::string&, const std::string& fname = "") ;
 
  private :
+  std::string m_name;
   Bins m_bins ;
   BinningPtr m_phaseBinning ;
 } ;

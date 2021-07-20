@@ -5,6 +5,8 @@
 
 using namespace std ;
 using MINT::NamedParameter ;
+using MINT::FitParameter;
+using MINT::NamedParameterBase;
 
 int HadronicParameters::EventBinInfo::binSign() const {
   return binNumber > 0 ? 1 : -1 ;
@@ -144,114 +146,158 @@ HadronicParameters::BinningPtr HadronicParameters::ModelBinning3Body::fromConfig
 }
   
 
-HadronicParameters::Bin::Bin(double _Fplus, double _Fminus, const complex<double>& X,
+HadronicParameters::Bin::Bin(const string& name, unsigned ibin,
+			     double _Fplus, double _Fminus, const complex<double>& X,
 			     double _Fbarplus, double _Fbarminus, const complex<double>& Xbar,
 			     double norm, double normBar, double sumw, double sumw2) :
-  m_Fplus(_Fplus),
-  m_Fminus(_Fminus),
-  m_X(X),
-  m_Fbarplus(_Fbarplus),
-  m_Fbarminus(_Fbarminus),
-  m_Xbar(Xbar),
+  m_name(getName(name, ibin)),
+  m_Fplus(new FitParameter(m_name + "_Fplus", FitParameter::HIDE, _Fplus, 0.)),
+  m_Fminus(new FitParameter(m_name + "_Fminus", FitParameter::HIDE, _Fminus, 0.)),
+  m_C(new FitParameter(m_name + "_C", FitParameter::HIDE, X.real(), 0.)),
+  m_S(new FitParameter(m_name + "_S", FitParameter::HIDE, X.imag(), 0.)),
+  m_Fbarplus(new FitParameter(m_name + "_Fbarplus", FitParameter::HIDE, _Fbarplus, 0.)),
+  m_Fbarminus(new FitParameter(m_name + "_Fbarminus", FitParameter::HIDE, _Fbarminus, 0.)),
+  m_Cbar(new FitParameter(m_name + "_Cbar", FitParameter::HIDE, Xbar.real(), 0.)),
+  m_Sbar(new FitParameter(m_name + "_Sbar", FitParameter::HIDE, Xbar.real(), 0.)),
   m_sumw(sumw),
   m_sumw2(sumw2),
   m_norm(norm),
   m_normBar(normBar)
 {}
 
-HadronicParameters::Bin::Bin() :
-  m_Fplus(0.),
-  m_Fminus(0.),
-  m_X(0., 0.),
-  m_Fbarplus(0.),
-  m_Fbarminus(0.),
-  m_Xbar(0., 0.),
+HadronicParameters::Bin::Bin(const string& name, unsigned ibin) :
+  m_name(getName(name, ibin)),
+  m_Fplus(new FitParameter(m_name + "_Fplus", FitParameter::HIDE, 0., 0.)),
+  m_Fminus(new FitParameter(m_name + "_Fminus", FitParameter::HIDE, 0., 0.)),
+  m_C(new FitParameter(m_name + "_C", FitParameter::HIDE, 0., 0.)),
+  m_S(new FitParameter(m_name + "_S", FitParameter::HIDE, 0., 0.)),
+  m_Fbarplus(new FitParameter(m_name + "_Fbarplus", FitParameter::HIDE, 0., 0.)),
+  m_Fbarminus(new FitParameter(m_name + "_Fbarminus", FitParameter::HIDE, 0., 0.)),
+  m_Cbar(new FitParameter(m_name + "_Cbar", FitParameter::HIDE, 0., 0.)),
+  m_Sbar(new FitParameter(m_name + "_Sbar", FitParameter::HIDE, 0., 0.)),
   m_sumw(0.),
   m_sumw2(0.),
   m_norm(1.),
   m_normBar(1.)
 {}
 
+void HadronicParameters::Bin::initFitPar(FitParPtr& fitPar, FitParPtr alt,
+					 const string& fname,
+					 const string& parName, const string& altParName) {
+  NamedParameter<double> par(m_name + parName, fname.c_str(),
+			     NamedParameterBase::QUIET);
+  if(!par.gotInitialised() && altParName.size() > 0)
+    par = NamedParameter<double>(m_name + altParName, fname.c_str(),
+				 NamedParameterBase::QUIET);
+  if(!par.gotInitialised()){
+    fitPar = alt;
+    return;
+  }
+  int fow = FitParameter::HIDE;
+  double mean(0.), step(0.), mi(0.), ma(0.);
+  if(par.size() == 1)
+    mean = par.getVal(0);
+  else{
+    fow = int(par.getVal(0));
+    mean = par.getVal(1);
+    step = par.getVal(2);
+  }
+  if(par.size() == 5){
+    mi = par.getVal(3);
+    ma = par.getVal(4);
+  }
+  fitPar = FitParPtr(new FitParameter(m_name + parName, fow, mean, step, mi, ma));
+}
+  
 HadronicParameters::Bin::Bin(const string& _name, unsigned number, const string& fname) :
-  m_Fplus(0.),
-  m_Fminus(0.),
-  m_X(0., 0.),
-  m_Fbarplus(0.),
-  m_Fbarminus(0.),
-  m_Xbar(0., 0.),
-  m_sumw(0.),
-  m_sumw2(0.),
-  m_norm(0.),
-  m_normBar(1.)
+  m_name(getName(_name, number))
 {
-  string name = getName(_name, number) ;
-  NamedParameter<double> _Fplus(name + "_Fplus", fname.c_str()) ;
-  NamedParameter<double> _Fminus(name + "_Fminus", fname.c_str()) ;
-  NamedParameter<double> Xplus_Re(name + "_Xplus_Re", fname.c_str()) ;
-  NamedParameter<double> Xplus_Im(name + "_Xplus_Im", fname.c_str()) ;
+  initFitPar(m_Fplus, nullptr, fname, "_Fplus");
+  initFitPar(m_Fminus, nullptr, fname, "_Fminus");
+  initFitPar(m_C, nullptr, fname, "_C", "_Xplus_Re");
+  initFitPar(m_S, nullptr, fname, "_S", "_Xplus_Im");
 
-  NamedParameter<double> _Fbarplus(name + "_Fbarplus", fname.c_str()) ;
-  NamedParameter<double> _Fbarminus(name + "_Fbarminus", fname.c_str()) ;
-  NamedParameter<double> Xbarplus_Re(name + "_Xbarplus_Re", fname.c_str()) ;
-  NamedParameter<double> Xbarplus_Im(name + "_Xbarplus_Im", fname.c_str()) ;
+  // In case of no CPV, Abar == A
+  initFitPar(m_Fbarplus, m_Fplus, fname, "_Fbarplus");
+  initFitPar(m_Fbarminus, m_Fminus, fname, "_Fbarminus");
+  initFitPar(m_Cbar, m_C, fname, "_Cbar", "_Xbarplus_Re");
+  initFitPar(m_Sbar, m_S, fname, "_Sbar", "_Xbarplus_Im");
 
-  NamedParameter<double> sumw(name + "_sumw", fname.c_str()) ;
-  NamedParameter<double> sumw2(name + "_sumw2", fname.c_str()) ;
-  NamedParameter<double> norm(name + "_norm", fname.c_str()) ;
-  NamedParameter<double> normBar(name + "_normBar", fname.c_str()) ;
+  NamedParameter<double> sumw(m_name + "_sumw", fname.c_str()) ;
+  NamedParameter<double> sumw2(m_name + "_sumw2", fname.c_str()) ;
+  NamedParameter<double> norm(m_name + "_norm", fname.c_str()) ;
+  NamedParameter<double> normBar(m_name + "_normBar", fname.c_str(),
+				 NamedParameterBase::QUIET) ;
 
   m_norm = norm ;
-  m_normBar = normBar ;
+  if(normBar.gotInitialised())
+    m_normBar = normBar;
+  else
+    m_normBar = norm;
   m_sumw = sumw ;
   m_sumw2 = sumw2 ;
-
-  m_Fplus = _Fplus ;
-  m_Fminus = _Fminus ;
-  m_X = complex<double>(Xplus_Re, Xplus_Im) ;
-
-  m_Fbarplus = _Fbarplus * m_sumw * m_normBar ;
-  m_Fbarminus = _Fbarminus * m_sumw * m_normBar ;
-  m_Xbar = complex<double>(Xbarplus_Re, Xbarplus_Im) ;
 }
 
+void HadronicParameters::Bin::setNoCPV() {
+  m_Fbarplus = m_Fplus;
+  m_Fbarminus = m_Fminus;
+  m_Cbar = m_C;
+  m_Sbar = m_S;
+}
+
+bool HadronicParameters::Bin::allowsCPV() const {
+  return m_Fbarplus.get() != m_Fplus.get();
+}
 
 void HadronicParameters::Bin::add(const HadronicParameters::EventBinInfo& evtPlus,
 				  const HadronicParameters::EventBinInfo& evtMinus,
 				  double weight) {
-  m_Fplus += evtPlus.F * weight ;
-  m_Fminus += evtMinus.F * weight ;
-  m_Fbarplus += evtMinus.Fbar * weight ;
-  m_Fbarminus += evtPlus.Fbar * weight ;
-  m_X += conj(evtPlus.amp) * evtPlus.ampBar * weight ;
-  m_Xbar += conj(evtMinus.ampBar) * evtMinus.amp * weight ;
+  *m_Fplus = *m_Fplus + evtPlus.F * weight ;
+  *m_Fminus = *m_Fminus + evtMinus.F * weight ;
+  complex<double> dX = conj(evtPlus.amp) * evtPlus.ampBar * weight;
+  *m_C = *m_C + dX.real();
+  *m_S = *m_S + dX.imag();
+  if(allowsCPV()){
+    *m_Fbarplus = *m_Fbarplus + evtMinus.Fbar * weight ;
+    *m_Fbarminus = *m_Fbarminus + evtPlus.Fbar * weight ;
+    complex<double> dXbar = conj(evtMinus.ampBar) * evtMinus.amp * weight ;
+    *m_Cbar = *m_C + dXbar.real();
+    *m_Sbar = *m_S + dXbar.imag();
+  }
   m_sumw += weight ;
   m_sumw2 += weight*weight ;
 }
 
 void HadronicParameters::Bin::finaliseSum() {
-  m_X /= sqrt(m_Fplus*m_Fbarminus);
-  m_Xbar /= sqrt(m_Fbarplus*m_Fminus);
-  m_Fplus /= m_sumw;
-  m_Fminus /= m_sumw;
-  m_Fbarplus /= m_sumw;
-  m_Fbarminus /= m_sumw;
+  double denom = sqrt((*m_Fplus)*(*m_Fbarminus));
+  double denomBar = sqrt((*m_Fbarplus)*(*m_Fminus));
+  *m_C = *m_C/denom;
+  *m_S = *m_S/denom;
+  *m_Fplus = *m_Fplus/m_sumw;
+  *m_Fminus = *m_Fminus/m_sumw;
+  if(allowsCPV()){
+    *m_Cbar = *m_Cbar/denomBar;
+    *m_Sbar = *m_Sbar/denomBar;
+    *m_Fbarplus = *m_Fbarplus/m_sumw;
+    *m_Fbarminus = *m_Fbarminus/m_sumw;
+  }
 }
 
 void HadronicParameters::Bin::normalise(double _norm, double _normBar) {
   setNorm(_norm);
-  setNormBar(_norm);
+  setNormBar(_normBar);
 }
 
 double HadronicParameters::Bin::Fplus() const {
-  return m_Fplus;
+  return *m_Fplus;
 }
 
 double HadronicParameters::Bin::Fminus() const {
-  return m_Fminus;
+  return *m_Fminus;
 }
 
 complex<double> HadronicParameters::Bin::Xplus() const {
-  return m_X;
+  return complex<double>(*m_C, *m_S);
 }
 
 complex<double> HadronicParameters::Bin::Xminus() const {
@@ -259,15 +305,15 @@ complex<double> HadronicParameters::Bin::Xminus() const {
 }
 
 double HadronicParameters::Bin::Fbarplus() const {
-  return m_Fbarplus;
+  return *m_Fbarplus;
 }
 
 double HadronicParameters::Bin::Fbarminus() const {
-  return m_Fbarminus;
+  return *m_Fbarminus;
 }
 
 complex<double> HadronicParameters::Bin::Xbarplus() const {
-  return m_Xbar;
+  return complex<double>(*m_Cbar, *m_Sbar);
 }
 
 complex<double> HadronicParameters::Bin::Xbarminus() const {
@@ -279,11 +325,11 @@ double HadronicParameters::Bin::getNorm() const {
 }
 
 void HadronicParameters::Bin::setNorm(double norm) {
-  m_Fplus *= m_norm;
-  m_Fminus *= m_norm;
+  *m_Fplus = *m_Fplus * m_norm;
+  *m_Fminus = *m_Fminus * m_norm;
   m_norm = norm ;
-  m_Fplus /= norm;
-  m_Fminus /= norm;
+  *m_Fplus = *m_Fplus/norm;
+  *m_Fminus = *m_Fminus/norm;
 }
 
 double HadronicParameters::Bin::getNormBar() const {
@@ -291,30 +337,33 @@ double HadronicParameters::Bin::getNormBar() const {
 }
 
 void HadronicParameters::Bin::setNormBar(double norm) {
-  m_Fbarplus *= m_normBar;
-  m_Fbarminus *= m_normBar;
+  if(!allowsCPV())
+    return;
+  *m_Fbarplus = *m_Fbarplus * m_normBar;
+  *m_Fbarminus = *m_Fbarminus * m_normBar;
   m_normBar = norm ;
-  m_Fbarplus /= norm;
-  m_Fbarminus /= norm;
+  *m_Fbarplus = *m_Fbarplus/norm;
+  *m_Fbarminus = *m_Fbarminus/norm;
 }
 
 void HadronicParameters::Bin::Print(const string& _name, unsigned number, ostream& os) const {
   string name = getName(_name, number) ;
-  complex<double> Xp = Xplus() ;
-  complex<double> Xbarp = Xbarplus() ;
   os.precision(16) ;
-  os << name << "_Fplus\t" << Fplus() << endl ;
-  os << name << "_Fminus\t" << Fminus() << endl ;
-  os << name << "_Xplus_Re\t" << Xp.real() << endl ;
-  os << name << "_Xplus_Im\t" << Xp.imag() << endl ;
-  os << name << "_Fbarplus\t" << Fbarplus() << endl ;
-  os << name << "_Fbarminus\t" << Fbarminus() << endl ;
-  os << name << "_Xbarplus_Re\t" << Xbarp.real() << endl ;
-  os << name << "_Xbarplus_Im\t" << Xbarp.imag() << endl ;
+  os << *m_Fplus << endl;
+  os << *m_Fminus << endl;
+  os << *m_C << endl;
+  os << *m_S << endl;
+  if(allowsCPV()){
+    os << *m_Fbarplus << endl;
+    os << *m_Fbarminus << endl;
+    os << *m_Cbar << endl;
+    os << *m_Sbar << endl;
+  }
   os << name << "_sumw\t" << m_sumw << endl ;
   os << name << "_sumw2\t" << m_sumw2 << endl ;
   os << name << "_norm\t" << m_norm << endl ;
-  os << name << "_normBar\t" << m_normBar << endl ;
+  if(allowsCPV())
+    os << name << "_normBar\t" << m_normBar << endl ;
 }
 
 string HadronicParameters::Bin::getName(const string& name, unsigned number) {
@@ -384,23 +433,32 @@ double HadronicParameters::Bin::asymmetry(double t, double t2, double lifetime,
   return (n - nbar)/(n + nbar);
 }
 
+
+
+/*
 HadronicParameters::HadronicParameters(const HadronicParameters::Bins& bins, 
 				       BinningPtr phaseBinning) :
   m_bins(bins),
   m_phaseBinning(phaseBinning)
 {}
+*/
 
-HadronicParameters::HadronicParameters(BinningPtr phaseBinning) :
-  m_bins(phaseBinning->nBins, HadronicParameters::Bin()),
+HadronicParameters::HadronicParameters(const string& name, BinningPtr phaseBinning) :
+  m_name(name),
+  m_bins(),
   m_phaseBinning(phaseBinning)
-{}
+{
+  for(unsigned i = 1 ; i < m_phaseBinning->nBins + 1 ; ++i)
+    m_bins.push_back(Bin(name, i)) ;
+}
 
 HadronicParameters::HadronicParameters(const string& name, const string& fname) :
+  m_name(name),
   m_bins(),
   m_phaseBinning(HadronicParameters::getPhaseBinning(name, fname))
 {
   for(unsigned i = 1 ; i < m_phaseBinning->nBins + 1 ; ++i)
-    m_bins.push_back(Bin(name, i, fname)) ;  
+    m_bins.push_back(Bin(name, i, fname)) ;
 }
 
 const HadronicParameters::Bin& HadronicParameters::bin(IDalitzEvent& evt) const {
@@ -464,19 +522,19 @@ pair<double, double> HadronicParameters::normalise(double _norm, double _normBar
   return norm ;
 }
 
-void HadronicParameters::Print(const string& name, ostream& os) const {
-  m_phaseBinning->Print(name, os) ;
+void HadronicParameters::Print(ostream& os) const {
+  m_phaseBinning->Print(m_name, os) ;
   unsigned i = 1 ;
   for(const auto& bin : m_bins){
-    bin.Print(name, i, os) ;
+    bin.Print(m_name, i, os) ;
     i += 1 ;
   }
 }
 
-void HadronicParameters::write(const string& name, const string& fname) const {
+void HadronicParameters::write(const string& fname) const {
   ofstream fout ;
   fout.open(fname) ;
-  Print(name, fout) ;
+  Print(fout) ;
   fout.close() ;
 }
   

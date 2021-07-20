@@ -40,7 +40,8 @@ int calculateHadronicParameters(const string& config = string()) {
   else
     binning = HadronicParameters::BinningPtr(new HadronicParameters::ModelPhaseBinning(model, cpmodel, nBinsPhase)) ;
   
-  HadronicParameters pars(binning) ;
+  NamedParameter<string> parsName("parsName", string("hadronicPars"), (char*)0) ;
+  HadronicParameters pars(parsName, binning) ;
 
   NamedParameter<int>  Nevents("Nevents", 10000);
   cout << "Calculating parameters with random seed " << int(RandomSeed) << " for " 
@@ -51,14 +52,16 @@ int calculateHadronicParameters(const string& config = string()) {
   cout << "Finished calculating. Took " << (endTime - startTime) << " s, " 
        << float(endTime - startTime)/Nevents << " s/event." << endl ;
 
+  cout << "Before finalisation:" << endl;
+  pars.Print();
+  
   pars.finaliseSum() ;
 
-  NamedParameter<string> parsName("parsName", string("hadronicPars"), (char*)0) ;
   cout << "Calculated parameters:" << endl ;
-  pars.Print(string(parsName)) ;
+  pars.Print() ;
 
   NamedParameter<string> outputFile("outputFile", string("hadronicParameters.txt"), (char*)0) ;
-  pars.write(parsName, outputFile) ;
+  pars.write(outputFile) ;
 
   return 0 ;
 }
