@@ -249,6 +249,9 @@ class HadronicParameters {
 
   /// Set the parameter set
   void setParSet(MINT::MinuitParameterSet*);
+
+  /// Check if CPV is allowed
+  bool allowsCPV() const;
   
  private :
   std::string m_name;

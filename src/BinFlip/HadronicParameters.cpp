@@ -599,3 +599,7 @@ void HadronicParameters::setParSet(MinuitParameterSet* pSet){
   for(auto& bin : m_bins)
     bin.setParSet(pSet);
 }
+
+bool HadronicParameters::allowsCPV() const {
+  return bin(1).allowsCPV();
+}
