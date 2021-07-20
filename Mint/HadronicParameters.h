@@ -14,6 +14,7 @@ class TRandom3 ;
 
 namespace MINT{
   class MinuitParameterSet;
+  class IMinimisable;
 }
 
 /** Class describing the hadronic parameters in bins of phase difference.
@@ -207,7 +208,8 @@ class HadronicParameters {
   typedef std::deque<Bin> Bins ;
   /// Pointer to the binning scheme.
   typedef MINT::counted_ptr<PhaseBinningBase> BinningPtr ;
-
+  typedef MINT::MinuitParameterSet::CovMatrix CovMatrix;
+  
   /// Initialise from a predetermined set of bins.
   //HadronicParameters(const Bins&, BinningPtr) ;
   /// Initialise from a binning scheme.
@@ -252,11 +254,17 @@ class HadronicParameters {
 
   /// Check if CPV is allowed
   bool allowsCPV() const;
-  
+
+  /// Get the Gaussian constraints and add the parameters to the parset
+  MINT::IMinimisable* getConstraints(MINT::MinuitParameterSet*);
+
+  /// Set the covariance matrix
+  void setCovMatrix(const CovMatrix& m) { m_covMatrix = m; };
  private :
   std::string m_name;
   Bins m_bins ;
   BinningPtr m_phaseBinning ;
+  CovMatrix m_covMatrix = CovMatrix();
 } ;
 
 #endif

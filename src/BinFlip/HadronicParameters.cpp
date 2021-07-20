@@ -3,12 +3,14 @@
 #include <Mint/NamedParameter.h>
 #include <fstream>
 #include <Mint/MinuitParameterSet.h>
+#include <Mint/GaussianConstraintChi2.h>
 
 using namespace std ;
 using MINT::NamedParameter ;
 using MINT::FitParameter;
 using MINT::NamedParameterBase;
 using MINT::MinuitParameterSet;
+using MINT::IMinimisable;
 
 int HadronicParameters::EventBinInfo::binSign() const {
   return binNumber > 0 ? 1 : -1 ;
@@ -602,4 +604,20 @@ void HadronicParameters::setParSet(MinuitParameterSet* pSet){
 
 bool HadronicParameters::allowsCPV() const {
   return bin(1).allowsCPV();
+}
+
+IMinimisable* HadronicParameters::getConstraints(MinuitParameterSet* pSet) {
+  setParSet(pSet);
+  // Get floating parameters from the bins
+  vector<FitParameter*> pars;
+  for(auto& bin : m_bins){
+    auto binpars = bin.getFitPars();
+    for(auto& par : binpars)
+      if(par->iFixInit() == FitParameter::FIT)
+	pars.push_back(par);
+  }
+
+  if(pars.size() > 0)
+    return new GaussianConstraintChi2(pSet, pars, m_covMatrix);
+  return nullptr;
 }
