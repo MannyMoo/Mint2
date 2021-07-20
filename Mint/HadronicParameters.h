@@ -211,7 +211,7 @@ class HadronicParameters {
   typedef MINT::MinuitParameterSet::CovMatrix CovMatrix;
   
   /// Initialise from a predetermined set of bins.
-  //HadronicParameters(const Bins&, BinningPtr) ;
+  HadronicParameters(const std::string&, const Bins&, BinningPtr) ;
   /// Initialise from a binning scheme.
   HadronicParameters(const std::string&, BinningPtr) ;
   /// Initialise from a config file.
@@ -259,12 +259,20 @@ class HadronicParameters {
   MINT::IMinimisable* getConstraints(MINT::MinuitParameterSet*);
 
   /// Set the covariance matrix
-  void setCovMatrix(const CovMatrix& m) { m_covMatrix = m; };
+  void setCovMatrix(const CovMatrix& m);
+
+  /// Get floating parameters
+  std::vector<const MINT::FitParameter*> getFloatingPars() const;
+  
  private :
   std::string m_name;
   Bins m_bins ;
   BinningPtr m_phaseBinning ;
   CovMatrix m_covMatrix = CovMatrix();
+
+  /// Get floating parameters
+  std::vector<MINT::FitParameter*> getFloatingPars();
+
 } ;
 
 #endif

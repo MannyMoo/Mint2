@@ -4,6 +4,7 @@
 #include <fstream>
 #include <Mint/MinuitParameterSet.h>
 #include <Mint/GaussianConstraintChi2.h>
+#include <stdexcept>
 
 using namespace std ;
 using MINT::NamedParameter ;
@@ -473,15 +474,17 @@ double HadronicParameters::Bin::asymmetry(double t, double t2, double lifetime,
   return (n - nbar)/(n + nbar);
 }
 
-
-
-/*
-HadronicParameters::HadronicParameters(const HadronicParameters::Bins& bins, 
+HadronicParameters::HadronicParameters(const string& name,
+				       const HadronicParameters::Bins& bins, 
 				       BinningPtr phaseBinning) :
+  m_name(name),
   m_bins(bins),
   m_phaseBinning(phaseBinning)
-{}
-*/
+{
+  if(m_bins.size() != m_phaseBinning->nBins)
+    throw length_error("HadronicParameters: Number of bins given doesn't match \
+number of bins in the binning scheme!");
+}
 
 HadronicParameters::HadronicParameters(const string& name, BinningPtr phaseBinning) :
   m_name(name),
@@ -608,6 +611,26 @@ bool HadronicParameters::allowsCPV() const {
 
 IMinimisable* HadronicParameters::getConstraints(MinuitParameterSet* pSet) {
   setParSet(pSet);
+
+  auto pars = getFloatingPars();
+  if(pars.size() > 0)
+    return new GaussianConstraintChi2(pSet, pars, m_covMatrix);
+  return nullptr;
+}
+
+vector<const FitParameter*> HadronicParameters::getFloatingPars() const {
+  // Get floating parameters from the bins
+  vector<const FitParameter*> pars;
+  for(auto& bin : m_bins){
+    auto binpars = bin.getFitPars();
+    for(auto& par : binpars)
+      if(par->iFixInit() == FitParameter::FIT)
+	pars.push_back(par);
+  }
+  return pars;
+}
+
+vector<FitParameter*> HadronicParameters::getFloatingPars() {
   // Get floating parameters from the bins
   vector<FitParameter*> pars;
   for(auto& bin : m_bins){
@@ -616,8 +639,13 @@ IMinimisable* HadronicParameters::getConstraints(MinuitParameterSet* pSet) {
       if(par->iFixInit() == FitParameter::FIT)
 	pars.push_back(par);
   }
-
-  if(pars.size() > 0)
-    return new GaussianConstraintChi2(pSet, pars, m_covMatrix);
-  return nullptr;
+  return pars;
 }
+
+void HadronicParameters::setCovMatrix(const CovMatrix& cov) {
+  if(cov.GetNcols() != getFloatingPars().size())
+    throw length_error("HadronicParameters::setCovMatrix: Inconsistent size\
+ of covariance matrix and number of floating parameters!");
+  m_covMatrix = cov;
+}
+		       
