@@ -12,6 +12,10 @@
 
 class TRandom3 ;
 
+namespace MINT{
+  class MinuitParameterSet;
+}
+
 /** Class describing the hadronic parameters in bins of phase difference.
  */
 class HadronicParameters {
@@ -135,6 +139,14 @@ class HadronicParameters {
     void setNoCPV();
     /// Check if CPV is allowed
     bool allowsCPV() const;
+
+    /// Get fit parameters
+    std::vector<MINT::FitParameter*> getFitPars();
+    /// Get fit parameters
+    std::vector<const MINT::FitParameter*> getFitPars() const;
+    
+    /// Set the parameter set
+    void setParSet(MINT::MinuitParameterSet*);
     
     /// Add a DalitzEvent and its conjugate.
     void add(const EventBinInfo&, const EventBinInfo&, double weight = 1.) ;
@@ -235,6 +247,9 @@ class HadronicParameters {
   /// Get the PhaseBinning type.
   static BinningPtr getPhaseBinning(const std::string&, const std::string& fname = "") ;
 
+  /// Set the parameter set
+  void setParSet(MINT::MinuitParameterSet*);
+  
  private :
   std::string m_name;
   Bins m_bins ;

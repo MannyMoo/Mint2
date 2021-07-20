@@ -2,11 +2,13 @@
 #include <TMath.h>
 #include <Mint/NamedParameter.h>
 #include <fstream>
+#include <Mint/MinuitParameterSet.h>
 
 using namespace std ;
 using MINT::NamedParameter ;
 using MINT::FitParameter;
 using MINT::NamedParameterBase;
+using MINT::MinuitParameterSet;
 
 int HadronicParameters::EventBinInfo::binSign() const {
   return binNumber > 0 ? 1 : -1 ;
@@ -247,6 +249,42 @@ void HadronicParameters::Bin::setNoCPV() {
 
 bool HadronicParameters::Bin::allowsCPV() const {
   return m_Fbarplus.get() != m_Fplus.get();
+}
+
+vector<FitParameter*> HadronicParameters::Bin::getFitPars(){
+  vector<FitParameter*> pars;
+  pars.push_back(m_Fplus.get());
+  pars.push_back(m_Fminus.get());
+  pars.push_back(m_C.get());
+  pars.push_back(m_S.get());
+  if(!allowsCPV())
+    return pars;
+  pars.push_back(m_Fbarplus.get());
+  pars.push_back(m_Fbarminus.get());
+  pars.push_back(m_Cbar.get());
+  pars.push_back(m_Sbar.get());
+  return pars;
+}
+
+vector<const FitParameter*> HadronicParameters::Bin::getFitPars() const {
+  vector<const FitParameter*> pars;
+  pars.push_back(m_Fplus.get());
+  pars.push_back(m_Fminus.get());
+  pars.push_back(m_C.get());
+  pars.push_back(m_S.get());
+  if(!allowsCPV())
+    return pars;
+  pars.push_back(m_Fbarplus.get());
+  pars.push_back(m_Fbarminus.get());
+  pars.push_back(m_Cbar.get());
+  pars.push_back(m_Sbar.get());
+  return pars;
+}
+
+void HadronicParameters::Bin::setParSet(MinuitParameterSet* pSet){
+  vector<FitParameter*> pars = getFitPars();
+  for(auto& par : pars)
+    par->addToParSet(pSet);
 }
 
 void HadronicParameters::Bin::add(const HadronicParameters::EventBinInfo& evtPlus,
@@ -555,4 +593,9 @@ const HadronicParameters::PhaseBinningBase& HadronicParameters::binning() const 
 
 HadronicParameters::BinningPtr HadronicParameters::binningPtr() const {
   return m_phaseBinning ;
+}
+
+void HadronicParameters::setParSet(MinuitParameterSet* pSet){
+  for(auto& bin : m_bins)
+    bin.setParSet(pSet);
 }
