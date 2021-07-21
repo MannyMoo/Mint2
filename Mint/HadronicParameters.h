@@ -274,7 +274,7 @@ class HadronicParameters {
 
   /// Get floating parameters
   std::vector<MINT::FitParameter*> getFloatingPars();
-  /// Get constrained parametres
+  /// Get constrained parameters
   virtual std::vector<MINT::FitParameter*> getConstrainedPars();
 
 } ;

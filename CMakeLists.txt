@@ -6,7 +6,8 @@ gaudi_subdir(Mint2 v0r1)
 gaudi_depends_on_subdirs(
 	GaudiConfUtils
 	AnalysisUtils
-	qft)
+	qft
+	HyperPlot)
 
 find_package(PythonLibs)
 find_package(Boost COMPONENTS program_options REQUIRED)
