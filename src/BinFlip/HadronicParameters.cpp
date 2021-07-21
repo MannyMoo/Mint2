@@ -612,7 +612,7 @@ bool HadronicParameters::allowsCPV() const {
 IMinimisable* HadronicParameters::getConstraints(MinuitParameterSet* pSet) {
   setParSet(pSet);
 
-  auto pars = getFloatingPars();
+  auto pars = getConstrainedPars();
   if(pars.size() > 0)
     return new GaussianConstraintChi2(pSet, pars, m_covMatrix);
   return nullptr;
@@ -642,8 +642,16 @@ vector<FitParameter*> HadronicParameters::getFloatingPars() {
   return pars;
 }
 
+vector<const FitParameter*> HadronicParameters::getConstrainedPars() const {
+  return getFloatingPars();
+}
+
+vector<FitParameter*> HadronicParameters::getConstrainedPars() {
+  return getFloatingPars();
+}
+
 void HadronicParameters::setCovMatrix(const CovMatrix& cov) {
-  if(cov.GetNcols() != getFloatingPars().size())
+  if(cov.GetNcols() != getConstrainedPars().size())
     throw length_error("HadronicParameters::setCovMatrix: Inconsistent size\
  of covariance matrix and number of floating parameters!");
   m_covMatrix = cov;
